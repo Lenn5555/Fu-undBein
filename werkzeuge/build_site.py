@@ -61,7 +61,16 @@ def slug(text):
 
 # ---------------------------------------------------------------- Daten
 
+def vergleichspreise():
+    """Verkaufspreise der Vergleichsprodukte (netto, schon mit Aufschlag), aus werkzeuge/preise_uebernehmen.py."""
+    datei = ROOT / "daten/preise-vergleich.csv"
+    if not datei.exists():
+        return {}
+    return {r["sku"]: r["preis_netto"] for r in csv.DictReader(datei.open(encoding="utf-8")) if r["preis_netto"]}
+
+
 def produkte_laden():
+    vk = vergleichspreise()
     rows = []
     for datei in ("produkte-woocommerce.csv", "vergleichsprodukte-woocommerce.csv"):
         rows += list(csv.DictReader((ROOT / "import" / datei).open(encoding="utf-8")))
@@ -92,7 +101,8 @@ def produkte_laden():
             "sku": r["SKU"], "slug": s, "name": r["Name"], "kurz": r["Short description"], "text": r["Description"],
             "bild": (r["Images"] or "").split(",")[0].strip(), "marke": r.get("Brands", ""),
             "kategorien": list(dict.fromkeys(kats)), "merkmale": merkmale,
-            "preis": r["Regular price"], "varianten": varianten.get(r["SKU"], []),
+            "preis": r["Regular price"] or vk.get(r["SKU"], ""), "varianten": varianten.get(r["SKU"], []),
+            "preis_ab": r["SKU"] in vk,  # Serienpreis: günstigste Ausführung
             "vergleich": r.get("Meta: _bf_herkunft") == "vergleich",
         })
     return produkte
@@ -111,7 +121,7 @@ def preis_text(p):
     w = preise(p)
     if not w:
         return "Preis auf Anfrage"
-    return ("ab " if len(set(w)) > 1 else "") + euro(min(w)) + " zzgl. MwSt."
+    return ("ab " if len(set(w)) > 1 or p.get("preis_ab") else "") + euro(min(w)) + " zzgl. MwSt."
 
 
 def mailto(betreff, text):
@@ -196,6 +206,9 @@ def produktseite(p):
                 f'<tbody>{zeilen}</tbody></table>')
     elif p["preis"]:
         kauf = f'<p class="preis-gross">{e(preis_text(p))}</p><p>{knopf_kaufen(p)}</p>'
+        if p.get("preis_ab"):
+            kauf += ('<p class="klein grau">Preis für die günstigste Ausführung dieser Serie. Bitte Gewinde und Maß in der '
+                     'Bestellung angeben; wir bestätigen Preis und Lieferzeit.</p>')
     else:
         kauf = (f'<p class="preis-gross">Preis auf Anfrage</p><p><a class="btn" href="{e(anfrage_link(p))}">Angebot anfragen</a></p>'
                 '<p class="klein grau">Wir melden uns mit Preis, passender Ausführung und Lieferzeit.</p>')
@@ -287,7 +300,7 @@ def store_api(produkte):
             "images": [{"src": bild_url(p)}],
             "attributes": [{"name": k, "terms": [{"name": t} for t in v]} for k, v in p["merkmale"].items() if k in FINDER and v],
             "prices": {"currency_code": "EUR", "currency_minor_unit": 2, "price": str(min(w)) if w else "",
-                       "price_range": {"min_amount": str(min(w)), "max_amount": str(max(w))} if len(set(w)) > 1 else None},
+                       "price_range": {"min_amount": str(min(w)), "max_amount": str(max(w))} if len(set(w)) > 1 or (w and p.get("preis_ab")) else None},
         })
     return out
 

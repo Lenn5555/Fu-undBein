@@ -1,0 +1,11 @@
+{
+  "name": "beinundfuss/shop-plugin",
+  "description": "Plugin für beinundfuß.de: Produktfinder, Preis auf Anfrage, KI-Berater",
+  "type": "wordpress-plugin",
+  "require": {
+    "php": "^8.1",
+    "anthropic-ai/sdk": "^0.56",
+    "guzzlehttp/guzzle": "^7.9"
+  },
+  "config": { "optimize-autoloader": true, "allow-plugins": { "php-http/discovery": true } }
+}

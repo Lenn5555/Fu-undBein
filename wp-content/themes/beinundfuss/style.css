@@ -1,0 +1,39 @@
+/*
+Theme Name: beinundfuß
+Theme URI: https://beinundfuß.de
+Description: Block-Theme für den Shop beinundfuß.de – Einschlagfüße, Stellbeine, Maschinenfüße. Benötigt WooCommerce und das Plugin „beinundfuß Shop“.
+Version: 0.1.0
+Requires at least: 6.6
+Requires PHP: 8.1
+Text Domain: beinundfuss
+License: proprietär
+*/
+
+.bf-wordmark { font-weight: 800; letter-spacing: -0.03em; font-size: 1.75rem; line-height: 1; text-decoration: none; color: var(--wp--preset--color--navy); white-space: nowrap; }
+.bf-wordmark .bf-und { font-weight: 300; color: var(--wp--preset--color--grau); }
+.bf-wordmark .bf-dot { color: var(--wp--preset--color--gruen); }
+.bf-claim { text-transform: uppercase; letter-spacing: 0.25em; font-size: 0.75rem; color: var(--wp--preset--color--navy); }
+
+.bf-kachel { background: var(--wp--preset--color--hell); border-radius: 8px; padding: 1.25rem; height: 100%; transition: box-shadow .15s, transform .15s; }
+.bf-kachel:hover { box-shadow: 0 6px 20px rgb(27 40 54 / 12%); transform: translateY(-2px); }
+.bf-kachel a { text-decoration: none; color: inherit; }
+.bf-kachel h3 { margin: 0 0 .35rem; font-size: 1.1rem; }
+.bf-kachel p { margin: 0; font-size: .9rem; color: var(--wp--preset--color--grau-dunkel); }
+.bf-nummer { display: inline-flex; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--wp--preset--color--gruen); color: #fff; font-weight: 700; align-items: center; justify-content: center; margin-right: .5rem; font-size: .9rem; }
+
+.bf-band { background: var(--wp--preset--color--navy); color: #fff; }
+.bf-band .bf-band-item { display: flex; gap: .75rem; align-items: center; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
+.bf-band svg { flex: none; width: 32px; height: 32px; stroke: #fff; fill: none; stroke-width: 1.6; }
+
+.bf-schritte { counter-reset: schritt; }
+.bf-schritte li { list-style: none; position: relative; padding-left: 2.5rem; margin-bottom: .75rem; }
+.bf-schritte li::before { counter-increment: schritt; content: counter(schritt); position: absolute; left: 0; top: -.1rem; width: 1.75rem; height: 1.75rem; border-radius: 50%; background: var(--wp--preset--color--gruen); color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+
+/* WooCommerce: Preise netto kennzeichnen, Anfrage-Hinweis */
+.bf-preis-anfrage { font-weight: 600; color: var(--wp--preset--color--navy); }
+.wc-block-components-product-price, .price { color: var(--wp--preset--color--navy); }
+
+@media (max-width: 781px) {
+  .bf-wordmark { font-size: 1.35rem; }
+  .bf-claim { letter-spacing: .15em; font-size: .65rem; }
+}

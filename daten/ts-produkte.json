@@ -1,0 +1,306 @@
+{
+  "_hinweis": "Startsortiment beinundfuß.de aus dem Bestand von ts-systemtechnik.de (Stand 08.10.2026). Texte neu geschrieben. Preise netto in EUR. Leerer Preis = Preis auf Anfrage. Variations-SKUs sind die Artikelnummern von TS und müssen gegen die SAP-Materialnummern geprüft werden.",
+  "produkte": [
+    {
+      "sku": "BF-15798",
+      "ts_id": 15798,
+      "name": "Einschlagfuß für Vierkantrohr 25 und 30 mm, Zinkdruckguss",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Robuster Einschlagfuß aus Zinkdruckguss für kleine Vierkantrohre, mit stufenlosem Höhenausgleich.",
+      "text": "Der Fuß wird einfach in das Rohrende eingeschlagen und sitzt danach fest. Über den Stellteil gleichen Sie Bodenunebenheiten aus, ohne das Gestell anzuheben. Erhältlich für 25er Rohr mit Flansch und für 30er Rohr mit Sechskant, jeweils in Zinkdruckguss natur oder vernickelt.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Zinkdruckguss2530mm.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell", "Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss"], "Rohrmaß": ["Vierkant 25 mm", "Vierkant 30 mm"], "Traglast": "6500 N", "Verstellbereich": "26–60 mm", "Fußform": ["Flansch", "Sechskant"]},
+      "varianten": [
+        {"sku": "1099-1404-2100", "ausfuehrung": "25 mm, Zamak natur, Flansch", "preis": "7.20"},
+        {"sku": "1099-1404-2120", "ausfuehrung": "25 mm, Zamak vernickelt, Flansch", "preis": "7.80"},
+        {"sku": "1099-1830-2102", "ausfuehrung": "30 mm, Zamak natur, Sechskant", "preis": "8.10"},
+        {"sku": "1099-1830-2122", "ausfuehrung": "30 mm, Zamak vernickelt, Sechskant", "preis": "8.45"}
+      ]
+    },
+    {
+      "sku": "BF-15797",
+      "ts_id": 15797,
+      "name": "Einschlagfuß für Vierkantrohr 35 mm, Zinkdruckguss",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Einschlagfuß für 35 × 35 mm Vierkantrohr mit Sechskant-Stellteil, natur oder vernickelt.",
+      "text": "Passend für Gestelle aus 35er Vierkantrohr. Der Sechskant lässt sich mit einem Gabelschlüssel nachstellen, auch wenn das Gestell schon beladen ist.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/11/Zinkdruckguss_35_351.gif",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell", "Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss"], "Rohrmaß": ["Vierkant 35 mm"], "Traglast": "6500 N", "Verstellbereich": "26–60 mm", "Fußform": ["Sechskant"]},
+      "varianten": [
+        {"sku": "1015-3501-1101", "ausfuehrung": "Zamak natur, Sechskant", "preis": "8.30"},
+        {"sku": "1015-3501-1110", "ausfuehrung": "Zamak vernickelt, Sechskant", "preis": "8.95"}
+      ]
+    },
+    {
+      "sku": "BF-15796",
+      "ts_id": 15796,
+      "name": "Einschlagfuß für Vierkantrohr 30 mm, Kunststoff mit Flansch",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Leichter Kunststoff-Einschlagfuß mit Flansch für 30er Vierkantrohr, zwei Verstellbereiche.",
+      "text": "Die günstige Lösung für leichte Möbel, Regale und Gestelle. Der Kunststoffflansch schont empfindliche Böden.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/Kunststoff3035.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"], "Rohrmaß": ["Vierkant 30 mm"], "Fußform": ["Flansch"]},
+      "varianten": [
+        {"sku": "1030-2743-FL28", "ausfuehrung": "Flansch 28 mm, Verstellbereich 20–45 mm", "preis": "5.25"},
+        {"sku": "1030-3856-FLS", "ausfuehrung": "Flansch 38 mm, Verstellbereich 38–56 mm", "preis": "5.85"}
+      ]
+    },
+    {
+      "sku": "BF-15795",
+      "ts_id": 15795,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm mit Vierkantflansch",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Einschlagfuß mit quadratischem Flansch 40 × 40 mm, bündig zum Rohr, bis 9000 N.",
+      "text": "Der quadratische Flansch schließt bündig mit dem Rohr ab und wirkt dadurch besonders sauber, etwa an Edelstahltischen. Für Rohre mit 1,2 bis 1,5 mm Wandstärke.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff4040.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss", "Edelstahl"], "Rohrmaß": ["Vierkant 40 mm"], "Traglast": "9000 N", "Verstellbereich": "33–62 mm", "Fußform": ["Flansch"]},
+      "varianten": [
+        {"sku": "1015-4003-2220", "ausfuehrung": "Zamak vernickelt, Flansch 40 × 40 mm", "preis": "12.85"},
+        {"sku": "1015-4040-1144", "ausfuehrung": "Edelstahl, Flansch 40 × 40 mm", "preis": "13.70"}
+      ]
+    },
+    {
+      "sku": "BF-15794",
+      "ts_id": 15794,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm mit Sechskant",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Der Klassiker für 40er Vierkantrohr: Zamak, Edelstahl oder Aluminium, auch für 2 mm Wandstärke.",
+      "text": "Die große Auswahl für 40 × 40 mm Rohr. Wählen Sie zwischen Zamak natur, vernickelt, Edelstahl und einer Aluminium-Ausführung mit langem Verstellweg bis 160 mm. Für dickwandige Rohre mit 2 mm Wand gibt es eigene Varianten.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/02Kunststoff4040.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell", "Gastronomiegerät", "Maschine / Anlage"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss", "Edelstahl", "Aluminium"], "Rohrmaß": ["Vierkant 40 mm"], "Verstellbereich": "29–160 mm", "Fußform": ["Sechskant"]},
+      "varianten": [
+        {"sku": "1099-1804-2100", "ausfuehrung": "Zamak natur, 29–67 mm", "preis": "4.59"},
+        {"sku": "1099-1804-2120", "ausfuehrung": "Zamak vernickelt, 29–67 mm", "preis": "7.95"},
+        {"sku": "1099-1804-2621", "ausfuehrung": "Edelstahl, 29–67 mm", "preis": "9.55"},
+        {"sku": "1099-1804-2153", "ausfuehrung": "Aluminium, bis 160 mm", "preis": "19.60"},
+        {"sku": "1652-0257", "ausfuehrung": "Zamak natur, für 2 mm Rohr, 38–66 mm", "preis": "8.25"},
+        {"sku": "1652-0258", "ausfuehrung": "Edelstahl vernickelt, für 2 mm Rohr, 38–66 mm", "preis": "9.25"}
+      ]
+    },
+    {
+      "sku": "BF-15793",
+      "ts_id": 15793,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm mit rundem Flansch",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Einschlagfuß mit rundem Edelstahlflansch 39 oder 89 mm, auch mit Löchern zur Bodenbefestigung.",
+      "text": "Der große 89-mm-Flansch verteilt die Last auf eine größere Fläche. Die Ausführung mit Löchern lässt sich am Boden verschrauben, etwa bei Kühlmöbeln oder Arbeitsplätzen, die nicht verrutschen dürfen.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/03Zink4040.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel", "Maschine / Anlage"], "Funktion": ["Höhenverstellung", "Bodenbefestigung"], "Material": ["Zinkdruckguss", "Edelstahl"], "Rohrmaß": ["Vierkant 40 mm"], "Fußform": ["Flansch"]},
+      "varianten": [
+        {"sku": "1015-4039-1144", "ausfuehrung": "Edelstahlflansch 39 mm", "preis": "11.30"},
+        {"sku": "1015-4090-1144", "ausfuehrung": "Edelstahlflansch 89 mm mit Löchern", "preis": "11.50"},
+        {"sku": "1652-0358", "ausfuehrung": "Edelstahlflansch 89 mm, für 2 mm Rohr", "preis": "11.75"}
+      ]
+    },
+    {
+      "sku": "BF-15792",
+      "ts_id": 15792,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm, Kunststoff",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Kunststoff-Einschlagfüße für 40er Rohr in Schwarz oder Grau, mit Sechskant oder rundem Fuß.",
+      "text": "Für Werkbänke, Regale und Betriebseinrichtungen, bei denen kein Metallfuß nötig ist. Fünf Ausführungen mit Verstellwegen von 27 bis 82 mm.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff40440-e1708349348686.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"], "Rohrmaß": ["Vierkant 40 mm"], "Verstellbereich": "27–82 mm", "Fußform": ["Sechskant", "Rund"]},
+      "varianten": [
+        {"sku": "1040-2643-GR", "ausfuehrung": "Grau, Sechskant, 30–53 mm", "preis": "7.25"},
+        {"sku": "1099-1040-13-SW", "ausfuehrung": "Schwarz, Sechskant, 44–60 mm", "preis": "7.10"},
+        {"sku": "1099-1040-11-SW", "ausfuehrung": "Schwarz, rund, 27–51 mm", "preis": "7.35"},
+        {"sku": "1099-1040-13-GR", "ausfuehrung": "Grau, Sechskant, 41–64 mm", "preis": "7.50"},
+        {"sku": "1099-1070-13-SW", "ausfuehrung": "Schwarz, Sechskant, 27–82 mm", "preis": "8.20"}
+      ]
+    },
+    {
+      "sku": "BF-15788",
+      "ts_id": 15788,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm, Kunststoff mit Flansch",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "PP-Einschlagfuß mit 38-mm-Flansch und großem Verstellweg 27–95 mm, bis 2000 N.",
+      "text": "Der lange Verstellweg gleicht auch stärkere Bodenunebenheiten aus. Für Rohre mit 1,0 mm Wandstärke, in Schwarz oder Grau.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff40440-e1708349348686.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"], "Rohrmaß": ["Vierkant 40 mm"], "Traglast": "2000 N", "Verstellbereich": "27–95 mm", "Fußform": ["Flansch"]},
+      "varianten": [
+        {"sku": "1040-2743-FL38", "ausfuehrung": "Schwarz", "preis": "7.40"},
+        {"sku": "1040-2743-FLG", "ausfuehrung": "Grau", "preis": "7.40"}
+      ]
+    },
+    {
+      "sku": "BF-15785",
+      "ts_id": 15785,
+      "name": "Einschlagfuß für Vierkantrohr 40 mm, lange Ausführung",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Glasfaserverstärkter Kunststoff, 87 mm Bauhöhe, für Gestelle mit mehr Bodenfreiheit.",
+      "text": "Die lange Bauform hebt das Gestell sichtbar vom Boden ab und erleichtert die Reinigung darunter. Material PA mit 30 % Glasfaser, Sechskant zum Nachstellen.",
+      "bild": "",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell", "Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"], "Rohrmaß": ["Vierkant 40 mm"], "Traglast": "2000 N", "Verstellbereich": "28–50 mm", "Fußform": ["Sechskant"]},
+      "varianten": [
+        {"sku": "1040-2773-SW", "ausfuehrung": "Kunststoff schwarz", "preis": "9.45"},
+        {"sku": "1040-2773-GR", "ausfuehrung": "Kunststoff grau", "preis": "9.45"}
+      ]
+    },
+    {
+      "sku": "BF-15789",
+      "ts_id": 15789,
+      "name": "Einschlagfuß für Vierkantrohr 50 mm mit Flansch",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Für 50er Vierkantrohr, bis 9000 N, wahlweise mit Edelstahlflansch und Befestigungslöchern.",
+      "text": "Für schwerere Gestelle und Geräteunterbauten. Der Edelstahlflansch mit Löchern erlaubt das Verschrauben am Boden.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/04/02vierkant50flansch.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Maschine / Anlage", "Gastronomiegerät", "Regal / Gestell"], "Funktion": ["Höhenverstellung", "Bodenbefestigung", "Hohe Traglast"], "Material": ["Zinkdruckguss", "Edelstahl"], "Rohrmaß": ["Vierkant 50 mm"], "Traglast": "9000 N", "Verstellbereich": "33–62 mm", "Fußform": ["Flansch"]},
+      "varianten": [
+        {"sku": "1015-5003-2222", "ausfuehrung": "Zamak vernickelt, Flansch 50 × 50 mm", "preis": "11.30"},
+        {"sku": "1015-5003-2289", "ausfuehrung": "Edelstahlflansch 50 × 50 mm mit Befestigungslöchern", "preis": "14.30"},
+        {"sku": "1015-5003-2290", "ausfuehrung": "Edelstahlflansch 50 × 50 mm ohne Befestigungslöcher", "preis": "13.95"}
+      ]
+    },
+    {
+      "sku": "BF-15790",
+      "ts_id": 15790,
+      "name": "Einschlagfuß für Vierkantrohr 50 mm, für 2 mm Wandstärke",
+      "kategorie": "Einschlagfüße > Vierkantrohr",
+      "kurz": "Für dickwandiges 50er Rohr, mit Sechskant oder Edelstahlflansch 89 mm.",
+      "text": "Speziell für Rohre mit 2 mm Wand, wie sie im Anlagen- und Maschinenbau üblich sind.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/11/Einschlagfuesse-Vierkant_50mm-2.jpg",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Maschine / Anlage", "Fördertechnik"], "Funktion": ["Höhenverstellung", "Hohe Traglast"], "Material": ["Zinkdruckguss", "Edelstahl"], "Rohrmaß": ["Vierkant 50 mm"], "Fußform": ["Sechskant", "Flansch"]},
+      "varianten": [
+        {"sku": "1115-5010-1144", "ausfuehrung": "Sechskant", "preis": "16.55"},
+        {"sku": "1115-5012-1144", "ausfuehrung": "Flansch 89 mm ohne Befestigungslöcher", "preis": "16.55"}
+      ]
+    },
+    {
+      "sku": "BF-15799",
+      "ts_id": 15799,
+      "name": "Einschlagfuß für Rundrohr 38 mm, Kunststoff",
+      "kategorie": "Einschlagfüße > Rundrohr",
+      "kurz": "PP-Einschlagfuß für 38-mm-Rundrohr mit Sechskant, schwarz oder grau.",
+      "text": "Für Rundrohrgestelle wie Stühle, Tische und leichte Regale. Verstellbereich 35–62 mm.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff3845.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Arbeitstisch / Möbel", "Regal / Gestell"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"], "Rohrmaß": ["Rund 38 mm"], "Traglast": "400 N", "Verstellbereich": "35–62 mm", "Fußform": ["Sechskant"]},
+      "varianten": [
+        {"sku": "1038-2755-SW", "ausfuehrung": "Schwarz", "preis": "4.90"},
+        {"sku": "1038-2755-GR", "ausfuehrung": "Grau", "preis": "4.90"}
+      ]
+    },
+    {
+      "sku": "BF-15802",
+      "ts_id": 15802,
+      "name": "Einschlagfuß für Rundrohr 1 5/8\" mit Flansch",
+      "kategorie": "Einschlagfüße > Rundrohr",
+      "kurz": "Zamak-Einschlagfuß mit 89-mm-Flansch für Rundrohr 41,3 mm, bis 9000 N.",
+      "text": "Typisch für Gastronomie- und Gerätegestelle aus Zollrohr. Der große Flansch sorgt für sicheren Stand.",
+      "bild": "",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss"], "Rohrmaß": ["Rund 1 5/8 Zoll (41.3 mm)"], "Traglast": "9000 N", "Verstellbereich": "28–30 mm", "Fußform": ["Flansch"]},
+      "varianten": []
+    },
+    {
+      "sku": "BF-15801",
+      "ts_id": 15801,
+      "name": "Einschlagfuß für Rundrohr 1 5/8\" mit Sechskant",
+      "kategorie": "Einschlagfüße > Rundrohr",
+      "kurz": "Einschlagfuß mit Sechskant für Rundrohr 41,3 mm.",
+      "text": "Für Rundrohrgestelle in Zollmaß. Technische Daten auf Anfrage.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/02Kunststoff1.png",
+      "merkmale": {"Bauform": ["Einschlagfuß"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel"], "Funktion": ["Höhenverstellung"], "Rohrmaß": ["Rund 1 5/8 Zoll (41.3 mm)"], "Fußform": ["Sechskant"]},
+      "varianten": []
+    },
+    {
+      "sku": "BF-15804",
+      "ts_id": 15804,
+      "name": "Edelstahl-Stellbein Ø 63 mm, höhenverstellbar",
+      "kategorie": "Edelstahl-Stellbeine",
+      "kurz": "Stellbein aus Edelstahl 1.4301 mit M10-Gewinde oder Montageplatte, bis 9000 N, Höhe bis 263 mm.",
+      "text": "Das Stellbein für Gastronomie, Großküche und Edelstahlmöbel. Wählen Sie den Anschluss passend zu Ihrem Gerät: Gewindebolzen M10 oder eine Montageplatte zum Anschrauben. Die Höhe stellen Sie über das Unterteil ein.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/0463.png",
+      "merkmale": {"Bauform": ["Stellbein"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel"], "Funktion": ["Höhenverstellung", "Hygiene-Anforderungen"], "Material": ["Edelstahl 1.4301"], "Gewinde": ["M10"], "Durchmesser": "63 mm", "Traglast": "9000 N", "Verstellbereich": "96–263 mm", "Anschluss": ["Gewinde", "Platte"]},
+      "varianten": [
+        {"sku": "1760-65090-110", "ausfuehrung": "96–130 mm, M10", "preis": "9.50"},
+        {"sku": "1760-130100", "ausfuehrung": "140–210 mm, M10", "preis": "10.10"},
+        {"sku": "1760-130110", "ausfuehrung": "140–215 mm, M10", "preis": "10.20"},
+        {"sku": "1760-130160", "ausfuehrung": "163–263 mm, M10", "preis": "9.25"},
+        {"sku": "1761-4010-0150", "ausfuehrung": "100–180 mm, Montageplatte 70 × 70 mm", "preis": "11.00"},
+        {"sku": "1771-5010-0120", "ausfuehrung": "120–165 mm, Montageplatte 90 × 90 mm", "preis": "11.50"}
+      ]
+    },
+    {
+      "sku": "BF-15803",
+      "ts_id": 15803,
+      "name": "Edelstahl-Stellbein Ø 40 und 50 mm",
+      "kategorie": "Edelstahl-Stellbeine",
+      "kurz": "Schlanke Edelstahl-Stellbeine mit Sechskant-, Rund- oder Flanschfuß, bis 9000 N.",
+      "text": "Für Geräte und Möbel, bei denen ein schlankes Bein gewünscht ist. Optional mit Montageplatte 89 × 89 mm. Verpackungseinheit 24 Stück.",
+      "bild": "",
+      "merkmale": {"Bauform": ["Stellbein"], "Anwendung": ["Gastronomiegerät", "Arbeitstisch / Möbel"], "Funktion": ["Höhenverstellung"], "Material": ["Edelstahl"], "Durchmesser": "40 / 50 mm", "Traglast": "9000 N", "Verstellbereich": "100–180 mm", "Fußform": ["Sechskant", "Rund", "Flansch"]},
+      "varianten": []
+    },
+    {
+      "sku": "BF-15805",
+      "ts_id": 15805,
+      "name": "Montageplatten für Edelstahl-Stellbeine",
+      "kategorie": "Zubehör",
+      "kurz": "Montageplatten zum Anschrauben der Edelstahl-Stellbeine an Gerät oder Möbel.",
+      "text": "Zubehör für die Edelstahl-Stellbeine. Maße und Ausführungen auf Anfrage.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01montage.png",
+      "merkmale": {"Bauform": ["Spezialausführung"], "Anwendung": ["Gastronomiegerät"], "Material": ["Edelstahl"]},
+      "varianten": []
+    },
+    {
+      "sku": "BF-15806",
+      "ts_id": 15806,
+      "name": "Gerätebein Kason, Zinkdruckguss pulverbeschichtet",
+      "kategorie": "Edelstahl-Stellbeine > Gerätebeine",
+      "kurz": "Gerätebein mit Gewinde 5/8\"-11, Höhe 154 mm, Flanschfuß, bis 4500 N.",
+      "text": "Robustes Bein für Gastronomie- und Kühlgeräte. Zinkdruckguss, dunkelgrau pulverbeschichtet, 26 mm Höhenverstellung.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/03beine.png",
+      "merkmale": {"Bauform": ["Stellbein"], "Anwendung": ["Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss"], "Gewinde": ["5/8\"-11 UNC"], "Traglast": "4500 N", "Verstellbereich": "26 mm", "Fußform": ["Flansch"]},
+      "hersteller": "Kason",
+      "varianten": []
+    },
+    {
+      "sku": "BF-15807",
+      "ts_id": 15807,
+      "name": "Gerätebein Kason, Polyamid",
+      "kategorie": "Edelstahl-Stellbeine > Gerätebeine",
+      "kurz": "Gerätebein aus Polyamid für Gastronomie- und Kühlgeräte.",
+      "text": "Leichtes, korrosionsfreies Gerätebein. Technische Daten auf Anfrage.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/02beine.png",
+      "merkmale": {"Bauform": ["Stellbein"], "Anwendung": ["Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff"]},
+      "hersteller": "Kason",
+      "varianten": []
+    },
+    {
+      "sku": "BF-17201",
+      "ts_id": 17201,
+      "name": "Gerätebein Kason, Zinkdruckguss vernickelt",
+      "kategorie": "Edelstahl-Stellbeine > Gerätebeine",
+      "kurz": "Vernickeltes Gerätebein aus Zinkdruckguss für Gastronomiegeräte.",
+      "text": "Glänzende, vernickelte Ausführung für sichtbare Gerätebeine. Technische Daten auf Anfrage.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2019/02/Gerätebeine_Zinkdruckguss_vernickelt_Foto-1.jpg",
+      "merkmale": {"Bauform": ["Stellbein"], "Anwendung": ["Gastronomiegerät"], "Funktion": ["Höhenverstellung"], "Material": ["Zinkdruckguss"]},
+      "hersteller": "Kason",
+      "varianten": []
+    },
+    {
+      "sku": "BF-19196",
+      "ts_id": 19196,
+      "name": "Maschinenfuß Kunststoff/Edelstahl",
+      "kategorie": "Maschinenfüße",
+      "kurz": "Maschinenfuß mit Kunststoffteller und Edelstahlspindel.",
+      "text": "Für Maschinen und Geräte, die ausgerichtet werden müssen. Gewinde, Tellergröße und Traglast auf Anfrage.",
+      "bild": "https://ts-systemtechnik.de/wp-content/uploads/2024/02/Seite-36-scaled.jpg",
+      "merkmale": {"Bauform": ["Stellfuß"], "Anwendung": ["Maschine / Anlage"], "Funktion": ["Höhenverstellung"], "Material": ["Kunststoff", "Edelstahl"]},
+      "varianten": []
+    }
+  ],
+  "gelenkfuesse": {
+    "hinweis": "12 Artikel M8–M24, je mit und ohne Bodenbefestigung. Teller PA6 GF30 mit rutschfester NBR-Sohle. Traglast laut TS: 8000 N bei Teller 40/50 mm, 12000 N bei 60/80 mm. Spindellänge 50 oder 100 mm. Preise bei TS nicht hinterlegt.",
+    "gewinde": {
+      "M8": {"teller": ["40", "50"], "ids": {"ohne": null, "mit": null}},
+      "M10": {"teller": ["40", "50", "60"], "ids": {"ohne": null, "mit": 19371}},
+      "M12": {"teller": ["40", "50", "60"], "ids": {"ohne": 19621, "mit": 19620}},
+      "M16": {"teller": ["60", "80"], "ids": {"ohne": 19624, "mit": 19623}},
+      "M20": {"teller": ["60", "80"], "ids": {"ohne": 19626, "mit": 19625}},
+      "M24": {"teller": ["80"], "ids": {"ohne": 19628, "mit": 19627}}
+    },
+    "bild_ohne": "https://ts-systemtechnik.de/wp-content/uploads/2019/03/Stellfüße_8010-8012_Foto.jpg",
+    "bild_mit": "https://ts-systemtechnik.de/wp-content/uploads/2019/03/Stellfüße_8015-8016_Foto.jpg"
+  }
+}

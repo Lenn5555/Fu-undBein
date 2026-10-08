@@ -1,0 +1,20 @@
+.bf-ki-knopf { position: fixed; right: 16px; bottom: 16px; z-index: 9998; background: #1b2836; color: #fff; border: 0; border-radius: 999px; padding: .8rem 1.2rem .8rem 2.6rem; font: 700 .95rem/1 system-ui, sans-serif; cursor: pointer; box-shadow: 0 6px 20px rgb(27 40 54 / 25%); }
+.bf-ki-knopf::before { content: ""; position: absolute; left: 1rem; top: 50%; width: 1rem; height: 1rem; margin-top: -.5rem; border-radius: 50%; background: #4fa82e; box-shadow: 0 0 0 3px rgb(79 168 46 / 30%); }
+.bf-ki-fenster { position: fixed; right: 16px; bottom: 76px; z-index: 9999; width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 110px)); background: #fff; border-radius: 12px; box-shadow: 0 12px 40px rgb(27 40 54 / 25%); display: flex; flex-direction: column; overflow: hidden; font: .95rem/1.45 system-ui, sans-serif; color: #1b2836; }
+.bf-ki-fenster[hidden] { display: none; }
+.bf-ki-kopf { background: #1b2836; color: #fff; padding: .75rem 2.5rem .75rem 1rem; position: relative; display: flex; flex-direction: column; }
+.bf-ki-kopf span { font-size: .75rem; opacity: .75; }
+.bf-ki-zu { position: absolute; right: .5rem; top: .45rem; background: none; border: 0; color: #fff; font-size: 1.5rem; cursor: pointer; line-height: 1; padding: .25rem .5rem; }
+.bf-ki-liste { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; background: #f2f4f6; }
+.bf-ki-msg { max-width: 88%; padding: .6rem .8rem; border-radius: 10px; white-space: pre-wrap; }
+.bf-ki-assistant { background: #fff; align-self: flex-start; border-bottom-left-radius: 2px; }
+.bf-ki-user { background: #1b2836; color: #fff; align-self: flex-end; border-bottom-right-radius: 2px; }
+.bf-ki-warte { opacity: .6; font-style: italic; }
+.bf-ki-produkt { display: flex; gap: .6rem; align-items: center; margin-top: .5rem; padding: .4rem; border: 1px solid #dde2e7; border-radius: 8px; text-decoration: none; color: inherit; white-space: normal; }
+.bf-ki-produkt img { width: 44px; height: 44px; object-fit: contain; flex: none; }
+.bf-ki-produkt span { display: flex; flex-direction: column; font-size: .85rem; }
+.bf-ki-produkt small { color: #3d8a22; font-weight: 600; }
+.bf-ki-form { display: flex; gap: .5rem; padding: .6rem; border-top: 1px solid #dde2e7; }
+.bf-ki-form textarea { flex: 1; resize: none; border: 1px solid #cfd6dd; border-radius: 8px; padding: .5rem; font: inherit; }
+.bf-ki-form button { background: #4fa82e; color: #fff; border: 0; border-radius: 8px; padding: 0 1rem; font-weight: 700; cursor: pointer; }
+.bf-ki-form button:disabled { opacity: .5; }

@@ -17,6 +17,8 @@ from collections import defaultdict
 from pathlib import Path
 from urllib.parse import quote
 
+from zeichnung import zeichnung
+
 ROOT = Path(__file__).resolve().parent.parent
 THEME = ROOT / "wp-content/themes/beinundfuss"
 PLUGIN = ROOT / "wp-content/plugins/beinundfuss-shop"
@@ -155,8 +157,13 @@ def seite(titel, inhalt, beschreibung="", extra_kopf=""):
 """
 
 
+def bild_url(p):
+    """Produktfoto, sonst die eigene Prinzipskizze."""
+    return p["bild"] or f"/assets/skizzen/{p['slug']}.svg"
+
+
 def karte(p):
-    bild = (f'<img src="{e(p["bild"])}" alt="" loading="lazy">' if p["bild"] else '<div class="bf-ohne-bild"></div>')
+    bild = f'<img src="{e(bild_url(p))}" alt="" loading="lazy">'
     return (f'<a class="bf-karte" href="/produkt/{p["slug"]}/">{bild}<h3>{e(p["name"])}</h3>'
             f'<p class="bf-preis">{e(preis_text(p))}</p><span class="bf-mehr">Ansehen</span></a>')
 
@@ -177,7 +184,7 @@ def produktseite(p):
         if eltern:
             pfad.append(f'<a href="/kategorie/{eltern}/">{e(SLUG_NAME[eltern])}</a>')
         pfad.append(f'<a href="/kategorie/{kat}/">{e(SLUG_NAME[kat])}</a>')
-    bild = (f'<img src="{e(p["bild"])}" alt="{e(p["name"])}">' if p["bild"] else '<div class="bf-ohne-bild"></div>')
+    bild = f'<img src="{e(p["bild"])}" alt="{e(p["name"])}">' if p["bild"] else zeichnung(p)
 
     if p["varianten"]:
         zeilen = "".join(
@@ -277,7 +284,7 @@ def store_api(produkte):
         w = [round(x * 100) for x in preise(p)]
         out.append({
             "id": i, "name": p["name"], "permalink": f"/produkt/{p['slug']}/",
-            "images": [{"src": p["bild"]}] if p["bild"] else [],
+            "images": [{"src": bild_url(p)}],
             "attributes": [{"name": k, "terms": [{"name": t} for t in v]} for k, v in p["merkmale"].items() if k in FINDER and v],
             "prices": {"currency_code": "EUR", "currency_minor_unit": 2, "price": str(min(w)) if w else "",
                        "price_range": {"min_amount": str(min(w)), "max_amount": str(max(w))} if len(set(w)) > 1 else None},
@@ -331,7 +338,7 @@ footer .grau { color:var(--grau); }
 .chip { border:1px solid #cfd6dd; border-radius:999px; padding:.3rem .9rem; text-decoration:none; color:var(--navy); font-weight:600; }
 .produkt { padding-bottom:40px; }
 .produkt-raster { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:2.5rem; align-items:start; margin-top:1rem; }
-.produkt-bild img, .produkt-bild .bf-ohne-bild { width:100%; aspect-ratio:1; object-fit:contain; background-color:var(--hell); border-radius:8px; }
+.produkt-bild img, .produkt-bild .bf-ohne-bild, .produkt-bild .bf-skizze { width:100%; aspect-ratio:1; object-fit:contain; background-color:var(--hell); border-radius:8px; }
 .marke { text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; color:var(--grau-dunkel); margin:0; }
 .preis-gross { font-size:1.4rem; font-weight:800; margin:.5rem 0; }
 table { border-collapse:collapse; width:100%; font-size:.92rem; }
@@ -377,6 +384,10 @@ def main():
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#1b2836"/>'
         '<path d="M16 6v14M12 10h8" stroke="#fff" stroke-width="2.5" fill="none"/><ellipse cx="16" cy="23" rx="8" ry="3" fill="#4fa82e"/></svg>',
         encoding="utf-8")
+    (OUT / "assets/skizzen").mkdir()
+    for p in produkte:
+        if not p["bild"]:
+            (OUT / "assets/skizzen" / f"{p['slug']}.svg").write_text(zeichnung(p, klein=True), encoding="utf-8")
     (OUT / "daten/produkte.json").write_text(json.dumps(store_api(produkte), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     def schreibe(pfad, text):
@@ -422,7 +433,8 @@ def main():
             t = re.sub(r'(api|kontakt|shop): "/', rf'\1: "{BASIS}/', t)
             f.write_text(t, encoding="utf-8")
         j = OUT / "daten/produkte.json"
-        j.write_text(j.read_text(encoding="utf-8").replace('"permalink":"/', f'"permalink":"{BASIS}/'), encoding="utf-8")
+        j.write_text(j.read_text(encoding="utf-8").replace('"permalink":"/', f'"permalink":"{BASIS}/')
+                     .replace('"src":"/', f'"src":"{BASIS}/'), encoding="utf-8")
         if (ROOT / "CNAME").exists():
             raise SystemExit("SITE_BASIS und eigene Domain (CNAME) schließen sich aus")
     if (ROOT / "CNAME").exists():

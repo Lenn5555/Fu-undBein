@@ -161,7 +161,7 @@ def produkt(r):
     return {
         "sku": sku(r), "name": f"{marke} {r['serie_artikel']}", "kategorie": kategorie, "marke": marke,
         "kurz": kurz + ". Preis und Lieferzeit auf Anfrage.", "text": text,
-        "merkmale": merkmale, "quelle": r.get("url", ""),
+        "merkmale": merkmale,
     }
 
 
@@ -178,7 +178,9 @@ def main(ordner: Path, sichtbar: bool):
             "Description", "Tax status", "In stock?", "Regular price", "Categories", "Images", "Brands"]
     for i in range(1, len(namen) + 1):
         head += [f"Attribute {i} name", f"Attribute {i} value(s)", f"Attribute {i} visible", f"Attribute {i} global"]
-    head += ["Meta: _bf_preis_auf_anfrage", "Meta: _bf_herkunft", "Meta: _bf_quelle"]
+    # Bezugsquellen und Einkaufsdaten gehören nicht in diese Datei (Repo ist öffentlich), sondern nach
+    # /mnt/project-files/katalog/intern/.
+    head += ["Meta: _bf_preis_auf_anfrage", "Meta: _bf_herkunft"]
 
     rows = []
     for p in sorted(produkte, key=lambda p: (p["kategorie"], p["name"].lower())):
@@ -188,7 +190,6 @@ def main(ordner: Path, sichtbar: bool):
             "Is featured?": 0, "Visibility in catalog": "visible", "Short description": p["kurz"],
             "Description": p["text"], "Tax status": "taxable", "In stock?": 1, "Categories": p["kategorie"],
             "Brands": p["marke"], "Meta: _bf_preis_auf_anfrage": 1, "Meta: _bf_herkunft": "vergleich",
-            "Meta: _bf_quelle": p["quelle"],
         })
         n = 0
         for name in namen:

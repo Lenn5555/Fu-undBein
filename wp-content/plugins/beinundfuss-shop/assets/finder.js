@@ -103,7 +103,7 @@
 						el('span', { class: 'bf-mehr' }, 'Ansehen')
 					)))
 				: el('p', {}, 'Mit dieser Kombination haben wir noch nichts im Sortiment. ',
-					el('a', { href: '/kontakt/' }, 'Fragen Sie uns nach einer Lösung.')),
+					el('a', { href: cfg.kontakt || '/kontakt/' }, 'Fragen Sie uns nach einer Lösung.')),
 			treffer.length > anzahl
 				? el('button', { type: 'button', class: 'bf-weitere', onclick: () => { anzahl += SEITE; render(); } },
 					`Weitere anzeigen (${treffer.length - anzahl} übrig)`)
@@ -138,6 +138,6 @@
 			render();
 		})
 		.catch(() => {
-			root.replaceChildren(el('p', {}, 'Der Produktfinder konnte nicht geladen werden. ', el('a', { href: '/shop/' }, 'Zu allen Produkten')));
+			root.replaceChildren(el('p', {}, 'Der Produktfinder konnte nicht geladen werden. ', el('a', { href: cfg.shop || '/shop/' }, 'Zu allen Produkten')));
 		});
 })();

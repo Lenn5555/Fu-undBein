@@ -9,6 +9,7 @@ Aufruf: python3 werkzeuge/build_site.py  ->  site/
 import csv
 import html
 import json
+import os
 import re
 import shutil
 import unicodedata
@@ -21,6 +22,11 @@ THEME = ROOT / "wp-content/themes/beinundfuss"
 PLUGIN = ROOT / "wp-content/plugins/beinundfuss-shop"
 OUT = ROOT / "site"
 CFG = json.loads((ROOT / "daten/site.json").read_text(encoding="utf-8"))
+RECHT = ROOT / "daten/rechtstexte"
+# Unterordner, falls die Seite nicht direkt unter der Domain liegt (z. B. /Fu-undBein auf github.io).
+BASIS = os.environ.get("SITE_BASIS", "").rstrip("/")
+# AGB-Seite nur, wenn der Text vorliegt; Impressum und Datenschutz sind Pflicht (Build bricht sonst ab).
+AGB_LINK = '<a href="/agb/">AGB</a>' if (RECHT / "agb.html").exists() else ""
 
 FINDER = ["Anwendung", "Funktion", "Bauform", "Material", "Rohrmaß", "Gewinde", "Fußform", "Anschluss", "Bodenbefestigung"]
 
@@ -142,7 +148,7 @@ def seite(titel, inhalt, beschreibung="", extra_kopf=""):
 <footer><div class="wrap fuss">
 <div><p class="fuss-marke">beinundfuß.de</p><p>Immer die passende Stabilität. {e(CFG['betreiber_zeile'])}</p>
 <p class="grau">Alle Preise zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p></div>
-<div class="fuss-links"><a href="/kontakt/">Kontakt</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/agb/">AGB</a></div>
+<div class="fuss-links"><a href="/kontakt/">Kontakt</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{AGB_LINK}</div>
 </div></footer>
 </body>
 </html>
@@ -253,7 +259,7 @@ def finderseite():
 <div id="bf-finder" class="bf-finder"><p>Produkte werden geladen …</p></div></div></section>
 <script>
 const q = new URLSearchParams(location.search);
-window.bfFinder = { api: "/daten/produkte.json", einmal: true, preset: { Anwendung: q.get("anwendung") || "" } };
+window.bfFinder = { api: "/daten/produkte.json", kontakt: "/kontakt/", shop: "/#welten", einmal: true, preset: { Anwendung: q.get("anwendung") || "" } };
 </script>
 <script src="/assets/finder.js" defer></script>"""
     return seite("Produktfinder | beinundfuß.de", inhalt, "Den passenden Fuß in sechs Schritten finden.",
@@ -400,12 +406,27 @@ def main():
                                              f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'
                                              f"<p>{e(CFG['betreiber_zeile'])}</p>"))
     for pfad, titel in (("impressum", "Impressum"), ("datenschutz", "Datenschutzerklärung"), ("agb", "Allgemeine Geschäftsbedingungen")):
-        datei = ROOT / "daten/rechtstexte" / f"{pfad}.html"
-        inhalt = datei.read_text(encoding="utf-8") if datei.exists() else "<p><strong>Platzhalter:</strong> Dieser Text fehlt noch und muss vor dem Start eingetragen werden.</p>"
-        schreibe(pfad, textseite(titel, inhalt))
+        datei = RECHT / f"{pfad}.html"
+        if not datei.exists():
+            if pfad == "agb":
+                continue
+            raise SystemExit(f"Rechtstext fehlt: {datei}")
+        schreibe(pfad, textseite(titel, datei.read_text(encoding="utf-8")))
     (OUT / "404.html").write_text(textseite("Seite nicht gefunden", '<p>Diese Seite gibt es nicht (mehr). <a href="/">Zur Startseite</a> oder <a href="/produktfinder/">zum Produktfinder</a>.</p>'), encoding="utf-8")
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
 
+    if BASIS:  # interne Links auf den Unterordner umschreiben
+        for f in OUT.rglob("*.html"):
+            t = f.read_text(encoding="utf-8")
+            t = re.sub(r'((?:href|src)=")/(?!/)', rf"\1{BASIS}/", t)
+            t = re.sub(r'(api|kontakt|shop): "/', rf'\1: "{BASIS}/', t)
+            f.write_text(t, encoding="utf-8")
+        j = OUT / "daten/produkte.json"
+        j.write_text(j.read_text(encoding="utf-8").replace('"permalink":"/', f'"permalink":"{BASIS}/'), encoding="utf-8")
+        if (ROOT / "CNAME").exists():
+            raise SystemExit("SITE_BASIS und eigene Domain (CNAME) schließen sich aus")
+    if (ROOT / "CNAME").exists():
+        shutil.copy(ROOT / "CNAME", OUT / "CNAME")
     seiten = sum(1 for _ in OUT.rglob("*.html"))
     groesse = sum(f.stat().st_size for f in OUT.rglob("*") if f.is_file()) // 1024
     print(f"site/: {seiten} Seiten, {len(produkte)} Produkte, {groesse} KB")

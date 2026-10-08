@@ -12,7 +12,15 @@ Shop für Einschlagfüße, Stellbeine und Maschinenfüße auf WordPress + WooCom
 | `werkzeuge/` | `build_import.py` (JSON → CSV), `build_vergleich.py` (Recherche → CSV), `build_auswahlliste.py` (Recherche → Excel), `build_preview.py` (statische Vorschau) |
 | `vorschau/index.html` | Vorschau der Startseite mit funktionierendem Produktfinder (erzeugt) |
 
-## Einrichtung auf Strato
+## Statische Website (ohne WordPress)
+
+`python3 werkzeuge/build_site.py` erzeugt aus denselben Importdateien die komplette Website im Ordner `site/` (Startseite, Produktfinder, Kategorie- und Produktseiten, Kontakt, Rechtstexte). Der Ordner läuft auf jedem Webspace ohne PHP und ohne Datenbank.
+
+- Einstellungen in `daten/site.json`: Anfrage-Adresse, Betreiberzeile, Bezahllinks (Artikelnummer → Stripe-Zahlungslink; ohne Link öffnet „Bestellen“ eine vorbereitete E-Mail).
+- Rechtstexte als HTML in `daten/rechtstexte/impressum.html`, `datenschutz.html`, `agb.html`. Fehlen sie, steht dort ein Platzhalter; so nicht veröffentlichen.
+- Produktbilder des TS-Sortiments werden von ts-systemtechnik.de geladen.
+
+## Einrichtung auf Strato (WordPress-Variante)
 
 1. **WordPress** für beinundfuß.de im bestehenden Strato-Paket installieren (Strato-Kundenbereich → WordPress → neue Installation, Domain beinundfuß.de zuweisen). Sprache Deutsch.
 2. **Plugins** aus dem WordPress-Verzeichnis installieren: WooCommerce, Germanized for WooCommerce (Rechtstexte, Rechnungen, Preisangaben).

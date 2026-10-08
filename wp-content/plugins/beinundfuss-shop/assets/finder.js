@@ -114,6 +114,11 @@
 	}
 
 	async function laden() {
+		if (cfg.einmal) { // statische Website: eine JSON-Datei mit allen Produkten
+			const r = await fetch(cfg.api);
+			if (!r.ok) throw new Error('HTTP ' + r.status);
+			return r.json();
+		}
 		const alle = [];
 		for (let seite = 1; seite < 50; seite++) {
 			const url = cfg.api + (cfg.api.includes('?') ? '&' : '?') + 'per_page=100&page=' + seite;

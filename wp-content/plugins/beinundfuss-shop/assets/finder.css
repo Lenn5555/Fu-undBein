@@ -23,3 +23,4 @@
 	.bf-finder-raster { grid-template-columns: 1fr; }
 	.bf-schritte-spalte { position: static; }
 }
+.bf-weitere { display: block; margin: 1.5rem auto 0; background: #fff; color: var(--bf-navy, #1b2836); border: 2px solid currentColor; border-radius: 6px; padding: .6rem 1.2rem; font: inherit; font-weight: 700; cursor: pointer; }

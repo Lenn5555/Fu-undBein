@@ -22,7 +22,11 @@ FINDER = ["Anwendung", "Funktion", "Bauform", "Material", "Rohrmaß", "Gewinde",
 
 
 def store_api_produkte():
-    rows = list(csv.DictReader((ROOT / "import/produkte-woocommerce.csv").open(encoding="utf-8")))
+    rows = []
+    for datei in ("produkte-woocommerce.csv", "vergleichsprodukte-woocommerce.csv"):
+        pfad = ROOT / "import" / datei
+        if pfad.exists():
+            rows += list(csv.DictReader(pfad.open(encoding="utf-8")))
     preise = {}
     for r in rows:
         if r["Type"] == "variation" and r["Regular price"]:
@@ -65,6 +69,8 @@ def main():
     css_finder = (PLUGIN / "assets/finder.css").read_text(encoding="utf-8")
     js_finder = (PLUGIN / "assets/finder.js").read_text(encoding="utf-8")
     produkte = store_api_produkte()
+    global TS_ANZAHL
+    TS_ANZAHL = sum(1 for p in produkte if not p["permalink"].startswith("#produkt-BF-V-"))
 
     welten = re.findall(r"array\( '([^']+)', '([^']+)', '([^']+)' \)", pattern_html("produktwelten"))
     anwendungen = re.findall(r"array\( '([^']+)', '([^']+)' \)", pattern_html("anwendungen"))
@@ -116,7 +122,7 @@ footer .grau {{ color:#8b939b; }}
 {css_theme}
 {css_finder}
 </style>
-<div class="hinweis">Vorschau mit dem TS-Startsortiment. Shop, Warenkorb und KI-Berater werden erst auf dem echten Server aktiv.</div>
+<div class="hinweis">Vorschau mit dem TS-Sortiment und {len(produkte) - TS_ANZAHL} Vergleichsprodukten anderer Hersteller (Preis auf Anfrage). Shop, Warenkorb und KI-Berater werden erst auf dem echten Server aktiv.</div>
 <header class="kopf"><div class="wrap"><a class="bf-wordmark" href="#">bein<span class="bf-und">und</span>fuß<span class="bf-dot">.</span>de</a>
 <nav><a href="#welten">Produktwelten</a><a href="#finder">Produktfinder</a><a href="#anwendungen">Anwendungen</a><a href="#">Kontakt</a></nav></div></header>
 <main>
@@ -141,8 +147,9 @@ footer .grau {{ color:#8b939b; }}
 const BF_DATEN = {json.dumps(produkte, ensure_ascii=False)};
 window.bfFinder = {{ api: "vorschau://produkte", preset: {{}} }};
 const echtesFetch = window.fetch;
+const seite = (url) => {{ const q = new URLSearchParams(url.split("?")[1]); const n = +q.get("per_page") || 100, s = +q.get("page") || 1; return BF_DATEN.slice((s - 1) * n, s * n); }};
 window.fetch = (url, o) => String(url).startsWith("vorschau://")
-  ? Promise.resolve(new Response(JSON.stringify(BF_DATEN), {{ status: 200, headers: {{ "Content-Type": "application/json" }} }}))
+  ? Promise.resolve(new Response(JSON.stringify(seite(String(url))), {{ status: 200, headers: {{ "Content-Type": "application/json" }} }}))
   : echtesFetch(url, o);
 </script>
 <script>{js_finder}</script>

@@ -16,8 +16,10 @@
 		{ merkmal: 'Material', frage: 'Welches Material?', technik: true },
 	];
 
+	const SEITE = 24; // Karten pro „Weitere anzeigen“
 	const auswahl = {};
 	let produkte = [];
+	let anzahl = SEITE;
 
 	const el = (tag, attrs, ...kinder) => {
 		const e = document.createElement(tag);
@@ -75,6 +77,7 @@
 						onclick: () => {
 							const liste = auswahl[s.merkmal] || [];
 							auswahl[s.merkmal] = liste.includes(w) ? liste.filter((x) => x !== w) : [...liste, w];
+							anzahl = SEITE;
 							render();
 						},
 					}, w, el('span', { class: 'bf-zahl' }, String(zaehler[w])))
@@ -86,11 +89,11 @@
 			el('div', { class: 'bf-ergebnis-kopf' },
 				el('h2', {}, treffer.length === 1 ? '1 passendes Produkt' : `${treffer.length} passende Produkte`),
 				Object.values(auswahl).some((w) => w.length)
-					? el('button', { type: 'button', class: 'bf-zuruecksetzen', onclick: () => { Object.keys(auswahl).forEach((k) => delete auswahl[k]); render(); } }, 'Auswahl zurücksetzen')
+					? el('button', { type: 'button', class: 'bf-zuruecksetzen', onclick: () => { Object.keys(auswahl).forEach((k) => delete auswahl[k]); anzahl = SEITE; render(); } }, 'Auswahl zurücksetzen')
 					: null
 			),
 			treffer.length
-				? el('div', { class: 'bf-karten' }, treffer.map((p) =>
+				? el('div', { class: 'bf-karten' }, treffer.slice(0, anzahl).map((p) =>
 					el('a', { class: 'bf-karte', href: p.permalink },
 						p.images && p.images[0]
 							? el('img', { src: p.images[0].thumbnail || p.images[0].src, alt: '', loading: 'lazy' })
@@ -100,7 +103,11 @@
 						el('span', { class: 'bf-mehr' }, 'Ansehen')
 					)))
 				: el('p', {}, 'Mit dieser Kombination haben wir noch nichts im Sortiment. ',
-					el('a', { href: '/kontakt/' }, 'Fragen Sie uns nach einer Lösung.'))
+					el('a', { href: '/kontakt/' }, 'Fragen Sie uns nach einer Lösung.')),
+			treffer.length > anzahl
+				? el('button', { type: 'button', class: 'bf-weitere', onclick: () => { anzahl += SEITE; render(); } },
+					`Weitere anzeigen (${treffer.length - anzahl} übrig)`)
+				: null
 		);
 
 		root.replaceChildren(el('div', { class: 'bf-finder-raster' }, el('div', { class: 'bf-schritte-spalte' }, schritte), ergebnis));

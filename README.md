@@ -8,7 +8,8 @@ Shop für Einschlagfüße, Stellbeine und Maschinenfüße auf WordPress + WooCom
 | `wp-content/plugins/beinundfuss-shop` | Produktwelten und Finder-Merkmale anlegen, Produktfinder `[bf_produktfinder]`, „Preis auf Anfrage“, KI-Produktberater, schlanker Admin für Shop-Manager |
 | `daten/ts-produkte.json` | Startsortiment aus ts-systemtechnik.de mit eigenen Texten (Quelle der Importdatei) |
 | `import/produkte-woocommerce.csv` | Importdatei für den WooCommerce-Produktimporter (erzeugt) |
-| `werkzeuge/` | `build_import.py` (JSON → CSV), `build_preview.py` (statische Vorschau) |
+| `import/vergleichsprodukte-woocommerce.csv` | 667 Vergleichsprodukte anderer Hersteller aus der Recherche (erzeugt) |
+| `werkzeuge/` | `build_import.py` (JSON → CSV), `build_vergleich.py` (Recherche → CSV), `build_auswahlliste.py` (Recherche → Excel), `build_preview.py` (statische Vorschau) |
 | `vorschau/index.html` | Vorschau der Startseite mit funktionierendem Produktfinder (erzeugt) |
 
 ## Einrichtung auf Strato
@@ -23,6 +24,7 @@ Shop für Einschlagfüße, Stellbeine und Maschinenfüße auf WordPress + WooCom
    - Germanized: Shop als B2B kennzeichnen, Rechnungen aktivieren, Rechtstexte (AGB, Widerruf, Datenschutz, Impressum) einbinden.
    - Zahlungsarten: z. B. Vorkasse, PayPal, Kauf auf Rechnung für Bestandskunden.
 6. **Produkte importieren**: Produkte → Importieren → `import/produkte-woocommerce.csv`. Bilder werden dabei von ts-systemtechnik.de geladen.
+   Danach `import/vergleichsprodukte-woocommerce.csv` (667 Artikel anderer Hersteller, „Preis auf Anfrage“, ohne Bilder). Sie kommen als **Entwurf** an; sichtbar schalten über Produkte → Filter „Entwurf“ → alle markieren → Bearbeiten → Status „Veröffentlicht“, oder die Datei mit `python3 werkzeuge/build_vergleich.py <recherche-ordner> --sichtbar` neu erzeugen.
 7. **Anfrage-Adresse** für „Preis auf Anfrage“ setzen: `wp option update bf_anfrage_email vertrieb@…` (oder Admin-E-Mail bleibt Standard).
 8. **KI-Berater einschalten**: in `wp-config.php`
    `define( 'BF_ANTHROPIC_API_KEY', 'sk-ant-…' );`
@@ -41,4 +43,4 @@ Finder-Merkmale (Filter): Anwendung, Funktion, Bauform, Material, Rohrmaß, Gewi
 - Preise für 16 Artikel ohne Preis bei TS (Gelenkfüße, Gerätebeine, Rollen u. a.) – bis dahin „Preis auf Anfrage“.
 - Artikelnummern der Varianten sind die TS-Nummern; vor einer späteren SAP-Anbindung gegen SAP prüfen.
 - SAP Business One: vorerst nicht angebunden (Entscheidung 08.10.2026), später nachrüstbar.
-- Produktwelten Schwingungsdämpfer, Hygienefüße, Schwerlastfüße sind noch leer; Kandidaten in der Herstellerrecherche.
+- Vergleichsprodukte: Bezug (Händler/Hersteller), Einkaufspreise und Lieferzeiten klären, bevor sie sichtbar geschaltet werden. Technische Daten stammen aus Hersteller- und Händlerseiten und sind teils lückenhaft; Herstellerfotos nur mit Freigabe verwenden.

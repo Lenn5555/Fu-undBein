@@ -4,9 +4,9 @@ mit den Vergleichsprodukten anderer Hersteller.
 
 Alle Artikel sind „Preis auf Anfrage“ und ohne Bilder (Herstellerfotos nur mit Freigabe). Texte und
 Merkmale werden aus den recherchierten Daten erzeugt, nicht von Herstellerseiten übernommen.
-Standard ist Entwurf (nicht veröffentlicht); mit --sichtbar werden sie direkt veröffentlicht.
+Standard ist veröffentlicht (Entscheidung Lenn, 08.10.2026); mit --entwurf kommen sie als Entwurf an.
 
-Aufruf: python3 werkzeuge/build_vergleich.py <recherche-ordner> [--sichtbar]
+Aufruf: python3 werkzeuge/build_vergleich.py <recherche-ordner> [--entwurf]
         ->  import/vergleichsprodukte-woocommerce.csv
 """
 import csv
@@ -210,4 +210,4 @@ def main(ordner: Path, sichtbar: bool):
 
 
 if __name__ == "__main__":
-    main(Path(sys.argv[1]), "--sichtbar" in sys.argv)
+    main(Path(sys.argv[1]), "--entwurf" not in sys.argv)

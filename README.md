@@ -24,7 +24,7 @@ Shop für Einschlagfüße, Stellbeine und Maschinenfüße auf WordPress + WooCom
    - Germanized: Shop als B2B kennzeichnen, Rechnungen aktivieren, Rechtstexte (AGB, Widerruf, Datenschutz, Impressum) einbinden.
    - Zahlungsarten: z. B. Vorkasse, PayPal, Kauf auf Rechnung für Bestandskunden.
 6. **Produkte importieren**: Produkte → Importieren → `import/produkte-woocommerce.csv`. Bilder werden dabei von ts-systemtechnik.de geladen.
-   Danach `import/vergleichsprodukte-woocommerce.csv` (667 Artikel anderer Hersteller, „Preis auf Anfrage“, ohne Bilder). Sie kommen als **Entwurf** an; sichtbar schalten über Produkte → Filter „Entwurf“ → alle markieren → Bearbeiten → Status „Veröffentlicht“, oder die Datei mit `python3 werkzeuge/build_vergleich.py <recherche-ordner> --sichtbar` neu erzeugen.
+   Danach `import/vergleichsprodukte-woocommerce.csv` (667 Artikel anderer Hersteller, „Preis auf Anfrage“, ohne Bilder, direkt veröffentlicht). Als Entwurf erzeugen: `python3 werkzeuge/build_vergleich.py <recherche-ordner> --entwurf`.
 7. **Anfrage-Adresse** für „Preis auf Anfrage“ setzen: `wp option update bf_anfrage_email vertrieb@…` (oder Admin-E-Mail bleibt Standard).
 8. **KI-Berater einschalten**: in `wp-config.php`
    `define( 'BF_ANTHROPIC_API_KEY', 'sk-ant-…' );`
@@ -43,4 +43,4 @@ Finder-Merkmale (Filter): Anwendung, Funktion, Bauform, Material, Rohrmaß, Gewi
 - Preise für 16 Artikel ohne Preis bei TS (Gelenkfüße, Gerätebeine, Rollen u. a.) – bis dahin „Preis auf Anfrage“.
 - Artikelnummern der Varianten sind die TS-Nummern; vor einer späteren SAP-Anbindung gegen SAP prüfen.
 - SAP Business One: vorerst nicht angebunden (Entscheidung 08.10.2026), später nachrüstbar.
-- Vergleichsprodukte: Bezug (Händler/Hersteller), Einkaufspreise und Lieferzeiten klären, bevor sie sichtbar geschaltet werden. Technische Daten stammen aus Hersteller- und Händlerseiten und sind teils lückenhaft; Herstellerfotos nur mit Freigabe verwenden.
+- Vergleichsprodukte sind sichtbar (Entscheidung 08.10.2026); Bezug (Händler/Hersteller), Einkaufspreise und Lieferzeiten für Anfragen noch klären. Technische Daten stammen aus Hersteller- und Händlerseiten und sind teils lückenhaft; Herstellerfotos nur mit Freigabe verwenden.

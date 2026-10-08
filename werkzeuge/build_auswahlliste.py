@@ -30,11 +30,22 @@ NAVY = "1B2836"
 GRUEN = "4FA82E"
 
 
+HERSTELLER = [  # Teilstring (klein) → einheitlicher Name; Herkunft der Daten steht in der Quelle-Spalte
+    ("ganter", "Elesa+Ganter"), ("elesa", "Elesa+Ganter"), ("kipp", "Kipp"), ("blohm", "Blohm"),
+    ("halder", "Halder"), ("martin", "Martin Levelling"), ("norelem", "norelem"), ("rs pro", "RS PRO"),
+]
+
+
+def hersteller(name):
+    klein = name.lower()
+    return next((neu for teil, neu in HERSTELLER if teil in klein), name.split(" (")[0])
+
+
 def zeile(r):
     mass = next((r[k] for k in ZUORDNUNG["Maß / Ø (mm)"] if r.get(k)), "")
     weitere = "; ".join(f"{label}: {r[k]}" for label, k in ZUORDNUNG["Weitere Daten"] if r.get(k))
     return [
-        "", r.get("produktwelt", ""), r.get("hersteller", ""), r.get("serie_artikel", ""), r.get("kurzbeschreibung", ""),
+        "", r.get("produktwelt", ""), hersteller(r.get("hersteller", "")), r.get("serie_artikel", ""), r.get("kurzbeschreibung", ""),
         r.get("material", ""), r.get("anschluss_gewinde", ""), mass, r.get("traglast_n", ""), weitere,
         r.get("bodenbefestigung", ""), r.get("zertifizierung", ""), r.get("anzahl_varianten", ""), r.get("url", ""),
     ]
@@ -82,7 +93,7 @@ def main(ordner: Path, ziel: Path):
     ue["A3"] = "So geht's: Im Blatt „Auswahlliste“ in Spalte „Aufnehmen?“ ja / nein / prüfen wählen und die Datei zurückschicken."
     r = 5
     for titel, zaehler in (("Nach Produktwelt", Counter(z[1] for z in daten)),
-                           ("Nach Hersteller", Counter(z[2].split(" (")[0] for z in daten))):
+                           ("Nach Hersteller", Counter(z[2] for z in daten))):
         ue.cell(r, 1, titel).font = Font(bold=True, color="FFFFFF")
         ue.cell(r, 1).fill = PatternFill("solid", fgColor=GRUEN)
         ue.cell(r, 2, "Einträge").font = Font(bold=True, color="FFFFFF")

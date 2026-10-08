@@ -1,2 +1,4 @@
-vendor/
+*.pyc
+__pycache__/
 node_modules/
+vendor/

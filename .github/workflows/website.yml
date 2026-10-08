@@ -22,9 +22,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       # Ohne eigene Domain (Datei CNAME) liegt die Seite unter lenn5555.github.io/Fu-undBein/
       - run: python3 werkzeuge/build_site.py
         env:

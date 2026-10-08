@@ -80,11 +80,10 @@ def main():
     band = "".join(f'<div class="bf-band-item"><svg viewBox="0 0 24 24" aria-hidden="true">{svg}</svg><span>{html.escape(t)}</span></div>'
                    for t, svg in vorteile)
 
-    seite = f"""<!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>beinundfuß Vorschau</title>
+    seite = f"""<title>beinundfuß.de Shopvorschau</title>
 <style>
 :root {{ --wp--preset--color--navy:#1b2836; --wp--preset--color--gruen:#4fa82e; --wp--preset--color--gruen-dunkel:#3d8a22; --wp--preset--color--grau:#8b939b; --wp--preset--color--grau-dunkel:#4a5560; --wp--preset--color--hell:#f2f4f6; color-scheme: light; }}
+html {{ background:#fff; }}
 * {{ box-sizing: border-box; }}
 body {{ margin:0; background:#fff; color:#1b2836; font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; }}
 h1,h2,h3 {{ font-weight:800; line-height:1.2; }}
@@ -112,10 +111,11 @@ section.block > .wrap > h2 {{ text-align:center; }}
 footer {{ background:#1b2836; color:#fff; padding:40px 0 28px; font-size:.9rem; }}
 footer .grau {{ color:#8b939b; }}
 .bf-ohne-bild {{ background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%238b939b' stroke-width='2'%3E%3Cpath d='M32 8v30'/%3E%3Cpath d='M26 14h12M26 20h12'/%3E%3Cellipse cx='32' cy='46' rx='18' ry='6'/%3E%3Cpath d='M14 46v4c0 3 8 6 18 6s18-3 18-6v-4'/%3E%3C/g%3E%3C/svg%3E") center/45% no-repeat; }}
+.ki-hinweis {{ position:fixed; right:16px; bottom:76px; max-width:min(320px,calc(100vw - 32px)); background:#fff; color:#1b2836; border-radius:10px; padding:.8rem 1rem; box-shadow:0 8px 30px rgb(27 40 54/25%); margin:0; font-size:.9rem; }}
 .bf-ki-knopf {{ position:fixed; right:16px; bottom:16px; background:#1b2836; color:#fff; border:0; border-radius:999px; padding:.8rem 1.2rem; font-weight:700; cursor:pointer; box-shadow:0 6px 20px rgb(27 40 54/25%); }}
 {css_theme}
 {css_finder}
-</style></head><body>
+</style>
 <div class="hinweis">Vorschau mit dem TS-Startsortiment. Shop, Warenkorb und KI-Berater werden erst auf dem echten Server aktiv.</div>
 <header class="kopf"><div class="wrap"><a class="bf-wordmark" href="#">bein<span class="bf-und">und</span>fuß<span class="bf-dot">.</span>de</a>
 <nav><a href="#welten">Produktwelten</a><a href="#finder">Produktfinder</a><a href="#anwendungen">Anwendungen</a><a href="#">Kontakt</a></nav></div></header>
@@ -135,7 +135,8 @@ footer .grau {{ color:#8b939b; }}
 <footer><div class="wrap"><p style="font-size:1.4rem;font-weight:800;margin:0">beinundfuß.de</p>
 <p>Immer die passende Stabilität. Ein Angebot der TS Systemtechnik.</p>
 <p class="grau">Alle Preise zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p></div></footer>
-<button class="bf-ki-knopf" type="button" onclick="alert('Der KI-Berater wird auf dem echten Server mit dem Produktkatalog verbunden.')">Produktberater</button>
+<p id="ki-hinweis" class="ki-hinweis" hidden>Der KI-Berater wird auf dem echten Server mit dem Produktkatalog verbunden und beantwortet dann Fragen wie „Fuß für 40er Vierkantrohr, Tisch mit 300 kg“.</p>
+<button class="bf-ki-knopf" type="button" onclick="const h=document.getElementById('ki-hinweis'); h.hidden=!h.hidden;">Produktberater</button>
 <script>
 const BF_DATEN = {json.dumps(produkte, ensure_ascii=False)};
 window.bfFinder = {{ api: "vorschau://produkte", preset: {{}} }};
@@ -155,7 +156,7 @@ document.querySelectorAll('[data-anwendung]').forEach(a => a.addEventListener('c
   }}, 50);
 }}));
 </script>
-</body></html>"""
+"""
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(seite, encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(seite) // 1024} KB, {len(produkte)} Produkte")

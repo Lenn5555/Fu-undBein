@@ -1,6 +1,6 @@
 {
-  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen (noch von Lenn zu bestätigen). bezahllinks: Artikelnummer -> Stripe-Zahlungslink.",
-  "anfrage_email": "info@beinundfuss.de",
+  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink.",
+  "anfrage_email": "sales@ts-systec.de",
   "betreiber_zeile": "Ein Angebot der TS Systemtechnik.",
   "bezahllinks": {}
 }

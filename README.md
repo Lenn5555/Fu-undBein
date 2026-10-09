@@ -52,3 +52,26 @@ Finder-Merkmale (Filter): Anwendung, Funktion, Bauform, Material, Rohrmaß, Gewi
 - Artikelnummern der Varianten sind die TS-Nummern; vor einer späteren SAP-Anbindung gegen SAP prüfen.
 - SAP Business One: vorerst nicht angebunden (Entscheidung 08.10.2026), später nachrüstbar.
 - Vergleichsprodukte sind sichtbar (Entscheidung 08.10.2026); Bezug (Händler/Hersteller), Einkaufspreise und Lieferzeiten für Anfragen noch klären. Technische Daten stammen aus Hersteller- und Händlerseiten und sind teils lückenhaft; Herstellerfotos nur mit Freigabe verwenden.
+
+## KI-Berater (Zweig `ki-shop`)
+
+Statt Katalog gibt es eine Seite mit KI-Berater. Er kennt nur Produkte **mit Preis** (`ki/worker/src/katalog.json`)
+und zeigt passende Produkte mit Bestellknopf. Eine Bestellung geht als Mail an `sales@ts-systec.de`,
+mit interner Bezugsquelle, Bestell-Link und EK. Der alte Katalog-Stand liegt im Zweig `stand-katalog-2026-10-08`.
+
+Aufbau:
+- `werkzeuge/build_ki.py` baut `site/` (Beraterseite, Rechtstexte) und `ki/worker/src/katalog.json`.
+  Lokal schreibt es außerdem `/mnt/project-files/katalog/intern/ki-bezugsquellen.json` (vertraulich, nie ins Repo).
+- `ki/seite/ki.js|css`: Chat und Bestellformular im Browser.
+- `ki/worker/`: Cloudflare Worker mit `POST /beraten` (Claude, Werkzeug `produkte_zeigen`) und `POST /bestellen` (Mail über Resend).
+  Händler und EK liest der Worker aus dem Cloudflare-KV, nicht aus dem Code.
+
+Einrichten (einmalig):
+1. Konten: Cloudflare (Worker), Anthropic (API-Schlüssel), Resend (Mailversand, Domain bestätigen).
+2. `cd ki/worker && npm install && npx wrangler login`
+3. `npx wrangler kv namespace create BEZUG`, die ausgegebene id in `wrangler.toml` eintragen.
+4. `npx wrangler kv key put --binding BEZUG --remote bezugsquellen --path /mnt/project-files/katalog/intern/ki-bezugsquellen.json`
+5. `npx wrangler secret put ANTHROPIC_API_KEY` und `npx wrangler secret put RESEND_API_KEY`
+6. `npx wrangler deploy`, die Worker-Adresse in `daten/site.json` als `ki_api` eintragen.
+
+Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, Schritt 4 und `npx wrangler deploy` wiederholen.

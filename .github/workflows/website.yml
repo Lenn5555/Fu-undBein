@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       # Ohne eigene Domain (Datei CNAME) liegt die Seite unter lenn5555.github.io/Fu-undBein/
-      - run: python3 werkzeuge/build_site.py
+      - run: python3 werkzeuge/build_ki.py
         env:
           SITE_BASIS: ${{ hashFiles('CNAME') == '' && '/Fu-undBein' || '' }}
       - uses: actions/upload-pages-artifact@v3

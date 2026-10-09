@@ -138,9 +138,11 @@ def anfrage_link(p, ausfuehrung="", bestellung=False):
 
 # ---------------------------------------------------------------- Layout
 
+NAV = [("Produktwelten", "/#welten"), ("Produktfinder", "/produktfinder/"), ("Anwendungen", "/#anwendungen"), ("Kontakt", "/kontakt/")]
+
+
 def seite(titel, inhalt, beschreibung="", extra_kopf=""):
-    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (
-        ("Produktwelten", "/#welten"), ("Produktfinder", "/produktfinder/"), ("Anwendungen", "/#anwendungen"), ("Kontakt", "/kontakt/")))
+    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in NAV)
     return f"""<!doctype html>
 <html lang="de">
 <head>

@@ -1,0 +1,39 @@
+.ki-wrap { max-width: 860px; padding-top: 32px; padding-bottom: 48px; }
+.ki-wrap h1 { margin-bottom: 8px; }
+.ki-intro { color: #4a5560; margin-bottom: 20px; }
+.ki { display: flex; flex-direction: column; gap: 12px; min-height: 260px; max-height: 64vh; overflow-y: auto;
+      padding: 16px; border: 1px solid #dfe4e8; border-radius: 12px; background: #f7f9fa; }
+.ki-blase { max-width: 85%; padding: 10px 14px; border-radius: 14px; line-height: 1.5; }
+.ki-blase p { margin: 0; }
+.ki-blase p + p { margin-top: 8px; }
+.ki-berater { align-self: flex-start; background: #fff; border: 1px solid #dfe4e8; }
+.ki-kunde { align-self: flex-end; background: #1b2836; color: #fff; }
+.ki-warte { color: #8b939b; font-style: italic; }
+.ki-fehler { border-color: #e7a9a4; background: #fdf1f0; }
+.ki-karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.ki-karte { display: flex; flex-direction: column; background: #fff; border: 1px solid #dfe4e8; border-radius: 12px; overflow: hidden; }
+.ki-karte img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: #fff; border-bottom: 1px solid #eef1f3; }
+.ki-karte-text { display: flex; flex-direction: column; gap: 6px; padding: 12px; flex: 1; }
+.ki-karte h3 { font-size: 1rem; margin: 0; }
+.ki-kurz { font-size: .9rem; color: #4a5560; margin: 0; }
+.ki-merkmale { list-style: none; padding: 0; margin: 0; font-size: .85rem; color: #4a5560; }
+.ki-preis { font-weight: 700; color: #1b2836; margin: 4px 0; }
+.ki-karte .btn { margin-top: auto; align-self: flex-start; }
+.ki-eingabe { display: flex; gap: 8px; margin-top: 12px; }
+.ki-eingabe textarea { flex: 1; min-width: 0; padding: 10px 12px; border: 1px solid #c9d0d6; border-radius: 10px; font: inherit; resize: vertical; }
+.ki-hinweis { font-size: .8rem; color: #8b939b; margin-top: 10px; }
+.ki-dialog { border: none; border-radius: 14px; padding: 0; width: min(520px, calc(100vw - 32px)); }
+.ki-dialog::backdrop { background: rgba(27, 40, 54, .5); }
+.ki-formular { display: flex; flex-direction: column; gap: 10px; padding: 20px; }
+.ki-formular h2 { margin: 0; }
+.ki-formular label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; }
+.ki-formular input, .ki-formular select, .ki-formular textarea { padding: 8px 10px; border: 1px solid #c9d0d6; border-radius: 8px; font: inherit; }
+.ki-formular .ki-check { flex-direction: row; align-items: flex-start; gap: 8px; }
+.ki-falle { position: absolute; left: -9999px; }
+.ki-meldung { color: #b3261e; margin: 0; min-height: 1em; }
+.ki-knoepfe { display: flex; gap: 8px; justify-content: flex-end; }
+.btn-hell { background: #fff !important; color: #1b2836 !important; border: 1px solid #c9d0d6 !important; }
+@media (max-width: 600px) {
+  .ki { max-height: 70vh; padding: 10px; }
+  .ki-blase { max-width: 95%; }
+}

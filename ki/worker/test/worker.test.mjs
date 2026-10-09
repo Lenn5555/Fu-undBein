@@ -84,3 +84,8 @@ test("Bestellmail enthält Bezugsquelle, EK und Aufschlag", async () => {
   assert.deepEqual(gesendet.to, ["sales@ts-systec.de"]);
   assert.equal(gesendet.reply_to, "max@example.com");
 });
+
+test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
+  const { bezugsquelle } = await import("../src/bestellung.js");
+  assert.equal(bezugsquelle("GIBTSNICHT"), null);
+});

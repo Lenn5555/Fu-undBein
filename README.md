@@ -64,14 +64,13 @@ Aufbau:
   Lokal schreibt es außerdem `/mnt/project-files/katalog/intern/ki-bezugsquellen.json` (vertraulich, nie ins Repo).
 - `ki/seite/ki.js|css`: Chat und Bestellformular im Browser.
 - `ki/worker/`: Cloudflare Worker mit `POST /beraten` (Claude, Werkzeug `produkte_zeigen`) und `POST /bestellen` (Mail über Resend).
-  Händler und EK liest der Worker aus dem Cloudflare-KV, nicht aus dem Code.
+  Händler und EK kommen beim Veröffentlichen aus dem GitHub-Secret `BEZUGSQUELLEN` in den Worker, nie ins Repo.
 
-Einrichten (einmalig):
-1. Konten: Cloudflare (Worker), Anthropic (API-Schlüssel), Resend (Mailversand, Domain bestätigen).
-2. `cd ki/worker && npm install && npx wrangler login`
-3. `npx wrangler kv namespace create BEZUG`, die ausgegebene id in `wrangler.toml` eintragen.
-4. `npx wrangler kv key put --binding BEZUG --remote bezugsquellen --path /mnt/project-files/katalog/intern/ki-bezugsquellen.json`
-5. `npx wrangler secret put ANTHROPIC_API_KEY` und `npx wrangler secret put RESEND_API_KEY`
-6. `npx wrangler deploy`, die Worker-Adresse in `daten/site.json` als `ki_api` eintragen.
+Einrichten (einmalig, ohne Terminal):
+1. Konten: Anthropic (API-Schlüssel), Cloudflare (Worker, API-Token mit Vorlage „Edit Cloudflare Workers“), Resend (Domain bestätigen, API-Schlüssel).
+2. Im GitHub-Repo unter Settings > Secrets and variables > Actions diese Secrets anlegen:
+   `ANTHROPIC_API_KEY`, `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `RESEND_API_KEY` und
+   `BEZUGSQUELLEN` (Inhalt von `/mnt/project-files/katalog/intern/ki-bezugsquellen-fuer-github.txt`).
+3. Unter Actions den Workflow „KI-Server veröffentlichen“ starten. Die Worker-Adresse (…workers.dev) in `daten/site.json` als `ki_api` eintragen.
 
-Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, Schritt 4 und `npx wrangler deploy` wiederholen.
+Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, das Secret `BEZUGSQUELLEN` erneuern und den Workflow neu starten.

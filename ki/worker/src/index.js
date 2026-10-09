@@ -72,7 +72,7 @@ export default {
     if (!env.RESEND_API_KEY) return antwort({ fehler: "Online-Bestellung ist noch nicht eingerichtet. Bitte per E-Mail bestellen." }, 503, herkunft);
     const nr = bestellnummer();
     try {
-      const quelle = await bezugsquelle(env, b.produkt.sku);
+      const quelle = bezugsquelle(b.produkt.sku);
       await senden(env, nr, b, mailText(nr, b, quelle));
     } catch (err) {
       console.error("Bestellung:", err);

@@ -1,6 +1,8 @@
 // Bestellung: prüft die Angaben, holt die interne Bezugsquelle und schickt eine Mail an den Vertrieb.
-// Die Bezugsquellen liegen im Cloudflare-KV (Schlüssel "bezugsquellen"), nie im Repo oder im Browser.
+// Die Bezugsquellen (Händler, EK) stecken in src/bezugsquellen.json. Die Datei steht NICHT im Repo:
+// Beim Veröffentlichen entsteht sie aus dem GitHub-Secret BEZUGSQUELLEN und landet nur im Worker bei Cloudflare.
 import { NACH_SKU } from "./berater.js";
+import BEZUGSQUELLEN from "./bezugsquellen.json" with { type: "json" };
 
 const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000 };
 
@@ -73,11 +75,8 @@ export function mailText(nr, b, quelle) {
   return zeilen.join("\n");
 }
 
-let bezugCache = null;
-
-export async function bezugsquelle(env, sku) {
-  if (!bezugCache && env.BEZUG) bezugCache = (await env.BEZUG.get("bezugsquellen", { type: "json" })) || {};
-  return bezugCache?.[sku] ?? null;
+export function bezugsquelle(sku) {
+  return BEZUGSQUELLEN[sku] ?? null;
 }
 
 export async function senden(env, nr, b, text, abruf = fetch) {

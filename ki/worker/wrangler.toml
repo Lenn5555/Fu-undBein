@@ -1,7 +1,6 @@
 # Cloudflare Worker für den KI-Berater von beinundfuß.de
-# Geheimnisse NICHT hier eintragen, sondern mit:
-#   npx wrangler secret put ANTHROPIC_API_KEY
-#   npx wrangler secret put RESEND_API_KEY
+# Veröffentlicht wird über GitHub Actions (.github/workflows/ki-server.yml).
+# Geheimnisse NIE hier eintragen, sondern als GitHub-Secrets (siehe README).
 name = "beinundfuss-ki"
 main = "src/index.js"
 compatibility_date = "2026-09-01"
@@ -13,13 +12,6 @@ HERKUNFT = "https://lenn5555.github.io,https://xn--beinundfu-o1a.de,https://www.
 BESTELL_EMAIL = "sales@ts-systec.de"
 # Absender muss bei Resend als Domain bestätigt sein
 ABSENDER = "beinundfuß.de <bestellung@xn--beinundfu-o1a.de>"
-
-# Interne Bezugsquellen (Händler, EK). Anlegen mit:
-#   npx wrangler kv namespace create BEZUG   -> die ausgegebene id unten eintragen
-#   npx wrangler kv key put --binding BEZUG --remote bezugsquellen --path /mnt/project-files/katalog/intern/ki-bezugsquellen.json
-[[kv_namespaces]]
-binding = "BEZUG"
-id = "HIER_ID_EINTRAGEN"
 
 # Schutz gegen Missbrauch: höchstens 20 Anfragen pro Minute und Besucher
 [[ratelimits]]

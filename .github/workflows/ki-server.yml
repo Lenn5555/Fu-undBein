@@ -1,0 +1,60 @@
+name: KI-Server veröffentlichen
+
+# Veröffentlicht den Cloudflare Worker (KI-Berater und Bestellmail).
+# Benötigte GitHub-Secrets (Settings > Secrets and variables > Actions):
+#   CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, ANTHROPIC_API_KEY, RESEND_API_KEY,
+#   BEZUGSQUELLEN (Inhalt von katalog/intern/ki-bezugsquellen-fuer-github.txt, gzip + base64)
+on:
+  push:
+    branches: [main]
+    paths: ["ki/worker/**", ".github/workflows/ki-server.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ki-server
+  cancel-in-progress: false
+
+jobs:
+  veroeffentlichen:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ki/worker
+    env:
+      BEZUGSQUELLEN: ${{ secrets.BEZUGSQUELLEN }}
+      HAT_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Bezugsquellen aus dem Secret auspacken (nur für diesen Lauf)
+        run: |
+          if [ -n "$BEZUGSQUELLEN" ]; then
+            echo "$BEZUGSQUELLEN" | base64 -d | gunzip > src/bezugsquellen.json
+          else
+            echo "::warning::Secret BEZUGSQUELLEN fehlt, Bestellmails enthalten keine Bezugsquelle"
+            echo '{}' > src/bezugsquellen.json
+          fi
+          node -e "console.log(Object.keys(require('./src/bezugsquellen.json')).length + ' Bezugsquellen')"
+      - run: npm test
+      - name: Worker veröffentlichen
+        if: env.HAT_TOKEN == 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ki/worker
+          secrets: |
+            ANTHROPIC_API_KEY
+            RESEND_API_KEY
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      - name: Hinweis
+        if: env.HAT_TOKEN != 'true'
+        run: echo "::notice::Noch kein CLOUDFLARE_API_TOKEN hinterlegt, Worker wurde nur getestet."

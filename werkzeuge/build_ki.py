@@ -10,7 +10,9 @@ Schreibt
 
 Aufruf: python3 werkzeuge/build_ki.py
 """
+import base64
 import csv
+import gzip
 import json
 import re
 import shutil
@@ -177,9 +179,15 @@ def main():
     KATALOG.parent.mkdir(parents=True, exist_ok=True)
     KATALOG.write_text(json.dumps(liste, ensure_ascii=False, indent=0), encoding="utf-8")
     if INTERN.exists():
+        daten = bezugsquellen(produkte)
         ziel = INTERN / "ki-bezugsquellen.json"
-        ziel.write_text(json.dumps(bezugsquellen(produkte), ensure_ascii=False, indent=1), encoding="utf-8")
-        print(f"intern: {ziel}")
+        ziel.write_text(json.dumps(daten, ensure_ascii=False, indent=1), encoding="utf-8")
+        # Für das GitHub-Secret BEZUGSQUELLEN: gzip + base64, damit es unter die 48-KB-Grenze passt
+        packung = base64.b64encode(gzip.compress(json.dumps(daten, ensure_ascii=False, separators=(",", ":")).encode(), 9, mtime=0)).decode()
+        (INTERN / "ki-bezugsquellen-fuer-github.txt").write_text(packung, encoding="ascii")
+        # Lokale Kopie für Tests; steht in .gitignore
+        (ROOT / "ki/worker/src/bezugsquellen.json").write_text(json.dumps(daten, ensure_ascii=False), encoding="utf-8")
+        print(f"intern: {ziel} (GitHub-Secret: {len(packung) // 1024} KB)")
 
     if OUT.exists():
         shutil.rmtree(OUT)

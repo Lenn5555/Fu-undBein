@@ -5,3 +5,4 @@ site/
 vendor/
 .dev.vars
 .wrangler/
+ki/worker/src/bezugsquellen.json

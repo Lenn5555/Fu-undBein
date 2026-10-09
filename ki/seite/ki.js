@@ -6,6 +6,7 @@
   var form = document.getElementById("ki-eingabe");
   var feld = document.getElementById("ki-text");
   var dialog = document.getElementById("ki-bestellen");
+  var chips = document.getElementById("ki-chips");
   var verlauf = [];
   var karten = {};
 
@@ -77,7 +78,11 @@
   function senden(text) {
     verlauf.push({ rolle: "kunde", text: text });
     blase("kunde", text);
-    var warte = blase("berater ki-warte", "Einen Moment …");
+    if (chips) chips.hidden = true;
+    var warte = el("div", "ki-blase ki-berater ki-warte");
+    warte.setAttribute("aria-label", "Berater schreibt");
+    warte.innerHTML = "<span></span><span></span><span></span>";
+    box.appendChild(warte); nachUnten();
     form.querySelector("button").disabled = true;
     if (!cfg.api) {
       warte.remove();
@@ -93,8 +98,10 @@
         if (!x.ok) throw new Error(x.d.fehler || "Fehler");
         var notiz = x.d.produkte.length ? "\n\n(Angezeigt: " + x.d.produkte.map(function (p) { return p.sku; }).join(", ") + ")" : "";
         verlauf.push({ rolle: "berater", text: x.d.antwort + notiz, produkte: x.d.produkte.map(function (p) { return p.sku; }) });
-        blase("berater", x.d.antwort);
+        var antwortBlase = blase("berater", x.d.antwort);
         kartenZeigen(x.d.produkte);
+        // Antworttext oben im Fenster lassen, damit er nicht hinter den Karten verschwindet
+        if (x.d.produkte.length) box.scrollTop = antwortBlase.offsetTop - box.offsetTop - 12;
         speichern();
       })
       .catch(function (err) {
@@ -190,7 +197,29 @@
     var t = feld.value.trim();
     if (!t) return;
     feld.value = "";
+    feld.style.height = "";
     senden(t);
+  });
+  feld.addEventListener("input", function () {
+    feld.style.height = "";
+    feld.style.height = Math.min(feld.scrollHeight, 160) + "px";
+  });
+  // Beispielfragen und Anwendungskacheln schicken ihre Frage direkt an den Berater
+  document.querySelectorAll("[data-frage]").forEach(function (k) {
+    k.addEventListener("click", function () {
+      if (form.querySelector("button").disabled) return;
+      if (k.classList.contains("kb-anw")) form.scrollIntoView({ behavior: "smooth", block: "center" });
+      senden(k.getAttribute("data-frage"));
+    });
+  });
+  var neu = document.getElementById("ki-neu");
+  if (neu) neu.addEventListener("click", function () {
+    verlauf = []; karten = {};
+    try { sessionStorage.removeItem("bf-ki"); } catch (e) { /* egal */ }
+    box.innerHTML = "";
+    if (chips) chips.hidden = false;
+    begruessen();
+    feld.focus();
   });
   feld.addEventListener("keydown", function (ev) {
     if (ev.key === "Enter" && !ev.shiftKey) { ev.preventDefault(); form.requestSubmit(); }
@@ -202,6 +231,7 @@
     if (alt && alt.verlauf && alt.verlauf.length) { verlauf = alt.verlauf; karten = alt.karten || {}; }
   } catch (e) { /* egal */ }
   begruessen();
+  if (verlauf.length && chips) chips.hidden = true;
   verlauf.forEach(function (m) {
     blase(m.rolle, m.text.replace(/\n\n\(Angezeigt: [^)]*\)$/, ""));
     if (m.produkte) kartenZeigen(m.produkte.map(function (s) { return karten[s]; }).filter(Boolean));

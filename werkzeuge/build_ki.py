@@ -75,21 +75,97 @@ def bezugsquellen(produkte):
     return daten
 
 
-def beraterseite():
+# Anwendungskacheln: Bild aus dem Theme, Titel, Frage, die beim Anklicken an den Berater geht
+ANWENDUNGEN = [
+    (1, "Gastronomie-Arbeitstische", "Ich brauche höhenverstellbare Füße für einen Edelstahl-Arbeitstisch in der Gastronomie."),
+    (3, "Produktionsmaschinen", "Ich suche Maschinenfüße für eine Produktionsmaschine. Was brauchen Sie von mir?"),
+    (4, "CNC- und Werkzeugmaschinen", "Welche Füße eignen sich für eine schwere CNC-Maschine mit Vibrationen?"),
+    (5, "Fördertechnik", "Ich brauche Gelenkfüße für ein Förderband, der Boden ist uneben."),
+    (9, "Schaltschränke", "Welche Stellfüße passen unter einen Schaltschrank?"),
+    (10, "Werkbänke und Gestelle", "Ich brauche Einschlagfüße für eine Werkbank aus Vierkantrohr."),
+    (11, "Regale", "Welche Füße nehme ich für ein Schwerlastregal?"),
+    (13, "Klima- und Lüftungsgeräte", "Ich suche Schwingungsdämpfer für ein Klimagerät."),
+]
+
+BEISPIELE = [
+    "Stellfuß M12 für eine Maschine, ca. 400 kg",
+    "Einschlagfuß für 40er Vierkantrohr",
+    "Edelstahl für die Lebensmittelindustrie",
+    "Ich weiß nicht, was ich brauche",
+]
+
+ICON = {
+    "senden": '<path d="M4 12 20 4l-6 16-2.5-6.5z" fill="currentColor"/>',
+    "fuss": '<path d="M12 3v11M9 6h6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="18" rx="7" ry="2.6" fill="currentColor"/>',
+    "check": '<path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+}
+
+
+def icon(name, klasse=""):
+    return f'<svg class="{klasse}" viewBox="0 0 24 24" aria-hidden="true">{ICON[name]}</svg>'
+
+
+def beraterseite(anzahl):
     api = CFG.get("ki_api", "")
+    chips = "".join(f'<button type="button" class="kb-chip" data-frage="{e(x)}">{e(x)}</button>' for x in BEISPIELE)
+    kacheln = "".join(
+        f'<button type="button" class="kb-anw" data-frage="{e(frage)}">'
+        f'<img src="/assets/anwendungen/anwendung-{nr:02d}.jpg" alt=""><span>{e(titel)}</span></button>'
+        for nr, titel, frage in ANWENDUNGEN)
+    schritte = "".join(
+        f'<li><span class="kb-nr">{i}</span><h3>{e(h)}</h3><p>{e(p)}</p></li>' for i, (h, p) in enumerate((
+            ("Beschreiben", "Sagen Sie, wofür der Fuß gedacht ist: Gerät, Gewinde oder Rohr, Last, Boden. Was fehlt, fragt der Berater nach."),
+            ("Vorschlag mit Preis", "Sie bekommen passende Produkte mit Bild, technischen Daten und Nettopreis."),
+            ("Bestellen", "Ausführung und Menge wählen, Lieferadresse eintragen. Wir bestätigen die Bestellung per E-Mail."),
+        ), 1))
+    haken = "".join(f'<li>{icon("check")}{e(x)}</li>' for x in (
+        f"{anzahl} Produkte mit festem Preis", "Beratung auch ohne Fachbegriffe", "Persönlicher Ansprechpartner bei TS Systemtechnik"))
     return b.seite("beinundfuß.de – Ihr Berater für Stellfüße und Einschlagfüße", f"""
-<section class="ki-wrap wrap">
-<h1>Welchen Fuß brauchen Sie?</h1>
-<p class="ki-intro">Beschreiben Sie, wofür der Fuß gedacht ist, oder nennen Sie direkt Gewinde, Rohrmaß und Last.
-Unser KI-Berater schlägt passende Produkte mit Preis vor, die Sie gleich bestellen können.</p>
-<div id="ki" class="ki" aria-live="polite"></div>
-<form id="ki-eingabe" class="ki-eingabe">
-<textarea id="ki-text" rows="2" maxlength="1500" placeholder="z. B. Stellfuß M12 für eine Maschine, ca. 300 kg, Boden ist etwas uneben" required></textarea>
-<button class="btn" type="submit">Senden</button>
+<section class="kb-hero">
+<div class="wrap kb-hero-inhalt">
+<p class="kb-claim">Stellfüße · Einschlagfüße · Maschinenfüße</p>
+<h1>Sagen Sie uns, was Ihr Fuß können muss.</h1>
+<p class="kb-lead">Unser Berater findet den passenden Fuß für Maschine, Tisch, Regal oder Gerät und nennt Ihnen gleich den Preis.</p>
+<ul class="kb-haken">{haken}</ul>
+</div>
+</section>
+
+<section class="wrap kb-buehne">
+<div class="kb-chat">
+<div class="kb-chat-kopf">
+<span class="kb-avatar">{icon("fuss")}</span>
+<div><strong>Fußberater</strong><span class="kb-status">KI-Assistent</span></div>
+<button type="button" class="kb-neu" id="ki-neu" title="Neues Gespräch">Neu starten</button>
+</div>
+<div id="ki" class="kb-verlauf" aria-live="polite"></div>
+<div class="kb-chips" id="ki-chips">{chips}</div>
+<form id="ki-eingabe" class="kb-eingabe">
+<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Was brauchen Sie?" aria-label="Ihre Frage" required></textarea>
+<button class="kb-senden" type="submit" aria-label="Senden">{icon("senden")}</button>
 </form>
-<p class="ki-hinweis">Sie sprechen mit einer KI. Angaben bitte vor der Bestellung prüfen; verbindlich sind Auftragsbestätigung und Datenblatt.
+</div>
+<p class="kb-hinweis">Sie sprechen mit einer KI. Angaben bitte vor der Bestellung prüfen; verbindlich sind Auftragsbestätigung und Datenblatt.
 Ihre Eingaben werden zur Beantwortung an Anthropic übermittelt, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
 </section>
+
+<section class="kb-bild"><img src="/assets/hero-fuesse.jpg" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen und Einschlagfüßen"></section>
+
+<section class="kb-block"><div class="wrap">
+<h2>So einfach geht's</h2>
+<ol class="kb-schritte">{schritte}</ol>
+</div></section>
+
+<section class="kb-block kb-hell"><div class="wrap">
+<h2>Wofür brauchen Sie Füße?</h2>
+<p class="kb-unter">Tippen Sie auf eine Anwendung, und der Berater legt direkt los.</p>
+<div class="kb-anwendungen">{kacheln}</div>
+</div></section>
+
+<section class="kb-block"><div class="wrap kb-kontakt">
+<div><h2>Lieber mit einem Menschen sprechen?</h2>
+<p>Sonderanfertigungen, große Mengen oder Produkte ohne Online-Preis: Schreiben Sie uns, wir melden uns persönlich.</p></div>
+<a class="btn" href="mailto:{e(CFG['anfrage_email'])}">{e(CFG['anfrage_email'])}</a>
+</div></section>
 <dialog id="ki-bestellen" class="ki-dialog"></dialog>
 <script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{e(CFG['anfrage_email'])}" }};</script>
 <script src="/assets/ki.js" defer></script>""", extra_kopf='<link rel="stylesheet" href="/assets/ki.css">')
@@ -110,6 +186,8 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     theme_css = re.sub(r"/\*.*?\*/", "", (b.THEME / "style.css").read_text(encoding="utf-8"), count=1, flags=re.S)
     (OUT / "assets/site.css").write_text(b.CSS + theme_css, encoding="utf-8")
+    shutil.copy(b.THEME / "assets/hero-fuesse.jpg", OUT / "assets/hero-fuesse.jpg")
+    shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     for datei in ("ki.js", "ki.css"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
@@ -125,7 +203,7 @@ def main():
         ziel.parent.mkdir(parents=True, exist_ok=True)
         ziel.write_text(text, encoding="utf-8")
 
-    schreibe("", beraterseite())
+    schreibe("", beraterseite(len(liste)))
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", b.textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

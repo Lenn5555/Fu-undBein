@@ -98,6 +98,26 @@ BAUFORMEN = [("Stellfuß", "Stellfüße"), ("Stellbein", "Stellbeine"), ("Gelenk
              ("Schwingungsdämpfer", "Schwingungsdämpfer"), ("Nivellierelement", "Nivellierelemente"),
              ("Gewindeeinsatz", "Gewindeeinsätze"), ("Spezialausführung", "Spezialausführungen")]
 
+
+# Zwei kleine Zeichentrick-Szenen für den Vergleich: Stellfuß wird herausgedreht, Einschlagfuß wird ins Rohr geschlagen
+SZENE_DREHEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein schiefer Tisch wird mit einem Stellfuß ausgerichtet, die Libelle wandert in die Mitte">
+<rect x="0" y="236" width="420" height="24" fill="#1a1a1a"/>
+<g class="an-tisch">
+<rect x="30" y="70" width="360" height="22" fill="#1a1a1a"/>
+<rect x="170" y="50" width="80" height="20" fill="#fff"/><circle class="an-blase" cx="210" cy="60" r="7" fill="#18bc42"/>
+<rect x="52" y="92" width="16" height="132" fill="#1a1a1a"/><rect x="40" y="224" width="40" height="12" fill="#1a1a1a"/>
+<g class="an-spindel"><rect x="356" y="186" width="8" height="42" fill="#fff"/><rect class="an-mutter" x="348" y="204" width="24" height="9" fill="#ed4b44"/><rect x="340" y="222" width="40" height="14" fill="#1a1a1a"/></g>
+<rect x="351" y="92" width="18" height="106" fill="#1a1a1a"/>
+</g>
+</svg>"""
+
+SZENE_SCHLAGEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein Hammer schlägt einen Einschlagfuß in ein Vierkantrohr">
+<rect x="0" y="236" width="420" height="24" fill="#1a1a1a"/>
+<g class="an-fuss"><rect x="186" y="90" width="48" height="60" fill="#fff"/><rect x="160" y="76" width="100" height="14" fill="#ed4b44"/></g>
+<rect x="170" y="122" width="80" height="114" fill="#1a1a1a"/>
+<g class="an-hammer"><rect x="228" y="47" width="160" height="12" fill="#1a1a1a"/><rect x="180" y="22" width="56" height="54" fill="#1a1a1a"/><rect x="180" y="22" width="56" height="10" fill="#fff"/></g>
+</svg>"""
+
 BEISPIELE = [
     "Stellfuß M12 für eine Maschine, ca. 400 kg",
     "Einschlagfuß für 40er Vierkantrohr",
@@ -212,6 +232,9 @@ def beraterseite(liste):
         bars.append(f'<details class="kb-bar"{" open" if i == 0 else ""}><summary><span>{e(mehrzahl)}</span>'
                     f'<span class="kb-bar-info">{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></summary><ul>{zeilen}</ul></details>')
 
+    band = "".join(f"<span>{e(x)}</span>" for x in (
+        f"{anzahl} Modelle mit Preis", f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
+        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"ab {euro(min(map(min_preis, liste)))} netto"))
     stell = sorted(gruppen["Stellfuß"], key=min_preis)
     schlag = sorted(gruppen["Einschlagfuß"], key=min_preis)
     kopf = ('<meta property="og:title" content="beinundfuß.de: Stellfüße und Einschlagfüße mit Preis">'
@@ -227,6 +250,8 @@ def beraterseite(liste):
 <p class="kb-aktionen"><a class="bf-knopf bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="kb-link" href="#preise">Alle Preise ansehen</a></p>
 </div>
 </section>
+
+<div class="kb-band" data-feld="gelb" aria-hidden="true"><div class="kb-band-lauf">{band}{band}</div></div>
 
 <section class="kb-berater" id="berater" data-feld="schwarz">
 <div class="kb-berater-text">
@@ -273,8 +298,8 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 Ein Einschlagfuß wird mit dem Hammer ins offene Rohr geschlagen und hält ohne Schweißen und Bohren.</p>
 </div>
 <div class="kb-specimen">
-<figure data-rein><p aria-hidden="true">Drehen</p><figcaption>Stellfuß: {len(stell)} Modelle ab {euro(min_preis(stell[0]))}</figcaption></figure>
-<figure data-rein><p aria-hidden="true">Schlagen</p><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
+<figure data-rein>{SZENE_DREHEN}<p aria-hidden="true">Drehen</p><figcaption>Stellfuß: {len(stell)} Modelle ab {euro(min_preis(stell[0]))}</figcaption></figure>
+<figure data-rein>{SZENE_SCHLAGEN}<p aria-hidden="true">Schlagen</p><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
 </div>
 </section>
 

@@ -59,6 +59,16 @@ jobs:
               echo "::warning::Secret $name fehlt noch"
             fi
           done
+      - name: Kurztest gegen den echten Berater
+        if: env.HAT_TOKEN == 'true'
+        run: |
+          sleep 5
+          curl -sS -m 90 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/beraten \
+            -H "Origin: https://lenn5555.github.io" -H "Content-Type: application/json" \
+            -d '{"verlauf":[{"rolle":"kunde","text":"Ich brauche 4 Stellfüße M12 für eine Maschine mit 400 kg, der Boden ist etwas uneben."}]}' \
+            -o antwort.json -w "HTTP %{http_code} in %{time_total}s\n"
+          node -e "const d=require('./antwort.json'); console.log(d.antwort||d.fehler); for (const p of d.produkte||[]) console.log('-', p.sku, p.name, p.preis)"
+          node -e "const d=require('./antwort.json'); process.exit(d.antwort ? 0 : 1)"
       - name: Hinweis
         if: env.HAT_TOKEN != 'true'
         run: echo "::notice::Noch kein CLOUDFLARE_API_TOKEN hinterlegt, Worker wurde nur getestet."

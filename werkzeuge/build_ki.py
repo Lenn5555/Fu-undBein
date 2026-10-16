@@ -115,24 +115,30 @@ def beraterseite(anzahl):
         f'<img src="/assets/anwendungen/anwendung-{nr:02d}.jpg" alt=""><span>{e(titel)}</span></button>'
         for nr, titel, frage in ANWENDUNGEN)
     schritte = "".join(
-        f'<li><span class="kb-nr">{i}</span><h3>{e(h)}</h3><p>{e(p)}</p></li>' for i, (h, p) in enumerate((
+        f'<li><span class="kb-nr">{i:02d}</span><div><h3>{e(h)}</h3><p>{e(p)}</p></div></li>' for i, (h, p) in enumerate((
             ("Beschreiben", "Sagen Sie, wofür der Fuß gedacht ist: Gerät, Gewinde oder Rohr, Last, Boden. Was fehlt, fragt der Berater nach."),
-            ("Vorschlag mit Preis", "Sie bekommen passende Produkte mit Bild, technischen Daten und Nettopreis."),
+            ("Vorschlag mit Preis", "Sie bekommen passende Produkte mit Skizze oder Foto, technischen Daten und Nettopreis."),
             ("Bestellen", "Ausführung und Menge wählen, Lieferadresse eintragen. Wir bestätigen die Bestellung per E-Mail."),
         ), 1))
     haken = "".join(f'<li>{icon("check")}{e(x)}</li>' for x in (
-        f"{anzahl} Produkte mit festem Preis", "Beratung auch ohne Fachbegriffe", "Persönlicher Ansprechpartner bei TS Systemtechnik"))
+        f"{anzahl} Produkte mit festem Nettopreis", "Beratung auch ohne Fachbegriffe", "Ansprechpartner bei TS Systemtechnik in Pfungstadt"))
+    kopf = ('<meta property="og:title" content="beinundfuß.de – Ihr Berater für Stellfüße und Einschlagfüße">'
+            '<meta property="og:description" content="Beschreiben Sie Ihre Anwendung, der Berater schlägt passende Füße mit Preis vor.">'
+            '<meta name="theme-color" content="#1b2836">'
+            '<link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>'
+            '<link rel="stylesheet" href="/assets/ki.css">')
     return b.seite("beinundfuß.de – Ihr Berater für Stellfüße und Einschlagfüße", f"""
+<a class="kb-skip" href="#ki-text">Direkt zum Berater</a>
 <section class="kb-hero">
-<div class="wrap kb-hero-inhalt">
-<p class="kb-claim">Stellfüße · Einschlagfüße · Maschinenfüße</p>
+<div class="wrap kb-hero-raster">
+<div class="kb-hero-text">
+<p class="kb-claim"><span></span>Stellfüße, Einschlagfüße und Maschinenfüße</p>
 <h1>Sagen Sie uns, was Ihr Fuß können muss.</h1>
-<p class="kb-lead">Unser Berater findet den passenden Fuß für Maschine, Tisch, Regal oder Gerät und nennt Ihnen gleich den Preis.</p>
+<p class="kb-lead">Der Berater findet den passenden Fuß für Maschine, Tisch, Regal oder Gerät und nennt Ihnen gleich den Preis.</p>
 <ul class="kb-haken">{haken}</ul>
 </div>
-</section>
 
-<section class="wrap kb-buehne">
+<div class="kb-buehne">
 <div class="kb-chat">
 <div class="kb-chat-kopf">
 <span class="kb-avatar">{icon("fuss")}</span>
@@ -148,29 +154,32 @@ def beraterseite(anzahl):
 </div>
 <p class="kb-hinweis">Sie sprechen mit einer KI. Angaben bitte vor der Bestellung prüfen; verbindlich sind Auftragsbestätigung und Datenblatt.
 Ihre Eingaben werden zur Beantwortung an Anthropic übermittelt, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
+</div>
+</div>
 </section>
 
-<section class="kb-bild"><img src="/assets/hero-fuesse.jpg" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen und Einschlagfüßen"></section>
+<section class="kb-bild"><div class="wrap"><img src="/assets/hero-fuesse.jpg" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen, Gelenkfüßen und einem Schwingungsdämpfer"></div></section>
 
-<section class="kb-block"><div class="wrap">
-<h2>So einfach geht's</h2>
+<section class="kb-block"><div class="wrap kb-ablauf">
+<div class="kb-ablauf-kopf"><p class="kb-marke">Ablauf</p><h2>In drei Schritten zum passenden Fuß</h2>
+<p>Kein Katalog zum Durchblättern. Sie beschreiben die Aufgabe, der Berater sucht aus {anzahl} Produkten das Passende.</p></div>
 <ol class="kb-schritte">{schritte}</ol>
 </div></section>
 
 <section class="kb-block kb-hell"><div class="wrap">
-<h2>Wofür brauchen Sie Füße?</h2>
-<p class="kb-unter">Tippen Sie auf eine Anwendung, und der Berater legt direkt los.</p>
+<div class="kb-abschnitt-kopf"><div><p class="kb-marke">Anwendungen</p><h2>Wofür brauchen Sie Füße?</h2></div>
+<p>Tippen Sie auf eine Anwendung, und der Berater legt direkt los.</p></div>
 <div class="kb-anwendungen">{kacheln}</div>
 </div></section>
 
-<section class="kb-block"><div class="wrap kb-kontakt">
-<div><h2>Lieber mit einem Menschen sprechen?</h2>
+<section class="kb-block"><div class="wrap"><div class="kb-kontakt">
+<div><p class="kb-marke">Persönlich</p><h2>Lieber mit einem Menschen sprechen?</h2>
 <p>Sonderanfertigungen, große Mengen oder Produkte ohne Online-Preis: Schreiben Sie uns, wir melden uns persönlich.</p></div>
 <a class="btn" href="mailto:{e(CFG['anfrage_email'])}">{e(CFG['anfrage_email'])}</a>
-</div></section>
+</div></div></section>
 <dialog id="ki-bestellen" class="ki-dialog"></dialog>
 <script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{e(CFG['anfrage_email'])}" }};</script>
-<script src="/assets/ki.js" defer></script>""", extra_kopf='<link rel="stylesheet" href="/assets/ki.css">')
+<script src="/assets/ki.js" defer></script>""", extra_kopf=kopf)
 
 
 def main():
@@ -196,6 +205,7 @@ def main():
     (OUT / "assets/site.css").write_text(b.CSS + theme_css, encoding="utf-8")
     shutil.copy(b.THEME / "assets/hero-fuesse.jpg", OUT / "assets/hero-fuesse.jpg")
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
+    shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
     for datei in ("ki.js", "ki.css"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(

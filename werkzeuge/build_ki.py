@@ -112,7 +112,7 @@ def beraterseite(anzahl):
     chips = "".join(f'<button type="button" class="kb-chip" data-frage="{e(x)}">{e(x)}</button>' for x in BEISPIELE)
     kacheln = "".join(
         f'<button type="button" class="kb-anw" data-frage="{e(frage)}">'
-        f'<img src="/assets/anwendungen/anwendung-{nr:02d}.jpg" alt=""><span>{e(titel)}</span></button>'
+        f'<img src="/assets/anwendungen/anwendung-{nr:02d}.jpg" alt="" width="266" height="180" loading="lazy" decoding="async"><span>{e(titel)}</span></button>'
         for nr, titel, frage in ANWENDUNGEN)
     schritte = "".join(
         f'<li><span class="kb-nr">{i}</span><h3>{e(h)}</h3><p>{e(p)}</p></li>' for i, (h, p) in enumerate((
@@ -139,7 +139,7 @@ def beraterseite(anzahl):
 <div><strong>Fußberater</strong><span class="kb-status">KI-Assistent</span></div>
 <button type="button" class="kb-neu" id="ki-neu" title="Neues Gespräch">Neu starten</button>
 </div>
-<div id="ki" class="kb-verlauf" aria-live="polite"></div>
+<div id="ki" class="kb-verlauf" role="log" aria-live="polite" aria-label="Gesprächsverlauf"></div>
 <div class="kb-chips" id="ki-chips">{chips}</div>
 <form id="ki-eingabe" class="kb-eingabe">
 <textarea id="ki-text" rows="1" maxlength="1500" placeholder="Was brauchen Sie?" aria-label="Ihre Frage" required></textarea>
@@ -150,7 +150,7 @@ def beraterseite(anzahl):
 Ihre Eingaben werden zur Beantwortung an Anthropic übermittelt, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
 </section>
 
-<section class="kb-bild"><img src="/assets/hero-fuesse.jpg" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen und Einschlagfüßen"></section>
+<section class="kb-bild"><img src="/assets/hero-fuesse.jpg" width="1344" height="390" loading="lazy" decoding="async" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen und Einschlagfüßen"></section>
 
 <section class="kb-block"><div class="wrap">
 <h2>So einfach geht's</h2>

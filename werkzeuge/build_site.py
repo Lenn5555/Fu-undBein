@@ -152,11 +152,13 @@ def seite(titel, inhalt, beschreibung="", extra_kopf=""):
 <meta name="description" content="{e(beschreibung or 'Einschlagfüße, Stellbeine und Maschinenfüße: Immer die passende Stabilität.')}">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#1b2836">
 {extra_kopf}</head>
 <body>
+<a class="sprung" href="#inhalt">Zum Inhalt springen</a>
 <header class="kopf"><div class="wrap"><a class="bf-wordmark" href="/">bein<span class="bf-und">und</span>fuß<span class="bf-dot">.</span>de</a>
 <nav>{nav}</nav></div></header>
-<main>
+<main id="inhalt">
 {inhalt}
 </main>
 <footer><div class="wrap fuss">
@@ -308,7 +310,7 @@ def store_api(produkte):
 
 
 CSS = """
-:root { --navy:#1b2836; --gruen:#4fa82e; --gruen-dunkel:#3d8a22; --grau:#8b939b; --grau-dunkel:#4a5560; --hell:#f2f4f6;
+:root { --navy:#1b2836; --gruen:#4fa82e; --gruen-dunkel:#367a1e; --grau:#8b939b; --grau-dunkel:#4a5560; --hell:#f2f4f6;
   --wp--preset--color--navy:var(--navy); --wp--preset--color--gruen:var(--gruen); --wp--preset--color--grau:var(--grau);
   --wp--preset--color--grau-dunkel:var(--grau-dunkel); --wp--preset--color--hell:var(--hell); color-scheme: light; }
 * { box-sizing: border-box; }
@@ -325,8 +327,11 @@ header.kopf .wrap { display:flex; align-items:center; justify-content:space-betw
 header nav { display:flex; flex-wrap:wrap; gap:.25rem 1.2rem; }
 header nav a { color:var(--navy); font-weight:600; text-decoration:none; }
 header nav a:hover { color:var(--gruen-dunkel); }
-.btn { display:inline-block; background:var(--gruen); color:#fff; font-weight:700; padding:.6rem 1.2rem; border-radius:6px; text-decoration:none; border:2px solid var(--gruen); white-space:nowrap; }
-.btn:hover { background:var(--gruen-dunkel); border-color:var(--gruen-dunkel); }
+.btn { display:inline-block; background:var(--gruen-dunkel); color:#fff; font:inherit; font-weight:700; padding:.6rem 1.2rem; border-radius:6px; text-decoration:none; border:2px solid var(--gruen-dunkel); white-space:nowrap; cursor:pointer; touch-action:manipulation; }
+.btn:hover { background:#2b6417; border-color:#2b6417; }
+:focus-visible { outline:3px solid var(--gruen); outline-offset:2px; }
+.sprung { position:absolute; left:8px; top:-60px; z-index:10; background:var(--navy); color:#fff; padding:.5rem 1rem; border-radius:6px; }
+.sprung:focus { top:8px; }
 .btn.outline { background:transparent; color:var(--navy); border-color:var(--navy); }
 .hero { text-align:center; padding:48px 0 32px; }
 .hero h1 { font-size:clamp(2rem,5vw,2.75rem); }

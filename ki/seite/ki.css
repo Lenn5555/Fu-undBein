@@ -33,7 +33,7 @@ header.kopf { position: relative; z-index: 2; background: #fff; }
   font: inherit; font-size: .8rem; color: #4a5560; cursor: pointer; white-space: nowrap; }
 .kb-neu:hover { border-color: #1b2836; color: #1b2836; }
 
-.kb-verlauf { display: flex; flex-direction: column; gap: 12px; min-height: 170px; max-height: min(62vh, 640px); overflow-y: auto;
+.kb-verlauf { display: flex; flex-direction: column; gap: 12px; min-height: 170px; max-height: min(62vh, 640px); max-height: min(62dvh, 640px); overflow-y: auto;
   padding: 22px 20px; background: linear-gradient(#fbfcfd, #f4f7f9); scroll-behavior: smooth; }
 .ki-blase { max-width: 80%; padding: 11px 15px; line-height: 1.55; font-size: .98rem; animation: kb-rein .25s ease-out; }
 .ki-blase p { margin: 0; }
@@ -64,7 +64,7 @@ header.kopf { position: relative; z-index: 2; background: #fff; }
 .kb-senden:hover { transform: scale(1.05); }
 .kb-senden:disabled { opacity: .5; cursor: wait; transform: none; }
 .kb-senden svg { width: 22px; height: 22px; margin-left: -2px; }
-.kb-hinweis { font-size: .78rem; color: #8b939b; text-align: center; margin: 14px auto 0; max-width: 720px; }
+.kb-hinweis { font-size: .8rem; color: #4a5560; text-align: center; margin: 14px auto 0; max-width: 720px; }
 
 /* Produktkarten im Chat */
 .ki-karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; animation: kb-rein .3s ease-out; }
@@ -135,7 +135,7 @@ header.kopf { position: relative; z-index: 2; background: #fff; }
   .kb-chat-kopf { padding: 12px 14px; }
   .kb-buehne { margin-top: -76px; padding-left: 10px; padding-right: 10px; }
   .kb-chat { border-radius: 18px; }
-  .kb-verlauf { padding: 16px 12px; max-height: 70vh; }
+  .kb-verlauf { padding: 16px 12px; max-height: 70vh; max-height: 70dvh; }
   .ki-blase { max-width: 92%; }
   .kb-chips { padding: 10px 12px 0; }
   .kb-eingabe { padding: 12px; }
@@ -143,4 +143,5 @@ header.kopf { position: relative; z-index: 2; background: #fff; }
   .kb-anw span { font-size: .85rem; padding: 10px; }
   .kb-block { padding: 44px 0; }
 }
-@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+.kb-chip, .kb-anw, .kb-neu, .kb-senden { touch-action: manipulation; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }

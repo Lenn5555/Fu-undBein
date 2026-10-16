@@ -77,17 +77,26 @@ def bezugsquellen(produkte):
     return daten
 
 
-# Anwendungskacheln: Bild aus dem Theme, Titel, Frage, die beim Anklicken an den Berater geht
-ANWENDUNGEN = [
-    (1, "Gastronomie-Arbeitstische", "Ich brauche höhenverstellbare Füße für einen Edelstahl-Arbeitstisch in der Gastronomie."),
-    (3, "Produktionsmaschinen", "Ich suche Maschinenfüße für eine Produktionsmaschine. Was brauchen Sie von mir?"),
-    (4, "CNC- und Werkzeugmaschinen", "Welche Füße eignen sich für eine schwere CNC-Maschine mit Vibrationen?"),
-    (5, "Fördertechnik", "Ich brauche Gelenkfüße für ein Förderband, der Boden ist uneben."),
-    (9, "Schaltschränke", "Welche Stellfüße passen unter einen Schaltschrank?"),
-    (10, "Werkbänke und Gestelle", "Ich brauche Einschlagfüße für eine Werkbank aus Vierkantrohr."),
-    (11, "Regale", "Welche Füße nehme ich für ein Schwerlastregal?"),
-    (13, "Klima- und Lüftungsgeräte", "Ich suche Schwingungsdämpfer für ein Klimagerät."),
+# Einsätze für das Akkordeon: Bild aus dem Theme, Name, Text (mit Zahlen aus dem Katalog), Frage an den Berater
+EINSAETZE = [
+    (1, "Gastronomie", "Edelstahl-Stellbeine für Arbeitstische, Spülen und Kühlmöbel, höhenverstellbar und leicht zu reinigen. {Gastronomiegerät} Modelle für Gastronomiegeräte.",
+     "Ich brauche höhenverstellbare Füße für einen Edelstahl-Arbeitstisch in der Gastronomie."),
+    (3, "Maschinen", "Maschinenfüße mit Gewindespindel von {gew_min} bis {gew_max}, mit oder ohne Bodenbefestigung. {Maschine / Anlage} Modelle für Maschinen und Anlagen.",
+     "Ich suche Maschinenfüße für eine Produktionsmaschine. Was brauchen Sie von mir?"),
+    (4, "CNC", "Schwere Maschinen mit Vibrationen stehen auf Schwingungsdämpfern und Nivellierelementen. {Schwingungsdämpfer} Dämpfer und {Nivellierelement} Nivellierelemente.",
+     "Welche Füße eignen sich für eine schwere CNC-Maschine mit Vibrationen?"),
+    (5, "Fördertechnik", "Gelenkfüße gleichen schiefe Böden aus und halten Förderbänder in der Flucht. {Gelenkfuß} Gelenkfüße mit Preis.",
+     "Ich brauche Gelenkfüße für ein Förderband, der Boden ist uneben."),
+    (9, "Schaltschränke", "Kompakte Stellfüße für Schaltschränke und Gehäuse, die genau im Lot stehen müssen. {Schaltschrank / Gehäuse} Modelle.",
+     "Welche Stellfüße passen unter einen Schaltschrank?"),
+    (10, "Gestelle", "Einschlagfüße für Vierkant- und Rundrohr: ins offene Rohrende schlagen, ohne Schweißen und Bohren. {Einschlagfuß} Einschlagfüße und {Gewindeeinsatz} Gewindeeinsätze.",
+     "Ich brauche Einschlagfüße für eine Werkbank aus Vierkantrohr."),
 ]
+
+# Reihenfolge der Preisliste nach Bauform, mit Mehrzahl für die Überschrift
+BAUFORMEN = [("Stellfuß", "Stellfüße"), ("Stellbein", "Stellbeine"), ("Gelenkfuß", "Gelenkfüße"), ("Einschlagfuß", "Einschlagfüße"),
+             ("Schwingungsdämpfer", "Schwingungsdämpfer"), ("Nivellierelement", "Nivellierelemente"),
+             ("Gewindeeinsatz", "Gewindeeinsätze"), ("Spezialausführung", "Spezialausführungen")]
 
 BEISPIELE = [
     "Stellfuß M12 für eine Maschine, ca. 400 kg",
@@ -96,90 +105,208 @@ BEISPIELE = [
     "Ich weiß nicht, was ich brauche",
 ]
 
-ICON = {
-    "senden": '<path d="M4 12 20 4l-6 16-2.5-6.5z" fill="currentColor"/>',
-    "fuss": '<path d="M12 3v11M9 6h6" stroke="currentColor" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="12" cy="18" rx="7" ry="2.6" fill="currentColor"/>',
-    "check": '<path d="m5 12.5 4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
-}
+
+def euro(x):
+    return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " €"
 
 
-def icon(name, klasse=""):
-    return f'<svg class="{klasse}" viewBox="0 0 24 24" aria-hidden="true">{ICON[name]}</svg>'
+def min_preis(p):
+    w = [v["preis"] for v in p["varianten"]] or [p["preis"]]
+    return min(x for x in w if x)
 
 
-def beraterseite(anzahl):
+def kennzahlen(liste):
+    z = {}
+    for p in liste:
+        m = p["merkmale"]
+        z[m["Bauform"]] = z.get(m["Bauform"], 0) + 1
+        for a in m["Anwendung"].split(", "):
+            z[a] = z.get(a, 0) + 1
+    gew = sorted({int(g.strip()[1:]) for p in liste for g in p["merkmale"].get("Gewinde", "").split(",") if re.fullmatch(r"M\d+", g.strip())})
+    z["gew_min"], z["gew_max"] = f"M{gew[0]}", f"M{gew[-1]}"
+    return z
+
+
+def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone"):
+    """Eigener Rahmen der KI-Seite: Kopfleiste, die die Farbe des Abschnitts darunter annimmt, und Fuß als Wortmarke aus Blöcken."""
+    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Einsätze", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
+    farben = ["koralle", "gelb", "gruen", "bone", "koralle", "gelb", "gruen", "bone", "koralle", "gelb", "gruen"]
+    hoehen = [1, .78, .92, .66, .84, 1, .72, .9, .64, .96]
+    blocks = "".join(f'<span class="bf-block bf-{f}" style="--h:{h}">{c}</span>' + ('<span class="bf-umbruch"></span>' if i == 3 else "")
+                     for i, (c, f, h) in enumerate(zip("BEINUNDFUẞ", farben, hoehen)))
+    mail = e(CFG["anfrage_email"])
+    return f"""<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(titel)}</title>
+<meta name="description" content="{e(beschreibung or 'Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Beschreiben Sie Ihre Anwendung und bestellen Sie den passenden Fuß.')}">
+<meta name="theme-color" content="#1a1a1a">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/ki.css">
+<script>document.documentElement.classList.add("js")</script>
+{kopf}</head>
+<body>
+<a class="bf-skip" href="#inhalt">Zum Inhalt</a>
+<header class="bf-kopf" data-feld="{feld}">
+<a class="bf-marke" href="/">beinundfuß.de</a>
+<nav class="bf-nav" aria-label="Hauptmenü">{nav}</nav>
+<a class="bf-knopf bf-knopf-kopf" href="/#berater">Fuß finden</a>
+</header>
+<main id="inhalt">
+{inhalt}
+</main>
+<footer class="bf-fuss" data-feld="schwarz">
+<a class="bf-wortmarke" href="/" aria-label="beinundfuß.de, zur Startseite"><span aria-hidden="true" class="bf-bloecke">{blocks}</span></a>
+<div class="bf-fuss-raster">
+<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a></nav>
+<nav class="bf-fuss-links" aria-label="Rechtliches"><a href="/kontakt/">Kontaktseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{b.AGB_LINK}</nav>
+<div class="bf-fuss-adresse"><p>{e(CFG['betreiber_zeile'])}<br>TS Systemtechnik, Pfungstadt</p><p><a href="mailto:{mail}">{mail}</a></p></div>
+</div>
+<div class="bf-fuss-ende"><p>Alle Preise netto zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p><a class="bf-knopf bf-knopf-klein" href="#inhalt">Nach oben</a></div>
+</footer>
+<script src="/assets/seite.js" defer></script>
+</body>
+</html>
+"""
+
+
+def textseite(titel, absaetze):
+    return seitenrahmen(f"{titel} | beinundfuß.de", f'<section class="bf-text" data-feld="bone"><h1>{e(titel)}</h1>{absaetze}</section>')
+
+
+def beraterseite(liste):
     api = CFG.get("ki_api", "")
+    anzahl = len(liste)
+    z = kennzahlen(liste)
     chips = "".join(f'<button type="button" class="kb-chip" data-frage="{e(x)}">{e(x)}</button>' for x in BEISPIELE)
-    kacheln = "".join(
-        f'<button type="button" class="kb-anw" data-frage="{e(frage)}">'
-        f'<img src="/assets/anwendungen/anwendung-{nr:02d}.jpg" alt=""><span>{e(titel)}</span></button>'
-        for nr, titel, frage in ANWENDUNGEN)
-    schritte = "".join(
-        f'<li><span class="kb-nr">{i:02d}</span><div><h3>{e(h)}</h3><p>{e(p)}</p></div></li>' for i, (h, p) in enumerate((
-            ("Beschreiben", "Sagen Sie, wofür der Fuß gedacht ist: Gerät, Gewinde oder Rohr, Last, Boden. Was fehlt, fragt der Berater nach."),
-            ("Vorschlag mit Preis", "Sie bekommen passende Produkte mit Skizze oder Foto, technischen Daten und Nettopreis."),
-            ("Bestellen", "Ausführung und Menge wählen, Lieferadresse eintragen. Wir bestätigen die Bestellung per E-Mail."),
-        ), 1))
-    haken = "".join(f'<li>{icon("check")}{e(x)}</li>' for x in (
-        f"{anzahl} Produkte mit festem Nettopreis", "Beratung auch ohne Fachbegriffe", "Ansprechpartner bei TS Systemtechnik in Pfungstadt"))
-    kopf = ('<meta property="og:title" content="beinundfuß.de – Ihr Berater für Stellfüße und Einschlagfüße">'
-            '<meta property="og:description" content="Beschreiben Sie Ihre Anwendung, der Berater schlägt passende Füße mit Preis vor.">'
-            '<meta name="theme-color" content="#1b2836">'
-            '<link rel="preload" href="/assets/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>'
-            '<link rel="stylesheet" href="/assets/ki.css">')
-    return b.seite("beinundfuß.de – Ihr Berater für Stellfüße und Einschlagfüße", f"""
-<a class="kb-skip" href="#ki-text">Direkt zum Berater</a>
-<section class="kb-hero">
-<div class="wrap kb-hero-raster">
-<div class="kb-hero-text">
-<p class="kb-claim"><span></span>Stellfüße, Einschlagfüße und Maschinenfüße</p>
-<h1>Sagen Sie uns, was Ihr Fuß können muss.</h1>
-<p class="kb-lead">Der Berater findet den passenden Fuß für Maschine, Tisch, Regal oder Gerät und nennt Ihnen gleich den Preis.</p>
-<ul class="kb-haken">{haken}</ul>
-</div>
 
-<div class="kb-buehne">
-<div class="kb-chat">
-<div class="kb-chat-kopf">
-<span class="kb-avatar">{icon("fuss")}</span>
-<div><strong>Fußberater</strong><span class="kb-status">KI-Assistent</span></div>
-<button type="button" class="kb-neu" id="ki-neu" title="Neues Gespräch">Neu starten</button>
-</div>
-<div id="ki" class="kb-verlauf" aria-live="polite"></div>
-<div class="kb-chips" id="ki-chips">{chips}</div>
-<form id="ki-eingabe" class="kb-eingabe">
-<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Was brauchen Sie?" aria-label="Ihre Frage" required></textarea>
-<button class="kb-senden" type="submit" aria-label="Senden">{icon("senden")}</button>
-</form>
-</div>
-<p class="kb-hinweis">Sie sprechen mit einer KI. Angaben bitte vor der Bestellung prüfen; verbindlich sind Auftragsbestätigung und Datenblatt.
-Ihre Eingaben werden zur Beantwortung an Anthropic übermittelt, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
-</div>
+    panels = []
+    for i, (nr, name, text, frage) in enumerate(EINSAETZE):
+        offen = " ist-offen" if i == 0 else ""
+        panels.append(
+            f'<div class="kb-akk-panel{offen}" style="--stufe:{i}">'
+            f'<button type="button" class="kb-akk-kopf" aria-expanded="{"true" if i == 0 else "false"}" aria-controls="einsatz-{i}"><span>{e(name)}</span></button>'
+            f'<div class="kb-akk-inhalt" id="einsatz-{i}">'
+            f'<div class="kb-akk-text"><h3>{e(name)}</h3><p>{e(text.format(**z))}</p>'
+            f'<button type="button" class="bf-knopf kb-anw" data-frage="{e(frage)}">Berater fragen</button></div>'
+            f'<img class="kb-sticker" src="/assets/anwendungen/anwendung-{nr:02d}.jpg" width="266" height="180" loading="lazy" '
+            f'alt="Beispiel: {e(name)} mit passendem Fuß"></div></div>')
+
+    gruppen = {}
+    for p in liste:
+        gruppen.setdefault(p["merkmale"]["Bauform"], []).append(p)
+    bars = []
+    for i, (bauform, mehrzahl) in enumerate(BAUFORMEN):
+        l = sorted(gruppen.get(bauform, []), key=min_preis)
+        if not l:
+            continue
+        auswahl = [l[round(k * (len(l) - 1) / 5)] for k in range(6)] if len(l) > 6 else l
+        auswahl = list(dict.fromkeys(p["sku"] for p in auswahl))
+        zeilen = "".join(
+            f'<li><button type="button" data-frage="{e("Ich interessiere mich für „" + p["name"] + "“ (" + p["sku"] + "). Welche Ausführungen gibt es?")}">'
+            f'<span>{e(p["name"])}</span><span class="kb-preis">{"ab " if (p["varianten"] and len(p["varianten"]) > 1) or p["preis_ab"] else ""}{euro(min_preis(p))}</span></button></li>'
+            for p in (next(q for q in l if q["sku"] == s) for s in auswahl))
+        bars.append(f'<details class="kb-bar"{" open" if i == 0 else ""}><summary><span>{e(mehrzahl)}</span>'
+                    f'<span class="kb-bar-info">{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></summary><ul>{zeilen}</ul></details>')
+
+    stell = sorted(gruppen["Stellfuß"], key=min_preis)
+    schlag = sorted(gruppen["Einschlagfuß"], key=min_preis)
+    kopf = ('<meta property="og:title" content="beinundfuß.de: Stellfüße und Einschlagfüße mit Preis">'
+            '<meta property="og:description" content="Beschreiben Sie Ihre Anwendung und bekommen Sie passende Füße mit festem Nettopreis.">')
+    mail = e(CFG["anfrage_email"])
+    return seitenrahmen("beinundfuß.de: Stellfüße und Einschlagfüße mit Preis", f"""
+<section class="kb-hero" data-feld="koralle">
+<h1 class="kb-titel" data-rein><span class="kb-z1">Stellfüße</span><span class="kb-z2">Einschlagfüße</span></h1>
+<img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
+ alt="Stellfüße, Edelstahl-Stellbeine, ein Einschlagfuß mit Flansch und ein Nivellierelement nebeneinander">
+<div class="kb-hero-unten" data-rein>
+<p>{anzahl} Modelle mit festem Nettopreis. Sagen Sie, was Ihr Fuß tragen muss, und Sie bekommen passende Modelle zum Bestellen.</p>
+<p class="kb-aktionen"><a class="bf-knopf bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="kb-link" href="#preise">Alle Preise ansehen</a></p>
 </div>
 </section>
 
-<section class="kb-bild"><div class="wrap"><img src="/assets/hero-fuesse.jpg" alt="Auswahl an Maschinenfüßen, Edelstahl-Stellbeinen, Gelenkfüßen und einem Schwingungsdämpfer"></div></section>
+<section class="kb-berater" id="berater" data-feld="schwarz">
+<div class="kb-berater-text">
+<h2 data-rein>Einfach fragen.</h2>
+<p data-rein>Gerät, Gewinde oder Rohrmaß, ungefähre Last, Boden: Was Sie wissen, reicht. Was fehlt, fragt der Berater nach und zeigt danach passende Füße mit Preis.</p>
+<form class="kb-rechner" id="kb-rechner" data-rein>
+<h3>Last pro Fuß</h3>
+<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">1.310 N</output></p>
+<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gerechnet mit 3 tragenden Füßen, weil auf unebenem Boden oft einer kaum Last trägt.</p>
+<div class="kb-rechner-felder">
+<label>Gewicht in kg<input type="number" id="kb-kg" min="1" max="100000" value="400" inputmode="numeric"></label>
+<label>Anzahl Füße<input type="number" id="kb-anzahl" min="1" max="64" value="4" inputmode="numeric"></label>
+</div>
+<button type="button" class="bf-knopf" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 1.310 N pro Fuß. Welche Füße passen?">Damit Füße suchen</button>
+</form>
+<p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
+</div>
 
-<section class="kb-block"><div class="wrap kb-ablauf">
-<div class="kb-ablauf-kopf"><p class="kb-marke">Ablauf</p><h2>In drei Schritten zum passenden Fuß</h2>
-<p>Kein Katalog zum Durchblättern. Sie beschreiben die Aufgabe, der Berater sucht aus {anzahl} Produkten das Passende.</p></div>
-<ol class="kb-schritte">{schritte}</ol>
-</div></section>
+<div class="kb-chat" data-rein>
+<div class="kb-chat-kopf"><strong>Berater</strong><button type="button" class="kb-neu" id="ki-neu">Neu starten</button></div>
+<div id="ki" class="kb-verlauf" aria-live="polite"></div>
+<div class="kb-chips" id="ki-chips">{chips}</div>
+<form id="ki-eingabe" class="kb-eingabe">
+<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Was soll der Fuß tragen?" aria-label="Ihre Frage" required></textarea>
+<button class="kb-senden" type="submit">Senden</button>
+</form>
+<p class="kb-hinweis">Der Berater ist ein KI-System. Angaben vor der Bestellung bitte prüfen, verbindlich sind Auftragsbestätigung und Datenblatt.
+Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
+</div>
+</section>
 
-<section class="kb-block kb-hell"><div class="wrap">
-<div class="kb-abschnitt-kopf"><div><p class="kb-marke">Anwendungen</p><h2>Wofür brauchen Sie Füße?</h2></div>
-<p>Tippen Sie auf eine Anwendung, und der Berater legt direkt los.</p></div>
-<div class="kb-anwendungen">{kacheln}</div>
-</div></section>
+<section class="kb-einsaetze" id="einsaetze" data-feld="bone">
+<div class="kb-intro">
+<h2 data-rein>Wo Füße arbeiten</h2>
+<p data-rein>Sechs typische Einsätze und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
+</div>
+<div class="kb-akk" data-rein>{"".join(panels)}</div>
+</section>
 
-<section class="kb-block"><div class="wrap"><div class="kb-kontakt">
-<div><p class="kb-marke">Persönlich</p><h2>Lieber mit einem Menschen sprechen?</h2>
-<p>Sonderanfertigungen, große Mengen oder Produkte ohne Online-Preis: Schreiben Sie uns, wir melden uns persönlich.</p></div>
-<a class="btn" href="mailto:{e(CFG['anfrage_email'])}">{e(CFG['anfrage_email'])}</a>
-</div></div></section>
+<section class="kb-vergleich" data-feld="gelb">
+<div class="kb-intro">
+<h2 data-rein>Zwei Arten zu stehen</h2>
+<p data-rein>Ein Stellfuß wird ins Gewinde gedreht, {z['gew_min']} bis {z['gew_max']}, und gleicht über die Spindel Unebenheiten aus.
+Ein Einschlagfuß wird mit dem Hammer ins offene Rohr geschlagen und hält ohne Schweißen und Bohren.</p>
+</div>
+<div class="kb-specimen">
+<figure data-rein><p aria-hidden="true">Drehen</p><figcaption>Stellfuß: {len(stell)} Modelle ab {euro(min_preis(stell[0]))}</figcaption></figure>
+<figure data-rein><p aria-hidden="true">Schlagen</p><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
+</div>
+</section>
+
+<section class="kb-preise" id="preise" data-feld="gruen">
+<div class="kb-preise-text">
+<p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p>
+<p data-rein>Tippen Sie auf ein Modell, und der Berater nennt Ausführungen, Maße und Traglast. Insgesamt {anzahl} Modelle.</p>
+</div>
+<div class="kb-preise-liste">
+<h2 class="kb-riesenwort" data-rein>Preise</h2>
+{"".join(bars)}
+</div>
+</section>
+
+<section class="kb-kontakt" id="kontakt" data-feld="bone">
+<form class="kb-coupon" id="kb-coupon" action="mailto:{mail}" method="post" enctype="text/plain" data-rein>
+<div class="kb-coupon-links">
+<h2>Lieber persönlich?</h2>
+<p>Sonderanfertigung, große Menge oder ein Fuß ohne Online-Preis: TS Systemtechnik in Pfungstadt antwortet persönlich. Das Formular öffnet Ihr E-Mail-Programm.</p>
+</div>
+<div class="kb-coupon-rechts">
+<label><span class="bf-unsichtbar">Name</span><input name="Name" placeholder="Name" autocomplete="name" required></label>
+<label><span class="bf-unsichtbar">E-Mail</span><input name="E-Mail" type="email" placeholder="E-Mail" autocomplete="email" required></label>
+<label><span class="bf-unsichtbar">Telefon</span><input name="Telefon" type="tel" placeholder="Telefon (freiwillig)" autocomplete="tel"></label>
+<label><span class="bf-unsichtbar">Nachricht</span><textarea name="Nachricht" rows="3" placeholder="Was brauchen Sie?" required></textarea></label>
+<button class="bf-knopf kb-coupon-senden" type="submit">Anfrage senden</button>
+</div>
+</form>
+</section>
 <dialog id="ki-bestellen" class="ki-dialog"></dialog>
-<script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{e(CFG['anfrage_email'])}" }};</script>
-<script src="/assets/ki.js" defer></script>""", extra_kopf=kopf)
+<script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{mail}" }};</script>
+<script src="/assets/ki.js" defer></script>""", kopf=kopf, feld="koralle")
 
 
 def main():
@@ -201,16 +328,13 @@ def main():
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "assets/skizzen").mkdir(parents=True)
-    theme_css = re.sub(r"/\*.*?\*/", "", (b.THEME / "style.css").read_text(encoding="utf-8"), count=1, flags=re.S)
-    (OUT / "assets/site.css").write_text(b.CSS + theme_css, encoding="utf-8")
-    shutil.copy(b.THEME / "assets/hero-fuesse.jpg", OUT / "assets/hero-fuesse.jpg")
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
-    for datei in ("ki.js", "ki.css"):
+    for datei in ("ki.js", "ki.css", "seite.js", "fuesse-freigestellt.webp"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#1b2836"/>'
-        '<path d="M16 6v14M12 10h8" stroke="#fff" stroke-width="2.5" fill="none"/><ellipse cx="16" cy="23" rx="8" ry="3" fill="#4fa82e"/></svg>',
+        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#ed4b44"/>'
+        '<path d="M16 5v15M11 9h10" stroke="#1a1a1a" stroke-width="3" fill="none"/><rect x="7" y="21" width="18" height="5" fill="#1a1a1a"/></svg>',
         encoding="utf-8")
     for p in produkte:
         if b.preise(p) and not p["bild"]:
@@ -221,9 +345,9 @@ def main():
         ziel.parent.mkdir(parents=True, exist_ok=True)
         ziel.write_text(text, encoding="utf-8")
 
-    schreibe("", beraterseite(len(liste)))
+    schreibe("", beraterseite(liste))
     mail = e(CFG["anfrage_email"])
-    schreibe("kontakt", b.textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
+    schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'
                                                f"<p>{e(CFG['betreiber_zeile'])}</p>"))
     for pfad, titel in (("impressum", "Impressum"), ("datenschutz", "Datenschutzerklärung"), ("agb", "Allgemeine Geschäftsbedingungen")):
@@ -232,8 +356,8 @@ def main():
             if pfad == "agb":
                 continue
             raise SystemExit(f"Rechtstext fehlt: {datei}")
-        schreibe(pfad, b.textseite(titel, datei.read_text(encoding="utf-8")))
-    (OUT / "404.html").write_text(b.textseite("Seite nicht gefunden", '<p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p>'), encoding="utf-8")
+        schreibe(pfad, textseite(titel, datei.read_text(encoding="utf-8")))
+    (OUT / "404.html").write_text(textseite("Seite nicht gefunden", '<p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p>'), encoding="utf-8")
     (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
 
     if b.BASIS:

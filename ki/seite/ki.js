@@ -204,11 +204,12 @@
     feld.style.height = "";
     feld.style.height = Math.min(feld.scrollHeight, 160) + "px";
   });
-  // Beispielfragen und Anwendungskacheln schicken ihre Frage direkt an den Berater
+  // Beispielfragen, Einsätze, Preisliste und Lastrechner schicken ihre Frage direkt an den Berater
   document.querySelectorAll("[data-frage]").forEach(function (k) {
     k.addEventListener("click", function () {
       if (form.querySelector("button").disabled) return;
-      if (k.classList.contains("kb-anw")) form.scrollIntoView({ behavior: "smooth", block: "center" });
+      // Fragen von außerhalb des Gesprächs (Einsätze, Preisliste, Lastrechner): zum Gespräch scrollen
+      if (!k.closest(".kb-chat")) document.querySelector(".kb-chat").scrollIntoView({ behavior: "smooth", block: "start" });
       senden(k.getAttribute("data-frage"));
     });
   });

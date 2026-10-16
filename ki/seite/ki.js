@@ -80,6 +80,7 @@
     blase("kunde", text);
     if (chips) chips.hidden = true;
     var warte = el("div", "ki-blase ki-berater ki-warte");
+    warte.setAttribute("role", "status");
     warte.setAttribute("aria-label", "Berater schreibt");
     warte.innerHTML = "<span></span><span></span><span></span>";
     box.appendChild(warte); nachUnten();
@@ -116,7 +117,9 @@
   function bestellen(p) {
     dialog.innerHTML = "";
     var f = el("form", "ki-formular");
-    f.appendChild(el("h2", null, "Bestellen"));
+    var titel = el("h2", null, "Bestellen"); titel.id = "ki-bestellen-titel";
+    dialog.setAttribute("aria-labelledby", titel.id);
+    f.appendChild(titel);
     f.appendChild(el("p", "ki-kurz", p.name));
     function zeile(label, name, typ, pflicht, extra) {
       var l = el("label", null, label + (pflicht ? " *" : ""));
@@ -136,7 +139,7 @@
       });
       l.appendChild(auswahl); f.appendChild(l);
     }
-    var menge = zeile("Menge (Stück)", "menge", "number", true, { min: 1, max: 100000, value: 4 });
+    var menge = zeile("Menge (Stück)", "menge", "number", true, { min: 1, max: 100000, value: 4, inputMode: "numeric" });
     var summe = el("p", "ki-preis");
     function rechnen() {
       var st = auswahl ? p.varianten.filter(function (v) { return v.sku === auswahl.value; })[0].preis : p.preis;
@@ -146,20 +149,22 @@
     menge.addEventListener("input", rechnen);
     if (auswahl) auswahl.addEventListener("change", rechnen);
     f.appendChild(summe); rechnen();
-    zeile("Firma", "firma", "text");
+    zeile("Firma", "firma", "text", false, { autocomplete: "organization" });
     zeile("Name", "name", "text", true, { autocomplete: "name" });
-    zeile("E-Mail", "email", "email", true, { autocomplete: "email" });
+    zeile("E-Mail", "email", "email", true, { autocomplete: "email", spellcheck: false });
     zeile("Telefon", "telefon", "tel", false, { autocomplete: "tel" });
-    zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3 });
+    zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3, autocomplete: "street-address" });
     zeile("Hinweis", "hinweis", "textarea", false, { rows: 2 });
     var falle = zeile("Website", "website", "text", false, { tabIndex: -1, autocomplete: "off" });
     falle.parentNode.className = "ki-falle";
+    falle.parentNode.setAttribute("aria-hidden", "true"); // Bot-Falle: für Screenreader unsichtbar, sonst füllen Blinde sie aus
     var zl = el("label", "ki-check");
     var z = el("input"); z.type = "checkbox"; z.name = "zustimmung"; z.required = true;
     zl.appendChild(z);
     zl.appendChild(document.createTextNode(" Ich bin Gewerbetreibender und stimme zu, dass meine Angaben zur Bearbeitung der Bestellung verwendet werden (siehe Datenschutz)."));
     f.appendChild(zl);
     var meldung = el("p", "ki-meldung");
+    meldung.setAttribute("role", "status");
     f.appendChild(meldung);
     var knoepfe = el("div", "ki-knoepfe");
     var ab = el("button", "btn btn-hell", "Abbrechen"); ab.type = "button";
@@ -208,7 +213,7 @@
   document.querySelectorAll("[data-frage]").forEach(function (k) {
     k.addEventListener("click", function () {
       if (form.querySelector("button").disabled) return;
-      if (k.classList.contains("kb-anw")) form.scrollIntoView({ behavior: "smooth", block: "center" });
+      if (k.classList.contains("kb-anw")) form.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
       senden(k.getAttribute("data-frage"));
     });
   });

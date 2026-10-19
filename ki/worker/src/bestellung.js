@@ -97,7 +97,8 @@ export async function senden(env, nr, b, text, abruf = fetch) {
       from: env.ABSENDER,
       to: [env.BESTELL_EMAIL],
       reply_to: b.kunde.email,
-      subject: `Bestellung ${nr}: ${b.menge} × ${b.produkt.name}`,
+      // Nur einfache Zeichen im Betreff: Outlook am Computer meldet sonst "Dateiname ungültig" und zeigt die Mail leer
+      subject: `Bestellung ${nr}`,
       text,
       html: mailHtml(text),
     }),

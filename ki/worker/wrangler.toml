@@ -11,7 +11,7 @@ compatibility_flags = ["nodejs_compat"]
 HERKUNFT = "https://lenn5555.github.io,https://xn--beinundfu-o1a.de,https://www.xn--beinundfu-o1a.de"
 BESTELL_EMAIL = "sales@ts-systec.de"
 # Absender muss bei Resend als Domain bestätigt sein
-ABSENDER = "beinundfuß.de <bestellung@xn--beinundfu-o1a.de>"
+ABSENDER = "Bein und Fuss <bestellung@xn--beinundfu-o1a.de>"
 
 # Schutz gegen Missbrauch: höchstens 20 Anfragen pro Minute und Besucher
 [[ratelimits]]

@@ -75,11 +75,14 @@ export function mailText(nr, b, quelle) {
   return zeilen.join("\n");
 }
 
-// Manche Mail-Apps zeigen reine Textmails leer an, deshalb geht der gleiche Text auch als HTML mit
+// Manche Mail-Apps zeigen reine Textmails leer an, deshalb geht der gleiche Text auch als HTML mit.
+// Einfaches HTML mit <br> statt CSS-Umbrüchen, weil Outlook am Computer kaum CSS kennt.
 export function mailHtml(text) {
   const sicher = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
-    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>');
-  return `<!doctype html><html><body><div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;white-space:pre-wrap">${sicher}</div></body></html>`;
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>')
+    .replace(/\n/g, "<br>\n");
+  return `<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>` +
+    `<body style="background:#ffffff;color:#000000"><p style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000">${sicher}</p></body></html>`;
 }
 
 export function bezugsquelle(sku) {

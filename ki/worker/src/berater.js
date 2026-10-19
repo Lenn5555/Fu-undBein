@@ -86,6 +86,7 @@ export function nachrichtenAus(verlauf) {
 export async function beraten(client, verlauf, modell = MODELL) {
   const messages = nachrichtenAus(verlauf);
   let karten = [];
+  let frueher = ""; // Text aus Runden mit Werkzeugaufruf; oft steht die eigentliche Antwort dort und die letzte Runde ist leer
   for (let runde = 0; runde < MAX_RUNDEN; runde++) {
     const antwort = await client.messages.create({
       model: modell,
@@ -101,8 +102,9 @@ export async function beraten(client, verlauf, modell = MODELL) {
       return { antwort: "Dazu kann ich leider nicht helfen. Bei Fragen zu Stellfüßen und Einschlagfüßen bin ich gern da.", produkte: [] };
     }
     if (antwort.stop_reason !== "tool_use" || !aufrufe.length) {
-      return { antwort: text || "Entschuldigung, da ist etwas schiefgelaufen. Bitte formulieren Sie Ihre Frage noch einmal.", produkte: karten };
+      return { antwort: text || frueher || "Entschuldigung, da ist etwas schiefgelaufen. Bitte formulieren Sie Ihre Frage noch einmal.", produkte: karten };
     }
+    if (text) frueher = frueher ? `${frueher}\n\n${text}` : text;
     messages.push({ role: "assistant", content: antwort.content });
     const ergebnisse = aufrufe.map((a) => {
       const r = a.name === "produkte_zeigen" ? produkteZeigen(a.input) : { fehler: `Unbekanntes Werkzeug ${a.name}` };
@@ -114,7 +116,7 @@ export async function beraten(client, verlauf, modell = MODELL) {
     });
     messages.push({ role: "user", content: ergebnisse });
   }
-  return { antwort: "Hier sind passende Produkte.", produkte: karten };
+  return { antwort: frueher || "Hier sind passende Produkte.", produkte: karten };
 }
 
 export function neuerClient(env) {

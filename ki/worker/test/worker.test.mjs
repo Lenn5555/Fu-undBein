@@ -49,6 +49,18 @@ test("Beraterschleife: Werkzeug, Ergebnis, Abschlusstext", async () => {
   assert.match(ergebnis.content, /Unbekannt und nicht angezeigt: X/);
 });
 
+test("Leere letzte Runde: Text aus der Werkzeugrunde wird die Antwort", async () => {
+  const [a] = KATALOG;
+  const client = falscherClient([
+    { stop_reason: "tool_use", content: [{ type: "text", text: "Für 400 kg auf vier Füßen passt dieser Fuß." },
+      { type: "tool_use", id: "t1", name: "produkte_zeigen", input: { artikelnummern: [a.sku] } }] },
+    { stop_reason: "end_turn", content: [] },
+  ]);
+  const r = await beraten(client, [{ rolle: "kunde", text: "Stellfuß M12, 400 kg" }]);
+  assert.equal(r.antwort, "Für 400 kg auf vier Füßen passt dieser Fuß.");
+  assert.deepEqual(r.produkte.map((k) => k.sku), [a.sku]);
+});
+
 test("Ablehnung führt zu freundlicher Absage ohne Produkte", async () => {
   const client = falscherClient([{ stop_reason: "refusal", content: [] }]);
   const r = await beraten(client, [{ rolle: "kunde", text: "..." }]);

@@ -241,7 +241,7 @@ def beraterseite(liste):
             '<meta property="og:description" content="Beschreiben Sie Ihre Anwendung und bekommen Sie passende Füße mit festem Nettopreis.">')
     mail = e(CFG["anfrage_email"])
     return seitenrahmen("beinundfuß.de: Stellfüße und Einschlagfüße mit Preis", f"""
-<section class="kb-hero" data-feld="koralle">
+<section class="kb-hero" data-feld="gruen">
 <h1 class="kb-titel" data-rein><span class="kb-z1">Stellfüße</span><span class="kb-z2">Einschlagfüße</span></h1>
 <img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
  alt="Stellfüße, Edelstahl-Stellbeine, ein Einschlagfuß mit Flansch und ein Nivellierelement nebeneinander">

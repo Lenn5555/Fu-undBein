@@ -9,6 +9,11 @@ on:
     branches: [main]
     paths: ["ki/worker/**", ".github/workflows/ki-server.yml"]
   workflow_dispatch:
+    inputs:
+      testbestellung:
+        description: "Testbestellung an die Bestelladresse schicken"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -75,6 +80,20 @@ jobs:
           node -e "const d=require('./antwort.json'); console.log(d.antwort||d.fehler); for (const p of d.produkte||[]) console.log('-', p.sku, p.name, p.preis)"
           sleep 3; echo "--- Server-Protokoll ---"; grep -v -i "key" protokoll.txt | tail -20 || true
           node -e "const d=require('./antwort.json'); process.exit(d.antwort ? 0 : 1)"
+      - name: Testbestellung (nur auf Wunsch beim manuellen Start)
+        if: env.HAT_TOKEN == 'true' && inputs.testbestellung
+        run: |
+          node -e "
+            const k = require('./src/katalog.json').find((p) => p.varianten.length);
+            console.log(JSON.stringify({ sku: k.sku, variante: k.varianten[0].sku, menge: 4, firma: 'TEST',
+              name: 'Testbestellung, bitte ignorieren', email: 'sales@ts-systec.de', adresse: 'Test, keine Lieferung',
+              hinweis: 'Automatischer Test der Bestellmail. Bitte nicht bearbeiten.', zustimmung: true }));
+          " > bestellung.json
+          curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bestellen \
+            -H "Origin: https://lenn5555.github.io" -H "Content-Type: application/json" \
+            --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
+          cat ergebnis.json; echo
+          node -e "process.exit(require('./ergebnis.json').ok ? 0 : 1)"
       - name: Hinweis
         if: env.HAT_TOKEN != 'true'
         run: echo "::notice::Noch kein CLOUDFLARE_API_TOKEN hinterlegt, Worker wurde nur getestet."

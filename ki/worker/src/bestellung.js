@@ -75,6 +75,13 @@ export function mailText(nr, b, quelle) {
   return zeilen.join("\n");
 }
 
+// Manche Mail-Apps zeigen reine Textmails leer an, deshalb geht der gleiche Text auch als HTML mit
+export function mailHtml(text) {
+  const sicher = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1">$1</a>');
+  return `<!doctype html><html><body><div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;white-space:pre-wrap">${sicher}</div></body></html>`;
+}
+
 export function bezugsquelle(sku) {
   return BEZUGSQUELLEN[sku] ?? null;
 }
@@ -89,6 +96,7 @@ export async function senden(env, nr, b, text, abruf = fetch) {
       reply_to: b.kunde.email,
       subject: `Bestellung ${nr}: ${b.menge} × ${b.produkt.name}`,
       text,
+      html: mailHtml(text),
     }),
   });
   if (!r.ok) throw new Error(`Mailversand fehlgeschlagen: ${r.status} ${await r.text()}`);

@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { beraten, produkteZeigen, nachrichtenAus, SYSTEM } from "../src/berater.js";
-import { pruefen, mailText, senden } from "../src/bestellung.js";
+import { pruefen, mailText, mailHtml, senden } from "../src/bestellung.js";
 import KATALOG from "../src/katalog.json" with { type: "json" };
 
 // Unterschiebbarer Client: gibt vorbereitete Antworten zurück und merkt sich die Anfragen.
@@ -95,6 +95,9 @@ test("Bestellmail enthält Bezugsquelle, EK und Aufschlag", async () => {
     async (url, opt) => { gesendet = JSON.parse(opt.body); return { ok: true }; });
   assert.deepEqual(gesendet.to, ["sales@ts-systec.de"]);
   assert.equal(gesendet.reply_to, "max@example.com");
+  assert.match(gesendet.html, /Bezugsquelle: Händler X/);
+  assert.match(gesendet.html, /<a href="https:\/\/x\.example\/a">/);
+  assert.doesNotMatch(mailHtml("<b>"), /<b>/);
 });
 
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {

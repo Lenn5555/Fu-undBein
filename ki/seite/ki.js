@@ -279,4 +279,18 @@
     blase(m.rolle, m.text.replace(/\n\n\(Angezeigt: [^)]*\)$/, ""));
     if (m.produkte) kartenZeigen(m.produkte.map(function (s) { return karten[s]; }).filter(Boolean));
   });
+
+  // Links von den Produktseiten: ?frage=… startet das Gespräch, ?bestellen=Artikelnummer öffnet das Bestellformular
+  var q = new URLSearchParams(location.search);
+  if (q.get("frage") || q.get("bestellen")) history.replaceState(null, "", location.pathname + location.hash);
+  if (q.get("frage")) senden(q.get("frage").slice(0, 1500));
+  if (q.get("bestellen")) {
+    fetch((cfg.basis || "") + "/assets/katalog.json")
+      .then(function (r) { return r.json(); })
+      .then(function (liste) {
+        var p = liste.filter(function (x) { return x.sku === q.get("bestellen"); })[0];
+        if (p) bestellen(p);
+      })
+      .catch(function () { /* Formular bleibt zu, der Berater ist trotzdem da */ });
+  }
 })();

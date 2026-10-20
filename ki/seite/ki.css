@@ -221,14 +221,6 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .kb-akk-text .bf-knopf:hover { background: var(--gelb-tief); }
 .kb-sticker { align-self: center; justify-self: center; width: 100%; max-width: 420px; border-radius: var(--r); background: #fff; }
 
-/* 4 Vergleich: zwei Karten mit Szene */
-.kb-vergleich { padding: 112px 0; }
-.kb-specimen { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: var(--breite); margin: 56px auto 0; padding: 0 var(--rand); box-sizing: content-box; }
-.kb-specimen figure { margin: 0; background: var(--weiss); border-radius: var(--r-gross); padding: 32px; display: grid; gap: 8px; align-content: start; }
-.kb-specimen h3 { font-size: var(--step-h3); margin-top: 16px; }
-.kb-specimen figcaption { color: var(--muted); }
-.kb-szene { display: block; width: 100%; max-width: 460px; height: auto; margin: 0 auto; }
-
 /* 5 Preise: Text links, Liste rechts */
 .kb-preise { display: grid; grid-template-columns: repeat(12, 1fr); gap: 32px; padding: 112px max(var(--rand), calc((100vw - var(--breite)) / 2)); }
 .kb-preise-text { grid-column: 1 / 5; display: grid; gap: 16px; align-content: start; position: sticky; top: calc(var(--kopf-h) + 40px); }
@@ -250,7 +242,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 
 /* 6 Kontakt: Karte mit Formular */
 .kb-kontakt { padding: 112px var(--rand); }
-.kb-coupon { max-width: var(--breite); margin: 0 auto; background: var(--weiss); border-radius: var(--r-gross); display: grid; grid-template-columns: 46fr 54fr; overflow: hidden; }
+.kb-coupon { max-width: var(--breite); margin: 0 auto; background: var(--weiss); border: 1px solid var(--hell-2); border-radius: var(--r-gross); display: grid; grid-template-columns: 46fr 54fr; overflow: hidden; }
 .kb-coupon-links { padding: 48px; display: flex; flex-direction: column; gap: 20px; border-right: 1px solid var(--hell-2); }
 .kb-coupon-links p { max-width: 40ch; color: var(--muted); }
 .kb-coupon-rechts { padding: 48px; display: grid; gap: 12px; }
@@ -299,23 +291,6 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .js [data-rein] { opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--v, 0ms); }
 .js [data-rein].ist-da { opacity: 1; transform: none; }
 
-/* Szene 1: Tisch wird über den Stellfuß ausgerichtet */
-.kb-szene g, .kb-szene circle, .kb-szene rect { transform-box: view-box; }
-.an-tisch { transform-origin: 60px 236px; animation: tisch 5s var(--ease) infinite; }
-.an-spindel { animation: spindel 5s var(--ease) infinite; }
-.an-blase { animation: blase-wandert 5s var(--ease) infinite; }
-.an-mutter { transform-origin: 360px 208px; animation: mutter 5s linear infinite; }
-@keyframes tisch { 0%, 12% { transform: rotate(3.2deg); } 60%, 88% { transform: rotate(0); } 100% { transform: rotate(3.2deg); } }
-@keyframes spindel { 0%, 12% { transform: translateY(-17px); } 60%, 88% { transform: translateY(0); } 100% { transform: translateY(-17px); } }
-@keyframes blase-wandert { 0%, 12% { transform: translateX(-28px); } 60%, 88% { transform: translateX(0); } 100% { transform: translateX(-28px); } }
-@keyframes mutter { 0%, 12%, 60%, 100% { transform: scaleX(1); } 18%, 30%, 42%, 54% { transform: scaleX(.45); } 24%, 36%, 48% { transform: scaleX(1); } }
-
-/* Szene 2: Der Rohrrahmen senkt sich auf die beiden Einschlagfüße, die Zapfen verschwinden im Rohr, der Rahmen sitzt bündig auf. */
-.an-rahmen { animation: aufsetzen 5s var(--ease) infinite; }
-.an-text { opacity: 0; animation: text-zeigen 5s infinite; }
-@keyframes aufsetzen { 0%, 24% { transform: translateY(-56px); } 56%, 86% { transform: translateY(0); } 100% { transform: translateY(-56px); } }
-@keyframes text-zeigen { 0%, 54% { opacity: 0; } 60%, 84% { opacity: 1; } 90%, 100% { opacity: 0; } }
-
 @media (max-width: 1100px) {
   .bf-nav { display: none; }
   .kb-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 40px; }
@@ -343,7 +318,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .kb-chat-kopf, .kb-verlauf { padding-left: 16px; padding-right: 16px; }
   .kb-chips, .kb-eingabe, .kb-hinweis { padding-left: 16px; padding-right: 16px; }
   .kb-rechner { padding: 20px; }
-  .kb-einsaetze, .kb-vergleich { padding: 80px 0; }
+  .kb-einsaetze { padding: 80px 0; }
   .kb-akk { flex-direction: column; height: auto; margin-top: 32px; }
   .kb-akk-panel { flex: none; }
   .kb-akk-kopf { position: relative; width: 100%; height: 60px; padding: 0 20px; justify-content: flex-start; align-items: center; }
@@ -352,8 +327,6 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .ist-offen .kb-akk-inhalt { display: grid; grid-template-columns: 1fr; padding: 24px 20px 28px; gap: 24px; }
   .kb-akk-text h3 { font-size: var(--step-h3); }
   .kb-akk-text p { margin-top: 0; }
-  .kb-specimen { grid-template-columns: minmax(0, 1fr); margin-top: 32px; gap: 12px; }
-  .kb-specimen figure { padding: 20px; }
   .kb-preise { padding: 80px var(--rand); gap: 24px; }
   .kb-bar summary { flex-wrap: wrap; gap: 0 12px; padding: 12px 16px; }
   .kb-bar-info { margin-left: 0; order: 3; width: 100%; }
@@ -373,6 +346,5 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js [data-rein] { transform: none; }
-  .kb-band-lauf, .kb-szene * { animation: none !important; }
-  .an-text { opacity: 1; }
+  .kb-band-lauf { animation: none !important; }
 }

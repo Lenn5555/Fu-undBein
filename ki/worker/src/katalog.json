@@ -3750,12 +3750,7 @@
 "preis": 156.82,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M45"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-ni.svg"
 },
 {
@@ -3775,12 +3770,7 @@
 "preis": 131.49,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M45"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-st.svg"
 },
 {
@@ -3800,12 +3790,7 @@
 "preis": 63.49,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M28"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-40-m10-a-b-st.svg"
 },
 {
@@ -3825,12 +3810,7 @@
 "preis": 102.23,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M36"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-ni.svg"
 },
 {
@@ -3850,12 +3830,7 @@
 "preis": 72.93,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M36"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-st.svg"
 },
 {
@@ -3875,12 +3850,7 @@
 "preis": 112.87,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M36"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-ni.svg"
 },
 {
@@ -3900,12 +3870,7 @@
 "preis": 158.85,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M36"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-st.svg"
 },
 {
@@ -4003,12 +3968,7 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M30"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0022.svg"
 },
 {
@@ -4029,12 +3989,7 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M30"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0024.svg"
 },
 {
@@ -4055,12 +4010,7 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M30"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0026.svg"
 },
 {
@@ -4081,12 +4031,7 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M40"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0032.svg"
 },
 {
@@ -4107,12 +4052,7 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M20",
-"M40"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0034.svg"
 },
 {
@@ -4133,12 +4073,7 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M24",
-"M40"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0036.svg"
 },
 {
@@ -4159,12 +4094,7 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M20",
-"M50"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0042.svg"
 },
 {
@@ -4185,12 +4115,7 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M24",
-"M50"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0044.svg"
 },
 {
@@ -4211,12 +4136,7 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M30",
-"M50"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0046.svg"
 },
 {
@@ -4237,12 +4157,7 @@
 "preis": 61.57,
 "preis_ab": true,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M30"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-25120-pendelnd-25120-0226.svg"
 },
 {

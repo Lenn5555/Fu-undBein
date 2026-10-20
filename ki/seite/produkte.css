@@ -42,3 +42,9 @@
 @media (max-width: 560px) { .pr-nr { display: none; } }
 .pr-kurz + .pr-kurz { margin-top: 12px; }
 .pr-kurz + section { margin-top: 40px; }
+
+/* Auswahl zum Anklicken: führt direkt ins Bestellformular */
+.pr-wahl { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px; }
+.pr-pille { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 16px; border: 1px solid var(--linie); border-radius: var(--r-klein);
+  background: var(--weiss); font-weight: 500; font-size: var(--step-small); text-decoration: none; white-space: nowrap; transition: background-color .15s, border-color .15s, color .15s; }
+.pr-pille:hover { background: var(--ink); border-color: var(--ink); color: var(--weiss); }

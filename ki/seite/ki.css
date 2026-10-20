@@ -182,12 +182,17 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-merkmale { list-style: none; margin: 0; padding: 0; font-size: var(--step-small); color: var(--muted); }
 .ki-preis { font-weight: 600; font-size: var(--step-lead); font-variant-numeric: tabular-nums; margin-top: auto; }
 .ki-karte .btn { align-self: flex-start; }
-.ki-wahl { display: grid; gap: 8px; }
-.ki-wahl label { display: grid; gap: 4px; font-size: var(--step-small); font-weight: 500; }
-.ki-wahl select { width: 100%; min-height: 44px; padding: 8px 36px 8px 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss)
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111827' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
-  -webkit-appearance: none; appearance: none; font-size: var(--step-small); cursor: pointer; }
-.ki-wahl select:focus-visible { outline-offset: 0; border-color: #2563eb; }
+.ki-wahl { display: grid; gap: 12px; }
+.ki-wahl-gruppe { border: 0; margin: 0; padding: 0; min-width: 0; }
+.ki-wahl-gruppe legend { padding: 0; margin-bottom: 6px; font-size: var(--step-small); font-weight: 500; }
+.ki-pillen { display: flex; flex-wrap: wrap; gap: 6px; }
+.ki-pille { position: relative; cursor: pointer; }
+.ki-pille input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.ki-pille span { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 14px; border: 1px solid var(--linie); border-radius: var(--r-klein);
+  background: var(--weiss); font-size: var(--step-small); font-weight: 500; line-height: 1.3; transition: background-color .15s, border-color .15s, color .15s; }
+.ki-pille:hover span { border-color: var(--ink); }
+.ki-pille input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--weiss); }
+.ki-pille input:focus-visible + span { outline: 3px solid #2563eb; outline-offset: 2px; }
 
 .kb-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 16px; }
 .kb-chip { background: var(--weiss); border: 1px solid var(--linie); border-radius: 999px; padding: 8px 14px; font-size: var(--step-small); font-weight: 500; cursor: pointer; text-align: left;

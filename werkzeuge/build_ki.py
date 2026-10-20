@@ -41,6 +41,17 @@ def ohne_html(text):
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text or "")).strip()
 
 
+def wahl_gewinde(p):
+    """Gewinde zum Anklicken, wenn eine Serie mehrere anbietet. Nicht bei Einzelartikeln mit zwei Gewinden am selben Teil
+    (z. B. GN 360-52-M12: M12 und M36, Halder 25120.0024: M12 und M30); die erkennt man an Gewinde oder Artikelcode im Namen."""
+    g = p["merkmale"].get("Gewinde")
+    if p["varianten"] or not isinstance(g, list) or len(g) < 2:
+        return {}
+    if any(re.search(rf"(?<![\w]){re.escape(w)}(?!\d)", p["name"]) for w in g) or re.search(r"\.\d{4}\b", p["name"]):
+        return {}
+    return {"Gewinde": g}
+
+
 def katalog(produkte):
     """Kompakte Liste für den Berater; nur was einen Preis hat."""
     liste = []
@@ -56,8 +67,7 @@ def katalog(produkte):
             "varianten": [{"sku": v["sku"], "ausfuehrung": v["ausfuehrung"], "preis": float(v["preis"])}
                           for v in p["varianten"] if v["preis"]],
             # Serien ohne eigene Variantenpreise: das Gewinde ist trotzdem vor der Bestellung zu wählen
-            "optionen": {"Gewinde": p["merkmale"]["Gewinde"]}
-                        if not p["varianten"] and isinstance(p["merkmale"].get("Gewinde"), list) and len(p["merkmale"]["Gewinde"]) > 1 else {},
+            "optionen": wahl_gewinde(p),
             "bild": b.bild_url(p),
         })
     return liste
@@ -443,15 +453,18 @@ def produktseite(p, verwandte, mehrzahl):
         daten = f'<tr><th scope="row">Hersteller</th><td>{e(p["marke"])}</td></tr>' + daten
     ausf = ""
     if p["varianten"]:
-        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-nr">{e(v["sku"])}</td><td class="pr-zahl">{euro(v["preis"])}</td></tr>'
+        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-nr">{e(v["sku"])}</td><td class="pr-zahl">{euro(v["preis"])}</td>'
+                         f'<td class="pr-zahl"><a class="pr-pille" href="/?bestellen={quote(p["sku"])}&amp;variante={quote(v["sku"])}#berater">Bestellen</a></td></tr>'
                          for v in p["varianten"])
         ausf = (f'<h2>Ausführungen und Preise</h2><div class="pr-tabelle"><table><thead><tr><th>Ausführung</th><th class="pr-nr">Artikelnr.</th>'
-                f'<th class="pr-zahl">Preis netto/Stück</th></tr></thead><tbody>{zeilen}</tbody></table></div>')
+                f'<th class="pr-zahl">Preis netto/Stück</th><th class="pr-zahl"><span class="bf-unsichtbar">Bestellen</span></th></tr></thead><tbody>{zeilen}</tbody></table></div>')
     if p["preis_ab"]:
         ausf += "<p class=\"pr-notiz\">Der Preis gilt für die günstigste Ausführung der Serie. Den Preis für Ihre Größe bestätigen wir mit der Auftragsbestätigung.</p>"
     optionen = p.get("optionen") or {}
     if optionen:
-        ausf += "".join(f'<p class="pr-notiz">{e(m)} wählbar: {e(", ".join(w))}. Die Wahl treffen Sie beim Bestellen.</p>' for m, w in optionen.items())
+        ausf += "".join(f'<h2>{e(m)} wählen</h2><p class="pr-wahl">' + "".join(
+            f'<a class="pr-pille" href="/?bestellen={quote(p["sku"])}&amp;{quote("opt-" + m)}={quote(x)}#berater">{e(x)}</a>' for x in w)
+            + '</p><p class="pr-notiz">Ein Klick öffnet das Bestellformular mit dieser Auswahl.</p>' for m, w in optionen.items())
     mehr = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(seo_name(q))}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>'
                    for q in verwandte)
     inhalt = f"""<article class="pr-seite" data-feld="weiss">

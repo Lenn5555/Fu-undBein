@@ -7,3 +7,5 @@ vendor/
 .wrangler/
 ki/worker/src/bezugsquellen.json
 .taste-skill/
+bericht.txt
+betreff.txt

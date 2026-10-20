@@ -74,6 +74,9 @@ Einrichten (einmalig, ohne Terminal):
 3. Unter Actions den Workflow „KI-Server veröffentlichen“ starten. Die Worker-Adresse (…workers.dev) in `daten/site.json` als `ki_api` eintragen.
 
 Suchmaschinen: `build_ki.py` schreibt Canonical-Links, Open-Graph-Vorschau (`ki/seite/vorschau.jpg`), schema.org-Daten, `sitemap.xml` und `robots.txt`.
+Dazu kommen Produktseiten für Google: `/produkte/` (Übersicht), je Bauform eine Kategorieseite (z. B. `/produkte/stellfuesse/`)
+und je Produkt eine Seite mit Daten, Preisen und schema.org-Angebot. „Bestellen“ führt zur Startseite (`/?bestellen=<Artikelnummer>`)
+und öffnet dort das Bestellformular; „Berater fragen“ startet das Gespräch (`/?frage=…`). Die Startseite verlinkt nur unauffällig im Fuß.
 Die Adressen zeigen auf github.io, bis eine Datei `CNAME` im Repo liegt; dann automatisch auf die eigene Domain.
 Den Bestätigungscode der Google Search Console in `daten/site.json` als `google_bestaetigung` eintragen.
 

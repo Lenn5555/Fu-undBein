@@ -19,6 +19,7 @@ import shutil
 import sys
 from datetime import date
 from html import escape as e
+from urllib.parse import quote
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -197,7 +198,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <footer class="bf-fuss" data-feld="dunkel">
 <div class="bf-fuss-kopf"><a class="bf-wortmarke" href="/">beinundfuß.de</a><p>Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Ein Angebot von TS Systemtechnik, Pfungstadt.</p></div>
 <div class="bf-fuss-raster">
-<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a></nav>
+<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a></nav>
 <nav class="bf-fuss-links" aria-label="Rechtliches"><a href="/kontakt/">Kontaktseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{b.AGB_LINK}</nav>
 <div class="bf-fuss-adresse"><p>{e(CFG['betreiber_zeile'])}<br>TS Systemtechnik, Pfungstadt</p><p><a href="mailto:{mail}">{mail}</a></p></div>
 </div>
@@ -400,6 +401,170 @@ Ein Einschlagfuß wird ins offene Rohrende eingesetzt und hält ohne Schweißen 
                      "Anwendung beschreiben, passenden Fuß finden und direkt bestellen.")
 
 
+def preis_ab_text(p):
+    """„ab 7,20 €“, wenn es mehrere Preise gibt oder der Preis für die günstigste Ausführung gilt."""
+    ab = (p["varianten"] and len(p["varianten"]) > 1) or p["preis_ab"]
+    return ("ab " if ab else "") + euro(min_preis(p))
+
+
+def seo_name(p):
+    """Name mit Bauform vorne, damit „Stellfuß“ & Co. in Titel und Überschrift stehen (Herstellernamen allein sucht kaum jemand)."""
+    bauform = p["merkmale"]["Bauform"]
+    stamm = bauform.lower()[:-1] if bauform.lower().endswith(("ß", "n", "r", "z", "t")) else bauform.lower()
+    if bauform == "Spezialausführung" or stamm[:6] in p["name"].lower():
+        return p["name"]
+    return f"{bauform} {p['name']}"
+
+
+# Einleitung je Bauform für die Kategorieseiten: (Überschrift, Text)
+KATEGORIEN = {
+    "Stellfuß": ("Stellfüße kaufen", "Stellfüße, auch Maschinenfüße oder Nivellierfüße genannt, werden mit dem Gewinde in Maschine, Gestell oder Gerät gedreht. "
+                 "Über die Spindel gleichen Sie Bodenunebenheiten aus und richten das Gerät waagerecht aus. Wichtig für die Auswahl sind Gewinde, Traglast und der Teller: "
+                 "mit Gummi gegen Rutschen und Schwingungen, aus Kunststoff oder Stahl für hohe Lasten, mit Bohrung zum Verschrauben am Boden."),
+    "Stellbein": ("Stellbeine kaufen", "Stellbeine sind höhenverstellbare Beine für Tische, Arbeitsplatten, Gastronomie- und Hygienebereiche. "
+                  "Sie werden angeschraubt oder ins Rohr gesteckt und lassen sich in der Höhe fein einstellen. Edelstahl-Ausführungen sind leicht zu reinigen und rostfrei."),
+    "Gelenkfuß": ("Gelenkfüße kaufen", "Gelenkfüße haben ein Kugelgelenk zwischen Gewinde und Teller. Der Teller legt sich auch auf schrägen oder unebenen Böden flach auf, "
+                  "dadurch steht die Maschine sicher und die Last verteilt sich gleichmäßig."),
+    "Einschlagfuß": ("Einschlagfüße kaufen", "Einschlagfüße werden ins offene Ende eines Vierkant- oder Rundrohrs gesteckt oder eingeschlagen und sitzen danach fest, ohne Schweißen und Bohren. "
+                     "Mit Stellteil gleichen sie zusätzlich Unebenheiten aus. Entscheidend ist das passende Rohrmaß."),
+    "Schwingungsdämpfer": ("Schwingungsdämpfer kaufen", "Schwingungsdämpfer und Maschinenlager trennen Maschine und Boden. Sie mindern Vibrationen und Körperschall und schützen Maschine und Umgebung."),
+    "Nivellierelement": ("Nivellierelemente kaufen", "Nivellierelemente richten schwere Maschinen genau aus, oft mit Keil oder Spindel und ohne Bodenbefestigung. Sie tragen hohe Lasten und dämpfen meist zugleich."),
+    "Gewindeeinsatz": ("Gewindeeinsätze kaufen", "Gewindeeinsätze werden in Rohre gesteckt oder eingeschlagen und bieten ein Innengewinde, in das Sie anschließend einen Stellfuß drehen."),
+    "Spezialausführung": ("Spezialausführungen", "Füße und Zubehör für besondere Einsätze."),
+}
+
+
+def kat_url(bauform, absolut=False):
+    return (SITE_URL if absolut else "") + f"/produkte/{b.slug(dict(BAUFORMEN)[bauform])}/"
+
+
+def produkt_url(p, absolut=False):
+    return (SITE_URL if absolut else "") + f"/produkte/{p['slug']}/"
+
+
+def bild_absolut(p):
+    return p["bild"] if p["bild"].startswith("http") else SITE_URL + p["bild"]
+
+
+def produktdaten(p, bauform):
+    """schema.org Product mit Angebot und Brotkrumen, damit Google Preis und Einordnung versteht."""
+    preise = [v["preis"] for v in p["varianten"]] or [p["preis"]]
+    netto = {"@type": "UnitPriceSpecification", "priceCurrency": "EUR", "valueAddedTaxIncluded": False}
+    if len(preise) > 1:
+        angebot = {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": f"{min(preise):.2f}",
+                   "highPrice": f"{max(preise):.2f}", "offerCount": len(preise)}
+    else:
+        angebot = {"@type": "Offer", "priceCurrency": "EUR", "price": f"{preise[0]:.2f}",
+                   "priceSpecification": {**netto, "price": f"{preise[0]:.2f}"}}
+    angebot.update({"url": produkt_url(p, True), "seller": {"@id": f"{SITE_URL}/#shop"},
+                    "eligibleCustomerType": "https://schema.org/Business"})
+    produkt = {"@type": "Product", "name": seo_name(p), "sku": p["sku"], "description": p["kurz"],
+               "image": bild_absolut(p), "url": produkt_url(p, True), "category": bauform, "offers": angebot}
+    if p["marke"]:
+        produkt["brand"] = {"@type": "Brand", "name": p["marke"]}
+    kette = [("Startseite", f"{SITE_URL}/"), ("Produkte", f"{SITE_URL}/produkte/"),
+             (dict(BAUFORMEN)[bauform], kat_url(bauform, True)), (seo_name(p), produkt_url(p, True))]
+    krumen = {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(kette)]}
+    daten = {"@context": "https://schema.org", "@graph": [produkt, krumen]}
+    return f'<script type="application/ld+json">{json.dumps(daten, ensure_ascii=False)}</script>'
+
+
+def produktseite(p, verwandte, mehrzahl):
+    """Eigene Seite je Produkt: Daten, Ausführungen mit Preis, Bestellen und Berater fragen."""
+    bauform = p["merkmale"]["Bauform"]
+    frage = f"Ich interessiere mich für „{p['name']}“ ({p['sku']}). Welche Ausführung passt für meine Anwendung?"
+    bestellen = f"/?bestellen={quote(p['sku'])}#berater"
+    fragen = f"/?frage={quote(frage)}#berater"
+    daten = "".join(f"<tr><th scope=\"row\">{e(k)}</th><td>{e(v)}</td></tr>" for k, v in p["merkmale"].items() if v)
+    if p["marke"]:
+        daten = f'<tr><th scope="row">Hersteller</th><td>{e(p["marke"])}</td></tr>' + daten
+    ausf = ""
+    if p["varianten"]:
+        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-nr">{e(v["sku"])}</td><td class="pr-zahl">{euro(v["preis"])}</td></tr>'
+                         for v in p["varianten"])
+        ausf = (f'<h2>Ausführungen und Preise</h2><div class="pr-tabelle"><table><thead><tr><th>Ausführung</th><th class="pr-nr">Artikelnr.</th>'
+                f'<th class="pr-zahl">Preis netto/Stück</th></tr></thead><tbody>{zeilen}</tbody></table></div>')
+    if p["preis_ab"]:
+        ausf += "<p class=\"pr-notiz\">Der Preis gilt für die günstigste Ausführung der Serie. Den Preis für Ihre Größe bestätigen wir mit der Auftragsbestätigung.</p>"
+    optionen = p.get("optionen") or {}
+    if optionen:
+        ausf += "".join(f'<p class="pr-notiz">{e(m)} wählbar: {e(", ".join(w))}. Die Wahl treffen Sie beim Bestellen.</p>' for m, w in optionen.items())
+    mehr = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(seo_name(q))}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>'
+                   for q in verwandte)
+    inhalt = f"""<article class="pr-seite" data-feld="weiss">
+<nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / <a href="/produkte/">Produkte</a> / <a href="{kat_url(bauform)}">{e(mehrzahl)}</a></nav>
+<div class="pr-kopf">
+<figure class="pr-bild"><img src="{e(p['bild'])}" alt="{e(seo_name(p))}" width="480" height="480" loading="eager"></figure>
+<div class="pr-info">
+<h1>{e(seo_name(p))}</h1>
+<p class="pr-kurz">{e(p['kurz'])}</p>
+<p class="pr-preis">{preis_ab_text(p)} <span>netto pro Stück, zzgl. MwSt. und Versand</span></p>
+<p class="pr-aktionen"><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="{bestellen}">Bestellen</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="{fragen}">Berater fragen</a></p>
+<p class="pr-notiz">Artikelnummer {e(p['sku'])}. Verkauf an Gewerbetreibende. Verbindlich wird die Bestellung mit unserer Auftragsbestätigung.</p>
+</div>
+</div>
+<div class="pr-details">
+<div>{ausf}<h2>Technische Daten</h2><div class="pr-tabelle"><table class="pr-daten"><tbody>{daten}</tbody></table></div></div>
+{f'<aside><h2>Weitere {e(mehrzahl)}</h2><ul class="pr-liste">{mehr}</ul></aside>' if mehr else ''}
+</div>
+</article>"""
+    besch = f"{seo_name(p)}: {p['kurz']} {preis_ab_text(p)} netto. Direkt bestellen bei beinundfuß.de."
+    pfad = f"produkte/{p['slug']}/"
+    SEITEN.append((pfad, "0.8"))
+    return seitenrahmen(f"{seo_name(p)} kaufen | beinundfuß.de", inhalt, beschreibung=besch[:300], kopf=PRODUKT_CSS + produktdaten(p, bauform), pfad=pfad)
+
+
+def produktuebersicht(liste):
+    gruppen = {}
+    for p in liste:
+        gruppen.setdefault(p["merkmale"]["Bauform"], []).append(p)
+    teile = []
+    for bauform, mehrzahl in BAUFORMEN:
+        l = sorted(gruppen.get(bauform, []), key=lambda q: (min_preis(q), q["name"]))
+        if not l:
+            continue
+        zeilen = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(q["name"])}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>' for q in l[:10])
+        teile.append(f'<section id="{b.slug(bauform)}"><h2><a href="{kat_url(bauform)}">{e(mehrzahl)}</a> <span>{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></h2>'
+                     f'<ul class="pr-liste pr-spalten">{zeilen}</ul>'
+                     + (f'<p><a class="pr-mehr" href="{kat_url(bauform)}">Alle {len(l)} {e(mehrzahl)} ansehen</a></p>' if len(l) > 10 else "") + '</section>')
+    inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / Produkte</nav>'
+              f'<h1>Alle Produkte mit Preis</h1><p class="pr-kurz">{len(liste)} Stellfüße, Stellbeine, Gelenkfüße, Einschlagfüße und mehr. '
+              f'Alle Preise netto pro Stück. Unsicher, welcher passt? <a href="/#berater">Fragen Sie den Berater.</a></p>'
+              f'<nav class="pr-sprung" aria-label="Bauformen">{"".join(f"<a href=\"{kat_url(bf)}\">{e(mz)}</a>" for bf, mz in BAUFORMEN if bf in gruppen)}</nav>'
+              f'{"".join(teile)}</article>')
+    SEITEN.append(("produkte/", "0.9"))
+    return seitenrahmen("Stellfüße, Einschlagfüße und Maschinenfüße: alle Produkte mit Preis | beinundfuß.de", inhalt,
+                        beschreibung=f"Alle {len(liste)} Stellfüße, Stellbeine, Gelenkfüße, Einschlagfüße, Schwingungsdämpfer und Nivellierelemente mit festem Nettopreis.",
+                        kopf=PRODUKT_CSS, pfad="produkte/")
+
+
+def kategorieseite(bauform, l):
+    """Seite je Bauform („Stellfüße kaufen“): Einleitung und alle Modelle, für Suchen wie „Stellfuß“ oder „Stellbein“."""
+    mehrzahl = dict(BAUFORMEN)[bauform]
+    titel, text = KATEGORIEN[bauform]
+    l = sorted(l, key=lambda q: (min_preis(q), q["name"]))
+    zeilen = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(q["name"])}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>' for q in l)
+    frage = f"Ich suche {mehrzahl}. Welche passen für meine Anwendung?"
+    inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / '
+              f'<a href="/produkte/">Produkte</a> / {e(mehrzahl)}</nav><h1>{e(titel)}</h1><p class="pr-kurz">{e(text)}</p>'
+              f'<p class="pr-kurz">{len(l)} Modelle ab {euro(min_preis(l[0]))} netto pro Stück. Unsicher, welcher passt? '
+              f'<a href="/?frage={quote(frage)}#berater">Fragen Sie den Berater.</a></p>'
+              f'<section><ul class="pr-liste pr-spalten">{zeilen}</ul></section></article>')
+    pfad = kat_url(bauform)[1:]
+    SEITEN.append((pfad, "0.9"))
+    krumen = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Startseite", "item": f"{SITE_URL}/"},
+        {"@type": "ListItem", "position": 2, "name": "Produkte", "item": f"{SITE_URL}/produkte/"},
+        {"@type": "ListItem", "position": 3, "name": mehrzahl, "item": kat_url(bauform, True)}]}
+    return seitenrahmen(f"{titel}: {len(l)} Modelle mit Preis | beinundfuß.de", inhalt,
+                        beschreibung=f"{len(l)} {mehrzahl} ab {euro(min_preis(l[0]))} netto. {text}"[:300],
+                        kopf=PRODUKT_CSS + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad)
+
+
+PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
+
+
 def main():
     produkte = b.produkte_laden()
     liste = katalog(produkte)
@@ -421,7 +586,7 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
-    for datei in ("ki.js", "ki.css", "seite.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
+    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fece14"/>'
@@ -437,6 +602,20 @@ def main():
         ziel.write_text(text, encoding="utf-8")
 
     schreibe("", beraterseite(liste))
+    # Produktseiten für Google; Katalog (nur Verkaufspreise) als Datei, damit „Bestellen“ auf der Startseite das Formular öffnet
+    mehrzahl = dict(BAUFORMEN)
+    slugs = {p["sku"]: p["slug"] for p in produkte}
+    liste = [{**k, "slug": slugs[k["sku"]]} for k in liste]
+    schreibe("produkte", produktuebersicht(liste))
+    for bauform, _ in BAUFORMEN:
+        l = [q for q in liste if q["merkmale"]["Bauform"] == bauform]
+        if l:
+            schreibe(kat_url(bauform)[1:-1], kategorieseite(bauform, l))
+    for p in liste:
+        gleich = sorted((q for q in liste if q["merkmale"]["Bauform"] == p["merkmale"]["Bauform"] and q["sku"] != p["sku"]),
+                        key=lambda q: abs(min_preis(q) - min_preis(p)))[:6]
+        schreibe(f"produkte/{p['slug']}", produktseite(p, gleich, mehrzahl.get(p["merkmale"]["Bauform"], p["merkmale"]["Bauform"])))
+    shutil.copy(KATALOG, OUT / "assets/katalog.json")
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

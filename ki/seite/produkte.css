@@ -1,0 +1,44 @@
+/* Produktseiten und Produktübersicht; Farben und Knöpfe kommen aus ki.css */
+.pr-seite { padding: calc(var(--kopf-h) + 40px) max(var(--rand), calc((100vw - var(--breite)) / 2)) 96px; }
+.pr-krumen { font-size: var(--step-small); color: var(--muted); margin-bottom: 28px; }
+.pr-krumen a { color: inherit; }
+.pr-kopf { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; }
+.pr-bild { margin: 0; background: var(--hell); border-radius: var(--r-gross); aspect-ratio: 1; display: grid; place-items: center; padding: 32px; }
+.pr-bild img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.pr-seite h1 { font-size: var(--step-h2); line-height: 1.12; margin: 0 0 16px; }
+.pr-kurz { font-size: var(--step-lead); color: var(--muted); max-width: 60ch; }
+.pr-preis { font-size: 2rem; font-weight: 600; letter-spacing: -.02em; margin: 24px 0 4px; font-variant-numeric: tabular-nums; }
+.pr-preis span { display: block; font-size: var(--step-small); font-weight: 400; letter-spacing: 0; color: var(--muted); }
+.pr-aktionen { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 16px; }
+.pr-notiz { font-size: var(--step-small); color: var(--muted); max-width: 70ch; }
+.pr-details { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 48px; margin-top: 64px; }
+.pr-details h2, .pr-seite section h2 { font-size: var(--step-h3); margin: 0 0 16px; }
+.pr-details h2 ~ h2 { margin-top: 40px; }
+.pr-tabelle { overflow-x: auto; }
+.pr-tabelle table { width: 100%; border-collapse: collapse; font-size: var(--step-small); }
+.pr-tabelle th, .pr-tabelle td { text-align: left; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--hell-2); vertical-align: top; }
+.pr-tabelle thead th { color: var(--muted); font-weight: 500; }
+.pr-daten th { width: 38%; font-weight: 500; color: var(--muted); }
+.pr-zahl { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pr-nr { white-space: nowrap; color: var(--muted); }
+.pr-liste { list-style: none; margin: 0; padding: 0; }
+.pr-liste a { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--hell-2); color: var(--ink); text-decoration: none; }
+.pr-liste a:hover span:first-child { text-decoration: underline; }
+.pr-spalten { columns: 2 360px; column-gap: 48px; }
+.pr-spalten li { break-inside: avoid; }
+.pr-sprung { display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0 48px; }
+.pr-sprung a { padding: 8px 14px; border: 1px solid var(--linie); border-radius: 999px; color: var(--ink); text-decoration: none; font-size: var(--step-small); }
+.pr-sprung a:hover { border-color: var(--ink); }
+.pr-seite section { margin-bottom: 56px; scroll-margin-top: calc(var(--kopf-h) + 16px); }
+.pr-seite section h2 span { font-size: var(--step-small); font-weight: 400; color: var(--muted); margin-left: 8px; }
+@media (max-width: 800px) {
+  .pr-kopf, .pr-details { grid-template-columns: 1fr; gap: 32px; }
+  .pr-bild { max-width: 360px; }
+  .pr-details { margin-top: 48px; }
+}
+.pr-seite section h2 a { color: inherit; text-decoration: none; }
+.pr-seite section h2 a:hover { text-decoration: underline; }
+.pr-mehr { display: inline-block; margin-top: 16px; font-weight: 500; color: var(--ink); }
+@media (max-width: 560px) { .pr-nr { display: none; } }
+.pr-kurz + .pr-kurz { margin-top: 12px; }
+.pr-kurz + section { margin-top: 40px; }

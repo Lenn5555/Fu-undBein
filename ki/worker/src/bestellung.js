@@ -4,7 +4,7 @@
 import { NACH_SKU } from "./berater.js";
 import BEZUGSQUELLEN from "./bezugsquellen.json" with { type: "json" };
 
-const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000 };
+const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200 };
 
 function euro(x) {
   return x.toFixed(2).replace(".", ",") + " €";
@@ -20,6 +20,13 @@ export function pruefen(d) {
     variante = p.varianten.find((v) => v.sku === d.variante);
     if (!variante) return { fehler: "Bitte eine Ausführung wählen." };
   }
+  // Wählbare Merkmale ohne eigenen Preis (z. B. Gewinde): nur Werte aus dem Katalog
+  const gewaehlt = {};
+  for (const [merkmal, werte] of Object.entries(p.optionen || {})) {
+    const wahl = d.optionen && typeof d.optionen === "object" ? d.optionen[merkmal] : undefined;
+    if (!werte.includes(wahl)) return { fehler: `Bitte ${merkmal} wählen.` };
+    gewaehlt[merkmal] = wahl;
+  }
   const menge = Number(d.menge);
   if (!Number.isInteger(menge) || menge < 1 || menge > 100000) return { fehler: "Bitte eine Menge zwischen 1 und 100000 angeben." };
   const k = {};
@@ -28,7 +35,7 @@ export function pruefen(d) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(k.email)) return { fehler: "Bitte eine gültige E-Mail-Adresse angeben." };
   if (d.zustimmung !== true) return { fehler: "Bitte der Datenverarbeitung zustimmen." };
   const stueck = variante ? variante.preis : p.preis;
-  return { produkt: p, variante, menge, kunde: k, stueck, summe: Math.round(stueck * menge * 100) / 100 };
+  return { produkt: p, variante, gewaehlt, menge, kunde: k, stueck, summe: Math.round(stueck * menge * 100) / 100 };
 }
 
 export function bestellnummer(jetzt = new Date()) {
@@ -37,14 +44,20 @@ export function bestellnummer(jetzt = new Date()) {
 }
 
 export function mailText(nr, b, quelle) {
-  const { produkt: p, variante: v, menge, kunde: k, stueck, summe } = b;
+  const { produkt: p, variante: v, gewaehlt = {}, menge, kunde: k, stueck, summe } = b;
+  const wahl = Object.entries(gewaehlt).map(([m, w]) => `${m} ${w}`).join(", ");
+  // Eindeutige Kennung der bestellten Ausführung, auch für die Preisüberwachung
+  const kennung = v ? v.sku : [p.sku, ...Object.entries(gewaehlt).map(([m, w]) => `${m}=${w}`)].join("|");
   const zeilen = [
     `Neue Bestellung über den KI-Berater auf beinundfuß.de`,
     `Bestellnummer: ${nr}`,
     ``,
     `PRODUKT`,
     `${p.name}${p.marke ? ` (${p.marke})` : ""}`,
-    `Artikelnummer Shop: ${p.sku}${v ? `, Ausführung: ${v.ausfuehrung} (${v.sku})` : ""}`,
+    `Artikelnummer Shop: ${p.sku}`,
+    `BESTELLTE AUSFÜHRUNG: ${v ? `${v.ausfuehrung} (Artikelnummer ${v.sku})` : wahl || "Serie wie angezeigt, keine Auswahl nötig"}`,
+    ...(k.wunsch ? [`Wunsch des Kunden zur Ausführung: ${k.wunsch}`] : []),
+    `Kennung: ${kennung}`,
     `Menge: ${menge}`,
     `Stückpreis netto: ${euro(stueck)}${p.preis_ab ? " (ab-Preis, günstigste Ausführung der Serie: Ausführung mit dem Kunden klären)" : ""}`,
     `Summe netto: ${euro(summe)} zzgl. MwSt. und Versand`,

@@ -54,13 +54,58 @@
       if (p.merkmale[n]) m.appendChild(el("li", null, n + ": " + p.merkmale[n]));
     });
     t.appendChild(m);
-    t.appendChild(el("p", "ki-preis", preisText(p)));
+    var preis = el("p", "ki-preis", preisText(p));
+    var wahl = auswahlFelder(p, function () {
+      var v = wahl.variante();
+      preis.textContent = v ? euro(v.preis) + " netto pro Stück" : preisText(p);
+    });
+    if (wahl.feld) { t.appendChild(wahl.feld); var v0 = wahl.variante(); if (v0) preis.textContent = euro(v0.preis) + " netto pro Stück"; }
+    t.appendChild(preis);
     var knopf = el("button", "btn", "Bestellen");
     knopf.type = "button";
-    knopf.addEventListener("click", function () { bestellen(p); });
+    knopf.addEventListener("click", function () { bestellen(p, wahl.werte()); });
     t.appendChild(knopf);
     k.appendChild(t);
     return k;
+  }
+
+  // Auswahlfelder für Ausführungen mit eigenem Preis (Varianten) und für wählbare Merkmale wie das Gewinde
+  function auswahlFelder(p, beiAenderung, vorher) {
+    vorher = vorher || {};
+    var feld = null, selects = {}, varSel = null;
+    function neu(label, name) {
+      if (!feld) feld = el("div", "ki-wahl");
+      var l = el("label", null, label);
+      var s = el("select"); s.name = name; s.required = true;
+      l.appendChild(s); feld.appendChild(l);
+      s.addEventListener("change", beiAenderung);
+      return s;
+    }
+    if (p.varianten.length > 1 || (p.varianten.length === 1 && p.preis_ab)) {
+      varSel = neu("Ausführung", "variante");
+      p.varianten.forEach(function (v) { var o = el("option", null, v.ausfuehrung + " – " + euro(v.preis)); o.value = v.sku; varSel.appendChild(o); });
+      if (vorher.variante) varSel.value = vorher.variante;
+    }
+    Object.keys(p.optionen || {}).forEach(function (m) {
+      var s = neu(m, "opt-" + m);
+      var leer = el("option", null, "Bitte wählen"); leer.value = ""; s.appendChild(leer);
+      p.optionen[m].forEach(function (w) { var o = el("option", null, w); o.value = w; s.appendChild(o); });
+      if (vorher.optionen && vorher.optionen[m]) s.value = vorher.optionen[m];
+      selects[m] = s;
+    });
+    return {
+      feld: feld,
+      variante: function () {
+        var sku = varSel ? varSel.value : (p.varianten.length === 1 ? p.varianten[0].sku : null);
+        return p.varianten.filter(function (v) { return v.sku === sku; })[0] || null;
+      },
+      werte: function () {
+        var o = {};
+        Object.keys(selects).forEach(function (m) { if (selects[m].value) o[m] = selects[m].value; });
+        var v = this.variante();
+        return { variante: v ? v.sku : null, optionen: o };
+      }
+    };
   }
 
   function kartenZeigen(liste) {
@@ -113,7 +158,7 @@
       .then(function () { form.querySelector("button").disabled = false; feld.focus(); });
   }
 
-  function bestellen(p) {
+  function bestellen(p, vorher) {
     dialog.innerHTML = "";
     var f = el("form", "ki-formular");
     f.appendChild(el("h2", null, "Bestellen"));
@@ -127,24 +172,18 @@
       l.appendChild(i); f.appendChild(l);
       return i;
     }
-    var auswahl = null;
-    if (p.varianten.length) {
-      var l = el("label", null, "Ausführung *");
-      auswahl = el("select"); auswahl.name = "variante"; auswahl.required = true;
-      p.varianten.forEach(function (v) {
-        var o = el("option", null, v.ausfuehrung + " – " + euro(v.preis)); o.value = v.sku; auswahl.appendChild(o);
-      });
-      l.appendChild(auswahl); f.appendChild(l);
-    }
+    var wahl = auswahlFelder(p, function () { rechnen(); }, vorher);
+    if (wahl.feld) f.appendChild(wahl.feld);
+    if (p.preis_ab) zeile("Größe oder Ausführung, falls schon bekannt", "wunsch", "text", false, { maxLength: 200, placeholder: "z. B. Länge 125 mm, Artikelnummer des Herstellers" });
     var menge = zeile("Menge (Stück)", "menge", "number", true, { min: 1, max: 100000, value: 4 });
     var summe = el("p", "ki-preis");
     function rechnen() {
-      var st = auswahl ? p.varianten.filter(function (v) { return v.sku === auswahl.value; })[0].preis : p.preis;
+      var v = wahl.variante();
+      var st = v ? v.preis : p.preis;
       var n = parseInt(menge.value, 10) || 0;
-      summe.textContent = "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab ? " (ab-Preis, Ausführung bestätigen wir)" : "");
+      summe.textContent = "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab && !v ? " (ab-Preis, den Preis für Ihre Ausführung bestätigen wir)" : "");
     }
     menge.addEventListener("input", rechnen);
-    if (auswahl) auswahl.addEventListener("change", rechnen);
     f.appendChild(summe); rechnen();
     zeile("Firma", "firma", "text");
     zeile("Name", "name", "text", true, { autocomplete: "name" });
@@ -171,7 +210,10 @@
     f.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var d = {};
-      new FormData(f).forEach(function (v, k) { d[k] = v; });
+      new FormData(f).forEach(function (v, k) { if (k.indexOf("opt-") !== 0) d[k] = v; });
+      var w = wahl.werte();
+      if (w.variante) d.variante = w.variante;
+      d.optionen = w.optionen;
       d.sku = p.sku; d.menge = parseInt(d.menge, 10); d.zustimmung = z.checked;
       ok.disabled = true; meldung.textContent = "Wird gesendet …";
       if (!cfg.api) { meldung.textContent = "Online-Bestellung ist noch nicht verbunden."; ok.disabled = false; return; }

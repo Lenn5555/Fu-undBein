@@ -48,6 +48,9 @@ def katalog(produkte):
             "preis_ab": p["preis_ab"],  # Preis gilt für die günstigste Ausführung der Serie
             "varianten": [{"sku": v["sku"], "ausfuehrung": v["ausfuehrung"], "preis": float(v["preis"])}
                           for v in p["varianten"] if v["preis"]],
+            # Serien ohne eigene Variantenpreise: das Gewinde ist trotzdem vor der Bestellung zu wählen
+            "optionen": {"Gewinde": p["merkmale"]["Gewinde"]}
+                        if not p["varianten"] and isinstance(p["merkmale"].get("Gewinde"), list) and len(p["merkmale"]["Gewinde"]) > 1 else {},
             "bild": b.bild_url(p),
         })
     return liste
@@ -99,7 +102,7 @@ BAUFORMEN = [("Stellfuß", "Stellfüße"), ("Stellbein", "Stellbeine"), ("Gelenk
              ("Gewindeeinsatz", "Gewindeeinsätze"), ("Spezialausführung", "Spezialausführungen")]
 
 
-# Zwei kleine Szenen für den Vergleich: Stellfuß wird herausgedreht, Einschlagfuß wird mit dem Gummihammer ins Rohr getrieben
+# Zwei kleine Szenen für den Vergleich: Stellfuß wird herausgedreht, Rohrrahmen wird auf Einschlagfüße gesetzt
 SZENE_DREHEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein schiefer Tisch wird mit einem Stellfuß ausgerichtet, die Libelle wandert in die Mitte">
 <rect x="0" y="236" width="420" height="24" fill="#d1d5db"/>
 <g class="an-tisch">
@@ -111,20 +114,17 @@ SZENE_DREHEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-la
 </g>
 </svg>"""
 
-SZENE_SCHLAGEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein Gummihammer treibt einen Einschlagfuß in drei Schlägen in das offene Ende eines Vierkantrohrs, bis der Fuß bündig aufsitzt">
+SZENE_SCHLAGEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein Rohrrahmen wird auf zwei Einschlagfüße gesetzt, die Zapfen verschwinden im Rohr, bis der Rahmen bündig auf den Füßen steht">
 <rect x="0" y="236" width="420" height="24" fill="#d1d5db"/>
-<rect x="178" y="130" width="64" height="106" fill="#e5e7eb"/>
-<g class="an-fuss">
-<rect x="180" y="80" width="60" height="50" fill="#6b7280"/>
-<rect x="177" y="88" width="66" height="5" fill="#4b5563"/><rect x="177" y="100" width="66" height="5" fill="#4b5563"/><rect x="177" y="112" width="66" height="5" fill="#4b5563"/>
-<rect x="160" y="64" width="100" height="16" rx="3" fill="#111827"/>
+<g fill="#6b7280"><rect x="55" y="196" width="14" height="30"/><rect x="351" y="196" width="14" height="30"/></g>
+<g fill="#4b5563"><rect x="53" y="202" width="18" height="3"/><rect x="53" y="210" width="18" height="3"/><rect x="53" y="218" width="18" height="3"/>
+<rect x="349" y="202" width="18" height="3"/><rect x="349" y="210" width="18" height="3"/><rect x="349" y="218" width="18" height="3"/></g>
+<g fill="#111827"><rect x="42" y="226" width="40" height="10" rx="2"/><rect x="338" y="226" width="40" height="10" rx="2"/></g>
+<g class="an-rahmen">
+<rect x="30" y="70" width="360" height="22" rx="2" fill="#111827"/>
+<rect x="52" y="92" width="20" height="134" fill="#374151"/><rect x="348" y="92" width="20" height="134" fill="#374151"/>
 </g>
-<rect x="170" y="130" width="8" height="106" fill="#374151"/><rect x="242" y="130" width="8" height="106" fill="#374151"/>
-<g class="an-hammer">
-<rect x="236" y="36" width="170" height="10" rx="5" fill="#fece14"/>
-<rect x="178" y="18" width="64" height="46" rx="8" fill="#111827"/>
-</g>
-<g class="an-text"><text x="210" y="252" text-anchor="middle" font-size="13" font-family="Poppins, Arial, sans-serif" fill="#111827">bündig, ohne Schweißen</text></g>
+<g class="an-text"><text x="210" y="252" text-anchor="middle" font-size="13" font-family="Poppins, Arial, sans-serif" fill="#111827">einstecken, fertig: ohne Schweißen und Bohren</text></g>
 </svg>"""
 
 BEISPIELE = [
@@ -305,11 +305,11 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <div class="kb-intro">
 <h2 data-rein>Zwei Arten zu stehen</h2>
 <p data-rein>Ein Stellfuß wird ins Gewinde gedreht, {z['gew_min']} bis {z['gew_max']}, und gleicht über die Spindel Unebenheiten aus.
-Ein Einschlagfuß wird mit dem Hammer ins offene Rohr geschlagen und hält ohne Schweißen und Bohren.</p>
+Ein Einschlagfuß wird ins offene Rohrende eingesetzt und hält ohne Schweißen und Bohren.</p>
 </div>
 <div class="kb-specimen">
 <figure data-rein>{SZENE_DREHEN}<h3>Drehen</h3><figcaption>Stellfuß: {len(stell)} Modelle ab {euro(min_preis(stell[0]))}</figcaption></figure>
-<figure data-rein>{SZENE_SCHLAGEN}<h3>Schlagen</h3><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
+<figure data-rein>{SZENE_SCHLAGEN}<h3>Einstecken</h3><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
 </div>
 </section>
 

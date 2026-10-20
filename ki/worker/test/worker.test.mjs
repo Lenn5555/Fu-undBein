@@ -71,7 +71,7 @@ const KUNDE = { name: "Max Muster", email: "max@example.com", adresse: "Weg 1, 1
 
 test("Bestellung prüfen: Varianten, Menge, Pflichtfelder, Falle", () => {
   const mitVar = KATALOG.find((p) => p.varianten.length);
-  const ohne = KATALOG.find((p) => !p.varianten.length);
+  const ohne = KATALOG.find((p) => !p.varianten.length && !Object.keys(p.optionen || {}).length);
   assert.match(pruefen({ ...KUNDE, sku: mitVar.sku, menge: 2 }).fehler, /Ausführung/);
   const ok = pruefen({ ...KUNDE, sku: mitVar.sku, variante: mitVar.varianten[1].sku, menge: 3 });
   assert.equal(ok.summe, Math.round(mitVar.varianten[1].preis * 300) / 100);
@@ -83,7 +83,7 @@ test("Bestellung prüfen: Varianten, Menge, Pflichtfelder, Falle", () => {
 });
 
 test("Bestellmail enthält Bezugsquelle, EK und Aufschlag", async () => {
-  const p = KATALOG.find((p) => !p.varianten.length);
+  const p = KATALOG.find((p) => !p.varianten.length && !Object.keys(p.optionen || {}).length);
   const b = pruefen({ ...KUNDE, sku: p.sku, menge: 10 });
   const text = mailText("BF-1", b, { bezugsquelle: "Händler X", bestell_url: "https://x.example/a", ek_netto: p.preis / 1.1, hersteller: "H" });
   assert.match(text, /Bezugsquelle: Händler X/);
@@ -98,6 +98,30 @@ test("Bestellmail enthält Bezugsquelle, EK und Aufschlag", async () => {
   assert.match(gesendet.html, /Bezugsquelle: Händler X/);
   assert.match(gesendet.html, /<a href="https:\/\/x\.example\/a">/);
   assert.doesNotMatch(mailHtml("<b>"), /<b>/);
+});
+
+test("Wählbares Gewinde wird geprüft und steht in der Bestellmail", () => {
+  const p = KATALOG.find((p) => Object.keys(p.optionen || {}).length);
+  assert.ok(p, "Katalog enthält Serien mit wählbarem Gewinde");
+  const werte = p.optionen.Gewinde;
+  assert.match(pruefen({ ...KUNDE, sku: p.sku, menge: 2 }).fehler, /Gewinde/);
+  assert.match(pruefen({ ...KUNDE, sku: p.sku, menge: 2, optionen: { Gewinde: "M999" } }).fehler, /Gewinde/);
+  const b = pruefen({ ...KUNDE, sku: p.sku, menge: 2, optionen: { Gewinde: werte[1] }, wunsch: "Länge 125 mm" });
+  assert.ok(!b.fehler, b.fehler);
+  const text = mailText("BF-3", b, null);
+  assert.match(text, new RegExp(`BESTELLTE AUSFÜHRUNG: Gewinde ${werte[1]}`));
+  assert.match(text, /Wunsch des Kunden zur Ausführung: Länge 125 mm/);
+  assert.match(text, new RegExp(`Kennung: ${p.sku}\\|Gewinde=${werte[1]}`));
+});
+
+test("Gewählte Variante steht mit Artikelnummer in der Bestellmail", () => {
+  const p = KATALOG.find((p) => p.varianten.length > 1);
+  const v = p.varianten[1];
+  const b = pruefen({ ...KUNDE, sku: p.sku, variante: v.sku, menge: 3 });
+  assert.equal(b.stueck, v.preis);
+  const text = mailText("BF-4", b, null);
+  assert.match(text, new RegExp(`BESTELLTE AUSFÜHRUNG: .*Artikelnummer ${v.sku}`));
+  assert.match(text, new RegExp(`Kennung: ${v.sku}`));
 });
 
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {

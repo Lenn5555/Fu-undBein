@@ -493,7 +493,8 @@ def main(argv):
                      "(oft nur vorübergehend, wird nicht ausgeblendet).")
 
     # Mail nur, wenn sich etwas ändert oder Lenn entscheiden muss (Wunsch 20.10.2026: kein Bericht, wenn alles ok ist)
-    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse)
+    widerspruch = any(h.startswith("zweite Lesung") for *_, h in unsicher)
+    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse or widerspruch)
     kopf = (f"Preiswächter {heute}: {geprueft} Händlerseiten geprüft, {erreichbar} erreichbar, "
             f"{len(ergebnisse)} Artikel.")
     bericht = kopf + "\n\n" + ("\n\n".join(teile) if teile else "Alles unverändert.") + "\n"

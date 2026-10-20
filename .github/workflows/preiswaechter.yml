@@ -8,9 +8,6 @@ name: Preiswächter
 on:
   schedule:
     - cron: "15 4 * * *"   # täglich 6:15 Uhr Sommerzeit / 5:15 Uhr Winterzeit
-  push:   # vorübergehend: Probelauf auf dem Entwicklungszweig, ändert nichts und mailt nicht
-    branches: [claude/project-thread-40doss]
-    paths: ["werkzeuge/preiswaechter*.py", ".github/workflows/preiswaechter.yml"]
   workflow_dispatch:
     inputs:
       nur_melden:

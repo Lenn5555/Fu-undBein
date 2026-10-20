@@ -38,6 +38,7 @@
 "preis": 8.45
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Zinkdruckguss2530mm.png"
 },
 {
@@ -69,6 +70,7 @@
 "preis": 8.95
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/11/Zinkdruckguss_35_351.gif"
 },
 {
@@ -98,6 +100,7 @@
 "preis": 5.85
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/Kunststoff3035.png"
 },
 {
@@ -129,6 +132,7 @@
 "preis": 13.7
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff4040.png"
 },
 {
@@ -179,6 +183,7 @@
 "preis": 9.25
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/02Kunststoff4040.png"
 },
 {
@@ -213,6 +218,7 @@
 "preis": 11.75
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/03Zink4040.png"
 },
 {
@@ -258,6 +264,7 @@
 "preis": 8.2
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff40440-e1708349348686.png"
 },
 {
@@ -289,6 +296,7 @@
 "preis": 7.4
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff40440-e1708349348686.png"
 },
 {
@@ -320,6 +328,7 @@
 "preis": 9.45
 }
 ],
+"optionen": {},
 "bild": "/assets/skizzen/einschlagfuss-fuer-vierkantrohr-40-mm-lange-ausfuehrung.svg"
 },
 {
@@ -356,6 +365,7 @@
 "preis": 13.95
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/04/02vierkant50flansch.png"
 },
 {
@@ -385,6 +395,7 @@
 "preis": 16.55
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2017/11/Einschlagfuesse-Vierkant_50mm-2.jpg"
 },
 {
@@ -416,6 +427,7 @@
 "preis": 4.9
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/01Kunststoff3845.png"
 },
 {
@@ -468,6 +480,7 @@
 "preis": 11.5
 }
 ],
+"optionen": {},
 "bild": "https://ts-systemtechnik.de/wp-content/uploads/2016/02/0463.png"
 },
 {
@@ -486,6 +499,12 @@
 "preis": 31.91,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-100.svg"
 },
 {
@@ -504,6 +523,12 @@
 "preis": 56.74,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M20",
+"M24"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-120.svg"
 },
 {
@@ -522,6 +547,7 @@
 "preis": 11.33,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-30.svg"
 },
 {
@@ -540,6 +566,12 @@
 "preis": 9.66,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M8",
+"M10"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-40.svg"
 },
 {
@@ -558,6 +590,7 @@
 "preis": 19.33,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-50.svg"
 },
 {
@@ -576,6 +609,12 @@
 "preis": 16.97,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-60.svg"
 },
 {
@@ -594,6 +633,7 @@
 "preis": 24.51,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-65.svg"
 },
 {
@@ -612,6 +652,12 @@
 "preis": 21.64,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M20"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-75.svg"
 },
 {
@@ -630,6 +676,7 @@
 "preis": 33.23,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-80.svg"
 },
 {
@@ -648,6 +695,14 @@
 "preis": 48.14,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M20",
+"M24",
+"M30"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-100.svg"
 },
 {
@@ -666,6 +721,15 @@
 "preis": 51.08,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M20",
+"M24",
+"M30",
+"M36"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-120.svg"
 },
 {
@@ -684,6 +748,7 @@
 "preis": 70.84,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-150.svg"
 },
 {
@@ -703,6 +768,14 @@
 "preis": 43.23,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-60.svg"
 },
 {
@@ -721,6 +794,7 @@
 "preis": 71.03,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-teknoclean-100.svg"
 },
 {
@@ -739,6 +813,7 @@
 "preis": 23.91,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-teknoclean-60.svg"
 },
 {
@@ -757,6 +832,12 @@
 "preis": 27.27,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/martin-levelling-teknoclean-80.svg"
 },
 {
@@ -775,6 +856,7 @@
 "preis": 11.2,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850020-stellfuss-44-5-56-5-m10x30.svg"
 },
 {
@@ -793,6 +875,7 @@
 "preis": 9.86,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850030-stellfuss-56-6-64-m10x30.svg"
 },
 {
@@ -811,6 +894,7 @@
 "preis": 9.36,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850030-m12-stellfuss-56-6-64-m12x30.svg"
 },
 {
@@ -829,6 +913,7 @@
 "preis": 9.86,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850039-n-stellfuss-44-5-52-m10.svg"
 },
 {
@@ -847,6 +932,7 @@
 "preis": 11.25,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850039-v-stellfuss-44-5-52-m10.svg"
 },
 {
@@ -865,6 +951,7 @@
 "preis": 10.22,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850040-stellfuss-44-5-56-5-m10.svg"
 },
 {
@@ -883,6 +970,7 @@
 "preis": 11.25,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850050-stellfuss-56-6-64-m10.svg"
 },
 {
@@ -902,6 +990,7 @@
 "preis": 181.8,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-237-8166-stellfuss-m24-100.svg"
 },
 {
@@ -921,6 +1010,7 @@
 "preis": 106.73,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-237-8168-stellfuss-m16-80.svg"
 },
 {
@@ -940,6 +1030,7 @@
 "preis": 255.24,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-237-8186-stellfuss-m24-100-2500-kg.svg"
 },
 {
@@ -959,6 +1050,7 @@
 "preis": 219.64,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-237-8188-stellfuss-m12-60.svg"
 },
 {
@@ -978,6 +1070,7 @@
 "preis": 196.27,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-237-8200-stellfuss-m16-80-lang.svg"
 },
 {
@@ -995,6 +1088,7 @@
 "preis": 12.03,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850000-reduziersockel-56-5-44-5-h180.svg"
 },
 {
@@ -1012,6 +1106,7 @@
 "preis": 12.99,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850010-reduziersockel-64-56-6-h180.svg"
 },
 {
@@ -1030,6 +1125,7 @@
 "preis": 8.88,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850019-stellfuss-30-40-m10x15.svg"
 },
 {
@@ -1048,6 +1144,7 @@
 "preis": 8.9,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/movet-45850019-f-stellfuss-30-40-m10x15-mit-lasche.svg"
 },
 {
@@ -1068,6 +1165,7 @@
 "preis": 2.81,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-448-gewindebuchse-20.svg"
 },
 {
@@ -1088,6 +1186,14 @@
 "preis": 4.09,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12",
+"M14",
+"M16"
+]
+},
 "bild": "/assets/skizzen/kipp-k0431-gewindestopfen-30.svg"
 },
 {
@@ -1108,6 +1214,13 @@
 "preis": 4.61,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12",
+"M16"
+]
+},
 "bild": "/assets/skizzen/kipp-k0431-gewindestopfen-38.svg"
 },
 {
@@ -1128,6 +1241,15 @@
 "preis": 5.14,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0431-gewindestopfen-42-4.svg"
 },
 {
@@ -1148,6 +1270,14 @@
 "preis": 5.9,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0431-gewindestopfen-48-3.svg"
 },
 {
@@ -1168,6 +1298,14 @@
 "preis": 6.24,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0431-gewindestopfen-50-9.svg"
 },
 {
@@ -1188,6 +1326,14 @@
 "preis": 4.15,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M8",
+"M10",
+"M12",
+"M16"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-348-elesa-nd-q-gewindebuchse-30x30.svg"
 },
 {
@@ -1208,6 +1354,7 @@
 "preis": 2.64,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-448-gewindebuchse-v-20.svg"
 },
 {
@@ -1228,6 +1375,14 @@
 "preis": 3.83,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12",
+"M14",
+"M16"
+]
+},
 "bild": "/assets/skizzen/kipp-k0430-gewindestopfen-30x30.svg"
 },
 {
@@ -1248,6 +1403,15 @@
 "preis": 4.05,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0430-gewindestopfen-40x40.svg"
 },
 {
@@ -1268,6 +1432,14 @@
 "preis": 6.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0430-gewindestopfen-50x50.svg"
 },
 {
@@ -1288,6 +1460,13 @@
 "preis": 6.49,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M14",
+"M16",
+"M20"
+]
+},
 "bild": "/assets/skizzen/kipp-k0430-gewindestopfen-60x60.svg"
 },
 {
@@ -1308,6 +1487,7 @@
 "preis": 6.89,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-345-m16.svg"
 },
 {
@@ -1328,6 +1508,7 @@
 "preis": 8.78,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-345-m20.svg"
 },
 {
@@ -1348,6 +1529,7 @@
 "preis": 7.49,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-445-m10.svg"
 },
 {
@@ -1368,6 +1550,7 @@
 "preis": 6.51,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-445-m12.svg"
 },
 {
@@ -1388,6 +1571,7 @@
 "preis": 12.24,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-445-m14.svg"
 },
 {
@@ -1408,6 +1592,7 @@
 "preis": 7.54,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-pressstahl-oval-65-m12x100-mit-bohrungen-typ-45815768.svg"
 },
 {
@@ -1428,6 +1613,7 @@
 "preis": 12.03,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-pressstahl-oval-65-m12x150-mutter-bohrungen-nbr-typ-45815770-g.svg"
 },
 {
@@ -1447,6 +1633,7 @@
 "preis": 9.71,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m10.svg"
 },
 {
@@ -1466,6 +1653,7 @@
 "preis": 9.76,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m12.svg"
 },
 {
@@ -1485,6 +1673,7 @@
 "preis": 9.78,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m14.svg"
 },
 {
@@ -1504,6 +1693,7 @@
 "preis": 12.82,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m16.svg"
 },
 {
@@ -1523,6 +1713,7 @@
 "preis": 20.22,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m20.svg"
 },
 {
@@ -1542,6 +1733,7 @@
 "preis": 30.55,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0375-m24.svg"
 },
 {
@@ -1561,6 +1753,7 @@
 "preis": 12.75,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-6311-4-m16.svg"
 },
 {
@@ -1579,6 +1772,7 @@
 "preis": 4.85,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m10.svg"
 },
 {
@@ -1597,6 +1791,7 @@
 "preis": 5.04,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m12.svg"
 },
 {
@@ -1614,6 +1809,7 @@
 "preis": 5.72,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m16.svg"
 },
 {
@@ -1631,6 +1827,7 @@
 "preis": 8.97,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m20.svg"
 },
 {
@@ -1648,6 +1845,7 @@
 "preis": 14.19,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m24.svg"
 },
 {
@@ -1666,6 +1864,7 @@
 "preis": 4.62,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m8.svg"
 },
 {
@@ -1684,6 +1883,7 @@
 "preis": 5.59,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m10.svg"
 },
 {
@@ -1702,6 +1902,7 @@
 "preis": 6.7,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m12.svg"
 },
 {
@@ -1720,6 +1921,7 @@
 "preis": 5.41,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m8.svg"
 },
 {
@@ -1739,6 +1941,7 @@
 "preis": 6.27,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m10.svg"
 },
 {
@@ -1758,6 +1961,7 @@
 "preis": 4.3,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m12.svg"
 },
 {
@@ -1777,6 +1981,7 @@
 "preis": 3.97,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m8.svg"
 },
 {
@@ -1796,6 +2001,7 @@
 "preis": 10.08,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-stahl-50-m12x125-gelb-typ-45810696.svg"
 },
 {
@@ -1815,6 +2021,7 @@
 "preis": 40.87,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-162-3253-m12.svg"
 },
 {
@@ -1834,6 +2041,7 @@
 "preis": 114.07,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-162-3265-m20.svg"
 },
 {
@@ -1853,6 +2061,7 @@
 "preis": 48.54,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-185-4516-m12.svg"
 },
 {
@@ -1872,6 +2081,7 @@
 "preis": 28.41,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-196-5326-m16.svg"
 },
 {
@@ -1891,6 +2101,7 @@
 "preis": 29.8,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-224-5782-m20.svg"
 },
 {
@@ -1910,6 +2121,7 @@
 "preis": 7.76,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-224-5785-m6.svg"
 },
 {
@@ -1929,6 +2141,7 @@
 "preis": 8.18,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-224-5787-m8.svg"
 },
 {
@@ -1948,6 +2161,7 @@
 "preis": 40.28,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-224-5821-m12.svg"
 },
 {
@@ -1967,6 +2181,7 @@
 "preis": 45.28,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-224-5822-m16.svg"
 },
 {
@@ -1987,6 +2202,7 @@
 "preis": 4.9,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-40-m10.svg"
 },
 {
@@ -2007,6 +2223,7 @@
 "preis": 4.25,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-40-m12.svg"
 },
 {
@@ -2027,6 +2244,7 @@
 "preis": 7.26,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-40-m16.svg"
 },
 {
@@ -2047,6 +2265,7 @@
 "preis": 8.0,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-40-m8.svg"
 },
 {
@@ -2067,6 +2286,7 @@
 "preis": 72.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-106012-form-a.svg"
 },
 {
@@ -2087,6 +2307,7 @@
 "preis": 72.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-106016-form-a.svg"
 },
 {
@@ -2107,6 +2328,7 @@
 "preis": 74.94,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-108016-form-a.svg"
 },
 {
@@ -2127,6 +2349,7 @@
 "preis": 78.7,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-108020-form-a.svg"
 },
 {
@@ -2147,6 +2370,7 @@
 "preis": 85.58,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-108024-form-a.svg"
 },
 {
@@ -2167,6 +2391,7 @@
 "preis": 78.56,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-110016-form-a.svg"
 },
 {
@@ -2187,6 +2412,7 @@
 "preis": 82.3,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-110020-form-a.svg"
 },
 {
@@ -2207,6 +2433,7 @@
 "preis": 89.16,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-110024-form-a.svg"
 },
 {
@@ -2227,6 +2454,7 @@
 "preis": 89.0,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-112016-form-a.svg"
 },
 {
@@ -2247,6 +2475,7 @@
 "preis": 92.77,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-112020-form-a.svg"
 },
 {
@@ -2267,6 +2496,7 @@
 "preis": 99.63,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-112024-form-a.svg"
 },
 {
@@ -2286,6 +2516,7 @@
 "preis": 76.48,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-206012-form-b.svg"
 },
 {
@@ -2305,6 +2536,7 @@
 "preis": 76.48,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-206016-form-b.svg"
 },
 {
@@ -2324,6 +2556,7 @@
 "preis": 78.56,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-208016-form-b.svg"
 },
 {
@@ -2343,6 +2576,7 @@
 "preis": 82.3,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-208020-form-b.svg"
 },
 {
@@ -2362,6 +2596,7 @@
 "preis": 89.16,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-208024-form-b.svg"
 },
 {
@@ -2381,6 +2616,7 @@
 "preis": 83.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-210016-form-b.svg"
 },
 {
@@ -2400,6 +2636,7 @@
 "preis": 86.87,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-210020-form-b.svg"
 },
 {
@@ -2419,6 +2656,7 @@
 "preis": 93.73,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0374-210024-form-b.svg"
 },
 {
@@ -2438,6 +2676,7 @@
 "preis": 72.19,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-20-80-m16-a.svg"
 },
 {
@@ -2458,6 +2697,7 @@
 "preis": 64.32,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-106012-form-a.svg"
 },
 {
@@ -2478,6 +2718,7 @@
 "preis": 63.71,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-106016-form-a.svg"
 },
 {
@@ -2498,6 +2739,7 @@
 "preis": 65.8,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-108016-form-a.svg"
 },
 {
@@ -2518,6 +2760,7 @@
 "preis": 70.43,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-108020-form-a.svg"
 },
 {
@@ -2538,6 +2781,7 @@
 "preis": 74.61,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-108024-form-a.svg"
 },
 {
@@ -2558,6 +2802,7 @@
 "preis": 68.52,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-110016-form-a.svg"
 },
 {
@@ -2578,6 +2823,7 @@
 "preis": 71.9,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-110020-form-a.svg"
 },
 {
@@ -2598,6 +2844,7 @@
 "preis": 77.23,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-110024-form-a.svg"
 },
 {
@@ -2618,6 +2865,7 @@
 "preis": 77.11,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-112016-form-a.svg"
 },
 {
@@ -2638,6 +2886,7 @@
 "preis": 80.75,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-112020-form-a.svg"
 },
 {
@@ -2658,6 +2907,7 @@
 "preis": 86.55,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-112024-form-a.svg"
 },
 {
@@ -2677,6 +2927,7 @@
 "preis": 67.39,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-206012-form-b.svg"
 },
 {
@@ -2696,6 +2947,7 @@
 "preis": 67.39,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-206016-form-b.svg"
 },
 {
@@ -2715,6 +2967,7 @@
 "preis": 68.35,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-208016-form-b.svg"
 },
 {
@@ -2734,6 +2987,7 @@
 "preis": 71.37,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-208020-form-b.svg"
 },
 {
@@ -2753,6 +3007,7 @@
 "preis": 77.8,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-208024-form-b.svg"
 },
 {
@@ -2772,6 +3027,7 @@
 "preis": 72.59,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-210016-form-b.svg"
 },
 {
@@ -2791,6 +3047,7 @@
 "preis": 75.73,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-210020-form-b.svg"
 },
 {
@@ -2810,6 +3067,7 @@
 "preis": 81.32,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k1303-210024-form-b.svg"
 },
 {
@@ -2826,6 +3084,7 @@
 "preis": 85.49,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/norelem-27791-05-stellfuesse-im-hygienic-design-form-a.svg"
 },
 {
@@ -2845,6 +3104,7 @@
 "preis": 6.2,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m10.svg"
 },
 {
@@ -2864,6 +3124,7 @@
 "preis": 6.81,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m12.svg"
 },
 {
@@ -2883,6 +3144,7 @@
 "preis": 8.77,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m14.svg"
 },
 {
@@ -2902,6 +3164,7 @@
 "preis": 10.7,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m16.svg"
 },
 {
@@ -2921,6 +3184,7 @@
 "preis": 13.2,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m20.svg"
 },
 {
@@ -2940,6 +3204,7 @@
 "preis": 5.95,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0372-m8.svg"
 },
 {
@@ -2959,6 +3224,7 @@
 "preis": 0.68,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0377-m10.svg"
 },
 {
@@ -2978,6 +3244,7 @@
 "preis": 0.47,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0377-m6.svg"
 },
 {
@@ -2997,6 +3264,7 @@
 "preis": 0.48,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blohm-b0377-m8.svg"
 },
 {
@@ -3014,6 +3282,7 @@
 "preis": 44.16,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/effbe-level-mount-lm-1-11.svg"
 },
 {
@@ -3031,6 +3300,7 @@
 "preis": 84.26,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/effbe-level-mount-lm-3-33.svg"
 },
 {
@@ -3050,6 +3320,7 @@
 "preis": 124.65,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/effbe-level-mount-lm-5-55-fb60015049.svg"
 },
 {
@@ -3067,6 +3338,7 @@
 "preis": 225.8,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/effbe-level-mount-lm-6-66.svg"
 },
 {
@@ -3084,6 +3356,7 @@
 "preis": 372.45,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/effbe-level-mount-lm-7-77.svg"
 },
 {
@@ -3103,6 +3376,7 @@
 "preis": 46.12,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-148-113.svg"
 },
 {
@@ -3122,6 +3396,7 @@
 "preis": 62.9,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-148-126.svg"
 },
 {
@@ -3141,6 +3416,7 @@
 "preis": 21.54,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-148-60.svg"
 },
 {
@@ -3160,6 +3436,7 @@
 "preis": 29.62,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-148-90.svg"
 },
 {
@@ -3179,6 +3456,7 @@
 "preis": 0.46,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-839-m10.svg"
 },
 {
@@ -3198,6 +3476,7 @@
 "preis": 1.94,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-839-m16.svg"
 },
 {
@@ -3217,6 +3496,7 @@
 "preis": 0.32,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-839-m8.svg"
 },
 {
@@ -3236,6 +3516,7 @@
 "preis": 0.65,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0674-m10.svg"
 },
 {
@@ -3255,6 +3536,7 @@
 "preis": 0.53,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0674-m6.svg"
 },
 {
@@ -3274,6 +3556,7 @@
 "preis": 0.57,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0674-m8.svg"
 },
 {
@@ -3293,6 +3576,7 @@
 "preis": 0.79,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0675-m10.svg"
 },
 {
@@ -3312,6 +3596,7 @@
 "preis": 0.55,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0675-m6.svg"
 },
 {
@@ -3331,6 +3616,7 @@
 "preis": 0.57,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0675-m8.svg"
 },
 {
@@ -3350,6 +3636,7 @@
 "preis": 33.89,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/nu-tech-engineering-a315-001-m12-rs-405-2803.svg"
 },
 {
@@ -3369,6 +3656,7 @@
 "preis": 43.55,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/rs-pro-rs-126-3549-m10.svg"
 },
 {
@@ -3387,6 +3675,7 @@
 "preis": 82.68,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/serious-10534-m16-rs-281-9804.svg"
 },
 {
@@ -3404,6 +3693,7 @@
 "preis": 200.11,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blickle-feststellfuss-fuer-rollenserien-le-l-lk-lh-lo-ls.svg"
 },
 {
@@ -3421,6 +3711,7 @@
 "preis": 218.99,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/blickle-wagenheber.svg"
 },
 {
@@ -3439,6 +3730,7 @@
 "preis": 64.37,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/tente-footmaster-gd-60-f-nyn.svg"
 },
 {
@@ -3458,6 +3750,12 @@
 "preis": 156.82,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M45"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-ni.svg"
 },
 {
@@ -3477,6 +3775,12 @@
 "preis": 131.49,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M45"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-st.svg"
 },
 {
@@ -3496,6 +3800,12 @@
 "preis": 63.49,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M28"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-40-m10-a-b-st.svg"
 },
 {
@@ -3515,6 +3825,12 @@
 "preis": 102.23,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M36"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-ni.svg"
 },
 {
@@ -3534,6 +3850,12 @@
 "preis": 72.93,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M36"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-st.svg"
 },
 {
@@ -3553,6 +3875,12 @@
 "preis": 112.87,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M36"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-ni.svg"
 },
 {
@@ -3572,6 +3900,12 @@
 "preis": 158.85,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M36"
+]
+},
 "bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-st.svg"
 },
 {
@@ -3590,6 +3924,7 @@
 "preis": 30.93,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-45811370-30.svg"
 },
 {
@@ -3609,6 +3944,7 @@
 "preis": 112.21,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/nu-tech-engineering-a070-029.svg"
 },
 {
@@ -3626,6 +3962,7 @@
 "preis": 215.23,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/serious-10305.svg"
 },
 {
@@ -3645,6 +3982,7 @@
 "preis": 10.26,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-gn-42-80-m24-u-uk.svg"
 },
 {
@@ -3665,6 +4003,12 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M10",
+"M30"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0022.svg"
 },
 {
@@ -3685,6 +4029,12 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M12",
+"M30"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0024.svg"
 },
 {
@@ -3705,6 +4055,12 @@
 "preis": 42.38,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M30"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0026.svg"
 },
 {
@@ -3725,6 +4081,12 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M40"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0032.svg"
 },
 {
@@ -3745,6 +4107,12 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M20",
+"M40"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0034.svg"
 },
 {
@@ -3765,6 +4133,12 @@
 "preis": 49.31,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M24",
+"M40"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0036.svg"
 },
 {
@@ -3785,6 +4159,12 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M20",
+"M50"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0042.svg"
 },
 {
@@ -3805,6 +4185,12 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M24",
+"M50"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0044.svg"
 },
 {
@@ -3825,6 +4211,12 @@
 "preis": 74.13,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M30",
+"M50"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-25120-0046.svg"
 },
 {
@@ -3845,6 +4237,12 @@
 "preis": 61.57,
 "preis_ab": true,
 "varianten": [],
+"optionen": {
+"Gewinde": [
+"M16",
+"M30"
+]
+},
 "bild": "/assets/skizzen/halder-eh-25120-pendelnd-25120-0226.svg"
 },
 {
@@ -3865,6 +4263,7 @@
 "preis": 37.33,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-45812378-30.svg"
 },
 {
@@ -3884,6 +4283,7 @@
 "preis": 37.0,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-45812406-g.svg"
 },
 {
@@ -3903,6 +4303,7 @@
 "preis": 23.21,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-45815516-g.svg"
 },
 {
@@ -3922,6 +4323,7 @@
 "preis": 28.35,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/martin-levelling-massiv-45815520-g.svg"
 },
 {
@@ -3940,6 +4342,7 @@
 "preis": 215.69,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-avr-r-220-30-290-30.svg"
 },
 {
@@ -3958,6 +4361,7 @@
 "preis": 155.22,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-avr-r-90-30-160-30.svg"
 },
 {
@@ -3977,6 +4381,7 @@
 "preis": 7.43,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/elesa-ganter-dve-45-m10.svg"
 },
 {
@@ -3996,6 +4401,7 @@
 "preis": 33.69,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-1-best-nr-39443.svg"
 },
 {
@@ -4015,6 +4421,7 @@
 "preis": 34.17,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-2-best-nr-39444.svg"
 },
 {
@@ -4034,6 +4441,7 @@
 "preis": 37.54,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-3-best-nr-39003.svg"
 },
 {
@@ -4053,6 +4461,7 @@
 "preis": 43.73,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-4-best-nr-39455.svg"
 },
 {
@@ -4072,6 +4481,7 @@
 "preis": 52.01,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-5-best-nr-39004.svg"
 },
 {
@@ -4091,6 +4501,7 @@
 "preis": 56.67,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-6-best-nr-39456.svg"
 },
 {
@@ -4110,6 +4521,7 @@
 "preis": 60.4,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-7-best-nr-39457.svg"
 },
 {
@@ -4129,6 +4541,7 @@
 "preis": 66.58,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-8-best-nr-39458.svg"
 },
 {
@@ -4148,6 +4561,7 @@
 "preis": 75.56,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/getzner-isotop-sd-9-best-nr-39459.svg"
 },
 {
@@ -4166,6 +4580,7 @@
 "preis": 0.96,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0567-01001057.svg"
 },
 {
@@ -4184,6 +4599,7 @@
 "preis": 0.99,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0567-01501557.svg"
 },
 {
@@ -4203,6 +4619,7 @@
 "preis": 3.87,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-05003555.svg"
 },
 {
@@ -4222,6 +4639,7 @@
 "preis": 3.87,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-05003570.svg"
 },
 {
@@ -4241,6 +4659,7 @@
 "preis": 7.16,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-08006055.svg"
 },
 {
@@ -4260,6 +4679,7 @@
 "preis": 7.18,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-08006070.svg"
 },
 {
@@ -4279,6 +4699,7 @@
 "preis": 25.22,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-12509055.svg"
 },
 {
@@ -4298,6 +4719,7 @@
 "preis": 25.55,
 "preis_ab": true,
 "varianten": [],
+"optionen": {},
 "bild": "/assets/skizzen/kipp-k0576-12509070.svg"
 }
 ]

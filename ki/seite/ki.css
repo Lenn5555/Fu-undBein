@@ -180,6 +180,12 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-merkmale { list-style: none; margin: 0; padding: 0; font-size: var(--step-small); color: var(--muted); }
 .ki-preis { font-weight: 600; font-size: var(--step-lead); font-variant-numeric: tabular-nums; margin-top: auto; }
 .ki-karte .btn { align-self: flex-start; }
+.ki-wahl { display: grid; gap: 8px; }
+.ki-wahl label { display: grid; gap: 4px; font-size: var(--step-small); font-weight: 500; }
+.ki-wahl select { width: 100%; min-height: 44px; padding: 8px 36px 8px 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss)
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23111827' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
+  -webkit-appearance: none; appearance: none; font-size: var(--step-small); cursor: pointer; }
+.ki-wahl select:focus-visible { outline-offset: 0; border-color: #2563eb; }
 
 .kb-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 16px; }
 .kb-chip { background: var(--weiss); border: 1px solid var(--linie); border-radius: 999px; padding: 8px 14px; font-size: var(--step-small); font-weight: 500; cursor: pointer; text-align: left;
@@ -302,30 +308,10 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 @keyframes blase-wandert { 0%, 12% { transform: translateX(-28px); } 60%, 88% { transform: translateX(0); } 100% { transform: translateX(-28px); } }
 @keyframes mutter { 0%, 12%, 60%, 100% { transform: scaleX(1); } 18%, 30%, 42%, 54% { transform: scaleX(.45); } 24%, 36%, 48% { transform: scaleX(1); } }
 
-/* Szene 2: Der Gummihammer fällt senkrecht auf die Kappe, jeder Schlag treibt den Fuß tiefer ins Rohr, bis die Kappe aufsitzt.
-   Kontakt Hammer/Kappe bei 0, 18, 36 und 50 px Weg; danach kurz Stillstand, Ausblenden, von vorn. */
-.an-hammer { animation: hammer 4.4s infinite; }
-.an-fuss { animation: einschlagen 4.4s infinite; }
-.an-text { opacity: 0; animation: text-zeigen 4.4s infinite; }
-@keyframes hammer {
-  0% { transform: translateY(-16px); animation-timing-function: ease-in; }
-  9% { transform: translateY(0); animation-timing-function: ease-out; }
-  12% { transform: translateY(18px); animation-timing-function: ease-in-out; }
-  21% { transform: translateY(-14px); animation-timing-function: ease-in; }
-  29% { transform: translateY(18px); animation-timing-function: ease-out; }
-  32% { transform: translateY(36px); animation-timing-function: ease-in-out; }
-  41% { transform: translateY(4px); animation-timing-function: ease-in; }
-  49% { transform: translateY(36px); animation-timing-function: ease-out; }
-  52% { transform: translateY(50px); animation-timing-function: ease-in-out; }
-  64%, 100% { transform: translateY(-16px); } }
-@keyframes einschlagen {
-  0%, 9% { transform: translateY(0); opacity: 1; animation-timing-function: ease-out; }
-  12%, 29% { transform: translateY(18px); animation-timing-function: ease-out; }
-  32%, 49% { transform: translateY(36px); animation-timing-function: ease-out; }
-  52%, 86% { transform: translateY(50px); opacity: 1; }
-  91% { transform: translateY(50px); opacity: 0; }
-  92% { transform: translateY(0); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; } }
+/* Szene 2: Der Rohrrahmen senkt sich auf die beiden Einschlagfüße, die Zapfen verschwinden im Rohr, der Rahmen sitzt bündig auf. */
+.an-rahmen { animation: aufsetzen 5s var(--ease) infinite; }
+.an-text { opacity: 0; animation: text-zeigen 5s infinite; }
+@keyframes aufsetzen { 0%, 24% { transform: translateY(-56px); } 56%, 86% { transform: translateY(0); } 100% { transform: translateY(-56px); } }
 @keyframes text-zeigen { 0%, 54% { opacity: 0; } 60%, 84% { opacity: 1; } 90%, 100% { opacity: 0; } }
 
 @media (max-width: 1100px) {
@@ -387,6 +373,4 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .js [data-rein] { transform: none; }
   .kb-band-lauf, .kb-szene * { animation: none !important; }
   .an-text { opacity: 1; }
-  .an-fuss { transform: translateY(50px); }
-  .an-hammer { transform: translateY(-16px); }
 }

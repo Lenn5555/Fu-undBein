@@ -60,7 +60,7 @@ export const WERKZEUGE = [
 // Was die Seite für eine Produktkarte braucht; alles davon ist ohnehin öffentlich.
 export function karte(p) {
   return { sku: p.sku, name: p.name, marke: p.marke, kurz: p.kurz, merkmale: p.merkmale, preis: p.preis,
-           preis_ab: p.preis_ab, varianten: p.varianten, bild: p.bild };
+           preis_ab: p.preis_ab, varianten: p.varianten, optionen: p.optionen || {}, bild: p.bild };
 }
 
 export function produkteZeigen(eingabe) {

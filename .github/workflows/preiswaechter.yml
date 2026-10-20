@@ -1,0 +1,88 @@
+name: Preiswächter
+
+# Prüft jeden Morgen die Händlerseiten der Bezugsquellen: Preisänderungen werden übernommen
+# (Verkaufspreis = Einkaufspreis + 10 %), ausgelaufene Artikel ausgeblendet, Bericht per Mail.
+# Das Log ist öffentlich: Es enthält nur Zahlen. Händler und Einkaufspreise stehen nur in der Mail.
+# Benötigte GitHub-Secrets: BEZUGSQUELLEN, RESEND_API_KEY (beide schon für den KI-Server angelegt).
+on:
+  schedule:
+    - cron: "15 4 * * *"   # täglich 6:15 Uhr Sommerzeit / 5:15 Uhr Winterzeit
+  workflow_dispatch:
+    inputs:
+      nur_melden:
+        description: "Nur melden, nichts im Shop ändern"
+        type: boolean
+        default: false
+      ohne_bremse:
+        description: "Sicherheitsbremse übergehen (nur nach Prüfung des Berichts)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: preiswaechter
+  cancel-in-progress: false
+
+jobs:
+  pruefen:
+    runs-on: ubuntu-latest
+    env:
+      BEZUGSQUELLEN: ${{ secrets.BEZUGSQUELLEN }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      EMPFAENGER: sales@ts-systec.de
+      ABSENDER: "Bein und Fuss <preiswaechter@xn--beinundfu-o1a.de>"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 -m unittest werkzeuge/test_preiswaechter.py
+      - name: Händlerseiten prüfen
+        id: lauf
+        run: |
+          if [ -z "$BEZUGSQUELLEN" ]; then echo "::error::Secret BEZUGSQUELLEN fehlt"; exit 1; fi
+          echo "$BEZUGSQUELLEN" | base64 -d | gunzip > "$RUNNER_TEMP/bq.json"
+          python3 werkzeuge/preiswaechter.py "$RUNNER_TEMP/bq.json" \
+            ${{ inputs.nur_melden && '--nur-melden' || '' }} ${{ inputs.ohne_bremse && '--ohne-bremse' || '' }}
+          rm -f "$RUNNER_TEMP/bq.json"
+      - name: Shop aktualisieren
+        run: |
+          if [ "${{ steps.lauf.outputs.geaendert }}" = "ja" ]; then
+            python3 werkzeuge/build_ki.py > /dev/null   # Katalog des Beraters mit den neuen Preisen
+          fi
+          git add daten ki/worker/src/katalog.json
+          if git diff --cached --quiet; then echo "Keine Änderung"; exit 0; fi
+          git config user.name "Preiswächter"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ steps.lauf.outputs.geaendert }}" = "ja" ]; then
+            git commit -q -m "Preiswächter: Preise/Verfügbarkeit von den Händlerseiten übernommen"
+          else
+            git commit -q -m "Preiswächter: Stand aktualisiert"
+          fi
+          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          if [ "${{ steps.lauf.outputs.geaendert }}" = "ja" ]; then
+            # Pushes mit dem Actions-Token starten keine Workflows, deshalb Website und KI-Server von Hand anstoßen
+            gh workflow run website.yml --ref main
+            gh workflow run ki-server.yml --ref main
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Bericht mailen
+        # bei Neuigkeiten sofort, sonst montags als Lebenszeichen
+        if: steps.lauf.outputs.wichtig == 'ja' || github.event_name == 'workflow_dispatch'
+        run: python3 werkzeuge/preiswaechter_mail.py bericht.txt
+      - name: Lebenszeichen am Montag
+        if: steps.lauf.outputs.wichtig != 'ja' && github.event_name == 'schedule'
+        run: |
+          if [ "$(date +%u)" = "1" ]; then python3 werkzeuge/preiswaechter_mail.py bericht.txt; fi
+      - name: Bei Abbruch Bescheid geben
+        if: failure()
+        run: |
+          printf 'Der Preiswächter ist heute abgebrochen und hat nichts geändert.\nDetails: %s\n' \
+            "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > fehler.txt
+          python3 werkzeuge/preiswaechter_mail.py fehler.txt "Preiswaechter: Lauf abgebrochen"

@@ -210,6 +210,17 @@ class Ablauf(unittest.TestCase):
         vk = self.lauf()
         self.assertEqual(vk["BF-V-6"], "12.10")
 
+    def test_nachpruefung_nur_offene(self):
+        self.lauf()
+        self.seiten["https://h.test/p7"] = (200, "<h1>Typ 45810007</h1><p>10,40 €</p>")
+        self.lauf()
+        abrufe = []
+        alt = self.seiten
+        self.seiten = type("Zaehler", (dict,), {"__getitem__": lambda d, u: abrufe.append(u) or alt[u]})(alt)
+        vk = self.lauf("--nur-offene")
+        self.assertEqual(set(abrufe), {"https://h.test/p7"})
+        self.assertEqual(vk["BF-V-7"], "11.44")
+
     def test_keine_mail_wenn_alles_ruhig(self):
         self.lauf()
         with mock.patch.dict("os.environ", {"GITHUB_OUTPUT": str(self.tmp / "out.txt")}):

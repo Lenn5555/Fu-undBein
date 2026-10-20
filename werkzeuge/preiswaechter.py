@@ -15,11 +15,11 @@ Grundsätze
   - Erster Lauf je Artikel = Einmessen: Nur wenn ein Leseweg den bekannten EK wiederfindet, wird der Artikel
     künftig automatisch geprüft. Sonst steht er einmal als „nicht automatisch prüfbar“ im Bericht.
   - Ausgeblendet wird nur bei eindeutigem Zeichen (Seite weg, Artikelnummer verschwunden, „nicht mehr lieferbar“)
-    an zwei Läufen hintereinander. „Ausverkauft“ wird nur gemeldet.
+    am Montag und bei der Nachprüfung am Dienstag. „Ausverkauft“ wird nur gemeldet.
   - Bremsen: Ist die Hälfte der Seiten nicht erreichbar oder wären auf einen Schlag viele Artikel betroffen,
     wird nichts geändert, nur gemeldet.
 
-Aufruf: python3 werkzeuge/preiswaechter.py bezugsquellen.json [--nur-melden] [--ohne-bremse]
+Aufruf: python3 werkzeuge/preiswaechter.py bezugsquellen.json [--nur-melden] [--ohne-bremse] [--nur-offene]
 
 Je Artikelnummer gibt es eine Bezugsquelle mit einem Referenzpreis (bei Serien die günstigste Ausführung,
 siehe preis_bezug). Danach richtet sich der „ab“-Preis im Shop; einzelne Gewinde haben keinen eigenen Preis.
@@ -286,6 +286,7 @@ def euro(x):
 def main(argv):
     nur_melden = "--nur-melden" in argv
     ohne_bremse = "--ohne-bremse" in argv  # von Hand nach Prüfung des Berichts
+    nur_offene = "--nur-offene" in argv  # Nachprüfung am Folgetag: nur Artikel mit unbestätigtem Fund
     pfad = next((a for a in argv if not a.startswith("--")), os.environ.get("BEZUGSQUELLEN_DATEI"))
     bezug = json.loads(Path(pfad).read_text(encoding="utf-8"))
     vk = {r["sku"]: float(r["preis_netto"]) for r in lade_csv(PREISE)}
@@ -298,6 +299,9 @@ def main(argv):
     stand.setdefault("artikel", {})
 
     zu_pruefen = {s: e for s, e in bezug.items() if e.get("bestell_url") and (s in vk or s in aus)}
+    if nur_offene:
+        offen = {s for s, a in stand["artikel"].items() if a.get("vorschlag_vk") or a.get("verdacht")}
+        zu_pruefen = {s: e for s, e in zu_pruefen.items() if s in offen}
     nach_url = {}
     for s, e in zu_pruefen.items():
         nach_url.setdefault(e["bestell_url"], []).append(s)
@@ -465,7 +469,7 @@ def main(argv):
         teile.append(f"GROSSER PREISSPRUNG, NICHT übernommen, bitte prüfen ({len(preis_gross)}):\n" + "\n".join(
             f"- {zeile(s)}\n    gelesen EK {euro(ek)}, Verkauf wäre {euro(alt)} -> {euro(neu)}" for s, alt, neu, ek in preis_gross))
     if ausblenden:
-        teile.append(f"AUSGEBLENDET{'' if aendern else ' (vorgeschlagen)'} ({len(ausblenden)}), zweimal hintereinander nicht verfügbar:\n" +
+        teile.append(f"AUSGEBLENDET{'' if aendern else ' (vorgeschlagen)'} ({len(ausblenden)}), bei zwei Prüfungen hintereinander nicht verfügbar:\n" +
                      "\n".join(f"- {zeile(s)}\n    {g}" for s, g in ausblenden))
     if zurueck:
         teile.append(f"WIEDER DA{'' if aendern else ' (vorgeschlagen)'} ({len(zurueck)}), wieder eingeblendet:\n" +

@@ -1,13 +1,14 @@
 name: Preiswächter
 
-# Prüft jeden Morgen die Händlerseiten der Bezugsquellen: Preisänderungen werden übernommen
+# Prüft einmal pro Woche (Lenn, 20.10.2026) die Händlerseiten der Bezugsquellen: Preisänderungen werden übernommen
 # (Verkaufspreis = Einkaufspreis + 10 %), ausgelaufene Artikel ausgeblendet. Eine Mail kommt nur,
 # wenn sich etwas ändert oder etwas zu entscheiden ist.
 # Das Log ist öffentlich: Es enthält nur Zahlen. Händler und Einkaufspreise stehen nur in der Mail.
 # Benötigte GitHub-Secrets: BEZUGSQUELLEN, RESEND_API_KEY, ANTHROPIC_API_KEY (alle schon für den KI-Server angelegt).
 on:
   schedule:
-    - cron: "15 4 * * *"   # täglich 6:15 Uhr Sommerzeit / 5:15 Uhr Winterzeit
+    - cron: "15 4 * * 1"   # montags 6:15 Uhr Sommerzeit / 5:15 Uhr Winterzeit: alle Artikel
+    - cron: "15 4 * * 2"   # dienstags: nur Artikel mit unbestätigtem Fund vom Montag nachprüfen
   workflow_dispatch:
     inputs:
       nur_melden:
@@ -54,7 +55,8 @@ jobs:
           if [ -z "$BEZUGSQUELLEN" ]; then echo "::error::Secret BEZUGSQUELLEN fehlt"; exit 1; fi
           echo "$BEZUGSQUELLEN" | base64 -d | gunzip > "$RUNNER_TEMP/bq.json"
           python3 werkzeuge/preiswaechter.py "$RUNNER_TEMP/bq.json" \
-            ${{ (inputs.nur_melden || github.event_name == 'push') && '--nur-melden' || '' }} ${{ inputs.ohne_bremse && '--ohne-bremse' || '' }}
+            ${{ (inputs.nur_melden || github.event_name == 'push') && '--nur-melden' || '' }} ${{ inputs.ohne_bremse && '--ohne-bremse' || '' }} \
+            ${{ github.event.schedule == '15 4 * * 2' && '--nur-offene' || '' }}
           rm -f "$RUNNER_TEMP/bq.json"
       - name: Shop aktualisieren
         if: github.event_name != 'push'

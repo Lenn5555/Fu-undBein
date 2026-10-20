@@ -35,8 +35,8 @@ FINDER = ["Anwendung", "Funktion", "Bauform", "Material", "Rohrmaß", "Gewinde",
 # Kategorien wie im WordPress-Plugin (includes/setup.php): Name → (Slug, Beschreibung, Eltern-Slug)
 KATEGORIEN = {
     "Einschlagfüße": ("einschlagfuesse", "Für Vierkant- und Rundrohre: einschlagen, ausrichten, fertig.", None),
-    "Vierkantrohr": ("vierkantrohr", "Einschlagfüße und Gewindeeinsätze für Vierkant- und Rechteckrohr.", "einschlagfuesse"),
-    "Rundrohr": ("rundrohr", "Einschlagfüße und Gewindeeinsätze für Rundrohr.", "einschlagfuesse"),
+    "Vierkantrohr": ("vierkantrohr", "Einschlagfüße und Gewindestopfen für Vierkant- und Rechteckrohr.", "einschlagfuesse"),
+    "Rundrohr": ("rundrohr", "Einschlagfüße und Gewindestopfen für Rundrohr.", "einschlagfuesse"),
     "Edelstahl-Stellbeine": ("edelstahl-stellbeine", "Höhenverstellbare Beine für Gastronomie, Großküche und Möbelbau.", None),
     "Gerätebeine": ("geraetebeine", "Gerätebeine und Möbelfüße.", "edelstahl-stellbeine"),
     "Maschinenfüße": ("maschinenfuesse", "Gewindespindel und Fußteller zum exakten Ausrichten von Maschinen.", None),

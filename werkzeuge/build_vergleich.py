@@ -138,7 +138,7 @@ def produkt(r):
     if last and last >= 20000:
         funktion = list(dict.fromkeys(funktion + ["Hohe Traglast"]))
     if bauform == "Einschlagfuß" and re.search(r"stopfen|buchse|einsatz", r["serie_artikel"] + r["kurzbeschreibung"], re.I):
-        bauform = "Gewindeeinsatz"
+        bauform = "Gewindestopfen"
 
     merkmale = {
         "Anwendung": anwendung, "Funktion": funktion, "Bauform": [bauform],

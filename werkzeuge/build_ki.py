@@ -109,14 +109,14 @@ EINSAETZE = [
      "Ich brauche Gelenkfüße für ein Förderband, der Boden ist uneben."),
     (9, "Schaltschränke", "Kompakte Stellfüße für Schaltschränke und Gehäuse, die genau im Lot stehen müssen. {Schaltschrank / Gehäuse} Modelle.",
      "Welche Stellfüße passen unter einen Schaltschrank?"),
-    (10, "Gestelle", "Einschlagfüße für Vierkant- und Rundrohr: ins offene Rohrende schlagen, ohne Schweißen und Bohren. {Einschlagfuß} Einschlagfüße und {Gewindeeinsatz} Gewindeeinsätze.",
+    (10, "Gestelle", "Einschlagfüße für Vierkant- und Rundrohr: ins offene Rohrende schlagen, ohne Schweißen und Bohren. {Einschlagfuß} Einschlagfüße und {Gewindestopfen} Gewindestopfen.",
      "Ich brauche Einschlagfüße für eine Werkbank aus Vierkantrohr."),
 ]
 
 # Reihenfolge der Preisliste nach Bauform, mit Mehrzahl für die Überschrift
 BAUFORMEN = [("Stellfuß", "Stellfüße"), ("Stellbein", "Stellbeine"), ("Gelenkfuß", "Gelenkfüße"), ("Einschlagfuß", "Einschlagfüße"),
              ("Schwingungsdämpfer", "Schwingungsdämpfer"), ("Nivellierelement", "Nivellierelemente"),
-             ("Gewindeeinsatz", "Gewindeeinsätze"), ("Spezialausführung", "Spezialausführungen")]
+             ("Gewindestopfen", "Gewindestopfen"), ("Spezialausführung", "Spezialausführungen")]
 
 
 BEISPIELE = [
@@ -401,7 +401,7 @@ KATEGORIEN = {
                      "Mit Stellteil gleichen sie zusätzlich Unebenheiten aus. Entscheidend ist das passende Rohrmaß."),
     "Schwingungsdämpfer": ("Schwingungsdämpfer kaufen", "Schwingungsdämpfer und Maschinenlager trennen Maschine und Boden. Sie mindern Vibrationen und Körperschall und schützen Maschine und Umgebung."),
     "Nivellierelement": ("Nivellierelemente kaufen", "Nivellierelemente richten schwere Maschinen genau aus, oft mit Keil oder Spindel und ohne Bodenbefestigung. Sie tragen hohe Lasten und dämpfen meist zugleich."),
-    "Gewindeeinsatz": ("Gewindeeinsätze kaufen", "Gewindeeinsätze werden in Rohre gesteckt oder eingeschlagen und bieten ein Innengewinde, in das Sie anschließend einen Stellfuß drehen."),
+    "Gewindestopfen": ("Gewindestopfen kaufen", "Gewindestopfen werden in Rohre gesteckt oder eingeschlagen und bieten ein Innengewinde, in das Sie anschließend einen Stellfuß drehen."),
     "Spezialausführung": ("Spezialausführungen", "Füße und Zubehör für besondere Einsätze."),
 }
 
@@ -591,6 +591,10 @@ def main():
                         key=lambda q: abs(min_preis(q) - min_preis(p)))[:6]
         schreibe(f"produkte/{p['slug']}", produktseite(p, gleich, mehrzahl.get(p["merkmale"]["Bauform"], p["merkmale"]["Bauform"])))
     shutil.copy(KATALOG, OUT / "assets/katalog.json")
+    # Alte Adresse der Kategorie (bis 20.10.2026 „Gewindeeinsätze“) leitet weiter
+    schreibe("produkte/gewindeeinsaetze", '<!doctype html><meta charset="utf-8"><title>Gewindestopfen</title>'
+             f'<link rel="canonical" href="{kat_url("Gewindestopfen", absolut=True)}">'
+             f'<meta http-equiv="refresh" content="0; url={b.BASIS}{kat_url("Gewindestopfen")}"><a href="{kat_url("Gewindestopfen")}">Gewindestopfen</a>')
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

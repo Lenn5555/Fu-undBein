@@ -115,7 +115,7 @@ def zeichnung(p, klein=False):
     mass = _mass(m.get("Durchmesser", ""))
     d = _zahl(m.get("Durchmesser", ""))
     rohr = " / ".join((m.get("Rohrmaß") or [])[:2])
-    if bauform in ("Einschlagfuß", "Gewindeeinsatz"):
+    if bauform in ("Einschlagfuß", "Gewindestopfen"):
         teile = _einschlag(gew, rohr)
     elif bauform == "Schwingungsdämpfer":
         teile = _daempfer(gew, mass, d)

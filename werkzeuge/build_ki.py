@@ -268,14 +268,11 @@ def beraterseite(liste):
         l = sorted(gruppen.get(bauform, []), key=min_preis)
         if not l:
             continue
-        auswahl = [l[round(k * (len(l) - 1) / 5)] for k in range(6)] if len(l) > 6 else l
-        auswahl = list(dict.fromkeys(p["sku"] for p in auswahl))
-        zeilen = "".join(
-            f'<li><button type="button" data-frage="{e("Ich interessiere mich für „" + p["name"] + "“ (" + p["sku"] + "). Welche Ausführungen gibt es?")}">'
-            f'<span>{e(p["name"])}</span><span class="kb-preis">{"ab " if (p["varianten"] and len(p["varianten"]) > 1) or p["preis_ab"] else ""}{euro(min_preis(p))}</span></button></li>'
-            for p in (next(q for q in l if q["sku"] == s) for s in auswahl))
+        # Alle Modelle der Bauform, jedes führt zu seiner Produktseite
+        zeilen = "".join(f'<li><a href="{produkt_url(p)}"><span>{e(p["name"])}</span><span class="kb-preis">{preis_ab_text(p)}</span></a></li>' for p in l)
         bars.append(f'<details class="kb-bar"{" open" if i == 0 else ""}><summary><span>{e(mehrzahl)}</span>'
-                    f'<span class="kb-bar-info">{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></summary><ul>{zeilen}</ul></details>')
+                    f'<span class="kb-bar-info">{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></summary><ul>{zeilen}</ul>'
+                    f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
     band = "".join(f"<span>{e(x)}</span>" for x in (
         f"{anzahl} Modelle mit Preis", f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
@@ -344,7 +341,7 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <div class="kb-preise-text">
 <h2 data-rein>Preise</h2>
 <p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p>
-<p data-rein>Tippen Sie auf ein Modell, und der Berater nennt Ausführungen, Maße und Traglast. Insgesamt {anzahl} Modelle.</p>
+<p data-rein>Tippen Sie auf ein Modell für Datenblatt, Ausführungen und Preise. Insgesamt {anzahl} Modelle, <a href="/produkte/">alle Produkte im Überblick</a>.</p>
 </div>
 <div class="kb-preise-liste">
 {"".join(bars)}
@@ -576,11 +573,11 @@ def main():
         ziel.parent.mkdir(parents=True, exist_ok=True)
         ziel.write_text(text, encoding="utf-8")
 
+    slugs = {p["sku"]: p["slug"] for p in produkte}
+    liste = [{**k, "slug": slugs[k["sku"]]} for k in liste]
     schreibe("", beraterseite(liste))
     # Produktseiten für Google; Katalog (nur Verkaufspreise) als Datei, damit „Bestellen“ auf der Startseite das Formular öffnet
     mehrzahl = dict(BAUFORMEN)
-    slugs = {p["sku"]: p["slug"] for p in produkte}
-    liste = [{**k, "slug": slugs[k["sku"]]} for k in liste]
     schreibe("produkte", produktuebersicht(liste))
     for bauform, _ in BAUFORMEN:
         l = [q for q in liste if q["merkmale"]["Bauform"] == bauform]

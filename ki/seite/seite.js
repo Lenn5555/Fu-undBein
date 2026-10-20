@@ -1,4 +1,4 @@
-/* beinundfuß.de: Kopfleiste nach Farbkapitel, Einblenden, Akkordeon, Lastrechner, Kontakt-Coupon. */
+/* beinundfuß.de: Kopfleiste, Einblenden, Akkordeon, Lastrechner, Kontakt-Coupon. */
 (function () {
   "use strict";
   var ruhig = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -17,13 +17,12 @@
     }
   }
 
-  // Bild im Hero driftet beim Scrollen leicht
+  // Bild im Hero bewegt sich beim Scrollen leicht mit
   var bild = document.querySelector(".kb-hero-bild");
   function drift() {
     if (!bild || ruhig || window.innerWidth < 761) return;
     var y = Math.min(window.scrollY, window.innerHeight);
-    bild.style.translate = "0 " + (y * -0.12).toFixed(1) + "px";
-    bild.style.rotate = (y * 0.004).toFixed(3) + "deg";
+    bild.style.translate = "0 " + (y * -0.06).toFixed(1) + "px";
   }
   var geplant = false;
   window.addEventListener("scroll", function () {

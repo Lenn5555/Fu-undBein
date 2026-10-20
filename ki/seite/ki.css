@@ -243,6 +243,11 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .kb-bar li button { width: 100%; display: flex; justify-content: space-between; gap: 20px; text-align: left; background: none; border: 0; border-radius: var(--r-klein); padding: 10px 12px; cursor: pointer;
   transition: background-color .2s; }
 .kb-bar li button:hover { background: var(--gelb-hell); }
+.kb-bar ul { max-height: 420px; overflow-y: auto; }
+.kb-bar li a { display: flex; justify-content: space-between; gap: 20px; border-radius: var(--r-klein); padding: 10px 12px; color: inherit; text-decoration: none; transition: background-color .2s; }
+.kb-bar li a:hover { background: var(--gelb-hell); }
+.kb-bar-alle { margin: 0; padding: 12px 20px 16px; border-top: 1px solid var(--hell-2); font-size: var(--step-small); }
+.kb-bar-alle a { color: var(--ink); font-weight: 600; }
 .kb-preis { white-space: nowrap; font-weight: 600; font-variant-numeric: tabular-nums; }
 
 /* 6 Kontakt: Karte mit Formular */

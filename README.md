@@ -78,15 +78,18 @@ Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, 
 ## Preiswächter (täglich, GitHub Actions)
 
 `.github/workflows/preiswaechter.yml` prüft jeden Morgen die Händlerseiten aus dem Secret `BEZUGSQUELLEN`
-(`werkzeuge/preiswaechter.py`) und schickt einen Bericht an `sales@ts-systec.de`.
+(`werkzeuge/preiswaechter.py`). Eine Mail an `sales@ts-systec.de` kommt nur, wenn sich etwas ändert oder etwas zu entscheiden ist.
 
-- **Preis geändert**: Verkaufspreis = neuer Einkaufspreis + 10 %, direkt übernommen. Sprünge über 25 % nur gemeldet.
+- **Lesen**: erst einfacher Abruf; ist die Seite gesperrt oder steht der Preis erst nach JavaScript da, mit echtem Browser (Chromium).
+  Beim ersten Lauf sucht der Wächter je Artikel die Stelle, an der der bekannte Einkaufspreis steht. Findet keine Regel ihn,
+  liest Claude die Seite (`werkzeuge/preiswaechter_hilfe.py`); passt Claudes Wert zum bekannten EK, wird der Artikel so weiter geprüft.
+- **Preis geändert**: Verkaufspreis = neuer Einkaufspreis + 10 %. Übernommen wird nur, was bestätigt ist: Regel und Claude lesen
+  denselben Preis, oder (wenn nur ein Leser den Preis findet) derselbe Wert an zwei Läufen hintereinander. Widersprechen sich
+  die Leser, wird nur gemeldet. Sprünge über 25 % werden nur gemeldet.
 - **Nicht mehr verfügbar** (Seite weg, Artikelnummer verschwunden, „nicht mehr lieferbar“ neu auf der Seite, an zwei Tagen hintereinander):
   Artikel wird ausgeblendet, also aus `daten/preise-vergleich.csv` nach `daten/ausgeblendet.csv` verschoben. Taucht er wieder auf, kommt er zurück.
   Von Hand wieder einblenden: Zeile aus `ausgeblendet.csv` zurück in `preise-vergleich.csv` kopieren.
 - **„Ausverkauft“** wird nur gemeldet (meist vorübergehend).
-- **Einmessen**: Beim ersten Lauf sucht der Wächter je Artikel die Stelle, an der der bekannte Einkaufspreis steht, und ändert nichts.
-  Artikel ohne eindeutigen Preis (z. B. Konfiguratoren) werden einmal als „nicht automatisch prüfbar“ gemeldet.
 - **Sicherheitsbremse**: Ist weniger als die Hälfte der Seiten erreichbar, wären mehr als 5 Artikel auf einmal auszublenden
   oder mehr als 40 Preise zu ändern, ändert er nichts und meldet nur. Nach Prüfung: Actions → Preiswächter → Run workflow,
   Haken bei „Sicherheitsbremse übergehen“.

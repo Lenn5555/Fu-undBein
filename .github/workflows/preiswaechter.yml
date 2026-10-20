@@ -1,12 +1,16 @@
 name: Preiswächter
 
 # Prüft jeden Morgen die Händlerseiten der Bezugsquellen: Preisänderungen werden übernommen
-# (Verkaufspreis = Einkaufspreis + 10 %), ausgelaufene Artikel ausgeblendet, Bericht per Mail.
+# (Verkaufspreis = Einkaufspreis + 10 %), ausgelaufene Artikel ausgeblendet. Eine Mail kommt nur,
+# wenn sich etwas ändert oder etwas zu entscheiden ist.
 # Das Log ist öffentlich: Es enthält nur Zahlen. Händler und Einkaufspreise stehen nur in der Mail.
-# Benötigte GitHub-Secrets: BEZUGSQUELLEN, RESEND_API_KEY (beide schon für den KI-Server angelegt).
+# Benötigte GitHub-Secrets: BEZUGSQUELLEN, RESEND_API_KEY, ANTHROPIC_API_KEY (alle schon für den KI-Server angelegt).
 on:
   schedule:
     - cron: "15 4 * * *"   # täglich 6:15 Uhr Sommerzeit / 5:15 Uhr Winterzeit
+  push:   # vorübergehend: Probelauf auf dem Entwicklungszweig, ändert nichts und mailt nicht
+    branches: [claude/project-thread-40doss]
+    paths: ["werkzeuge/preiswaechter*.py", ".github/workflows/preiswaechter.yml"]
   workflow_dispatch:
     inputs:
       nur_melden:
@@ -32,6 +36,7 @@ jobs:
     env:
       BEZUGSQUELLEN: ${{ secrets.BEZUGSQUELLEN }}
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       EMPFAENGER: sales@ts-systec.de
       ABSENDER: "Bein und Fuss <preiswaechter@xn--beinundfu-o1a.de>"
     steps:
@@ -41,6 +46,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Browser und Claude-Bibliothek installieren
+        run: |
+          pip install -q anthropic playwright
+          python3 -m playwright install --with-deps chromium > /dev/null
       - run: python3 -m unittest werkzeuge/test_preiswaechter.py
       - name: Händlerseiten prüfen
         id: lauf
@@ -48,9 +57,10 @@ jobs:
           if [ -z "$BEZUGSQUELLEN" ]; then echo "::error::Secret BEZUGSQUELLEN fehlt"; exit 1; fi
           echo "$BEZUGSQUELLEN" | base64 -d | gunzip > "$RUNNER_TEMP/bq.json"
           python3 werkzeuge/preiswaechter.py "$RUNNER_TEMP/bq.json" \
-            ${{ inputs.nur_melden && '--nur-melden' || '' }} ${{ inputs.ohne_bremse && '--ohne-bremse' || '' }}
+            ${{ (inputs.nur_melden || github.event_name == 'push') && '--nur-melden' || '' }} ${{ inputs.ohne_bremse && '--ohne-bremse' || '' }}
           rm -f "$RUNNER_TEMP/bq.json"
       - name: Shop aktualisieren
+        if: github.event_name != 'push'
         run: |
           if [ "${{ steps.lauf.outputs.geaendert }}" = "ja" ]; then
             python3 werkzeuge/build_ki.py > /dev/null   # Katalog des Beraters mit den neuen Preisen
@@ -65,6 +75,7 @@ jobs:
             git commit -q -m "Preiswächter: Stand aktualisiert"
           fi
           for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          git fetch -q origin main && git merge-base --is-ancestor HEAD origin/main || { echo "::error::Änderung konnte nicht gespeichert werden"; exit 1; }
           if [ "${{ steps.lauf.outputs.geaendert }}" = "ja" ]; then
             # Pushes mit dem Actions-Token starten keine Workflows, deshalb Website und KI-Server von Hand anstoßen
             gh workflow run website.yml --ref main
@@ -72,16 +83,11 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ github.token }}
-      - name: Bericht mailen
-        # bei Neuigkeiten sofort, sonst montags als Lebenszeichen
-        if: steps.lauf.outputs.wichtig == 'ja' || github.event_name == 'workflow_dispatch'
+      - name: Bericht mailen (nur wenn sich etwas ändert oder zu entscheiden ist)
+        if: steps.lauf.outputs.wichtig == 'ja' && github.event_name != 'push'
         run: python3 werkzeuge/preiswaechter_mail.py bericht.txt
-      - name: Lebenszeichen am Montag
-        if: steps.lauf.outputs.wichtig != 'ja' && github.event_name == 'schedule'
-        run: |
-          if [ "$(date +%u)" = "1" ]; then python3 werkzeuge/preiswaechter_mail.py bericht.txt; fi
       - name: Bei Abbruch Bescheid geben
-        if: failure()
+        if: failure() && github.event_name != 'push'
         run: |
           printf 'Der Preiswächter ist heute abgebrochen und hat nichts geändert.\nDetails: %s\n' \
             "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" > fehler.txt

@@ -26,6 +26,7 @@ siehe preis_bezug). Danach richtet sich der „ab“-Preis im Shop; einzelne Gew
 """
 import csv
 import gzip
+import hashlib
 import html
 import json
 import os
@@ -37,6 +38,9 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import preiswaechter_hilfe as hilfe  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PREISE = ROOT / "daten/preise-vergleich.csv"
@@ -147,6 +151,20 @@ def finde(text, token):
     return -1
 
 
+def auszug(text, tokens, groesse=12000):
+    """Textstück für den zweiten Leser (Claude): rund um die Artikelnummern, sonst der Seitenanfang."""
+    stellen = sorted({i for t in tokens for i in [finde(text, t)] if i >= 0})
+    if not stellen:
+        return text[:groesse]
+    teile, ende = [], 0
+    for i in stellen:
+        von, bis = max(i - 2500, ende), min(i + 3500, len(text))
+        if bis > von:
+            teile.append(text[von:bis])
+            ende = bis
+    return " … ".join(teile)[:groesse]
+
+
 def kandidaten(roh, text, tokens):
     """Alle Lesewege mit ihrem Ergebnis. Schlüssel sind allgemein (keine Händlerangaben)."""
     k = {}
@@ -212,7 +230,8 @@ def pruefe(eintrag, status, final, roh, basis):
     token_da = [n for n, t in enumerate(tokens) if finde(text, t) >= 0]
     auslauf = bool(AUSLAUF.search(text))
     info = {"ausverkauft": bool(AUSVERKAUFT.search(text)), "auslauf_text": auslauf,
-            "token": basis["token"] if "token" in basis else (token_da[0] if token_da else None)}
+            "token": basis["token"] if "token" in basis else (token_da[0] if token_da else None),
+            "auszug": auszug(text, tokens)}  # nur für Claude, wird nie gespeichert
 
     # Ausgelaufen nur, wenn sich gegenüber dem ersten Lauf etwas geändert hat
     grund = None
@@ -225,17 +244,19 @@ def pruefe(eintrag, status, final, roh, basis):
 
     k = kandidaten(roh, text, tokens)
     leseweg = basis.get("weg")
+    if leseweg == "ki":
+        return {"art": "ki_noetig", **info}
     if leseweg:
         wert = k.get(leseweg)
         if wert is None:
             return {"art": "unlesbar", **info}
-        return {"art": "ok", "ek": round(wert / MWST, 2) if basis.get("brutto") else wert, **info}
+        return {"art": "ok", "quelle": "regel", "ek": round(wert / MWST, 2) if basis.get("brutto") else wert, **info}
 
     # Einmessen: welcher Leseweg findet den bekannten EK wieder? Artikelnummer-nahe Preise zuerst.
     for name in sorted(k, key=lambda n: (not n.startswith("nach:"), n)):
         brutto = passt(k[name], eintrag.get("ek_netto"))
         if brutto is not None:
-            return {"art": "eingemessen", "weg": name, "brutto": brutto,
+            return {"art": "eingemessen", "quelle": "regel", "weg": name, "brutto": brutto,
                     "ek": round(k[name] / MWST, 2) if brutto else k[name], **info}
     return {"art": "nicht_pruefbar", **info}
 
@@ -281,15 +302,58 @@ def main(argv):
     for s, e in zu_pruefen.items():
         nach_url.setdefault(e["bestell_url"], []).append(s)
 
-    ergebnisse, erreichbar = {}, 0
-    for url, skus in sorted(nach_url.items()):
-        status, final, roh = lesen(url)
-        erreichbar += status == 200
-        for s in skus:
-            ergebnisse[s] = pruefe(zu_pruefen[s], status, final, roh, stand["artikel"].get(s, {}))
-        time.sleep(PAUSE)
+    seiten = {}
 
-    preis_neu, preis_gross, ausblenden, verdacht, zurueck, ausverkauft, unlesbar, nicht_pruefbar, fehler = ([] for _ in range(9))
+    def seite(url, browser):
+        """Seite einmal je Lauf laden; browser=True über Chromium (None, wenn kein Browser verfügbar)."""
+        if (url, browser) not in seiten:
+            seiten[url, browser] = hilfe.browser_lesen(url) if browser else lesen(url)
+            time.sleep(PAUSE)
+        return seiten[url, browser]
+
+    ergebnisse = {}
+    for s, e in sorted(zu_pruefen.items(), key=lambda x: x[1]["bestell_url"]):
+        basis = stand["artikel"].get(s, {})
+        url = e["bestell_url"]
+        r = pruefe(e, *(basis.get("browser") and seite(url, True) or seite(url, False)), basis)
+        # Gesperrt oder Preis nicht gefunden: mit echtem Browser nochmal versuchen
+        if r["art"] in ("fehler", "nicht_pruefbar") and not basis.get("browser"):
+            b = seite(url, True)
+            if b:
+                r2 = pruefe(e, *b, basis)
+                if r2["art"] not in ("fehler", "nicht_pruefbar") or r["art"] == "fehler":
+                    r = r2
+                    r["browser"] = r2["art"] != "fehler"
+        # Zweiter, unabhängiger Leser: Claude
+        if r["art"] == "nicht_pruefbar":
+            ki = hilfe.ki_lesen(e, r["auszug"])
+            if ki and ki["gefunden"] and passt(ki["preis"] / (MWST if ki["brutto"] else 1), e.get("ek_netto")) is not None:
+                r.update({"art": "eingemessen", "quelle": "ki", "weg": "ki", "brutto": False,
+                          "ek": round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)})
+        elif r["art"] == "ki_noetig":
+            h = hashlib.sha256(r["auszug"].encode()).hexdigest()[:16]
+            r["hash"] = h
+            if h == basis.get("hash"):
+                r.update({"art": "ok", "quelle": "ki", "ek": None})  # Seite unverändert: Preis unverändert
+            else:
+                ki = hilfe.ki_lesen(e, r["auszug"])
+                if not ki:
+                    r["art"] = "unlesbar"
+                elif ki.get("nicht_mehr_lieferbar"):
+                    r.update({"art": "auslauf", "grund": "Händlerseite meldet, dass der Artikel nicht mehr erhältlich ist"})
+                else:
+                    r.update({"art": "ok", "quelle": "ki", "ek": round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)})
+        elif r["art"] in ("ok", "eingemessen") and (s in aus or abs(round(r["ek"] * AUFSCHLAG, 2) - vk.get(s, 0)) >= 0.01):
+            ki = hilfe.ki_lesen(e, r["auszug"])  # Änderung gefunden: Claude liest gegen
+            if ki and ki["gefunden"]:
+                r["ki_ek"] = round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)
+        if r["art"] == "eingemessen" and r.get("quelle") == "ki":
+            r["hash"] = hashlib.sha256(r["auszug"].encode()).hexdigest()[:16]
+        ergebnisse[s] = r
+    erreichbar = sum(1 for url in nach_url if any(x and x[0] == 200 for x in (seiten.get((url, False)), seiten.get((url, True)))))
+
+    preis_neu, preis_gross, ausblenden, verdacht, zurueck, ausverkauft, unlesbar, nicht_pruefbar, fehler, unsicher = (
+        [] for _ in range(10))
     for s, r in sorted(ergebnisse.items()):
         a = stand["artikel"].setdefault(s, {})
         art = r["art"]
@@ -308,8 +372,13 @@ def main(argv):
         a.pop("verdacht", None)
         if art == "eingemessen":
             a.update({"weg": r["weg"], "brutto": r["brutto"]})
-            a.pop("nicht_pruefbar", None)
+            for k in ("nicht_pruefbar", "browser", "hash"):
+                a.pop(k, None)
             art = "ok"
+        if r.get("browser"):
+            a["browser"] = True
+        if r.get("hash"):
+            a["hash"] = r["hash"]
         if art == "nicht_pruefbar":
             if not a.get("nicht_pruefbar"):
                 nicht_pruefbar.append(s)
@@ -318,12 +387,32 @@ def main(argv):
         if art == "unlesbar":
             unlesbar.append(s)
             continue
+        if r.get("ek") is None:
+            continue
         neu = round(r["ek"] * AUFSCHLAG, 2)
+        alt = None if s in aus else vk.get(s)
+        if alt is not None and abs(neu - alt) < 0.01:
+            a.pop("vorschlag_vk", None)
+            continue
+        # Bestätigung: Claude liest denselben Preis, oder (ohne Gegenlesung) zwei Läufe hintereinander derselbe Wert
+        ki_ek = r.get("ki_ek")
+        ki_gleich = ki_ek is not None and abs(round(ki_ek * AUFSCHLAG, 2) - neu) < 0.015
+        if r["quelle"] == "regel":
+            bestaetigt = ki_gleich or (ki_ek is None and a.get("vorschlag_vk") == neu)
+        else:
+            bestaetigt = a.get("vorschlag_vk") == neu
+        if not bestaetigt:
+            a["vorschlag_vk"] = neu
+            if ki_ek is not None and not ki_gleich:
+                hinweis = f"zweite Lesung ergab EK {euro(ki_ek)}, nicht übernommen"
+            else:
+                hinweis = "noch nicht bestätigt, wird beim nächsten Lauf nochmal gelesen"
+            unsicher.append((s, alt, neu, r["ek"], hinweis))
+            continue
+        a.pop("vorschlag_vk", None)
         if s in aus:
             zurueck.append((s, neu))
-            continue
-        alt = vk.get(s)
-        if alt is not None and abs(neu - alt) >= 0.01:
+        else:
             (preis_gross if abs(neu - alt) / alt > MAX_SPRUNG else preis_neu).append((s, alt, neu, r["ek"]))
 
     geprueft = len(nach_url)
@@ -381,6 +470,10 @@ def main(argv):
     if zurueck:
         teile.append(f"WIEDER DA{'' if aendern else ' (vorgeschlagen)'} ({len(zurueck)}), wieder eingeblendet:\n" +
                      "\n".join(f"- {zeile(s)}\n    Verkauf {euro(n)}" for s, n in zurueck))
+    if unsicher:
+        teile.append(f"GEFUNDEN, ABER NOCH NICHT ÜBERNOMMEN ({len(unsicher)}):\n" + "\n".join(
+            f"- {zeile(s)}\n    gelesen EK {euro(ek)}, Verkauf wäre {euro(alt) + ' -> ' if alt else ''}{euro(neu)}; {h}"
+            for s, alt, neu, ek, h in unsicher))
     if verdacht:
         teile.append(f"VERDACHT, wird morgen nochmal geprüft ({len(verdacht)}):\n" + "\n".join(f"- {zeile(s)}\n    {g}" for s, g in verdacht))
     if nicht_pruefbar:
@@ -399,7 +492,8 @@ def main(argv):
         teile.append(f"Zur Info: bei {len(ausverkauft)} Artikeln steht auf der Händlerseite „ausverkauft“ o. ä. "
                      "(oft nur vorübergehend, wird nicht ausgeblendet).")
 
-    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse or erster_lauf or nicht_pruefbar)
+    # Mail nur, wenn sich etwas ändert oder Lenn entscheiden muss (Wunsch 20.10.2026: kein Bericht, wenn alles ok ist)
+    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse)
     kopf = (f"Preiswächter {heute}: {geprueft} Händlerseiten geprüft, {erreichbar} erreichbar, "
             f"{len(ergebnisse)} Artikel.")
     bericht = kopf + "\n\n" + ("\n\n".join(teile) if teile else "Alles unverändert.") + "\n"
@@ -414,7 +508,14 @@ def main(argv):
                                       encoding="utf-8")
 
     # Öffentliches Log: nur Zahlen
+    wege = {}
+    for a in stand["artikel"].values():
+        w = "nicht prüfbar" if a.get("nicht_pruefbar") else (a.get("weg", "-").split(":")[0] + ("+browser" if a.get("browser") else ""))
+        wege[w] = wege.get(w, 0) + 1
+    print(f"Browser-Abrufe {hilfe.zaehler['browser']}, Claude-Abfragen {hilfe.zaehler['ki']}")
+    print("Lesewege je Artikel: " + ", ".join(f"{k} {v}" for k, v in sorted(wege.items())))
     print(f"Seiten {geprueft}, erreichbar {erreichbar}, Artikel {len(ergebnisse)}; Preisänderungen {len(preis_neu)}, "
+          f"unbestätigt {len(unsicher)}, "
           f"große Sprünge {len(preis_gross)}, ausgeblendet {len(ausblenden)}, Verdacht {len(verdacht)}, wieder da {len(zurueck)}, "
           f"nicht prüfbar {sum(1 for a in stand['artikel'].values() if a.get('nicht_pruefbar'))}, "
           f"geändert: {'ja' if aendern and (preis_neu or ausblenden or zurueck) else 'nein'}")

@@ -109,31 +109,6 @@ BAUFORMEN = [("Stellfuß", "Stellfüße"), ("Stellbein", "Stellbeine"), ("Gelenk
              ("Gewindeeinsatz", "Gewindeeinsätze"), ("Spezialausführung", "Spezialausführungen")]
 
 
-# Zwei kleine Szenen für den Vergleich: Stellfuß wird herausgedreht, Rohrrahmen wird auf Einschlagfüße gesetzt
-SZENE_DREHEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein schiefer Tisch wird mit einem Stellfuß ausgerichtet, die Libelle wandert in die Mitte">
-<rect x="0" y="236" width="420" height="24" fill="#d1d5db"/>
-<g class="an-tisch">
-<rect x="30" y="70" width="360" height="22" rx="2" fill="#111827"/>
-<rect x="170" y="50" width="80" height="20" rx="10" fill="#e5e7eb"/><circle class="an-blase" cx="210" cy="60" r="7" fill="#16a34a"/>
-<rect x="52" y="92" width="16" height="132" fill="#374151"/><rect x="40" y="224" width="40" height="12" rx="2" fill="#111827"/>
-<g class="an-spindel"><rect x="356" y="186" width="8" height="42" fill="#9ca3af"/><rect class="an-mutter" x="348" y="204" width="24" height="9" fill="#fece14"/><rect x="340" y="222" width="40" height="14" rx="2" fill="#111827"/></g>
-<rect x="351" y="92" width="18" height="106" fill="#374151"/>
-</g>
-</svg>"""
-
-SZENE_SCHLAGEN = """<svg class="kb-szene" viewBox="0 0 420 260" role="img" aria-label="Ein Rohrrahmen wird auf zwei Einschlagfüße gesetzt, die Zapfen verschwinden im Rohr, bis der Rahmen bündig auf den Füßen steht">
-<rect x="0" y="236" width="420" height="24" fill="#d1d5db"/>
-<g fill="#6b7280"><rect x="55" y="196" width="14" height="30"/><rect x="351" y="196" width="14" height="30"/></g>
-<g fill="#4b5563"><rect x="53" y="202" width="18" height="3"/><rect x="53" y="210" width="18" height="3"/><rect x="53" y="218" width="18" height="3"/>
-<rect x="349" y="202" width="18" height="3"/><rect x="349" y="210" width="18" height="3"/><rect x="349" y="218" width="18" height="3"/></g>
-<g fill="#111827"><rect x="42" y="226" width="40" height="10" rx="2"/><rect x="338" y="226" width="40" height="10" rx="2"/></g>
-<g class="an-rahmen">
-<rect x="30" y="70" width="360" height="22" rx="2" fill="#111827"/>
-<rect x="52" y="92" width="20" height="134" fill="#374151"/><rect x="348" y="92" width="20" height="134" fill="#374151"/>
-</g>
-<g class="an-text"><text x="210" y="252" text-anchor="middle" font-size="13" font-family="Poppins, Arial, sans-serif" fill="#111827">einstecken, fertig: ohne Schweißen und Bohren</text></g>
-</svg>"""
-
 BEISPIELE = [
     "Stellfuß M12 für eine Maschine, ca. 400 kg",
     "Einschlagfuß für 40er Vierkantrohr",
@@ -295,8 +270,6 @@ def beraterseite(liste):
     band = "".join(f"<span>{e(x)}</span>" for x in (
         f"{anzahl} Modelle mit Preis", f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
         "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"ab {euro(min(map(min_preis, liste)))} netto"))
-    stell = sorted(gruppen["Stellfuß"], key=min_preis)
-    schlag = sorted(gruppen["Einschlagfuß"], key=min_preis)
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])
@@ -324,13 +297,14 @@ def beraterseite(liste):
 <p data-rein>Gerät, Gewinde oder Rohrmaß, ungefähre Last, Boden: Was Sie wissen, reicht. Was fehlt, fragt der Berater nach und zeigt danach passende Füße mit Preis.</p>
 <form class="kb-rechner" id="kb-rechner" data-rein>
 <h3>Last pro Fuß</h3>
-<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">1.310 N</output></p>
-<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gerechnet mit 3 tragenden Füßen, weil auf unebenem Boden oft einer kaum Last trägt.</p>
+<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">990 N</output></p>
+<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gleichmäßig verteilt auf 4 Füße.</p>
+<p class="kb-rechner-reserve" id="kb-last-reserve">Mit Reserve: <strong>1.310 N</strong>. Auf unebenem Boden trägt ein Fuß oft kaum mit, bis das Gestell ausgerichtet ist. Dann verteilt sich die Last auf 3 Füße.</p>
 <div class="kb-rechner-felder">
 <label>Gewicht in kg<input type="number" id="kb-kg" min="1" max="100000" value="400" inputmode="numeric"></label>
 <label>Anzahl Füße<input type="number" id="kb-anzahl" min="1" max="64" value="4" inputmode="numeric"></label>
 </div>
-<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 1.310 N pro Fuß. Welche Füße passen?">Damit Füße suchen</button>
+<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 990 N pro Fuß bei gleichmäßiger Verteilung, mit Reserve für unebenen Boden 1.310 N. Welche Füße passen?">Damit Füße suchen</button>
 </form>
 <p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
 </div>
@@ -356,19 +330,7 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <div class="kb-akk" data-rein>{"".join(panels)}</div>
 </section>
 
-<section class="kb-vergleich" data-feld="hell">
-<div class="kb-intro">
-<h2 data-rein>Zwei Arten zu stehen</h2>
-<p data-rein>Ein Stellfuß wird ins Gewinde gedreht, {z['gew_min']} bis {z['gew_max']}, und gleicht über die Spindel Unebenheiten aus.
-Ein Einschlagfuß wird ins offene Rohrende eingesetzt und hält ohne Schweißen und Bohren.</p>
-</div>
-<div class="kb-specimen">
-<figure data-rein>{SZENE_DREHEN}<h3>Drehen</h3><figcaption>Stellfuß: {len(stell)} Modelle ab {euro(min_preis(stell[0]))}</figcaption></figure>
-<figure data-rein>{SZENE_SCHLAGEN}<h3>Einstecken</h3><figcaption>Einschlagfuß: {len(schlag)} Modelle ab {euro(min_preis(schlag[0]))}</figcaption></figure>
-</div>
-</section>
-
-<section class="kb-preise" id="preise" data-feld="weiss">
+<section class="kb-preise" id="preise" data-feld="hell">
 <div class="kb-preise-text">
 <h2 data-rein>Preise</h2>
 <p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p>
@@ -379,7 +341,7 @@ Ein Einschlagfuß wird ins offene Rohrende eingesetzt und hält ohne Schweißen 
 </div>
 </section>
 
-<section class="kb-kontakt" id="kontakt" data-feld="hell">
+<section class="kb-kontakt" id="kontakt" data-feld="weiss">
 <form class="kb-coupon" id="kb-coupon" action="mailto:{mail}" method="post" enctype="text/plain" data-rein>
 <div class="kb-coupon-links">
 <h2>Lieber persönlich?</h2>

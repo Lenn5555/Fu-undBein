@@ -62,24 +62,30 @@
     });
   });
 
-  // Lastrechner: Gewicht und Anzahl Füße ergeben die Last pro Fuß in Newton
+  // Lastrechner: Gewicht und Anzahl Füße ergeben die Last pro Fuß in Newton, gleichmäßig verteilt und mit Reserve
   var kg = document.getElementById("kb-kg");
   var anz = document.getElementById("kb-anzahl");
   var aus = document.getElementById("kb-last");
   var notiz = document.getElementById("kb-last-notiz");
   var frage = document.getElementById("kb-last-frage");
+  var reserve = document.getElementById("kb-last-reserve");
   function zahl(x) { return Math.round(x).toString().replace(/\B(?=(\d{3})+$)/g, "."); }
   function rechnen() {
     var g = parseFloat(kg.value), n = parseInt(anz.value, 10);
-    if (!(g > 0) || !(n > 0)) { aus.textContent = "–"; return; }
-    var tragend = n >= 4 ? n - 1 : n;
-    var newton = Math.ceil(g * 9.81 / tragend / 10) * 10;
+    if (!(g > 0) || !(n > 0)) { aus.textContent = "–"; reserve.hidden = true; return; }
+    function proFuss(k) { return Math.ceil(g * 9.81 / k / 10) * 10; }
+    var newton = proFuss(n);
     aus.textContent = zahl(newton) + " N";
-    notiz.textContent = n >= 4
-      ? "pro Fuß, gerechnet mit " + tragend + " tragenden Füßen, weil auf unebenem Boden oft einer kaum Last trägt."
-      : "pro Fuß, bei " + n + (n === 1 ? " Fuß." : " Füßen.");
+    notiz.textContent = "pro Fuß, gleichmäßig verteilt auf " + n + (n === 1 ? " Fuß." : " Füße.");
+    // Ab 4 Füßen steht ein steifes Gestell auf unebenem Boden oft nur auf n-1 Füßen, bis es ausgerichtet ist
+    var mitReserve = n >= 4 ? proFuss(n - 1) : null;
+    reserve.hidden = !mitReserve;
+    if (mitReserve) {
+      reserve.innerHTML = "Mit Reserve: <strong>" + zahl(mitReserve) + " N</strong>. Auf unebenem Boden trägt ein Fuß oft kaum mit, bis das Gestell ausgerichtet ist. Dann verteilt sich die Last auf " + (n - 1) + " Füße.";
+    }
     frage.setAttribute("data-frage", "Mein Gerät wiegt " + zahl(g) + " kg und steht auf " + n + (n === 1 ? " Fuß" : " Füßen") +
-      ", also etwa " + zahl(newton) + " N pro Fuß. Welche Füße passen?");
+      ", also etwa " + zahl(newton) + " N pro Fuß bei gleichmäßiger Verteilung" +
+      (mitReserve ? ", mit Reserve für unebenen Boden " + zahl(mitReserve) + " N" : "") + ". Welche Füße passen?");
     if (!ruhig) { aus.classList.remove("ist-neu"); void aus.offsetWidth; aus.classList.add("ist-neu"); setTimeout(function () { aus.classList.remove("ist-neu"); }, 260); }
   }
   if (kg && anz) {

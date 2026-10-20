@@ -148,6 +148,8 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .kb-rechner-wert output { display: inline-block; transition: transform .25s var(--ease); }
 .kb-rechner-wert output.ist-neu { transform: scale(1.04); }
 .kb-rechner-notiz { font-size: var(--step-small); color: var(--dunkel-muted); max-width: 46ch; }
+.kb-rechner-reserve { font-size: var(--step-small); color: var(--dunkel-muted); max-width: 46ch; padding: 10px 12px; border-left: 3px solid var(--gelb); background: var(--dunkel); border-radius: 0 var(--r-klein) var(--r-klein) 0; }
+.kb-rechner-reserve strong { color: var(--weiss); }
 .kb-rechner .bf-knopf { justify-self: start; }
 .kb-ablauf { font-size: var(--step-small); }
 

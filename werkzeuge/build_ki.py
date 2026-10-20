@@ -269,13 +269,14 @@ def beraterseite(liste):
 <p data-rein>Gerät, Gewinde oder Rohrmaß, ungefähre Last, Boden: Was Sie wissen, reicht. Was fehlt, fragt der Berater nach und zeigt danach passende Füße mit Preis.</p>
 <form class="kb-rechner" id="kb-rechner" data-rein>
 <h3>Last pro Fuß</h3>
-<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">1.310 N</output></p>
-<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gerechnet mit 3 tragenden Füßen, weil auf unebenem Boden oft einer kaum Last trägt.</p>
+<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">990 N</output></p>
+<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gleichmäßig verteilt auf 4 Füße.</p>
+<p class="kb-rechner-reserve" id="kb-last-reserve">Mit Reserve: <strong>1.310 N</strong>. Auf unebenem Boden trägt ein Fuß oft kaum mit, bis das Gestell ausgerichtet ist. Dann verteilt sich die Last auf 3 Füße.</p>
 <div class="kb-rechner-felder">
 <label>Gewicht in kg<input type="number" id="kb-kg" min="1" max="100000" value="400" inputmode="numeric"></label>
 <label>Anzahl Füße<input type="number" id="kb-anzahl" min="1" max="64" value="4" inputmode="numeric"></label>
 </div>
-<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 1.310 N pro Fuß. Welche Füße passen?">Damit Füße suchen</button>
+<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 990 N pro Fuß bei gleichmäßiger Verteilung, mit Reserve für unebenen Boden 1.310 N. Welche Füße passen?">Damit Füße suchen</button>
 </form>
 <p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
 </div>

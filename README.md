@@ -73,4 +73,8 @@ Einrichten (einmalig, ohne Terminal):
    `BEZUGSQUELLEN` (Inhalt von `/mnt/project-files/katalog/intern/ki-bezugsquellen-fuer-github.txt`).
 3. Unter Actions den Workflow „KI-Server veröffentlichen“ starten. Die Worker-Adresse (…workers.dev) in `daten/site.json` als `ki_api` eintragen.
 
+Suchmaschinen: `build_ki.py` schreibt Canonical-Links, Open-Graph-Vorschau (`ki/seite/vorschau.jpg`), schema.org-Daten, `sitemap.xml` und `robots.txt`.
+Die Adressen zeigen auf github.io, bis eine Datei `CNAME` im Repo liegt; dann automatisch auf die eigene Domain.
+Den Bestätigungscode der Google Search Console in `daten/site.json` als `google_bestaetigung` eintragen.
+
 Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, das Secret `BEZUGSQUELLEN` erneuern und den Workflow neu starten.

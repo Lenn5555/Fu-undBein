@@ -17,6 +17,7 @@ import json
 import re
 import shutil
 import sys
+from datetime import date
 from html import escape as e
 from pathlib import Path
 
@@ -28,6 +29,11 @@ ROOT, OUT, CFG = b.ROOT, b.OUT, b.CFG
 b.NAV = [("Berater", "/"), ("Kontakt", "/kontakt/")]
 INTERN = Path("/mnt/project-files/katalog/intern")
 KATALOG = ROOT / "ki/worker/src/katalog.json"
+# Öffentliche Adresse für Canonical, Sitemap und Vorschaubilder. Mit Datei CNAME gilt die eigene Domain,
+# so zieht Google beim Umzug auf beinundfuß.de automatisch mit.
+CNAME = (ROOT / "CNAME").read_text(encoding="utf-8").strip() if (ROOT / "CNAME").exists() else ""
+SITE_URL = f"https://{CNAME}" if CNAME else "https://lenn5555.github.io/Fu-undBein"
+SEITEN = []  # (pfad, priorität) für sitemap.xml
 
 
 def ohne_html(text):
@@ -126,6 +132,10 @@ BEISPIELE = [
 ]
 
 
+STANDARD_BESCHREIBUNG = ("Stellfüße, Einschlagfüße, Stellbeine und Maschinenfüße mit festem Nettopreis kaufen. "
+                         "Anwendung beschreiben, passenden Fuß finden und direkt bestellen. Für Gewerbekunden.")
+
+
 def euro(x):
     return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " €"
 
@@ -147,7 +157,7 @@ def kennzahlen(liste):
     return z
 
 
-def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone"):
+def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", index=True):
     """Eigener Rahmen der KI-Seite: Kopfleiste, die die Farbe des Abschnitts darunter annimmt, und Fuß als Wortmarke aus Blöcken."""
     nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Einsätze", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
     farben = ["koralle", "gelb", "gruen", "bone", "koralle", "gelb", "gruen", "bone", "koralle", "gelb", "gruen"]
@@ -161,8 +171,9 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone"):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(titel)}</title>
-<meta name="description" content="{e(beschreibung or 'Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Beschreiben Sie Ihre Anwendung und bestellen Sie den passenden Fuß.')}">
+<meta name="description" content="{e(beschreibung or STANDARD_BESCHREIBUNG)}">
 <meta name="theme-color" content="#1a1a1a">
+{seo_kopf(titel, beschreibung, pfad, index)}
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/ki.css">
@@ -193,8 +204,51 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone"):
 """
 
 
-def textseite(titel, absaetze):
-    return seitenrahmen(f"{titel} | beinundfuß.de", f'<section class="bf-text" data-feld="bone"><h1>{e(titel)}</h1>{absaetze}</section>')
+def seo_kopf(titel, beschreibung, pfad, index):
+    """Canonical, Open Graph und Search-Console-Bestätigung; Seiten ohne Index bekommen noindex."""
+    if not index:
+        return '<meta name="robots" content="noindex">'
+    url = f"{SITE_URL}/{pfad}"
+    besch = e(beschreibung or STANDARD_BESCHREIBUNG)
+    zeilen = [f'<link rel="canonical" href="{url}">',
+              '<meta property="og:type" content="website">', '<meta property="og:locale" content="de_DE">',
+              '<meta property="og:site_name" content="beinundfuß.de">', f'<meta property="og:url" content="{url}">',
+              f'<meta property="og:title" content="{e(titel)}">', f'<meta property="og:description" content="{besch}">',
+              f'<meta property="og:image" content="{SITE_URL}/assets/vorschau.jpg">',
+              '<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">',
+              '<meta name="twitter:card" content="summary_large_image">']
+    if CFG.get("google_bestaetigung"):
+        zeilen.append(f'<meta name="google-site-verification" content="{e(CFG["google_bestaetigung"])}">')
+    return "\n".join(zeilen)
+
+
+def textseite(titel, absaetze, pfad, beschreibung="", prio="0.3"):
+    SEITEN.append((pfad, prio))
+    return seitenrahmen(f"{titel} | beinundfuß.de", f'<section class="bf-text" data-feld="bone"><h1>{e(titel)}</h1>{absaetze}</section>',
+                        beschreibung=beschreibung, pfad=pfad)
+
+
+def strukturierte_daten(liste):
+    """schema.org für Google: Händler (Shop) mit Kontakt und Website."""
+    daten = {"@context": "https://schema.org", "@graph": [
+        {"@type": "OnlineStore", "@id": f"{SITE_URL}/#shop", "name": "beinundfuß.de", "url": f"{SITE_URL}/",
+         "logo": f"{SITE_URL}/assets/favicon.svg", "image": f"{SITE_URL}/assets/vorschau.jpg",
+         "description": STANDARD_BESCHREIBUNG, "email": CFG["anfrage_email"],
+         "parentOrganization": {"@type": "Organization", "name": "T&S Systemtechnik GmbH",
+                                "address": {"@type": "PostalAddress", "addressLocality": "Pfungstadt", "addressCountry": "DE"}},
+         "areaServed": "DE", "currenciesAccepted": "EUR",
+         "knowsAbout": ["Stellfüße", "Einschlagfüße", "Stellbeine", "Gelenkfüße", "Maschinenfüße", "Nivellierelemente", "Schwingungsdämpfer"]},
+        {"@type": "WebSite", "@id": f"{SITE_URL}/#website", "url": f"{SITE_URL}/", "name": "beinundfuß.de", "inLanguage": "de-DE",
+         "publisher": {"@id": f"{SITE_URL}/#shop"}},
+    ]}
+    return f'<script type="application/ld+json">{json.dumps(daten, ensure_ascii=False)}</script>'
+
+
+def sitemap():
+    heute = date.today().isoformat()
+    urls = "".join(f"<url><loc>{e(SITE_URL)}/{pfad}</loc><lastmod>{heute}</lastmod><priority>{prio}</priority></url>"
+                   for pfad, prio in SEITEN)
+    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n'
 
 
 def beraterseite(liste):
@@ -237,10 +291,10 @@ def beraterseite(liste):
         "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"ab {euro(min(map(min_preis, liste)))} netto"))
     stell = sorted(gruppen["Stellfuß"], key=min_preis)
     schlag = sorted(gruppen["Einschlagfuß"], key=min_preis)
-    kopf = ('<meta property="og:title" content="beinundfuß.de: Stellfüße und Einschlagfüße mit Preis">'
-            '<meta property="og:description" content="Beschreiben Sie Ihre Anwendung und bekommen Sie passende Füße mit festem Nettopreis.">')
+    kopf = strukturierte_daten(liste)
+    SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])
-    return seitenrahmen("beinundfuß.de: Stellfüße und Einschlagfüße mit Preis", f"""
+    return seitenrahmen("Stellfüße und Einschlagfüße kaufen, mit festem Preis | beinundfuß.de", f"""
 <section class="kb-hero" data-feld="gruen">
 <h1 class="kb-titel" data-rein><span class="kb-z1">Stellfüße</span><span class="kb-z2">Einschlagfüße</span></h1>
 <img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
@@ -331,7 +385,9 @@ Ein Einschlagfuß wird mit dem Hammer ins offene Rohr geschlagen und hält ohne 
 </section>
 <dialog id="ki-bestellen" class="ki-dialog"></dialog>
 <script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{mail}" }};</script>
-<script src="/assets/ki.js" defer></script>""", kopf=kopf, feld="koralle")
+<script src="/assets/ki.js" defer></script>""", kopf=kopf, feld="koralle",
+        beschreibung=f"{anzahl} Stellfüße, Einschlagfüße, Stellbeine und Gelenkfüße mit festem Nettopreis, Gewinde {z['gew_min']} bis {z['gew_max']}. "
+                     "Anwendung beschreiben, passenden Fuß finden und direkt bestellen.")
 
 
 def main():
@@ -355,7 +411,7 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
-    for datei in ("ki.js", "ki.css", "seite.js", "fuesse-freigestellt.webp"):
+    for datei in ("ki.js", "ki.css", "seite.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" fill="#ed4b44"/>'
@@ -374,16 +430,20 @@ def main():
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'
-                                               f"<p>{e(CFG['betreiber_zeile'])}</p>"))
+                                               f"<p>{e(CFG['betreiber_zeile'])}</p>", "kontakt/",
+                                    "Kontakt zu beinundfuß.de: Fragen zu Stellfüßen, Einschlagfüßen, Sonderanfertigungen und Mengenpreisen.", "0.5"))
     for pfad, titel in (("impressum", "Impressum"), ("datenschutz", "Datenschutzerklärung"), ("agb", "Allgemeine Geschäftsbedingungen")):
         datei = b.RECHT / f"{pfad}.html"
         if not datei.exists():
             if pfad == "agb":
                 continue
             raise SystemExit(f"Rechtstext fehlt: {datei}")
-        schreibe(pfad, textseite(titel, datei.read_text(encoding="utf-8")))
-    (OUT / "404.html").write_text(textseite("Seite nicht gefunden", '<p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p>'), encoding="utf-8")
-    (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\n", encoding="utf-8")
+        schreibe(pfad, textseite(titel, datei.read_text(encoding="utf-8"), f"{pfad}/", prio="0.1"))
+    (OUT / "404.html").write_text(seitenrahmen("Seite nicht gefunden | beinundfuß.de", '<section class="bf-text" data-feld="bone">'
+                                               '<h1>Seite nicht gefunden</h1><p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p></section>',
+                                               index=False), encoding="utf-8")
+    (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
+    (OUT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
 
     if b.BASIS:
         for f in OUT.rglob("*.html"):

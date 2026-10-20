@@ -1,7 +1,8 @@
 {
-  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink.",
+  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink. google_bestaetigung: Code aus der Google Search Console (Bestätigung per HTML-Tag), leer lassen bis vorhanden.",
   "anfrage_email": "sales@ts-systec.de",
   "betreiber_zeile": "Ein Angebot der TS Systemtechnik.",
   "bezahllinks": {},
-  "ki_api": "https://beinundfuss-ki.beinundfuss.workers.dev"
+  "ki_api": "https://beinundfuss-ki.beinundfuss.workers.dev",
+  "google_bestaetigung": ""
 }

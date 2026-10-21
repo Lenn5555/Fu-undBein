@@ -1,7 +1,7 @@
 name: Preiswächter
 
 # Prüft einmal pro Woche (Lenn, 20.10.2026) die Händlerseiten der Bezugsquellen: Preisänderungen werden übernommen
-# (Verkaufspreis = Einkaufspreis + 10 %), ausgelaufene Artikel ausgeblendet. Eine Mail kommt nur,
+# (Verkaufspreis = Einkaufspreis + 15 %), ausgelaufene Artikel ausgeblendet. Eine Mail kommt nur,
 # wenn sich etwas ändert oder etwas zu entscheiden ist.
 # Das Log ist öffentlich: Es enthält nur Zahlen. Händler und Einkaufspreise stehen nur in der Mail.
 # Benötigte GitHub-Secrets: BEZUGSQUELLEN, RESEND_API_KEY, ANTHROPIC_API_KEY (alle schon für den KI-Server angelegt).

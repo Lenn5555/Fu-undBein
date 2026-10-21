@@ -90,7 +90,7 @@ Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, 
 - **Lesen**: erst einfacher Abruf; ist die Seite gesperrt oder steht der Preis erst nach JavaScript da, mit echtem Browser (Chromium).
   Beim ersten Lauf sucht der Wächter je Artikel die Stelle, an der der bekannte Einkaufspreis steht. Findet keine Regel ihn,
   liest Claude die Seite (`werkzeuge/preiswaechter_hilfe.py`); passt Claudes Wert zum bekannten EK, wird der Artikel so weiter geprüft.
-- **Preis geändert**: Verkaufspreis = neuer Einkaufspreis + 10 %. Übernommen wird nur, was bestätigt ist: Regel und Claude lesen
+- **Preis geändert**: Verkaufspreis = neuer Einkaufspreis + 15 % (seit 21.10.2026). Produkte aus dem TS-Sortiment prüft der Wächter nicht, sie haben keine Händlerseite. Übernommen wird nur, was bestätigt ist: Regel und Claude lesen
   denselben Preis, oder (wenn nur ein Leser den Preis findet) derselbe Wert am Montag und bei der Nachprüfung am Dienstag. Widersprechen sich
   die Leser, wird nur gemeldet. Sprünge über 25 % werden nur gemeldet.
 - **Nicht mehr verfügbar** (Seite weg, Artikelnummer verschwunden, „nicht mehr lieferbar“ neu auf der Seite, am Montag und bei der Nachprüfung am Dienstag):

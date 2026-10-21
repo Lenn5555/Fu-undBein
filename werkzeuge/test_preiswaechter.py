@@ -99,7 +99,9 @@ class Ablauf(unittest.TestCase):
                         (("PREISE", "preise-vergleich.csv"), ("AUSGEBLENDET", "ausgeblendet.csv"), ("STAND", "preiswaechter.json"))]
         self.ki = None  # Antwort des zweiten Lesers (Claude); None = nicht verfügbar
         self.ki_aufrufe = 0
-        self.patches += [mock.patch.object(pw, "ROOT", self.tmp), mock.patch.object(pw, "PAUSE", 0),
+        # Rechenbeispiele unten mit 10 % Aufschlag; der echte Aufschlag steht in preiswaechter.AUFSCHLAG
+        self.patches += [mock.patch.object(pw, "AUFSCHLAG", 1.10),
+                         mock.patch.object(pw, "ROOT", self.tmp), mock.patch.object(pw, "PAUSE", 0),
                          mock.patch.object(pw.hilfe, "browser_lesen", lambda url: None),
                          mock.patch.object(pw.hilfe, "ki_lesen", self.ki_lesen)]
         for p in self.patches:

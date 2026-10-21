@@ -47,7 +47,7 @@ PREISE = ROOT / "daten/preise-vergleich.csv"
 AUSGEBLENDET = ROOT / "daten/ausgeblendet.csv"
 STAND = ROOT / "daten/preiswaechter.json"
 
-AUFSCHLAG = 1.10            # Verkaufspreis = EK + 10 % (Lenn, 08.10.2026)
+AUFSCHLAG = 1.15            # Verkaufspreis = EK + 15 % (Lenn, 21.10.2026; vorher 10 %)
 MWST = 1.19
 TOLERANZ_EINMESSEN = 0.03   # gefundener Preis darf beim Einmessen 3 % vom bekannten EK abweichen
 MAX_SPRUNG = 0.25           # größere Preissprünge nur melden, nicht übernehmen
@@ -463,7 +463,7 @@ def main(argv):
                      "(Actions > Preiswächter > Run workflow, Haken bei „Sicherheitsbremse übergehen“).")
     tun = "geändert" if aendern else "würde geändert"
     if preis_neu:
-        teile.append(f"PREISE {tun.upper()} ({len(preis_neu)}), Verkaufspreis = neuer Einkaufspreis + 10 %:\n" + "\n".join(
+        teile.append(f"PREISE {tun.upper()} ({len(preis_neu)}), Verkaufspreis = neuer Einkaufspreis + 15 %:\n" + "\n".join(
             f"- {zeile(s)}\n    EK jetzt {euro(ek)}, Verkauf {euro(alt)} -> {euro(neu)}" for s, alt, neu, ek in preis_neu))
     if preis_gross:
         teile.append(f"GROSSER PREISSPRUNG, NICHT übernommen, bitte prüfen ({len(preis_gross)}):\n" + "\n".join(

@@ -204,7 +204,10 @@
     var zl = el("label", "ki-check");
     var z = el("input"); z.type = "checkbox"; z.name = "zustimmung"; z.required = true;
     zl.appendChild(z);
-    zl.appendChild(document.createTextNode(" Ich bin Gewerbetreibender und stimme zu, dass meine Angaben zur Bearbeitung der Bestellung verwendet werden (siehe Datenschutz)."));
+    zl.appendChild(document.createTextNode(" Ich bestelle als Unternehmer, nicht als Verbraucher. Es gelten die "));
+    var agb = el("a", "", "AGB"); agb.href = (cfg.basis || "") + "/agb/"; agb.target = "_blank";
+    zl.appendChild(agb);
+    zl.appendChild(document.createTextNode(". Meine Angaben werden zur Bearbeitung der Bestellung verwendet (siehe Datenschutz)."));
     f.appendChild(zl);
     var meldung = el("p", "ki-meldung");
     f.appendChild(meldung);

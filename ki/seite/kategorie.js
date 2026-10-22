@@ -16,8 +16,8 @@
   const vergleich = {
     preis: (a, b) => zahl(a, "preis") - zahl(b, "preis"),
     "preis-ab": (a, b) => zahl(b, "preis") - zahl(a, "preis"),
-    gewinde: (a, b) => zahl(a, "gewinde") - zahl(b, "gewinde") || zahl(a, "groesse") - zahl(b, "groesse") || zahl(a, "preis") - zahl(b, "preis"),
-    groesse: (a, b) => zahl(a, "groesse") - zahl(b, "groesse") || zahl(a, "gewinde") - zahl(b, "gewinde") || zahl(a, "preis") - zahl(b, "preis"),
+    gewinde: (a, b) => zahl(a, "nachGewinde") - zahl(b, "nachGewinde") || zahl(a, "nachGroesse") - zahl(b, "nachGroesse") || zahl(a, "preis") - zahl(b, "preis"),
+    groesse: (a, b) => zahl(a, "nachGroesse") - zahl(b, "nachGroesse") || zahl(a, "nachGewinde") - zahl(b, "nachGewinde") || zahl(a, "preis") - zahl(b, "preis"),
   };
 
   function anwenden() {

@@ -563,7 +563,7 @@ def sortierdaten(q):
     """Daten am Listeneintrag für Sortieren und Filtern im Browser (kategorie.js); ohne JavaScript bleibt die Liste nach Preis."""
     gew = [int(w[1:]) for w in werte(q, "Gewinde")]
     groesse = zahl(q["merkmale"].get("Rohrmaß")) or zahl(q["merkmale"].get("Durchmesser"))
-    attr = {"preis": f"{min_preis(q):.2f}", "gewinde": min(gew) if gew else 999, "groesse": groesse or 9999}
+    attr = {"preis": f"{min_preis(q):.2f}", "nach-gewinde": min(gew) if gew else 999, "nach-groesse": groesse or 9999}
     for m, _ in FILTER:
         attr[b.slug(m)] = "|".join(werte(q, m))
     return "".join(f' data-{k}="{e(str(v))}"' for k, v in attr.items())

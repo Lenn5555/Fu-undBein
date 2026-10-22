@@ -181,7 +181,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
     """Eigener Rahmen der KI-Seite: feste helle Kopfleiste, dunkler Fuß mit Wortmarke."""
     # Seitenart für die anonyme Zählung (Einstiegsseite), siehe ki/seite/zaehlen.js
     seite = seite or ("start" if pfad == "" and index else "uebersicht" if pfad == "produkte/" else "sonstige")
-    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Einsätze", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
+    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Anwendung", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
     mail = e(CFG["anfrage_email"])
     return f"""<!doctype html>
 <html lang="de">
@@ -210,7 +210,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <footer class="bf-fuss" data-feld="dunkel">
 <div class="bf-fuss-kopf"><a class="bf-wortmarke" href="/">beinundfuß.de</a><p>Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Ein Angebot von TS Systemtechnik, Pfungstadt.</p></div>
 <div class="bf-fuss-raster">
-<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a><a href="/versandkosten/">Versandkosten</a></nav>
+<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Anwendung</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a><a href="/versandkosten/">Versandkosten</a></nav>
 <nav class="bf-fuss-links" aria-label="Rechtliches"><a href="/kontakt/">Kontaktseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{b.AGB_LINK}</nav>
 <div class="bf-fuss-adresse"><p>{e(CFG['betreiber_zeile'])}<br>TS Systemtechnik, Pfungstadt</p><p><a href="mailto:{mail}">{mail}</a></p></div>
 </div>
@@ -360,8 +360,8 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 
 <section class="kb-einsaetze" id="einsaetze" data-feld="weiss">
 <div class="kb-intro">
-<h2 data-rein>Wo Füße arbeiten</h2>
-<p data-rein>Sechs typische Einsätze und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
+<h2 data-rein>Anwendungsbereiche</h2>
+<p data-rein>Sechs typische Anwendungen und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
 </div>
 <div class="kb-akk" data-rein>{"".join(panels)}</div>
 </section>

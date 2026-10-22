@@ -74,7 +74,7 @@ jobs:
           npx wrangler tail beinundfuss-ki --format pretty > protokoll.txt 2>&1 &
           sleep 12
           curl -sS -m 90 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/beraten \
-            -H "Origin: https://lenn5555.github.io" -H "Content-Type: application/json" \
+            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
             -d '{"verlauf":[{"rolle":"kunde","text":"Ich brauche 4 Stellfüße M12 für eine Maschine mit 400 kg, der Boden ist etwas uneben."}]}' \
             -o antwort.json -w "HTTP %{http_code} in %{time_total}s\n"
           node -e "const d=require('./antwort.json'); console.log(d.antwort||d.fehler); for (const p of d.produkte||[]) console.log('-', p.sku, p.name, p.preis)"
@@ -90,7 +90,7 @@ jobs:
               hinweis: 'Automatischer Test der Bestellmail. Bitte nicht bearbeiten.', zustimmung: true }));
           " > bestellung.json
           curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bestellen \
-            -H "Origin: https://lenn5555.github.io" -H "Content-Type: application/json" \
+            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
             --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
           cat ergebnis.json; echo
           node -e "process.exit(require('./ergebnis.json').ok ? 0 : 1)"

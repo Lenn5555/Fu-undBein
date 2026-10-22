@@ -20,7 +20,6 @@
 .pr-tabelle thead th { color: var(--muted); font-weight: 500; }
 .pr-daten th { width: 38%; font-weight: 500; color: var(--muted); }
 .pr-zahl { text-align: right !important; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.pr-nr { white-space: nowrap; color: var(--muted); }
 .pr-liste { list-style: none; margin: 0; padding: 0; }
 .pr-liste a { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--hell-2); color: var(--ink); text-decoration: none; }
 .pr-liste a:hover span:first-child { text-decoration: underline; }
@@ -39,7 +38,6 @@
 .pr-seite section h2 a { color: inherit; text-decoration: none; }
 .pr-seite section h2 a:hover { text-decoration: underline; }
 .pr-mehr { display: inline-block; margin-top: 16px; font-weight: 500; color: var(--ink); }
-@media (max-width: 560px) { .pr-nr { display: none; } }
 .pr-kurz + .pr-kurz { margin-top: 12px; }
 .pr-kurz + section { margin-top: 40px; }
 

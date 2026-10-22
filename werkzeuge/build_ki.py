@@ -124,7 +124,7 @@ def bezugsquellen(produkte):
 
 # Einsätze für das Akkordeon: Bild aus dem Theme, Name, Text (mit Zahlen aus dem Katalog), Frage an den Berater
 EINSAETZE = [
-    (1, "Gastronomie", "Edelstahl-Stellbeine für Arbeitstische, Spülen und Kühlmöbel, höhenverstellbar und leicht zu reinigen. {Gastronomiegerät} Modelle für Gastronomiegeräte.",
+    (1, "Gastronomie", "Edelstahl-Stellbeine für Arbeitstische, Spülen, Kühlmöbel, Öfen und Kaffeemaschinen, höhenverstellbar und leicht zu reinigen. {Gastronomiegerät} Modelle für Gastronomiegeräte.",
      "Ich brauche höhenverstellbare Füße für einen Edelstahl-Arbeitstisch in der Gastronomie."),
     (3, "Maschinen", "Maschinenfüße mit Gewindespindel von {gew_min} bis {gew_max}, mit oder ohne Bodenbefestigung. {Maschine / Anlage} Modelle für Maschinen und Anlagen.",
      "Ich suche Maschinenfüße für eine Produktionsmaschine. Was brauchen Sie von mir?"),
@@ -460,7 +460,7 @@ def produktdaten(p, bauform):
                    "priceSpecification": {**netto, "price": f"{preise[0]:.2f}"}}
     angebot.update({"url": produkt_url(p, True), "seller": {"@id": f"{SITE_URL}/#shop"},
                     "eligibleCustomerType": "https://schema.org/Business"})
-    produkt = {"@type": "Product", "name": seo_name(p), "sku": p["sku"], "description": p["kurz"],
+    produkt = {"@type": "Product", "name": seo_name(p), "description": p["kurz"],
                "image": bild_absolut(p), "url": produkt_url(p, True), "category": bauform, "offers": angebot}
     if p["marke"]:
         produkt["brand"] = {"@type": "Brand", "name": p["marke"]}
@@ -475,7 +475,7 @@ def produktdaten(p, bauform):
 def produktseite(p, verwandte, mehrzahl):
     """Eigene Seite je Produkt: Daten, Ausführungen mit Preis, Bestellen und Berater fragen."""
     bauform = p["merkmale"]["Bauform"]
-    frage = f"Ich interessiere mich für „{p['name']}“ ({p['sku']}). Welche Ausführung passt für meine Anwendung?"
+    frage = f"Ich interessiere mich für „{p['name']}“. Welche Ausführung passt für meine Anwendung?"
     bestellen = f"/?bestellen={quote(p['sku'])}#berater"
     fragen = f"/?frage={quote(frage)}#berater"
     daten = "".join(f"<tr><th scope=\"row\">{e(k)}</th><td>{e(v)}</td></tr>" for k, v in p["merkmale"].items() if v)
@@ -483,10 +483,10 @@ def produktseite(p, verwandte, mehrzahl):
         daten = f'<tr><th scope="row">Hersteller</th><td>{e(p["marke"])}</td></tr>' + daten
     ausf = ""
     if p["varianten"]:
-        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-nr">{e(v["sku"])}</td><td class="pr-zahl">{euro(v["preis"])}</td>'
+        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-zahl">{euro(v["preis"])}</td>'
                          f'<td class="pr-zahl"><a class="pr-pille" href="/?bestellen={quote(p["sku"])}&amp;variante={quote(v["sku"])}#berater">Bestellen</a></td></tr>'
                          for v in p["varianten"])
-        ausf = (f'<h2>Ausführungen und Preise</h2><div class="pr-tabelle"><table><thead><tr><th>Ausführung</th><th class="pr-nr">Artikelnr.</th>'
+        ausf = (f'<h2>Ausführungen und Preise</h2><div class="pr-tabelle"><table><thead><tr><th>Ausführung</th>'
                 f'<th class="pr-zahl">Preis netto/Stück</th><th class="pr-zahl"><span class="bf-unsichtbar">Bestellen</span></th></tr></thead><tbody>{zeilen}</tbody></table></div>')
     if p["preis_ab"]:
         ausf += "<p class=\"pr-notiz\">Der Preis gilt für die günstigste Ausführung der Serie. Den Preis für Ihre Größe bestätigen wir mit der Auftragsbestätigung.</p>"
@@ -506,7 +506,7 @@ def produktseite(p, verwandte, mehrzahl):
 <p class="pr-kurz">{e(p['kurz'])}</p>
 <p class="pr-preis">{preis_ab_text(p)} <span>netto pro Stück, zzgl. MwSt. und <a href="/versandkosten/">Versand</a></span></p>
 <p class="pr-aktionen"><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="{bestellen}">Bestellen</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="{fragen}">Berater fragen</a></p>
-<p class="pr-notiz">Artikelnummer {e(p['sku'])}. Verkauf an Gewerbetreibende. Verbindlich wird die Bestellung mit unserer Auftragsbestätigung.</p>
+<p class="pr-notiz">Verkauf an Gewerbetreibende. Verbindlich wird die Bestellung mit unserer Auftragsbestätigung.</p>
 </div>
 </div>
 <div class="pr-details">

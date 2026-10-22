@@ -180,6 +180,7 @@ test("Statistik: Bericht und Schlüssel", async () => {
   assert.equal(r.proTag["2026-10-22"].besuch, 8);
   assert.equal(r.einstieg.produkt, 2);
   assert.equal(r.luecken["Stellfuß: Traglast zu hoch"], 4);
+  assert.deepEqual(r.umsatz, { netto_cent: 0, werbung_cent: 0, proTag: {} });
   // sha256("test")
   assert.ok(await schluesselPasst("test", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08"));
   assert.ok(!(await schluesselPasst("falsch", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08")));
@@ -202,4 +203,24 @@ test("Berater meldet „nichts passend“ nur als Kategorie", async () => {
     { stop_reason: "end_turn", content: [{ type: "text", text: "Ok." }] },
   ]);
   assert.equal((await beraten(c2, [{ rolle: "kunde", text: "?" }])).luecke, null);
+});
+
+test("Statistik: Bestellung zählt nur Summen aus Katalogpreis und Menge", async () => {
+  const { bestellEintraege, bericht } = await import("../src/statistik.js");
+  const b = { produkt: { sku: "A-1", name: "Stellfuß M10" }, menge: 4, summe: 12.34, kunde: { name: "Muster", email: "a@b.de" } };
+  const e = bestellEintraege({ herkunft: "werbung", summe: 999999 }, b);
+  assert.deepEqual(e, [
+    { art: "ereignis", wert: "bestellung", quelle: "werbung" },
+    { art: "umsatz", wert: "netto_cent", quelle: "werbung", n: 1234 },
+    { art: "artikel", wert: "A-1 Stellfuß M10", quelle: "werbung", n: 4 },
+  ]);
+  assert.ok(!JSON.stringify(e).includes("Muster"));
+  const r = bericht([
+    ...e.map((x) => ({ tag: "2026-10-22", ...x, n: x.n ?? 1 })),
+    { tag: "2026-10-23", art: "umsatz", wert: "netto_cent", quelle: "sonstige", n: 500 },
+    { tag: "2026-10-23", art: "artikel", wert: "A-1 Stellfuß M10", quelle: "sonstige", n: 2 },
+  ], 7);
+  assert.deepEqual(r.umsatz, { netto_cent: 1734, werbung_cent: 1234, proTag: { "2026-10-22": 1234, "2026-10-23": 500 } });
+  assert.equal(r.artikel["A-1 Stellfuß M10"], 6);
+  assert.equal(r.summe.bestellung, 1);
 });

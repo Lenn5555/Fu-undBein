@@ -16,8 +16,8 @@ export class Zaehler extends DurableObject {
     const tag = heute();
     for (const e of eintraege) {
       this.ctx.storage.sql.exec(
-        "INSERT INTO zahlen (tag, art, wert, quelle, n) VALUES (?, ?, ?, ?, 1) ON CONFLICT DO UPDATE SET n = n + 1",
-        tag, e.art, e.wert, e.quelle);
+        "INSERT INTO zahlen (tag, art, wert, quelle, n) VALUES (?, ?, ?, ?, ?) ON CONFLICT DO UPDATE SET n = n + excluded.n",
+        tag, e.art, e.wert, e.quelle, e.n ?? 1);
     }
   }
 

@@ -71,3 +71,8 @@
 .pr-versand-eu td { padding-left: 12px; }
 .pr-punkte { padding-left: 1.2em; display: grid; gap: 8px; max-width: 70ch; }
 .pr-preis a, .pr-kurz a { color: inherit; }
+/* Statistikseite */
+.st-form { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin: 32px 0 8px; }
+.st-form label { display: grid; gap: 6px; font-size: var(--step-small); color: var(--muted); }
+.st-form input, .st-form select { min-height: 48px; padding: 0 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); font: inherit; color: var(--ink); background: var(--weiss); }
+#st-ergebnis section { margin: 48px 0 0; }

@@ -80,6 +80,11 @@ und öffnet dort das Bestellformular; „Berater fragen“ startet das Gespräch
 Die Adressen zeigen auf github.io, bis eine Datei `CNAME` im Repo liegt; dann automatisch auf die eigene Domain.
 Den Bestätigungscode der Google Search Console in `daten/site.json` als `google_bestaetigung` eintragen.
 
+Besucherzählung ohne Cookies: `ki/seite/zaehlen.js` meldet je Seitenaufruf nur Ereignisart, Herkunft (Werbung über `gclid`/`utm_medium=cpc`,
+Google, andere Seite, direkt) und Seitenart an `POST /zaehlen`. Der Worker speichert Tagessummen im Durable Object `Zaehler` (SQLite),
+keine IP, keine Kennung, keine Texte. Bestellungen zählt der Server selbst; findet der Berater nichts, meldet er über das Werkzeug
+`nichts_passend` nur Bauform und Grund. Bericht unter `/statistik/` mit Schlüssel (im Repo steht nur sein SHA-256 als `STATISTIK_HASH`).
+
 Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, das Secret `BEZUGSQUELLEN` erneuern und den Workflow neu starten.
 
 ## Preiswächter (täglich, GitHub Actions)

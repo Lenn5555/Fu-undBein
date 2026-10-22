@@ -129,7 +129,13 @@
     blase("berater", "Guten Tag! Wofür brauchen Sie Füße? Nennen Sie mir zum Beispiel Anwendung, Gewinde oder Rohrmaß und ungefähre Last. Wenn Sie unsicher sind, frage ich nach.");
   }
 
+  // Anonyme Zählung (zaehlen.js); fehlt sie, passiert nichts
+  function zaehle(ereignis) {
+    if (window.bfZaehle) window.bfZaehle(ereignis);
+  }
+
   function senden(text) {
+    zaehle("chat_start");
     verlauf.push({ rolle: "kunde", text: text });
     blase("kunde", text);
     if (chips) chips.hidden = true;
@@ -154,6 +160,7 @@
         verlauf.push({ rolle: "berater", text: x.d.antwort + notiz, produkte: x.d.produkte.map(function (p) { return p.sku; }) });
         var antwortBlase = blase("berater", x.d.antwort);
         kartenZeigen(x.d.produkte);
+        if (x.d.produkte.length) zaehle("produktkarten");
         // Antworttext oben im Fenster lassen, damit er nicht hinter den Karten verschwindet
         if (x.d.produkte.length) box.scrollTop = antwortBlase.offsetTop - box.offsetTop - 12;
         speichern();
@@ -306,6 +313,7 @@
       if (w.variante) d.variante = w.variante;
       d.optionen = w.optionen;
       d.sku = p.sku; d.menge = parseInt(d.menge, 10); d.zustimmung = z.checked;
+      if (window.bfHerkunft) d.herkunft = window.bfHerkunft; // nur „werbung“, für die Erfolgsmessung der Anzeigen
       ok.disabled = true; meldung.textContent = "Wird gesendet …";
       if (!cfg.api) { meldung.textContent = "Online-Bestellung ist noch nicht verbunden."; ok.disabled = false; return; }
       fetch(cfg.api.replace(/\/$/, "") + "/bestellen", {
@@ -323,6 +331,7 @@
     });
     dialog.appendChild(f);
     dialog.showModal();
+    zaehle("bestellformular");
   }
 
   form.addEventListener("submit", function (ev) {
@@ -373,7 +382,12 @@
 
   // Links von den Produktseiten: ?frage=… startet das Gespräch, ?bestellen=Artikelnummer öffnet das Bestellformular
   var q = new URLSearchParams(location.search);
-  if (q.get("frage") || q.get("bestellen")) history.replaceState(null, "", location.pathname + location.hash);
+  if (q.get("frage") || q.get("bestellen")) {
+    // Nur die eigenen Zusätze entfernen; „herkunft“ braucht noch die Zählung
+    var rest = new URLSearchParams(location.search);
+    rest.delete("frage"); rest.delete("bestellen");
+    history.replaceState(null, "", location.pathname + (rest.toString() ? "?" + rest : "") + location.hash);
+  }
   if (q.get("frage")) senden(q.get("frage").slice(0, 1500));
   if (q.get("bestellen")) {
     fetch((cfg.basis || "") + "/assets/katalog.json")

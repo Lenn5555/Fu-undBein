@@ -177,8 +177,10 @@ def kennzahlen(liste):
     return z
 
 
-def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", index=True):
+def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", index=True, seite=None):
     """Eigener Rahmen der KI-Seite: feste helle Kopfleiste, dunkler Fuß mit Wortmarke."""
+    # Seitenart für die anonyme Zählung (Einstiegsseite), siehe ki/seite/zaehlen.js
+    seite = seite or ("start" if pfad == "" and index else "uebersicht" if pfad == "produkte/" else "sonstige")
     nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Einsätze", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
     mail = e(CFG["anfrage_email"])
     return f"""<!doctype html>
@@ -215,6 +217,8 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <div class="bf-fuss-ende"><p>Alle Preise netto zzgl. MwSt. und <a href="/versandkosten/">Versand</a>. Verkauf an Gewerbetreibende.</p><a class="bf-knopf bf-knopf-klein" href="#inhalt">Nach oben</a></div>
 </footer>
 <script src="/assets/seite.js" defer></script>
+<script>window.bfZaehlen = {{ api: "{e(CFG.get('ki_api', ''))}", basis: "", seite: "{seite}" }};</script>
+<script src="/assets/zaehlen.js" defer></script>
 </body>
 </html>
 """
@@ -513,7 +517,8 @@ def produktseite(p, verwandte, mehrzahl):
     besch = f"{seo_name(p)}: {p['kurz']} {preis_ab_text(p)} netto. Direkt bestellen bei beinundfuß.de."
     pfad = f"produkte/{p['slug']}/"
     SEITEN.append((pfad, "0.8"))
-    return seitenrahmen(f"{seo_name(p)} kaufen | beinundfuß.de", inhalt, beschreibung=besch[:300], kopf=PRODUKT_CSS + produktdaten(p, bauform), pfad=pfad)
+    return seitenrahmen(f"{seo_name(p)} kaufen | beinundfuß.de", inhalt, beschreibung=besch[:300], kopf=PRODUKT_CSS + produktdaten(p, bauform), pfad=pfad,
+                        seite="produkt")
 
 
 def produktuebersicht(liste):
@@ -608,7 +613,7 @@ def kategorieseite(bauform, l):
     return seitenrahmen(f"{titel}: {len(l)} Modelle mit Preis | beinundfuß.de", inhalt,
                         beschreibung=f"{len(l)} {mehrzahl} ab {euro(min_preis(l[0]))} netto. {text}"[:300],
                         kopf=PRODUKT_CSS + '<script src="/assets/kategorie.js" defer></script>'
-                        + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad)
+                        + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad, seite="kategorie")
 
 
 PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
@@ -671,7 +676,7 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
-    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
+    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "zaehlen.js", "statistik.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fece14"/>'
@@ -727,6 +732,15 @@ def main():
                 continue
             raise SystemExit(f"Rechtstext fehlt: {datei}")
         schreibe(pfad, textseite(titel, datei.read_text(encoding="utf-8"), f"{pfad}/", prio="0.1"))
+    # Statistik für Lenn (anonyme Zählung, Bericht nur mit Schlüssel); nicht in der Sitemap, noindex
+    schreibe("statistik", seitenrahmen("Statistik | beinundfuß.de", '<article class="pr-seite" data-feld="weiss"><h1>Statistik</h1>'
+        '<p class="pr-kurz">Besucher, Berater und Bestellungen als Tagessummen. Gezählt wird ohne Cookies und ohne Personenbezug.</p>'
+        '<form id="st-form" class="st-form"><label>Schlüssel<input id="st-schluessel" type="password" autocomplete="current-password" required></label>'
+        '<label>Zeitraum<select id="st-tage"><option value="7">7 Tage</option><option value="30" selected>30 Tage</option>'
+        '<option value="90">90 Tage</option><option value="365">1 Jahr</option></select></label>'
+        '<button class="bf-knopf bf-knopf-gelb" type="submit">Anzeigen</button></form><p id="st-meldung" class="pr-notiz" aria-live="polite"></p>'
+        '<div id="st-ergebnis"></div></article>',
+        kopf=PRODUKT_CSS + '<script src="/assets/statistik.js" defer></script>', index=False, seite="statistik"))
     (OUT / "404.html").write_text(seitenrahmen("Seite nicht gefunden | beinundfuß.de", '<section class="bf-text" data-feld="weiss">'
                                                '<h1>Seite nicht gefunden</h1><p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p></section>',
                                                index=False), encoding="utf-8")

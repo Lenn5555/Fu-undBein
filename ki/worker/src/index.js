@@ -1,10 +1,11 @@
 // Cloudflare Worker für beinundfuß.de: POST /beraten (KI-Berater), POST /bestellen (Mail an den Vertrieb),
 // POST /zaehlen (anonyme Besucherzählung) und GET /statistik (Bericht, nur mit Schlüssel).
+// Der Abendbericht der Sekretärin liest /statistik ohne Browser mit einem eigenen Schlüssel (BERICHT_HASH).
 // Geheimnisse (ANTHROPIC_API_KEY, RESEND_API_KEY) liegen als Worker-Secrets bei Cloudflare, nie im Browser.
 import Anthropic from "@anthropic-ai/sdk";
 import { beraten, neuerClient } from "./berater.js";
 import { pruefen, bestellnummer, mailText, bezugsquelle, senden } from "./bestellung.js";
-import { meldungPruefen, bestellQuelle, bericht, schluesselPasst } from "./statistik.js";
+import { meldungPruefen, bestellEintraege, bericht, schluesselPasst } from "./statistik.js";
 import { zaehlerVon } from "./zaehler.js";
 
 export { Zaehler } from "./zaehler.js";
@@ -46,7 +47,10 @@ function zaehlen(env, ctx, eintraege) {
 async function statistik(request, env, herkunft) {
   const url = new URL(request.url);
   const schluessel = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
-  if (!(await schluesselPasst(schluessel, env.STATISTIK_HASH))) return antwort({ fehler: "Falscher Schlüssel." }, 401, herkunft);
+  // Aus dem Browser nur Lenns Schlüssel; ohne erlaubte Herkunft nur der Berichtsschlüssel
+  const hash = herkunft ? env.STATISTIK_HASH : env.BERICHT_HASH;
+  const passt = (await schluesselPasst(schluessel, hash)) || (herkunft && (await schluesselPasst(schluessel, env.BERICHT_HASH)));
+  if (!passt) return antwort({ fehler: "Falscher Schlüssel." }, 401, herkunft);
   const tage = Math.min(Math.max(parseInt(url.searchParams.get("tage"), 10) || 30, 1), 400);
   const z = zaehlerVon(env);
   if (!z) return antwort({ fehler: "Zählung ist nicht eingerichtet." }, 503, herkunft);
@@ -65,7 +69,6 @@ export default {
     }
     const pfad = new URL(request.url).pathname;
     if (request.method === "GET" && pfad === "/statistik") {
-      if (!herkunft) return antwort({ fehler: "Nicht erlaubt." }, 403, null);
       if (await gebremst(env, request, pfad)) return antwort({ fehler: "Zu viele Anfragen. Bitte kurz warten." }, 429, herkunft);
       return statistik(request, env, herkunft);
     }
@@ -116,7 +119,7 @@ export default {
       console.error("Bestellung:", err);
       return antwort({ fehler: "Die Bestellung konnte nicht übermittelt werden. Bitte per E-Mail bestellen." }, 502, herkunft);
     }
-    zaehlen(env, ctx, [{ art: "ereignis", wert: "bestellung", quelle: bestellQuelle(daten) }]);
+    zaehlen(env, ctx, bestellEintraege(daten, b));
     return antwort({ ok: true, bestellnummer: nr }, 200, herkunft);
   },
 };

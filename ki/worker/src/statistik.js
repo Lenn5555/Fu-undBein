@@ -38,9 +38,20 @@ export function bestellQuelle(d) {
   return d && d.herkunft === "werbung" ? "werbung" : "sonstige";
 }
 
+// Was eine erfolgreiche Bestellung zählt: nur Summen (Anzahl, Warenwert netto in Cent, Stück je Artikel), nichts zum Kunden
+export function bestellEintraege(daten, b) {
+  const quelle = bestellQuelle(daten);
+  return [
+    { art: "ereignis", wert: "bestellung", quelle },
+    { art: "umsatz", wert: "netto_cent", quelle, n: Math.round(b.summe * 100) },
+    { art: "artikel", wert: `${b.produkt.sku} ${b.produkt.name}`.slice(0, 120), quelle, n: b.menge },
+  ];
+}
+
 // Zeilen {tag, art, wert, quelle, n} zu einem Bericht für die Statistikseite
 export function bericht(zeilen, tage) {
-  const summe = {}, werbung = {}, proTag = {}, quellen = {}, einstieg = {}, luecken = {};
+  const summe = {}, werbung = {}, proTag = {}, quellen = {}, einstieg = {}, luecken = {}, artikel = {};
+  const umsatz = { netto_cent: 0, werbung_cent: 0, proTag: {} };
   for (const z of zeilen) {
     if (z.art === "ereignis") {
       summe[z.wert] = (summe[z.wert] || 0) + z.n;
@@ -50,8 +61,13 @@ export function bericht(zeilen, tage) {
       if (z.wert === "besuch") quellen[z.quelle] = (quellen[z.quelle] || 0) + z.n;
     } else if (z.art === "einstieg") einstieg[z.wert] = (einstieg[z.wert] || 0) + z.n;
     else if (z.art === "luecke") luecken[z.wert] = (luecken[z.wert] || 0) + z.n;
+    else if (z.art === "umsatz") {
+      umsatz.netto_cent += z.n;
+      if (z.quelle === "werbung") umsatz.werbung_cent += z.n;
+      umsatz.proTag[z.tag] = (umsatz.proTag[z.tag] || 0) + z.n;
+    } else if (z.art === "artikel") artikel[z.wert] = (artikel[z.wert] || 0) + z.n;
   }
-  return { tage, summe, werbung, proTag, quellen, einstieg, luecken };
+  return { tage, summe, werbung, proTag, quellen, einstieg, luecken, umsatz, artikel };
 }
 
 export async function schluesselPasst(schluessel, hash) {

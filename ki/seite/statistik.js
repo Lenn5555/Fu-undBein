@@ -1,4 +1,4 @@
-/* Statistikseite für Lenn: holt den anonymen Bericht vom Server (nur mit Schlüssel) und zeigt Trichter, Herkunft und Lücken. */
+/* Statistikseite für Lenn: holt den anonymen Bericht vom Server (nur mit Schlüssel) und zeigt Trichter, Bestellwert, Artikel, Herkunft und Lücken. */
 (function () {
   "use strict";
   var cfg = window.bfZaehlen || {};
@@ -27,6 +27,7 @@
     return n;
   }
   function zahl(x) { return (x || 0).toLocaleString("de-DE"); }
+  function euro(cent) { return ((cent || 0) / 100).toLocaleString("de-DE", { style: "currency", currency: "EUR" }); }
   function quote(a, b) { return b ? Math.round((a || 0) * 1000 / b) / 10 + " %" : "–"; }
   function tabelle(kopf, zeilen) {
     var w = el("div", null, "pr-tabelle"), t = el("table"), th = el("thead"), tr = el("tr"), tb = el("tbody");
@@ -58,6 +59,15 @@
       tabelle(["Schritt", "Alle", "Quote", "Davon Werbung", "Quote Werbung"], SCHRITTE.map(function (x) {
         return [x[1], zahl(s[x[0]]), quote(s[x[0]], s.besuch), zahl(w[x[0]]), quote(w[x[0]], w.besuch)];
       })));
+    var u = d.umsatz || { netto_cent: 0, werbung_cent: 0, proTag: {} };
+    abschnitt("Bestellwert", "Warenwert netto der abgeschickten Bestellungen, ohne Versand und MwSt.",
+      tabelle(["", "Alle", "Davon Werbung"], [
+        ["Bestellwert netto", euro(u.netto_cent), euro(u.werbung_cent)],
+        ["Pro Bestellung", s.bestellung ? euro(u.netto_cent / s.bestellung) : "–", w.bestellung ? euro(u.werbung_cent / w.bestellung) : "–"],
+      ]));
+    var a = sortiert(d.artikel || {});
+    if (a.length) abschnitt("Was bestellt wurde", "Stückzahl je Artikel.",
+      tabelle(["Artikel", "Stück"], a.map(function (k) { return [k, zahl(d.artikel[k])]; })));
     var q = sortiert(d.quellen);
     abschnitt("Woher die Besucher kommen", null, q.length
       ? tabelle(["Herkunft", "Besuche", "Anteil"], q.map(function (k) { return [QUELLEN[k] || k, zahl(d.quellen[k]), quote(d.quellen[k], s.besuch)]; }))
@@ -69,10 +79,10 @@
     abschnitt("Was gesucht, aber nicht gefunden wurde", "Wenn der Berater nichts Passendes hatte, merkt er sich nur Bauform und Grund, keine Texte und keine Namen.",
       l.length ? tabelle(["Gesucht und warum nicht", "Anzahl"], l.map(function (k) { return [k, zahl(d.luecken[k])]; })) : el("p", "Noch nichts gemeldet."));
     var t = Object.keys(d.proTag).sort().reverse();
-    if (t.length) abschnitt("Pro Tag", null, tabelle(["Tag", "Besuche", "Berater", "Bestellformular", "Bestellungen"], t.map(function (k) {
+    if (t.length) abschnitt("Pro Tag", null, tabelle(["Tag", "Besuche", "Berater", "Bestellformular", "Bestellungen", "Bestellwert"], t.map(function (k) {
       var x = d.proTag[k];
       return [new Date(k + "T12:00:00").toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" }),
-        zahl(x.besuch), zahl(x.chat_start), zahl(x.bestellformular), zahl(x.bestellung)];
+        zahl(x.besuch), zahl(x.chat_start), zahl(x.bestellformular), zahl(x.bestellung), euro(u.proTag[k])];
     })));
   }
 

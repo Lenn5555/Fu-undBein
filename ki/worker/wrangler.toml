@@ -14,6 +14,9 @@ BESTELL_EMAIL = "sales@ts-systec.de"
 ABSENDER = "Bein und Fuss <bestellung@xn--beinundfu-o1a.de>"
 # SHA-256 des Schlüssels für die Statistikseite; der Schlüssel selbst steht nicht im Repo
 STATISTIK_HASH = "8d97d06abe5bb2467539b272c03c85fa0d29f4ad45ae7ccf2e887d04d28233f2"
+# SHA-256 des Schlüssels für den Abendbericht (liest /statistik ohne Browser).
+# Klartext steht nur als Umgebungsvariable BERICHT_SCHLUESSEL in Lenns Cloud-Umgebung, nie im Repo.
+BERICHT_HASH = "f427cf84cb865f4cac89bb62cc51dfbae4c28555998b1dbe272126a3d608f722"
 
 # Anonyme Besucherzählung (Tagessummen, keine Cookies, keine IP), siehe src/statistik.js
 [[durable_objects.bindings]]

@@ -4,7 +4,7 @@
 import { NACH_SKU } from "./berater.js";
 import BEZUGSQUELLEN from "./bezugsquellen.json" with { type: "json" };
 
-const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200 };
+const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200, land: 60 };
 
 function euro(x) {
   return x.toFixed(2).replace(".", ",") + " €";
@@ -68,6 +68,7 @@ export function mailText(nr, b, quelle) {
     `E-Mail: ${k.email}`,
     `Telefon: ${k.telefon || "-"}`,
     `Lieferadresse: ${k.adresse}`,
+    `Lieferland: ${k.land || "-"}`,
     `Hinweis: ${k.hinweis || "-"}`,
     ``,
     `INTERN: HIER BESTELLEN (nicht an den Kunden weitergeben)`,

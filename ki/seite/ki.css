@@ -368,3 +368,4 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-versand table { width: 100%; max-width: 320px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
 .ki-versand td { padding: 6px 0; border-bottom: 1px solid var(--hell-2); }
 .ki-versand .ki-zahl { text-align: right; }
+.ki-versand-ab { margin: 0; font-size: var(--step-small); color: var(--muted); }

@@ -128,3 +128,10 @@ test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   const { bezugsquelle } = await import("../src/bestellung.js");
   assert.equal(bezugsquelle("GIBTSNICHT"), null);
 });
+
+test("Lieferland steht in der Bestellmail", () => {
+  const p = KATALOG.find((p) => !p.varianten.length && !Object.keys(p.optionen || {}).length);
+  const b = pruefen({ ...KUNDE, sku: p.sku, menge: 1, land: "Österreich" });
+  assert.ok(!b.fehler, b.fehler);
+  assert.match(mailText("BF-5", b, null), /Lieferland: Österreich/);
+});

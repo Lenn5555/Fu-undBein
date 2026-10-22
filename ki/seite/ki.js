@@ -167,58 +167,57 @@
       .then(function () { form.querySelector("button").disabled = false; feld.focus(); });
   }
 
-  // Versandkosten zum Aufklappen im Bestellformular; die Daten kommen erst beim ersten Öffnen
+  // Versandkosten im Bestellformular: Lieferland wählen, „ab …“ unter der Summe, Tabelle nach Gewicht zum Aufklappen.
+  // Produktgewichte gibt es noch nicht, deshalb kein genauer Betrag (Lenn, 22.10.2026).
   var versandDaten = null;
-  function versandInfo() {
+  function versandLaden() {
+    if (versandDaten) return Promise.resolve(versandDaten);
+    return fetch((cfg.basis || "") + "/assets/versandkosten.json")
+      .then(function (r) { return r.json(); })
+      .then(function (v) { versandDaten = v; return v; });
+  }
+  function versandFelder() {
+    var l = el("label", null, "Lieferland *");
+    var wahl = el("select"); wahl.name = "land"; wahl.required = true;
+    var de = el("option", null, "Deutschland"); de.value = "Deutschland"; wahl.appendChild(de);
+    l.appendChild(wahl);
+    var ab = el("p", "ki-versand-ab");
     var d = el("details", "ki-versand");
-    d.appendChild(el("summary", null, "Versandkosten anzeigen"));
-    var inhalt = el("div", "ki-versand-inhalt", "Wird geladen …");
+    d.appendChild(el("summary", null, "Versandkosten nach Gewicht anzeigen"));
+    var inhalt = el("div", "ki-versand-inhalt");
     d.appendChild(inhalt);
     function kg(x) { return String(x).replace(".", ",") + " kg"; }
-    function tabelle(gewichte, preise) {
-      var t = el("table");
-      gewichte.forEach(function (g, i) {
+    function tarif(v) {
+      if (wahl.value === "Deutschland") return { bis: v.deutschland.bis_kg, preise: v.deutschland.preise };
+      var t = v.europa.laender.filter(function (x) { return x.land === wahl.value; })[0];
+      return { bis: v.europa.bis_kg, preise: t.preise, luft: t.luftfracht };
+    }
+    function zeigen() {
+      if (!versandDaten) { ab.textContent = "Versand: zzgl., den Betrag nennen wir in der Auftragsbestätigung."; return; }
+      var t = tarif(versandDaten);
+      ab.textContent = "Versand nach " + wahl.value + ": ab " + euro(t.preise[0]) + " netto pro Paket (bis " + kg(t.bis[0]) +
+        "), je nach Gewicht. Den genauen Betrag nennen wir in der Auftragsbestätigung.";
+      inhalt.textContent = "";
+      var tab = el("table");
+      t.bis.forEach(function (g, i) {
         var tr = el("tr");
         tr.appendChild(el("td", null, "bis " + kg(g)));
-        tr.appendChild(el("td", "ki-zahl", euro(preise[i])));
-        t.appendChild(tr);
+        tr.appendChild(el("td", "ki-zahl", euro(t.preise[i])));
+        tab.appendChild(tr);
       });
-      return t;
-    }
-    function zeigen(v) {
-      inhalt.textContent = "";
-      inhalt.appendChild(el("p", null, "Versand mit GLS ab Pfungstadt, pro Paket netto zzgl. MwSt. Lieferland:"));
-      var wahl = el("select");
-      wahl.setAttribute("aria-label", "Lieferland");
-      var de = el("option", null, "Deutschland"); de.value = "-1"; wahl.appendChild(de);
-      v.europa.laender.forEach(function (l, i) { var o = el("option", null, l.land); o.value = String(i); wahl.appendChild(o); });
-      inhalt.appendChild(wahl);
-      var platz = el("div");
-      inhalt.appendChild(platz);
-      function land() {
-        platz.textContent = "";
-        var i = parseInt(wahl.value, 10);
-        if (i < 0) platz.appendChild(tabelle(v.deutschland.bis_kg, v.deutschland.preise));
-        else {
-          var l = v.europa.laender[i];
-          platz.appendChild(tabelle(v.europa.bis_kg, l.preise));
-          if (l.luftfracht) platz.appendChild(el("p", null, "Versand per Luftfracht, berechnet nach Volumengewicht."));
-        }
-      }
-      wahl.addEventListener("change", land); land();
+      inhalt.appendChild(tab);
+      if (t.luft) inhalt.appendChild(el("p", null, "Versand per Luftfracht, berechnet nach Volumengewicht."));
       var a = el("a", null, "Alle Versandkosten und Hinweise");
       a.href = (cfg.basis || "") + "/versandkosten/"; a.target = "_blank";
       var p = el("p"); p.appendChild(a); inhalt.appendChild(p);
     }
-    d.addEventListener("toggle", function () {
-      if (!d.open) return;
-      if (versandDaten) return zeigen(versandDaten);
-      fetch((cfg.basis || "") + "/assets/versandkosten.json")
-        .then(function (r) { return r.json(); })
-        .then(function (v) { versandDaten = v; zeigen(v); })
-        .catch(function () { inhalt.textContent = "Versandkosten konnten nicht geladen werden. Sie stehen auch unter " + (cfg.basis || "") + "/versandkosten/."; });
-    });
-    return d;
+    wahl.addEventListener("change", zeigen);
+    versandLaden().then(function (v) {
+      v.europa.laender.forEach(function (x) { var o = el("option", null, x.land); o.value = x.land; wahl.appendChild(o); });
+      zeigen();
+    }).catch(zeigen);
+    zeigen();
+    return { land: l, ab: ab, tabelle: d };
   }
 
   function bestellen(p, vorher) {
@@ -247,7 +246,8 @@
     }
     menge.addEventListener("input", rechnen);
     f.appendChild(summe); rechnen();
-    f.appendChild(versandInfo());
+    var versand = versandFelder();
+    f.appendChild(versand.land); f.appendChild(versand.ab); f.appendChild(versand.tabelle);
     zeile("Firma", "firma", "text");
     zeile("Name", "name", "text", true, { autocomplete: "name" });
     zeile("E-Mail", "email", "email", true, { autocomplete: "email" });

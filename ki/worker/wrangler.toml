@@ -12,6 +12,17 @@ HERKUNFT = "https://lenn5555.github.io,https://xn--beinundfu-o1a.de,https://www.
 BESTELL_EMAIL = "sales@ts-systec.de"
 # Absender muss bei Resend als Domain bestätigt sein
 ABSENDER = "Bein und Fuss <bestellung@xn--beinundfu-o1a.de>"
+# SHA-256 des Schlüssels für die Statistikseite; der Schlüssel selbst steht nicht im Repo
+STATISTIK_HASH = "8d97d06abe5bb2467539b272c03c85fa0d29f4ad45ae7ccf2e887d04d28233f2"
+
+# Anonyme Besucherzählung (Tagessummen, keine Cookies, keine IP), siehe src/statistik.js
+[[durable_objects.bindings]]
+name = "ZAEHLER"
+class_name = "Zaehler"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Zaehler"]
 
 # Schutz gegen Missbrauch: höchstens 20 Anfragen pro Minute und Besucher
 [[ratelimits]]

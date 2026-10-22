@@ -2,6 +2,7 @@
 // Händler und Einkaufspreise kennt der Berater nicht; sie liegen nur im internen Speicher (siehe bestellung.js).
 import Anthropic from "@anthropic-ai/sdk";
 import KATALOG from "./katalog.json" with { type: "json" };
+import { LUECKE_BAUFORM, LUECKE_GRUND, lueckePruefen } from "./statistik.js";
 
 export const MODELL = "claude-opus-5-5";
 const MAX_RUNDEN = 4;
@@ -30,7 +31,7 @@ So beraten Sie:
 - Empfehlen Sie ausschließlich Produkte aus dem Katalog unten. Erfinden Sie keine Produkte, Maße oder Preise.
 - Sobald Sie passende Produkte nennen, rufen Sie das Werkzeug produkte_zeigen mit deren Artikelnummern auf (höchstens ${MAX_ANZEIGE}, bestes zuerst). Nur so sieht der Kunde die Produkte mit Bestellknopf. Sagen Sie im Text in einem Satz, warum Sie diese gewählt haben.
 - Alle Preise sind netto zzgl. MwSt. und Versand. "ab"-Preise gelten für die günstigste Ausführung einer Serie; die genaue Ausführung bestätigen wir nach der Bestellung.
-- Passt nichts im Katalog, sagen Sie das offen und verweisen Sie auf eine Anfrage per E-Mail an sales@ts-systec.de; dort sind auch Sonderanfertigungen und weitere Produkte ohne Online-Preis möglich.
+- Passt nichts im Katalog, sagen Sie das offen und verweisen Sie auf eine Anfrage per E-Mail an sales@ts-systec.de; dort sind auch Sonderanfertigungen und weitere Produkte ohne Online-Preis möglich. Rufen Sie in diesem Fall zusätzlich das Werkzeug nichts_passend auf (nur Kategorien, nie Kundentext).
 - Bezugsquellen, Lieferanten oder Einkaufspreise kennen Sie nicht und spekulieren nicht darüber.
 - Bleiben Sie beim Thema Maschinenfüße. Andere Anfragen lehnen Sie höflich ab.
 
@@ -52,6 +53,21 @@ export const WERKZEUGE = [
         artikelnummern: { type: "array", items: { type: "string" }, description: "Artikelnummern aus dem Katalog" },
       },
       required: ["artikelnummern"],
+      additionalProperties: false,
+    },
+  },
+  {
+    name: "nichts_passend",
+    description:
+      "Meldet anonym, dass im Katalog nichts zur Anfrage passt, damit der Shop sein Sortiment verbessern kann. Nur die Kategorien wählen, keinen Kundentext.",
+    strict: true,
+    input_schema: {
+      type: "object",
+      properties: {
+        bauform: { type: "string", enum: LUECKE_BAUFORM, description: "Was der Kunde gesucht hat" },
+        grund: { type: "string", enum: LUECKE_GRUND, description: "Warum nichts passt" },
+      },
+      required: ["bauform", "grund"],
       additionalProperties: false,
     },
   },
@@ -86,6 +102,7 @@ export function nachrichtenAus(verlauf) {
 export async function beraten(client, verlauf, modell = MODELL) {
   const messages = nachrichtenAus(verlauf);
   let karten = [];
+  let luecke = null; // „Berater fand nichts“ als Kategorie, für die anonyme Statistik
   let frueher = ""; // Text aus Runden mit Werkzeugaufruf; oft steht die eigentliche Antwort dort und die letzte Runde ist leer
   for (let runde = 0; runde < MAX_RUNDEN; runde++) {
     const antwort = await client.messages.create({
@@ -99,14 +116,18 @@ export async function beraten(client, verlauf, modell = MODELL) {
     const text = antwort.content.filter((b) => b.type === "text").map((b) => b.text).join("\n").trim();
     const aufrufe = antwort.content.filter((b) => b.type === "tool_use");
     if (antwort.stop_reason === "refusal") {
-      return { antwort: "Dazu kann ich leider nicht helfen. Bei Fragen zu Stellfüßen und Einschlagfüßen bin ich gern da.", produkte: [] };
+      return { antwort: "Dazu kann ich leider nicht helfen. Bei Fragen zu Stellfüßen und Einschlagfüßen bin ich gern da.", produkte: [], luecke };
     }
     if (antwort.stop_reason !== "tool_use" || !aufrufe.length) {
-      return { antwort: text || frueher || "Entschuldigung, da ist etwas schiefgelaufen. Bitte formulieren Sie Ihre Frage noch einmal.", produkte: karten };
+      return { antwort: text || frueher || "Entschuldigung, da ist etwas schiefgelaufen. Bitte formulieren Sie Ihre Frage noch einmal.", produkte: karten, luecke };
     }
     if (text) frueher = frueher ? `${frueher}\n\n${text}` : text;
     messages.push({ role: "assistant", content: antwort.content });
     const ergebnisse = aufrufe.map((a) => {
+      if (a.name === "nichts_passend") {
+        luecke = lueckePruefen(a.input) || luecke;
+        return { type: "tool_result", tool_use_id: a.id, content: "Notiert." };
+      }
       const r = a.name === "produkte_zeigen" ? produkteZeigen(a.input) : { fehler: `Unbekanntes Werkzeug ${a.name}` };
       if (r.karten) karten = [...karten, ...r.karten.filter((k) => !karten.some((x) => x.sku === k.sku))].slice(0, MAX_ANZEIGE);
       const inhalt = r.fehler
@@ -116,7 +137,7 @@ export async function beraten(client, verlauf, modell = MODELL) {
     });
     messages.push({ role: "user", content: ergebnisse });
   }
-  return { antwort: frueher || "Hier sind passende Produkte.", produkte: karten };
+  return { antwort: frueher || "Hier sind passende Produkte.", produkte: karten, luecke };
 }
 
 export function neuerClient(env) {

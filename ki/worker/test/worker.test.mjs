@@ -129,9 +129,22 @@ test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   assert.equal(bezugsquelle("GIBTSNICHT"), null);
 });
 
-test("Lieferland steht in der Bestellmail", () => {
+test("Lieferland und USt-IdNr.: EU-Ausland nur mit USt-IdNr., Nicht-EU mit Hinweis", () => {
   const p = KATALOG.find((p) => !p.varianten.length && !Object.keys(p.optionen || {}).length);
-  const b = pruefen({ ...KUNDE, sku: p.sku, menge: 1, land: "Österreich" });
-  assert.ok(!b.fehler, b.fehler);
-  assert.match(mailText("BF-5", b, null), /Lieferland: Österreich/);
+  const basis = { ...KUNDE, sku: p.sku, menge: 1 };
+  const inland = pruefen(basis);
+  assert.ok(!inland.fehler, inland.fehler);
+  assert.match(mailText("BF-5", inland, null), /Lieferland: Deutschland/);
+  assert.doesNotMatch(mailText("BF-5", inland, null), /AUSLANDSBESTELLUNG/);
+  assert.match(pruefen({ ...basis, land: "Österreich" }).fehler, /USt-IdNr/);
+  assert.match(pruefen({ ...basis, land: "Atlantis" }).fehler, /Lieferland/);
+  const at = pruefen({ ...basis, land: "Österreich", ust_id: "atu 1234 5678" });
+  assert.ok(!at.fehler, at.fehler);
+  const mail = mailText("BF-6", at, null);
+  assert.match(mail, /Lieferland: Österreich/);
+  assert.match(mail, /USt-IdNr\.: ATU12345678/);
+  assert.match(mail, /AUSLANDSBESTELLUNG: EU, ohne deutsche MwSt/);
+  const ch = pruefen({ ...basis, land: "Schweiz" });
+  assert.ok(!ch.fehler, ch.fehler);
+  assert.match(mailText("BF-7", ch, null), /Nicht-EU: Zoll/);
 });

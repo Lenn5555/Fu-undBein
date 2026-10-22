@@ -54,7 +54,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Andorra",
@@ -68,7 +69,8 @@
      153.09,
      180.99,
      228.87
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Belgien",
@@ -82,7 +84,8 @@
      15.3,
      22.41,
      32.04
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Bosnien und Herzegowina",
@@ -97,7 +100,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Bulgarien",
@@ -111,7 +115,8 @@
      43.47,
      62.28,
      83.07
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Dänemark",
@@ -125,7 +130,8 @@
      20.79,
      29.79,
      40.77
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Estland",
@@ -139,7 +145,8 @@
      29.34,
      42.66,
      53.82
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Färöer",
@@ -154,7 +161,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Finnland",
@@ -168,7 +176,8 @@
      43.2,
      59.13,
      76.59
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Frankreich",
@@ -182,7 +191,8 @@
      26.46,
      36.27,
      52.47
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Frankreich (Korsika)",
@@ -196,7 +206,8 @@
      106.47,
      132.3,
      190.17
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Gibraltar",
@@ -210,7 +221,8 @@
      153.09,
      180.99,
      228.87
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Griechenland (Athen, Piräus, Thessaloniki)",
@@ -224,7 +236,8 @@
      58.14,
      81.27,
      118.71
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Griechenland",
@@ -238,7 +251,8 @@
      58.14,
      81.27,
      118.71
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Großbritannien",
@@ -252,7 +266,8 @@
      29.43,
      39.96,
      56.7
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Großbritannien (Nordirland und Inseln)",
@@ -266,7 +281,8 @@
      29.43,
      39.96,
      56.7
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Irland",
@@ -280,7 +296,8 @@
      47.34,
      59.76,
      75.15
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Island",
@@ -295,7 +312,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Italien (Nord)",
@@ -309,7 +327,8 @@
      29.07,
      40.14,
      51.21
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Italien (Süd)",
@@ -323,7 +342,8 @@
      29.07,
      40.14,
      51.21
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Kosovo",
@@ -337,7 +357,8 @@
      161.73,
      177.48,
      308.43
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Kroatien",
@@ -351,7 +372,8 @@
      29.34,
      44.01,
      48.96
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Lettland",
@@ -365,7 +387,8 @@
      24.21,
      37.17,
      50.31
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Liechtenstein",
@@ -379,7 +402,8 @@
      28.8,
      38.25,
      58.14
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Litauen",
@@ -393,7 +417,8 @@
      25.11,
      38.07,
      43.92
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Luxemburg",
@@ -407,7 +432,8 @@
      15.3,
      22.41,
      32.04
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Malta",
@@ -422,7 +448,8 @@
      161.1,
      198.99
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": true
    },
    {
     "land": "Nordmazedonien",
@@ -437,7 +464,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Monaco",
@@ -451,7 +479,8 @@
      26.46,
      36.27,
      52.47
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Montenegro",
@@ -466,7 +495,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Niederlande",
@@ -480,7 +510,8 @@
      15.3,
      22.41,
      32.04
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Norwegen",
@@ -494,7 +525,8 @@
      38.52,
      46.44,
      61.02
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Österreich",
@@ -508,7 +540,8 @@
      21.78,
      30.33,
      41.4
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Polen",
@@ -522,7 +555,8 @@
      17.73,
      25.56,
      32.76
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Portugal",
@@ -536,7 +570,8 @@
      35.28,
      44.1,
      59.94
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Portugal (Azoren und Madeira)",
@@ -550,7 +585,8 @@
      175.14,
      183.96,
      330.39
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Rumänien",
@@ -564,7 +600,8 @@
      26.64,
      38.34,
      46.08
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "San Marino",
@@ -578,7 +615,8 @@
      29.07,
      40.14,
      51.21
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Schweden",
@@ -592,7 +630,8 @@
      33.57,
      44.37,
      59.04
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Schweiz",
@@ -606,7 +645,8 @@
      28.8,
      38.25,
      58.14
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Serbien",
@@ -620,7 +660,8 @@
      132.3,
      163.62,
      306.99
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Slowakei",
@@ -634,7 +675,8 @@
      28.26,
      37.17,
      48.24
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Slowenien",
@@ -648,7 +690,8 @@
      25.65,
      37.98,
      45.99
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Spanien",
@@ -662,7 +705,8 @@
      31.05,
      40.77,
      57.24
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Spanien (Balearen)",
@@ -676,7 +720,8 @@
      101.52,
      114.66,
      143.01
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Spanien (Kanaren)",
@@ -690,7 +735,8 @@
      153.09,
      180.99,
      228.87
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Spanien (Ceuta und Melilla)",
@@ -704,7 +750,8 @@
      153.09,
      180.99,
      228.87
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Tschechien",
@@ -718,7 +765,8 @@
      20.34,
      28.62,
      37.89
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Türkei",
@@ -733,7 +781,8 @@
      177.48,
      308.43
     ],
-    "luftfracht": true
+    "luftfracht": true,
+    "eu": false
    },
    {
     "land": "Ungarn",
@@ -747,7 +796,8 @@
      26.91,
      36.72,
      47.43
-    ]
+    ],
+    "eu": true
    },
    {
     "land": "Vatikanstadt",
@@ -761,7 +811,8 @@
      29.07,
      40.14,
      51.21
-    ]
+    ],
+    "eu": false
    },
    {
     "land": "Zypern",
@@ -775,7 +826,8 @@
      188.19,
      194.4,
      288.09
-    ]
+    ],
+    "eu": true
    }
   ]
  }

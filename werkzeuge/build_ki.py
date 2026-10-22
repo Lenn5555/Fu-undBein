@@ -714,6 +714,7 @@ def main():
     schreibe("versandkosten", versandseite())
     SEITEN.append(("versandkosten/", "0.4"))
     shutil.copy(ROOT / "daten/versandkosten.json", OUT / "assets/versandkosten.json")
+    shutil.copy(ROOT / "daten/versandkosten.json", ROOT / "ki/worker/src/versandkosten.json")  # Lieferländer und EU-Kennung für /bestellen
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

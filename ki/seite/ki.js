@@ -217,7 +217,27 @@
       zeigen();
     }).catch(zeigen);
     zeigen();
-    return { land: l, ab: ab, tabelle: d };
+    // USt-IdNr.: Pflicht im EU-Ausland, freiwillig außerhalb der EU, in Deutschland ausgeblendet
+    var ust = el("label", null, "USt-IdNr. *");
+    var ustFeld = el("input"); ustFeld.type = "text"; ustFeld.name = "ust_id"; ustFeld.maxLength = 20;
+    ustFeld.placeholder = "z. B. IT12345678901"; ustFeld.autocomplete = "off";
+    ust.appendChild(ustFeld);
+    var ausland = el("p", "ki-versand-ab");
+    function ustZeigen() {
+      var info = versandDaten && versandDaten.europa.laender.filter(function (x) { return x.land === wahl.value; })[0];
+      var eu = !info || info.eu;
+      var inland = wahl.value === "Deutschland";
+      ust.hidden = inland; ausland.hidden = inland;
+      ustFeld.required = !inland && eu;
+      ust.firstChild.textContent = eu ? "USt-IdNr. *" : "USt-IdNr. oder Steuernummer (falls vorhanden)";
+      ausland.textContent = eu
+        ? "Lieferung ins EU-Ausland ohne deutsche MwSt. mit Ihrer gültigen USt-IdNr. Die erste Bestellung aus dem Ausland liefern wir gegen Vorkasse."
+        : "Lieferung außerhalb der EU: Zoll und Versand stimmen wir vor der Auftragsbestätigung mit Ihnen ab. Die erste Bestellung liefern wir gegen Vorkasse.";
+    }
+    wahl.addEventListener("change", ustZeigen);
+    ustZeigen();
+    versandLaden().then(ustZeigen, function () {});
+    return { land: l, ab: ab, tabelle: d, ust: ust, ausland: ausland };
   }
 
   function bestellen(p, vorher) {
@@ -248,10 +268,12 @@
     f.appendChild(summe); rechnen();
     var versand = versandFelder();
     f.appendChild(versand.land); f.appendChild(versand.ab); f.appendChild(versand.tabelle);
+    f.appendChild(versand.ausland);
     zeile("Firma", "firma", "text");
     zeile("Name", "name", "text", true, { autocomplete: "name" });
     zeile("E-Mail", "email", "email", true, { autocomplete: "email" });
     zeile("Telefon", "telefon", "tel", false, { autocomplete: "tel" });
+    f.appendChild(versand.ust);
     zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3 });
     zeile("Hinweis", "hinweis", "textarea", false, { rows: 2 });
     var falle = zeile("Website", "website", "text", false, { tabIndex: -1, autocomplete: "off" });
@@ -259,10 +281,13 @@
     var zl = el("label", "ki-check");
     var z = el("input"); z.type = "checkbox"; z.name = "zustimmung"; z.required = true;
     zl.appendChild(z);
-    zl.appendChild(document.createTextNode(" Ich bestelle als Unternehmer, nicht als Verbraucher. Es gelten die "));
+    // Text in einem Element, sonst verteilt das Flex-Layout jedes Textstück auf eine eigene Spalte
+    var zt = el("span");
+    zt.appendChild(document.createTextNode("Ich bestelle als Unternehmer, nicht als Verbraucher. Es gelten die "));
     var agb = el("a", "", "AGB"); agb.href = (cfg.basis || "") + "/agb/"; agb.target = "_blank";
-    zl.appendChild(agb);
-    zl.appendChild(document.createTextNode(". Meine Angaben werden zur Bearbeitung der Bestellung verwendet (siehe Datenschutz)."));
+    zt.appendChild(agb);
+    zt.appendChild(document.createTextNode(". Meine Angaben werden zur Bearbeitung der Bestellung verwendet (siehe Datenschutz)."));
+    zl.appendChild(zt);
     f.appendChild(zl);
     var meldung = el("p", "ki-meldung");
     f.appendChild(meldung);

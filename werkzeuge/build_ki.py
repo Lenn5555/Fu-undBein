@@ -563,7 +563,7 @@ def sortierdaten(q):
     """Daten am Listeneintrag für Sortieren und Filtern im Browser (kategorie.js); ohne JavaScript bleibt die Liste nach Preis."""
     gew = [int(w[1:]) for w in werte(q, "Gewinde")]
     groesse = zahl(q["merkmale"].get("Rohrmaß")) or zahl(q["merkmale"].get("Durchmesser"))
-    attr = {"preis": f"{min_preis(q):.2f}", "gewinde": min(gew) if gew else 999, "groesse": groesse or 9999, "name": q["name"].lower()}
+    attr = {"preis": f"{min_preis(q):.2f}", "gewinde": min(gew) if gew else 999, "groesse": groesse or 9999}
     for m, _ in FILTER:
         attr[b.slug(m)] = "|".join(werte(q, m))
     return "".join(f' data-{k}="{e(str(v))}"' for k, v in attr.items())
@@ -581,7 +581,7 @@ def sortierleiste(l):
     return (f'<div class="pr-werkzeug" hidden><label class="pr-sortieren">Sortieren nach <select id="pr-sortierung">'
             '<option value="preis">Preis aufsteigend</option><option value="preis-ab">Preis absteigend</option>'
             '<option value="gewinde">Gewinde, klein nach groß</option><option value="groesse">Größe (Teller oder Rohr), klein nach groß</option>'
-            f'<option value="name">Name A–Z</option></select></label>{gruppen}'
+            f'</select></label>{gruppen}'
             f'<p class="pr-treffer" aria-live="polite"><span><span id="pr-anzahl">{len(l)}</span> von {len(l)} Modellen</span>'
             '<button type="button" class="pr-zuruecksetzen" id="pr-zuruecksetzen" hidden>Filter zurücksetzen</button></p>'
             '<p class="pr-leer" id="pr-leer" hidden>Kein Modell passt zu dieser Auswahl. Nehmen Sie einen Filter heraus oder fragen Sie den Berater.</p></div>')

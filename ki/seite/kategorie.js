@@ -1,4 +1,4 @@
-// Kategorieseiten: Modelle sortieren (Preis, Gewinde, Größe, Name) und nach Material, Gewinde oder Rohrmaß filtern.
+// Kategorieseiten: Modelle sortieren (Preis, Gewinde, Größe) und nach Material, Gewinde oder Rohrmaß filtern.
 // Ohne JavaScript bleibt die Liste nach Preis sortiert und die Leiste unsichtbar.
 (() => {
   const liste = document.getElementById("pr-modelle");
@@ -18,7 +18,6 @@
     "preis-ab": (a, b) => zahl(b, "preis") - zahl(a, "preis"),
     gewinde: (a, b) => zahl(a, "gewinde") - zahl(b, "gewinde") || zahl(a, "groesse") - zahl(b, "groesse") || zahl(a, "preis") - zahl(b, "preis"),
     groesse: (a, b) => zahl(a, "groesse") - zahl(b, "groesse") || zahl(a, "gewinde") - zahl(b, "gewinde") || zahl(a, "preis") - zahl(b, "preis"),
-    name: (a, b) => a.dataset.name.localeCompare(b.dataset.name, "de"),
   };
 
   function anwenden() {

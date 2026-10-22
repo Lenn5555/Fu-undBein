@@ -192,7 +192,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <meta name="description" content="{e(beschreibung or STANDARD_BESCHREIBUNG)}">
 <meta name="theme-color" content="#111827">
 {seo_kopf(titel, beschreibung, pfad, index)}
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="/assets/favicon-180.png">
 <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/ki.css">
 <script>document.documentElement.classList.add("js")</script>
@@ -617,6 +617,9 @@ def kategorieseite(bauform, l):
 
 
 PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
+FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#111827"/>'
+           '<rect x="14" y="4" width="4" height="15" rx="1" fill="#fece14"/><path d="M14 7h4M14 10h4M14 13h4M14 16h4" stroke="#111827" stroke-width="1"/>'
+           '<path d="M8 26l3-6h10l3 6z" fill="#fece14"/></svg>')
 VERSAND = json.loads((ROOT / "daten/versandkosten.json").read_text(encoding="utf-8"))
 
 
@@ -678,10 +681,10 @@ def main():
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
     for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "zaehlen.js", "statistik.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
-    (OUT / "assets/favicon.svg").write_text(
-        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fece14"/>'
-        '<path d="M16 5v15M11 9h10" stroke="#111827" stroke-width="3" fill="none"/><rect x="7" y="21" width="18" height="5" fill="#111827"/></svg>',
-        encoding="utf-8")
+    # Logo im Browser-Tab: gelber Stellfuß (Gewindespindel und Teller) auf Dunkel (Lenn, 22.10.2026); PNGs für Apple und Google
+    (OUT / "assets/favicon.svg").write_text(FAVICON, encoding="utf-8")
+    for datei in ("favicon-48.png", "favicon-180.png"):
+        shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     for p in produkte:
         if b.preise(p) and not p["bild"]:
             (OUT / "assets/skizzen" / f"{p['slug']}.svg").write_text(zeichnung(p, klein=True), encoding="utf-8")

@@ -83,7 +83,7 @@ Den Bestätigungscode der Google Search Console in `daten/site.json` als `google
 Besucherzählung ohne Cookies: `ki/seite/zaehlen.js` meldet je Seitenaufruf nur Ereignisart, Herkunft (Werbung über `gclid`/`utm_medium=cpc`,
 Google, andere Seite, direkt) und Seitenart an `POST /zaehlen`. Der Worker speichert Tagessummen im Durable Object `Zaehler` (SQLite),
 keine IP, keine Kennung, keine Texte. Bestellungen zählt der Server selbst; findet der Berater nichts, meldet er über das Werkzeug
-`nichts_passend` nur Bauform und Grund. Bericht unter `/statistik/` mit Schlüssel (im Repo steht nur sein SHA-256 als `STATISTIK_HASH`). Bestellungen zählen zusätzlich nur als Summen: Warenwert netto (aus Katalogpreis und Menge, Art `umsatz`) und Stück je Artikel (Art `artikel`), nichts zum Kunden. Für den täglichen Abendbericht gibt es einen zweiten Schlüssel (`BERICHT_HASH`), der `/statistik` auch ohne Browser lesen darf; sein Klartext liegt nur als Umgebungs-Secret.
+`nichts_passend` nur Bauform und Grund. Bericht unter `/statistik/` mit Schlüssel (im Repo steht nur sein SHA-256 als `STATISTIK_HASH`). Bestellungen zählen zusätzlich nur als Summen: Warenwert netto (aus Katalogpreis und Menge, Art `umsatz`) und Stück je Artikel (Art `artikel`), nichts zum Kunden. Für den täglichen Abendbericht gibt es einen zweiten Schlüssel (`BERICHT_HASH`), der `/statistik` auch ohne Browser lesen darf; sein Klartext liegt nur als Umgebungsvariable `BERICHT_SCHLUESSEL` in der Cloud-Umgebung des Projekts, im Repo steht nur der SHA-256 (leer = kein Zugang).
 
 Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, das Secret `BEZUGSQUELLEN` erneuern und den Workflow neu starten.
 

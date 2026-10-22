@@ -64,3 +64,10 @@
 .pr-zuruecksetzen { padding: 0; border: 0; background: none; font: inherit; color: var(--ink); text-decoration: underline; cursor: pointer; }
 .pr-zuruecksetzen[hidden], .pr-leer[hidden], #pr-modelle li[hidden] { display: none; }
 .pr-leer { margin: 0; }
+
+/* Versandkosten */
+.pr-versand-de { max-width: 420px; }
+.pr-versand-eu th[scope="row"] { min-width: 200px; font-weight: 500; }
+.pr-versand-eu td { padding-left: 12px; }
+.pr-punkte { padding-left: 1.2em; display: grid; gap: 8px; max-width: 70ch; }
+.pr-preis a, .pr-kurz a { color: inherit; }

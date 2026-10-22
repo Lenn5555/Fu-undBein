@@ -358,3 +358,13 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .js [data-rein] { transform: none; }
   .kb-band-lauf { animation: none !important; }
 }
+
+/* Versandkosten im Bestellformular */
+.ki-versand { border: 1px solid var(--hell-2); border-radius: var(--r-klein); padding: 0 14px; font-size: var(--step-small); }
+.ki-versand summary { cursor: pointer; padding: 12px 0; font-weight: 600; min-height: 44px; box-sizing: border-box; }
+.ki-versand-inhalt { padding-bottom: 12px; display: grid; gap: 8px; }
+.ki-versand-inhalt p { margin: 0; }
+.ki-versand select { min-height: 44px; padding: 8px 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); font: inherit; background: var(--weiss); color: var(--ink); max-width: 100%; }
+.ki-versand table { width: 100%; max-width: 320px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ki-versand td { padding: 6px 0; border-bottom: 1px solid var(--hell-2); }
+.ki-versand .ki-zahl { text-align: right; }

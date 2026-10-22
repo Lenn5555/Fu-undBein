@@ -208,11 +208,11 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <footer class="bf-fuss" data-feld="dunkel">
 <div class="bf-fuss-kopf"><a class="bf-wortmarke" href="/">beinundfuß.de</a><p>Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Ein Angebot von TS Systemtechnik, Pfungstadt.</p></div>
 <div class="bf-fuss-raster">
-<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a></nav>
+<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Einsätze</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a><a href="/versandkosten/">Versandkosten</a></nav>
 <nav class="bf-fuss-links" aria-label="Rechtliches"><a href="/kontakt/">Kontaktseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{b.AGB_LINK}</nav>
 <div class="bf-fuss-adresse"><p>{e(CFG['betreiber_zeile'])}<br>TS Systemtechnik, Pfungstadt</p><p><a href="mailto:{mail}">{mail}</a></p></div>
 </div>
-<div class="bf-fuss-ende"><p>Alle Preise netto zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p><a class="bf-knopf bf-knopf-klein" href="#inhalt">Nach oben</a></div>
+<div class="bf-fuss-ende"><p>Alle Preise netto zzgl. MwSt. und <a href="/versandkosten/">Versand</a>. Verkauf an Gewerbetreibende.</p><a class="bf-knopf bf-knopf-klein" href="#inhalt">Nach oben</a></div>
 </footer>
 <script src="/assets/seite.js" defer></script>
 </body>
@@ -365,7 +365,7 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <section class="kb-preise" id="preise" data-feld="hell">
 <div class="kb-preise-text">
 <h2 data-rein>Preise</h2>
-<p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und Versand. Verkauf an Gewerbetreibende.</p>
+<p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und <a href="/versandkosten/">Versand</a>. Verkauf an Gewerbetreibende.</p>
 <p data-rein>Tippen Sie auf ein Modell für Datenblatt, Ausführungen und Preise. Insgesamt {anzahl} Modelle, <a href="/produkte/">alle Produkte im Überblick</a>.</p>
 </div>
 <div class="kb-preise-liste">
@@ -500,7 +500,7 @@ def produktseite(p, verwandte, mehrzahl):
 <div class="pr-info">
 <h1>{e(seo_name(p))}</h1>
 <p class="pr-kurz">{e(p['kurz'])}</p>
-<p class="pr-preis">{preis_ab_text(p)} <span>netto pro Stück, zzgl. MwSt. und Versand</span></p>
+<p class="pr-preis">{preis_ab_text(p)} <span>netto pro Stück, zzgl. MwSt. und <a href="/versandkosten/">Versand</a></span></p>
 <p class="pr-aktionen"><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="{bestellen}">Bestellen</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="{fragen}">Berater fragen</a></p>
 <p class="pr-notiz">Artikelnummer {e(p['sku'])}. Verkauf an Gewerbetreibende. Verbindlich wird die Bestellung mit unserer Auftragsbestätigung.</p>
 </div>
@@ -612,6 +612,41 @@ def kategorieseite(bauform, l):
 
 
 PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
+VERSAND = json.loads((ROOT / "daten/versandkosten.json").read_text(encoding="utf-8"))
+
+
+def kg_text(x):
+    return f"{x:g}".replace(".", ",") + " kg"
+
+
+def versandseite():
+    """Versandkosten pro Paket (GLS ab Pfungstadt), Deutschland und Europa. Länder mit gleichen Preisen stehen in einer Zeile."""
+    de = VERSAND["deutschland"]
+    zeilen_de = "".join(f'<tr><td>bis {kg_text(g)}</td><td class="pr-zahl">{euro(x)}</td></tr>' for g, x in zip(de["bis_kg"], de["preise"]))
+    eu = VERSAND["europa"]
+    gruppen = {}
+    for l in eu["laender"]:
+        gruppen.setdefault((tuple(l["preise"]), bool(l.get("luftfracht"))), []).append(l["land"])
+    reihen = sorted(gruppen.items(), key=lambda kv: kv[1][0].replace("Ö", "Oe"))  # alphabetisch, damit man sein Land findet
+    kopf = "".join(f'<th class="pr-zahl">{kg_text(g)}</th>' for g in eu["bis_kg"])
+    zeilen_eu = "".join(f'<tr><th scope="row">{e(", ".join(laender))}{" ¹" if luft else ""}</th>'
+                        + "".join(f'<td class="pr-zahl">{euro(x)}</td>' for x in preise) + "</tr>"
+                        for (preise, luft), laender in reihen)
+    inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / Versandkosten</nav>'
+              '<h1>Versandkosten</h1><p class="pr-kurz">Wir versenden mit GLS ab Pfungstadt. Die Versandkosten gelten pro Paket, netto zzgl. MwSt., '
+              'und richten sich nach Land und Paketgewicht. Mehrere Artikel einer Bestellung packen wir zusammen.</p>'
+              f'<section><h2>Deutschland</h2><div class="pr-tabelle pr-versand-de"><table><thead><tr><th>Paketgewicht</th><th class="pr-zahl">Preis netto</th></tr></thead>'
+              f'<tbody>{zeilen_de}</tbody></table></div></section>'
+              f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis …</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
+              f'<tbody>{zeilen_eu}</tbody></table></div>'
+              '<p class="pr-notiz">¹ Versand per Luftfracht. Berechnet wird nach Volumengewicht, wenn es höher ist als das tatsächliche Gewicht.</p></section>'
+              '<section><h2>Gut zu wissen</h2><ul class="pr-punkte">'
+              '<li>Ist ein Paket groß und leicht, zählt das Volumengewicht: Länge × Breite × Höhe in cm geteilt durch 6.000, höchstens 30 kg.</li>'
+              '<li>Für Pakete über 40 kg, Paletten oder Expressversand machen wir Ihnen gern ein Angebot: '
+              f'<a href="mailto:{e(CFG["anfrage_email"])}">{e(CFG["anfrage_email"])}</a>.</li>'
+              '<li>Die Versandkosten stellen wir mit der Auftragsbestätigung in Rechnung.</li></ul></section></article>')
+    return seitenrahmen("Versandkosten | beinundfuß.de", inhalt, pfad="versandkosten/", kopf=PRODUKT_CSS,
+                        beschreibung="Versandkosten von beinundfuß.de: Versand mit GLS ab Pfungstadt nach Deutschland und Europa, Preise pro Paket nach Gewicht.")
 
 
 def main():
@@ -676,6 +711,9 @@ def main():
             schreibe(f"produkte/{p['slug_alt']}", f'<!doctype html><meta charset="utf-8"><title>{e(p["name"])}</title>'
                      f'<meta name="robots" content="noindex"><link rel="canonical" href="{produkt_url(p, absolut=True)}">'
                      f'<meta http-equiv="refresh" content="0; url={b.BASIS}{produkt_url(p)}"><a href="{produkt_url(p)}">{e(p["name"])}</a>')
+    schreibe("versandkosten", versandseite())
+    SEITEN.append(("versandkosten/", "0.4"))
+    shutil.copy(ROOT / "daten/versandkosten.json", OUT / "assets/versandkosten.json")
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

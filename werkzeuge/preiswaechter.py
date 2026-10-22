@@ -47,7 +47,7 @@ PREISE = ROOT / "daten/preise-vergleich.csv"
 AUSGEBLENDET = ROOT / "daten/ausgeblendet.csv"
 STAND = ROOT / "daten/preiswaechter.json"
 
-AUFSCHLAG = 1.15            # Verkaufspreis = EK + 15 % (Lenn, 21.10.2026; vorher 10 %)
+AUFSCHLAG = 1.20            # Verkaufspreis = EK + 20 % (Lenn, 22.10.2026; vorher 15 %, davor 10 %)
 MWST = 1.19
 TOLERANZ_EINMESSEN = 0.03   # gefundener Preis darf beim Einmessen 3 % vom bekannten EK abweichen
 MAX_SPRUNG = 0.25           # größere Preissprünge nur melden, nicht übernehmen
@@ -401,10 +401,12 @@ def main(argv):
         # Bestätigung: Claude liest denselben Preis, oder (ohne Gegenlesung) zwei Läufe hintereinander derselbe Wert
         ki_ek = r.get("ki_ek")
         ki_gleich = ki_ek is not None and abs(round(ki_ek * AUFSCHLAG, 2) - neu) < 0.015
+        # Toleranz 1 Cent: umgerechnete Vorschläge (Aufschlagänderung) können um einen Cent abweichen
+        gleich_wie_vorschlag = a.get("vorschlag_vk") is not None and abs(a["vorschlag_vk"] - neu) < 0.015
         if r["quelle"] == "regel":
-            bestaetigt = ki_gleich or (ki_ek is None and a.get("vorschlag_vk") == neu)
+            bestaetigt = ki_gleich or (ki_ek is None and gleich_wie_vorschlag)
         else:
-            bestaetigt = a.get("vorschlag_vk") == neu
+            bestaetigt = gleich_wie_vorschlag
         if not bestaetigt:
             a["vorschlag_vk"] = neu
             if ki_ek is not None and not ki_gleich:
@@ -463,7 +465,7 @@ def main(argv):
                      "(Actions > Preiswächter > Run workflow, Haken bei „Sicherheitsbremse übergehen“).")
     tun = "geändert" if aendern else "würde geändert"
     if preis_neu:
-        teile.append(f"PREISE {tun.upper()} ({len(preis_neu)}), Verkaufspreis = neuer Einkaufspreis + 15 %:\n" + "\n".join(
+        teile.append(f"PREISE {tun.upper()} ({len(preis_neu)}), Verkaufspreis = neuer Einkaufspreis + 20 %:\n" + "\n".join(
             f"- {zeile(s)}\n    EK jetzt {euro(ek)}, Verkauf {euro(alt)} -> {euro(neu)}" for s, alt, neu, ek in preis_neu))
     if preis_gross:
         teile.append(f"GROSSER PREISSPRUNG, NICHT übernommen, bitte prüfen ({len(preis_gross)}):\n" + "\n".join(

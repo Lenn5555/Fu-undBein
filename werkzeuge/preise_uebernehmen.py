@@ -5,7 +5,7 @@ Liest  /mnt/project-files/katalog/intern/eingabe-*.csv und bezug-*.csv (nicht im
 Schreibt daten/preise-vergleich.csv (nur Artikelnummer und Verkaufspreis, öffentlich unbedenklich)
 und     /mnt/project-files/katalog/intern/bezugsquellen.xlsx (intern, für Bestellungen).
 
-Aufruf: python3 werkzeuge/preise_uebernehmen.py [aufschlag_prozent]   (Standard 15)
+Aufruf: python3 werkzeuge/preise_uebernehmen.py [aufschlag_prozent]   (Standard 20)
 """
 import csv
 import sys
@@ -17,7 +17,7 @@ from openpyxl.utils import get_column_letter
 
 ROOT = Path(__file__).resolve().parent.parent
 INTERN = Path("/mnt/project-files/katalog/intern")
-AUFSCHLAG = float(sys.argv[1]) if len(sys.argv) > 1 else 15.0
+AUFSCHLAG = float(sys.argv[1]) if len(sys.argv) > 1 else 20.0
 WENIG_MARGE = 2.00  # € Aufschlag pro Stück, darunter wird es in der Liste markiert
 # Preise, die nicht als Stückpreis dieses Artikels gelten dürfen: bleiben intern, Website zeigt „auf Anfrage“.
 NICHT_AUF_WEBSITE = {

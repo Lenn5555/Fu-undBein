@@ -496,7 +496,7 @@
 "Gewinde": "M16, M20",
 "Durchmesser": "Teller 100 mm"
 },
-"preis": 33.36,
+"preis": 34.81,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -520,7 +520,7 @@
 "Gewinde": "M20, M24",
 "Durchmesser": "Teller 120 mm"
 },
-"preis": 59.32,
+"preis": 61.9,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -544,7 +544,7 @@
 "Gewinde": "M8",
 "Durchmesser": "Teller 30 mm"
 },
-"preis": 11.85,
+"preis": 12.36,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -563,7 +563,7 @@
 "Gewinde": "M8, M10",
 "Durchmesser": "Teller 40 mm"
 },
-"preis": 10.1,
+"preis": 10.54,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -587,7 +587,7 @@
 "Gewinde": "M12",
 "Durchmesser": "Teller 50 mm"
 },
-"preis": 20.21,
+"preis": 21.08,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -606,7 +606,7 @@
 "Gewinde": "M10, M12",
 "Durchmesser": "Teller 60 mm"
 },
-"preis": 17.74,
+"preis": 18.52,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -630,7 +630,7 @@
 "Gewinde": "M16",
 "Durchmesser": "Teller 65 mm"
 },
-"preis": 25.62,
+"preis": 26.74,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -649,7 +649,7 @@
 "Gewinde": "M12, M20",
 "Durchmesser": "Teller 75 mm"
 },
-"preis": 22.62,
+"preis": 23.6,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -673,7 +673,7 @@
 "Gewinde": "M20",
 "Durchmesser": "Teller 80 mm"
 },
-"preis": 34.74,
+"preis": 36.25,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -692,7 +692,7 @@
 "Gewinde": "M16, M20, M24, M30",
 "Durchmesser": "Teller 100 mm"
 },
-"preis": 50.32,
+"preis": 52.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -718,7 +718,7 @@
 "Gewinde": "M16, M20, M24, M30, M36",
 "Durchmesser": "Teller 120 mm"
 },
-"preis": 53.41,
+"preis": 55.73,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -745,7 +745,7 @@
 "Gewinde": "M36",
 "Durchmesser": "Teller 150 mm"
 },
-"preis": 74.06,
+"preis": 77.28,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -765,7 +765,7 @@
 "Traglast": "40000 (M16x190) N",
 "Durchmesser": "Teller 60 mm"
 },
-"preis": 45.19,
+"preis": 47.16,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -791,7 +791,7 @@
 "Gewinde": "M30",
 "Durchmesser": "Teller 100 mm"
 },
-"preis": 74.26,
+"preis": 77.48,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -810,7 +810,7 @@
 "Gewinde": "M16",
 "Durchmesser": "Teller 60 mm"
 },
-"preis": 25.0,
+"preis": 26.09,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -829,7 +829,7 @@
 "Gewinde": "M16, M20",
 "Durchmesser": "Teller 80 mm"
 },
-"preis": 28.51,
+"preis": 29.75,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -853,7 +853,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø44, 5 / 56, 5 mm"
 },
-"preis": 11.71,
+"preis": 12.22,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -872,7 +872,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
-"preis": 10.3,
+"preis": 10.75,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -891,7 +891,7 @@
 "Gewinde": "M12",
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
-"preis": 9.79,
+"preis": 10.21,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -910,7 +910,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø44, 5 / 52 mm"
 },
-"preis": 10.3,
+"preis": 10.75,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -929,7 +929,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø44, 5 / 52 mm"
 },
-"preis": 11.76,
+"preis": 12.28,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -948,7 +948,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø44, 5 / 56, 5 mm"
 },
-"preis": 10.68,
+"preis": 11.15,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -967,7 +967,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
-"preis": 11.76,
+"preis": 12.28,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -987,7 +987,7 @@
 "Traglast": "14710 (1500 kg) N",
 "Durchmesser": "Teller 100 · Höhe 192 mm"
 },
-"preis": 190.06,
+"preis": 198.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1007,7 +1007,7 @@
 "Traglast": "9807 (1000 kg) N",
 "Durchmesser": "Teller 80 · Höhe 163 mm"
 },
-"preis": 111.58,
+"preis": 116.44,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1027,7 +1027,7 @@
 "Traglast": "24517 (2500 kg) N",
 "Durchmesser": "Teller 100 · Höhe 196 mm"
 },
-"preis": 266.85,
+"preis": 278.45,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1047,7 +1047,7 @@
 "Traglast": "9807 (1000 kg) N",
 "Durchmesser": "Teller 60 · Höhe 191 mm"
 },
-"preis": 229.62,
+"preis": 239.6,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1067,7 +1067,7 @@
 "Traglast": "19613 (2000 kg) N",
 "Durchmesser": "Teller 80 · Höhe 243 mm"
 },
-"preis": 205.19,
+"preis": 214.12,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1085,7 +1085,7 @@
 "Material": "Edelstahl",
 "Durchmesser": "Ø56, 5 / 44, 5 · Höhe 180 mm"
 },
-"preis": 12.58,
+"preis": 13.13,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1103,7 +1103,7 @@
 "Material": "Edelstahl",
 "Durchmesser": "Ø64 / 56, 6 · Höhe 180 mm"
 },
-"preis": 13.58,
+"preis": 14.17,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1122,7 +1122,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø30 / 40 mm"
 },
-"preis": 9.28,
+"preis": 9.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1141,7 +1141,7 @@
 "Gewinde": "M10",
 "Durchmesser": "Ø30 / 40 mm"
 },
-"preis": 9.3,
+"preis": 9.71,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1162,7 +1162,7 @@
 "Traglast": "4500 N",
 "Durchmesser": "20 (Wand 2) mm"
 },
-"preis": 2.93,
+"preis": 3.06,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1183,7 +1183,7 @@
 "Traglast": "5000 N",
 "Durchmesser": "30 (Wand 1) mm"
 },
-"preis": 4.28,
+"preis": 4.46,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1211,7 +1211,7 @@
 "Traglast": "5000 N",
 "Durchmesser": "38 (Wand 1, 5) mm"
 },
-"preis": 4.82,
+"preis": 5.03,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1238,7 +1238,7 @@
 "Traglast": "6000 N",
 "Durchmesser": "42, 4 (Wand 1, 5) mm"
 },
-"preis": 5.37,
+"preis": 5.6,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1267,7 +1267,7 @@
 "Traglast": "6000 N",
 "Durchmesser": "48, 3 (Wand 1, 5) mm"
 },
-"preis": 6.16,
+"preis": 6.43,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1295,7 +1295,7 @@
 "Traglast": "6000 N",
 "Durchmesser": "50, 9 (Wand 1, 5) mm"
 },
-"preis": 6.52,
+"preis": 6.8,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1323,7 +1323,7 @@
 "Traglast": "17000 N",
 "Durchmesser": "30x30 (Wand 1, 5) mm"
 },
-"preis": 4.34,
+"preis": 4.52,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1351,7 +1351,7 @@
 "Traglast": "4000 N",
 "Durchmesser": "20x20 (Wand 1, 5-2) mm"
 },
-"preis": 2.76,
+"preis": 2.88,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1372,7 +1372,7 @@
 "Traglast": "5000 N",
 "Durchmesser": "30x30 (Wand 1, 5-2) mm"
 },
-"preis": 4.0,
+"preis": 4.18,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1400,7 +1400,7 @@
 "Traglast": "8000-10000 N",
 "Durchmesser": "40x40 (Wand 1, 5-4) mm"
 },
-"preis": 4.23,
+"preis": 4.42,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1429,7 +1429,7 @@
 "Traglast": "8000-12000 N",
 "Durchmesser": "50x50 (Wand 1, 5-4) mm"
 },
-"preis": 6.41,
+"preis": 6.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1457,7 +1457,7 @@
 "Traglast": "12000 N",
 "Durchmesser": "60x60 (Wand 2-4) mm"
 },
-"preis": 6.79,
+"preis": 7.08,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -1484,7 +1484,7 @@
 "Traglast": "16000-28000 N",
 "Durchmesser": "80/100/125 mm"
 },
-"preis": 7.2,
+"preis": 7.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1505,7 +1505,7 @@
 "Traglast": "18000-28000 N",
 "Durchmesser": "80/100/125 mm"
 },
-"preis": 9.18,
+"preis": 9.58,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1526,7 +1526,7 @@
 "Traglast": "14000-16000 N",
 "Durchmesser": "60/80 mm"
 },
-"preis": 7.83,
+"preis": 8.17,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1547,7 +1547,7 @@
 "Traglast": "14000-16000 N",
 "Durchmesser": "60/80 mm"
 },
-"preis": 6.81,
+"preis": 7.1,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1568,7 +1568,7 @@
 "Traglast": "14000-16000 N",
 "Durchmesser": "60/80 mm"
 },
-"preis": 12.8,
+"preis": 13.36,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1589,7 +1589,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "65 (oval) mm"
 },
-"preis": 7.88,
+"preis": 8.22,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1610,7 +1610,7 @@
 "Traglast": "15000 N",
 "Durchmesser": "65 (oval) mm"
 },
-"preis": 12.58,
+"preis": 13.13,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1630,7 +1630,7 @@
 "Traglast": "15000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 10.15,
+"preis": 10.6,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1650,7 +1650,7 @@
 "Traglast": "15000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 10.2,
+"preis": 10.64,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1670,7 +1670,7 @@
 "Traglast": "15000-20000 N",
 "Durchmesser": "50/65 mm"
 },
-"preis": 10.22,
+"preis": 10.67,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1690,7 +1690,7 @@
 "Traglast": "20000-35000 N",
 "Durchmesser": "65/80/100 mm"
 },
-"preis": 13.4,
+"preis": 13.98,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1710,7 +1710,7 @@
 "Traglast": "30000-45000 N",
 "Durchmesser": "80/100 mm"
 },
-"preis": 21.14,
+"preis": 22.06,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1730,7 +1730,7 @@
 "Traglast": "55000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 31.94,
+"preis": 33.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1750,7 +1750,7 @@
 "Traglast": "30000 (Form R 5000-19000) N",
 "Durchmesser": "50/60/80/100 mm"
 },
-"preis": 13.33,
+"preis": 13.91,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1769,7 +1769,7 @@
 "Gewinde": "M10",
 "Durchmesser": "40/50 mm"
 },
-"preis": 5.07,
+"preis": 5.29,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1788,7 +1788,7 @@
 "Gewinde": "M12",
 "Durchmesser": "40 mm"
 },
-"preis": 5.27,
+"preis": 5.5,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1806,7 +1806,7 @@
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M16"
 },
-"preis": 5.98,
+"preis": 6.24,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1824,7 +1824,7 @@
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M20"
 },
-"preis": 9.37,
+"preis": 9.78,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1842,7 +1842,7 @@
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M24"
 },
-"preis": 14.83,
+"preis": 15.48,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1861,7 +1861,7 @@
 "Gewinde": "M8",
 "Durchmesser": "40/50 mm"
 },
-"preis": 4.83,
+"preis": 5.04,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1880,7 +1880,7 @@
 "Gewinde": "M10",
 "Durchmesser": "40/50 mm"
 },
-"preis": 5.84,
+"preis": 6.1,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1899,7 +1899,7 @@
 "Gewinde": "M12",
 "Durchmesser": "40 mm"
 },
-"preis": 7.0,
+"preis": 7.31,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1918,7 +1918,7 @@
 "Gewinde": "M8",
 "Durchmesser": "40/50 mm"
 },
-"preis": 5.66,
+"preis": 5.9,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1938,7 +1938,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "40 mm"
 },
-"preis": 6.55,
+"preis": 6.84,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1958,7 +1958,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "40 mm"
 },
-"preis": 4.5,
+"preis": 4.69,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1978,7 +1978,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "40 mm"
 },
-"preis": 4.15,
+"preis": 4.33,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -1998,7 +1998,7 @@
 "Traglast": "15000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 10.53,
+"preis": 10.99,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2018,7 +2018,7 @@
 "Traglast": "9000 (900 kg) N",
 "Durchmesser": "40 mm"
 },
-"preis": 42.72,
+"preis": 44.58,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2038,7 +2038,7 @@
 "Traglast": "30000 (3000 kg) N",
 "Durchmesser": "100 mm"
 },
-"preis": 119.25,
+"preis": 124.44,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2058,7 +2058,7 @@
 "Traglast": "4000 (400 kg) N",
 "Durchmesser": "50 mm"
 },
-"preis": 50.75,
+"preis": 52.96,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2078,7 +2078,7 @@
 "Traglast": "18000 (1800 kg) N",
 "Durchmesser": "123 mm"
 },
-"preis": 29.7,
+"preis": 31.0,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2098,7 +2098,7 @@
 "Traglast": "25000 (2500 kg) N",
 "Durchmesser": "103 mm"
 },
-"preis": 31.15,
+"preis": 32.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2118,7 +2118,7 @@
 "Traglast": "5000 (500 kg) N",
 "Durchmesser": "40 mm"
 },
-"preis": 8.11,
+"preis": 8.46,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2138,7 +2138,7 @@
 "Traglast": "10000 (1000 kg) N",
 "Durchmesser": "40 mm"
 },
-"preis": 8.56,
+"preis": 8.93,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2158,7 +2158,7 @@
 "Traglast": "7000 (700 kg) N",
 "Durchmesser": "60 mm"
 },
-"preis": 42.11,
+"preis": 43.94,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2178,7 +2178,7 @@
 "Traglast": "7000 (700 kg) N",
 "Durchmesser": "60 mm"
 },
-"preis": 47.33,
+"preis": 49.39,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2199,7 +2199,7 @@
 "Traglast": "7000-10000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 5.12,
+"preis": 5.34,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2220,7 +2220,7 @@
 "Traglast": "7000-12000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 4.44,
+"preis": 4.63,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2241,7 +2241,7 @@
 "Traglast": "7000-12000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 7.59,
+"preis": 7.92,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2262,7 +2262,7 @@
 "Traglast": "7000-8000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 8.36,
+"preis": 8.72,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2283,7 +2283,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 75.41,
+"preis": 78.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2304,7 +2304,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 75.41,
+"preis": 78.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2325,7 +2325,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 78.35,
+"preis": 81.76,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2346,7 +2346,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 82.28,
+"preis": 85.86,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2367,7 +2367,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 89.47,
+"preis": 93.36,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2388,7 +2388,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 82.13,
+"preis": 85.7,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2409,7 +2409,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 86.04,
+"preis": 89.78,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2430,7 +2430,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 93.21,
+"preis": 97.26,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2451,7 +2451,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 93.05,
+"preis": 97.09,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2472,7 +2472,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 96.99,
+"preis": 101.21,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2493,7 +2493,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 104.16,
+"preis": 108.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2513,7 +2513,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 79.96,
+"preis": 83.44,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2533,7 +2533,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 79.96,
+"preis": 83.44,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2553,7 +2553,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 82.13,
+"preis": 85.7,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2573,7 +2573,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 86.04,
+"preis": 89.78,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2593,7 +2593,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 93.21,
+"preis": 97.26,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2613,7 +2613,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 86.91,
+"preis": 90.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2633,7 +2633,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 90.82,
+"preis": 94.76,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2653,7 +2653,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 97.99,
+"preis": 102.25,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2673,7 +2673,7 @@
 "Bodenbefestigung": "nein",
 "Durchmesser": "80 mm"
 },
-"preis": 75.47,
+"preis": 78.76,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2694,7 +2694,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 67.24,
+"preis": 70.16,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2715,7 +2715,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 66.61,
+"preis": 69.5,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2736,7 +2736,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 68.79,
+"preis": 71.78,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2757,7 +2757,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 73.63,
+"preis": 76.84,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2778,7 +2778,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 78.0,
+"preis": 81.4,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2799,7 +2799,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 71.63,
+"preis": 74.75,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2820,7 +2820,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 75.16,
+"preis": 78.43,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2841,7 +2841,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 80.74,
+"preis": 84.25,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2862,7 +2862,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 80.61,
+"preis": 84.12,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2883,7 +2883,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 84.42,
+"preis": 88.09,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2904,7 +2904,7 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 90.48,
+"preis": 94.42,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2924,7 +2924,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 70.45,
+"preis": 73.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2944,7 +2944,7 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 70.45,
+"preis": 73.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2964,7 +2964,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 71.46,
+"preis": 74.57,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -2984,7 +2984,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 74.61,
+"preis": 77.86,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3004,7 +3004,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 81.34,
+"preis": 84.88,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3024,7 +3024,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 75.89,
+"preis": 79.19,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3044,7 +3044,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 79.18,
+"preis": 82.62,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3064,7 +3064,7 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 85.02,
+"preis": 88.72,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3081,7 +3081,7 @@
 "Bauform": "Stellfuß",
 "Material": "Edelstahl"
 },
-"preis": 89.38,
+"preis": 93.26,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3101,7 +3101,7 @@
 "Traglast": "3000-10000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 6.49,
+"preis": 6.77,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3121,7 +3121,7 @@
 "Traglast": "3000-10000 N",
 "Durchmesser": "40/50/60/80 mm"
 },
-"preis": 7.12,
+"preis": 7.43,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3141,7 +3141,7 @@
 "Traglast": "4000-10000 N",
 "Durchmesser": "50/60/80 mm"
 },
-"preis": 9.17,
+"preis": 9.56,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3161,7 +3161,7 @@
 "Traglast": "4000-30000 N",
 "Durchmesser": "50/60/80/100/120 mm"
 },
-"preis": 11.19,
+"preis": 11.68,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3181,7 +3181,7 @@
 "Traglast": "7000-30000 N",
 "Durchmesser": "60/80/100/120 mm"
 },
-"preis": 13.8,
+"preis": 14.4,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3201,7 +3201,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "40 mm"
 },
-"preis": 6.22,
+"preis": 6.49,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3221,7 +3221,7 @@
 "Traglast": "4000 N",
 "Durchmesser": "47 mm"
 },
-"preis": 0.71,
+"preis": 0.74,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3241,7 +3241,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "30 mm"
 },
-"preis": 0.49,
+"preis": 0.52,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3261,7 +3261,7 @@
 "Traglast": "3000-4000 N",
 "Durchmesser": "30/47 mm"
 },
-"preis": 0.51,
+"preis": 0.53,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3279,7 +3279,7 @@
 "Material": "Stahl",
 "Traglast": "6000 N"
 },
-"preis": 46.17,
+"preis": 48.18,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3297,7 +3297,7 @@
 "Material": "Stahl",
 "Traglast": "20000 N"
 },
-"preis": 88.09,
+"preis": 91.92,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3317,7 +3317,7 @@
 "Traglast": "40000 N",
 "Durchmesser": "160 mm"
 },
-"preis": 130.32,
+"preis": 135.98,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3335,7 +3335,7 @@
 "Material": "Stahl",
 "Traglast": "55000 N"
 },
-"preis": 236.06,
+"preis": 246.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3353,7 +3353,7 @@
 "Material": "Stahl",
 "Traglast": "80000 N"
 },
-"preis": 389.38,
+"preis": 406.31,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3373,7 +3373,7 @@
 "Traglast": "3500/6500/10000 (43/57/68 ShA) N",
 "Durchmesser": "113 mm"
 },
-"preis": 48.22,
+"preis": 50.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3393,7 +3393,7 @@
 "Traglast": "7500/12500/19000 (43/57/68 ShA) N",
 "Durchmesser": "126 mm"
 },
-"preis": 65.76,
+"preis": 68.62,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3413,7 +3413,7 @@
 "Traglast": "1100/1750/2800 (43/57/68 ShA) N",
 "Durchmesser": "60 mm"
 },
-"preis": 22.52,
+"preis": 23.5,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3433,7 +3433,7 @@
 "Traglast": "1500/2800/4500 (43/57/68 ShA) N",
 "Durchmesser": "90 mm"
 },
-"preis": 30.97,
+"preis": 32.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3453,7 +3453,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "30/40/50 mm"
 },
-"preis": 0.48,
+"preis": 0.5,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3473,7 +3473,7 @@
 "Traglast": "7500 N",
 "Durchmesser": "60 mm"
 },
-"preis": 2.02,
+"preis": 2.11,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3493,7 +3493,7 @@
 "Traglast": "2500 N",
 "Durchmesser": "25/30/40 mm"
 },
-"preis": 0.33,
+"preis": 0.35,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3513,7 +3513,7 @@
 "Traglast": "4000 N",
 "Durchmesser": "47 mm"
 },
-"preis": 0.68,
+"preis": 0.71,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3533,7 +3533,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "30 mm"
 },
-"preis": 0.55,
+"preis": 0.58,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3553,7 +3553,7 @@
 "Traglast": "3000-4000 N",
 "Durchmesser": "30/47 mm"
 },
-"preis": 0.6,
+"preis": 0.62,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3573,7 +3573,7 @@
 "Traglast": "4000 N",
 "Durchmesser": "47 mm"
 },
-"preis": 0.83,
+"preis": 0.86,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3593,7 +3593,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "30 mm"
 },
-"preis": 0.57,
+"preis": 0.6,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3613,7 +3613,7 @@
 "Traglast": "3000-4000 N",
 "Durchmesser": "30/47 mm"
 },
-"preis": 0.6,
+"preis": 0.62,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3633,7 +3633,7 @@
 "Traglast": "12500 (1250 kg) N",
 "Durchmesser": "60 mm"
 },
-"preis": 35.43,
+"preis": 36.97,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3653,7 +3653,7 @@
 "Traglast": "4000 (400 kg) N",
 "Durchmesser": "80 mm"
 },
-"preis": 45.53,
+"preis": 47.51,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3672,7 +3672,7 @@
 "Traglast": "10000 (1000 kg) N",
 "Durchmesser": "98 mm"
 },
-"preis": 86.43,
+"preis": 90.19,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3690,7 +3690,7 @@
 "Material": "Stahl",
 "Traglast": "ca. 600 Klemmkraft N"
 },
-"preis": 209.21,
+"preis": 218.3,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3708,7 +3708,7 @@
 "Material": "Stahl",
 "Traglast": "5000 (vertikal angehoben) N"
 },
-"preis": 228.94,
+"preis": 238.9,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3727,7 +3727,7 @@
 "Traglast": "1400 N",
 "Durchmesser": "50 mm"
 },
-"preis": 67.3,
+"preis": 70.22,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3747,7 +3747,7 @@
 "Traglast": "155000 N",
 "Durchmesser": "119 mm"
 },
-"preis": 163.94,
+"preis": 171.07,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3767,7 +3767,7 @@
 "Traglast": "225000 N",
 "Durchmesser": "119 mm"
 },
-"preis": 137.47,
+"preis": 143.45,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3787,7 +3787,7 @@
 "Traglast": "100000 N",
 "Durchmesser": "40 mm"
 },
-"preis": 66.38,
+"preis": 69.26,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3807,7 +3807,7 @@
 "Traglast": "85000 N",
 "Durchmesser": "52 mm"
 },
-"preis": 106.88,
+"preis": 111.53,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3827,7 +3827,7 @@
 "Traglast": "125000 N",
 "Durchmesser": "52 mm"
 },
-"preis": 76.24,
+"preis": 79.56,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3847,7 +3847,7 @@
 "Traglast": "85000 N",
 "Durchmesser": "99 mm"
 },
-"preis": 118.0,
+"preis": 123.13,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3867,7 +3867,7 @@
 "Traglast": "125000 N",
 "Durchmesser": "99 mm"
 },
-"preis": 166.07,
+"preis": 173.29,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3886,7 +3886,7 @@
 "Gewinde": "M30",
 "Durchmesser": "100 mm"
 },
-"preis": 32.34,
+"preis": 33.74,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3906,7 +3906,7 @@
 "Traglast": "29430 N",
 "Durchmesser": "100 mm"
 },
-"preis": 117.31,
+"preis": 122.41,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3924,7 +3924,7 @@
 "Traglast": "53955 N",
 "Durchmesser": "200 mm"
 },
-"preis": 225.01,
+"preis": 234.79,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3944,7 +3944,7 @@
 "Bodenbefestigung": "ja",
 "Durchmesser": "80 mm"
 },
-"preis": 10.73,
+"preis": 11.2,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3965,7 +3965,7 @@
 "Traglast": "120000 N",
 "Durchmesser": "45 mm"
 },
-"preis": 44.31,
+"preis": 46.24,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3986,7 +3986,7 @@
 "Traglast": "120000 N",
 "Durchmesser": "45 mm"
 },
-"preis": 44.31,
+"preis": 46.24,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4007,7 +4007,7 @@
 "Traglast": "120000 N",
 "Durchmesser": "45 mm"
 },
-"preis": 44.31,
+"preis": 46.24,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4028,7 +4028,7 @@
 "Traglast": "210000 N",
 "Durchmesser": "58 mm"
 },
-"preis": 51.55,
+"preis": 53.8,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4049,7 +4049,7 @@
 "Traglast": "210000 N",
 "Durchmesser": "58 mm"
 },
-"preis": 51.55,
+"preis": 53.8,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4070,7 +4070,7 @@
 "Traglast": "210000 N",
 "Durchmesser": "58 mm"
 },
-"preis": 51.55,
+"preis": 53.8,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4091,7 +4091,7 @@
 "Traglast": "330000 N",
 "Durchmesser": "70 mm"
 },
-"preis": 77.5,
+"preis": 80.87,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4112,7 +4112,7 @@
 "Traglast": "330000 N",
 "Durchmesser": "70 mm"
 },
-"preis": 77.5,
+"preis": 80.87,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4133,7 +4133,7 @@
 "Traglast": "330000 N",
 "Durchmesser": "70 mm"
 },
-"preis": 77.5,
+"preis": 80.87,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4154,7 +4154,7 @@
 "Traglast": "120000 N",
 "Durchmesser": "45 mm"
 },
-"preis": 64.37,
+"preis": 67.16,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4175,7 +4175,7 @@
 "Traglast": "60000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 39.03,
+"preis": 40.73,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4195,7 +4195,7 @@
 "Bodenbefestigung": "ja",
 "Durchmesser": "120 mm"
 },
-"preis": 38.69,
+"preis": 40.37,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4215,7 +4215,7 @@
 "Bodenbefestigung": "ja",
 "Durchmesser": "100 mm"
 },
-"preis": 24.27,
+"preis": 25.32,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4235,7 +4235,7 @@
 "Bodenbefestigung": "ja",
 "Durchmesser": "100 mm"
 },
-"preis": 29.64,
+"preis": 30.92,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4254,7 +4254,7 @@
 "Gewinde": "M16",
 "Traglast": "21000 N"
 },
-"preis": 225.49,
+"preis": 235.3,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4273,7 +4273,7 @@
 "Gewinde": "M16",
 "Traglast": "8400 N"
 },
-"preis": 162.28,
+"preis": 169.33,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4293,7 +4293,7 @@
 "Traglast": "643 (40 ShA) / 1374 (60 ShA) N",
 "Durchmesser": "45 mm"
 },
-"preis": 7.76,
+"preis": 8.1,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4313,7 +4313,7 @@
 "Traglast": "196 N",
 "Durchmesser": "70 mm"
 },
-"preis": 35.22,
+"preis": 36.76,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4333,7 +4333,7 @@
 "Traglast": "324 N",
 "Durchmesser": "70 mm"
 },
-"preis": 35.72,
+"preis": 37.27,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4353,7 +4353,7 @@
 "Traglast": "510 N",
 "Durchmesser": "70 mm"
 },
-"preis": 39.25,
+"preis": 40.96,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4373,7 +4373,7 @@
 "Traglast": "804 N",
 "Durchmesser": "70 mm"
 },
-"preis": 45.71,
+"preis": 47.7,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4393,7 +4393,7 @@
 "Traglast": "1206 N",
 "Durchmesser": "70 mm"
 },
-"preis": 54.37,
+"preis": 56.74,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4413,7 +4413,7 @@
 "Traglast": "1913 N",
 "Durchmesser": "70 mm"
 },
-"preis": 59.25,
+"preis": 61.82,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4433,7 +4433,7 @@
 "Traglast": "3041 N",
 "Durchmesser": "70 mm"
 },
-"preis": 63.15,
+"preis": 65.89,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4453,7 +4453,7 @@
 "Traglast": "4120 N",
 "Durchmesser": "70 mm"
 },
-"preis": 69.61,
+"preis": 72.64,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4473,7 +4473,7 @@
 "Traglast": "5150 N",
 "Durchmesser": "70 mm"
 },
-"preis": 78.99,
+"preis": 82.43,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4492,7 +4492,7 @@
 "Gewinde": "M4",
 "Durchmesser": "10 mm"
 },
-"preis": 1.0,
+"preis": 1.04,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4511,7 +4511,7 @@
 "Gewinde": "M4",
 "Durchmesser": "15 mm"
 },
-"preis": 1.03,
+"preis": 1.08,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4531,7 +4531,7 @@
 "Traglast": "2200 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.05,
+"preis": 4.22,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4551,7 +4551,7 @@
 "Traglast": "8000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.05,
+"preis": 4.22,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4571,7 +4571,7 @@
 "Traglast": "11000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 7.49,
+"preis": 7.81,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4591,7 +4591,7 @@
 "Traglast": "24000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 7.51,
+"preis": 7.84,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4611,7 +4611,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "125 mm"
 },
-"preis": 26.37,
+"preis": 27.52,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4631,7 +4631,7 @@
 "Traglast": "62000 N",
 "Durchmesser": "125 mm"
 },
-"preis": 26.71,
+"preis": 27.88,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},

@@ -540,18 +540,65 @@ def produktuebersicht(liste):
                         kopf=PRODUKT_CSS, pfad="produkte/")
 
 
+def werte(q, merkmal):
+    """Einzelwerte eines Merkmals für die Filter, vereinheitlicht („Edelstahl 1.4301“ zählt als Edelstahl)."""
+    roh = [w.strip() for w in str(q["merkmale"].get(merkmal) or "").split(",") if w.strip()]
+    if merkmal == "Material":
+        roh = ["Edelstahl" if w.startswith("Edelstahl") else "Gummi" if w.startswith("Gummi") else w for w in roh]
+    if merkmal == "Gewinde":
+        roh = [w for w in roh if re.fullmatch(r"M\d+", w)]
+    return list(dict.fromkeys(roh))
+
+
+def zahl(text):
+    m = re.search(r"\d+(?:[.,]\d+)?", text or "")
+    return float(m.group().replace(",", ".")) if m else 0
+
+
+# Filter auf den Kategorieseiten: (Merkmal, Überschrift)
+FILTER = [("Material", "Material"), ("Gewinde", "Gewinde"), ("Rohrmaß", "Rohrmaß")]
+
+
+def sortierdaten(q):
+    """Daten am Listeneintrag für Sortieren und Filtern im Browser (kategorie.js); ohne JavaScript bleibt die Liste nach Preis."""
+    gew = [int(w[1:]) for w in werte(q, "Gewinde")]
+    groesse = zahl(q["merkmale"].get("Rohrmaß")) or zahl(q["merkmale"].get("Durchmesser"))
+    attr = {"preis": f"{min_preis(q):.2f}", "gewinde": min(gew) if gew else 999, "groesse": groesse or 9999, "name": q["name"].lower()}
+    for m, _ in FILTER:
+        attr[b.slug(m)] = "|".join(werte(q, m))
+    return "".join(f' data-{k}="{e(str(v))}"' for k, v in attr.items())
+
+
+def sortierleiste(l):
+    """Sortieren und Filter über der Modellliste. Erscheint erst mit JavaScript (hidden), sonst stört sie nicht."""
+    gruppen = ""
+    for m, titel in FILTER:
+        alle = sorted({w for q in l for w in werte(q, m)}, key=lambda w: (zahl(w), w) if m != "Material" else (w,))
+        if len(alle) < 2:
+            continue
+        knoepfe = "".join(f'<button type="button" class="pr-pille" aria-pressed="false" data-wert="{e(w)}">{e(w)}</button>' for w in alle)
+        gruppen += f'<div class="pr-filter-gruppe" data-merkmal="{b.slug(m)}"><span class="pr-filter-titel">{e(titel)}</span><div class="pr-wahl">{knoepfe}</div></div>'
+    return (f'<div class="pr-werkzeug" hidden><label class="pr-sortieren">Sortieren nach <select id="pr-sortierung">'
+            '<option value="preis">Preis aufsteigend</option><option value="preis-ab">Preis absteigend</option>'
+            '<option value="gewinde">Gewinde, klein nach groß</option><option value="groesse">Größe (Teller oder Rohr), klein nach groß</option>'
+            f'<option value="name">Name A–Z</option></select></label>{gruppen}'
+            f'<p class="pr-treffer" aria-live="polite"><span><span id="pr-anzahl">{len(l)}</span> von {len(l)} Modellen</span>'
+            '<button type="button" class="pr-zuruecksetzen" id="pr-zuruecksetzen" hidden>Filter zurücksetzen</button></p>'
+            '<p class="pr-leer" id="pr-leer" hidden>Kein Modell passt zu dieser Auswahl. Nehmen Sie einen Filter heraus oder fragen Sie den Berater.</p></div>')
+
+
 def kategorieseite(bauform, l):
     """Seite je Bauform („Stellfüße kaufen“): Einleitung und alle Modelle, für Suchen wie „Stellfuß“ oder „Stellbein“."""
     mehrzahl = dict(BAUFORMEN)[bauform]
     titel, text = KATEGORIEN[bauform]
     l = sorted(l, key=lambda q: (min_preis(q), q["name"]))
-    zeilen = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(q["name"])}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>' for q in l)
+    zeilen = "".join(f'<li{sortierdaten(q)}><a href="{produkt_url(q)}"><span>{e(q["name"])}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>' for q in l)
     frage = f"Ich suche {mehrzahl}. Welche passen für meine Anwendung?"
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / '
               f'<a href="/produkte/">Produkte</a> / {e(mehrzahl)}</nav><h1>{e(titel)}</h1><p class="pr-kurz">{e(text)}</p>'
               f'<p class="pr-kurz">{len(l)} Modelle ab {euro(min_preis(l[0]))} netto pro Stück. Unsicher, welcher passt? '
               f'<a href="/?frage={quote(frage)}#berater">Fragen Sie den Berater.</a></p>'
-              f'<section><ul class="pr-liste pr-spalten">{zeilen}</ul></section></article>')
+              f'<section>{sortierleiste(l)}<ul class="pr-liste pr-spalten" id="pr-modelle">{zeilen}</ul></section></article>')
     pfad = kat_url(bauform)[1:]
     SEITEN.append((pfad, "0.9"))
     krumen = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -560,7 +607,8 @@ def kategorieseite(bauform, l):
         {"@type": "ListItem", "position": 3, "name": mehrzahl, "item": kat_url(bauform, True)}]}
     return seitenrahmen(f"{titel}: {len(l)} Modelle mit Preis | beinundfuß.de", inhalt,
                         beschreibung=f"{len(l)} {mehrzahl} ab {euro(min_preis(l[0]))} netto. {text}"[:300],
-                        kopf=PRODUKT_CSS + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad)
+                        kopf=PRODUKT_CSS + '<script src="/assets/kategorie.js" defer></script>'
+                        + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad)
 
 
 PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
@@ -588,7 +636,7 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
-    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
+    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     (OUT / "assets/favicon.svg").write_text(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#fece14"/>'

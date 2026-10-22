@@ -48,3 +48,19 @@
 .pr-pille { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 16px; border: 1px solid var(--linie); border-radius: var(--r-klein);
   background: var(--weiss); font-weight: 500; font-size: var(--step-small); text-decoration: none; white-space: nowrap; transition: background-color .15s, border-color .15s, color .15s; }
 .pr-pille:hover { background: var(--ink); border-color: var(--ink); color: var(--weiss); }
+
+/* Sortieren und Filtern auf den Kategorieseiten (kategorie.js) */
+.pr-werkzeug { display: grid; gap: 16px; margin: 8px 0 24px; padding: 20px; border-radius: var(--r-klein); background: var(--hell); }
+.pr-werkzeug[hidden] { display: none; }
+.pr-sortieren { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; font-weight: 600; }
+.pr-werkzeug > * { min-width: 0; }
+.pr-sortieren select { flex: 1 1 240px; min-width: 0; max-width: 420px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss); font: inherit; font-weight: 400; color: var(--ink); }
+.pr-filter-gruppe { display: grid; gap: 4px; }
+.pr-filter-titel { font-weight: 600; }
+.pr-filter-gruppe .pr-wahl { margin: 4px 0 0; }
+.pr-filter-gruppe .pr-pille { cursor: pointer; color: var(--ink); }
+.pr-filter-gruppe .pr-pille[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--weiss); }
+.pr-treffer { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.pr-zuruecksetzen { padding: 0; border: 0; background: none; font: inherit; color: var(--ink); text-decoration: underline; cursor: pointer; }
+.pr-zuruecksetzen[hidden], .pr-leer[hidden], #pr-modelle li[hidden] { display: none; }
+.pr-leer { margin: 0; }

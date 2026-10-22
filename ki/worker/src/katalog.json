@@ -485,8 +485,8 @@
 },
 {
 "sku": "BF-V-EAF2794A",
-"name": "Martin Levelling MASSIV Edelstahl Ø100",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 100 mm, M16/M20",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -505,12 +505,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-100.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-100-mm-m16-m20.svg"
 },
 {
 "sku": "BF-V-171BBB60",
-"name": "Martin Levelling MASSIV Edelstahl Ø120",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 120 mm, M20/M24",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -529,12 +529,12 @@
 "M24"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-120.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-120-mm-m20-m24.svg"
 },
 {
 "sku": "BF-V-FDB606CC",
-"name": "Martin Levelling MASSIV Edelstahl Ø30",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 30 mm, M8",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -548,12 +548,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-30.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-30-mm-m8.svg"
 },
 {
 "sku": "BF-V-BAF05656",
-"name": "Martin Levelling MASSIV Edelstahl Ø40",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 40 mm, M8/M10",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -572,12 +572,12 @@
 "M10"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-40.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-40-mm-m8-m10.svg"
 },
 {
 "sku": "BF-V-A49D2D3F",
-"name": "Martin Levelling MASSIV Edelstahl Ø50",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 50 mm, M12",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -591,12 +591,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-50.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-50-mm-m12.svg"
 },
 {
 "sku": "BF-V-6303D9CA",
-"name": "Martin Levelling MASSIV Edelstahl Ø60",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 60 mm, M10/M12",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -615,12 +615,12 @@
 "M12"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-60.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-60-mm-m10-m12.svg"
 },
 {
 "sku": "BF-V-88A4059A",
-"name": "Martin Levelling MASSIV Edelstahl Ø65",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 65 mm, M16",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -634,12 +634,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-65.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-65-mm-m16.svg"
 },
 {
 "sku": "BF-V-E4E11F57",
-"name": "Martin Levelling MASSIV Edelstahl Ø75",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 75 mm, M12/M20",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -658,12 +658,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-75.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-75-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-1454A637",
-"name": "Martin Levelling MASSIV Edelstahl Ø80",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 80 mm, M20",
+"marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -677,12 +677,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-edelstahl-80.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg"
 },
 {
 "sku": "BF-V-911165B2",
-"name": "Martin Levelling TEKNO-HYGIENIC 3-A Ø100",
-"marke": "Martin Levelling",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 100 mm, M16–M30",
+"marke": "",
 "kurz": "Hygiene-Stellfuß Edelstahl, 3-A, optional mit Laschen/Bohrungen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -703,12 +703,12 @@
 "M30"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-100.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-100-mm-m16-m30.svg"
 },
 {
 "sku": "BF-V-1046960A",
-"name": "Martin Levelling TEKNO-HYGIENIC 3-A Ø120",
-"marke": "Martin Levelling",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 120 mm, M16–M36",
+"marke": "",
 "kurz": "Hygiene-Stellfuß Edelstahl, 3-A, mit 0-2 Befestigungslaschen.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -730,12 +730,12 @@
 "M36"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-120.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-120-mm-m16-m36.svg"
 },
 {
 "sku": "BF-V-76754EAA",
-"name": "Martin Levelling TEKNO-HYGIENIC 3-A Ø150",
-"marke": "Martin Levelling",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 150 mm, M36",
+"marke": "",
 "kurz": "Großer Hygiene-Stellfuß Edelstahl für Schwerlast.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -749,12 +749,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-150.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-150-mm-m36.svg"
 },
 {
 "sku": "BF-V-BF1F0CBB",
-"name": "Martin Levelling TEKNO-HYGIENIC 3-A Ø60",
-"marke": "Martin Levelling",
+"name": "Hygiene-Gelenkstellfuß Edelstahl, 3-A, Teller Ø 60 mm, M12–M20",
+"marke": "",
 "kurz": "Hygiene-Gelenkstellfuß Edelstahl, 3-A zertifiziert, 15° Gelenk.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -776,12 +776,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-tekno-hygienic-3-a-60.svg"
+"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-3-a-teller-60-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-AA1A5310",
-"name": "Martin Levelling TEKNOCLEAN Ø100",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 100 mm, M30",
+"marke": "",
 "kurz": "Leicht reinigbarer Edelstahl-Stellfuß, große Spindel.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -795,12 +795,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-teknoclean-100.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-100-mm-m30.svg"
 },
 {
 "sku": "BF-V-D62B62EF",
-"name": "Martin Levelling TEKNOCLEAN Ø60",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 60 mm, M16",
+"marke": "",
 "kurz": "Leicht reinigbarer Edelstahl-Stellfuß, Belag wählbar.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -814,12 +814,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-teknoclean-60.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-60-mm-m16.svg"
 },
 {
 "sku": "BF-V-648F0321",
-"name": "Martin Levelling TEKNOCLEAN Ø80",
-"marke": "Martin Levelling",
+"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 80 mm, M16/M20",
+"marke": "",
 "kurz": "Leicht reinigbarer Edelstahl-Stellfuß, optional Lasche.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -838,12 +838,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/martin-levelling-teknoclean-80.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-80-mm-m16-m20.svg"
 },
 {
 "sku": "BF-V-5465A128",
-"name": "MOVET 45850020 Stellfuß Ø44,5/56,5 M10x30",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 44,5/56,5 mm, M10 × 30",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß mit 30-mm-Spindel, PVC-Gleiter.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -857,12 +857,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850020-stellfuss-44-5-56-5-m10x30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10-x-30.svg"
 },
 {
 "sku": "BF-V-4462289E",
-"name": "MOVET 45850030 Stellfuß Ø56,6/64 M10x30",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 56,6/64 mm, M10 × 30",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß für Gastro-Rohrbeine, PVC-Gleiter.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -876,12 +876,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850030-stellfuss-56-6-64-m10x30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10-x-30.svg"
 },
 {
 "sku": "BF-V-DBC1920D",
-"name": "MOVET 45850030/M12 Stellfuß Ø56,6/64 M12x30",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 56,6/64 mm, M12 × 30",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß mit M12-Spindel, PVC-Gleiter.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -895,12 +895,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850030-m12-stellfuss-56-6-64-m12x30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m12-x-30.svg"
 },
 {
 "sku": "BF-V-EF7B51BC",
-"name": "MOVET 45850039/N Stellfuß Ø44,5/52 M10",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 44,5/52 mm, M10, Ausführung N",
+"marke": "",
 "kurz": "Kompakter Edelstahl-Rohrstellfuß, kurzer Verstellweg.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -914,12 +914,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850039-n-stellfuss-44-5-52-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-n.svg"
 },
 {
 "sku": "BF-V-AEA013E1",
-"name": "MOVET 45850039/V Stellfuß Ø44,5/52 M10",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 44,5/52 mm, M10, Ausführung V",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß, Ausführung V.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -933,12 +933,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850039-v-stellfuss-44-5-52-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-v.svg"
 },
 {
 "sku": "BF-V-3CE8A471",
-"name": "MOVET 45850040 Stellfuß Ø44,5/56,5 M10",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 44,5/56,5 mm, M10",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß für Ø44,5 Rohrbeine, PVC-Gleiter.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -952,12 +952,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850040-stellfuss-44-5-56-5-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10.svg"
 },
 {
 "sku": "BF-V-9D7CA43F",
-"name": "MOVET 45850050 Stellfuß Ø56,6/64 M10",
-"marke": "MOVET",
+"name": "Rohrstellfuß Edelstahl mit Gleiter, Ø 56,6/64 mm, M10",
+"marke": "",
 "kurz": "Edelstahl-Rohrstellfuß, Variante mit M10-Spindel.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -971,12 +971,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850050-stellfuss-56-6-64-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10.svg"
 },
 {
 "sku": "BF-V-146A30E3",
-"name": "RS PRO RS 237-8166 Stellfuß M24 Ø100",
-"marke": "RS PRO",
+"name": "Gelenkstellfuß Edelstahl, M24, Teller Ø 100 mm, 1500 kg",
+"marke": "",
 "kurz": "Schwerer Edelstahl-Gelenkstellfuß, 10° neigbar.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -991,12 +991,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-237-8166-stellfuss-m24-100.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-edelstahl-m24-teller-100-mm-1500-kg.svg"
 },
 {
 "sku": "BF-V-4787B9E1",
-"name": "RS PRO RS 237-8168 Stellfuß M16 Ø80",
-"marke": "RS PRO",
+"name": "Gelenkstellfuß Edelstahl, M16, Teller Ø 80 mm, 1000 kg",
+"marke": "",
 "kurz": "Edelstahl-Gelenkstellfuß bis 10° neigbar, vulkanisierte Gummisohle.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1011,12 +1011,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-237-8168-stellfuss-m16-80.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-edelstahl-m16-teller-80-mm-1000-kg.svg"
 },
 {
 "sku": "BF-V-C1FE1F23",
-"name": "RS PRO RS 237-8186 Stellfuß M24 Ø100 2500 kg",
-"marke": "RS PRO",
+"name": "Gelenkstellfuß Edelstahl, M24, Teller Ø 100 mm, 2500 kg",
+"marke": "",
 "kurz": "Schwerlast-Edelstahl-Gelenkstellfuß, 15° neigbar.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1031,12 +1031,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-237-8186-stellfuss-m24-100-2500-kg.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-edelstahl-m24-teller-100-mm-2500-kg.svg"
 },
 {
 "sku": "BF-V-EF145E35",
-"name": "RS PRO RS 237-8188 Stellfuß M12 Ø60",
-"marke": "RS PRO",
+"name": "Gelenkstellfuß Edelstahl, M12, Teller Ø 60 mm, 1000 kg",
+"marke": "",
 "kurz": "Edelstahl-Gelenkstellfuß bis 15° neigbar, Gummiauflage.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1051,12 +1051,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-237-8188-stellfuss-m12-60.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-edelstahl-m12-teller-60-mm-1000-kg.svg"
 },
 {
 "sku": "BF-V-CC792DD3",
-"name": "RS PRO RS 237-8200 Stellfuß M16 Ø80 lang",
-"marke": "RS PRO",
+"name": "Gelenkstellfuß Edelstahl, M16, Teller Ø 80 mm, 2000 kg, lange Spindel",
+"marke": "",
 "kurz": "Edelstahl-Gelenkstellfuß mit langer Spindel, 15° neigbar.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1071,12 +1071,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-237-8200-stellfuss-m16-80-lang.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-edelstahl-m16-teller-80-mm-2000-kg-lange-spindel.svg"
 },
 {
 "sku": "BF-V-636C1764",
-"name": "MOVET 45850000 Reduziersockel Ø56,5/44,5 H180",
-"marke": "MOVET",
+"name": "Rohrsockel Edelstahl mit Anschraubplatte, Ø 56,5/44,5 mm, Höhe 180 mm",
+"marke": "",
 "kurz": "Edelstahl-Rohrfußsockel mit Anschraubplatte, verstellbar.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1089,12 +1089,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850000-reduziersockel-56-5-44-5-h180.svg"
+"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-56-5-44-5-mm-hoehe-180-mm.svg"
 },
 {
 "sku": "BF-V-DD89A61D",
-"name": "MOVET 45850010 Reduziersockel Ø64/56,6 H180",
-"marke": "MOVET",
+"name": "Rohrsockel Edelstahl mit Anschraubplatte, Ø 64/56,6 mm, Höhe 180 mm",
+"marke": "",
 "kurz": "Edelstahl-Rohrfußsockel mit Anschraubplatte für Gastro-Unterbauten.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1107,12 +1107,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850010-reduziersockel-64-56-6-h180.svg"
+"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-64-56-6-mm-hoehe-180-mm.svg"
 },
 {
 "sku": "BF-V-46D9552F",
-"name": "MOVET 45850019 Stellfuß Ø30/40 M10x15",
-"marke": "MOVET",
+"name": "Möbelstellfuß Edelstahl mit Gleiter, Ø 30/40 mm, M10 × 15",
+"marke": "",
 "kurz": "Kleiner Edelstahl-Möbelstellfuß mit PVC-Gleiter.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1126,12 +1126,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850019-stellfuss-30-40-m10x15.svg"
+"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-gleiter-30-40-mm-m10-x-15.svg"
 },
 {
 "sku": "BF-V-9AB2383E",
-"name": "MOVET 45850019/F Stellfuß Ø30/40 M10x15 mit Lasche",
-"marke": "MOVET",
+"name": "Möbelstellfuß Edelstahl mit Lasche, Ø 30/40 mm, M10 × 15",
+"marke": "",
 "kurz": "Kleiner Edelstahl-Stellfuß mit Befestigungslasche.",
 "merkmale": {
 "Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
@@ -1145,12 +1145,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/movet-45850019-f-stellfuss-30-40-m10x15-mit-lasche.svg"
+"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-lasche-30-40-mm-m10-x-15.svg"
 },
 {
 "sku": "BF-V-1F498E5D",
-"name": "Elesa+Ganter GN 448 Gewindebuchse Ø20",
-"marke": "Elesa+Ganter",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 20 mm, M8",
+"marke": "",
 "kurz": "Kunststoff-Einschlagbuchse für Rundrohr mit Innengewinde für Stellfüße.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1166,12 +1166,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-448-gewindebuchse-20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-20-mm-m8.svg"
 },
 {
 "sku": "BF-V-DAF1DCFF",
-"name": "Kipp K0431 Gewindestopfen Ø30",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 30 mm, M10–M16",
+"marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1194,12 +1194,12 @@
 "M16"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0431-gewindestopfen-30.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-30-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-735F76C5",
-"name": "Kipp K0431 Gewindestopfen Ø38",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 38 mm, M10–M16",
+"marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1221,12 +1221,12 @@
 "M16"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0431-gewindestopfen-38.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-38-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-1D4E9EFA",
-"name": "Kipp K0431 Gewindestopfen Ø42,4",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 42,4 mm, M10–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1250,12 +1250,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0431-gewindestopfen-42-4.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-42-4-mm-m10-m20.svg"
 },
 {
 "sku": "BF-V-E3785639",
-"name": "Kipp K0431 Gewindestopfen Ø48,3",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 48,3 mm, M12–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1278,12 +1278,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0431-gewindestopfen-48-3.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-48-3-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-406430F7",
-"name": "Kipp K0431 Gewindestopfen Ø50,9",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 50,9 mm, M12–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1306,12 +1306,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0431-gewindestopfen-50-9.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-50-9-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-81A33A5E",
-"name": "Elesa+Ganter GN 348 (Elesa ND.Q) Gewindebuchse 30x30",
-"marke": "Elesa+Ganter",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 30 × 30 mm, M8–M16, mit Messingbuchse",
+"marke": "",
 "kurz": "Schwerlast-Einschlagbuchse für Vierkantrohr, Messingbuchse mit Gewinde.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1334,12 +1334,12 @@
 "M16"
 ]
 },
-"bild": "/assets/skizzen/elesa-ganter-gn-348-elesa-nd-q-gewindebuchse-30x30.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-30-x-30-mm-m8-m16-mit-messingbuchse.svg"
 },
 {
 "sku": "BF-V-FFACA225",
-"name": "Elesa+Ganter GN 448 Gewindebuchse V 20",
-"marke": "Elesa+Ganter",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 20 × 20 mm, M8",
+"marke": "",
 "kurz": "Kunststoff-Einschlagbuchse für Vierkantrohr mit Innengewinde für Stellfüße.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1355,12 +1355,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-448-gewindebuchse-v-20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-20-x-20-mm-m8.svg"
 },
 {
 "sku": "BF-V-F09EC711",
-"name": "Kipp K0430 Gewindestopfen 30x30",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 30 × 30 mm, M10–M16",
+"marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1383,12 +1383,12 @@
 "M16"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0430-gewindestopfen-30x30.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-30-x-30-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-6510EF99",
-"name": "Kipp K0430 Gewindestopfen 40x40",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 40 × 40 mm, M10–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1412,12 +1412,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0430-gewindestopfen-40x40.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-40-x-40-mm-m10-m20.svg"
 },
 {
 "sku": "BF-V-56C74504",
-"name": "Kipp K0430 Gewindestopfen 50x50",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 50 × 50 mm, M12–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1440,12 +1440,12 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0430-gewindestopfen-50x50.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-50-x-50-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-0EA495CD",
-"name": "Kipp K0430 Gewindestopfen 60x60",
-"marke": "Kipp",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 60 × 60 mm, M14–M20",
+"marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
 "Anwendung": "Arbeitstisch / Möbel, Regal / Gestell, Gastronomiegerät",
@@ -1467,13 +1467,13 @@
 "M20"
 ]
 },
-"bild": "/assets/skizzen/kipp-k0430-gewindestopfen-60x60.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-60-x-60-mm-m14-m20.svg"
 },
 {
 "sku": "BF-V-5C9CEF9F",
-"name": "Elesa+Ganter GN 345 M16",
-"marke": "Elesa+Ganter",
-"kurz": "Kunststoffteller mit 2 Befestigungsbohrungen, Stahlspindel, Elesa LV.F.",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M16, Ø 80–125 mm",
+"marke": "",
+"kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Bodenbefestigung",
@@ -1488,13 +1488,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-345-m16.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m16-80-125-mm.svg"
 },
 {
 "sku": "BF-V-185A2C70",
-"name": "Elesa+Ganter GN 345 M20",
-"marke": "Elesa+Ganter",
-"kurz": "Kunststoffteller mit 2 Befestigungsbohrungen, Stahlspindel, Elesa LV.F.",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M20, Ø 80–125 mm",
+"marke": "",
+"kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Bodenbefestigung",
@@ -1509,13 +1509,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-345-m20.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m20-80-125-mm.svg"
 },
 {
 "sku": "BF-V-22625A7B",
-"name": "Elesa+Ganter GN 445 M10",
-"marke": "Elesa+Ganter",
-"kurz": "Kunststoffteller mit Befestigungsbohrungen, Stahlspindel, Elesa LV.FO.",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M10, Ø 60/80 mm",
+"marke": "",
+"kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Bodenbefestigung",
@@ -1530,13 +1530,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-445-m10.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m10-60-80-mm.svg"
 },
 {
 "sku": "BF-V-4C22478D",
-"name": "Elesa+Ganter GN 445 M12",
-"marke": "Elesa+Ganter",
-"kurz": "Kunststoffteller mit Befestigungsbohrungen, Stahlspindel, Elesa LV.FO.",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M12, Ø 60/80 mm",
+"marke": "",
+"kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Bodenbefestigung",
@@ -1551,13 +1551,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-445-m12.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m12-60-80-mm.svg"
 },
 {
 "sku": "BF-V-8F383257",
-"name": "Elesa+Ganter GN 445 M14",
-"marke": "Elesa+Ganter",
-"kurz": "Kunststoffteller mit Befestigungsbohrungen, Stahlspindel, Elesa LV.FO.",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M14, Ø 60/80 mm",
+"marke": "",
+"kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Bodenbefestigung",
@@ -1572,12 +1572,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-445-m14.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m14-60-80-mm.svg"
 },
 {
 "sku": "BF-V-D497CA83",
-"name": "Martin Levelling Pressstahl oval Ø65 M12x100 mit Bohrungen (Typ 45815768)",
-"marke": "Martin Levelling",
+"name": "Gelenkstellfuß Pressstahl, ovaler Teller 65 mm, M12 × 100, mit Bohrungen",
+"marke": "",
 "kurz": "Ovaler Pressstahlteller mit 2 Bohrungen, Gelenkspindel 8°.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -1593,12 +1593,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-pressstahl-oval-65-m12x100-mit-bohrungen-typ-45815768.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-100-mit-bohrungen.svg"
 },
 {
 "sku": "BF-V-52A8EA2C",
-"name": "Martin Levelling Pressstahl oval Ø65 M12x150 Mutter, Bohrungen, NBR (Typ 45815770/G)",
-"marke": "Martin Levelling",
+"name": "Gelenkstellfuß Pressstahl, ovaler Teller 65 mm, M12 × 150, mit Bohrungen und NBR-Belag",
+"marke": "",
 "kurz": "Ovaler Pressstahlteller mit Bohrungen und NBR-Auflage, 8° Gelenk.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -1614,12 +1614,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-pressstahl-oval-65-m12x150-mutter-bohrungen-nbr-typ-45815770-g.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-150-mit-bohrungen-und-nbr-b.svg"
 },
 {
 "sku": "BF-V-F65DB51E",
-"name": "Blohm B0375 M10",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M10, Ø 50 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1634,12 +1634,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m10.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m10-50-mm.svg"
 },
 {
 "sku": "BF-V-B8214EC0",
-"name": "Blohm B0375 M12",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M12, Ø 50 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1654,12 +1654,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m12-50-mm.svg"
 },
 {
 "sku": "BF-V-C9F0E492",
-"name": "Blohm B0375 M14",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M14, Ø 50/65 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1674,12 +1674,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m14.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m14-50-65-mm.svg"
 },
 {
 "sku": "BF-V-C0BFBD73",
-"name": "Blohm B0375 M16",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M16, Ø 65–100 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1694,12 +1694,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m16-65-100-mm.svg"
 },
 {
 "sku": "BF-V-BE2F7339",
-"name": "Blohm B0375 M20",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M20, Ø 80/100 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1714,12 +1714,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m20.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m20-80-100-mm.svg"
 },
 {
 "sku": "BF-V-40FAB03A",
-"name": "Blohm B0375 M24",
-"marke": "Blohm",
+"name": "Gelenkfuß Stahl, Teller lackiert, M24, Ø 100 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß, Teller lackiert, optional NBR-Rutschschutz.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1734,12 +1734,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0375-m24.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-10CBE62C",
-"name": "Elesa+Ganter GN 6311.4 M16",
-"marke": "Elesa+Ganter",
+"name": "Gelenkfuß Stahl mit Kunststoffkappe, M16, Ø 50–100 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkfuß mit Haltefeder, Kappe POM oder TPE wählbar.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1754,12 +1754,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-6311-4-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-mit-kunststoffkappe-m16-50-100-mm.svg"
 },
 {
 "sku": "BF-V-A635A01A",
-"name": "Halder EH 22593 Stellfüße M10",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M10, Ø 40/50 mm",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1773,12 +1773,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m10.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m10-40-50-mm.svg"
 },
 {
 "sku": "BF-V-68FB055B",
-"name": "Halder EH 22593 Stellfüße M12",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M12, Ø 40 mm",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1792,12 +1792,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-8B2D7859",
-"name": "Halder EH 22593 Stellfüße M16",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M16",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1810,12 +1810,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m16.svg"
 },
 {
 "sku": "BF-V-D69A3421",
-"name": "Halder EH 22593 Stellfüße M20",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M20",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1828,12 +1828,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m20.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m20.svg"
 },
 {
 "sku": "BF-V-6A7BF3AC",
-"name": "Halder EH 22593 Stellfüße M24",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M24",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1846,12 +1846,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m24.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m24.svg"
 },
 {
 "sku": "BF-V-B875363B",
-"name": "Halder EH 22593 Stellfüße M8",
-"marke": "Halder",
+"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M8, Ø 40/50 mm",
+"marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1865,12 +1865,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-m8.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m8-40-50-mm.svg"
 },
 {
 "sku": "BF-V-83F6240B",
-"name": "Halder EH 22593 Stellfüße mit Rutschsicherung M10",
-"marke": "Halder",
+"name": "Gelenkfuß mit Rutschschutzkappe, M10, Ø 40/50 mm",
+"marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1884,12 +1884,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m10.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m10-40-50-mm.svg"
 },
 {
 "sku": "BF-V-62C8717D",
-"name": "Halder EH 22593 Stellfüße mit Rutschsicherung M12",
-"marke": "Halder",
+"name": "Gelenkfuß mit Rutschschutzkappe, M12, Ø 40 mm",
+"marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1903,12 +1903,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-137671DB",
-"name": "Halder EH 22593 Stellfüße mit Rutschsicherung M8",
-"marke": "Halder",
+"name": "Gelenkfuß mit Rutschschutzkappe, M8, Ø 40/50 mm",
+"marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1922,12 +1922,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-22593-stellfuesse-mit-rutschsicherung-m8.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m8-40-50-mm.svg"
 },
 {
 "sku": "BF-V-94F38ABA",
-"name": "Martin Levelling Codes 10000-10017 M10",
-"marke": "Martin Levelling",
+"name": "Gelenkfuß Kunststoff, Edelstahlspindel M10, Ø 40 mm",
+"marke": "",
 "kurz": "Kleiner Kunststoff-Gelenkfuß Ø40 mit Edelstahlspindel, optional NBR.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1942,12 +1942,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m10.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m10-40-mm.svg"
 },
 {
 "sku": "BF-V-FDB021BD",
-"name": "Martin Levelling Codes 10000-10017 M12",
-"marke": "Martin Levelling",
+"name": "Gelenkfuß Kunststoff, Edelstahlspindel M12, Ø 40 mm",
+"marke": "",
 "kurz": "Kleiner Kunststoff-Gelenkfuß Ø40 mit Edelstahlspindel, optional NBR.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1962,12 +1962,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-D97654F3",
-"name": "Martin Levelling Codes 10000-10017 M8",
-"marke": "Martin Levelling",
+"name": "Gelenkfuß Kunststoff, Edelstahlspindel M8, Ø 40 mm",
+"marke": "",
 "kurz": "Kleiner Kunststoff-Gelenkfuß Ø40 mit Edelstahlspindel, optional NBR.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -1982,12 +1982,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-codes-10000-10017-m8.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m8-40-mm.svg"
 },
 {
 "sku": "BF-V-E89F7C52",
-"name": "Martin Levelling MASSIV Stahl Ø50 M12x125 gelb (Typ 45810696)",
-"marke": "Martin Levelling",
+"name": "Gelenkfuß Stahl massiv, gelb, M12 × 125, Ø 50 mm",
+"marke": "",
 "kurz": "Massiver Stahlteller gelb pulverbeschichtet, Gelenkspindel bis 30°.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -2002,13 +2002,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-stahl-50-m12x125-gelb-typ-45810696.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-massiv-gelb-m12-x-125-50-mm.svg"
 },
 {
 "sku": "BF-V-54FE5871",
-"name": "RS PRO RS 162-3253 M12",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Stahl, M12, Ø 40 mm, 900 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Stahl mit Gewindespindel M12, Tragkraft bis 900 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2022,13 +2022,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-162-3253-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-m12-40-mm-900-kg.svg"
 },
 {
 "sku": "BF-V-8C8CE63E",
-"name": "RS PRO RS 162-3265 M20",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Edelstahl, M20, Ø 100 mm, 3000 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Edelstahl mit Gewindespindel M20, Tragkraft bis 3000 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung, Hohe Traglast",
@@ -2042,13 +2042,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-162-3265-m20.svg"
+"bild": "/assets/skizzen/gelenkfuss-edelstahl-m20-100-mm-3000-kg.svg"
 },
 {
 "sku": "BF-V-D6D183C1",
-"name": "RS PRO RS 185-4516 M12",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Edelstahl, M12, Ø 50 mm, 400 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Edelstahl mit Gewindespindel M12, Tragkraft bis 400 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2062,13 +2062,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-185-4516-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-edelstahl-m12-50-mm-400-kg.svg"
 },
 {
 "sku": "BF-V-5979AAB2",
-"name": "RS PRO RS 196-5326 M16",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Edelstahl, M16, Ø 123 mm, 1800 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Edelstahl mit Gewindespindel M16, Tragkraft bis 1800 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2082,13 +2082,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-196-5326-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-edelstahl-m16-123-mm-1800-kg.svg"
 },
 {
 "sku": "BF-V-294DBF8D",
-"name": "RS PRO RS 224-5782 M20",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Stahl, M20, Ø 103 mm, 2500 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Stahl mit Gewindespindel M20, Tragkraft bis 2500 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung, Hohe Traglast",
@@ -2102,13 +2102,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-224-5782-m20.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-m20-103-mm-2500-kg.svg"
 },
 {
 "sku": "BF-V-2603AA47",
-"name": "RS PRO RS 224-5785 M6",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Stahl, M6, Ø 40 mm, 500 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Stahl mit Gewindespindel M6, Tragkraft bis 500 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2122,13 +2122,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-224-5785-m6.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-m6-40-mm-500-kg.svg"
 },
 {
 "sku": "BF-V-7713E393",
-"name": "RS PRO RS 224-5787 M8",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Stahl, M8, Ø 40 mm, 1000 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Stahl mit Gewindespindel M8, Tragkraft bis 1000 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2142,13 +2142,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-224-5787-m8.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-m8-40-mm-1000-kg.svg"
 },
 {
 "sku": "BF-V-72DD0526",
-"name": "RS PRO RS 224-5821 M12",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Edelstahl, M12, Ø 60 mm, 700 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Edelstahl mit Gewindespindel M12, Tragkraft bis 700 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2162,13 +2162,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-224-5821-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-edelstahl-m12-60-mm-700-kg.svg"
 },
 {
 "sku": "BF-V-69BD6C25",
-"name": "RS PRO RS 224-5822 M16",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Gelenkfuß Edelstahl, M16, Ø 60 mm, 700 kg",
+"marke": "",
+"kurz": "Gelenkfuß aus Edelstahl mit Gewindespindel M16, Tragkraft bis 700 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
 "Funktion": "Höhenverstellung",
@@ -2182,12 +2182,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-224-5822-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-edelstahl-m16-60-mm-700-kg.svg"
 },
 {
 "sku": "BF-V-1D17726A",
-"name": "Elesa+Ganter GN 40 M10",
-"marke": "Elesa+Ganter",
+"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M10, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -2203,12 +2203,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-40-m10.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m10-40-80-mm.svg"
 },
 {
 "sku": "BF-V-DF88EAFA",
-"name": "Elesa+Ganter GN 40 M12",
-"marke": "Elesa+Ganter",
+"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M12, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -2224,12 +2224,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-40-m12.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m12-40-80-mm.svg"
 },
 {
 "sku": "BF-V-B84FEB57",
-"name": "Elesa+Ganter GN 40 M16",
-"marke": "Elesa+Ganter",
+"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M16, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -2245,12 +2245,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-40-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m16-40-80-mm.svg"
 },
 {
 "sku": "BF-V-B2F674E9",
-"name": "Elesa+Ganter GN 40 M8",
-"marke": "Elesa+Ganter",
+"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M8, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik, Schaltschrank / Gehäuse",
@@ -2266,12 +2266,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-40-m8.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m8-40-80-mm.svg"
 },
 {
 "sku": "BF-V-E9058507",
-"name": "Blohm B0374.106012 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M12, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2287,12 +2287,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-106012-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m12-60-mm.svg"
 },
 {
 "sku": "BF-V-AD6C4005",
-"name": "Blohm B0374.106016 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M16, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2308,12 +2308,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-106016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-A9742B5F",
-"name": "Blohm B0374.108016 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M16, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2329,12 +2329,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-108016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-80-mm.svg"
 },
 {
 "sku": "BF-V-A6B953FC",
-"name": "Blohm B0374.108020 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M20, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2350,12 +2350,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-108020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-80-mm.svg"
 },
 {
 "sku": "BF-V-B8C06E52",
-"name": "Blohm B0374.108024 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M24, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2371,12 +2371,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-108024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-80-mm.svg"
 },
 {
 "sku": "BF-V-C809BE61",
-"name": "Blohm B0374.110016 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M16, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2392,12 +2392,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-110016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-100-mm.svg"
 },
 {
 "sku": "BF-V-5A0968A3",
-"name": "Blohm B0374.110020 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M20, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2413,12 +2413,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-110020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-100-mm.svg"
 },
 {
 "sku": "BF-V-81D067CB",
-"name": "Blohm B0374.110024 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M24, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2434,12 +2434,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-110024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-3BF481CB",
-"name": "Blohm B0374.112016 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M16, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2455,12 +2455,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-112016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-120-mm.svg"
 },
 {
 "sku": "BF-V-C9834603",
-"name": "Blohm B0374.112020 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M20, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2476,12 +2476,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-112020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-120-mm.svg"
 },
 {
 "sku": "BF-V-EF5668EF",
-"name": "Blohm B0374.112024 (Form A)",
-"marke": "Blohm",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, M24, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Lebensmittel, Getränke und Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2497,13 +2497,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-112024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-120-mm.svg"
 },
 {
 "sku": "BF-V-A887A160",
-"name": "Blohm B0374.206012 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M12, Ø 60 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen",
@@ -2517,13 +2517,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-206012-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m12-60-mm.svg"
 },
 {
 "sku": "BF-V-194A7354",
-"name": "Blohm B0374.206016 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M16, Ø 60 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen",
@@ -2537,13 +2537,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-206016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-3C8766E4",
-"name": "Blohm B0374.208016 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M16, Ø 80 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2557,13 +2557,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-208016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-80-mm.svg"
 },
 {
 "sku": "BF-V-FDB5AEA4",
-"name": "Blohm B0374.208020 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M20, Ø 80 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2577,13 +2577,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-208020-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-80-mm.svg"
 },
 {
 "sku": "BF-V-BD84EE13",
-"name": "Blohm B0374.208024 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M24, Ø 80 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2597,13 +2597,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-208024-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-80-mm.svg"
 },
 {
 "sku": "BF-V-7C35D122",
-"name": "Blohm B0374.210016 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M16, Ø 100 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2617,13 +2617,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-210016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-100-mm.svg"
 },
 {
 "sku": "BF-V-5151482F",
-"name": "Blohm B0374.210020 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M20, Ø 100 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2637,13 +2637,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-210020-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-100-mm.svg"
 },
 {
 "sku": "BF-V-9A88586C",
-"name": "Blohm B0374.210024 (Form B)",
-"marke": "Blohm",
-"kurz": "Hygiene-Stellfuß 3-A, Form B, Zubehör Gewindeabdeckung B0522.",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form B, M24, Ø 100 mm",
+"marke": "",
+"kurz": "Hygiene-Stellfuß 3-A, Form B, passende Gewindeabdeckung als Zubehör.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hygiene-Anforderungen, Hohe Traglast",
@@ -2657,12 +2657,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0374-210024-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-8750ED83",
-"name": "Elesa+Ganter GN 20-80-M16-A",
-"marke": "Elesa+Ganter",
+"name": "Hygiene-Gelenkstellfuß Edelstahl, abgedichtet, M16, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß ohne Befestigungslöcher, abgedichtete Gelenkspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2677,12 +2677,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-20-80-m16-a.svg"
+"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-abgedichtet-m16-80-mm.svg"
 },
 {
 "sku": "BF-V-413F70F3",
-"name": "Kipp K1303.106012 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M12, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2698,12 +2698,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-106012-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m12-60-mm.svg"
 },
 {
 "sku": "BF-V-A20D0C83",
-"name": "Kipp K1303.106016 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M16, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2719,12 +2719,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-106016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-4F303E42",
-"name": "Kipp K1303.108016 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M16, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2740,12 +2740,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-108016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-80-mm.svg"
 },
 {
 "sku": "BF-V-9C99F91D",
-"name": "Kipp K1303.108020 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M20, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2761,12 +2761,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-108020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-80-mm.svg"
 },
 {
 "sku": "BF-V-27CC917E",
-"name": "Kipp K1303.108024 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M24, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2782,12 +2782,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-108024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-80-mm.svg"
 },
 {
 "sku": "BF-V-BC515CE9",
-"name": "Kipp K1303.110016 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M16, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2803,12 +2803,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-110016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-100-mm.svg"
 },
 {
 "sku": "BF-V-7AE5095E",
-"name": "Kipp K1303.110020 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M20, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2824,12 +2824,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-110020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-100-mm.svg"
 },
 {
 "sku": "BF-V-03FE504C",
-"name": "Kipp K1303.110024 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M24, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2845,12 +2845,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-110024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-18C43044",
-"name": "Kipp K1303.112016 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M16, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2866,12 +2866,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-112016-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-120-mm.svg"
 },
 {
 "sku": "BF-V-7D100B83",
-"name": "Kipp K1303.112020 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M20, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2887,12 +2887,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-112020-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-120-mm.svg"
 },
 {
 "sku": "BF-V-FA124A9A",
-"name": "Kipp K1303.112024 (Form A)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form A, M24, Ø 120 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, polierter Teller, Spindellänge 140/190.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2908,12 +2908,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-112024-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-120-mm.svg"
 },
 {
 "sku": "BF-V-7457568A",
-"name": "Kipp K1303.206012 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M12, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2928,12 +2928,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-206012-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m12-60-mm.svg"
 },
 {
 "sku": "BF-V-9915CADA",
-"name": "Kipp K1303.206016 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M16, Ø 60 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2948,12 +2948,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-206016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-2DCC8132",
-"name": "Kipp K1303.208016 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M16, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2968,12 +2968,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-208016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-80-mm.svg"
 },
 {
 "sku": "BF-V-9CB42F41",
-"name": "Kipp K1303.208020 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M20, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -2988,12 +2988,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-208020-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-80-mm.svg"
 },
 {
 "sku": "BF-V-4767CD6D",
-"name": "Kipp K1303.208024 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M24, Ø 80 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3008,12 +3008,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-208024-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-80-mm.svg"
 },
 {
 "sku": "BF-V-B43408F0",
-"name": "Kipp K1303.210016 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M16, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3028,12 +3028,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-210016-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-100-mm.svg"
 },
 {
 "sku": "BF-V-D7106CD1",
-"name": "Kipp K1303.210020 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M20, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3048,12 +3048,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-210020-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-100-mm.svg"
 },
 {
 "sku": "BF-V-FF32DA3D",
-"name": "Kipp K1303.210024 (Form B)",
-"marke": "Kipp",
+"name": "Hygiene-Stellfuß Edelstahl poliert, 3-A, Form B, M24, Ø 100 mm",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A, Form B mit zusätzlichem Maß A.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3068,12 +3068,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k1303-210024-form-b.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-12F0182E",
-"name": "norelem 27791-05 Stellfüße im Hygienic DESIGN Form A",
-"marke": "norelem",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Form A, für Brauerei und Molkerei",
+"marke": "",
 "kurz": "Hygiene-Stellfuß 3-A für Brauereien, Molkereien, Pharma.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3085,12 +3085,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/norelem-27791-05-stellfuesse-im-hygienic-design-form-a.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-fuer-brauerei-und-molkerei.svg"
 },
 {
 "sku": "BF-V-0185216D",
-"name": "Blohm B0372 M10",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M10, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3105,12 +3105,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m10.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m10-40-80-mm.svg"
 },
 {
 "sku": "BF-V-DFC3814D",
-"name": "Blohm B0372 M12",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M12, Ø 40–80 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3125,12 +3125,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m12.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m12-40-80-mm.svg"
 },
 {
 "sku": "BF-V-533974A5",
-"name": "Blohm B0372 M14",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M14, Ø 50–80 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3145,12 +3145,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m14.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m14-50-80-mm.svg"
 },
 {
 "sku": "BF-V-D55D4762",
-"name": "Blohm B0372 M16",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M16, Ø 50–120 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3165,12 +3165,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m16.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m16-50-120-mm.svg"
 },
 {
 "sku": "BF-V-33362442",
-"name": "Blohm B0372 M20",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M20, Ø 60–120 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3185,12 +3185,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m20.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m20-60-120-mm.svg"
 },
 {
 "sku": "BF-V-734661D5",
-"name": "Blohm B0372 M8",
-"marke": "Blohm",
+"name": "Stellfuß Stahl oder Edelstahl, drehbare Spindel M8, Ø 40 mm",
+"marke": "",
 "kurz": "Stellfuß mit drehbar gelagerter Spindel, wahlweise Stahl oder Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3205,12 +3205,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0372-m8.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m8-40-mm.svg"
 },
 {
 "sku": "BF-V-2F4ED981",
-"name": "Blohm B0377 M10",
-"marke": "Blohm",
+"name": "Stellfuß Kunststoff rund, Sechskant zum Verstellen, M10, Ø 47 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit Sechskant zum Verstellen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3225,12 +3225,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0377-m10.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m10-47-mm.svg"
 },
 {
 "sku": "BF-V-5BB0921F",
-"name": "Blohm B0377 M6",
-"marke": "Blohm",
+"name": "Stellfuß Kunststoff rund, Sechskant zum Verstellen, M6, Ø 30 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit Sechskant zum Verstellen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3245,12 +3245,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0377-m6.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m6-30-mm.svg"
 },
 {
 "sku": "BF-V-2DD71741",
-"name": "Blohm B0377 M8",
-"marke": "Blohm",
+"name": "Stellfuß Kunststoff rund, Sechskant zum Verstellen, M8, Ø 30/47 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit Sechskant zum Verstellen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3265,12 +3265,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blohm-b0377-m8.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m8-30-47-mm.svg"
 },
 {
 "sku": "BF-V-777608B6",
-"name": "Effbe Level-Mount LM 1-11",
-"marke": "Effbe",
+"name": "Maschinenlager nivellierbar, Elastomer, bis 610 kg",
+"marke": "",
 "kurz": "Elastomer-Maschinenlager mit integrierter Höhenverstellung, ankerlos.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3283,12 +3283,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/effbe-level-mount-lm-1-11.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-610-kg.svg"
 },
 {
 "sku": "BF-V-DFB0AFFD",
-"name": "Effbe Level-Mount LM 3-33",
-"marke": "Effbe",
+"name": "Maschinenlager nivellierbar, Elastomer, bis 2000 kg",
+"marke": "",
 "kurz": "Elastomer-Maschinenlager mit integrierter Höhenverstellung, ankerlos.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3301,12 +3301,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/effbe-level-mount-lm-3-33.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-2000-kg.svg"
 },
 {
 "sku": "BF-V-02375754",
-"name": "Effbe Level-Mount LM 5-55 (FB60015049)",
-"marke": "Effbe",
+"name": "Maschinenlager nivellierbar, Elastomer, bis 4100 kg, M16, Ø 160 mm",
+"marke": "",
 "kurz": "Elastomer-Maschinenlager, nivellierbar 20 mm, für Fräs- und Drehmaschinen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3321,12 +3321,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/effbe-level-mount-lm-5-55-fb60015049.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-4100-kg-m16-160-mm.svg"
 },
 {
 "sku": "BF-V-05A9A6CF",
-"name": "Effbe Level-Mount LM 6-66",
-"marke": "Effbe",
+"name": "Maschinenlager nivellierbar, Elastomer, bis 5600 kg",
+"marke": "",
 "kurz": "Elastomer-Maschinenlager mit integrierter Höhenverstellung, ankerlos.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3339,12 +3339,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/effbe-level-mount-lm-6-66.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-5600-kg.svg"
 },
 {
 "sku": "BF-V-CD29986B",
-"name": "Effbe Level-Mount LM 7-77",
-"marke": "Effbe",
+"name": "Maschinenlager nivellierbar, Elastomer, bis 8200 kg",
+"marke": "",
 "kurz": "Elastomer-Maschinenlager mit integrierter Höhenverstellung, ankerlos.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3357,12 +3357,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/effbe-level-mount-lm-7-77.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-8200-kg.svg"
 },
 {
 "sku": "BF-V-D87492B7",
-"name": "Elesa+Ganter GN 148-113",
-"marke": "Elesa+Ganter",
+"name": "Gerätefuß schwingungsdämpfend, M16, Ø 113 mm",
+"marke": "",
 "kurz": "Gerätefuß mit Schwingungsdämpfung, Flansch Form A/B, Abreißsicherung optional.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3377,12 +3377,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-148-113.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m16-113-mm.svg"
 },
 {
 "sku": "BF-V-2ABB824D",
-"name": "Elesa+Ganter GN 148-126",
-"marke": "Elesa+Ganter",
+"name": "Gerätefuß schwingungsdämpfend, M20, Ø 126 mm",
+"marke": "",
 "kurz": "Gerätefuß mit Schwingungsdämpfung, Flansch Form B, Abreißsicherung optional.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3397,12 +3397,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-148-126.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m20-126-mm.svg"
 },
 {
 "sku": "BF-V-DEF8FCCF",
-"name": "Elesa+Ganter GN 148-60",
-"marke": "Elesa+Ganter",
+"name": "Gerätefuß schwingungsdämpfend, M10, Ø 60 mm",
+"marke": "",
 "kurz": "Gerätefuß mit Schwingungsdämpfung, Flansch Form A, Abreißsicherung optional.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3417,12 +3417,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-148-60.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m10-60-mm.svg"
 },
 {
 "sku": "BF-V-639B22ED",
-"name": "Elesa+Ganter GN 148-90",
-"marke": "Elesa+Ganter",
+"name": "Gerätefuß schwingungsdämpfend, M12, Ø 90 mm",
+"marke": "",
 "kurz": "Gerätefuß mit Schwingungsdämpfung, Flansch Form A, Abreißsicherung optional.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3437,13 +3437,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-148-90.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m12-90-mm.svg"
 },
 {
 "sku": "BF-V-A3402006",
-"name": "Elesa+Ganter GN 839 M10",
-"marke": "Elesa+Ganter",
-"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel, Elesa LX-S.",
+"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M10, Ø 30–50 mm",
+"marke": "",
+"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
 "Funktion": "Höhenverstellung",
@@ -3457,13 +3457,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-839-m10.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m10-30-50-mm.svg"
 },
 {
 "sku": "BF-V-94165989",
-"name": "Elesa+Ganter GN 839 M16",
-"marke": "Elesa+Ganter",
-"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel, Elesa LX-S.",
+"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M16, Ø 60 mm",
+"marke": "",
+"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
 "Funktion": "Höhenverstellung",
@@ -3477,13 +3477,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-839-m16.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-201F27B6",
-"name": "Elesa+Ganter GN 839 M8",
-"marke": "Elesa+Ganter",
-"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel, Elesa LX-S.",
+"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M8, Ø 25–40 mm",
+"marke": "",
+"kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
 "Funktion": "Höhenverstellung",
@@ -3497,12 +3497,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-839-m8.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m8-25-40-mm.svg"
 },
 {
 "sku": "BF-V-E68C5C6F",
-"name": "Kipp K0674 M10",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M10, Ø 47 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3517,12 +3517,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0674-m10.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m10-47-mm.svg"
 },
 {
 "sku": "BF-V-7A82C84C",
-"name": "Kipp K0674 M6",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M6, Ø 30 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3537,12 +3537,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0674-m6.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m6-30-mm.svg"
 },
 {
 "sku": "BF-V-BD2DE969",
-"name": "Kipp K0674 M8",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M8, Ø 30/47 mm",
+"marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3557,12 +3557,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0674-m8.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m8-30-47-mm.svg"
 },
 {
 "sku": "BF-V-4B26BE1E",
-"name": "Kipp K0675 M10",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M10, Ø 47 mm",
+"marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3577,12 +3577,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0675-m10.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m10-47-mm.svg"
 },
 {
 "sku": "BF-V-8A0B5FB4",
-"name": "Kipp K0675 M6",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M6, Ø 30 mm",
+"marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3597,12 +3597,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0675-m6.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m6-30-mm.svg"
 },
 {
 "sku": "BF-V-6EB85C59",
-"name": "Kipp K0675 M8",
-"marke": "Kipp",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M8, Ø 30/47 mm",
+"marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3617,12 +3617,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0675-m8.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m8-30-47-mm.svg"
 },
 {
 "sku": "BF-V-3C729371",
-"name": "Nu-Tech Engineering A315/001 M12 (RS 405-2803)",
-"marke": "Nu-Tech Engineering",
+"name": "Stellfuß Edelstahl mit Gummieinlage, M12, Ø 60 mm, 1250 kg",
+"marke": "",
 "kurz": "Edelstahl-Stellfuß mit rutschfester Nitrilgummi-Einlage.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3637,13 +3637,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nu-tech-engineering-a315-001-m12-rs-405-2803.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-mit-gummieinlage-m12-60-mm-1250-kg.svg"
 },
 {
 "sku": "BF-V-4F63F519",
-"name": "RS PRO RS 126-3549 M10",
-"marke": "RS PRO",
-"kurz": "RS-Eigenmarke Stellfuß, Handelsware, Hersteller nicht genannt.",
+"name": "Stellfuß Stahl, M10, Ø 80 mm, 400 kg",
+"marke": "",
+"kurz": "Stellfuß aus Stahl mit Gewindespindel M10, Tragkraft bis 400 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
 "Funktion": "Höhenverstellung",
@@ -3657,12 +3657,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rs-pro-rs-126-3549-m10.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-m10-80-mm-400-kg.svg"
 },
 {
 "sku": "BF-V-E9D02ECF",
-"name": "Serious 10534 M16 (RS 281-9804)",
-"marke": "Serious",
+"name": "Stellfuß mit Gummibasis, M16, Ø 98 mm, 1000 kg",
+"marke": "",
 "kurz": "Stellfuß mit Gummibasis für schwere Lasten bis 1000 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Fördertechnik",
@@ -3676,13 +3676,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/serious-10534-m16-rs-281-9804.svg"
+"bild": "/assets/skizzen/stellfuss-mit-gummibasis-m16-98-mm-1000-kg.svg"
 },
 {
 "sku": "BF-V-8297A0A9",
-"name": "Blickle Feststellfuß (für Rollenserien LE, L, LK, LH, LO, LS)",
-"marke": "Blickle",
-"kurz": "Fußbetätigter Feststeller arretiert Transportgerät ohne Anheben.",
+"name": "Feststeller für Transportgeräte, fußbetätigt",
+"marke": "",
+"kurz": "Fußbetätigter Feststeller arretiert das Transportgerät, ohne es anzuheben.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Gastronomiegerät",
 "Funktion": "Mobil (Rolle + Fuß)",
@@ -3694,12 +3694,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blickle-feststellfuss-fuer-rollenserien-le-l-lk-lh-lo-ls.svg"
+"bild": "/assets/skizzen/feststeller-fuer-transportgeraete-fussbetaetigt.svg"
 },
 {
 "sku": "BF-V-853C97B1",
-"name": "Blickle Wagenheber",
-"marke": "Blickle",
+"name": "Wagenheber für Transportgeräte, bis 500 kg",
+"marke": "",
 "kurz": "Hebt Gerät per Hebel von den Rollen ab, Last bis 500 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Gastronomiegerät",
@@ -3712,12 +3712,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/blickle-wagenheber.svg"
+"bild": "/assets/skizzen/wagenheber-fuer-transportgeraete-bis-500-kg.svg"
 },
 {
 "sku": "BF-V-0F4E301F",
-"name": "Tente Footmaster GD-60-F-NYN",
-"marke": "Tente",
+"name": "Lenkrolle mit Nivellierfuß, Rolle Ø 50 mm, Bauhöhe 82 mm",
+"marke": "",
 "kurz": "Lenkrolle mit integriertem Nivellierfuß für Maschinen und Werkbänke, Bauhöhe 82 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Gastronomiegerät",
@@ -3731,12 +3731,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/tente-footmaster-gd-60-f-nyn.svg"
+"bild": "/assets/skizzen/lenkrolle-mit-nivellierfuss-rolle-50-mm-bauhoehe-82-mm.svg"
 },
 {
 "sku": "BF-V-AE657A40",
-"name": "Elesa+Ganter GN 360-119-M16-A/B-NI",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Edelstahl, Feingewinde M45, Schraube M16, Ø 119 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3751,12 +3751,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-ni.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m45-schraube-m16-119-mm.svg"
 },
 {
 "sku": "BF-V-189CAFA7",
-"name": "Elesa+Ganter GN 360-119-M16-A/B-ST",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Stahl, Feingewinde M45, Schraube M16, Ø 119 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3771,12 +3771,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-119-m16-a-b-st.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m45-schraube-m16-119-mm.svg"
 },
 {
 "sku": "BF-V-48C84102",
-"name": "Elesa+Ganter GN 360-40-M10-A/B-ST",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Stahl, Feingewinde M28, Schraube M10, Ø 40 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3791,12 +3791,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-40-m10-a-b-st.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m28-schraube-m10-40-mm.svg"
 },
 {
 "sku": "BF-V-1B3BA4DF",
-"name": "Elesa+Ganter GN 360-52-M12-A/B-NI",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Edelstahl, Feingewinde M36, Schraube M12, Ø 52 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3811,12 +3811,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-ni.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-52-mm.svg"
 },
 {
 "sku": "BF-V-79F3EB19",
-"name": "Elesa+Ganter GN 360-52-M12-A/B-ST",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Stahl, Feingewinde M36, Schraube M12, Ø 52 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3831,12 +3831,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-52-m12-a-b-st.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m36-schraube-m12-52-mm.svg"
 },
 {
 "sku": "BF-V-DE4CAA40",
-"name": "Elesa+Ganter GN 360-99-M12-A/B-NI",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Edelstahl, Feingewinde M36, Schraube M12, Ø 99 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3851,12 +3851,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-ni.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-99-mm.svg"
 },
 {
 "sku": "BF-V-69213716",
-"name": "Elesa+Ganter GN 360-99-M12-A/B-ST",
-"marke": "Elesa+Ganter",
+"name": "Nivellierset Stahl, Feingewinde M36, Schraube M12, Ø 99 mm",
+"marke": "",
 "kurz": "Nivellierset für sehr hohe Lasten, Feingewinde-Verstellung per Hakenschlüssel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3871,12 +3871,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-360-99-m12-a-b-st.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m36-schraube-m12-99-mm.svg"
 },
 {
 "sku": "BF-V-365D21EF",
-"name": "Martin Levelling MASSIV 45811370/30",
-"marke": "Martin Levelling",
+"name": "Stellfuß Stahl massiv, gelb, lange Spindel M30, Ø 100 mm",
+"marke": "",
 "kurz": "Massiver Stahlfuß gelb, lange Gewindespindel.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3890,13 +3890,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-45811370-30.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-lange-spindel-m30-100-mm.svg"
 },
 {
 "sku": "BF-V-E3D4AC99",
-"name": "Nu-Tech Engineering A070/029",
-"marke": "Nu-Tech Engineering",
-"kurz": "Gelenk-Stellfuß bis 10° neigbar, 3000 kg (umgerechnet in N).",
+"name": "Gelenkstellfuß Stahl, M24, Ø 100 mm, 3000 kg",
+"marke": "",
+"kurz": "Gelenk-Stellfuß bis 10° neigbar, Tragkraft bis 3000 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hohe Traglast",
@@ -3910,13 +3910,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nu-tech-engineering-a070-029.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-stahl-m24-100-mm-3000-kg.svg"
 },
 {
 "sku": "BF-V-618E68E1",
-"name": "Serious 10305",
-"marke": "Serious",
-"kurz": "Schwerlastfuß Ø200, 5500 kg statisch (umgerechnet in N).",
+"name": "Schwerlastfuß Ø 200 mm, 5500 kg",
+"marke": "",
+"kurz": "Schwerlastfuß Ø 200 mm, statisch bis 5500 kg.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
 "Funktion": "Höhenverstellung, Hohe Traglast",
@@ -3928,12 +3928,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/serious-10305.svg"
+"bild": "/assets/skizzen/schwerlastfuss-200-mm-5500-kg.svg"
 },
 {
 "sku": "BF-V-F423AED3",
-"name": "Elesa+Ganter GN 42-80-M24 (U/UK)",
-"marke": "Elesa+Ganter",
+"name": "Stellfuß Stahl mit Befestigungslasche, M24, Ø 80 mm",
+"marke": "",
 "kurz": "Stahl-Stellfuß mit Befestigungslasche in Tropfenform.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3948,12 +3948,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-gn-42-80-m24-u-uk.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-mit-befestigungslasche-m24-80-mm.svg"
 },
 {
 "sku": "BF-V-7CBAC4A5",
-"name": "Halder EH 25120 / 25120.0022",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M10, Ø 45 mm, bis 12 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M10.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3969,12 +3969,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0022.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m10-45-mm-bis-12-t.svg"
 },
 {
 "sku": "BF-V-082AAF0B",
-"name": "Halder EH 25120 / 25120.0024",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M12, Ø 45 mm, bis 12 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M12.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -3990,12 +3990,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0024.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m12-45-mm-bis-12-t.svg"
 },
 {
 "sku": "BF-V-FA094BEC",
-"name": "Halder EH 25120 / 25120.0026",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M16, Ø 45 mm, bis 12 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M16.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4011,12 +4011,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0026.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-45-mm-bis-12-t.svg"
 },
 {
 "sku": "BF-V-5D0E79A3",
-"name": "Halder EH 25120 / 25120.0032",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M16, Ø 58 mm, bis 21 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M16.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4032,12 +4032,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0032.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-58-mm-bis-21-t.svg"
 },
 {
 "sku": "BF-V-0F768522",
-"name": "Halder EH 25120 / 25120.0034",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M20, Ø 58 mm, bis 21 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M20.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4053,12 +4053,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0034.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-58-mm-bis-21-t.svg"
 },
 {
 "sku": "BF-V-C7EE29C9",
-"name": "Halder EH 25120 / 25120.0036",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M24, Ø 58 mm, bis 21 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M24.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4074,12 +4074,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0036.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-58-mm-bis-21-t.svg"
 },
 {
 "sku": "BF-V-E43B565D",
-"name": "Halder EH 25120 / 25120.0042",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M20, Ø 70 mm, bis 34 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M20.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4095,12 +4095,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0042.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-70-mm-bis-34-t.svg"
 },
 {
 "sku": "BF-V-0A759BBF",
-"name": "Halder EH 25120 / 25120.0044",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M24, Ø 70 mm, bis 34 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M24.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4116,12 +4116,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0044.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-70-mm-bis-34-t.svg"
 },
 {
 "sku": "BF-V-A854E5E7",
-"name": "Halder EH 25120 / 25120.0046",
-"marke": "Halder",
+"name": "Nivellierelement Stahl, Durchgang für M30, Ø 70 mm, bis 34 t",
+"marke": "",
 "kurz": "Nivellierelement mit Durchgangsbohrung für Schraube M30.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4137,12 +4137,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-25120-0046.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m30-70-mm-bis-34-t.svg"
 },
 {
 "sku": "BF-V-36964982",
-"name": "Halder EH 25120 pendelnd / 25120.0226",
-"marke": "Halder",
+"name": "Nivellierelement Stahl pendelnd, Durchgang für M16, Ø 45 mm, bis 12 t",
+"marke": "",
 "kurz": "Pendelndes Nivellierelement, gleicht Schiefstellungen aus.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4158,12 +4158,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/halder-eh-25120-pendelnd-25120-0226.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-pendelnd-durchgang-fuer-m16-45-mm-bis-12-t.svg"
 },
 {
 "sku": "BF-V-D946412C",
-"name": "Martin Levelling MASSIV 45812378/30",
-"marke": "Martin Levelling",
+"name": "Stellfuß Stahl massiv, gelb, mit Bohrungen, M30, Ø 120 mm",
+"marke": "",
 "kurz": "Massiver Stahlfuß gelb lackiert mit zwei Bohrungen.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4179,12 +4179,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-45812378-30.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-mit-bohrungen-m30-120-mm.svg"
 },
 {
 "sku": "BF-V-E23D8B71",
-"name": "Martin Levelling MASSIV 45812406/G",
-"marke": "Martin Levelling",
+"name": "Stellfuß Stahl massiv, Bohrungen und NBR-Belag, M24, Ø 120 mm",
+"marke": "",
 "kurz": "Massiver Stahlfuß Ø120 mit Bohrungen und NBR-Belag.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4199,12 +4199,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-45812406-g.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-120-mm.svg"
 },
 {
 "sku": "BF-V-0862A772",
-"name": "Martin Levelling MASSIV 45815516/G",
-"marke": "Martin Levelling",
+"name": "Stellfuß Stahl massiv, Bohrungen und NBR-Belag, M24, Ø 100 mm",
+"marke": "",
 "kurz": "Massiver Stahlfuß mit Bohrungen und NBR-Belag.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4219,12 +4219,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-45815516-g.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-F14120C0",
-"name": "Martin Levelling MASSIV 45815520/G",
-"marke": "Martin Levelling",
+"name": "Stellfuß Stahl massiv, Bohrungen und NBR-Belag, M30, Ø 100 mm",
+"marke": "",
 "kurz": "Massiver Stahlfuß mit Bohrungen und NBR-Belag.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage",
@@ -4239,12 +4239,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/martin-levelling-massiv-45815520-g.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m30-100-mm.svg"
 },
 {
 "sku": "BF-V-92C29081",
-"name": "Elesa+Ganter AVR-R-220-30-290-30",
-"marke": "Elesa+Ganter",
+"name": "Gummi-Metall-Dämpfer rechteckig, M16, bis 2100 kg",
+"marke": "",
 "kurz": "Rechteckiger Gummi-Metall-Dämpfer für schwere Maschinenaufstellung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4258,12 +4258,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-avr-r-220-30-290-30.svg"
+"bild": "/assets/skizzen/gummi-metall-daempfer-rechteckig-m16-bis-2100-kg.svg"
 },
 {
 "sku": "BF-V-581C4488",
-"name": "Elesa+Ganter AVR-R-90-30-160-30",
-"marke": "Elesa+Ganter",
+"name": "Gummi-Metall-Dämpfer rechteckig, M16, bis 860 kg",
+"marke": "",
 "kurz": "Rechteckiger Gummi-Metall-Dämpfer für schwere Maschinenaufstellung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4277,12 +4277,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-avr-r-90-30-160-30.svg"
+"bild": "/assets/skizzen/gummi-metall-daempfer-rechteckig-m16-bis-860-kg.svg"
 },
 {
 "sku": "BF-V-0C01A2F4",
-"name": "Elesa+Ganter DVE-45-M10",
-"marke": "Elesa+Ganter",
+"name": "Gummi-Metall-Dämpfer mit ovalem Flansch, M10, Ø 45 mm",
+"marke": "",
 "kurz": "Gummi-Metall-Dämpfer mit ovalem Flansch, auch Edelstahl.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4297,12 +4297,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/elesa-ganter-dve-45-m10.svg"
+"bild": "/assets/skizzen/gummi-metall-daempfer-mit-ovalem-flansch-m10-45-mm.svg"
 },
 {
 "sku": "BF-V-86276E42",
-"name": "Getzner Isotop SD 1 (Best.-Nr. 39443)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 20 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4317,12 +4317,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-1-best-nr-39443.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-20-kg.svg"
 },
 {
 "sku": "BF-V-37B55DF4",
-"name": "Getzner Isotop SD 2 (Best.-Nr. 39444)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 33 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4337,12 +4337,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-2-best-nr-39444.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-33-kg.svg"
 },
 {
 "sku": "BF-V-0BD9119D",
-"name": "Getzner Isotop SD 3 (Best.-Nr. 39003)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 52 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4357,12 +4357,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-3-best-nr-39003.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-52-kg.svg"
 },
 {
 "sku": "BF-V-8FA0D200",
-"name": "Getzner Isotop SD 4 (Best.-Nr. 39455)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 82 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4377,12 +4377,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-4-best-nr-39455.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-82-kg.svg"
 },
 {
 "sku": "BF-V-9D45DF37",
-"name": "Getzner Isotop SD 5 (Best.-Nr. 39004)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 120 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4397,12 +4397,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-5-best-nr-39004.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-120-kg.svg"
 },
 {
 "sku": "BF-V-90058B06",
-"name": "Getzner Isotop SD 6 (Best.-Nr. 39456)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 200 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4417,12 +4417,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-6-best-nr-39456.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-200-kg.svg"
 },
 {
 "sku": "BF-V-7926B558",
-"name": "Getzner Isotop SD 7 (Best.-Nr. 39457)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 310 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4437,12 +4437,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-7-best-nr-39457.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-310-kg.svg"
 },
 {
 "sku": "BF-V-2D7F3A15",
-"name": "Getzner Isotop SD 8 (Best.-Nr. 39458)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 420 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4457,12 +4457,12 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-8-best-nr-39458.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-420-kg.svg"
 },
 {
 "sku": "BF-V-87D287E1",
-"name": "Getzner Isotop SD 9 (Best.-Nr. 39459)",
-"marke": "Getzner",
+"name": "Federisolator Stahl, M10, bis 520 kg",
+"marke": "",
 "kurz": "Stahlfeder-Isolator für Lüftungs- und Klimageräte, sehr tiefe Abstimmung.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
@@ -4477,13 +4477,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/getzner-isotop-sd-9-best-nr-39459.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-520-kg.svg"
 },
 {
 "sku": "BF-V-3BB77D3C",
-"name": "Kipp K0567.01001057",
-"marke": "Kipp",
-"kurz": "Taillierter Gummi-Metall-Puffer Typ AT, beidseitig Außengewinde.",
+"name": "Gummipuffer tailliert, beidseitig Außengewinde M4, Ø 10 mm",
+"marke": "",
+"kurz": "Taillierter Gummi-Metall-Puffer, beidseitig Außengewinde.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung",
@@ -4496,13 +4496,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0567-01001057.svg"
+"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-10-mm.svg"
 },
 {
 "sku": "BF-V-687EB24D",
-"name": "Kipp K0567.01501557",
-"marke": "Kipp",
-"kurz": "Taillierter Gummi-Metall-Puffer Typ AT, beidseitig Außengewinde.",
+"name": "Gummipuffer tailliert, beidseitig Außengewinde M4, Ø 15 mm",
+"marke": "",
+"kurz": "Taillierter Gummi-Metall-Puffer, beidseitig Außengewinde.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung",
@@ -4515,13 +4515,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0567-01501557.svg"
+"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-15-mm.svg"
 },
 {
 "sku": "BF-V-2CDB3B6F",
-"name": "Kipp K0576.05003555",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 35 mm.",
+"name": "Gummipuffer ballig, Innengewinde M10, Ø 50 × 35 mm, 55 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 35 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung",
@@ -4535,13 +4535,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-05003555.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-55-shore.svg"
 },
 {
 "sku": "BF-V-897A8F8D",
-"name": "Kipp K0576.05003570",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 35 mm.",
+"name": "Gummipuffer ballig, Innengewinde M10, Ø 50 × 35 mm, 70 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 35 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung",
@@ -4555,13 +4555,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-05003570.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-70-shore.svg"
 },
 {
 "sku": "BF-V-49F1BA89",
-"name": "Kipp K0576.08006055",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 60 mm.",
+"name": "Gummipuffer ballig, Innengewinde M12, Ø 80 × 60 mm, 55 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 60 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung",
@@ -4575,13 +4575,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-08006055.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-55-shore.svg"
 },
 {
 "sku": "BF-V-A307B24B",
-"name": "Kipp K0576.08006070",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 60 mm.",
+"name": "Gummipuffer ballig, Innengewinde M12, Ø 80 × 60 mm, 70 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 60 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung, Hohe Traglast",
@@ -4595,13 +4595,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-08006070.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-70-shore.svg"
 },
 {
 "sku": "BF-V-D1163685",
-"name": "Kipp K0576.12509055",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 93 mm.",
+"name": "Gummipuffer ballig, Innengewinde M16, Ø 125 × 93 mm, 55 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 93 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung, Hohe Traglast",
@@ -4615,13 +4615,13 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-12509055.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-93-mm-55-shore.svg"
 },
 {
 "sku": "BF-V-CD5A7308",
-"name": "Kipp K0576.12509070",
-"marke": "Kipp",
-"kurz": "Balliger Gummipuffer Typ KE mit Innengewinde, Höhe 90 mm.",
+"name": "Gummipuffer ballig, Innengewinde M16, Ø 125 × 90 mm, 70 Shore",
+"marke": "",
+"kurz": "Balliger Gummipuffer mit Innengewinde, Höhe 90 mm.",
 "merkmale": {
 "Anwendung": "Maschine / Anlage, Klima- / Lüftungsgerät",
 "Funktion": "Schwingungsdämpfung, Hohe Traglast",
@@ -4635,6 +4635,6 @@
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/kipp-k0576-12509070.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-90-mm-70-shore.svg"
 }
 ]

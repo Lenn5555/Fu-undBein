@@ -47,9 +47,34 @@ def wahl_gewinde(p):
     g = p["merkmale"].get("Gewinde")
     if p["varianten"] or not isinstance(g, list) or len(g) < 2:
         return {}
-    if any(re.search(rf"(?<![\w]){re.escape(w)}(?!\d)", p["name"]) for w in g) or re.search(r"\.\d{4}\b", p["name"]):
+    name = p.get("name_alt", p["name"])  # Herstellername mit Artikelcode, nicht der eigene Name mit „M16/M20“
+    if any(re.search(rf"(?<![\w]){re.escape(w)}(?!\d)", name) for w in g) or re.search(r"\.\d{4}\b", name):
         return {}
     return {"Gewinde": g}
+
+
+NAMEN = ROOT / "daten/produktnamen.csv"
+
+
+def neutral(produkte):
+    """Eigene Produktnamen ohne Herstellernamen (Lenn, 22.10.2026): Name und Kurztext aus daten/produktnamen.csv.
+    Hersteller und Herstellerartikel stehen nur noch intern in den Bezugsquellen (Bestellmail).
+    Die alte Adresse jeder Produktseite wird gemerkt und leitet weiter."""
+    namen = {r["sku"]: r for r in csv.DictReader(NAMEN.open(encoding="utf-8"))}
+    belegt = {p["slug"] for p in produkte if p["sku"] not in namen}
+    for p in produkte:
+        p["marke"] = ""
+        r = namen.get(p["sku"])
+        if not r:
+            continue
+        p["name_alt"], p["name"] = p["name"], r["name"]
+        if r["kurz"]:
+            p["kurz"] = r["kurz"]
+        s = b.slug(r["name"].replace("–", "-").replace("×", "x").replace("Ø", ""))[:80].strip("-")
+        if s in belegt:
+            s = f"{s}-{b.slug(p['sku'])}"
+        belegt.add(s)
+        p["slug_alt"], p["slug"] = p["slug"], s
 
 
 def katalog(produkte):
@@ -380,6 +405,10 @@ def seo_name(p):
     """Name mit Bauform vorne, damit „Stellfuß“ & Co. in Titel und Überschrift stehen (Herstellernamen allein sucht kaum jemand)."""
     bauform = p["merkmale"]["Bauform"]
     stamm = bauform.lower()[:-1] if bauform.lower().endswith(("ß", "n", "r", "z", "t")) else bauform.lower()
+    erstes = p["name"].split()[0].lower()
+    # Eigene Namen beginnen schon mit dem Produktwort (Rohrstellfuß, Gummipuffer, ...): nicht doppeln
+    if any(w in erstes for w in ("fuß", "bein", "stopfen", "dämpfer", "lager", "element", "set", "puffer", "isolator", "sockel", "rolle", "heber", "feststeller")):
+        return p["name"]
     if bauform == "Spezialausführung" or stamm[:6] in p["name"].lower():
         return p["name"]
     return f"{bauform} {p['name']}"
@@ -539,6 +568,7 @@ PRODUKT_CSS = '<link rel="stylesheet" href="/assets/produkte.css">'
 
 def main():
     produkte = b.produkte_laden()
+    neutral(produkte)
     liste = katalog(produkte)
     KATALOG.parent.mkdir(parents=True, exist_ok=True)
     KATALOG.write_text(json.dumps(liste, ensure_ascii=False, indent=0), encoding="utf-8")
@@ -592,6 +622,12 @@ def main():
     schreibe("produkte/gewindeeinsaetze", '<!doctype html><meta charset="utf-8"><title>Gewindestopfen</title>'
              f'<link rel="canonical" href="{kat_url("Gewindestopfen", absolut=True)}">'
              f'<meta http-equiv="refresh" content="0; url={b.BASIS}{kat_url("Gewindestopfen")}"><a href="{kat_url("Gewindestopfen")}">Gewindestopfen</a>')
+    # Alte Produktadressen (mit Herstellernamen, bis 22.10.2026) leiten auf die neuen weiter
+    for p in produkte:
+        if p.get("slug_alt") and p["slug_alt"] != p["slug"] and b.preise(p):
+            schreibe(f"produkte/{p['slug_alt']}", f'<!doctype html><meta charset="utf-8"><title>{e(p["name"])}</title>'
+                     f'<meta name="robots" content="noindex"><link rel="canonical" href="{produkt_url(p, absolut=True)}">'
+                     f'<meta http-equiv="refresh" content="0; url={b.BASIS}{produkt_url(p)}"><a href="{produkt_url(p)}">{e(p["name"])}</a>')
     mail = e(CFG["anfrage_email"])
     schreibe("kontakt", textseite("Kontakt", f"<p>Fragen zu Produkten, Sonderanfertigungen oder Mengenpreisen? Schreiben Sie uns.</p>"
                                                f'<p><a class="btn" href="mailto:{mail}">{mail}</a></p>'

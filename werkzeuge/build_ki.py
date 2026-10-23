@@ -660,6 +660,10 @@ def versandseite():
 def main():
     produkte = b.produkte_laden()
     neutral(produkte)
+    # T&S-Fotos haben einen grauen Hintergrund; wie alle anderen die weiße Skizze zeigen (Lenn, 23.10.2026)
+    for p in produkte:
+        if p["bild"].startswith("https://ts-systemtechnik.de/"):
+            p["bild"] = ""
     liste = katalog(produkte)
     KATALOG.parent.mkdir(parents=True, exist_ok=True)
     KATALOG.write_text(json.dumps(liste, ensure_ascii=False, indent=0), encoding="utf-8")

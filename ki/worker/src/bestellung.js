@@ -8,7 +8,9 @@ import VERSAND from "./versandkosten.json" with { type: "json" };
 // Lieferländer aus der Versandtabelle; EU-Ausland nur mit USt-IdNr. (Lieferung ohne deutsche MwSt.)
 const LAENDER = new Map([["Deutschland", { eu: true }], ...VERSAND.europa.laender.map((l) => [l.land, l])]);
 
-const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200, land: 60, ust_id: 20 };
+const ZAHLARTEN = ["Überweisung (Vorkasse)", "Kreditkarte", "PayPal"];
+
+const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200, land: 60, ust_id: 20, zahlart: 40 };
 
 function euro(x) {
   return x.toFixed(2).replace(".", ",") + " €";
@@ -43,6 +45,8 @@ export function pruefen(d) {
   k.ust_id = k.ust_id.replace(/[\s.-]/g, "").toUpperCase();
   if (k.land !== "Deutschland" && land.eu && !/^[A-Z]{2}[0-9A-Z+*]{2,12}$/.test(k.ust_id))
     return { fehler: "Für Lieferungen ins EU-Ausland brauchen wir Ihre USt-IdNr. (z. B. IT12345678901)." };
+  if (!k.zahlart) k.zahlart = ZAHLARTEN[0];
+  if (!ZAHLARTEN.includes(k.zahlart)) return { fehler: "Bitte eine Zahlungsart wählen." };
   if (d.zustimmung !== true) return { fehler: "Bitte der Datenverarbeitung zustimmen." };
   const stueck = variante ? variante.preis : p.preis;
   return { produkt: p, variante, gewaehlt, menge, kunde: k, stueck, summe: Math.round(stueck * menge * 100) / 100 };
@@ -82,9 +86,10 @@ export function mailText(nr, b, quelle) {
     `USt-IdNr.: ${k.ust_id || "-"}`,
     `Hinweis: ${k.hinweis || "-"}`,
     ``,
+    `ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungsdaten bzw. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`,
+    ``,
     ...(k.land === "Deutschland" ? [] : [
       `AUSLANDSBESTELLUNG: ${LAENDER.get(k.land)?.eu ? "EU, ohne deutsche MwSt. (Reverse Charge). USt-IdNr. vor der Auftragsbestätigung im EU-System VIES prüfen, Lieferung in die Zusammenfassende Meldung." : "Nicht-EU: Zoll und Ausfuhrpapiere klären, Versand mit dem Kunden absprechen."}`,
-      `Neukunde im Ausland: Vorkasse verlangen (AGB 3.2).`,
       ``,
     ]),
     `INTERN: HIER BESTELLEN (nicht an den Kunden weitergeben)`,

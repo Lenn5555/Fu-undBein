@@ -238,14 +238,16 @@
       ustFeld.required = !inland && eu;
       ust.firstChild.textContent = eu ? "USt-IdNr. *" : "USt-IdNr. oder Steuernummer (falls vorhanden)";
       ausland.textContent = eu
-        ? "Lieferung ins EU-Ausland ohne deutsche MwSt. mit Ihrer gültigen USt-IdNr. Die erste Bestellung aus dem Ausland liefern wir gegen Vorkasse."
-        : "Lieferung außerhalb der EU: Zoll und Versand stimmen wir vor der Auftragsbestätigung mit Ihnen ab. Die erste Bestellung liefern wir gegen Vorkasse.";
+        ? "Lieferung ins EU-Ausland ohne deutsche MwSt. mit Ihrer gültigen USt-IdNr."
+        : "Lieferung außerhalb der EU: Zoll und Versand stimmen wir vor der Auftragsbestätigung mit Ihnen ab.";
     }
     wahl.addEventListener("change", ustZeigen);
     ustZeigen();
     versandLaden().then(ustZeigen, function () {});
     return { land: l, ab: ab, tabelle: d, ust: ust, ausland: ausland };
   }
+
+  var ZAHLARTEN = ["Überweisung (Vorkasse)", "Kreditkarte", "PayPal"];
 
   function bestellen(p, vorher) {
     dialog.innerHTML = "";
@@ -281,6 +283,12 @@
     zeile("E-Mail", "email", "email", true, { autocomplete: "email" });
     zeile("Telefon", "telefon", "tel", false, { autocomplete: "tel" });
     f.appendChild(versand.ust);
+    // Zahlung nur im Voraus; die Zahlungsdaten kommen mit der Auftragsbestätigung
+    var zahl = el("label", null, "Zahlungsart *");
+    var zs = el("select"); zs.name = "zahlart"; zs.required = true;
+    ZAHLARTEN.forEach(function (x) { var o = el("option", null, x); o.value = x; zs.appendChild(o); });
+    zahl.appendChild(zs); f.appendChild(zahl);
+    f.appendChild(el("p", "ki-kurz", "Wir liefern gegen Vorkasse. Die Zahlungsdaten oder den Zahlungslink erhalten Sie mit der Auftragsbestätigung, der Versand erfolgt nach Zahlungseingang."));
     zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3 });
     zeile("Hinweis", "hinweis", "textarea", false, { rows: 2 });
     var falle = zeile("Website", "website", "text", false, { tabIndex: -1, autocomplete: "off" });
@@ -322,7 +330,7 @@
         .then(function (r) {
           if (!r.ok) throw new Error(r.x.fehler || "Fehler");
           dialog.close();
-          blase("berater", "Danke! Ihre Bestellung " + r.x.bestellnummer + " ist bei uns eingegangen. Wir melden uns mit der Auftragsbestätigung.");
+          blase("berater", "Danke! Ihre Bestellung " + r.x.bestellnummer + " ist bei uns eingegangen. Wir melden uns mit der Auftragsbestätigung und den Zahlungsdaten.");
         })
         .catch(function (err) {
           meldung.textContent = (err.message !== "Failed to fetch" ? err.message : "Keine Verbindung.") + " Alternativ per E-Mail an " + cfg.email + ".";

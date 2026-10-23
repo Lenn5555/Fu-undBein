@@ -149,6 +149,16 @@ test("Lieferland und USt-IdNr.: EU-Ausland nur mit USt-IdNr., Nicht-EU mit Hinwe
   assert.match(mailText("BF-7", ch, null), /Nicht-EU: Zoll/);
 });
 
+test("Bestellung: Zahlung nur Vorkasse, Zahlungsart aus der Liste", () => {
+  const p = KATALOG.find((x) => !x.varianten.length && !Object.keys(x.optionen || {}).length);
+  const basis = { sku: p.sku, menge: 2, name: "Max", email: "max@example.com", adresse: "Weg 1", zustimmung: true };
+  const ohne = pruefen(basis);
+  assert.equal(ohne.kunde.zahlart, "Überweisung (Vorkasse)");
+  assert.match(mailText("BF-8", ohne, null), /ZAHLUNG: Vorkasse per Überweisung \(Vorkasse\)/);
+  assert.match(mailText("BF-9", pruefen({ ...basis, zahlart: "PayPal" }), null), /Vorkasse per PayPal/);
+  assert.match(pruefen({ ...basis, zahlart: "Rechnung" }).fehler, /Zahlungsart/);
+});
+
 test("Zählung: nur erlaubte Ereignisse und Quellen, Einstieg nur beim Besuch", async () => {
   const { meldungPruefen } = await import("../src/statistik.js");
   assert.equal(meldungPruefen({ ereignis: "hack" }), null);

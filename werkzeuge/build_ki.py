@@ -660,10 +660,11 @@ def versandseite():
 def main():
     produkte = b.produkte_laden()
     neutral(produkte)
-    # T&S-Fotos haben einen grauen Hintergrund; wie alle anderen die weiße Skizze zeigen (Lenn, 23.10.2026)
+    # T&S-Fotos von ts-systemtechnik.de mit weiß gerechnetem Hintergrund (ki/seite/ts-fotos, Lenn, 23.10.2026);
+    # ohne eigenes Foto die weiße Skizze wie bei allen anderen
     for p in produkte:
         if p["bild"].startswith("https://ts-systemtechnik.de/"):
-            p["bild"] = ""
+            p["bild"] = f"/assets/ts-fotos/{p['sku']}.jpg" if (ROOT / "ki/seite/ts-fotos" / f"{p['sku']}.jpg").exists() else ""
     liste = katalog(produkte)
     KATALOG.parent.mkdir(parents=True, exist_ok=True)
     KATALOG.write_text(json.dumps(liste, ensure_ascii=False, indent=0), encoding="utf-8")
@@ -683,6 +684,7 @@ def main():
     (OUT / "assets/skizzen").mkdir(parents=True)
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
+    shutil.copytree(ROOT / "ki/seite/ts-fotos", OUT / "assets/ts-fotos")
     for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "zaehlen.js", "statistik.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     # Logo im Browser-Tab: gelber Stellfuß (Gewindespindel und Teller) auf Dunkel (Lenn, 22.10.2026); PNGs für Apple und Google

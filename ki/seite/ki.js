@@ -6,6 +6,20 @@
   var form = document.getElementById("ki-eingabe");
   var feld = document.getElementById("ki-text");
   var dialog = document.getElementById("ki-bestellen");
+  // Klick oder Tippen auf den abgedunkelten Bereich neben dem Bestellfeld schließt es.
+  // Nur wenn der Klick dort auch begonnen hat, damit Markieren im Formular es nicht zufällig schließt.
+  var startDraussen = false;
+  function draussen(ev) {
+    var r = dialog.getBoundingClientRect();
+    return ev.clientX < r.left || ev.clientX > r.right || ev.clientY < r.top || ev.clientY > r.bottom;
+  }
+  if (dialog) {
+    dialog.addEventListener("pointerdown", function (ev) { startDraussen = ev.target === dialog && draussen(ev); });
+    dialog.addEventListener("click", function (ev) {
+      if (startDraussen && ev.target === dialog && draussen(ev)) dialog.close();
+      startDraussen = false;
+    });
+  }
   var chips = document.getElementById("ki-chips");
   var verlauf = [];
   var karten = {};

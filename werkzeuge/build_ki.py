@@ -340,7 +340,7 @@ def beraterseite(liste):
 <label>Gewicht in kg<input type="number" id="kb-kg" min="1" max="100000" value="400" inputmode="numeric"></label>
 <label>Anzahl Füße<input type="number" id="kb-anzahl" min="1" max="64" value="4" inputmode="numeric"></label>
 </div>
-<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 990 N pro Fuß bei gleichmäßiger Verteilung, mit Reserve für unebenen Boden 1.310 N. Welche Füße passen?">Damit Füße suchen</button>
+<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 990 N pro Fuß bei gleichmäßiger Verteilung, mit Reserve für unebenen Boden 1.310 N. Welche Füße passen?">Füße suchen</button>
 </form>
 <p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
 </div>

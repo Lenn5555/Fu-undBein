@@ -1400,7 +1400,7 @@
 "Traglast": "8000-10000 N",
 "Durchmesser": "40x40 (Wand 1, 5-4) mm"
 },
-"preis": 4.42,
+"preis": 4.4,
 "preis_ab": true,
 "varianten": [],
 "optionen": {
@@ -2757,7 +2757,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 76.84,
+"preis": 74.75,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3553,7 +3553,7 @@
 "Traglast": "3000-4000 N",
 "Durchmesser": "30/47 mm"
 },
-"preis": 0.62,
+"preis": 0.61,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -3613,7 +3613,7 @@
 "Traglast": "3000-4000 N",
 "Durchmesser": "30/47 mm"
 },
-"preis": 0.62,
+"preis": 0.61,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4511,7 +4511,7 @@
 "Gewinde": "M4",
 "Durchmesser": "15 mm"
 },
-"preis": 1.08,
+"preis": 1.07,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4531,7 +4531,7 @@
 "Traglast": "2200 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.22,
+"preis": 4.15,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},

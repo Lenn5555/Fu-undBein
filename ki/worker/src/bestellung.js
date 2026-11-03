@@ -4,6 +4,7 @@
 import { NACH_SKU } from "./berater.js";
 import BEZUGSQUELLEN from "./bezugsquellen.json" with { type: "json" };
 import VERSAND from "./versandkosten.json" with { type: "json" };
+import { zahlungsZeilen } from "./bezahlen.js";
 
 // Lieferländer aus der Versandtabelle; EU-Ausland nur mit USt-IdNr. (Lieferung ohne deutsche MwSt.)
 const LAENDER = new Map([["Deutschland", { eu: true }], ...VERSAND.europa.laender.map((l) => [l.land, l])]);
@@ -57,7 +58,8 @@ export function bestellnummer(jetzt = new Date()) {
   return `BF-${tag}-${Math.random().toString(36).slice(2, 6).toUpperCase()}`;
 }
 
-export function mailText(nr, b, quelle) {
+// zahlung: nur bei Sofortbezahlung über PayPal (siehe bezahlen.js)
+export function mailText(nr, b, quelle, zahlung = null) {
   const { produkt: p, variante: v, gewaehlt = {}, menge, kunde: k, stueck, summe } = b;
   const wahl = Object.entries(gewaehlt).map(([m, w]) => `${m} ${w}`).join(", ");
   // Eindeutige Kennung der bestellten Ausführung, auch für die Preisüberwachung
@@ -86,7 +88,7 @@ export function mailText(nr, b, quelle) {
     `USt-IdNr.: ${k.ust_id || "-"}`,
     `Hinweis: ${k.hinweis || "-"}`,
     ``,
-    `ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungsdaten bzw. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`,
+    ...(zahlung ? zahlungsZeilen(zahlung) : [`ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungsdaten bzw. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`]),
     ``,
     ...(k.land === "Deutschland" ? [] : [
       `AUSLANDSBESTELLUNG: ${LAENDER.get(k.land)?.eu ? "EU, ohne deutsche MwSt. (Reverse Charge). USt-IdNr. vor der Auftragsbestätigung im EU-System VIES prüfen, Lieferung in die Zusammenfassende Meldung." : "Nicht-EU: Zoll und Ausfuhrpapiere klären, Versand mit dem Kunden absprechen."}`,
@@ -124,7 +126,7 @@ export function bezugsquelle(sku) {
   return BEZUGSQUELLEN[sku] ?? null;
 }
 
-export async function senden(env, nr, b, text, abruf = fetch) {
+export async function senden(env, nr, b, text, abruf = fetch, bezahlt = false) {
   const r = await abruf(env.RESEND_URL || "https://api.resend.com/emails", { // RESEND_URL nur für lokale Tests
     method: "POST",
     headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -133,7 +135,7 @@ export async function senden(env, nr, b, text, abruf = fetch) {
       to: [env.BESTELL_EMAIL],
       reply_to: b.kunde.email,
       // Nur einfache Zeichen im Betreff: Outlook am Computer meldet sonst "Dateiname ungültig" und zeigt die Mail leer
-      subject: `Bestellung ${nr}`,
+      subject: `Bestellung ${nr}${bezahlt ? " (bezahlt)" : ""}`,
       text,
       html: mailHtml(text),
     }),

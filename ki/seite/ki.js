@@ -263,6 +263,34 @@
 
   var ZAHLARTEN = ["Überweisung (Vorkasse)", "Kreditkarte", "PayPal"];
 
+  // Sofortbezahlen mit PayPal oder Karte (über PayPal): nur wenn der Server Zugangsdaten hat und der Preis fest ist.
+  // Der Betrag wird auf dem Server berechnet; hier nur zur Anzeige mit derselben Versandpauschale (bis 5 kg).
+  var PAUSCHALE_BIS_KG = 5, MWST = 0.19;
+  var bezahlInfo = null, paypalSkript = null;
+  function bezahlenLaden() {
+    if (!cfg.api) return Promise.resolve({ aktiv: false });
+    if (!bezahlInfo) bezahlInfo = fetch(cfg.api.replace(/\/$/, "") + "/bezahlen")
+      .then(function (r) { return r.json(); }).catch(function () { return { aktiv: false }; });
+    return bezahlInfo;
+  }
+  function paypalLaden(info) {
+    if (!paypalSkript) paypalSkript = new Promise(function (ok, nein) {
+      var s = document.createElement("script");
+      s.src = "https://www.paypal.com/sdk/js?client-id=" + encodeURIComponent(info.client_id) +
+        "&currency=EUR&intent=capture&components=buttons&locale=de_DE&enable-funding=card&disable-funding=paylater,sepa";
+      s.onload = function () { ok(window.paypal); };
+      s.onerror = function () { paypalSkript = null; nein(new Error("PayPal konnte nicht geladen werden.")); };
+      document.head.appendChild(s);
+    });
+    return paypalSkript;
+  }
+  function pauschale(land) {
+    if (!versandDaten) return null;
+    if (land === "Deutschland") return versandDaten.deutschland.preise[versandDaten.deutschland.bis_kg.indexOf(PAUSCHALE_BIS_KG)];
+    var t = versandDaten.europa.laender.filter(function (x) { return x.land === land; })[0];
+    return t ? t.preise[versandDaten.europa.bis_kg.indexOf(PAUSCHALE_BIS_KG)] : null;
+  }
+
   function bestellen(p, vorher) {
     dialog.innerHTML = "";
     var f = el("form", "ki-formular");
@@ -302,7 +330,8 @@
     var zs = el("select"); zs.name = "zahlart"; zs.required = true;
     ZAHLARTEN.forEach(function (x) { var o = el("option", null, x); o.value = x; zs.appendChild(o); });
     zahl.appendChild(zs); f.appendChild(zahl);
-    f.appendChild(el("p", "ki-kurz", "Wir liefern gegen Vorkasse. Die Zahlungsdaten oder den Zahlungslink erhalten Sie mit der Auftragsbestätigung, der Versand erfolgt nach Zahlungseingang."));
+    var zahlHinweis = el("p", "ki-kurz");
+    f.appendChild(zahlHinweis);
     zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3 });
     zeile("Hinweis", "hinweis", "textarea", false, { rows: 2 });
     var falle = zeile("Website", "website", "text", false, { tabIndex: -1, autocomplete: "off" });
@@ -325,10 +354,14 @@
     ab.addEventListener("click", function () { dialog.close(); });
     var ok = el("button", "btn", "Verbindlich bestellen"); ok.type = "submit";
     knoepfe.appendChild(ab); knoepfe.appendChild(ok); f.appendChild(knoepfe);
+    var sofortBox = el("div", "ki-sofort"); sofortBox.hidden = true;
+    var sofortSumme = el("p", "ki-preis");
+    var paypalFeld = el("div", "ki-paypal");
+    sofortBox.appendChild(sofortSumme); sofortBox.appendChild(paypalFeld);
+    f.insertBefore(sofortBox, knoepfe);
     f.appendChild(el("p", "ki-kurz", "Sie erhalten von uns eine Auftragsbestätigung per E-Mail. Erst damit kommt der Vertrag zustande."));
 
-    f.addEventListener("submit", function (ev) {
-      ev.preventDefault();
+    function daten() {
       var d = {};
       new FormData(f).forEach(function (v, k) { if (!/^w\d+-/.test(k)) d[k] = v; });
       var w = wahl.werte();
@@ -336,6 +369,80 @@
       d.optionen = w.optionen;
       d.sku = p.sku; d.menge = parseInt(d.menge, 10); d.zustimmung = z.checked;
       if (window.bfHerkunft) d.herkunft = window.bfHerkunft; // nur „werbung“, für die Erfolgsmessung der Anzeigen
+      return d;
+    }
+    function api(pfad, d) {
+      return fetch(cfg.api.replace(/\/$/, "") + pfad, {
+        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d)
+      }).then(function (r) { return r.json().then(function (x) { if (!r.ok) throw new Error(x.fehler || "Fehler"); return x; }); });
+    }
+
+    // Zahlungsart: bei PayPal/Karte mit festem Preis erscheinen die PayPal-Knöpfe statt „Verbindlich bestellen“
+    var info = { aktiv: false }, quelle = null;
+    function sofortMoeglich() {
+      var v = wahl.variante();
+      return info.aktiv && (zs.value === "PayPal" || zs.value === "Kreditkarte") && !(p.preis_ab && !v) &&
+        !(p.varianten.length && !v) && pauschale(f.elements.land.value) != null;
+    }
+    function zahlungZeigen() {
+      var sofort = sofortMoeglich();
+      ok.hidden = sofort; sofortBox.hidden = !sofort;
+      if (!sofort) {
+        var karte = info.aktiv && zs.value !== ZAHLARTEN[0];
+        zahlHinweis.textContent = (karte && p.varianten.length && !wahl.variante() ? "Bitte zuerst eine Ausführung wählen, dann können Sie sofort bezahlen. "
+          : karte && p.preis_ab && !wahl.variante() ? "Für diese Serie bestätigen wir zuerst den Preis Ihrer Ausführung. " : "") +
+          "Wir liefern gegen Vorkasse. Die Zahlungsdaten oder den Zahlungslink erhalten Sie mit der Auftragsbestätigung, der Versand erfolgt nach Zahlungseingang.";
+        return;
+      }
+      var v = wahl.variante(), n = parseInt(menge.value, 10) || 0, land = f.elements.land.value;
+      var ware = Math.round((v ? v.preis : p.preis) * n * 100), vs = Math.round(pauschale(land) * 100);
+      var mw = land === "Deutschland" ? Math.round((ware + vs) * MWST) : 0;
+      sofortSumme.textContent = "Jetzt zu zahlen: " + euro((ware + vs + mw) / 100) + " (Ware " + euro(ware / 100) +
+        " + Versandpauschale " + euro(vs / 100) + (mw ? " + 19 % MwSt. " + euro(mw / 100) : ", ohne deutsche MwSt.") + ")";
+      zahlHinweis.textContent = "Sie bezahlen sofort über PayPal" + (zs.value === "Kreditkarte" ? " mit Ihrer Karte" : "") +
+        ". Wir versenden nach Zahlungseingang. Die Versandpauschale gilt bis " + PAUSCHALE_BIS_KG + " kg; bei größeren Mengen melden wir uns vorher.";
+      var neu = zs.value === "Kreditkarte" ? "card" : "paypal";
+      if (quelle === neu) return;
+      quelle = neu; paypalFeld.textContent = "PayPal wird geladen …";
+      paypalLaden(info).then(function (pp) {
+        if (quelle !== neu) return;
+        paypalFeld.textContent = "";
+        pp.Buttons({
+          fundingSource: neu === "card" ? pp.FUNDING.CARD : pp.FUNDING.PAYPAL,
+          style: { layout: "vertical", label: "pay" },
+          onClick: function (_, actions) {
+            if (!f.reportValidity()) return actions.reject();
+            meldung.textContent = "";
+            return actions.resolve();
+          },
+          createOrder: function () { return api("/bezahlen/start", daten()).then(function (x) { return x.id; }); },
+          onApprove: function (d) {
+            meldung.textContent = "Zahlung wird abgeschlossen …";
+            var x = daten(); x.paypal_id = d.orderID;
+            return api("/bezahlen/abschluss", x).then(function (r) {
+              dialog.close();
+              blase("berater", "Danke! Ihre Bestellung " + r.bestellnummer + " ist bezahlt (" + euro(r.gesamt / 100) +
+                "). Sie erhalten von PayPal eine Zahlungsbestätigung, wir melden uns mit der Auftragsbestätigung.");
+            });
+          },
+          onCancel: function () { meldung.textContent = "Zahlung abgebrochen. Es wurde nichts abgebucht."; },
+          onError: function (err) {
+            meldung.textContent = (err && err.message && !/^Fehler$/.test(err.message) ? err.message : "Die Zahlung hat nicht geklappt.") +
+              " Sie können auch „Überweisung (Vorkasse)“ wählen.";
+          },
+        }).render(paypalFeld);
+      }).catch(function (err) { paypalFeld.textContent = err.message + " Bitte „Überweisung (Vorkasse)“ wählen."; });
+    }
+    zs.addEventListener("change", zahlungZeigen);
+    f.addEventListener("change", function (ev) { if (ev.target !== zs) zahlungZeigen(); });
+    menge.addEventListener("input", zahlungZeigen);
+    zahlungZeigen();
+    Promise.all([bezahlenLaden(), versandLaden().catch(function () {})]).then(function (x) { info = x[0] || { aktiv: false }; zahlungZeigen(); });
+
+    f.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (sofortMoeglich()) return; // bezahlt wird über die PayPal-Knöpfe
+      var d = daten();
       ok.disabled = true; meldung.textContent = "Wird gesendet …";
       if (!cfg.api) { meldung.textContent = "Online-Bestellung ist noch nicht verbunden."; ok.disabled = false; return; }
       fetch(cfg.api.replace(/\/$/, "") + "/bestellen", {

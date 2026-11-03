@@ -73,6 +73,12 @@ Einrichten (einmalig, ohne Terminal):
    `BEZUGSQUELLEN` (Inhalt von `/mnt/project-files/katalog/intern/ki-bezugsquellen-fuer-github.txt`).
 3. Unter Actions den Workflow „KI-Server veröffentlichen“ starten. Die Worker-Adresse (…workers.dev) in `daten/site.json` als `ki_api` eintragen.
 
+Sofortbezahlen (optional, `ki/worker/src/bezahlen.js`): Mit den Secrets `PAYPAL_CLIENT_ID` und `PAYPAL_SECRET`
+(PayPal-Geschäftskonto, Entwickler-Bereich, App „Live“) zeigt das Bestellformular bei PayPal/Kreditkarte die PayPal-Knöpfe.
+Nur bei festem Preis (T&S-Produkte mit gewählter Ausführung); Betrag = Ware + GLS-Pauschale bis 5 kg + 19 % MwSt. (nur Deutschland),
+berechnet im Worker. `PAYPAL_SANDBOX` = `ja` nutzt die PayPal-Testumgebung, für echte Zahlungen `nein`.
+Ohne diese Secrets bleibt es bei Vorkasse mit Zahlungslink nach der Auftragsbestätigung.
+
 Suchmaschinen: `build_ki.py` schreibt Canonical-Links, Open-Graph-Vorschau (`ki/seite/vorschau.jpg`), schema.org-Daten, `sitemap.xml` und `robots.txt`.
 Dazu kommen Produktseiten für Google: `/produkte/` (Übersicht), je Bauform eine Kategorieseite (z. B. `/produkte/stellfuesse/`)
 und je Produkt eine Seite mit Daten, Preisen und schema.org-Angebot. „Bestellen“ führt zur Startseite (`/?bestellen=<Artikelnummer>`)

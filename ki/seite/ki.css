@@ -296,6 +296,10 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-falle { position: absolute; left: -9999px; }
 .ki-meldung { font-weight: 500; min-height: 1.5em; }
 .ki-knoepfe { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+.ki-sofort { display: grid; gap: 10px; }
+.ki-sofort .ki-preis { font-size: var(--step-body); }
+.ki-paypal { min-height: 48px; }
+[hidden] { display: none !important; }
 
 /* Einblenden beim Scrollen: nur mit Skript, Inhalt bleibt ohne Skript sichtbar */
 .js [data-rein] { opacity: 0; transform: translateY(20px); transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--v, 0ms); }

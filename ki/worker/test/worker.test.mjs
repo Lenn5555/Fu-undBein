@@ -234,3 +234,52 @@ test("Statistik: Bestellung zählt nur Summen aus Katalogpreis und Menge", async
   assert.equal(r.artikel["A-1 Stellfuß M10"], 6);
   assert.equal(r.summe.bestellung, 1);
 });
+
+test("Sofortbezahlen: Betrag, Pauschale, Fingerabdruck und Prüfung vor dem Einziehen", async () => {
+  const { betrag, versandPauschale, bezahlbar, anlegen, abschliessen } = await import("../src/bezahlen.js");
+  // Fester Preis gibt es bei den T&S-Produkten mit gewählter Ausführung
+  const p = KATALOG.find((x) => x.varianten.length && !Object.keys(x.optionen || {}).length);
+  const v = p.varianten[0];
+  const basis = { sku: p.sku, variante: v.sku, menge: 3, name: "Max", email: "max@example.com", adresse: "Weg 1", zustimmung: true, zahlart: "PayPal" };
+  const de = pruefen(basis);
+  assert.ok(!de.fehler, de.fehler);
+  assert.equal(versandPauschale("Deutschland"), 4.63);
+  const g = betrag(de);
+  assert.equal(g.ware, Math.round(v.preis * 3 * 100));
+  assert.equal(g.versand, 463);
+  assert.equal(g.mwst, Math.round((g.ware + 463) * 0.19));
+  assert.equal(g.gesamt, g.ware + g.versand + g.mwst);
+  const at = pruefen({ ...basis, land: "Österreich", ust_id: "ATU12345678" });
+  assert.equal(betrag(at).mwst, 0);
+  assert.equal(bezahlbar(de), null);
+  const serie = KATALOG.find((x) => x.preis_ab && x.varianten.length === 0 && !Object.keys(x.optionen || {}).length);
+  const { variante, ...ohneVariante } = basis;
+  assert.match(bezahlbar(pruefen({ ...ohneVariante, sku: serie.sku })), /Überweisung/);
+
+  // PayPal nachgebildet: merkt sich die angelegte Bestellung
+  const env = { PAYPAL_CLIENT_ID: "id", PAYPAL_SECRET: "geheim" };
+  let gespeichert, eingezogen = 0;
+  const abruf = async (url, o) => {
+    const j = (d) => new Response(JSON.stringify(d), { status: 200 });
+    if (url.endsWith("/v1/oauth2/token")) return j({ access_token: "t" });
+    if (url.endsWith("/v2/checkout/orders") && o.method === "POST") { gespeichert = JSON.parse(o.body).purchase_units[0]; return j({ id: "ABCD1234EFGH" }); }
+    if (url.endsWith("/capture")) { eingezogen++; return j({ status: "COMPLETED", purchase_units: [{ payments: { captures: [{ id: "CAP1", status: "COMPLETED", amount: { value: gespeichert.amount.value } }] } }] }); }
+    if (o.method === "GET") return j({ purchase_units: [gespeichert] });
+    throw new Error("unerwartet " + url);
+  };
+  const o = await anlegen(env, "BF-TEST-1", de, abruf);
+  assert.equal(o.id, "ABCD1234EFGH");
+  assert.equal(gespeichert.amount.value, (g.gesamt / 100).toFixed(2));
+  // Andere Menge als beim Anlegen: nichts einziehen
+  const anders = pruefen({ ...basis, menge: 1 });
+  assert.match((await abschliessen(env, o.id, anders, abruf)).fehler, /passt nicht/);
+  assert.equal(eingezogen, 0);
+  const z = await abschliessen(env, o.id, de, abruf);
+  assert.equal(z.nr, "BF-TEST-1");
+  assert.equal(z.transaktion, "CAP1");
+  assert.equal(eingezogen, 1);
+  const mail = mailText(z.nr, de, null, { ...z, zahlart: "PayPal" });
+  assert.match(mail, /BEZAHLT über PayPal \(PayPal\)/);
+  assert.doesNotMatch(mail, /Zahlungsdaten bzw\. Zahlungslink/);
+  assert.match((await abschliessen(env, "x y", de, abruf)).fehler, /Ungültige/);
+});

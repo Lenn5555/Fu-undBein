@@ -1,5 +1,6 @@
 // Cloudflare Worker für beinundfuß.de: POST /beraten (KI-Berater), POST /bestellen (Mail an den Vertrieb),
-// POST /zaehlen (anonyme Besucherzählung) und GET /statistik (Bericht, nur mit Schlüssel).
+// POST /zaehlen (anonyme Besucherzählung), GET /statistik (Bericht, nur mit Schlüssel) und
+// GET /bezahlen, POST /bezahlen/start und /bezahlen/abschluss (Sofortbezahlen über PayPal, siehe bezahlen.js).
 // Der Abendbericht der Sekretärin liest /statistik ohne Browser mit einem eigenen Schlüssel (BERICHT_HASH).
 // Geheimnisse (ANTHROPIC_API_KEY, RESEND_API_KEY) liegen als Worker-Secrets bei Cloudflare, nie im Browser.
 import Anthropic from "@anthropic-ai/sdk";
@@ -7,6 +8,9 @@ import { beraten, neuerClient } from "./berater.js";
 import { pruefen, bestellnummer, mailText, bezugsquelle, senden } from "./bestellung.js";
 import { meldungPruefen, bestellEintraege, bericht, schluesselPasst } from "./statistik.js";
 import { zaehlerVon } from "./zaehler.js";
+import { aktiv, bezahlbar, anlegen, abschliessen, betrag } from "./bezahlen.js";
+
+const SOFORT = ["PayPal", "Kreditkarte"];
 
 export { Zaehler } from "./zaehler.js";
 
@@ -72,7 +76,11 @@ export default {
       if (await gebremst(env, request, pfad)) return antwort({ fehler: "Zu viele Anfragen. Bitte kurz warten." }, 429, herkunft);
       return statistik(request, env, herkunft);
     }
-    if (request.method !== "POST" || !["/beraten", "/bestellen", "/zaehlen"].includes(pfad)) return antwort({ fehler: "Nicht gefunden." }, 404, herkunft);
+    // Öffentliche Client-ID für die PayPal-Knöpfe; ohne Zugangsdaten bleibt es bei Vorkasse mit Zahlungslink
+    if (request.method === "GET" && pfad === "/bezahlen") {
+      return antwort(aktiv(env) ? { aktiv: true, client_id: env.PAYPAL_CLIENT_ID, sandbox: env.PAYPAL_SANDBOX === "ja" } : { aktiv: false }, 200, herkunft);
+    }
+    if (request.method !== "POST" || !["/beraten", "/bestellen", "/zaehlen", "/bezahlen/start", "/bezahlen/abschluss"].includes(pfad)) return antwort({ fehler: "Nicht gefunden." }, 404, herkunft);
     if (!herkunft) return antwort({ fehler: "Nicht erlaubt." }, 403, null);
     if (await gebremst(env, request, pfad)) return antwort({ fehler: "Zu viele Anfragen. Bitte kurz warten." }, 429, herkunft);
 
@@ -110,6 +118,7 @@ export default {
 
     const b = pruefen(daten);
     if (b.fehler) return antwort(b, 400, herkunft);
+    if (pfad.startsWith("/bezahlen/")) return bezahlen(pfad, daten, b, env, ctx, herkunft);
     if (!env.RESEND_API_KEY) return antwort({ fehler: "Online-Bestellung ist noch nicht eingerichtet. Bitte per E-Mail bestellen." }, 503, herkunft);
     const nr = bestellnummer();
     try {
@@ -123,3 +132,35 @@ export default {
     return antwort({ ok: true, bestellnummer: nr }, 200, herkunft);
   },
 };
+
+async function bezahlen(pfad, daten, b, env, ctx, herkunft) {
+  if (!aktiv(env) || !env.RESEND_API_KEY) return antwort({ fehler: "Sofortbezahlen ist noch nicht eingerichtet. Bitte „Überweisung (Vorkasse)“ wählen." }, 503, herkunft);
+  if (!SOFORT.includes(b.kunde.zahlart)) return antwort({ fehler: "Bitte PayPal oder Kreditkarte wählen." }, 400, herkunft);
+  const nein = bezahlbar(b);
+  if (nein) return antwort({ fehler: nein }, 400, herkunft);
+  if (pfad === "/bezahlen/start") {
+    try {
+      const o = await anlegen(env, bestellnummer(), b);
+      return antwort({ ok: true, id: o.id, gesamt: o.betrag.gesamt }, 200, herkunft);
+    } catch (err) {
+      console.error("PayPal anlegen:", err.message);
+      return antwort({ fehler: "PayPal ist gerade nicht erreichbar. Bitte später erneut versuchen oder „Überweisung (Vorkasse)“ wählen." }, 502, herkunft);
+    }
+  }
+  let z;
+  try {
+    z = await abschliessen(env, daten.paypal_id, b);
+  } catch (err) {
+    console.error("PayPal abschließen:", err.message);
+    return antwort({ fehler: "Die Zahlung konnte nicht abgeschlossen werden. Es wurde nichts abgebucht, bitte erneut versuchen." }, 502, herkunft);
+  }
+  if (z.fehler) return antwort(z, 400, herkunft);
+  // Geld ist eingezogen: die Bestellung gilt auch dann, wenn die Mail scheitert (dann steht sie im Protokoll und bei PayPal)
+  try {
+    await senden(env, z.nr, b, mailText(z.nr, b, bezugsquelle(b.produkt.sku), { ...z, zahlart: b.kunde.zahlart }), fetch, true);
+  } catch (err) {
+    console.error(`Mail zur bezahlten Bestellung ${z.nr} (PayPal ${z.transaktion}) fehlgeschlagen:`, err.message);
+  }
+  zaehlen(env, ctx, bestellEintraege(daten, b));
+  return antwort({ ok: true, bestellnummer: z.nr, gesamt: betrag(b).gesamt }, 200, herkunft);
+}

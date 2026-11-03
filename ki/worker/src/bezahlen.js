@@ -111,6 +111,6 @@ export function zahlungsZeilen(z) {
   return [
     `BEZAHLT über PayPal (${z.zahlart}): ${e(z.betrag.gesamt)} brutto, Transaktion ${z.transaktion}.`,
     `  Ware ${e(z.betrag.ware)} + Versandpauschale ${e(z.betrag.versand)}${z.betrag.mwst ? ` + MwSt. ${e(z.betrag.mwst)}` : " (ohne deutsche MwSt.)"}.`,
-    `  Ware kann versendet werden. Mehr Versandkosten als die Pauschale (bis ${PAUSCHALE_BIS_KG} kg) nicht nachberechnen ohne Rücksprache.`,
+    `  Ware kann versendet werden. Versand ist mit der Pauschale abgegolten, laut AGB keine Nachberechnung.`,
   ];
 }

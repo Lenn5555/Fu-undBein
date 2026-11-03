@@ -400,7 +400,7 @@
       sofortSumme.textContent = "Jetzt zu zahlen: " + euro((ware + vs + mw) / 100) + " (Ware " + euro(ware / 100) +
         " + Versandpauschale " + euro(vs / 100) + (mw ? " + 19 % MwSt. " + euro(mw / 100) : ", ohne deutsche MwSt.") + ")";
       zahlHinweis.textContent = "Sie bezahlen sofort über PayPal" + (zs.value === "Kreditkarte" ? " mit Ihrer Karte" : "") +
-        ". Wir versenden nach Zahlungseingang. Die Versandpauschale gilt bis " + PAUSCHALE_BIS_KG + " kg; bei größeren Mengen melden wir uns vorher.";
+        ". Mit der Zahlung ist Ihre Bestellung verbindlich; wir versenden nach Zahlungseingang. Der Versand ist mit der Pauschale abgegolten.";
       var neu = zs.value === "Kreditkarte" ? "card" : "paypal";
       if (quelle === neu) return;
       quelle = neu; paypalFeld.textContent = "PayPal wird geladen …";

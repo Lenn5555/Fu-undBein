@@ -14,6 +14,10 @@ on:
         description: "Testbestellung an die Bestelladresse schicken"
         type: boolean
         default: false
+      paypaltest:
+        description: "PayPal-Zugang prüfen (legt eine unbezahlte PayPal-Bestellung an, es wird nichts abgebucht)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -98,6 +102,21 @@ jobs:
             --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
           cat ergebnis.json; echo
           node -e "process.exit(require('./ergebnis.json').ok ? 0 : 1)"
+      - name: PayPal-Zugang prüfen (nur auf Wunsch beim manuellen Start)
+        if: env.HAT_TOKEN == 'true' && inputs.paypaltest
+        run: |
+          curl -sS -m 30 https://beinundfuss-ki.beinundfuss.workers.dev/bezahlen -H "Origin: https://xn--beinundfu-o1a.de" \
+            | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{const d=JSON.parse(s);console.log('aktiv:',d.aktiv,'sandbox:',d.sandbox)})"
+          node -e "
+            const k = require('./src/katalog.json').find((p) => p.varianten.length && !p.preis_ab);
+            console.log(JSON.stringify({ sku: k.sku, variante: k.varianten[0].sku, menge: 1, firma: 'TEST',
+              name: 'PayPal-Test', email: 'sales@ts-systec.de', strasse: 'Teststraße 1', plz: '64319', ort: 'Pfungstadt',
+              zahlart: 'PayPal', zustimmung: true }));
+          " > zahlung.json
+          curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bezahlen/start \
+            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
+            --data @zahlung.json -o start.json -w "HTTP %{http_code}\n"
+          node -e "const d=require('./start.json'); console.log(d.ok ? 'PayPal-Bestellung angelegt, Betrag ' + d.gesamt : 'Fehler: ' + d.fehler); process.exit(d.ok ? 0 : 1)"
       - name: Hinweis
         if: env.HAT_TOKEN != 'true'
         run: echo "::notice::Noch kein CLOUDFLARE_API_TOKEN hinterlegt, Worker wurde nur getestet."

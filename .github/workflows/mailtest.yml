@@ -1,0 +1,27 @@
+name: Mailtest Outlook
+# Einmaliger Test: welche Mail-Variante zeigt Outlook am PC an? Danach wieder löschen.
+on: workflow_dispatch
+jobs:
+  senden:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Drei Testmails an die Bestelladresse
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+          absender = "Bein und Fuss <bestellung@xn--beinundfu-o1a.de>"
+          an = ["sales@ts-systec.de"]
+          html = lambda t: '<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head><body><p style="font-family:Arial">' + t + '</p></body></html>'
+          mails = [
+            {"from": "bestellung@xn--beinundfu-o1a.de", "to": an, "subject": "Mailtest 1", "text": "Mailtest 1: nur Text, ohne Absendername."},
+            {"from": absender, "to": an, "subject": "Mailtest 2", "text": "Mailtest 2: Text und HTML.", "html": html("Mailtest 2: Text und HTML.")},
+            {"from": absender, "to": an, "subject": "Mailtest 3", "reply_to": "sales@ts-systec.de", "text": "Mailtest 3: wie die Bestellmail, mit Antwortadresse. Umlaute: äöüß.", "html": html("Mailtest 3: wie die Bestellmail, mit Antwortadresse. Umlaute: &auml;&ouml;&uuml;&szlig;.")},
+          ]
+          for m in mails:
+              r = urllib.request.Request("https://api.resend.com/emails", data=json.dumps(m).encode(), method="POST",
+                  headers={"Authorization": "Bearer " + os.environ["RESEND_API_KEY"], "Content-Type": "application/json", "User-Agent": "beinundfuss-mailtest"})
+              with urllib.request.urlopen(r) as a:
+                  print(m["subject"], a.status)
+          PY

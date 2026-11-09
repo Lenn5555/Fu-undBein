@@ -782,10 +782,12 @@ def main():
     # Ausgeblendete Produkte (ohne gesicherten Preis): alte Seite leitet auf die Kategorie weiter
     for p in produkte:
         if p.get("ausgeblendet"):
-            ziel = kat_url(p["merkmale"]["Bauform"])
-            schreibe(f"produkte/{p['slug']}", f'<!doctype html><meta charset="utf-8"><title>{e(p["merkmale"]["Bauform"])}</title>'
-                     f'<meta name="robots" content="noindex"><link rel="canonical" href="{kat_url(p["merkmale"]["Bauform"], absolut=True)}">'
-                     f'<meta http-equiv="refresh" content="0; url={b.BASIS}{ziel}"><a href="{ziel}">{e(p["merkmale"]["Bauform"])}</a>')
+            bf = p["merkmale"]["Bauform"]
+            bf = bf[0] if isinstance(bf, list) else bf
+            ziel = kat_url(bf)
+            schreibe(f"produkte/{p['slug']}", f'<!doctype html><meta charset="utf-8"><title>{e(bf)}</title>'
+                     f'<meta name="robots" content="noindex"><link rel="canonical" href="{kat_url(bf, absolut=True)}">'
+                     f'<meta http-equiv="refresh" content="0; url={b.BASIS}{ziel}"><a href="{ziel}">{e(bf)}</a>')
     schreibe("versandkosten", versandseite())
     SEITEN.append(("versandkosten/", "0.4"))
     shutil.copy(ROOT / "daten/versandkosten.json", OUT / "assets/versandkosten.json")

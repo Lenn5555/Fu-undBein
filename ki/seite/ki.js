@@ -318,13 +318,54 @@
     menge.addEventListener("input", rechnen);
     f.appendChild(summe); rechnen();
     var versand = versandFelder();
-    f.appendChild(versand.land); f.appendChild(versand.ab); f.appendChild(versand.tabelle);
-    f.appendChild(versand.ausland);
-    zeile("Firma", "firma", "text");
+    zeile("Firma", "firma", "text", false, { autocomplete: "organization" });
     zeile("Name", "name", "text", true, { autocomplete: "name" });
     zeile("E-Mail", "email", "email", true, { autocomplete: "email" });
     zeile("Telefon", "telefon", "tel", false, { autocomplete: "tel" });
+    // Lieferadresse in einzelnen Feldern
+    f.appendChild(el("h3", "ki-abschnitt", "Lieferadresse"));
+    zeile("Straße und Hausnummer", "strasse", "text", true, { autocomplete: "shipping street-address", maxLength: 120 });
+    zeile("Adresszusatz", "zusatz", "text", false, { maxLength: 120, placeholder: "z. B. Halle 3, Wareneingang" });
+    var plzOrt = el("div", "ki-plz-ort");
+    var plzEnde = f.lastChild;
+    zeile("PLZ", "plz", "text", true, { autocomplete: "shipping postal-code", maxLength: 10, inputMode: "numeric" });
+    zeile("Ort", "ort", "text", true, { autocomplete: "shipping address-level2", maxLength: 80 });
+    plzOrt.appendChild(plzEnde.nextSibling); plzOrt.appendChild(plzEnde.nextSibling);
+    f.appendChild(plzOrt);
+    f.appendChild(versand.land); f.appendChild(versand.ab); f.appendChild(versand.tabelle);
+    f.appendChild(versand.ausland);
     f.appendChild(versand.ust);
+    // Rechnungsadresse: standardmäßig gleich der Lieferadresse; abgewählt erscheinen eigene Felder, vorbelegt mit der Lieferadresse
+    f.appendChild(el("h3", "ki-abschnitt", "Rechnungsadresse"));
+    var gl = el("label", "ki-check");
+    var gleich = el("input"); gleich.type = "checkbox"; gleich.checked = true;
+    gl.appendChild(gleich); gl.appendChild(el("span", null, "Rechnungsadresse ist gleich der Lieferadresse"));
+    f.appendChild(gl);
+    var rBox = el("div", "ki-rechnung"); rBox.hidden = true;
+    var rFelder = {};
+    [["Firma", "firma", false, "billing organization"], ["Name", "name", false, "billing name"],
+     ["Straße und Hausnummer", "strasse", true, "billing street-address"], ["Adresszusatz", "zusatz", false, "off"],
+     ["PLZ", "plz", true, "billing postal-code"], ["Ort", "ort", true, "billing address-level2"], ["Land", "land", true, "billing country-name"]]
+      .forEach(function (x) {
+        var l = el("label", null, x[0] + (x[2] ? " *" : ""));
+        var i = el("input"); i.type = "text"; i.autocomplete = x[3]; i.maxLength = x[1] === "plz" ? 10 : 120;
+        i.dataset.pflicht = x[2] ? "1" : "";
+        l.appendChild(i); rBox.appendChild(l); rFelder[x[1]] = i;
+      });
+    f.appendChild(rBox);
+    function rechnungZeigen() {
+      rBox.hidden = gleich.checked;
+      Object.keys(rFelder).forEach(function (k) { rFelder[k].required = !gleich.checked && !!rFelder[k].dataset.pflicht; });
+      if (!gleich.checked) {
+        var e = f.elements;
+        var von = { firma: e.firma.value, name: e.name.value, strasse: e.strasse.value, zusatz: e.zusatz.value,
+          plz: e.plz.value, ort: e.ort.value, land: e.land.value };
+        var leer = Object.keys(rFelder).every(function (k) { return !rFelder[k].value; });
+        if (leer) Object.keys(rFelder).forEach(function (k) { rFelder[k].value = von[k] || ""; });
+        rFelder.firma.focus();
+      }
+    }
+    gleich.addEventListener("change", rechnungZeigen);
     // Zahlung nur im Voraus; die Zahlungsdaten kommen mit der Auftragsbestätigung
     var zahl = el("label", null, "Zahlungsart *");
     var zs = el("select"); zs.name = "zahlart"; zs.required = true;
@@ -332,7 +373,6 @@
     zahl.appendChild(zs); f.appendChild(zahl);
     var zahlHinweis = el("p", "ki-kurz");
     f.appendChild(zahlHinweis);
-    zeile("Lieferadresse", "adresse", "textarea", true, { rows: 3 });
     zeile("Hinweis", "hinweis", "textarea", false, { rows: 2 });
     var falle = zeile("Website", "website", "text", false, { tabIndex: -1, autocomplete: "off" });
     falle.parentNode.className = "ki-falle";
@@ -368,6 +408,11 @@
       if (w.variante) d.variante = w.variante;
       d.optionen = w.optionen;
       d.sku = p.sku; d.menge = parseInt(d.menge, 10); d.zustimmung = z.checked;
+      d.rechnung_gleich = gleich.checked;
+      if (!gleich.checked) {
+        d.rechnung = {};
+        Object.keys(rFelder).forEach(function (k) { d.rechnung[k] = rFelder[k].value; });
+      }
       if (window.bfHerkunft) d.herkunft = window.bfHerkunft; // nur „werbung“, für die Erfolgsmessung der Anzeigen
       return d;
     }

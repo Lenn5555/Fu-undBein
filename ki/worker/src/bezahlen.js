@@ -49,7 +49,7 @@ export function bezahlbar(b) {
 export async function fingerabdruck(b) {
   const k = b.kunde;
   const roh = JSON.stringify([b.produkt.sku, b.variante?.sku || "", b.gewaehlt || {}, b.menge, k.firma, k.name, k.email,
-    k.telefon, k.adresse, k.land, k.ust_id, k.hinweis, k.wunsch, k.zahlart]);
+    k.telefon, k.adresse, k.land, k.ust_id, k.hinweis, k.wunsch, k.zahlart, k.rechnung]);
   const h = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(roh));
   return [...new Uint8Array(h)].map((x) => x.toString(16).padStart(2, "0")).join("");
 }

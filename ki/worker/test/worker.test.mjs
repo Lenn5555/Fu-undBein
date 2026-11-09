@@ -134,14 +134,14 @@ test("Lieferland und USt-IdNr.: EU-Ausland nur mit USt-IdNr., Nicht-EU mit Hinwe
   const basis = { ...KUNDE, sku: p.sku, menge: 1 };
   const inland = pruefen(basis);
   assert.ok(!inland.fehler, inland.fehler);
-  assert.match(mailText("BF-5", inland, null), /Lieferland: Deutschland/);
+  assert.match(mailText("BF-5", inland, null), /LIEFERADRESSE\n.*\nDeutschland\n/);
   assert.doesNotMatch(mailText("BF-5", inland, null), /AUSLANDSBESTELLUNG/);
   assert.match(pruefen({ ...basis, land: "Österreich" }).fehler, /USt-IdNr/);
   assert.match(pruefen({ ...basis, land: "Atlantis" }).fehler, /Lieferland/);
   const at = pruefen({ ...basis, land: "Österreich", ust_id: "atu 1234 5678" });
   assert.ok(!at.fehler, at.fehler);
   const mail = mailText("BF-6", at, null);
-  assert.match(mail, /Lieferland: Österreich/);
+  assert.match(mail, /LIEFERADRESSE\n.*\nÖsterreich\n/);
   assert.match(mail, /USt-IdNr\.: ATU12345678/);
   assert.match(mail, /AUSLANDSBESTELLUNG: EU, ohne deutsche MwSt/);
   const ch = pruefen({ ...basis, land: "Schweiz" });
@@ -282,4 +282,26 @@ test("Sofortbezahlen: Betrag, Pauschale, Fingerabdruck und Prüfung vor dem Einz
   assert.match(mail, /BEZAHLT über PayPal \(PayPal\)/);
   assert.doesNotMatch(mail, /Zahlungsdaten bzw\. Zahlungslink/);
   assert.match((await abschliessen(env, "x y", de, abruf)).fehler, /Ungültige/);
+});
+
+test("Lieferadresse in Feldern und abweichende Rechnungsadresse", async () => {
+  const { pruefen, mailText } = await import("../src/bestellung.js");
+  const { NACH_SKU } = await import("../src/berater.js");
+  const p = [...NACH_SKU.values()].find((x) => !x.varianten.length && !Object.keys(x.optionen || {}).length);
+  const basis = { sku: p.sku, menge: 2, name: "Max", firma: "Muster GmbH", email: "max@example.com", zustimmung: true,
+    strasse: "Hauptstr. 5", plz: "64319", ort: "Pfungstadt" };
+  const b = pruefen(basis);
+  assert.ok(!b.fehler, b.fehler);
+  assert.equal(b.kunde.adresse, "Hauptstr. 5, 64319 Pfungstadt");
+  let t = mailText("BF-1", b, null);
+  assert.match(t, /LIEFERADRESSE\nMuster GmbH\nMax\nHauptstr\. 5\n64319 Pfungstadt\nDeutschland/);
+  assert.match(t, /RECHNUNGSADRESSE\ngleich Lieferadresse/);
+  assert.match(pruefen({ ...basis, plz: "123" }).fehler, /Postleitzahl/);
+  assert.match(pruefen({ ...basis, ort: "" }).fehler, /Straße, PLZ und Ort/);
+  assert.match(pruefen({ ...basis, rechnung_gleich: false, rechnung: { firma: "X" } }).fehler, /Rechnungsadresse/);
+  const r = pruefen({ ...basis, rechnung_gleich: false,
+    rechnung: { firma: "Muster Holding", strasse: "Ring 1", plz: "60311", ort: "Frankfurt", land: "Deutschland" } });
+  assert.ok(!r.fehler, r.fehler);
+  t = mailText("BF-1", r, null);
+  assert.match(t, /RECHNUNGSADRESSE\nMuster Holding\nRing 1\n60311 Frankfurt\nDeutschland/);
 });

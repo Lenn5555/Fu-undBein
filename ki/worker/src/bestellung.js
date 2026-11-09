@@ -11,7 +11,17 @@ const LAENDER = new Map([["Deutschland", { eu: true }], ...VERSAND.europa.laende
 
 const ZAHLARTEN = ["Überweisung (Vorkasse)", "Kreditkarte", "PayPal"];
 
-const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, hinweis: 1000, wunsch: 200, land: 60, ust_id: 20, zahlart: 40 };
+const FELDER = { firma: 120, name: 120, email: 160, telefon: 60, adresse: 400, strasse: 120, zusatz: 120, plz: 10, ort: 80,
+  hinweis: 1000, wunsch: 200, land: 60, ust_id: 20, zahlart: 40 };
+// Abweichende Rechnungsadresse (nur wenn „gleich Lieferadresse“ abgewählt ist)
+const R_FELDER = { firma: 120, name: 120, strasse: 120, zusatz: 120, plz: 10, ort: 80, land: 60 };
+
+function plzOk(plz, land) {
+  return land === "Deutschland" ? /^\d{5}$/.test(plz) : /^[0-9A-Za-z][0-9A-Za-z -]{1,9}$/.test(plz);
+}
+function zeilenAdresse(a) {
+  return [a.firma, a.name, a.strasse, a.zusatz, `${a.plz} ${a.ort}`.trim(), a.land].filter(Boolean);
+}
 
 function euro(x) {
   return x.toFixed(2).replace(".", ",") + " €";
@@ -38,11 +48,28 @@ export function pruefen(d) {
   if (!Number.isInteger(menge) || menge < 1 || menge > 100000) return { fehler: "Bitte eine Menge zwischen 1 und 100000 angeben." };
   const k = {};
   for (const [feld, max] of Object.entries(FELDER)) k[feld] = String(d[feld] ?? "").trim().slice(0, max);
-  if (!k.name || !k.adresse) return { fehler: "Bitte Name und Lieferadresse angeben." };
+  if (!k.name) return { fehler: "Bitte einen Namen angeben." };
+  // Lieferadresse in einzelnen Feldern; „adresse“ (ein Textfeld) nur noch für alte Seitenstände
+  if (k.strasse || k.plz || k.ort) {
+    if (!k.strasse || !k.plz || !k.ort) return { fehler: "Bitte Straße, PLZ und Ort der Lieferadresse angeben." };
+  } else if (!k.adresse) return { fehler: "Bitte die Lieferadresse angeben." };
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(k.email)) return { fehler: "Bitte eine gültige E-Mail-Adresse angeben." };
   if (!k.land) k.land = "Deutschland";
   const land = LAENDER.get(k.land);
   if (!land) return { fehler: "Bitte ein Lieferland aus der Liste wählen." };
+  if (k.plz && !plzOk(k.plz, k.land)) return { fehler: "Bitte eine gültige Postleitzahl der Lieferadresse angeben." };
+  if (k.strasse) k.adresse = [k.strasse, k.zusatz, `${k.plz} ${k.ort}`].filter(Boolean).join(", ");
+  // Rechnungsadresse: gleich Lieferadresse, außer der Kunde hat eine andere angegeben
+  k.rechnung = null;
+  if (d.rechnung_gleich === false) {
+    const r = {};
+    const roh = d.rechnung && typeof d.rechnung === "object" ? d.rechnung : {};
+    for (const [feld, max] of Object.entries(R_FELDER)) r[feld] = String(roh[feld] ?? "").trim().slice(0, max);
+    if (!r.firma && !r.name) return { fehler: "Bitte Firma oder Name für die Rechnungsadresse angeben." };
+    if (!r.strasse || !r.plz || !r.ort || !r.land) return { fehler: "Bitte Straße, PLZ, Ort und Land der Rechnungsadresse angeben." };
+    if (!plzOk(r.plz, r.land)) return { fehler: "Bitte eine gültige Postleitzahl der Rechnungsadresse angeben." };
+    k.rechnung = r;
+  }
   k.ust_id = k.ust_id.replace(/[\s.-]/g, "").toUpperCase();
   if (k.land !== "Deutschland" && land.eu && !/^[A-Z]{2}[0-9A-Z+*]{2,12}$/.test(k.ust_id))
     return { fehler: "Für Lieferungen ins EU-Ausland brauchen wir Ihre USt-IdNr. (z. B. IT12345678901)." };
@@ -83,10 +110,15 @@ export function mailText(nr, b, quelle, zahlung = null) {
     `Name: ${k.name}`,
     `E-Mail: ${k.email}`,
     `Telefon: ${k.telefon || "-"}`,
-    `Lieferadresse: ${k.adresse}`,
-    `Lieferland: ${k.land}`,
     `USt-IdNr.: ${k.ust_id || "-"}`,
     `Hinweis: ${k.hinweis || "-"}`,
+    ``,
+    `LIEFERADRESSE`,
+    ...(k.strasse ? zeilenAdresse({ firma: k.firma, name: k.name, strasse: k.strasse, zusatz: k.zusatz, plz: k.plz, ort: k.ort, land: k.land })
+      : [k.adresse, k.land]),
+    ``,
+    `RECHNUNGSADRESSE`,
+    ...(k.rechnung ? zeilenAdresse(k.rechnung) : [`gleich Lieferadresse`]),
     ``,
     ...(zahlung ? zahlungsZeilen(zahlung) : [`ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungsdaten bzw. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`]),
     ``,

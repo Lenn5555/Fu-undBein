@@ -293,6 +293,9 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-formular input, .ki-formular select, .ki-formular textarea { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid var(--linie); border-radius: var(--r-klein); background: var(--weiss); font-size: var(--step-body); }
 .ki-formular .ki-check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
 .ki-formular .ki-check input { width: 20px; min-height: 20px; flex: none; margin-top: 2px; accent-color: var(--ink); }
+.ki-formular .ki-abschnitt { font-size: var(--step-body); font-weight: 700; margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--linie); }
+.ki-plz-ort { display: grid; grid-template-columns: minmax(96px, 1fr) 2.4fr; gap: 12px; }
+.ki-rechnung { display: grid; gap: 14px; }
 .ki-falle { position: absolute; left: -9999px; }
 .ki-meldung { font-weight: 500; min-height: 1.5em; }
 .ki-knoepfe { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }

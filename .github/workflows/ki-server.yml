@@ -90,7 +90,7 @@ jobs:
           node -e "
             const k = require('./src/katalog.json').find((p) => p.varianten.length);
             console.log(JSON.stringify({ sku: k.sku, variante: k.varianten[0].sku, menge: 4, firma: 'TEST',
-              name: 'Testbestellung, bitte ignorieren', email: 'sales@ts-systec.de', adresse: 'Test, keine Lieferung',
+              name: 'Testbestellung, bitte ignorieren', email: 'sales@ts-systec.de', strasse: 'Teststraße 1', zusatz: 'Test, keine Lieferung', plz: '64319', ort: 'Pfungstadt',
               hinweis: 'Automatischer Test der Bestellmail. Bitte nicht bearbeiten.', zustimmung: true }));
           " > bestellung.json
           curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bestellen \

@@ -89,14 +89,15 @@ class Lesen(unittest.TestCase):
             self.assertEqual(pw.pruefe(e, 200, e["bestell_url"], seite, basis)["art"], "fehler")
 
 
-class Ablauf(unittest.TestCase):
-    """Ganzer Lauf mit erfundenen Seiten in einem Temp-Ordner."""
+class Lauf(unittest.TestCase):
+    """Ganzer Lauf mit erfundenen Seiten in einem Temp-Ordner (Grundlage, ohne eigene Tests)."""
 
     def setUp(self):
         self.tmp = Path(tempfile.mkdtemp())
         (self.tmp / "daten").mkdir()
         self.patches = [mock.patch.object(pw, n, self.tmp / f"daten/{d}") for n, d in
-                        (("PREISE", "preise-vergleich.csv"), ("AUSGEBLENDET", "ausgeblendet.csv"), ("STAND", "preiswaechter.json"))]
+                        (("PREISE", "preise-vergleich.csv"), ("AUSGEBLENDET", "ausgeblendet.csv"), ("STAND", "preiswaechter.json"),
+                         ("FESTE", "feste-preise.json"))]
         self.ki = None  # Antwort des zweiten Lesers (Claude); None = nicht verfügbar
         self.ki_aufrufe = 0
         # Rechenbeispiele unten mit 10 % Aufschlag; der echte Aufschlag steht in preiswaechter.AUFSCHLAG
@@ -128,6 +129,8 @@ class Ablauf(unittest.TestCase):
         with (self.tmp / "daten/preise-vergleich.csv").open() as f:
             return {r["sku"]: r["preis_netto"] for r in csv.DictReader(f)}
 
+
+class Ablauf(Lauf):
     def test_erster_lauf_aendert_nichts_dann_preis_und_ausblenden(self):
         self.seiten["https://h.test/p1"] = (200, "<h1>Typ 45810001</h1><p>10,20 €</p>")
         vk = self.lauf()
@@ -228,6 +231,95 @@ class Ablauf(unittest.TestCase):
         with mock.patch.dict("os.environ", {"GITHUB_OUTPUT": str(self.tmp / "out.txt")}):
             self.lauf()
         self.assertIn("wichtig=nein", (self.tmp / "out.txt").read_text())
+
+
+class FestePreise(Lauf):
+    """Feste Preise (09.11.2026): Einzelpreis je Produkt und Preise je Ausführung in daten/feste-preise.json."""
+
+    def setUp(self):
+        super().setUp()
+        self.bezug["BF-V-1"] = {**eintrag("https://h.test/p1", 10.91, ""), "artikel": "Typ 45810001"}
+        self.bezug["BF-V-2"] = {**eintrag("https://h.test/s", 10.0, "ab"), "varianten": {
+            "BF-V-2-01": {"artikel": "Typ 77770001", "ek_netto": 10.0, "bestell_url": "https://h.test/v"},
+            "BF-V-2-02": {"artikel": "Typ 77770002", "ek_netto": 12.0}}}
+        self.bezug["BF-V-2"]["varianten"]["BF-V-2-02"]["bestell_url"] = "https://h.test/v"
+        (self.tmp / "bq.json").write_text(json.dumps(self.bezug))
+        self.fest = {"BF-V-1": {"preis": 12.0}, "BF-V-2": {"varianten": [
+            {"sku": "BF-V-2-01", "ausfuehrung": "Teller 40 mm", "wahl": {"Teller": "40 mm"}, "preis": 11.0},
+            {"sku": "BF-V-2-02", "ausfuehrung": "Teller 60 mm", "wahl": {"Teller": "60 mm"}, "preis": 13.2}]}}
+        (self.tmp / "daten/feste-preise.json").write_text(json.dumps(self.fest, ensure_ascii=False, indent=1))
+        self.seiten["https://h.test/p1"] = (200, "<h1>Typ 45810001</h1><p>10,91 €</p>")
+        self.variantenseite(10.0, 12.0)
+
+    def variantenseite(self, a, b, zweite="Typ 77770002"):
+        self.seiten["https://h.test/v"] = (200, f"<table><tr><td>Typ 77770001</td><td>{a:.2f} €</td></tr>"
+                                                f"<tr><td>{zweite}</td><td>{b:.2f} €</td></tr></table>".replace(".", ","))
+
+    def feste(self):
+        return json.loads((self.tmp / "daten/feste-preise.json").read_text())
+
+    def test_preis_je_ausfuehrung(self):
+        self.lauf()
+        self.variantenseite(10.0, 12.5)
+        self.lauf()
+        vk = self.lauf()
+        v = {x["sku"]: x["preis"] for x in self.feste()["BF-V-2"]["varianten"]}
+        self.assertEqual(v, {"BF-V-2-01": 11.0, "BF-V-2-02": 13.75})
+        self.assertNotIn("BF-V-2-02", vk)  # Ausführungen stehen nur in feste-preise.json
+        self.assertNotIn("BF-V-2", json.loads((self.tmp / "daten/preiswaechter.json").read_text())["artikel"])
+
+    def test_fester_einzelpreis(self):
+        self.lauf()
+        self.seiten["https://h.test/p1"] = (200, "<h1>Typ 45810001</h1><p>11,00 €</p>")
+        self.lauf()
+        self.lauf()
+        self.assertEqual(self.feste()["BF-V-1"]["preis"], 12.1)
+
+    def test_ausfuehrung_weg_nur_gemeldet(self):
+        self.lauf()
+        self.variantenseite(10.0, 12.0, zweite="Typ 99990002")
+        self.lauf()
+        with mock.patch.dict("os.environ", {"GITHUB_OUTPUT": str(self.tmp / "out.txt")}):
+            self.lauf()
+        self.assertIn("AUSFÜHRUNG NICHT MEHR DA", (self.tmp / "bericht.txt").read_text())
+        self.assertIn("wichtig=ja", (self.tmp / "out.txt").read_text())
+        self.assertEqual(len(self.feste()["BF-V-2"]["varianten"]), 2)  # bleibt im Shop
+        self.lauf()
+        self.assertNotIn("AUSFÜHRUNG NICHT MEHR DA", (self.tmp / "bericht.txt").read_text())  # nur einmal gemeldet
+
+    def test_fester_preis_ausblenden_und_zurueck(self):
+        self.lauf()
+        self.seiten["https://h.test/p1"] = (404, "")
+        self.lauf()
+        self.lauf()
+        self.assertNotIn("BF-V-1", self.feste())
+        self.assertEqual(pw.lade_csv(self.tmp / "daten/ausgeblendet.csv")[0]["sku"], "BF-V-1")
+        self.seiten["https://h.test/p1"] = (200, "<h1>Typ 45810001</h1><p>10,91 €</p>")
+        self.lauf()
+        self.lauf()
+        self.assertEqual(self.feste()["BF-V-1"], {"preis": 12.0})
+
+    def test_altes_secret_ueberspringt_feste_preise(self):
+        del self.bezug["BF-V-2"]["varianten"]
+        (self.tmp / "bq.json").write_text(json.dumps(self.bezug))
+        self.lauf()
+        self.seiten["https://h.test/p1"] = (200, "<h1>Typ 45810001</h1><p>3,00 €</p>")
+        with mock.patch.dict("os.environ", {"GITHUB_OUTPUT": str(self.tmp / "out.txt")}):
+            self.lauf()
+        self.assertIn("SECRET BEZUGSQUELLEN VERALTET: 2", (self.tmp / "bericht.txt").read_text())
+        self.assertIn("wichtig=ja", (self.tmp / "out.txt").read_text())
+        self.assertEqual(self.feste(), self.fest)
+
+    def test_neue_zuordnung_misst_neu_ein(self):
+        self.lauf()
+        stand = json.loads((self.tmp / "daten/preiswaechter.json").read_text())
+        stand["artikel"]["BF-V-1"]["ref"] = "alt"
+        stand["artikel"]["BF-V-1"]["vorschlag_vk"] = 99.0
+        (self.tmp / "daten/preiswaechter.json").write_text(json.dumps(stand))
+        self.lauf()
+        a = json.loads((self.tmp / "daten/preiswaechter.json").read_text())["artikel"]["BF-V-1"]
+        self.assertNotIn("vorschlag_vk", a)
+        self.assertEqual(a["weg"], "nach:0")
 
 
 if __name__ == "__main__":

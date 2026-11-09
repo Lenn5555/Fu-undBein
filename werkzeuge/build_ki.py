@@ -206,6 +206,12 @@ def euro(x):
     return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " €"
 
 
+def spanne(l):
+    """„0,35 bis 212,40 €“ für eine Gruppe von Produkten (statt „ab“, Lenn 09.11.2026)."""
+    w = [x for p in l for x in ([v["preis"] for v in p["varianten"]] or [p["preis"]]) if x]
+    return euro(min(w)) if min(w) == max(w) else f"{euro(min(w))[:-2]} bis {euro(max(w))}"
+
+
 def min_preis(p):
     w = [v["preis"] for v in p["varianten"]] or [p["preis"]]
     return min(x for x in w if x)
@@ -346,12 +352,12 @@ def beraterseite(liste):
         # Alle Modelle der Bauform, jedes führt zu seiner Produktseite
         zeilen = "".join(f'<li><a href="{produkt_url(p)}"><span>{e(p["name"])}</span><span class="kb-preis">{preis_ab_text(p)}</span></a></li>' for p in l)
         bars.append(f'<details class="kb-bar"{" open" if i == 0 else ""}><summary><span>{e(mehrzahl)}</span>'
-                    f'<span class="kb-bar-info">{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></summary><ul>{zeilen}</ul>'
+                    f'<span class="kb-bar-info">{len(l)} Modelle, {spanne(l)}</span></summary><ul>{zeilen}</ul>'
                     f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
     band = "".join(f"<span>{e(x)}</span>" for x in (
         f"{anzahl} Modelle mit Preis", f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
-        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"ab {euro(min(map(min_preis, liste)))} netto"))
+        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"{spanne(liste)} netto"))
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])
@@ -580,7 +586,7 @@ def produktuebersicht(liste):
         if not l:
             continue
         zeilen = "".join(f'<li><a href="{produkt_url(q)}"><span>{e(q["name"])}</span><span class="pr-zahl">{preis_ab_text(q)}</span></a></li>' for q in l[:10])
-        teile.append(f'<section id="{b.slug(bauform)}"><h2><a href="{kat_url(bauform)}">{e(mehrzahl)}</a> <span>{len(l)} Modelle ab {euro(min_preis(l[0]))}</span></h2>'
+        teile.append(f'<section id="{b.slug(bauform)}"><h2><a href="{kat_url(bauform)}">{e(mehrzahl)}</a> <span>{len(l)} Modelle, {spanne(l)}</span></h2>'
                      f'<ul class="pr-liste pr-spalten">{zeilen}</ul>'
                      + (f'<p><a class="pr-mehr" href="{kat_url(bauform)}">Alle {len(l)} {e(mehrzahl)} ansehen</a></p>' if len(l) > 10 else "") + '</section>')
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / Produkte</nav>'
@@ -650,7 +656,7 @@ def kategorieseite(bauform, l):
     frage = f"Ich suche {mehrzahl}. Welche passen für meine Anwendung?"
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / '
               f'<a href="/produkte/">Produkte</a> / {e(mehrzahl)}</nav><h1>{e(titel)}</h1><p class="pr-kurz">{e(text)}</p>'
-              f'<p class="pr-kurz">{len(l)} Modelle ab {euro(min_preis(l[0]))} netto pro Stück. Unsicher, welcher passt? '
+              f'<p class="pr-kurz">{len(l)} Modelle, {spanne(l)} netto pro Stück. Unsicher, welcher passt? '
               f'<a href="/?frage={quote(frage)}#berater">Fragen Sie den Berater.</a></p>'
               f'<section>{sortierleiste(l)}<ul class="pr-liste pr-spalten" id="pr-modelle">{zeilen}</ul></section></article>')
     pfad = kat_url(bauform)[1:]
@@ -660,7 +666,7 @@ def kategorieseite(bauform, l):
         {"@type": "ListItem", "position": 2, "name": "Produkte", "item": f"{SITE_URL}/produkte/"},
         {"@type": "ListItem", "position": 3, "name": mehrzahl, "item": kat_url(bauform, True)}]}
     return seitenrahmen(f"{titel}: {len(l)} Modelle mit Preis | beinundfuß.de", inhalt,
-                        beschreibung=f"{len(l)} {mehrzahl} ab {euro(min_preis(l[0]))} netto. {text}"[:300],
+                        beschreibung=f"{len(l)} {mehrzahl}, {spanne(l)} netto. {text}"[:300],
                         kopf=PRODUKT_CSS + '<script src="/assets/kategorie.js" defer></script>'
                         + f'<script type="application/ld+json">{json.dumps(krumen, ensure_ascii=False)}</script>', pfad=pfad, seite="kategorie")
 

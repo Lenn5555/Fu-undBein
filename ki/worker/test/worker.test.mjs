@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { beraten, produkteZeigen, nachrichtenAus, SYSTEM } from "../src/berater.js";
+import { beraten, produkteZeigen, nachrichtenAus, SYSTEM, NACH_SKU } from "../src/berater.js";
 import { pruefen, mailText, mailHtml, senden } from "../src/bestellung.js";
 import KATALOG from "../src/katalog.json" with { type: "json" };
 
@@ -11,7 +11,7 @@ function falscherClient(antworten) {
 }
 
 test("Katalog enthält nur Produkte mit Preis und keine internen Daten", () => {
-  assert.ok(KATALOG.length > 200);
+  assert.ok(KATALOG.length > 150);
   for (const p of KATALOG) assert.ok(p.preis || p.varianten.length, p.sku);
   const roh = JSON.stringify(KATALOG) + SYSTEM;
   for (const wort of ["ek_netto", "bezugsquelle", "bestell_url", "preis_quelle"]) assert.ok(!roh.includes(wort), wort);
@@ -101,8 +101,9 @@ test("Bestellmail enthält Bezugsquelle, EK und Aufschlag", async () => {
 });
 
 test("Wählbares Gewinde wird geprüft und steht in der Bestellmail", () => {
-  const p = KATALOG.find((p) => Object.keys(p.optionen || {}).length);
-  assert.ok(p, "Katalog enthält Serien mit wählbarem Gewinde");
+  // Seit den festen Preisen (09.11.2026) hat keine Serie mehr ein wählbares Gewinde; die Prüfung bleibt für künftige Serien
+  const p = { ...structuredClone(KATALOG.find((p) => !p.varianten.length)), sku: "TEST-GEWINDE", optionen: { Gewinde: ["M8", "M10", "M12"] } };
+  NACH_SKU.set(p.sku, p);
   const werte = p.optionen.Gewinde;
   assert.match(pruefen({ ...KUNDE, sku: p.sku, menge: 2 }).fehler, /Gewinde/);
   assert.match(pruefen({ ...KUNDE, sku: p.sku, menge: 2, optionen: { Gewinde: "M999" } }).fehler, /Gewinde/);
@@ -112,6 +113,7 @@ test("Wählbares Gewinde wird geprüft und steht in der Bestellmail", () => {
   assert.match(text, new RegExp(`BESTELLTE AUSFÜHRUNG: Gewinde ${werte[1]}`));
   assert.match(text, /Wunsch des Kunden zur Ausführung: Länge 125 mm/);
   assert.match(text, new RegExp(`Kennung: ${p.sku}\\|Gewinde=${werte[1]}`));
+  NACH_SKU.delete(p.sku);
 });
 
 test("Gewählte Variante steht mit Artikelnummer in der Bestellmail", () => {
@@ -264,9 +266,12 @@ test("Sofortbezahlen: Betrag, Pauschale, Fingerabdruck und Prüfung vor dem Einz
   const at = pruefen({ ...basis, land: "Österreich", ust_id: "ATU12345678" });
   assert.match(bezahlbar(at), /nur bei Lieferung nach Deutschland/);
   assert.equal(bezahlbar(de), null);
-  const serie = KATALOG.find((x) => x.preis_ab && x.varianten.length === 0 && !Object.keys(x.optionen || {}).length);
+  // Serie ohne gesicherten Preis je Ausführung (seit 09.11.2026 ausgeblendet, die Sperre bleibt)
+  const serie = { ...structuredClone(KATALOG.find((x) => !x.varianten.length)), sku: "TEST-SERIE", preis_ab: true };
+  NACH_SKU.set(serie.sku, serie);
   const { variante, ...ohneVariante } = basis;
   assert.match(bezahlbar(pruefen({ ...ohneVariante, sku: serie.sku })), /Überweisung/);
+  NACH_SKU.delete(serie.sku);
 
   // PayPal nachgebildet: merkt sich die angelegte Bestellung
   const env = { PAYPAL_CLIENT_ID: "id", PAYPAL_SECRET: "geheim" };

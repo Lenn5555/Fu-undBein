@@ -1,8 +1,9 @@
 {
-  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink. google_bestaetigung: Code aus der Google Search Console (Bestätigung per HTML-Tag), leer lassen bis vorhanden.",
+  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink. google_bestaetigung: Code aus der Google Search Console (Bestätigung per HTML-Tag), leer lassen bis vorhanden. nur_feste_preise: true blendet Produkte ohne gesicherten Preis je Ausführung aus (Lenn, 09.11.2026).",
   "anfrage_email": "sales@ts-systec.de",
   "betreiber_zeile": "Ein Angebot der TS Systemtechnik.",
   "bezahllinks": {},
   "ki_api": "https://beinundfuss-ki.beinundfuss.workers.dev",
-  "google_bestaetigung": ""
+  "google_bestaetigung": "",
+  "nur_feste_preise": true
 }

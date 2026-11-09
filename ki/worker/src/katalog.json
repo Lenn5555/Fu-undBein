@@ -3533,7 +3533,7 @@
 "Traglast": "3000 N",
 "Durchmesser": "30 mm"
 },
-"preis": 0.58,
+"preis": 0.56,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4551,7 +4551,7 @@
 "Traglast": "8000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.22,
+"preis": 4.24,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4571,7 +4571,7 @@
 "Traglast": "11000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 7.75,
+"preis": 7.82,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},
@@ -4611,7 +4611,7 @@
 "Traglast": "20000 N",
 "Durchmesser": "125 mm"
 },
-"preis": 27.52,
+"preis": 27.5,
 "preis_ab": true,
 "varianten": [],
 "optionen": {},

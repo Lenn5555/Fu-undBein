@@ -104,6 +104,7 @@ export function mailText(nr, b, quelle, zahlung = null) {
     `Menge: ${menge}`,
     `Stückpreis netto: ${euro(stueck)}${p.preis_ab ? " (ab-Preis, günstigste Ausführung der Serie: Ausführung mit dem Kunden klären)" : ""}`,
     `Summe netto: ${euro(summe)} zzgl. MwSt. und Versand`,
+    `Versand: ${k.land === "Deutschland" ? `pauschal ${euro(VERSAND.deutschland.pauschal)} netto` : "nach GLS-Tarif je Paketgewicht (siehe Versandkosten)"}`,
     ``,
     `KUNDE`,
     `Firma: ${k.firma || "-"}`,

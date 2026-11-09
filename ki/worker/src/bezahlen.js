@@ -6,8 +6,8 @@
 import VERSAND from "./versandkosten.json" with { type: "json" };
 
 export const MWST = 0.19;
-// Pauschale je Bestellung: GLS-Preis bis 5 kg für das Lieferland. Größere Mengen klärt der Innendienst.
-export const PAUSCHALE_BIS_KG = 5;
+// Sofortbezahlen nur bei Lieferung nach Deutschland, mit der festen Versandpauschale (Lenn, 09.11.2026).
+// Auslandsbestellungen bestätigt der Innendienst und schickt eine Zahlungsanforderung.
 
 const cent = (x) => Math.round(x * 100);
 const euro2 = (c) => (c / 100).toFixed(2);
@@ -21,12 +21,7 @@ function apiBasis(env) {
 }
 
 export function versandPauschale(land) {
-  if (land === "Deutschland") {
-    const t = VERSAND.deutschland;
-    return t.preise[t.bis_kg.indexOf(PAUSCHALE_BIS_KG)];
-  }
-  const t = VERSAND.europa.laender.find((l) => l.land === land);
-  return t ? t.preise[VERSAND.europa.bis_kg.indexOf(PAUSCHALE_BIS_KG)] : null;
+  return land === "Deutschland" ? VERSAND.deutschland.pauschal : null;
 }
 
 // Endbetrag in Cent: Ware + Versandpauschale, deutsche MwSt. nur bei Lieferung nach Deutschland
@@ -41,7 +36,7 @@ export function betrag(b) {
 // Sofort bezahlen nur mit festem Stückpreis; bei „ab“-Preisen ohne gewählte Ausführung bestätigt der Innendienst den Preis
 export function bezahlbar(b) {
   if (b.produkt.preis_ab && !b.variante) return "Für diese Serie bestätigen wir den Preis Ihrer Ausführung. Bitte „Überweisung (Vorkasse)“ wählen.";
-  if (versandPauschale(b.kunde.land) == null) return "Für dieses Lieferland ist Sofortbezahlen nicht möglich.";
+  if (versandPauschale(b.kunde.land) == null) return "Sofortbezahlen ist nur bei Lieferung nach Deutschland möglich. Bitte „Überweisung (Vorkasse)“ wählen, Sie erhalten mit der Auftragsbestätigung eine Zahlungsanforderung.";
   return null;
 }
 
@@ -111,6 +106,6 @@ export function zahlungsZeilen(z) {
   return [
     `BEZAHLT über PayPal (${z.zahlart}): ${e(z.betrag.gesamt)} brutto, Transaktion ${z.transaktion}.`,
     `  Ware ${e(z.betrag.ware)} + Versandpauschale ${e(z.betrag.versand)}${z.betrag.mwst ? ` + MwSt. ${e(z.betrag.mwst)}` : " (ohne deutsche MwSt.)"}.`,
-    `  Ware kann versendet werden. Versand ist mit der Pauschale abgegolten, laut AGB keine Nachberechnung.`,
+    `  Ware kann versendet werden. Versand ist mit der Pauschale abgegolten, keine Nachberechnung.`,
   ];
 }

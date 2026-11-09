@@ -243,14 +243,14 @@ test("Sofortbezahlen: Betrag, Pauschale, Fingerabdruck und Prüfung vor dem Einz
   const basis = { sku: p.sku, variante: v.sku, menge: 3, name: "Max", email: "max@example.com", adresse: "Weg 1", zustimmung: true, zahlart: "PayPal" };
   const de = pruefen(basis);
   assert.ok(!de.fehler, de.fehler);
-  assert.equal(versandPauschale("Deutschland"), 4.63);
+  assert.equal(versandPauschale("Deutschland"), 4.99);
   const g = betrag(de);
   assert.equal(g.ware, Math.round(v.preis * 3 * 100));
-  assert.equal(g.versand, 463);
-  assert.equal(g.mwst, Math.round((g.ware + 463) * 0.19));
+  assert.equal(g.versand, 499);
+  assert.equal(g.mwst, Math.round((g.ware + 499) * 0.19));
   assert.equal(g.gesamt, g.ware + g.versand + g.mwst);
   const at = pruefen({ ...basis, land: "Österreich", ust_id: "ATU12345678" });
-  assert.equal(betrag(at).mwst, 0);
+  assert.match(bezahlbar(at), /nur bei Lieferung nach Deutschland/);
   assert.equal(bezahlbar(de), null);
   const serie = KATALOG.find((x) => x.preis_ab && x.varianten.length === 0 && !Object.keys(x.optionen || {}).length);
   const { variante, ...ohneVariante } = basis;

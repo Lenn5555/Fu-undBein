@@ -209,12 +209,17 @@
     d.appendChild(inhalt);
     function kg(x) { return String(x).replace(".", ",") + " kg"; }
     function tarif(v) {
-      if (wahl.value === "Deutschland") return { bis: v.deutschland.bis_kg, preise: v.deutschland.preise };
       var t = v.europa.laender.filter(function (x) { return x.land === wahl.value; })[0];
       return { bis: v.europa.bis_kg, preise: t.preise, luft: t.luftfracht };
     }
     function zeigen() {
       if (!versandDaten) { ab.textContent = "Versand: zzgl., den Betrag nennen wir in der Auftragsbestätigung."; return; }
+      // Deutschland: feste Pauschale pro Bestellung, keine Gewichtstabelle (Lenn, 09.11.2026)
+      d.hidden = wahl.value === "Deutschland";
+      if (wahl.value === "Deutschland") {
+        ab.textContent = "Versand innerhalb Deutschlands: pauschal " + euro(versandDaten.deutschland.pauschal) + " netto pro Bestellung.";
+        return;
+      }
       var t = tarif(versandDaten);
       ab.textContent = "Versand nach " + wahl.value + ": ab " + euro(t.preise[0]) + " netto pro Paket (bis " + kg(t.bis[0]) +
         "), je nach Gewicht. Den genauen Betrag nennen wir in der Auftragsbestätigung.";
@@ -265,7 +270,7 @@
 
   // Sofortbezahlen mit PayPal oder Karte (über PayPal): nur wenn der Server Zugangsdaten hat und der Preis fest ist.
   // Der Betrag wird auf dem Server berechnet; hier nur zur Anzeige mit derselben Versandpauschale (bis 5 kg).
-  var PAUSCHALE_BIS_KG = 5, MWST = 0.19;
+  var MWST = 0.19;
   var bezahlInfo = null, paypalSkript = null;
   function bezahlenLaden() {
     if (!cfg.api) return Promise.resolve({ aktiv: false });
@@ -286,9 +291,7 @@
   }
   function pauschale(land) {
     if (!versandDaten) return null;
-    if (land === "Deutschland") return versandDaten.deutschland.preise[versandDaten.deutschland.bis_kg.indexOf(PAUSCHALE_BIS_KG)];
-    var t = versandDaten.europa.laender.filter(function (x) { return x.land === land; })[0];
-    return t ? t.preise[versandDaten.europa.bis_kg.indexOf(PAUSCHALE_BIS_KG)] : null;
+    return land === "Deutschland" ? versandDaten.deutschland.pauschal : null; // Sofortbezahlen nur in Deutschland
   }
 
   function bestellen(p, vorher) {
@@ -435,7 +438,8 @@
       if (!sofort) {
         var karte = info.aktiv && zs.value !== ZAHLARTEN[0];
         zahlHinweis.textContent = (karte && p.varianten.length && !wahl.variante() ? "Bitte zuerst eine Ausführung wählen, dann können Sie sofort bezahlen. "
-          : karte && p.preis_ab && !wahl.variante() ? "Für diese Serie bestätigen wir zuerst den Preis Ihrer Ausführung. " : "") +
+          : karte && p.preis_ab && !wahl.variante() ? "Für diese Serie bestätigen wir zuerst den Preis Ihrer Ausführung. "
+          : karte && f.elements.land.value !== "Deutschland" ? "Sofortbezahlen ist nur bei Lieferung nach Deutschland möglich. " : "") +
           "Wir liefern gegen Vorkasse. Die Zahlungsdaten oder den Zahlungslink erhalten Sie mit der Auftragsbestätigung, der Versand erfolgt nach Zahlungseingang.";
         return;
       }

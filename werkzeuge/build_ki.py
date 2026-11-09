@@ -629,8 +629,7 @@ def kg_text(x):
 
 def versandseite():
     """Versandkosten pro Paket (GLS ab Pfungstadt), Deutschland und Europa. Länder mit gleichen Preisen stehen in einer Zeile."""
-    de = VERSAND["deutschland"]
-    zeilen_de = "".join(f'<tr><td>bis {kg_text(g)}</td><td class="pr-zahl">{euro(x)}</td></tr>' for g, x in zip(de["bis_kg"], de["preise"]))
+    de = VERSAND["deutschland"]["pauschal"]
     eu = VERSAND["europa"]
     gruppen = {}
     for l in eu["laender"]:
@@ -641,20 +640,19 @@ def versandseite():
                         + "".join(f'<td class="pr-zahl">{euro(x)}</td>' for x in preise) + "</tr>"
                         for (preise, luft), laender in reihen)
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / Versandkosten</nav>'
-              '<h1>Versandkosten</h1><p class="pr-kurz">Wir versenden mit GLS ab Pfungstadt. Die Versandkosten gelten pro Paket, netto zzgl. MwSt., '
-              'und richten sich nach Land und Paketgewicht. Mehrere Artikel einer Bestellung packen wir zusammen.</p>'
-              f'<section><h2>Deutschland</h2><div class="pr-tabelle pr-versand-de"><table><thead><tr><th>Paketgewicht</th><th class="pr-zahl">Preis netto</th></tr></thead>'
-              f'<tbody>{zeilen_de}</tbody></table></div></section>'
-              f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis …</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
+              '<h1>Versandkosten</h1><p class="pr-kurz">Wir versenden mit GLS ab Pfungstadt. Alle Versandkosten verstehen sich netto zzgl. MwSt.</p>'
+              f'<section><h2>Deutschland</h2><p>Innerhalb Deutschlands berechnen wir pauschal <strong>{euro(de)}</strong> netto pro Bestellung, '
+              'unabhängig von Gewicht und Menge.</p></section>'
+              f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis … Mehrere Artikel einer Bestellung packen wir zusammen.</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
               f'<tbody>{zeilen_eu}</tbody></table></div>'
               '<p class="pr-notiz">¹ Versand per Luftfracht. Berechnet wird nach Volumengewicht, wenn es höher ist als das tatsächliche Gewicht.</p></section>'
               '<section><h2>Gut zu wissen</h2><ul class="pr-punkte">'
-              '<li>Ist ein Paket groß und leicht, zählt das Volumengewicht: Länge × Breite × Höhe in cm geteilt durch 6.000, höchstens 30 kg.</li>'
-              '<li>Für Pakete über 40 kg, Paletten oder Expressversand machen wir Ihnen gern ein Angebot: '
+              '<li>Europa: Ist ein Paket groß und leicht, zählt das Volumengewicht: Länge × Breite × Höhe in cm geteilt durch 6.000, höchstens 30 kg.</li>'
+              '<li>Für Paletten oder Expressversand machen wir Ihnen gern ein Angebot: '
               f'<a href="mailto:{e(CFG["anfrage_email"])}">{e(CFG["anfrage_email"])}</a>.</li>'
               '<li>Die Versandkosten stellen wir mit der Auftragsbestätigung in Rechnung.</li></ul></section></article>')
     return seitenrahmen("Versandkosten | beinundfuß.de", inhalt, pfad="versandkosten/", kopf=PRODUKT_CSS,
-                        beschreibung="Versandkosten von beinundfuß.de: Versand mit GLS ab Pfungstadt nach Deutschland und Europa, Preise pro Paket nach Gewicht.")
+                        beschreibung="Versandkosten von beinundfuß.de: Deutschland pauschal pro Bestellung, Europa mit GLS ab Pfungstadt nach Gewicht.")
 
 
 def main():

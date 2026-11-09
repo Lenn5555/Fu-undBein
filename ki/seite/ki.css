@@ -192,6 +192,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   background: var(--weiss); font-size: var(--step-small); font-weight: 500; line-height: 1.3; transition: background-color .15s, border-color .15s, color .15s; }
 .ki-pille:hover span { border-color: var(--ink); }
 .ki-pille input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--weiss); }
+.ki-pille-aus span { color: #6b7280; border-style: dashed; }
 .ki-pille input:focus-visible + span { outline: 3px solid #2563eb; outline-offset: 2px; }
 
 .kb-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 24px 16px; }

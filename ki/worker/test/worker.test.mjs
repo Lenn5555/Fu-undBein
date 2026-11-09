@@ -124,6 +124,18 @@ test("Gewählte Variante steht mit Artikelnummer in der Bestellmail", () => {
   assert.match(text, new RegExp(`Kennung: ${v.sku}`));
 });
 
+test("Feste Preise: Ausführungen mit Merkmalen, kein „ab“ bei bestätigten Produkten", () => {
+  const p = KATALOG.find((p) => p.varianten.length > 2 && p.varianten.every((v) => v.wahl));
+  assert.ok(p, "Produkt mit wählbaren Merkmalen");
+  assert.equal(p.preis_ab, false);
+  const v = p.varianten.at(-1);
+  const b = pruefen({ ...KUNDE, sku: p.sku, variante: v.sku, menge: 2 });
+  assert.equal(b.stueck, v.preis);
+  assert.match(mailText("BF-5", b, null), new RegExp(`BESTELLTE AUSFÜHRUNG: ${v.ausfuehrung}`));
+  assert.ok(pruefen({ ...KUNDE, sku: p.sku, menge: 2 }).fehler, "ohne Ausführung keine Bestellung");
+  assert.ok(SYSTEM.includes("je nach Ausführung"));
+});
+
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   const { bezugsquelle } = await import("../src/bestellung.js");
   assert.equal(bezugsquelle("GIBTSNICHT"), null);

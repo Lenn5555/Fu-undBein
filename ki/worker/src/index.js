@@ -122,7 +122,7 @@ export default {
     if (!env.RESEND_API_KEY) return antwort({ fehler: "Online-Bestellung ist noch nicht eingerichtet. Bitte per E-Mail bestellen." }, 503, herkunft);
     const nr = bestellnummer();
     try {
-      const quelle = bezugsquelle(b.produkt.sku);
+      const quelle = bezugsquelle(b.produkt.sku, b.variante?.sku);
       await senden(env, nr, b, mailText(nr, b, quelle));
     } catch (err) {
       console.error("Bestellung:", err);
@@ -157,7 +157,7 @@ async function bezahlen(pfad, daten, b, env, ctx, herkunft) {
   if (z.fehler) return antwort(z, 400, herkunft);
   // Geld ist eingezogen: die Bestellung gilt auch dann, wenn die Mail scheitert (dann steht sie im Protokoll und bei PayPal)
   try {
-    await senden(env, z.nr, b, mailText(z.nr, b, bezugsquelle(b.produkt.sku), { ...z, zahlart: b.kunde.zahlart }), fetch, true);
+    await senden(env, z.nr, b, mailText(z.nr, b, bezugsquelle(b.produkt.sku, b.variante?.sku), { ...z, zahlart: b.kunde.zahlart }), fetch, true);
   } catch (err) {
     console.error(`Mail zur bezahlten Bestellung ${z.nr} (PayPal ${z.transaktion}) fehlgeschlagen:`, err.message);
   }

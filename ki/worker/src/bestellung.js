@@ -155,8 +155,13 @@ export function mailHtml(text) {
     `<body style="background:#ffffff;color:#000000"><p style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:20px;color:#000000">${sicher}</p></body></html>`;
 }
 
-export function bezugsquelle(sku) {
-  return BEZUGSQUELLEN[sku] ?? null;
+// Bei Ausführungen mit eigenem Händlerartikel (feste Preise je Ausführung) gilt deren Artikel und EK
+export function bezugsquelle(sku, varianteSku = null) {
+  const q = BEZUGSQUELLEN[sku];
+  if (!q) return null;
+  const { varianten, ...rest } = q;
+  const v = varianteSku && varianten ? varianten[varianteSku] : null;
+  return v ? { ...rest, ...v } : rest;
 }
 
 export async function senden(env, nr, b, text, abruf = fetch, bezahlt = false) {

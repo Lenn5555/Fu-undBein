@@ -77,11 +77,41 @@ def neutral(produkte):
         p["slug_alt"], p["slug"] = p["slug"], s
 
 
+FESTE_PREISE = ROOT / "daten/feste-preise.json"
+
+
+def feste_preise(produkte):
+    """Feste Preise statt „ab“-Preisen (Lenn, 09.11.2026): daten/feste-preise.json legt je Produkt entweder alle
+    Ausführungen mit eigenem Preis fest (varianten, mit Merkmalen zum Wählen) oder die eine genaue Ausführung
+    (preis, name, merkmale). Quelle: Händlerseiten, VK = EK + 20 %. Produkte ohne gesicherte Preise werden mit
+    "nur_feste_preise": true in daten/site.json ausgeblendet."""
+    fest = json.loads(FESTE_PREISE.read_text(encoding="utf-8")) if FESTE_PREISE.exists() else {}
+    ohne = []
+    for p in produkte:
+        f = fest.get(p["sku"])
+        if f is None:
+            if p["preis_ab"] and b.preise(p):
+                ohne.append(p["sku"])
+                p["ausgeblendet"] = bool(CFG.get("nur_feste_preise"))
+            continue
+        if "varianten" in f:
+            p["varianten"] = [dict(v) for v in f["varianten"]]
+            p["preis"] = min(v["preis"] for v in f["varianten"])
+        else:
+            p["preis"] = f["preis"]
+        if f.get("name"):
+            p["name"] = f["name"]
+        p["merkmale"].update(f.get("merkmale", {}))
+        p["preis_ab"] = False
+    print(f"feste Preise: {len(fest)} Produkte, ohne gesicherten Preis: {len(ohne)}"
+          f"{' (ausgeblendet)' if CFG.get('nur_feste_preise') else ''}")
+
+
 def katalog(produkte):
     """Kompakte Liste für den Berater; nur was einen Preis hat."""
     liste = []
     for p in produkte:
-        if not b.preise(p):
+        if not b.preise(p) or p.get("ausgeblendet"):
             continue
         kurz = re.sub(r"\s*Preis und Lieferzeit auf Anfrage\.?", "", p["kurz"]).strip()
         merkmale = {k: (", ".join(v) if isinstance(v, list) else v) for k, v in p["merkmale"].items()}
@@ -89,7 +119,8 @@ def katalog(produkte):
             "sku": p["sku"], "name": p["name"], "marke": p["marke"], "kurz": kurz, "merkmale": merkmale,
             "preis": float(p["preis"]) if p["preis"] else None,
             "preis_ab": p["preis_ab"],  # Preis gilt für die günstigste Ausführung der Serie
-            "varianten": [{"sku": v["sku"], "ausfuehrung": v["ausfuehrung"], "preis": float(v["preis"])}
+            "varianten": [{"sku": v["sku"], "ausfuehrung": v["ausfuehrung"], "preis": float(v["preis"]),
+                           **({"wahl": v["wahl"]} if v.get("wahl") else {})}
                           for v in p["varianten"] if v["preis"]],
             # Serien ohne eigene Variantenpreise: das Gewinde ist trotzdem vor der Bestellung zu wählen
             "optionen": wahl_gewinde(p),
@@ -119,6 +150,21 @@ def bezugsquellen(produkte):
             "ek_netto": float(q["preis_netto_eur"]) if q.get("preis_netto_eur") else None,
             "preis_bezug": q.get("preis_bezug", ""), "notiz": q.get("notiz", ""),
         }
+    # Feste Preise (09.11.2026): genauer Händlerartikel und EK je Produkt bzw. je Ausführung
+    fest_datei = INTERN / "feste-preise-intern.json"
+    fest = json.loads(fest_datei.read_text(encoding="utf-8")) if fest_datei.exists() else {}
+    for p in produkte:
+        d = daten.get(p["sku"])
+        if d is None or p.get("ausgeblendet"):
+            continue
+        if p["sku"] in fest:
+            x = fest[p["sku"]]
+            d.update({"artikel": x["artikel"], "ek_netto": x["ek_netto"], "bestell_url": x["url"] or d["bestell_url"], "preis_bezug": ""})
+        v = {v["sku"]: fest[v["sku"]] for v in p["varianten"] if v["sku"] in fest}
+        if v:
+            d["varianten"] = {s: {"artikel": x["artikel"], "ek_netto": x["ek_netto"], **({"bestell_url": x["url"]} if x["url"] else {})}
+                              for s, x in v.items()}
+            d["preis_bezug"] = ""
     return daten
 
 
@@ -400,9 +446,12 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 
 
 def preis_ab_text(p):
-    """„ab 7,20 €“, wenn es mehrere Preise gibt oder der Preis für die günstigste Ausführung gilt."""
-    ab = (p["varianten"] and len(p["varianten"]) > 1) or p["preis_ab"]
-    return ("ab " if ab else "") + euro(min_preis(p))
+    """Fester Preis, bei Ausführungen mit verschiedenen Preisen die Spanne „6,77 – 12,40 €“.
+    „ab“ nur noch bei Serien ohne gesicherten Preis je Ausführung (bis sie ausgeblendet sind)."""
+    w = [v["preis"] for v in p["varianten"]] or [p["preis"]]
+    if p["preis_ab"]:
+        return "ab " + euro(min(w))
+    return euro(min(w)) if min(w) == max(w) else f"{euro(min(w))[:-2]} – {euro(max(w))}"
 
 
 def seo_name(p):
@@ -658,6 +707,7 @@ def versandseite():
 def main():
     produkte = b.produkte_laden()
     neutral(produkte)
+    feste_preise(produkte)
     # T&S-Fotos von ts-systemtechnik.de mit weiß gerechnetem Hintergrund (ki/seite/ts-fotos, Lenn, 23.10.2026);
     # ohne eigenes Foto die weiße Skizze wie bei allen anderen
     for p in produkte:
@@ -723,6 +773,13 @@ def main():
             schreibe(f"produkte/{p['slug_alt']}", f'<!doctype html><meta charset="utf-8"><title>{e(p["name"])}</title>'
                      f'<meta name="robots" content="noindex"><link rel="canonical" href="{produkt_url(p, absolut=True)}">'
                      f'<meta http-equiv="refresh" content="0; url={b.BASIS}{produkt_url(p)}"><a href="{produkt_url(p)}">{e(p["name"])}</a>')
+    # Ausgeblendete Produkte (ohne gesicherten Preis): alte Seite leitet auf die Kategorie weiter
+    for p in produkte:
+        if p.get("ausgeblendet"):
+            ziel = kat_url(p["merkmale"]["Bauform"])
+            schreibe(f"produkte/{p['slug']}", f'<!doctype html><meta charset="utf-8"><title>{e(p["merkmale"]["Bauform"])}</title>'
+                     f'<meta name="robots" content="noindex"><link rel="canonical" href="{kat_url(p["merkmale"]["Bauform"], absolut=True)}">'
+                     f'<meta http-equiv="refresh" content="0; url={b.BASIS}{ziel}"><a href="{ziel}">{e(p["merkmale"]["Bauform"])}</a>')
     schreibe("versandkosten", versandseite())
     SEITEN.append(("versandkosten/", "0.4"))
     shutil.copy(ROOT / "daten/versandkosten.json", OUT / "assets/versandkosten.json")

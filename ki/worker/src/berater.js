@@ -16,9 +16,17 @@ function euro(x) {
 
 function katalogZeile(p) {
   const merkmale = Object.entries(p.merkmale).map(([k, v]) => `${k}: ${v}`).join("; ");
-  const preis = p.varianten.length
-    ? p.varianten.map((v) => `${v.ausfuehrung} = ${euro(v.preis)}`).join(" | ")
-    : (p.preis_ab ? "ab " : "") + euro(p.preis);
+  let preis;
+  if (p.varianten.length > 1 && p.varianten.every((v) => v.wahl)) {
+    // Viele Ausführungen mit Merkmalen: kompakt die wählbaren Werte und die Preisspanne
+    const werte = Object.keys(p.varianten[0].wahl).map((m) => `${m} ${[...new Set(p.varianten.map((v) => v.wahl[m]))].join("/")}`);
+    const w = p.varianten.map((v) => v.preis);
+    preis = `${euro(Math.min(...w))} bis ${euro(Math.max(...w))} je nach Ausführung (wählbar: ${werte.join("; ")}; fester Preis je Ausführung im Bestellformular)`;
+  } else {
+    preis = p.varianten.length
+      ? p.varianten.map((v) => `${v.ausfuehrung} = ${euro(v.preis)}`).join(" | ")
+      : (p.preis_ab ? "ab " : "") + euro(p.preis);
+  }
   return `- ${p.sku} | ${p.name}${p.marke ? ` (${p.marke})` : ""} | ${p.kurz} | ${merkmale} | Preis netto: ${preis}`;
 }
 
@@ -30,7 +38,7 @@ So beraten Sie:
 - Rechnen Sie bei Lastangaben die Last pro Fuß aus (Gesamtlast geteilt durch Anzahl Füße) und empfehlen Sie eine Reserve. Garantieren Sie keine Tragfähigkeit; verbindlich ist das Datenblatt des Herstellers.
 - Empfehlen Sie ausschließlich Produkte aus dem Katalog unten. Erfinden Sie keine Produkte, Maße oder Preise.
 - Sobald Sie passende Produkte nennen, rufen Sie das Werkzeug produkte_zeigen mit deren Artikelnummern auf (höchstens ${MAX_ANZEIGE}, bestes zuerst). Nur so sieht der Kunde die Produkte mit Bestellknopf. Sagen Sie im Text in einem Satz, warum Sie diese gewählt haben.
-- Alle Preise sind netto zzgl. MwSt. und Versand. "ab"-Preise gelten für die günstigste Ausführung einer Serie; die genaue Ausführung bestätigen wir nach der Bestellung.
+- Alle Preise sind netto zzgl. MwSt. und Versand. Jede Ausführung hat einen festen Preis; bei mehreren Ausführungen wählt der Kunde im Bestellformular und sieht dort den Preis. Nur wo noch "ab" steht, gilt der Preis für die günstigste Ausführung einer Serie.
 - Passt nichts im Katalog, sagen Sie das offen und verweisen Sie auf eine Anfrage per E-Mail an sales@ts-systec.de; dort sind auch Sonderanfertigungen und weitere Produkte ohne Online-Preis möglich. Rufen Sie in diesem Fall zusätzlich das Werkzeug nichts_passend auf (nur Kategorien, nie Kundentext).
 - Nennen Sie im Text nie Artikelnummern, sondern beschreiben Sie Produkte mit Namen und Merkmalen. Die Artikelnummern sind nur für das Werkzeug produkte_zeigen.
 - Bezugsquellen, Lieferanten oder Einkaufspreise kennen Sie nicht und spekulieren nicht darüber.

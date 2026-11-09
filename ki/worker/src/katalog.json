@@ -485,7 +485,7 @@
 },
 {
 "sku": "BF-V-EAF2794A",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 100 mm, M16/M20",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 100 mm, M16 × 50 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -493,23 +493,18 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M16, M20",
+"Gewinde": "M16",
 "Durchmesser": "Teller 100 mm"
 },
 "preis": 34.81,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-100-mm-m16-m20.svg"
 },
 {
 "sku": "BF-V-171BBB60",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 120 mm, M20/M24",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 120 mm, M20 × 125 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -517,18 +512,13 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M20, M24",
+"Gewinde": "M20",
 "Durchmesser": "Teller 120 mm"
 },
 "preis": 61.9,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M20",
-"M24"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-120-mm-m20-m24.svg"
 },
 {
@@ -545,14 +535,14 @@
 "Durchmesser": "Teller 30 mm"
 },
 "preis": 12.36,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-30-mm-m8.svg"
 },
 {
 "sku": "BF-V-BAF05656",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 40 mm, M8/M10",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 40 mm, M8 × 25 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -560,18 +550,13 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M8, M10",
+"Gewinde": "M8",
 "Durchmesser": "Teller 40 mm"
 },
 "preis": 10.54,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M8",
-"M10"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-40-mm-m8-m10.svg"
 },
 {
@@ -588,14 +573,14 @@
 "Durchmesser": "Teller 50 mm"
 },
 "preis": 21.08,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-50-mm-m12.svg"
 },
 {
 "sku": "BF-V-6303D9CA",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 60 mm, M10/M12",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 60 mm, M12 × 100 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -603,18 +588,13 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M10, M12",
+"Gewinde": "M12",
 "Durchmesser": "Teller 60 mm"
 },
 "preis": 18.52,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-60-mm-m10-m12.svg"
 },
 {
@@ -631,14 +611,14 @@
 "Durchmesser": "Teller 65 mm"
 },
 "preis": 26.74,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-65-mm-m16.svg"
 },
 {
 "sku": "BF-V-E4E11F57",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 75 mm, M12/M20",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 75 mm, M12 × 75 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -646,23 +626,18 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M12, M20",
+"Gewinde": "M12",
 "Durchmesser": "Teller 75 mm"
 },
 "preis": 23.6,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-75-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-1454A637",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 80 mm, M20",
+"name": "Stellfuß Edelstahl massiv, Teller Ø 80 mm, M20 × 150 mm",
 "marke": "",
 "kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
 "merkmale": {
@@ -674,14 +649,14 @@
 "Durchmesser": "Teller 80 mm"
 },
 "preis": 36.25,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg"
 },
 {
 "sku": "BF-V-911165B2",
-"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 100 mm, M16–M30",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 100 mm, M20 × 140 mm",
 "marke": "",
 "kurz": "Hygiene-Stellfuß Edelstahl, 3-A, optional mit Laschen/Bohrungen.",
 "merkmale": {
@@ -689,25 +664,18 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M16, M20, M24, M30",
+"Gewinde": "M20",
 "Durchmesser": "Teller 100 mm"
 },
 "preis": 52.51,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M20",
-"M24",
-"M30"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-100-mm-m16-m30.svg"
 },
 {
 "sku": "BF-V-1046960A",
-"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 120 mm, M16–M36",
+"name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 120 mm, M16 × 140 mm",
 "marke": "",
 "kurz": "Hygiene-Stellfuß Edelstahl, 3-A, mit 0-2 Befestigungslaschen.",
 "merkmale": {
@@ -715,21 +683,13 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M16, M20, M24, M30, M36",
+"Gewinde": "M16",
 "Durchmesser": "Teller 120 mm"
 },
 "preis": 55.73,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M20",
-"M24",
-"M30",
-"M36"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-120-mm-m16-m36.svg"
 },
 {
@@ -746,14 +706,14 @@
 "Durchmesser": "Teller 150 mm"
 },
 "preis": 77.28,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-150-mm-m36.svg"
 },
 {
 "sku": "BF-V-BF1F0CBB",
-"name": "Hygiene-Gelenkstellfuß Edelstahl, 3-A, Teller Ø 60 mm, M12–M20",
+"name": "Hygiene-Gelenkstellfuß Edelstahl, 3-A, Teller Ø 60 mm, M12 × 140 mm",
 "marke": "",
 "kurz": "Hygiene-Gelenkstellfuß Edelstahl, 3-A zertifiziert, 15° Gelenk.",
 "merkmale": {
@@ -761,21 +721,14 @@
 "Funktion": "Höhenverstellung, Hohe Traglast",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M12, M14, M16, M20",
+"Gewinde": "M12",
 "Traglast": "40000 (M16x190) N",
 "Durchmesser": "Teller 60 mm"
 },
 "preis": 47.16,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-3-a-teller-60-mm-m12-m20.svg"
 },
 {
@@ -792,14 +745,14 @@
 "Durchmesser": "Teller 100 mm"
 },
 "preis": 77.48,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-100-mm-m30.svg"
 },
 {
 "sku": "BF-V-D62B62EF",
-"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 60 mm, M16",
+"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 60 mm, M16 × 125 mm",
 "marke": "",
 "kurz": "Leicht reinigbarer Edelstahl-Stellfuß, Belag wählbar.",
 "merkmale": {
@@ -811,14 +764,14 @@
 "Durchmesser": "Teller 60 mm"
 },
 "preis": 26.09,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-60-mm-m16.svg"
 },
 {
 "sku": "BF-V-648F0321",
-"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 80 mm, M16/M20",
+"name": "Stellfuß Edelstahl, leicht zu reinigen, Teller Ø 80 mm, M16 × 150 mm",
 "marke": "",
 "kurz": "Leicht reinigbarer Edelstahl-Stellfuß, optional Lasche.",
 "merkmale": {
@@ -826,18 +779,13 @@
 "Funktion": "Höhenverstellung",
 "Bauform": "Stellbein",
 "Material": "Edelstahl",
-"Gewinde": "M16, M20",
+"Gewinde": "M16",
 "Durchmesser": "Teller 80 mm"
 },
 "preis": 29.75,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-80-mm-m16-m20.svg"
 },
 {
@@ -854,7 +802,7 @@
 "Durchmesser": "Ø44, 5 / 56, 5 mm"
 },
 "preis": 12.22,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10-x-30.svg"
@@ -873,7 +821,7 @@
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
 "preis": 10.75,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10-x-30.svg"
@@ -892,7 +840,7 @@
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
 "preis": 10.21,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m12-x-30.svg"
@@ -911,7 +859,7 @@
 "Durchmesser": "Ø44, 5 / 52 mm"
 },
 "preis": 10.75,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-n.svg"
@@ -930,7 +878,7 @@
 "Durchmesser": "Ø44, 5 / 52 mm"
 },
 "preis": 12.28,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-v.svg"
@@ -949,7 +897,7 @@
 "Durchmesser": "Ø44, 5 / 56, 5 mm"
 },
 "preis": 11.15,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10.svg"
@@ -968,7 +916,7 @@
 "Durchmesser": "Ø56, 6 / 64 mm"
 },
 "preis": 12.28,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10.svg"
@@ -1086,7 +1034,7 @@
 "Durchmesser": "Ø56, 5 / 44, 5 · Höhe 180 mm"
 },
 "preis": 13.13,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-56-5-44-5-mm-hoehe-180-mm.svg"
@@ -1104,7 +1052,7 @@
 "Durchmesser": "Ø64 / 56, 6 · Höhe 180 mm"
 },
 "preis": 14.17,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-64-56-6-mm-hoehe-180-mm.svg"
@@ -1123,7 +1071,7 @@
 "Durchmesser": "Ø30 / 40 mm"
 },
 "preis": 9.68,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-gleiter-30-40-mm-m10-x-15.svg"
@@ -1142,7 +1090,7 @@
 "Durchmesser": "Ø30 / 40 mm"
 },
 "preis": 9.71,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-lasche-30-40-mm-m10-x-15.svg"
@@ -1170,7 +1118,7 @@
 },
 {
 "sku": "BF-V-DAF1DCFF",
-"name": "Gewindestopfen Kunststoff für Rundrohr Ø 30 mm, M10–M16",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 30 mm, M10",
 "marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
@@ -1179,26 +1127,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Rund 30 mm",
-"Gewinde": "M10, M12, M14, M16",
+"Gewinde": "M10",
 "Traglast": "5000 N",
 "Durchmesser": "30 (Wand 1) mm"
 },
-"preis": 4.44,
-"preis_ab": true,
+"preis": 4.43,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12",
-"M14",
-"M16"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-30-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-735F76C5",
-"name": "Gewindestopfen Kunststoff für Rundrohr Ø 38 mm, M10–M16",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 38 mm, M10",
 "marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
@@ -1207,25 +1148,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Rund 38 mm",
-"Gewinde": "M10, M12, M16",
+"Gewinde": "M10",
 "Traglast": "5000 N",
 "Durchmesser": "38 (Wand 1, 5) mm"
 },
-"preis": 5.03,
-"preis_ab": true,
+"preis": 5.0,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12",
-"M16"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-38-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-1D4E9EFA",
-"name": "Gewindestopfen Kunststoff für Rundrohr Ø 42,4 mm, M10–M20",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 42,4 mm, M16",
 "marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
@@ -1234,27 +1169,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Rund 42, 4 mm",
-"Gewinde": "M10, M12, M14, M16, M20",
+"Gewinde": "M16",
 "Traglast": "6000 N",
 "Durchmesser": "42, 4 (Wand 1, 5) mm"
 },
-"preis": 5.6,
-"preis_ab": true,
+"preis": 5.58,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-42-4-mm-m10-m20.svg"
 },
 {
 "sku": "BF-V-E3785639",
-"name": "Gewindestopfen Kunststoff für Rundrohr Ø 48,3 mm, M12–M20",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 48,3 mm, M12",
 "marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
@@ -1263,26 +1190,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Rund 48, 3 mm",
-"Gewinde": "M12, M14, M16, M20",
+"Gewinde": "M12",
 "Traglast": "6000 N",
 "Durchmesser": "48, 3 (Wand 1, 5) mm"
 },
-"preis": 6.43,
-"preis_ab": true,
+"preis": 6.41,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-48-3-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-406430F7",
-"name": "Gewindestopfen Kunststoff für Rundrohr Ø 50,9 mm, M12–M20",
+"name": "Gewindestopfen Kunststoff für Rundrohr Ø 50,9 mm, M12",
 "marke": "",
 "kurz": "Gewindestopfen für Rundrohr zur Aufnahme von Stellfüßen.",
 "merkmale": {
@@ -1291,21 +1211,14 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Rund 50, 9 mm",
-"Gewinde": "M12, M14, M16, M20",
+"Gewinde": "M12",
 "Traglast": "6000 N",
 "Durchmesser": "50, 9 (Wand 1, 5) mm"
 },
-"preis": 6.8,
-"preis_ab": true,
+"preis": 6.78,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-50-9-mm-m12-m20.svg"
 },
 {
@@ -1359,7 +1272,7 @@
 },
 {
 "sku": "BF-V-F09EC711",
-"name": "Gewindestopfen Kunststoff für Vierkantrohr 30 × 30 mm, M10–M16",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 30 × 30 mm, M10",
 "marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
@@ -1368,26 +1281,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Vierkant 30 mm",
-"Gewinde": "M10, M12, M14, M16",
+"Gewinde": "M10",
 "Traglast": "5000 N",
 "Durchmesser": "30x30 (Wand 1, 5-2) mm"
 },
 "preis": 4.16,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12",
-"M14",
-"M16"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-30-x-30-mm-m10-m16.svg"
 },
 {
 "sku": "BF-V-6510EF99",
-"name": "Gewindestopfen Kunststoff für Vierkantrohr 40 × 40 mm, M10–M20",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 40 × 40 mm, M12",
 "marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
@@ -1396,27 +1302,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Vierkant 40 mm",
-"Gewinde": "M10, M12, M14, M16, M20",
+"Gewinde": "M12",
 "Traglast": "8000-10000 N",
 "Durchmesser": "40x40 (Wand 1, 5-4) mm"
 },
 "preis": 4.4,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M10",
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-40-x-40-mm-m10-m20.svg"
 },
 {
 "sku": "BF-V-56C74504",
-"name": "Gewindestopfen Kunststoff für Vierkantrohr 50 × 50 mm, M12–M20",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 50 × 50 mm, M12",
 "marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
@@ -1425,26 +1323,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Vierkant 50 mm",
-"Gewinde": "M12, M14, M16, M20",
+"Gewinde": "M12",
 "Traglast": "8000-12000 N",
 "Durchmesser": "50x50 (Wand 1, 5-4) mm"
 },
-"preis": 6.64,
-"preis_ab": true,
+"preis": 6.65,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M12",
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-50-x-50-mm-m12-m20.svg"
 },
 {
 "sku": "BF-V-0EA495CD",
-"name": "Gewindestopfen Kunststoff für Vierkantrohr 60 × 60 mm, M14–M20",
+"name": "Gewindestopfen Kunststoff für Vierkantrohr 60 × 60 mm, M14",
 "marke": "",
 "kurz": "Gewindestopfen für Vierkantrohr zur Aufnahme von Stell- und Gelenkfüßen.",
 "merkmale": {
@@ -1453,25 +1344,19 @@
 "Bauform": "Gewindestopfen",
 "Material": "Kunststoff",
 "Rohrmaß": "Vierkant 60 mm",
-"Gewinde": "M14, M16, M20",
+"Gewinde": "M14",
 "Traglast": "12000 N",
 "Durchmesser": "60x60 (Wand 2-4) mm"
 },
-"preis": 7.08,
-"preis_ab": true,
+"preis": 7.19,
+"preis_ab": false,
 "varianten": [],
-"optionen": {
-"Gewinde": [
-"M14",
-"M16",
-"M20"
-]
-},
+"optionen": {},
 "bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-60-x-60-mm-m14-m20.svg"
 },
 {
 "sku": "BF-V-5C9CEF9F",
-"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M16, Ø 80–125 mm",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M16 × 68 mm, Ø 100 mm",
 "marke": "",
 "kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
@@ -1482,17 +1367,17 @@
 "Gewinde": "M16",
 "Bodenbefestigung": "ja",
 "Traglast": "16000-28000 N",
-"Durchmesser": "80/100/125 mm"
+"Durchmesser": "Teller 100 mm"
 },
 "preis": 7.51,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m16-80-125-mm.svg"
 },
 {
 "sku": "BF-V-185A2C70",
-"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M20, Ø 80–125 mm",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M20 × 138 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
@@ -1503,17 +1388,17 @@
 "Gewinde": "M20",
 "Bodenbefestigung": "ja",
 "Traglast": "18000-28000 N",
-"Durchmesser": "80/100/125 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 9.58,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m20-80-125-mm.svg"
 },
 {
 "sku": "BF-V-22625A7B",
-"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M10, Ø 60/80 mm",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M10 × 98 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
@@ -1524,17 +1409,17 @@
 "Gewinde": "M10",
 "Bodenbefestigung": "ja",
 "Traglast": "14000-16000 N",
-"Durchmesser": "60/80 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 8.17,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m10-60-80-mm.svg"
 },
 {
 "sku": "BF-V-4C22478D",
-"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M12, Ø 60/80 mm",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M12 × 68 mm, Ø 60 mm",
 "marke": "",
 "kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
@@ -1545,17 +1430,17 @@
 "Gewinde": "M12",
 "Bodenbefestigung": "ja",
 "Traglast": "14000-16000 N",
-"Durchmesser": "60/80 mm"
+"Durchmesser": "Teller 60 mm"
 },
 "preis": 7.1,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m12-60-80-mm.svg"
 },
 {
 "sku": "BF-V-8F383257",
-"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M14, Ø 60/80 mm",
+"name": "Stellfuß mit Kunststoffteller und Bohrungen, Stahlspindel M14 × 68 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Kunststoffteller mit Befestigungsbohrungen und Stahlspindel.",
 "merkmale": {
@@ -1566,10 +1451,10 @@
 "Gewinde": "M14",
 "Bodenbefestigung": "ja",
 "Traglast": "14000-16000 N",
-"Durchmesser": "60/80 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 13.36,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m14-60-80-mm.svg"
@@ -1590,7 +1475,7 @@
 "Durchmesser": "65 (oval) mm"
 },
 "preis": 8.22,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-100-mit-bohrungen.svg"
@@ -1611,7 +1496,7 @@
 "Durchmesser": "65 (oval) mm"
 },
 "preis": 13.13,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-150-mit-bohrungen-und-nbr-b.svg"
@@ -1631,8 +1516,49 @@
 "Durchmesser": "50 mm"
 },
 "preis": 10.6,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-F65DB51E-01",
+"ausfuehrung": "Spindellänge 25 mm",
+"preis": 10.6,
+"wahl": {
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-F65DB51E-02",
+"ausfuehrung": "Spindellänge 50 mm",
+"preis": 11.39,
+"wahl": {
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-F65DB51E-03",
+"ausfuehrung": "Spindellänge 75 mm",
+"preis": 11.7,
+"wahl": {
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-F65DB51E-04",
+"ausfuehrung": "Spindellänge 100 mm",
+"preis": 12.18,
+"wahl": {
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-F65DB51E-05",
+"ausfuehrung": "Spindellänge 125 mm",
+"preis": 12.4,
+"wahl": {
+"Spindellänge": "125 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m10-50-mm.svg"
 },
@@ -1651,8 +1577,49 @@
 "Durchmesser": "50 mm"
 },
 "preis": 10.64,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-B8214EC0-01",
+"ausfuehrung": "Spindellänge 25 mm",
+"preis": 10.64,
+"wahl": {
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-B8214EC0-02",
+"ausfuehrung": "Spindellänge 50 mm",
+"preis": 11.42,
+"wahl": {
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-B8214EC0-03",
+"ausfuehrung": "Spindellänge 75 mm",
+"preis": 11.75,
+"wahl": {
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-B8214EC0-04",
+"ausfuehrung": "Spindellänge 100 mm",
+"preis": 12.23,
+"wahl": {
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-B8214EC0-05",
+"ausfuehrung": "Spindellänge 125 mm",
+"preis": 12.43,
+"wahl": {
+"Spindellänge": "125 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m12-50-mm.svg"
 },
@@ -1671,8 +1638,99 @@
 "Durchmesser": "50/65 mm"
 },
 "preis": 10.67,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-C9F0E492-01",
+"ausfuehrung": "Teller Ø 50 mm, Spindellänge 25 mm",
+"preis": 10.67,
+"wahl": {
+"Teller": "Ø 50 mm",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-02",
+"ausfuehrung": "Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 11.45,
+"wahl": {
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-03",
+"ausfuehrung": "Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 11.78,
+"wahl": {
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-04",
+"ausfuehrung": "Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 12.25,
+"wahl": {
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-05",
+"ausfuehrung": "Teller Ø 50 mm, Spindellänge 125 mm",
+"preis": 12.47,
+"wahl": {
+"Teller": "Ø 50 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-06",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 50 mm",
+"preis": 13.86,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-07",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 75 mm",
+"preis": 14.36,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-08",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 100 mm",
+"preis": 14.84,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-09",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 125 mm",
+"preis": 15.3,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-C9F0E492-10",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 150 mm",
+"preis": 15.77,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "150 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m14-50-65-mm.svg"
 },
@@ -1691,8 +1749,189 @@
 "Durchmesser": "65/80/100 mm"
 },
 "preis": 13.98,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-C0BFBD73-01",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 50 mm",
+"preis": 13.98,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-02",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 75 mm",
+"preis": 14.41,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-03",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 100 mm",
+"preis": 14.92,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-04",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 125 mm",
+"preis": 15.35,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-05",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 150 mm",
+"preis": 15.82,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-06",
+"ausfuehrung": "Teller Ø 65 mm, Spindellänge 175 mm",
+"preis": 16.28,
+"wahl": {
+"Teller": "Ø 65 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-07",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 21.01,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-08",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 21.49,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-09",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 21.96,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-10",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 22.39,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-11",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 22.87,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-12",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 175 mm",
+"preis": 23.34,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-13",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 23.8,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-14",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 50 mm",
+"preis": 31.78,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-15",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 32.47,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-16",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 33.3,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-17",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 125 mm",
+"preis": 34.2,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-18",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 35.02,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-19",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 175 mm",
+"preis": 35.92,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-C0BFBD73-20",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 36.85,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m16-65-100-mm.svg"
 },
@@ -1711,8 +1950,117 @@
 "Durchmesser": "80/100 mm"
 },
 "preis": 22.06,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-BE2F7339-01",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 22.06,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-02",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 22.67,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-03",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 23.38,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-04",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 24.06,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-05",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 175 mm",
+"preis": 24.72,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-06",
+"ausfuehrung": "Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 25.43,
+"wahl": {
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-07",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 32.6,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-08",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 33.4,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-09",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 125 mm",
+"preis": 34.33,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-10",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 35.1,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-11",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 175 mm",
+"preis": 36.02,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-BE2F7339-12",
+"ausfuehrung": "Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 36.97,
+"wahl": {
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m20-80-100-mm.svg"
 },
@@ -1731,14 +2079,63 @@
 "Durchmesser": "100 mm"
 },
 "preis": 33.32,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-40FAB03A-01",
+"ausfuehrung": "Spindellänge 75 mm",
+"preis": 33.32,
+"wahl": {
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-40FAB03A-02",
+"ausfuehrung": "Spindellänge 100 mm",
+"preis": 34.15,
+"wahl": {
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-40FAB03A-03",
+"ausfuehrung": "Spindellänge 125 mm",
+"preis": 35.06,
+"wahl": {
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-40FAB03A-04",
+"ausfuehrung": "Spindellänge 150 mm",
+"preis": 35.84,
+"wahl": {
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-40FAB03A-05",
+"ausfuehrung": "Spindellänge 175 mm",
+"preis": 36.78,
+"wahl": {
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-40FAB03A-06",
+"ausfuehrung": "Spindellänge 200 mm",
+"preis": 37.67,
+"wahl": {
+"Spindellänge": "200 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m24-100-mm.svg"
 },
 {
 "sku": "BF-V-10CBE62C",
-"name": "Gelenkfuß Stahl mit Kunststoffkappe, M16, Ø 50–100 mm",
+"name": "Gelenkfuß Stahl mit Kunststoffkappe, M16 × 59 mm, Ø 50 mm",
 "marke": "",
 "kurz": "Stahl-Gelenkfuß mit Haltefeder, Kappe POM oder TPE wählbar.",
 "merkmale": {
@@ -1748,17 +2145,17 @@
 "Material": "Stahl, Kunststoff",
 "Gewinde": "M16",
 "Traglast": "30000 (Form R 5000-19000) N",
-"Durchmesser": "50/60/80/100 mm"
+"Durchmesser": "Teller 50 mm"
 },
 "preis": 13.91,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-mit-kunststoffkappe-m16-50-100-mm.svg"
 },
 {
 "sku": "BF-V-A635A01A",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M10, Ø 40/50 mm",
+"name": "Gelenkfuß Stahl verzinkt, Innengewinde M10, Höhe 28 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1767,17 +2164,17 @@
 "Bauform": "Gelenkfuß",
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M10",
-"Durchmesser": "40/50 mm"
+"Durchmesser": "Teller 40 mm"
 },
 "preis": 5.29,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m10-40-50-mm.svg"
 },
 {
 "sku": "BF-V-68FB055B",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M12, Ø 40 mm",
+"name": "Gelenkfuß Stahl verzinkt, Innengewinde M12, Höhe 31 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1789,14 +2186,14 @@
 "Durchmesser": "40 mm"
 },
 "preis": 5.5,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-8B2D7859",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M16",
+"name": "Gelenkfuß Stahl verzinkt, Innengewinde M16, Höhe 37 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1807,14 +2204,14 @@
 "Gewinde": "M16"
 },
 "preis": 6.24,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m16.svg"
 },
 {
 "sku": "BF-V-D69A3421",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M20",
+"name": "Gelenkfuß Stahl verzinkt, Innengewinde M20, Höhe 45 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1825,14 +2222,14 @@
 "Gewinde": "M20"
 },
 "preis": 9.78,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m20.svg"
 },
 {
 "sku": "BF-V-6A7BF3AC",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M24",
+"name": "Gelenkfuß Stahl verzinkt, M24 × 100 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1843,14 +2240,14 @@
 "Gewinde": "M24"
 },
 "preis": 15.48,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m24.svg"
 },
 {
 "sku": "BF-V-B875363B",
-"name": "Gelenkfuß Stahl verzinkt oder Edelstahl, M8, Ø 40/50 mm",
+"name": "Gelenkfuß Stahl verzinkt, M8 × 40 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Gelenkteller, Schraube oder Innengewinde, verzinkt oder rostfrei.",
 "merkmale": {
@@ -1859,17 +2256,17 @@
 "Bauform": "Gelenkfuß",
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M8",
-"Durchmesser": "40/50 mm"
+"Durchmesser": "Teller 40 mm"
 },
 "preis": 5.04,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m8-40-50-mm.svg"
 },
 {
 "sku": "BF-V-83F6240B",
-"name": "Gelenkfuß mit Rutschschutzkappe, M10, Ø 40/50 mm",
+"name": "Gelenkfuß mit Rutschschutzkappe, M10 × 50 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
@@ -1878,17 +2275,17 @@
 "Bauform": "Gelenkfuß",
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M10",
-"Durchmesser": "40/50 mm"
+"Durchmesser": "Teller 40 mm"
 },
 "preis": 6.1,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m10-40-50-mm.svg"
 },
 {
 "sku": "BF-V-62C8717D",
-"name": "Gelenkfuß mit Rutschschutzkappe, M12, Ø 40 mm",
+"name": "Gelenkfuß mit Rutschschutzkappe, M12 × 60 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
@@ -1900,14 +2297,14 @@
 "Durchmesser": "40 mm"
 },
 "preis": 7.31,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-137671DB",
-"name": "Gelenkfuß mit Rutschschutzkappe, M8, Ø 40/50 mm",
+"name": "Gelenkfuß mit Rutschschutzkappe, M8 × 40 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Stellfuß mit Schutzkappe gegen Rutschen und Vibration.",
 "merkmale": {
@@ -1916,10 +2313,10 @@
 "Bauform": "Gelenkfuß",
 "Material": "Edelstahl, Stahl",
 "Gewinde": "M8",
-"Durchmesser": "40/50 mm"
+"Durchmesser": "Teller 40 mm"
 },
 "preis": 5.9,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m8-40-50-mm.svg"
@@ -1939,7 +2336,7 @@
 "Durchmesser": "40 mm"
 },
 "preis": 6.84,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m10-40-mm.svg"
@@ -1959,14 +2356,14 @@
 "Durchmesser": "40 mm"
 },
 "preis": 4.69,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m12-40-mm.svg"
 },
 {
 "sku": "BF-V-D97654F3",
-"name": "Gelenkfuß Kunststoff, Edelstahlspindel M8, Ø 40 mm",
+"name": "Gelenkfuß Kunststoff, Edelstahlspindel M8 × 25 mm, Ø 40 mm",
 "marke": "",
 "kurz": "Kleiner Kunststoff-Gelenkfuß Ø40 mit Edelstahlspindel, optional NBR.",
 "merkmale": {
@@ -1979,7 +2376,7 @@
 "Durchmesser": "40 mm"
 },
 "preis": 4.33,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m8-40-mm.svg"
@@ -1999,7 +2396,7 @@
 "Durchmesser": "50 mm"
 },
 "preis": 10.99,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-massiv-gelb-m12-x-125-50-mm.svg"
@@ -2186,7 +2583,7 @@
 },
 {
 "sku": "BF-V-1D17726A",
-"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M10, Ø 40–80 mm",
+"name": "Gelenkfuß Stahl, M10 × 29 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
@@ -2197,17 +2594,17 @@
 "Gewinde": "M10",
 "Bodenbefestigung": "ja",
 "Traglast": "7000-10000 N",
-"Durchmesser": "40/50/60/80 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 5.34,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m10-40-80-mm.svg"
 },
 {
 "sku": "BF-V-DF88EAFA",
-"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M12, Ø 40–80 mm",
+"name": "Gelenkfuß Stahl, M12 × 32 mm, Ø 60 mm",
 "marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
@@ -2218,17 +2615,17 @@
 "Gewinde": "M12",
 "Bodenbefestigung": "ja",
 "Traglast": "7000-12000 N",
-"Durchmesser": "40/50/60/80 mm"
+"Durchmesser": "Teller 60 mm"
 },
 "preis": 4.63,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m12-40-80-mm.svg"
 },
 {
 "sku": "BF-V-B84FEB57",
-"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M16, Ø 40–80 mm",
+"name": "Gelenkfuß Stahl, M16 × 150 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
@@ -2239,17 +2636,17 @@
 "Gewinde": "M16",
 "Bodenbefestigung": "ja",
 "Traglast": "7000-12000 N",
-"Durchmesser": "40/50/60/80 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 7.92,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m16-40-80-mm.svg"
 },
 {
 "sku": "BF-V-B2F674E9",
-"name": "Gelenkfuß Stahl, wahlweise mit Gummiauflage, M8, Ø 40–80 mm",
+"name": "Gelenkfuß Stahl, M8 × 50 mm, Ø 80 mm",
 "marke": "",
 "kurz": "Stahl-Gelenkstellfuß, mit/ohne TPE- oder NBR-Auflage, Form B0 mit Bohrungen.",
 "merkmale": {
@@ -2260,10 +2657,10 @@
 "Gewinde": "M8",
 "Bodenbefestigung": "ja",
 "Traglast": "7000-8000 N",
-"Durchmesser": "40/50/60/80 mm"
+"Durchmesser": "Teller 80 mm"
 },
 "preis": 8.72,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m8-40-80-mm.svg"
@@ -2284,8 +2681,25 @@
 "Durchmesser": "60 mm"
 },
 "preis": 78.68,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-E9058507-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 78.68,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-E9058507-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 95.16,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m12-60-mm.svg"
 },
@@ -2305,8 +2719,25 @@
 "Durchmesser": "60 mm"
 },
 "preis": 78.68,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-AD6C4005-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 78.68,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-AD6C4005-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 95.34,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-60-mm.svg"
 },
@@ -2326,8 +2757,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 81.76,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-A9742B5F-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 81.76,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-A9742B5F-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 98.17,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-80-mm.svg"
 },
@@ -2347,8 +2795,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 85.86,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-A6B953FC-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 85.86,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-A6B953FC-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 99.05,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-80-mm.svg"
 },
@@ -2368,8 +2833,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 93.36,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-B8C06E52-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 93.36,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-B8C06E52-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 105.83,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-80-mm.svg"
 },
@@ -2389,8 +2871,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 85.7,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-C809BE61-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 85.7,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-C809BE61-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 102.08,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-100-mm.svg"
 },
@@ -2410,8 +2909,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 89.78,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-5A0968A3-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 89.78,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-5A0968A3-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 102.98,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-100-mm.svg"
 },
@@ -2431,8 +2947,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 97.26,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-81D067CB-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 97.26,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-81D067CB-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 109.74,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-100-mm.svg"
 },
@@ -2452,8 +2985,25 @@
 "Durchmesser": "120 mm"
 },
 "preis": 97.09,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-3BF481CB-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 97.09,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-3BF481CB-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 113.47,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-120-mm.svg"
 },
@@ -2473,8 +3023,25 @@
 "Durchmesser": "120 mm"
 },
 "preis": 101.21,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-C9834603-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 101.21,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-C9834603-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 114.4,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-120-mm.svg"
 },
@@ -2494,8 +3061,25 @@
 "Durchmesser": "120 mm"
 },
 "preis": 108.68,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-EF5668EF-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 108.68,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-EF5668EF-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 121.14,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-120-mm.svg"
 },
@@ -2514,8 +3098,25 @@
 "Durchmesser": "60 mm"
 },
 "preis": 83.44,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-A887A160-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 83.44,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-A887A160-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 99.85,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m12-60-mm.svg"
 },
@@ -2534,8 +3135,25 @@
 "Durchmesser": "60 mm"
 },
 "preis": 83.44,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-194A7354-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 83.44,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-194A7354-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 100.04,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-60-mm.svg"
 },
@@ -2554,8 +3172,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 85.7,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-3C8766E4-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 85.7,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-3C8766E4-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 102.08,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-80-mm.svg"
 },
@@ -2574,8 +3209,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 89.78,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-FDB5AEA4-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 89.78,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-FDB5AEA4-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 102.98,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-80-mm.svg"
 },
@@ -2594,8 +3246,25 @@
 "Durchmesser": "80 mm"
 },
 "preis": 97.26,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-BD84EE13-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 97.26,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-BD84EE13-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 109.74,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-80-mm.svg"
 },
@@ -2614,8 +3283,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 90.68,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-7C35D122-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 90.68,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-7C35D122-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 107.06,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-100-mm.svg"
 },
@@ -2634,8 +3320,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 94.76,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-5151482F-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 94.76,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-5151482F-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 107.96,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-100-mm.svg"
 },
@@ -2654,8 +3357,25 @@
 "Durchmesser": "100 mm"
 },
 "preis": 102.25,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-9A88586C-01",
+"ausfuehrung": "Spindellänge 140 mm",
+"preis": 102.25,
+"wahl": {
+"Spindellänge": "140 mm"
+}
+},
+{
+"sku": "BF-V-9A88586C-02",
+"ausfuehrung": "Spindellänge 190 mm",
+"preis": 114.72,
+"wahl": {
+"Spindellänge": "190 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-100-mm.svg"
 },
@@ -2674,7 +3394,7 @@
 "Durchmesser": "80 mm"
 },
 "preis": 78.76,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-abgedichtet-m16-80-mm.svg"
@@ -2694,8 +3414,8 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 70.16,
-"preis_ab": true,
+"preis": 68.9,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m12-60-mm.svg"
@@ -2715,8 +3435,8 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 69.5,
-"preis_ab": true,
+"preis": 69.19,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-60-mm.svg"
@@ -2736,8 +3456,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 71.78,
-"preis_ab": true,
+"preis": 71.75,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-80-mm.svg"
@@ -2757,8 +3477,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 74.75,
-"preis_ab": true,
+"preis": 74.74,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-80-mm.svg"
@@ -2778,8 +3498,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 81.4,
-"preis_ab": true,
+"preis": 81.55,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-80-mm.svg"
@@ -2799,8 +3519,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 74.75,
-"preis_ab": true,
+"preis": 76.06,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-100-mm.svg"
@@ -2820,8 +3540,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 78.43,
-"preis_ab": true,
+"preis": 78.12,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-100-mm.svg"
@@ -2841,8 +3561,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 84.25,
-"preis_ab": true,
+"preis": 84.59,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-100-mm.svg"
@@ -2862,8 +3582,8 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 84.12,
-"preis_ab": true,
+"preis": 84.38,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-120-mm.svg"
@@ -2883,8 +3603,8 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 87.4,
-"preis_ab": true,
+"preis": 88.27,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-120-mm.svg"
@@ -2904,8 +3624,8 @@
 "Traglast": "30000 N",
 "Durchmesser": "120 mm"
 },
-"preis": 93.44,
-"preis_ab": true,
+"preis": 93.7,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-120-mm.svg"
@@ -2924,8 +3644,8 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 73.51,
-"preis_ab": true,
+"preis": 73.06,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m12-60-mm.svg"
@@ -2944,8 +3664,8 @@
 "Traglast": "10000 N",
 "Durchmesser": "60 mm"
 },
-"preis": 73.51,
-"preis_ab": true,
+"preis": 72.94,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-60-mm.svg"
@@ -2964,8 +3684,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 74.57,
-"preis_ab": true,
+"preis": 74.92,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-80-mm.svg"
@@ -2984,8 +3704,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 77.89,
-"preis_ab": true,
+"preis": 78.18,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-80-mm.svg"
@@ -3004,8 +3724,8 @@
 "Traglast": "20000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 84.88,
-"preis_ab": true,
+"preis": 84.38,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-80-mm.svg"
@@ -3024,8 +3744,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 79.19,
-"preis_ab": true,
+"preis": 79.16,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-100-mm.svg"
@@ -3044,8 +3764,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 82.62,
-"preis_ab": true,
+"preis": 82.18,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-100-mm.svg"
@@ -3064,8 +3784,8 @@
 "Traglast": "25000 N",
 "Durchmesser": "100 mm"
 },
-"preis": 88.72,
-"preis_ab": true,
+"preis": 88.84,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-100-mm.svg"
@@ -3081,8 +3801,8 @@
 "Bauform": "Stellfuß",
 "Material": "Edelstahl"
 },
-"preis": 93.26,
-"preis_ab": true,
+"preis": 93.8,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-fuer-brauerei-und-molkerei.svg"
@@ -3102,8 +3822,289 @@
 "Durchmesser": "40/50/60/80 mm"
 },
 "preis": 6.77,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-0185216D-01",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 25 mm",
+"preis": 6.77,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-02",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 50 mm",
+"preis": 7.03,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-03",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 75 mm",
+"preis": 7.3,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-04",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 100 mm",
+"preis": 7.48,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-05",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 125 mm",
+"preis": 7.55,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-06",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 9.13,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-07",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 9.78,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-08",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 50 mm",
+"preis": 10.6,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-09",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 11.68,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-10",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 12.05,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-11",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 12.64,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-12",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 25 mm",
+"preis": 8.77,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-13",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 50 mm",
+"preis": 9.01,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-14",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 75 mm",
+"preis": 9.28,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-15",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 100 mm",
+"preis": 9.79,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-16",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 125 mm",
+"preis": 10.15,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-17",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 10.54,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-18",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 11.44,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-19",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 11.87,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-20",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 125 mm",
+"preis": 13.0,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-21",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 50 mm",
+"preis": 14.46,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-22",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 15.47,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-23",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 15.82,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-24",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 125 mm",
+"preis": 16.91,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-25",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 17.18,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-26",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 17.84,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-27",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 18.5,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-0185216D-28",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 19.18,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m10-40-80-mm.svg"
 },
@@ -3122,8 +4123,349 @@
 "Durchmesser": "40/50/60/80 mm"
 },
 "preis": 7.43,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-DFC3814D-01",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 50 mm",
+"preis": 7.43,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-02",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 75 mm",
+"preis": 7.84,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-03",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 100 mm",
+"preis": 8.12,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-04",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 125 mm",
+"preis": 8.47,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-05",
+"ausfuehrung": "Material Stahl, Teller Ø 40 mm, Spindellänge 150 mm",
+"preis": 8.88,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-06",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 9.13,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-07",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 9.78,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-08",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 10.57,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-09",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 50 mm",
+"preis": 10.6,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-10",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 11.68,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-11",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 12.4,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-12",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 12.11,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-13",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 12.7,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-14",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 14.44,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-15",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 50 mm",
+"preis": 10.04,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-16",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 75 mm",
+"preis": 10.33,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-17",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 100 mm",
+"preis": 10.96,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-18",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 125 mm",
+"preis": 11.21,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-19",
+"ausfuehrung": "Material Edelstahl, Teller Ø 40 mm, Spindellänge 150 mm",
+"preis": 11.65,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 40 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-20",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 10.54,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-21",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 11.44,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-22",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 11.87,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-23",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 125 mm",
+"preis": 13.0,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-24",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 13.46,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-25",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 50 mm",
+"preis": 14.46,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-26",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 15.47,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-27",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 15.82,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-28",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 125 mm",
+"preis": 16.91,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-29",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 17.24,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-30",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 17.27,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-31",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 17.94,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-32",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 18.56,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-33",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 19.26,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-DFC3814D-34",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 20.48,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m12-40-80-mm.svg"
 },
@@ -3142,8 +4484,249 @@
 "Durchmesser": "50/60/80 mm"
 },
 "preis": 9.56,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-533974A5-01",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 50 mm",
+"preis": 9.56,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-02",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 10.25,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-03",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 11.14,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-04",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 50 mm",
+"preis": 11.11,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-05",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 12.26,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-06",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 13.01,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-07",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 50 mm",
+"preis": 12.46,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-08",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 13.07,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-09",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 14.47,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-10",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 11.81,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-11",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 12.44,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-12",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 125 mm",
+"preis": 13.34,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-13",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 14.8,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-14",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 175 mm",
+"preis": 15.56,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-15",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 16.2,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-16",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 16.93,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-17",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 125 mm",
+"preis": 17.71,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-18",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 18.42,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-19",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 175 mm",
+"preis": 19.14,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-20",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 18.42,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-21",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 19.08,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-22",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 19.76,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-23",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 20.48,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-533974A5-24",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 175 mm",
+"preis": 21.16,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "175 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m14-50-80-mm.svg"
 },
@@ -3162,8 +4745,509 @@
 "Durchmesser": "50/60/80/100/120 mm"
 },
 "preis": 11.68,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-D55D4762-01",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 11.68,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-02",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 12.02,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-03",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 13.9,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-04",
+"ausfuehrung": "Material Stahl, Teller Ø 50 mm, Spindellänge 200 mm",
+"preis": 15.79,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-05",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 13.51,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-06",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 13.87,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-07",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 15.54,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-08",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 200 mm",
+"preis": 16.2,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-09",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 15.38,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-10",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 14.4,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-11",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 15.96,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-12",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 18.22,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-13",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 17.24,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-14",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 17.58,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-15",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 19.28,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-16",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 19.97,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-17",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 75 mm",
+"preis": 22.21,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-18",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 100 mm",
+"preis": 22.54,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-19",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 150 mm",
+"preis": 24.42,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-20",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 200 mm",
+"preis": 25.08,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-21",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 75 mm",
+"preis": 13.34,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-22",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 100 mm",
+"preis": 13.87,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-23",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 125 mm",
+"preis": 14.5,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-24",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 150 mm",
+"preis": 15.25,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-25",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 175 mm",
+"preis": 16.0,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-26",
+"ausfuehrung": "Material Edelstahl, Teller Ø 50 mm, Spindellänge 200 mm",
+"preis": 16.82,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 50 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-27",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 15.7,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-28",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 16.32,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-29",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 125 mm",
+"preis": 17.06,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-30",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 17.54,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-31",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 175 mm",
+"preis": 18.36,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-32",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 200 mm",
+"preis": 19.04,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-33",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 19.92,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-34",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 20.95,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-35",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 21.61,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-36",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 22.36,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-37",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 175 mm",
+"preis": 23.39,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-38",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 25.42,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-39",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 30.68,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-40",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 31.85,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-41",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 125 mm",
+"preis": 32.44,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-42",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 33.01,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-43",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 175 mm",
+"preis": 34.14,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-44",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 35.65,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-45",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 75 mm",
+"preis": 47.0,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-46",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 100 mm",
+"preis": 47.83,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-47",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 125 mm",
+"preis": 48.76,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-48",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 150 mm",
+"preis": 49.39,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-49",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 175 mm",
+"preis": 50.72,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-D55D4762-50",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 200 mm",
+"preis": 52.09,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "200 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m16-50-120-mm.svg"
 },
@@ -3182,8 +5266,529 @@
 "Durchmesser": "60/80/100/120 mm"
 },
 "preis": 14.4,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-33362442-01",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 14.4,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-02",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 14.68,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-03",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 16.66,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-04",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 200 mm",
+"preis": 18.78,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-05",
+"ausfuehrung": "Material Stahl, Teller Ø 60 mm, Spindellänge 250 mm",
+"preis": 21.11,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-06",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 14.98,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-07",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 15.26,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-08",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 17.12,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-09",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 19.3,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-10",
+"ausfuehrung": "Material Stahl, Teller Ø 80 mm, Spindellänge 250 mm",
+"preis": 22.74,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-11",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 17.44,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-12",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 17.74,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-13",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 19.62,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-14",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 21.52,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-15",
+"ausfuehrung": "Material Stahl, Teller Ø 100 mm, Spindellänge 250 mm",
+"preis": 23.75,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-16",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 75 mm",
+"preis": 24.17,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-17",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 100 mm",
+"preis": 24.98,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-18",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 150 mm",
+"preis": 26.18,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-19",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 200 mm",
+"preis": 27.82,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-20",
+"ausfuehrung": "Material Stahl, Teller Ø 120 mm, Spindellänge 250 mm",
+"preis": 30.01,
+"wahl": {
+"Material": "Stahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-21",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 75 mm",
+"preis": 16.49,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-22",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 100 mm",
+"preis": 18.38,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-23",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 125 mm",
+"preis": 20.28,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-33362442-24",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 150 mm",
+"preis": 22.2,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-25",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 175 mm",
+"preis": 24.12,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-33362442-26",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 200 mm",
+"preis": 26.04,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-27",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 225 mm",
+"preis": 27.94,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "225 mm"
+}
+},
+{
+"sku": "BF-V-33362442-28",
+"ausfuehrung": "Material Edelstahl, Teller Ø 60 mm, Spindellänge 250 mm",
+"preis": 29.89,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 60 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-29",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 75 mm",
+"preis": 22.3,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-30",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 100 mm",
+"preis": 24.05,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-31",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 125 mm",
+"preis": 24.89,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-33362442-32",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 150 mm",
+"preis": 25.79,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-33",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 175 mm",
+"preis": 27.49,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-33362442-34",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 200 mm",
+"preis": 28.36,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-35",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 225 mm",
+"preis": 29.24,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "225 mm"
+}
+},
+{
+"sku": "BF-V-33362442-36",
+"ausfuehrung": "Material Edelstahl, Teller Ø 80 mm, Spindellänge 250 mm",
+"preis": 32.27,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 80 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-37",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 75 mm",
+"preis": 31.31,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-38",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 100 mm",
+"preis": 32.7,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-39",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 125 mm",
+"preis": 33.73,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-33362442-40",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 150 mm",
+"preis": 34.75,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-41",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 175 mm",
+"preis": 36.14,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-33362442-42",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 200 mm",
+"preis": 37.19,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-43",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 225 mm",
+"preis": 40.19,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "225 mm"
+}
+},
+{
+"sku": "BF-V-33362442-44",
+"ausfuehrung": "Material Edelstahl, Teller Ø 100 mm, Spindellänge 250 mm",
+"preis": 41.29,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 100 mm",
+"Spindellänge": "250 mm"
+}
+},
+{
+"sku": "BF-V-33362442-45",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 75 mm",
+"preis": 47.2,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-33362442-46",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 100 mm",
+"preis": 49.75,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "100 mm"
+}
+},
+{
+"sku": "BF-V-33362442-47",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 125 mm",
+"preis": 51.23,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "125 mm"
+}
+},
+{
+"sku": "BF-V-33362442-48",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 150 mm",
+"preis": 52.0,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "150 mm"
+}
+},
+{
+"sku": "BF-V-33362442-49",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 175 mm",
+"preis": 53.44,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "175 mm"
+}
+},
+{
+"sku": "BF-V-33362442-50",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 200 mm",
+"preis": 54.92,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "200 mm"
+}
+},
+{
+"sku": "BF-V-33362442-51",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 225 mm",
+"preis": 56.76,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "225 mm"
+}
+},
+{
+"sku": "BF-V-33362442-52",
+"ausfuehrung": "Material Edelstahl, Teller Ø 120 mm, Spindellänge 250 mm",
+"preis": 58.34,
+"wahl": {
+"Material": "Edelstahl",
+"Teller": "Ø 120 mm",
+"Spindellänge": "250 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m20-60-120-mm.svg"
 },
@@ -3202,8 +5807,63 @@
 "Durchmesser": "40 mm"
 },
 "preis": 6.49,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-734661D5-01",
+"ausfuehrung": "Material Stahl, Spindellänge 25 mm",
+"preis": 6.49,
+"wahl": {
+"Material": "Stahl",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-734661D5-02",
+"ausfuehrung": "Material Stahl, Spindellänge 50 mm",
+"preis": 6.74,
+"wahl": {
+"Material": "Stahl",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-734661D5-03",
+"ausfuehrung": "Material Stahl, Spindellänge 75 mm",
+"preis": 7.01,
+"wahl": {
+"Material": "Stahl",
+"Spindellänge": "75 mm"
+}
+},
+{
+"sku": "BF-V-734661D5-04",
+"ausfuehrung": "Material Edelstahl, Spindellänge 25 mm",
+"preis": 7.99,
+"wahl": {
+"Material": "Edelstahl",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-734661D5-05",
+"ausfuehrung": "Material Edelstahl, Spindellänge 50 mm",
+"preis": 8.21,
+"wahl": {
+"Material": "Edelstahl",
+"Spindellänge": "50 mm"
+}
+},
+{
+"sku": "BF-V-734661D5-06",
+"ausfuehrung": "Material Edelstahl, Spindellänge 75 mm",
+"preis": 8.5,
+"wahl": {
+"Material": "Edelstahl",
+"Spindellänge": "75 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m8-40-mm.svg"
 },
@@ -3222,8 +5882,25 @@
 "Durchmesser": "47 mm"
 },
 "preis": 0.74,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-2F4ED981-01",
+"ausfuehrung": "Spindellänge 20 mm",
+"preis": 0.74,
+"wahl": {
+"Spindellänge": "20 mm"
+}
+},
+{
+"sku": "BF-V-2F4ED981-02",
+"ausfuehrung": "Spindellänge 30 mm",
+"preis": 0.77,
+"wahl": {
+"Spindellänge": "30 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m10-47-mm.svg"
 },
@@ -3242,8 +5919,25 @@
 "Durchmesser": "30 mm"
 },
 "preis": 0.52,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-5BB0921F-01",
+"ausfuehrung": "Spindellänge 20 mm",
+"preis": 0.52,
+"wahl": {
+"Spindellänge": "20 mm"
+}
+},
+{
+"sku": "BF-V-5BB0921F-02",
+"ausfuehrung": "Spindellänge 30 mm",
+"preis": 0.52,
+"wahl": {
+"Spindellänge": "30 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m6-30-mm.svg"
 },
@@ -3262,8 +5956,90 @@
 "Durchmesser": "30/47 mm"
 },
 "preis": 0.53,
-"preis_ab": true,
-"varianten": [],
+"preis_ab": false,
+"varianten": [
+{
+"sku": "BF-V-2DD71741-01",
+"ausfuehrung": "Teller Ø 30 mm, Spindellänge 15 mm",
+"preis": 0.53,
+"wahl": {
+"Teller": "Ø 30 mm",
+"Spindellänge": "15 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-02",
+"ausfuehrung": "Teller Ø 30 mm, Spindellänge 20 mm",
+"preis": 0.55,
+"wahl": {
+"Teller": "Ø 30 mm",
+"Spindellänge": "20 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-03",
+"ausfuehrung": "Teller Ø 30 mm, Spindellänge 25 mm",
+"preis": 0.59,
+"wahl": {
+"Teller": "Ø 30 mm",
+"Spindellänge": "25 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-04",
+"ausfuehrung": "Teller Ø 30 mm, Spindellänge 30 mm",
+"preis": 0.6,
+"wahl": {
+"Teller": "Ø 30 mm",
+"Spindellänge": "30 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-05",
+"ausfuehrung": "Teller Ø 30 mm, Spindellänge 40 mm",
+"preis": 0.62,
+"wahl": {
+"Teller": "Ø 30 mm",
+"Spindellänge": "40 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-06",
+"ausfuehrung": "Teller Ø 47 mm, Spindellänge 15 mm",
+"preis": 0.67,
+"wahl": {
+"Teller": "Ø 47 mm",
+"Spindellänge": "15 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-07",
+"ausfuehrung": "Teller Ø 47 mm, Spindellänge 20 mm",
+"preis": 0.68,
+"wahl": {
+"Teller": "Ø 47 mm",
+"Spindellänge": "20 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-08",
+"ausfuehrung": "Teller Ø 47 mm, Spindellänge 30 mm",
+"preis": 0.71,
+"wahl": {
+"Teller": "Ø 47 mm",
+"Spindellänge": "30 mm"
+}
+},
+{
+"sku": "BF-V-2DD71741-09",
+"ausfuehrung": "Teller Ø 47 mm, Spindellänge 40 mm",
+"preis": 0.73,
+"wahl": {
+"Teller": "Ø 47 mm",
+"Spindellänge": "40 mm"
+}
+}
+],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m8-30-47-mm.svg"
 },
@@ -3280,7 +6056,7 @@
 "Traglast": "6000 N"
 },
 "preis": 48.18,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-610-kg.svg"
@@ -3298,7 +6074,7 @@
 "Traglast": "20000 N"
 },
 "preis": 91.92,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-2000-kg.svg"
@@ -3318,7 +6094,7 @@
 "Durchmesser": "160 mm"
 },
 "preis": 135.98,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-4100-kg-m16-160-mm.svg"
@@ -3336,7 +6112,7 @@
 "Traglast": "55000 N"
 },
 "preis": 246.32,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-5600-kg.svg"
@@ -3354,7 +6130,7 @@
 "Traglast": "80000 N"
 },
 "preis": 406.31,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-8200-kg.svg"
@@ -3374,7 +6150,7 @@
 "Durchmesser": "113 mm"
 },
 "preis": 50.32,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m16-113-mm.svg"
@@ -3394,7 +6170,7 @@
 "Durchmesser": "126 mm"
 },
 "preis": 68.62,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m20-126-mm.svg"
@@ -3441,7 +6217,7 @@
 },
 {
 "sku": "BF-V-A3402006",
-"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M10, Ø 30–50 mm",
+"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M10 × 33 mm, Ø 30 mm",
 "marke": "",
 "kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel.",
 "merkmale": {
@@ -3451,10 +6227,10 @@
 "Material": "Stahl, Kunststoff",
 "Gewinde": "M10",
 "Traglast": "3000 N",
-"Durchmesser": "30/40/50 mm"
+"Durchmesser": "Teller 30 mm"
 },
 "preis": 0.5,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m10-30-50-mm.svg"
@@ -3474,14 +6250,14 @@
 "Durchmesser": "60 mm"
 },
 "preis": 2.11,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m16-60-mm.svg"
 },
 {
 "sku": "BF-V-201F27B6",
-"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M8, Ø 25–40 mm",
+"name": "Stellfuß Kunststoff, Stahlspindel verzinkt, M8 × 24 mm, Ø 25 mm",
 "marke": "",
 "kurz": "Starrer Kunststoff-Stellfuß mit verzinkter Stahlspindel.",
 "merkmale": {
@@ -3491,17 +6267,17 @@
 "Material": "Stahl, Kunststoff",
 "Gewinde": "M8",
 "Traglast": "2500 N",
-"Durchmesser": "25/30/40 mm"
+"Durchmesser": "Teller 25 mm"
 },
 "preis": 0.35,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m8-25-40-mm.svg"
 },
 {
 "sku": "BF-V-E68C5C6F",
-"name": "Stellfuß Kunststoff, Schraube verzinkt, M10, Ø 47 mm",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M10 × 25 mm, Ø 47 mm",
 "marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
@@ -3514,14 +6290,14 @@
 "Durchmesser": "47 mm"
 },
 "preis": 0.7,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m10-47-mm.svg"
 },
 {
 "sku": "BF-V-7A82C84C",
-"name": "Stellfuß Kunststoff, Schraube verzinkt, M6, Ø 30 mm",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M6 × 20 mm, Ø 30 mm",
 "marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
@@ -3534,14 +6310,14 @@
 "Durchmesser": "30 mm"
 },
 "preis": 0.56,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m6-30-mm.svg"
 },
 {
 "sku": "BF-V-BD2DE969",
-"name": "Stellfuß Kunststoff, Schraube verzinkt, M8, Ø 30/47 mm",
+"name": "Stellfuß Kunststoff, Schraube verzinkt, M8 × 16 mm, Ø 30 mm",
 "marke": "",
 "kurz": "Starrer runder Kunststoff-Stellfuß mit verzinkter Stahlschraube.",
 "merkmale": {
@@ -3551,17 +6327,17 @@
 "Material": "Stahl, Kunststoff",
 "Gewinde": "M8",
 "Traglast": "3000-4000 N",
-"Durchmesser": "30/47 mm"
+"Durchmesser": "Teller 30 mm"
 },
 "preis": 0.61,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m8-30-47-mm.svg"
 },
 {
 "sku": "BF-V-4B26BE1E",
-"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M10, Ø 47 mm",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M10 × 20 mm, Ø 47 mm",
 "marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
@@ -3574,14 +6350,14 @@
 "Durchmesser": "47 mm"
 },
 "preis": 0.85,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m10-47-mm.svg"
 },
 {
 "sku": "BF-V-8A0B5FB4",
-"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M6, Ø 30 mm",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M6 × 20 mm, Ø 30 mm",
 "marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
@@ -3594,14 +6370,14 @@
 "Durchmesser": "30 mm"
 },
 "preis": 0.6,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m6-30-mm.svg"
 },
 {
 "sku": "BF-V-6EB85C59",
-"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M8, Ø 30/47 mm",
+"name": "Stellfuß Kunststoff rund mit Sechskant, starr, M8 × 15 mm, Ø 30 mm",
 "marke": "",
 "kurz": "Runder Kunststoff-Stellfuß mit Sechskant, starre Ausführung.",
 "merkmale": {
@@ -3611,10 +6387,10 @@
 "Material": "Stahl, Kunststoff",
 "Gewinde": "M8",
 "Traglast": "3000-4000 N",
-"Durchmesser": "30/47 mm"
+"Durchmesser": "Teller 30 mm"
 },
 "preis": 0.61,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m8-30-47-mm.svg"
@@ -3728,7 +6504,7 @@
 "Durchmesser": "50 mm"
 },
 "preis": 70.22,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/lenkrolle-mit-nivellierfuss-rolle-50-mm-bauhoehe-82-mm.svg"
@@ -3748,7 +6524,7 @@
 "Durchmesser": "119 mm"
 },
 "preis": 171.07,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m45-schraube-m16-119-mm.svg"
@@ -3768,7 +6544,7 @@
 "Durchmesser": "119 mm"
 },
 "preis": 143.45,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m45-schraube-m16-119-mm.svg"
@@ -3788,7 +6564,7 @@
 "Durchmesser": "40 mm"
 },
 "preis": 69.26,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m28-schraube-m10-40-mm.svg"
@@ -3808,7 +6584,7 @@
 "Durchmesser": "52 mm"
 },
 "preis": 111.53,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-52-mm.svg"
@@ -3828,7 +6604,7 @@
 "Durchmesser": "52 mm"
 },
 "preis": 79.56,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m36-schraube-m12-52-mm.svg"
@@ -3848,7 +6624,7 @@
 "Durchmesser": "99 mm"
 },
 "preis": 123.13,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-99-mm.svg"
@@ -3887,7 +6663,7 @@
 "Durchmesser": "100 mm"
 },
 "preis": 33.74,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-lange-spindel-m30-100-mm.svg"
@@ -3945,7 +6721,7 @@
 "Durchmesser": "80 mm"
 },
 "preis": 11.2,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-mit-befestigungslasche-m24-80-mm.svg"
@@ -3966,7 +6742,7 @@
 "Durchmesser": "45 mm"
 },
 "preis": 46.24,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m10-45-mm-bis-12-t.svg"
@@ -3987,7 +6763,7 @@
 "Durchmesser": "45 mm"
 },
 "preis": 46.24,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m12-45-mm-bis-12-t.svg"
@@ -4008,7 +6784,7 @@
 "Durchmesser": "45 mm"
 },
 "preis": 46.24,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-45-mm-bis-12-t.svg"
@@ -4029,7 +6805,7 @@
 "Durchmesser": "58 mm"
 },
 "preis": 53.8,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-58-mm-bis-21-t.svg"
@@ -4050,7 +6826,7 @@
 "Durchmesser": "58 mm"
 },
 "preis": 53.8,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-58-mm-bis-21-t.svg"
@@ -4071,7 +6847,7 @@
 "Durchmesser": "58 mm"
 },
 "preis": 53.8,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-58-mm-bis-21-t.svg"
@@ -4092,7 +6868,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 80.87,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-70-mm-bis-34-t.svg"
@@ -4113,7 +6889,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 80.87,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-70-mm-bis-34-t.svg"
@@ -4134,7 +6910,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 80.87,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m30-70-mm-bis-34-t.svg"
@@ -4155,7 +6931,7 @@
 "Durchmesser": "45 mm"
 },
 "preis": 67.16,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/nivellierelement-stahl-pendelnd-durchgang-fuer-m16-45-mm-bis-12-t.svg"
@@ -4176,7 +6952,7 @@
 "Durchmesser": "120 mm"
 },
 "preis": 40.73,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-mit-bohrungen-m30-120-mm.svg"
@@ -4196,7 +6972,7 @@
 "Durchmesser": "120 mm"
 },
 "preis": 40.37,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-120-mm.svg"
@@ -4216,7 +6992,7 @@
 "Durchmesser": "100 mm"
 },
 "preis": 25.32,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-100-mm.svg"
@@ -4236,7 +7012,7 @@
 "Durchmesser": "100 mm"
 },
 "preis": 30.92,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m30-100-mm.svg"
@@ -4314,7 +7090,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 36.76,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-20-kg.svg"
@@ -4334,7 +7110,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 37.27,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-33-kg.svg"
@@ -4354,7 +7130,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 40.96,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-52-kg.svg"
@@ -4374,7 +7150,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 47.7,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-82-kg.svg"
@@ -4394,7 +7170,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 56.74,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-120-kg.svg"
@@ -4414,7 +7190,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 61.82,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-200-kg.svg"
@@ -4434,7 +7210,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 65.89,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-310-kg.svg"
@@ -4454,7 +7230,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 72.64,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-420-kg.svg"
@@ -4474,7 +7250,7 @@
 "Durchmesser": "70 mm"
 },
 "preis": 82.43,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/federisolator-stahl-m10-bis-520-kg.svg"
@@ -4493,7 +7269,7 @@
 "Durchmesser": "10 mm"
 },
 "preis": 1.03,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-10-mm.svg"
@@ -4511,8 +7287,8 @@
 "Gewinde": "M4",
 "Durchmesser": "15 mm"
 },
-"preis": 1.07,
-"preis_ab": true,
+"preis": 1.08,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-15-mm.svg"
@@ -4531,8 +7307,8 @@
 "Traglast": "2200 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.15,
-"preis_ab": true,
+"preis": 4.18,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-55-shore.svg"
@@ -4552,7 +7328,7 @@
 "Durchmesser": "50 mm"
 },
 "preis": 4.24,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-70-shore.svg"
@@ -4572,7 +7348,7 @@
 "Durchmesser": "80 mm"
 },
 "preis": 7.82,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-55-shore.svg"
@@ -4591,8 +7367,8 @@
 "Traglast": "24000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 7.82,
-"preis_ab": true,
+"preis": 7.81,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-70-shore.svg"
@@ -4612,7 +7388,7 @@
 "Durchmesser": "125 mm"
 },
 "preis": 27.5,
-"preis_ab": true,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-93-mm-55-shore.svg"
@@ -4631,8 +7407,8 @@
 "Traglast": "62000 N",
 "Durchmesser": "125 mm"
 },
-"preis": 27.88,
-"preis_ab": true,
+"preis": 27.61,
+"preis_ab": false,
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-90-mm-70-shore.svg"

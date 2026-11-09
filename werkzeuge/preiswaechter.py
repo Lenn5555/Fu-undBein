@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Preiswächter: prüft täglich die Händlerseiten der Bezugsquellen auf Preisänderungen und ausgelaufene Produkte.
+"""Preiswächter: prüft wöchentlich die Händlerseiten der Bezugsquellen auf Preisänderungen und ausgelaufene Produkte.
 
 Liest
   bezugsquellen.json        Händler, Bestell-Link und EK je Artikelnummer (aus dem GitHub-Secret BEZUGSQUELLEN,
                             nie im Repo; Pfad als Argument oder Umgebungsvariable BEZUGSQUELLEN_DATEI)
   daten/preise-vergleich.csv  aktuelle Verkaufspreise (EK + Aufschlag)
+  daten/feste-preise.json     feste Preise je Produkt bzw. je Ausführung (seit 09.11.2026, gehen vor die CSV)
   daten/preiswaechter.json    Stand des Wächters: wie der Preis je Artikel auf der Händlerseite gefunden wird
 Schreibt
-  daten/preise-vergleich.csv, daten/ausgeblendet.csv, daten/preiswaechter.json
+  daten/preise-vergleich.csv, daten/feste-preise.json, daten/ausgeblendet.csv, daten/preiswaechter.json
   bericht.txt               Bericht für die Mail (enthält Händlernamen; nur per Mail versenden, nie ins Log)
 
 Grundsätze
@@ -21,12 +22,14 @@ Grundsätze
 
 Aufruf: python3 werkzeuge/preiswaechter.py bezugsquellen.json [--nur-melden] [--ohne-bremse] [--nur-offene]
 
-Je Artikelnummer gibt es eine Bezugsquelle mit einem Referenzpreis (bei Serien die günstigste Ausführung,
-siehe preis_bezug). Danach richtet sich der „ab“-Preis im Shop; einzelne Gewinde haben keinen eigenen Preis.
+Geprüft wird je Prüfposten: Produkte mit festem Preis (feste-preise.json) mit ihrem genauen Händlerartikel,
+Produkte mit Ausführungen je Ausführung (SKU <produkt>-NN), die übrigen je Artikelnummer mit dem Referenzpreis
+der Serie (preis_bezug). Eine ausgelaufene Ausführung wird nur gemeldet, nicht entfernt.
 """
 import csv
 import gzip
 import hashlib
+import hmac
 import html
 import json
 import os
@@ -44,6 +47,7 @@ import preiswaechter_hilfe as hilfe  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PREISE = ROOT / "daten/preise-vergleich.csv"
+FESTE = ROOT / "daten/feste-preise.json"
 AUSGEBLENDET = ROOT / "daten/ausgeblendet.csv"
 STAND = ROOT / "daten/preiswaechter.json"
 
@@ -281,6 +285,39 @@ def euro(x):
     return f"{x:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".") + " EUR"
 
 
+def kennung(e):
+    """Kennung der Zuordnung Händlerseite + Artikel. Mit Schlüssel gehasht, damit der öffentliche Stand nichts über
+    den Händler verrät. Ändert sich die Zuordnung (oder der Schlüssel), misst sich der Posten neu ein."""
+    schluessel = (os.environ.get("ANTHROPIC_API_KEY") or "-").encode()
+    return hmac.new(schluessel, f"{e.get('bestell_url')}|{e.get('artikel')}".encode(), "sha256").hexdigest()[:12]
+
+
+def posten(bezug, fest):
+    """Prüfposten aus den Bezugsquellen: {schlüssel: eintrag}, eintrag["fest"] = "einzel", "variante" oder None.
+
+    Feste Preise brauchen die neue Zuordnung im Secret (Einträge mit "varianten"); fehlt sie, werden Produkte
+    mit festem Preis übersprungen, weil der alte Referenzpreis der Serie nicht zum festen Preis passt."""
+    neu = any("varianten" in e for e in bezug.values())
+    liste, uebersprungen = {}, 0
+    for s, e in bezug.items():
+        f = fest.get(s)
+        if f is None:
+            liste[s] = {**e, "fest": None}
+        elif not neu:
+            uebersprungen += 1
+        elif "varianten" in f:
+            for v in f["varianten"]:
+                x = (e.get("varianten") or {}).get(v["sku"])
+                if x:
+                    liste[v["sku"]] = {"hersteller": e.get("hersteller", ""), "bezugsquelle": e.get("bezugsquelle", ""),
+                                       "artikel": x["artikel"], "ek_netto": x["ek_netto"],
+                                       "bestell_url": x.get("bestell_url") or e.get("bestell_url"),
+                                       "preis_bezug": v["ausfuehrung"], "fest": "variante", "produkt": s}
+        else:
+            liste[s] = {**e, "preis_bezug": "", "fest": "einzel"}
+    return liste, uebersprungen
+
+
 # ---------------------------------------------------------------- Ablauf
 
 def main(argv):
@@ -289,7 +326,8 @@ def main(argv):
     nur_offene = "--nur-offene" in argv  # Nachprüfung am Folgetag: nur Artikel mit unbestätigtem Fund
     pfad = next((a for a in argv if not a.startswith("--")), os.environ.get("BEZUGSQUELLEN_DATEI"))
     bezug = json.loads(Path(pfad).read_text(encoding="utf-8"))
-    vk = {r["sku"]: float(r["preis_netto"]) for r in lade_csv(PREISE)}
+    csv_vk = {r["sku"]: float(r["preis_netto"]) for r in lade_csv(PREISE)}
+    fest = json.loads(FESTE.read_text(encoding="utf-8")) if FESTE.exists() else {}
     aus = {r["sku"]: r for r in lade_csv(AUSGEBLENDET)}
     stand = json.loads(STAND.read_text(encoding="utf-8")) if STAND.exists() else {}
     erster_lauf = not stand
@@ -298,7 +336,29 @@ def main(argv):
     heute = date.today().isoformat()
     stand.setdefault("artikel", {})
 
-    zu_pruefen = {s: e for s, e in bezug.items() if e.get("bestell_url") and (s in vk or s in aus)}
+    # Aktueller Verkaufspreis je Prüfposten: feste Preise gehen vor die CSV (so rechnet auch der Build)
+    vk = dict(csv_vk)
+    variante_von = {}
+    for p, f in fest.items():
+        if "varianten" in f:
+            for v in f["varianten"]:
+                vk[v["sku"]] = v["preis"]
+                variante_von[v["sku"]] = p
+        else:
+            vk[p] = f["preis"]
+    alle, veraltet = posten(bezug, fest)
+    zu_pruefen = {s: e for s, e in alle.items() if e.get("bestell_url") and (s in vk or s in aus)}
+    for s, e in zu_pruefen.items():
+        a = stand["artikel"].get(s)
+        k = kennung(e)
+        if a is not None and a.get("ref") != k:
+            # Zuordnung geändert (z. B. fester Preis statt Serienpreis): neu einmessen
+            if "ref" in a or e["fest"]:
+                stand["artikel"][s] = {x: a[x] for x in ("fest_alt",) if x in a}
+        stand["artikel"].setdefault(s, {})["ref"] = k
+    if not nur_offene:  # Stand von Posten, die es nicht mehr gibt (z. B. Serie jetzt je Ausführung geprüft), aufräumen
+        for s in [s for s, a in stand["artikel"].items() if s not in zu_pruefen and "fest_alt" not in a]:
+            del stand["artikel"][s]
     if nur_offene:
         offen = {s for s, a in stand["artikel"].items() if a.get("vorschlag_vk") or a.get("verdacht")}
         zu_pruefen = {s: e for s, e in zu_pruefen.items() if s in offen}
@@ -356,8 +416,8 @@ def main(argv):
         ergebnisse[s] = r
     erreichbar = sum(1 for url in nach_url if any(x and x[0] == 200 for x in (seiten.get((url, False)), seiten.get((url, True)))))
 
-    preis_neu, preis_gross, ausblenden, verdacht, zurueck, ausverkauft, unlesbar, nicht_pruefbar, fehler, unsicher = (
-        [] for _ in range(10))
+    preis_neu, preis_gross, ausblenden, verdacht, zurueck, ausverkauft, unlesbar, nicht_pruefbar, fehler, unsicher, \
+        variante_aus = ([] for _ in range(11))
     for s, r in sorted(ergebnisse.items()):
         a = stand["artikel"].setdefault(s, {})
         art = r["art"]
@@ -369,11 +429,20 @@ def main(argv):
         if r.get("ausverkauft"):
             ausverkauft.append(s)
         if art in ("weg", "auslauf"):
-            if s not in aus:
+            if zu_pruefen[s]["fest"] == "variante":
+                # Einzelne Ausführung nur melden (einmal), nicht aus dem Shop nehmen
+                if a.get("verdacht") and not a.get("gemeldet"):
+                    variante_aus.append((s, r["grund"]))
+                    a["gemeldet"] = heute
+                elif not a.get("verdacht"):
+                    verdacht.append((s, r["grund"]))
+                a.setdefault("verdacht", heute)
+            elif s not in aus:
                 (ausblenden if a.get("verdacht") else verdacht).append((s, r["grund"]))
                 a.setdefault("verdacht", heute)
             continue
         a.pop("verdacht", None)
+        a.pop("gemeldet", None)
         if art == "eingemessen":
             a.update({"weg": r["weg"], "brutto": r["brutto"]})
             for k in ("nicht_pruefbar", "browser", "hash"):
@@ -433,15 +502,33 @@ def main(argv):
         bremse = []
     aendern = not nur_melden and not bremse
 
+    def fest_setzen(s, preis):
+        if s in variante_von:
+            next(v for v in fest[variante_von[s]]["varianten"] if v["sku"] == s)["preis"] = preis
+        elif s in fest:
+            fest[s]["preis"] = preis
+
     if aendern:
         for s, alt, neu, _ in preis_neu:
-            vk[s] = neu
+            fest_setzen(s, neu)
+            if s in csv_vk:
+                csv_vk[s] = neu
         for s, grund in ausblenden:
-            aus[s] = {"sku": s, "preis_netto": f"{vk.pop(s):.2f}", "seit": heute, "grund": grund}
+            if s in fest:  # fester Preis: Eintrag im Stand aufheben, damit er beim Wiedereinblenden zurückkommt
+                stand["artikel"][s]["fest_alt"] = fest.pop(s)
+            aus[s] = {"sku": s, "preis_netto": f"{vk[s]:.2f}", "seit": heute, "grund": grund}
+            csv_vk.pop(s, None)
         for s, neu in zurueck:
-            vk[s] = neu
+            alt_fest = stand["artikel"][s].pop("fest_alt", None)
+            if alt_fest is not None:
+                fest[s] = {**alt_fest, "preis": neu}
+            else:
+                csv_vk[s] = neu
             aus.pop(s)
-        schreibe_csv(PREISE, ["sku", "preis_netto"], [[s, f"{p:.2f}"] for s, p in sorted(vk.items())])
+        schreibe_csv(PREISE, ["sku", "preis_netto"], [[s, f"{p:.2f}"] for s, p in sorted(csv_vk.items())])
+        neu_fest = json.dumps(fest, ensure_ascii=False, indent=1)
+        if FESTE.exists() and neu_fest != json.dumps(json.loads(FESTE.read_text(encoding="utf-8")), ensure_ascii=False, indent=1):
+            FESTE.write_text(neu_fest, encoding="utf-8")  # Format wie vom Shop-Build erzeugt (ohne Zeilenende)
         schreibe_csv(AUSGEBLENDET, ["sku", "preis_netto", "seit", "grund"],
                      [[r["sku"], r["preis_netto"], r["seit"], r["grund"]] for _, r in sorted(aus.items())])
     STAND.write_text(json.dumps(stand, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
@@ -476,6 +563,12 @@ def main(argv):
     if zurueck:
         teile.append(f"WIEDER DA{'' if aendern else ' (vorgeschlagen)'} ({len(zurueck)}), wieder eingeblendet:\n" +
                      "\n".join(f"- {zeile(s)}\n    Verkauf {euro(n)}" for s, n in zurueck))
+    if variante_aus:
+        teile.append(f"AUSFÜHRUNG NICHT MEHR DA, bitte prüfen ({len(variante_aus)}); bleibt im Shop, bis du entscheidest:\n" +
+                     "\n".join(f"- {zeile(s)}\n    {g}" for s, g in variante_aus))
+    if veraltet:
+        teile.append(f"SECRET BEZUGSQUELLEN VERALTET: {veraltet} Produkte mit festem Preis wurden nicht geprüft. "
+                     "Bitte in GitHub den neuen Inhalt eintragen (Settings > Secrets and variables > Actions > BEZUGSQUELLEN).")
     if unsicher:
         teile.append(f"GEFUNDEN, ABER NOCH NICHT ÜBERNOMMEN ({len(unsicher)}):\n" + "\n".join(
             f"- {zeile(s)}\n    gelesen EK {euro(ek)}, Verkauf wäre {euro(alt) + ' -> ' if alt else ''}{euro(neu)}; {h}"
@@ -500,13 +593,16 @@ def main(argv):
 
     # Mail nur, wenn sich etwas ändert oder Lenn entscheiden muss (Wunsch 20.10.2026: kein Bericht, wenn alles ok ist)
     widerspruch = any(h.startswith("zweite Lesung") for *_, h in unsicher)
-    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse or widerspruch)
+    wichtig = bool(preis_neu or preis_gross or ausblenden or zurueck or bremse or widerspruch or variante_aus or veraltet)
     kopf = (f"Preiswächter {heute}: {geprueft} Händlerseiten geprüft, {erreichbar} erreichbar, "
             f"{len(ergebnisse)} Artikel.")
     bericht = kopf + "\n\n" + ("\n\n".join(teile) if teile else "Alles unverändert.") + "\n"
     (ROOT / "bericht.txt").write_text(bericht, encoding="utf-8")
     teile_betreff = [f"{n} {name}" for n, name in ((len(preis_neu), "Preise"), (len(ausblenden), "ausgeblendet"),
-                                                   (len(preis_gross), "zu pruefen"), (len(zurueck), "wieder da")) if n]
+                                                   (len(preis_gross), "zu pruefen"), (len(zurueck), "wieder da"),
+                                                   (len(variante_aus), "Ausfuehrungen weg")) if n]
+    if veraltet:
+        teile_betreff.insert(0, "Secret veraltet")
     if bremse:
         teile_betreff.insert(0, "Sicherheitsbremse")
     if erster_lauf:
@@ -525,6 +621,7 @@ def main(argv):
           f"unbestätigt {len(unsicher)}, "
           f"große Sprünge {len(preis_gross)}, ausgeblendet {len(ausblenden)}, Verdacht {len(verdacht)}, wieder da {len(zurueck)}, "
           f"nicht prüfbar {sum(1 for a in stand['artikel'].values() if a.get('nicht_pruefbar'))}, "
+          f"Ausführungen weg {len(variante_aus)}, ohne neue Zuordnung übersprungen {veraltet}, "
           f"geändert: {'ja' if aendern and (preis_neu or ausblenden or zurueck) else 'nein'}")
     ausgabe = os.environ.get("GITHUB_OUTPUT")
     if ausgabe:

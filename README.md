@@ -93,7 +93,7 @@ keine IP, keine Kennung, keine Texte. Bestellungen zählt der Server selbst; fin
 
 Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, dann `build_ki.py`, das Secret `BEZUGSQUELLEN` erneuern und den Workflow neu starten.
 
-## Preiswächter (täglich, GitHub Actions)
+## Preiswächter (wöchentlich, GitHub Actions)
 
 `.github/workflows/preiswaechter.yml` prüft montags die Händlerseiten (dienstags nur die Artikel mit unbestätigtem Fund nach) aus dem Secret `BEZUGSQUELLEN`
 (`werkzeuge/preiswaechter.py`). Eine Mail an `sales@ts-systec.de` kommt nur, wenn sich etwas ändert oder etwas zu entscheiden ist.
@@ -108,6 +108,11 @@ Tests: `cd ki/worker && npm test`. Nach neuen Preisen: `preise_uebernehmen.py`, 
   Artikel wird ausgeblendet, also aus `daten/preise-vergleich.csv` nach `daten/ausgeblendet.csv` verschoben. Taucht er wieder auf, kommt er zurück.
   Von Hand wieder einblenden: Zeile aus `ausgeblendet.csv` zurück in `preise-vergleich.csv` kopieren.
 - **„Ausverkauft“** wird nur gemeldet (meist vorübergehend).
+- **Feste Preise** (seit 09.11.2026): Produkte in `daten/feste-preise.json` prüft der Wächter mit ihrem genauen Händlerartikel,
+  Produkte mit Ausführungen je Ausführung (`<sku>-NN`). Neue Preise schreibt er dort hinein. Ein festes Produkt, das ausläuft,
+  wird ausgeblendet und kommt mit seinem Eintrag zurück, wenn es wieder da ist. Eine einzelne Ausführung, die verschwindet,
+  wird nur gemeldet. Dafür braucht das Secret `BEZUGSQUELLEN` die neue Zuordnung mit `varianten`; fehlt sie, überspringt der
+  Wächter die festen Preise und meldet das.
 - **Sicherheitsbremse**: Ist weniger als die Hälfte der Seiten erreichbar, wären mehr als 5 Artikel auf einmal auszublenden
   oder mehr als 40 Preise zu ändern, ändert er nichts und meldet nur. Nach Prüfung: Actions → Preiswächter → Run workflow,
   Haken bei „Sicherheitsbremse übergehen“.

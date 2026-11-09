@@ -1,40 +1,261 @@
 {
  "artikel": {
-  "BF-V-0185216D": {
+  "BF-V-0185216D-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "ee2a35a3c54b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "eabe868f608a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "28197218cc52",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0cc096035b6f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1791c1cc5cf7",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6332a82e8deb",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "101a653c9ad9",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "595802144bfc",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "770ee8bb54af",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6d292e3e6aa1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2b0890c75b1d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "391e55310436",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ed828e4d9ecd",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b6fba7e9a97f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "10718e256b85",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d10e612d5be6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bd2294f250a5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2feccf18bbda",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c13b666dd903",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9c7cd26d691f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-21": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b0e51b0d2852",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-22": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f315fad346b2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-23": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1c435c29b408",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-24": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3f0d8ae539c8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-25": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a96dd1dec0af",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-26": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2229aa610292",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-27": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7a86294b5006",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-0185216D-28": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e16ec26b4142",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-02375754": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
-   "token": 0,
-   "weg": "nach:0"
+   "ref": "7db3b54628d7",
+   "seit": "2026-11-09",
+   "token": null,
+   "weg": "meta"
   },
   "BF-V-03FE504C": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "507e645ac3f45ee5",
-   "seit": "2026-10-20",
+   "ref": "2d97acf208c3",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 84.59,
    "weg": "ki"
   },
   "BF-V-05A9A6CF": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
-   "token": 0,
-   "weg": "nach:0"
+   "hash": "f510b6383e8a72de",
+   "ref": "04f252367bee",
+   "seit": "2026-11-09",
+   "token": null,
+   "weg": "ki"
   },
   "BF-V-082AAF0B": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "6fd2633470b4266b",
-   "seit": "2026-10-20",
+   "hash": "21cf380e25ca5b8d",
+   "ref": "0a5d956abd4f",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
@@ -42,39 +263,45 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "c860f653b9b3ff28",
-   "seit": "2026-10-20",
+   "ref": "f76d94b7ef81",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-0A759BBF": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "acfdf5630846de3a",
-   "seit": "2026-10-20",
+   "hash": "90dec67c3b0ce7a1",
+   "ref": "cea3b1e3ff01",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
   "BF-V-0BD9119D": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "bb30def6a647",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
-  "BF-V-0C01A2F4": {},
+  "BF-V-0C01A2F4": {
+   "ref": "e25c60a58716"
+  },
   "BF-V-0EA495CD": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "cb4b13b7410ce219",
-   "seit": "2026-10-20",
+   "ref": "9fd3eac258b3",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 7.19,
    "weg": "ki"
   },
   "BF-V-0F4E301F": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "1110ff9e342c",
+   "seit": "2026-11-09",
    "token": null,
    "vorschlag_vk": 70.81,
    "weg": "jsonld"
@@ -82,8 +309,9 @@
   "BF-V-0F768522": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "cf9892f4e48f1369",
-   "seit": "2026-10-20",
+   "hash": "6548e34c21c3f87a",
+   "ref": "23192f450528",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
@@ -91,25 +319,35 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "8764174ccff0bec4",
-   "seit": "2026-10-20",
+   "ref": "192fee61ab04",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-10CBE62C": {},
+  "BF-V-10CBE62C": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "5550b54675132f8d",
+   "ref": "fc00a0f5a123",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-12F0182E": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "c3a47b18298fb001",
-   "seit": "2026-10-20",
+   "ref": "6d40d6d8610b",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 93.8,
    "weg": "ki"
   },
   "BF-V-137671DB": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "0cac4fc2f9df7d97",
-   "seit": "2026-10-20",
+   "hash": "462f35728cb2fece",
+   "ref": "5a243dae086f",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -117,76 +355,152 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "6b5e6b22172ef8ac",
-   "seit": "2026-10-20",
+   "ref": "950a16757860",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-146A30E3": {},
+  "BF-V-146A30E3": {
+   "ref": "e9e3104a594b"
+  },
   "BF-V-171BBB60": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "668f0955d979500b",
-   "seit": "2026-10-20",
+   "ref": "1a8cb9f4364b",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-185A2C70": {},
-  "BF-V-189CAFA7": {},
+  "BF-V-185A2C70": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "4bc1c1bfa34d8148",
+   "ref": "ecdb0bab72d2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-189CAFA7": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "3e13d2dedd7bc088",
+   "ref": "2de786cc1a2f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-18C43044": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "ba25b25e717338f5",
-   "seit": "2026-10-20",
+   "ref": "85b1fd74a9de",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 84.38,
    "weg": "ki"
   },
-  "BF-V-194A7354": {
+  "BF-V-194A7354-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "2400153d4682",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-1B3BA4DF": {},
-  "BF-V-1D17726A": {},
+  "BF-V-194A7354-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9a294f7f1f54",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-1B3BA4DF": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "c0b391a0ad02a8e9",
+   "ref": "e57d801902c1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-1D17726A": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "93ddb6c1cd9a557c",
+   "ref": "43bb39f3d9c8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-1D4E9EFA": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "3b28271898a14d2e",
-   "seit": "2026-10-20",
+   "ref": "94f5dab22642",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 5.58,
    "weg": "ki"
   },
-  "BF-V-1F498E5D": {},
-  "BF-V-201F27B6": {},
-  "BF-V-22625A7B": {},
-  "BF-V-2603AA47": {},
+  "BF-V-1F498E5D": {
+   "ref": "07f75a329c10"
+  },
+  "BF-V-201F27B6": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "030415e96f442174",
+   "ref": "8d9a42e7a37d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-22625A7B": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "1844415f502a36b4",
+   "ref": "36bcfc6c6156",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-2603AA47": {
+   "ref": "e751927a91be"
+  },
   "BF-V-27CC917E": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "e72403316e8d8933",
-   "seit": "2026-10-20",
+   "ref": "5ad892394ac4",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 81.55,
    "weg": "ki"
   },
-  "BF-V-294DBF8D": {},
-  "BF-V-2ABB824D": {},
+  "BF-V-294DBF8D": {
+   "ref": "6ecb2e626dc6"
+  },
+  "BF-V-2ABB824D": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "d1a40a4315fd79c8",
+   "ref": "fda87fd59d02",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-2CDB3B6F": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "69060d7370358891",
-   "seit": "2026-10-20",
+   "hash": "ad1fbd01a3030349",
+   "ref": "c3e3ade5868d",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 4.18,
    "weg": "ki"
   },
   "BF-V-2D7F3A15": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "770c0a45f1f1",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
@@ -194,29 +508,512 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "4182a9804f4b45d4",
-   "seit": "2026-10-20",
+   "ref": "96167540eef4",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 74.92,
    "weg": "ki"
   },
-  "BF-V-2DD71741": {
+  "BF-V-2DD71741-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "0227fd033c4c",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-2F4ED981": {
+  "BF-V-2DD71741-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "813bdf707b32",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-33362442": {
+  "BF-V-2DD71741-03": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "1c8db95c5c92",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a81ec6a7b9ca",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bab5d3887ee3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "618f57e02bea",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "52df88d0235d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c0828ad2bd1a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2DD71741-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bce1adb4dedd",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2F4ED981-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "49cdb029d469",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-2F4ED981-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0c1c8525a651",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "41d753a3588e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9428b75edf3e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ad8dee35b3b4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9bba53576bfc",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "08392edfb209",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "cefdfb1afe14",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8f9c2a30a213",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c4a4c425d35b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b2a71e52fec8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "806b0909061e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0af39e2f218e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bf47d8ba06e2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "354e650bb6b4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "15eaed22da87",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "445e154f21e6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d099a981fb01",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ed646ab58346",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3ea233934c39",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a19719bbd214",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ca0417c29cd5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-21": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9a9a879028af",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-22": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "007596636bbc",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-23": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "22230dd0c1a2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-24": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8eff625df3f8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-25": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6023562327b3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-26": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "02facc5a93bf",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-27": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1991061cca36",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-28": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "80d90c05d910",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-29": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "aa4481cdc1a4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-30": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9964b9d8ca81",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-31": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8e4a6567dc31",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-32": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9ef99a8c9f8c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-33": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6f3dae967da2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-34": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7be287f20e3b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-35": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7117e525f46d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-36": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "cc9d7b060dff",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-37": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7cf637a84b64",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-38": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "cd68c642a4de",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-39": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b8a1667e73e1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-40": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e4992bac9dc3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-41": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3b6cb6697aa2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-42": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7b1b74f80ab8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-43": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e508807e9b0c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-44": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9e139f06cfa9",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-45": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4a949ca74f71",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-46": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c76c9e780cd5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-47": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d85a947ab727",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-48": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6a8e07a80218",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-49": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c835f7b94dd3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-50": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "597c41a1dd18",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-51": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "fc74f662ee69",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-33362442-52": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3bfbc7e2587a",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -224,22 +1021,25 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "8c24b47b4a330d25",
-   "seit": "2026-10-20",
+   "ref": "cdec4b3510cb",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-36964982": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "70de74c93c740b65",
-   "seit": "2026-10-20",
+   "hash": "065e5fc5ec48555d",
+   "ref": "24889d7ade84",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-37B55DF4": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "87d40e9bf322",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
@@ -247,29 +1047,51 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "55b08220d773ab48",
-   "seit": "2026-10-20",
+   "ref": "939151618397",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-3BF481CB": {
+  "BF-V-3BF481CB-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "390df46d0300",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-3C729371": {},
-  "BF-V-3C8766E4": {
+  "BF-V-3BF481CB-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "c76e548386ca",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-3C729371": {
+   "ref": "eb29cb09b40d"
+  },
+  "BF-V-3C8766E4-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9c36e3f93391",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-3C8766E4-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b768b1ea7361",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-3CE8A471": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "1b4e6b0ebd5a",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -277,15 +1099,56 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "12d900d4d698d69d",
-   "seit": "2026-10-20",
+   "ref": "a367b5228b01",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 6.78,
    "weg": "ki"
   },
-  "BF-V-40FAB03A": {
+  "BF-V-40FAB03A-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "048bbf1f124a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-40FAB03A-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b13e3c63458b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-40FAB03A-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "eedd7720eb77",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-40FAB03A-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "aae111000483",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-40FAB03A-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0500d618bb1d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-40FAB03A-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "40db53740379",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -293,16 +1156,17 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "d27f6d6cec7f878a",
-   "seit": "2026-10-20",
+   "ref": "bd0e1b5fc9f5",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 68.9,
    "weg": "ki"
   },
   "BF-V-4462289E": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "2779e79e139087c5",
-   "seit": "2026-10-20",
+   "ref": "7240ddc1e4ac",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -310,7 +1174,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "a0e32aab85f05ee4",
-   "seit": "2026-10-20",
+   "ref": "b9b7194f4313",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -318,18 +1183,29 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "706ba14e0c3aa38b",
-   "seit": "2026-10-20",
+   "ref": "ceb05f47dca6",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 84.38,
    "weg": "ki"
   },
-  "BF-V-4787B9E1": {},
-  "BF-V-48C84102": {},
+  "BF-V-4787B9E1": {
+   "ref": "5e165dbb4423"
+  },
+  "BF-V-48C84102": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "56301a2ae122d812",
+   "ref": "0aa1da240d0e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-49F1BA89": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "af08edadfe458baa",
-   "seit": "2026-10-20",
+   "ref": "8a893c44944c",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -337,25 +1213,45 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "84860d79c69bc105",
-   "seit": "2026-10-20",
+   "ref": "68c987c3c5e1",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-4C22478D": {},
+  "BF-V-4C22478D": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "eb8519c304a8fd59",
+   "ref": "661ff8e2583b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-4F303E42": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "bee203cee51138ec",
-   "seit": "2026-10-20",
+   "ref": "d0fb1b72d0a6",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 71.75,
    "weg": "ki"
   },
-  "BF-V-4F63F519": {},
-  "BF-V-5151482F": {
+  "BF-V-4F63F519": {
+   "ref": "0fb170f3f07e"
+  },
+  "BF-V-5151482F-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "893ff6c8b7ef",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-5151482F-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e135022cc2dd",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -363,14 +1259,200 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "ba255fc6b89b4ed7",
-   "seit": "2026-10-20",
+   "ref": "6e3659058173",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-533974A5": {
+  "BF-V-533974A5-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "10757231edf1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9ef597ab60cd",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3533a1a730a6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f11a6745d89c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "091c9d1df2e3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "eba0d6c13b25",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "698b8e7d3eab",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0294bf8b6ee2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bc2f5f412495",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b91f160d28f5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3f7eea301dfc",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "104a146174ac",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0f272ba0dcc4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "84ad7cba8bb1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bd6440ce843f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d426a53443de",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "557981a4418b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ea43a787b66b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e5380b2ac9e5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c1cf182ad3e0",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-21": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "872f00e01c6c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-22": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c7ea6d028087",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-23": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e144c9411559",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-533974A5-24": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "13fea59dbc3d",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -378,51 +1460,88 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "ecdbe47af8790edb",
-   "seit": "2026-10-20",
+   "ref": "e1d6e50dce25",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-54FE5871": {},
+  "BF-V-54FE5871": {
+   "ref": "6b59d7b88fe1"
+  },
   "BF-V-56C74504": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "1cfbb9d50ac2406a",
-   "seit": "2026-10-20",
+   "ref": "968683175cc0",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 6.65,
    "weg": "ki"
   },
-  "BF-V-581C4488": {},
-  "BF-V-5979AAB2": {},
-  "BF-V-5A0968A3": {
+  "BF-V-581C4488": {
+   "ref": "65c1d937182f"
+  },
+  "BF-V-5979AAB2": {
+   "ref": "a2230d895c2d"
+  },
+  "BF-V-5A0968A3-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "3cf55c125ba5",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-5BB0921F": {
+  "BF-V-5A0968A3-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "41bb8c5ddff5",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-5C9CEF9F": {},
+  "BF-V-5BB0921F-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "24c839211fd8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-5BB0921F-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "24315dde0d2c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-5C9CEF9F": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "77d08cd1165e3e97",
+   "ref": "1ee144627f08",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-5D0E79A3": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "d355efd0469e2259",
-   "seit": "2026-10-20",
+   "hash": "959a476c7bd5c374",
+   "ref": "be77d5a51b06",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-618E68E1": {},
+  "BF-V-618E68E1": {
+   "ref": "5213cadd2c7b"
+  },
   "BF-V-62C8717D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "596d6c4cc8561800",
-   "seit": "2026-10-20",
+   "hash": "0c3258adf87123da",
+   "ref": "5c189d4e14fe",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -430,7 +1549,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "bda72c1479d786c0",
-   "seit": "2026-10-20",
+   "ref": "801c7a755e69",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -438,16 +1558,20 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "c4218bf5aa1f80cf",
-   "seit": "2026-10-20",
+   "ref": "fb0369fbe345",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-639B22ED": {},
+  "BF-V-639B22ED": {
+   "ref": "f10b2fa1bb70"
+  },
   "BF-V-648F0321": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "7b8afedb8e09d427",
-   "seit": "2026-10-20",
+   "ref": "ba113382b12f",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -455,7 +1579,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "2d619327e15216ec",
-   "seit": "2026-10-20",
+   "ref": "a0d55d5afeae",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -463,26 +1588,32 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "cfa65a6533af857a",
-   "seit": "2026-10-20",
+   "ref": "c49643f3b3e1",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 1.08,
    "weg": "ki"
   },
   "BF-V-68FB055B": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "be12afd97aedf264",
-   "seit": "2026-10-20",
+   "hash": "00ec991599f8c3d8",
+   "ref": "f4ad162ed84a",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-69213716": {},
-  "BF-V-69BD6C25": {},
+  "BF-V-69213716": {
+   "ref": "3048811d015e"
+  },
+  "BF-V-69BD6C25": {
+   "ref": "7de7b55b3889"
+  },
   "BF-V-6A7BF3AC": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "c342b2bbe86bb081",
-   "seit": "2026-10-20",
+   "hash": "af4fbb20876b1920",
+   "ref": "fcfed6af8125",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -490,15 +1621,59 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "e3883aa6ebfdcc1d",
-   "seit": "2026-10-20",
+   "ref": "5d4082bd84ea",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-72DD0526": {},
-  "BF-V-734661D5": {
+  "BF-V-72DD0526": {
+   "ref": "87c010720d38"
+  },
+  "BF-V-734661D5-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "14a94db85dca",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-734661D5-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3a075ddd4f85",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-734661D5-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "dd7ff91db635",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-734661D5-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bdc58dc425ff",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-734661D5-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3367005f87a5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-734661D5-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8a1b3a376ee2",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -506,49 +1681,64 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "9e1051bba9243d5e",
-   "seit": "2026-10-20",
+   "ref": "3762cd13da55",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 5.0,
    "weg": "ki"
   },
   "BF-V-7457568A": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "3fa729a467d26135",
-   "seit": "2026-10-20",
+   "hash": "cb5aede6e740730d",
+   "ref": "d91013cd52b2",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 73.06,
    "weg": "ki"
   },
   "BF-V-76754EAA": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "f55c318210142d3f",
-   "seit": "2026-10-20",
+   "ref": "b37619986c45",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-7713E393": {},
+  "BF-V-7713E393": {
+   "ref": "0d8a3773d00e"
+  },
   "BF-V-777608B6": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
-   "token": 0,
-   "weg": "nach:0"
+   "hash": "f510b6383e8a72de",
+   "ref": "cc02a3119659",
+   "seit": "2026-11-09",
+   "token": null,
+   "weg": "ki"
   },
   "BF-V-7926B558": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "8773ac447d42",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
-  "BF-V-79F3EB19": {},
+  "BF-V-79F3EB19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "a1789667dc909f9b",
+   "ref": "ad0444b1ec41",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-7A82C84C": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "318202ad5fa0a114",
-   "seit": "2026-10-20",
+   "ref": "e8d5f0848855",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -556,23 +1746,33 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "6b7422757f75e8a5",
-   "seit": "2026-10-20",
+   "ref": "e9e8904d6e9d",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 78.12,
    "weg": "ki"
   },
-  "BF-V-7C35D122": {
+  "BF-V-7C35D122-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "28facc3fa110",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-7C35D122-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "fc0fca929088",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-7CBAC4A5": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "1f8058fbaa4a6aa6",
-   "seit": "2026-10-20",
+   "hash": "046d6be2b4a70e2f",
+   "ref": "e11277852329",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
@@ -580,16 +1780,27 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "fc203e2cd89d7e40",
-   "seit": "2026-10-20",
+   "ref": "979cd9c49d6c",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 88.27,
    "weg": "ki"
   },
-  "BF-V-81A33A5E": {},
-  "BF-V-81D067CB": {
+  "BF-V-81A33A5E": {
+   "ref": "346979e30a31"
+  },
+  "BF-V-81D067CB-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "3c12a7ccd329",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-81D067CB-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "433b7ef32f5d",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -597,6 +1808,7 @@
    "auslauf_text": false,
    "browser": true,
    "brutto": false,
+   "ref": "839c73a6cad8",
    "seit": "2026-10-20",
    "token": 1,
    "weg": "jsonld"
@@ -604,24 +1816,43 @@
   "BF-V-83F6240B": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "47574310448de0f0",
-   "seit": "2026-10-20",
+   "hash": "af2001b6fc6ba8ff",
+   "ref": "e9292f9e790b",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-853C97B1": {},
+  "BF-V-853C97B1": {
+   "auslauf_text": false,
+   "browser": true,
+   "brutto": false,
+   "ref": "f765e0e43983",
+   "seit": "2026-11-09",
+   "token": 1,
+   "weg": "jsonld"
+  },
   "BF-V-86276E42": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "b3d2db2150e2",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
-  "BF-V-8750ED83": {},
+  "BF-V-8750ED83": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "d95b4cf872a3ceec",
+   "ref": "9f0718ff3559",
+   "seit": "2026-11-09",
+   "token": 1,
+   "weg": "ki"
+  },
   "BF-V-87D287E1": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "d7f6c82eb7e2",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
@@ -629,15 +1860,17 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "933e7473d2f82750",
-   "seit": "2026-10-20",
+   "ref": "f3c3f62f5805",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-897A8F8D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "f00621f62047428e",
-   "seit": "2026-10-20",
+   "hash": "1e99ac3f1a8c99a1",
+   "ref": "bd554366c160",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -645,31 +1878,45 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "1607b9308f9d4f79",
-   "seit": "2026-10-20",
+   "ref": "eaf51f6c6091",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-8B2D7859": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "3c47309411080bda",
-   "seit": "2026-10-20",
+   "hash": "3e7c9ca7246ac1cd",
+   "ref": "0633b2d1a811",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-8C8CE63E": {},
-  "BF-V-8F383257": {},
+  "BF-V-8C8CE63E": {
+   "ref": "b2bf190fb851"
+  },
+  "BF-V-8F383257": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "781c8d165fdcd488",
+   "ref": "5a9b6dbd7877",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-8FA0D200": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "674828764f15",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
   "BF-V-90058B06": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "bd743e9c6cd7",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
@@ -677,41 +1924,63 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "4e1653aa5d8feed6",
-   "seit": "2026-10-20",
+   "ref": "eb8022deeb19",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-92C29081": {},
-  "BF-V-94165989": {},
+  "BF-V-92C29081": {
+   "ref": "5fbe20310686"
+  },
+  "BF-V-94165989": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "e89fcb26bec41f2d",
+   "ref": "6cc732be9de2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-94F38ABA": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "d5e7d00b62afdf03",
-   "seit": "2026-10-20",
-   "token": 1,
+   "ref": "410878db1216",
+   "seit": "2026-11-09",
+   "token": 0,
    "weg": "ki"
   },
   "BF-V-9915CADA": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "26925871e5dfb637",
-   "seit": "2026-10-20",
+   "ref": "c3788c66f463",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 72.94,
    "weg": "ki"
   },
-  "BF-V-9A88586C": {
+  "BF-V-9A88586C-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "e9561e15ce82",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-9A88586C-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2e2ee5f2f521",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-9AB2383E": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "68b32f24b88c2fd8",
-   "seit": "2026-10-20",
+   "hash": "2998a07f5d22bd31",
+   "ref": "ef4a69969d65",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -719,24 +1988,25 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "6ed40f05ee09b921",
-   "seit": "2026-10-20",
+   "ref": "e86f51e15164",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 74.74,
    "weg": "ki"
   },
   "BF-V-9CB42F41": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "9e033bc2840a304a",
-   "seit": "2026-10-20",
+   "ref": "d494d1ad8df1",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 78.18,
    "weg": "ki"
   },
   "BF-V-9D45DF37": {
    "auslauf_text": false,
    "brutto": true,
-   "seit": "2026-10-20",
+   "ref": "d6c7fea949be",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "jsonld"
   },
@@ -744,7 +2014,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "7568b9ced43623d9",
-   "seit": "2026-10-20",
+   "ref": "de251825650d",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -752,63 +2023,101 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "9fd9d8440b0c8294",
-   "seit": "2026-10-20",
+   "ref": "6e427979fc7d",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 69.19,
    "weg": "ki"
   },
   "BF-V-A307B24B": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "75376d3919052b94",
-   "seit": "2026-10-20",
+   "hash": "27e18d2b9f5ad10d",
+   "ref": "f90bf9578c49",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 7.81,
    "weg": "ki"
   },
-  "BF-V-A3402006": {},
+  "BF-V-A3402006": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "2bb474490eefa607",
+   "ref": "cb61c863efe7",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-A49D2D3F": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "950644bfd69add68",
-   "seit": "2026-10-20",
+   "ref": "a5214f7888b1",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-A635A01A": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "546b0823bca6b7fa",
-   "seit": "2026-10-20",
+   "hash": "7d96b5b734aa0dad",
+   "ref": "747fae5118f8",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-A6B953FC": {
+  "BF-V-A6B953FC-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "dcb18e6cafb5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-A6B953FC-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8132c2067426",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-A854E5E7": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "52365505723aa247",
-   "seit": "2026-10-20",
+   "hash": "5439c6df0a90c759",
+   "ref": "f8128b2095b0",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-A887A160": {
+  "BF-V-A887A160-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "7c874bf656fe",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-A9742B5F": {
+  "BF-V-A887A160-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "9e2b7d064025",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-A9742B5F-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "709888f19eea",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-A9742B5F-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ec3cfad68a5f",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -816,56 +2125,134 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "5b5a371ea54b94a2",
-   "seit": "2026-10-20",
+   "ref": "c189f4d05cbd",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-AD6C4005": {
+  "BF-V-AD6C4005-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "180275b663f0",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-AE657A40": {},
+  "BF-V-AD6C4005-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "83f9f10c191e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-AE657A40": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "5bcf25ffe17284ba",
+   "ref": "8c779fef2b79",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-AEA013E1": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "9d693ef332a331ea",
-   "seit": "2026-10-20",
+   "ref": "cb7685527882",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-B2F674E9": {},
+  "BF-V-B2F674E9": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "45f2ae7e597f6f7e",
+   "ref": "2c37ff18f7d0",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-B43408F0": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "5c716ae5389d7f3a",
-   "seit": "2026-10-20",
+   "ref": "87a2cedc7418",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 79.16,
    "weg": "ki"
   },
-  "BF-V-B8214EC0": {
+  "BF-V-B8214EC0-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "8e0f622cabf5",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-B84FEB57": {},
-  "BF-V-B875363B": {
+  "BF-V-B8214EC0-02": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "e77f724522bde93a",
-   "seit": "2026-10-20",
+   "ref": "021b54b73291",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-B8214EC0-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d11e56e662b1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-B8214EC0-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7bc162021296",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-B8214EC0-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ada55d606a9d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-B84FEB57": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "9c75f1deabec4789",
+   "ref": "978c5f529dd1",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-B8C06E52": {
+  "BF-V-B875363B": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "hash": "3dd2a2f27b25e1b1",
+   "ref": "2d3affc53588",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-B8C06E52-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "79f6af059a55",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-B8C06E52-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4beba1f791a1",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -873,7 +2260,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "ec76c54fab6ad5d2",
-   "seit": "2026-10-20",
+   "ref": "bc5d503650d5",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -881,30 +2269,129 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "3f4086199fc4f663",
-   "seit": "2026-10-20",
+   "ref": "39bbb0c194a1",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 76.06,
    "weg": "ki"
   },
   "BF-V-BD2DE969": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "515762dba2a5c062",
-   "seit": "2026-10-20",
+   "ref": "ef092e622e94",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-BD84EE13": {
+  "BF-V-BD84EE13-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "e41f4df184b8",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-BE2F7339": {
+  "BF-V-BD84EE13-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "204caaeb8b32",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4e77969b2864",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bbc736e4eebc",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3895a9f9674d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "549b53949344",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9a2352701dc6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "92181db642c4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "fd0824c12208",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c7ea9bf08f64",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bc8774152b52",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4ea77a30170e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "42f50f738952",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-BE2F7339-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4edc90d18cad",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -912,69 +2399,322 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "810fff73dffa2f0d",
-   "seit": "2026-10-20",
+   "ref": "14d33b5d595a",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-C0BFBD73": {
+  "BF-V-C0BFBD73-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "2c9e2e455a52",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-C1FE1F23": {},
+  "BF-V-C0BFBD73-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4b80c1577b60",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "eecf32fc8b94",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ee189ffd2d64",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f5b8c3451176",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1cc4aca698ba",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d3f0be8ddda6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "689953b3f520",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ca5825ac4624",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b2d997285f64",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d7ace53db55b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "5acd5f0b32f3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "48952689fbff",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "00a85c57ed54",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c903850e90e3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "725270ab5608",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "93df74d90b68",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4639743b88d6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ece87a5c4ac2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C0BFBD73-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "dd8a7231540b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C1FE1F23": {
+   "ref": "782327be4656"
+  },
   "BF-V-C7EE29C9": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "30f55c270798a654",
-   "seit": "2026-10-20",
+   "hash": "16d85dd008125497",
+   "ref": "60b698cf436e",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-C809BE61": {
+  "BF-V-C809BE61-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "5d5b4e8dae43",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-C9834603": {
+  "BF-V-C809BE61-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "9a14ffce4f0e",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-C9F0E492": {
+  "BF-V-C9834603-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "7aca0bc6938e",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-CC792DD3": {},
+  "BF-V-C9834603-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "26d541a39f6b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f3acf11477c6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c5942d6265d3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f3a6d8a339ef",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d5a99b685c5f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0552128741f3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4c9bd87bf272",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b34d0077fedb",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "489d9cf28bc3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "edbae7867284",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-C9F0E492-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "64ef12cdc04b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-CC792DD3": {
+   "ref": "97c7936b91d8"
+  },
   "BF-V-CD29986B": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
-   "token": 0,
-   "weg": "nach:0"
+   "hash": "f510b6383e8a72de",
+   "ref": "67bc96b56125",
+   "seit": "2026-11-09",
+   "token": null,
+   "weg": "ki"
   },
   "BF-V-CD5A7308": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "2e4ab404ba1a2496",
-   "seit": "2026-10-20",
+   "ref": "fda49d20f384",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 27.61,
    "weg": "ki"
   },
   "BF-V-D1163685": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "15cefbcb06284592",
-   "seit": "2026-10-20",
+   "ref": "460fe5635c0c",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -982,14 +2722,408 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "3f572245e049a1e2",
-   "seit": "2026-10-20",
+   "ref": "c7db6fb167e5",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-D55D4762": {
+  "BF-V-D55D4762-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "fe28137911e6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "351935957075",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bbb4a76cf1d5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a443edb25303",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b8ea3fccd0d3",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "aead62f47968",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2660b199a4f9",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d0cebe039d8b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "38762c351ba5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0baa31c7f738",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ec44cc6ab276",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "b1f20b6e9c31",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "febcb54fe92b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "6d71c6f2c551",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "70a345bcc28f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "87c032c7d50c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "db851b0c295f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "21be667550e8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "cc30a943d052",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ec98ff73b170",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-21": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7ca4f3d8feed",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-22": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3b2177beeae6",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-23": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7999699f5e02",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-24": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d2906107ae0d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-25": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2a09faaa4f2d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-26": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "56f3637db53e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-27": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f8753fb4641b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-28": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9fd5180245e8",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-29": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bef0e7716b5c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-30": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "14b75f044bf7",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-31": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "78d9ce828d69",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-32": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "212ae9c61a21",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-33": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "9e30b4259c8d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-34": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "97068f007f06",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-35": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "763e4dcc6f5a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-36": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3e0b77051f53",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-37": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0d690356225d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-38": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ccb314419118",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-39": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2513bf0a2918",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-40": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3dff7fb0fda4",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-41": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1e4ff0211da5",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-42": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "597db4f3f021",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-43": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ef441af9af36",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-44": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d7fe0d4e9557",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-45": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f6af40207c35",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-46": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "54e2185ae565",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-47": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1167d9b45cea",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-48": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "12ae943a9aeb",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-49": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "abe948e68124",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-D55D4762-50": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "5e1f3dc6d469",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -997,33 +3131,46 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "ee5eb851b02b1212",
-   "seit": "2026-10-20",
+   "ref": "665eb7d29365",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
   "BF-V-D69A3421": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "330309b276edf3ed",
-   "seit": "2026-10-20",
+   "hash": "f873159b42bfb6cf",
+   "ref": "d54f9e2dd6b8",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
-  "BF-V-D6D183C1": {},
+  "BF-V-D6D183C1": {
+   "ref": "56c4ef4f5ce2"
+  },
   "BF-V-D7106CD1": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "416db43c9a5e6ca6",
-   "seit": "2026-10-20",
+   "ref": "2a4298f33fef",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 82.18,
    "weg": "ki"
   },
-  "BF-V-D87492B7": {},
+  "BF-V-D87492B7": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "d39e5d83d36ea62e",
+   "ref": "b696a6c00e76",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-D946412C": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "c29267b12221",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1031,23 +3178,25 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "b63c56dab1cd70ec",
-   "seit": "2026-10-20",
-   "token": 1,
+   "ref": "be0df971352f",
+   "seit": "2026-11-09",
+   "token": 0,
    "weg": "ki"
   },
   "BF-V-DAF1DCFF": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "0102dacaf39f5fe1",
-   "seit": "2026-10-20",
+   "ref": "4a1e06ff6bfc",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 4.43,
    "weg": "ki"
   },
   "BF-V-DBC1920D": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "b6242ba2bbd6",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1055,31 +3204,318 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "4505812f1eb69bc8",
-   "seit": "2026-10-20",
+   "ref": "0fec82f84f3b",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-DE4CAA40": {},
-  "BF-V-DEF8FCCF": {},
-  "BF-V-DF88EAFA": {},
+  "BF-V-DE4CAA40": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "2cacaef43990068f",
+   "ref": "bec1e91785d9",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
+  "BF-V-DEF8FCCF": {
+   "ref": "7e3e0560d952"
+  },
+  "BF-V-DF88EAFA": {
+   "auslauf_text": false,
+   "brutto": false,
+   "hash": "0d9b89e8719ae916",
+   "ref": "d2e506f54057",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "ki"
+  },
   "BF-V-DFB0AFFD": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "hash": "f510b6383e8a72de",
+   "ref": "0cf8b7f8013b",
+   "seit": "2026-11-09",
+   "token": null,
+   "weg": "ki"
+  },
+  "BF-V-DFC3814D-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7ece82e6d13b",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-DFC3814D": {
+  "BF-V-DFC3814D-02": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "82d43106c07c",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "69811b3fc49a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bce08b3fed91",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "96ae0f16edce",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-06": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c3da14378679",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-07": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "5b2c3acdefbe",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-08": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a27485e85e2a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-09": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f441cd77f9df",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-10": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "cb65760b0105",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-11": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "24843ec9be9b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-12": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "0c664d3f4d45",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-13": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ea4eb3458552",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-14": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f3a8483fe39b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-15": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8fa61f61e4d7",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-16": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "470995dadedb",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-17": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a6cb23b4065b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-18": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "60adc1689110",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-19": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "5bcc3b725afe",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-20": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8f7494b38e58",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-21": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "a055931d98fe",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-22": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ea8ea79f7048",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-23": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ce421674f654",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-24": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "128a1702fa3a",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-25": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "bed37b86821d",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-26": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "7a986a81b75f",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-27": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "e9fb2663dd68",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-28": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "2f132c2e28d0",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-29": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "fd1d9a22405e",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-30": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "31da2c0a4aa2",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-31": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "091cc8ad0335",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-32": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "110c2684a9e1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-33": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "4aeaf86e1445",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-DFC3814D-34": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f50aed516a85",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-E23D8B71": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "d439cccd15e8",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1087,24 +3523,28 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "83c6a79971dcb5f5",
-   "seit": "2026-10-20",
+   "ref": "1b3f6b5cae34",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 6.41,
    "weg": "ki"
   },
-  "BF-V-E3D4AC99": {},
+  "BF-V-E3D4AC99": {
+   "ref": "39138618a061"
+  },
   "BF-V-E43B565D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "42e72bb4b0704706",
-   "seit": "2026-10-20",
+   "hash": "0d02fb2d1e3e0ff8",
+   "ref": "d326cdefc551",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
   "BF-V-E4E11F57": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "5523721a15cb",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1112,7 +3552,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "5192d503a5192331",
-   "seit": "2026-10-20",
+   "ref": "593c210c71af",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -1120,31 +3561,55 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "9f19733cf183f2cc",
-   "seit": "2026-10-20",
+   "ref": "000553d9b2b8",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-E9058507": {
+  "BF-V-E9058507-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "54d2c6cb39bd",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
-  "BF-V-E9D02ECF": {},
+  "BF-V-E9058507-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "c64de589ba02",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-E9D02ECF": {
+   "ref": "5ffec1010973"
+  },
   "BF-V-EAF2794A": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "6fc7e89567e0f867",
-   "seit": "2026-10-20",
+   "ref": "9ff2c81d781d",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-EF145E35": {},
-  "BF-V-EF5668EF": {
+  "BF-V-EF145E35": {
+   "ref": "7cf5a02ffd62"
+  },
+  "BF-V-EF5668EF-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "4ae9e67552f7",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-EF5668EF-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "18457463e341",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1152,7 +3617,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "f6df59ed3d553b88",
-   "seit": "2026-10-20",
+   "ref": "f59594e3e522",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -1160,7 +3626,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "9f367d5c684150fd",
-   "seit": "2026-10-20",
+   "ref": "5f0d802b7ee2",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -1168,23 +3635,66 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "51c1681f4515e840",
-   "seit": "2026-10-20",
+   "ref": "5d191c69b11d",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-F423AED3": {},
-  "BF-V-F65DB51E": {
+  "BF-V-F423AED3": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "hash": "59615474bd7d8212",
+   "ref": "9ee4c6379d22",
+   "seit": "2026-11-09",
+   "token": 1,
+   "weg": "ki"
+  },
+  "BF-V-F65DB51E-01": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "3df2477acef1",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-F65DB51E-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "ea6de569ec9b",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-F65DB51E-03": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "8fdd759d5797",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-F65DB51E-04": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "f5b3d55e0cfb",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-F65DB51E-05": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "d9b073bf9e7a",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
   "BF-V-FA094BEC": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "3670589714009403",
-   "seit": "2026-10-20",
+   "hash": "f6e7e317a97e5463",
+   "ref": "063ecc5f08f4",
+   "seit": "2026-11-09",
    "token": 1,
    "weg": "ki"
   },
@@ -1192,23 +3702,33 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "26de0c91fef73433",
-   "seit": "2026-10-20",
+   "ref": "f11f581eeeaf",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 93.7,
    "weg": "ki"
   },
   "BF-V-FDB021BD": {
    "auslauf_text": false,
    "brutto": false,
    "hash": "b8c74ed0e0928d54",
-   "seit": "2026-10-20",
+   "ref": "956fba430954",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
-  "BF-V-FDB5AEA4": {
+  "BF-V-FDB5AEA4-01": {
    "auslauf_text": false,
    "brutto": false,
-   "seit": "2026-10-20",
+   "ref": "55be70441a47",
+   "seit": "2026-11-09",
+   "token": 0,
+   "weg": "nach:0"
+  },
+  "BF-V-FDB5AEA4-02": {
+   "auslauf_text": false,
+   "brutto": false,
+   "ref": "1988a1cd45c9",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "nach:0"
   },
@@ -1216,7 +3736,8 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "5e09193432f10cd1",
-   "seit": "2026-10-20",
+   "ref": "79a148503907",
+   "seit": "2026-11-09",
    "token": 0,
    "weg": "ki"
   },
@@ -1224,11 +3745,13 @@
    "auslauf_text": false,
    "brutto": false,
    "hash": "be7f1530ef901c19",
-   "seit": "2026-10-20",
+   "ref": "af94d975f24b",
+   "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 88.84,
    "weg": "ki"
   },
-  "BF-V-FFACA225": {}
+  "BF-V-FFACA225": {
+   "ref": "0a1cace0b50e"
+  }
  }
 }

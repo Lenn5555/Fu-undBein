@@ -10,8 +10,10 @@ compatibility_flags = ["nodejs_compat"]
 # Seiten, die den Berater aufrufen dürfen (kommagetrennt)
 HERKUNFT = "https://lenn5555.github.io,https://xn--beinundfu-o1a.de,https://www.xn--beinundfu-o1a.de"
 BESTELL_EMAIL = "sales@ts-systec.de"
-# Absender muss bei Resend als Domain bestätigt sein
-ABSENDER = "Bein und Fuss <bestellung@xn--beinundfu-o1a.de>"
+# Absender muss bei Resend erlaubt sein. Outlook am PC zeigt Mails von der ß-Domain (xn--beinundfu-o1a.de) leer an
+# (Test 09.11.2026), deshalb übergangsweise Resends Standardabsender. Er liefert nur an die Adresse des Resend-Kontos,
+# also nur für die interne Bestellmail an sales@ geeignet. Dauerhaft: eigene Domain ohne ß bei Resend bestätigen.
+ABSENDER = "Bein und Fuss <onboarding@resend.dev>"
 # SHA-256 des Schlüssels für die Statistikseite; der Schlüssel selbst steht nicht im Repo
 STATISTIK_HASH = "8d97d06abe5bb2467539b272c03c85fa0d29f4ad45ae7ccf2e887d04d28233f2"
 # SHA-256 des Schlüssels für den Abendbericht (liest /statistik ohne Browser).

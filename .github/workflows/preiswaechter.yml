@@ -36,7 +36,8 @@ jobs:
       RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       EMPFAENGER: sales@ts-systec.de
-      ABSENDER: "Bein und Fuss <preiswaechter@xn--beinundfu-o1a.de>"
+      # Outlook am PC zeigt Mails von der ß-Domain leer an (getestet 09.11.2026); resend.dev geht, solange nur an sales@ gesendet wird
+      ABSENDER: "Bein und Fuss <onboarding@resend.dev>"
     steps:
       - uses: actions/checkout@v4
         with:

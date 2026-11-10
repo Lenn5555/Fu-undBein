@@ -138,7 +138,7 @@ test("Feste Preise: Ausführungen mit Merkmalen, kein „ab“ bei bestätigten 
   assert.ok(SYSTEM.includes("je nach Ausführung"));
 });
 
-test("Mindermengenzuschlag nur für Händlerware unter 60 € Warenwert", async () => {
+test("Mindermengenzuschlag gestaffelt, nur für Händlerware", async () => {
   const { betrag } = await import("../src/bezahlen.js");
   const h = KATALOG.find((p) => p.mindermenge && !p.varianten.length && p.preis < 10);
   const ts = KATALOG.find((p) => !p.mindermenge && p.varianten.length);
@@ -148,6 +148,8 @@ test("Mindermengenzuschlag nur für Händlerware unter 60 € Warenwert", async 
   const g = betrag(klein);
   assert.equal(g.zuschlag, 2000);
   assert.equal(g.mwst, Math.round((g.ware + 2000 + g.versand) * 0.19));
+  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(20 / h.preis) }).zuschlag, 15);
+  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(40 / h.preis) }).zuschlag, 10);
   assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(60 / h.preis) }).zuschlag, 0);
   assert.equal(pruefen({ ...KUNDE, sku: ts.sku, variante: ts.varianten[0].sku, menge: 1 }).zuschlag, 0);
 });

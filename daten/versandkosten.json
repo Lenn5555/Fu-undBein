@@ -807,8 +807,20 @@
     ]
   },
   "mindermenge": {
-    "grenze": 60,
-    "zuschlag": 20,
-    "hinweis": "Mindermengenzuschlag netto für Händlerware (nicht T&S) bei Warenwert unter der Grenze, Lenn 10.11.2026"
+    "stufen": [
+      {
+        "unter": 20,
+        "zuschlag": 20
+      },
+      {
+        "unter": 40,
+        "zuschlag": 15
+      },
+      {
+        "unter": 60,
+        "zuschlag": 10
+      }
+    ],
+    "hinweis": "Mindermengenzuschlag netto für Händlerware (nicht T&S), gestaffelt nach Warenwert netto der Bestellung (Lenn, 10.11.2026)"
   }
 }

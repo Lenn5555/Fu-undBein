@@ -83,8 +83,8 @@ export function pruefen(d) {
 
 // Mindermengenzuschlag für Händlerware unter dem Mindestwarenwert (Lenn, 10.11.2026)
 export function mindermenge(p, summe) {
-  const m = VERSAND.mindermenge;
-  return m && p.mindermenge && summe < m.grenze ? m.zuschlag : 0;
+  const s = p.mindermenge && VERSAND.mindermenge ? VERSAND.mindermenge.stufen.find((x) => summe < x.unter) : null;
+  return s ? s.zuschlag : 0;
 }
 
 export function bestellnummer(jetzt = new Date()) {
@@ -111,7 +111,7 @@ export function mailText(nr, b, quelle, zahlung = null) {
     `Menge: ${menge}`,
     `Stückpreis netto: ${euro(stueck)}${p.preis_ab ? " (ab-Preis, günstigste Ausführung der Serie: Ausführung mit dem Kunden klären)" : ""}`,
     `Summe netto: ${euro(summe)} zzgl. MwSt. und Versand`,
-    ...(b.zuschlag ? [`Mindermengenzuschlag: ${euro(b.zuschlag)} netto (Warenwert unter ${euro(VERSAND.mindermenge.grenze)})`] : []),
+    ...(b.zuschlag ? [`Mindermengenzuschlag: ${euro(b.zuschlag)} netto (Warenwert unter ${euro(VERSAND.mindermenge.stufen.find((x) => b.summe < x.unter).unter)})`] : []),
     `Versand: ${k.land === "Deutschland" ? `pauschal ${euro(VERSAND.deutschland.pauschal)} netto` : "nach GLS-Tarif je Paketgewicht (siehe Versandkosten)"}`,
     ``,
     `KUNDE`,

@@ -333,8 +333,12 @@
   }
   // Mindermengenzuschlag für Händlerware (gleiche Regel wie auf dem Server)
   function zuschlag(p, ware) {
+    var s = stufe(p, ware);
+    return s ? s.zuschlag : 0;
+  }
+  function stufe(p, ware) {
     var m = versandDaten && versandDaten.mindermenge;
-    return m && p.mindermenge && ware < m.grenze ? m.zuschlag : 0;
+    return m && p.mindermenge ? m.stufen.filter(function (x) { return ware < x.unter; })[0] || null : null;
   }
   function pauschale(land) {
     if (!versandDaten) return null;
@@ -366,8 +370,10 @@
       if (!v && p.varianten.length > 1) { summe.textContent = "Bitte Ausführung wählen, dann sehen Sie Stückpreis und Summe."; return; }
       var zu = zuschlag(p, Math.round(st * n * 100) / 100);
       summe.textContent = (v && p.varianten.length > 1 ? "Stückpreis " + euro(st) + " · " : "") + "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab && !v ? " (ab-Preis, den Preis für Ihre Ausführung bestätigen wir)" : "");
-      mmHinweis.textContent = zu ? "Unter " + euro(versandDaten.mindermenge.grenze) + " Warenwert kommt ein Mindermengenzuschlag von " + euro(zu) +
-        " netto dazu. Ab " + Math.ceil(versandDaten.mindermenge.grenze / st) + " Stück entfällt er." : "";
+      var s = stufe(p, Math.round(st * n * 100) / 100), stufen = versandDaten && versandDaten.mindermenge ? versandDaten.mindermenge.stufen : [];
+      var naechste = s ? stufen[stufen.indexOf(s) + 1] : null;
+      mmHinweis.textContent = zu ? "Mindermengenzuschlag bei unter " + euro(s.unter) + " Warenwert: " + euro(zu) + " netto. Ab " +
+        Math.ceil(s.unter / st) + " Stück " + (naechste ? "nur noch " + euro(naechste.zuschlag) + "." : "entfällt er.") : "";
     }
     var mmHinweis = el("p", "ki-kurz");
     menge.addEventListener("input", rechnen);

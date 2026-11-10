@@ -140,16 +140,19 @@ test("Feste Preise: Ausführungen mit Merkmalen, kein „ab“ bei bestätigten 
 
 test("Mindermengenzuschlag gestaffelt, nur für Händlerware", async () => {
   const { betrag } = await import("../src/bezahlen.js");
-  const h = KATALOG.find((p) => p.mindermenge && !p.varianten.length && p.preis < 10);
+  const h = KATALOG.find((p) => p.mindermenge && !p.mindestwert && !p.varianten.length && p.preis < 10);
+  const mw = KATALOG.find((p) => p.mindestwert && !p.varianten.length);
+  assert.match(pruefen({ ...KUNDE, sku: mw.sku, menge: 1 }).fehler, /Mindestbestellwert/);
+  assert.ok(!pruefen({ ...KUNDE, sku: mw.sku, menge: Math.ceil(mw.mindestwert / mw.preis) }).fehler);
   const ts = KATALOG.find((p) => !p.mindermenge && p.varianten.length);
   const klein = pruefen({ ...KUNDE, sku: h.sku, menge: 1 });
-  assert.equal(klein.zuschlag, 20);
-  assert.match(mailText("BF-6", klein, null), /Mindermengenzuschlag: 20,00 €/);
+  assert.equal(klein.zuschlag, 25);
+  assert.match(mailText("BF-6", klein, null), /Mindermengenzuschlag: 25,00 €/);
   const g = betrag(klein);
-  assert.equal(g.zuschlag, 2000);
-  assert.equal(g.mwst, Math.round((g.ware + 2000 + g.versand) * 0.19));
-  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(20 / h.preis) }).zuschlag, 15);
-  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(40 / h.preis) }).zuschlag, 10);
+  assert.equal(g.zuschlag, 2500);
+  assert.equal(g.mwst, Math.round((g.ware + 2500 + g.versand) * 0.19));
+  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(20 / h.preis) }).zuschlag, 20);
+  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(40 / h.preis) }).zuschlag, 15);
   assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(60 / h.preis) }).zuschlag, 0);
   assert.equal(pruefen({ ...KUNDE, sku: ts.sku, variante: ts.varianten[0].sku, menge: 1 }).zuschlag, 0);
 });
@@ -160,7 +163,7 @@ test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
 });
 
 test("Lieferland und USt-IdNr.: EU-Ausland nur mit USt-IdNr., Nicht-EU mit Hinweis", () => {
-  const p = KATALOG.find((p) => !p.varianten.length && !Object.keys(p.optionen || {}).length);
+  const p = KATALOG.find((p) => !p.varianten.length && !p.mindestwert && !Object.keys(p.optionen || {}).length);
   const basis = { ...KUNDE, sku: p.sku, menge: 1 };
   const inland = pruefen(basis);
   assert.ok(!inland.fehler, inland.fehler);

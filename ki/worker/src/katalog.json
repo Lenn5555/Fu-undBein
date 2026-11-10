@@ -514,7 +514,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-100-mm-m16-m20.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-171BBB60",
@@ -534,7 +535,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-120-mm-m20-m24.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-FDB606CC",
@@ -554,7 +556,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-30-mm-m8.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-BAF05656",
@@ -574,7 +577,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-40-mm-m8-m10.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-A49D2D3F",
@@ -594,7 +598,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-50-mm-m12.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-6303D9CA",
@@ -614,7 +619,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-60-mm-m10-m12.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-88A4059A",
@@ -634,7 +640,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-65-mm-m16.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-E4E11F57",
@@ -654,7 +661,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-75-mm-m12-m20.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-1454A637",
@@ -674,7 +682,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-911165B2",
@@ -694,7 +703,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-100-mm-m16-m30.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-1046960A",
@@ -714,7 +724,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-120-mm-m16-m36.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-76754EAA",
@@ -734,7 +745,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-150-mm-m36.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-BF1F0CBB",
@@ -755,7 +767,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-3-a-teller-60-mm-m12-m20.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-AA1A5310",
@@ -775,7 +788,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-100-mm-m30.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-D62B62EF",
@@ -795,7 +809,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-60-mm-m16.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-648F0321",
@@ -815,7 +830,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-80-mm-m16-m20.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-5465A128",
@@ -835,7 +851,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10-x-30.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-4462289E",
@@ -855,7 +872,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10-x-30.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-DBC1920D",
@@ -875,7 +893,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m12-x-30.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-EF7B51BC",
@@ -895,7 +914,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-n.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-AEA013E1",
@@ -915,7 +935,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-v.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-3CE8A471",
@@ -935,7 +956,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-9D7CA43F",
@@ -955,7 +977,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-636C1764",
@@ -974,7 +997,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-56-5-44-5-mm-hoehe-180-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-DD89A61D",
@@ -993,7 +1017,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-64-56-6-mm-hoehe-180-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-46D9552F",
@@ -1013,7 +1038,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-gleiter-30-40-mm-m10-x-15.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-9AB2383E",
@@ -1033,7 +1059,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-lasche-30-40-mm-m10-x-15.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-DAF1DCFF",
@@ -1363,7 +1390,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-100-mit-bohrungen.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-52A8EA2C",
@@ -1385,7 +1413,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-150-mit-bohrungen-und-nbr-b.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-F65DB51E",
@@ -2242,7 +2271,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m10-40-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-FDB021BD",
@@ -2263,7 +2293,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m12-40-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-D97654F3",
@@ -2284,7 +2315,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m8-40-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-E89F7C52",
@@ -2305,7 +2337,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/gelenkfuss-stahl-massiv-gelb-m12-x-125-50-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-1D17726A",
@@ -6314,7 +6347,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-lange-spindel-m30-100-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-F423AED3",
@@ -6577,7 +6611,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-mit-bohrungen-m30-120-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-E23D8B71",
@@ -6598,7 +6633,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-120-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-0862A772",
@@ -6619,7 +6655,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-100-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-F14120C0",
@@ -6640,7 +6677,8 @@
 "varianten": [],
 "optionen": {},
 "bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m30-100-mm.svg",
-"mindermenge": true
+"mindermenge": true,
+"mindestwert": 42
 },
 {
 "sku": "BF-V-86276E42",

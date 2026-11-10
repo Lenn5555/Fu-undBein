@@ -372,6 +372,10 @@
       summe.textContent = (v && p.varianten.length > 1 ? "Stückpreis " + euro(st) + " · " : "") + "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab && !v ? " (ab-Preis, den Preis für Ihre Ausführung bestätigen wir)" : "");
       var s = stufe(p, Math.round(st * n * 100) / 100), stufen = versandDaten && versandDaten.mindermenge ? versandDaten.mindermenge.stufen : [];
       var naechste = s ? stufen[stufen.indexOf(s) + 1] : null;
+      if (p.mindestwert && st * n < p.mindestwert) {
+        mmHinweis.textContent = "Mindestbestellwert für diesen Artikel: " + euro(p.mindestwert) + " netto, also ab " + Math.ceil(p.mindestwert / st) + " Stück.";
+        return;
+      }
       mmHinweis.textContent = zu ? "Mindermengenzuschlag bei unter " + euro(s.unter) + " Warenwert: " + euro(zu) + " netto. Ab " +
         Math.ceil(s.unter / st) + " Stück " + (naechste ? "nur noch " + euro(naechste.zuschlag) + "." : "entfällt er.") : "";
     }

@@ -107,6 +107,9 @@ def feste_preise(produkte):
           f"{' (ausgeblendet)' if CFG.get('nur_feste_preise') else ''}")
 
 
+MINDESTWERT = json.loads((ROOT / "daten/mindestwert.json").read_text(encoding="utf-8"))["artikel"]
+
+
 def katalog(produkte):
     """Kompakte Liste für den Berater; nur was einen Preis hat."""
     liste = []
@@ -127,6 +130,7 @@ def katalog(produkte):
             "bild": b.bild_url(p),
             # Händlerware (nicht T&S): Mindermengenzuschlag unter der Grenze aus daten/versandkosten.json (Lenn, 10.11.2026)
             "mindermenge": bool(p["vergleich"]),
+            **({"mindestwert": MINDESTWERT[p["sku"]]} if p["sku"] in MINDESTWERT else {}),
         })
     return liste
 
@@ -710,7 +714,8 @@ def versandseite():
               'einen Mindermengenzuschlag pro Bestellung (netto):</p><ul class="pr-punkte">'
               + "".join(f'<li>Warenwert unter {euro(s["unter"])}: {euro(s["zuschlag"])}</li>' for s in MM["stufen"])
               + f'<li>ab {euro(MM["stufen"][-1]["unter"])}: kein Zuschlag</li></ul>'
-              '<p>Ob ein Artikel betroffen ist, sehen Sie im Bestellformular.</p></section>'
+              '<p>Ob ein Artikel betroffen ist, sehen Sie im Bestellformular. Für einzelne Artikel gilt außerdem ein Mindestbestellwert; '
+              'er steht ebenfalls im Bestellformular.</p></section>'
               f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis … Mehrere Artikel einer Bestellung packen wir zusammen.</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
               f'<tbody>{zeilen_eu}</tbody></table></div>'
               '<p class="pr-notiz">¹ Versand per Luftfracht. Berechnet wird nach Volumengewicht, wenn es höher ist als das tatsächliche Gewicht.</p></section>'

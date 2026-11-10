@@ -78,6 +78,8 @@ export function pruefen(d) {
   if (d.zustimmung !== true) return { fehler: "Bitte der Datenverarbeitung zustimmen." };
   const stueck = variante ? variante.preis : p.preis;
   const summe = Math.round(stueck * menge * 100) / 100;
+  if (p.mindestwert && summe < p.mindestwert)
+    return { fehler: `Für diesen Artikel gilt ein Mindestbestellwert von ${euro(p.mindestwert)} netto, also ab ${Math.ceil(p.mindestwert / stueck)} Stück.` };
   return { produkt: p, variante, gewaehlt, menge, kunde: k, stueck, summe, zuschlag: mindermenge(p, summe) };
 }
 

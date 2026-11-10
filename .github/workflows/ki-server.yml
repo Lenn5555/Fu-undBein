@@ -14,6 +14,10 @@ on:
         description: "Testbestellung an die Bestelladresse schicken"
         type: boolean
         default: false
+      testsku:
+        description: "Artikelnummer für die Testbestellung (leer = erstes Produkt mit Ausführungen)"
+        type: string
+        default: ""
       paypaltest:
         description: "PayPal-Zugang prüfen (legt eine unbezahlte PayPal-Bestellung an, es wird nichts abgebucht)"
         type: boolean
@@ -90,10 +94,13 @@ jobs:
           node -e "const d=require('./antwort.json'); process.exit(d.antwort ? 0 : 1)"
       - name: Testbestellung (nur auf Wunsch beim manuellen Start)
         if: env.HAT_TOKEN == 'true' && inputs.testbestellung
+        env:
+          TESTSKU: ${{ inputs.testsku }}
         run: |
           node -e "
-            const k = require('./src/katalog.json').find((p) => p.varianten.length);
-            console.log(JSON.stringify({ sku: k.sku, variante: k.varianten[0].sku, menge: 4, firma: 'TEST',
+            const kat = require('./src/katalog.json');
+            const k = (process.env.TESTSKU && kat.find((p) => p.sku === process.env.TESTSKU)) || kat.find((p) => p.varianten.length);
+            console.log(JSON.stringify({ sku: k.sku, variante: k.varianten.length ? k.varianten[0].sku : undefined, menge: 4, firma: 'TEST',
               name: 'Testbestellung, bitte ignorieren', email: 'sales@ts-systec.de', strasse: 'Teststraße 1', zusatz: 'Test, keine Lieferung', plz: '64319', ort: 'Pfungstadt',
               hinweis: 'Automatischer Test der Bestellmail. Bitte nicht bearbeiten.', zustimmung: true }));
           " > bestellung.json

@@ -138,6 +138,20 @@ test("Feste Preise: Ausführungen mit Merkmalen, kein „ab“ bei bestätigten 
   assert.ok(SYSTEM.includes("je nach Ausführung"));
 });
 
+test("Mindermengenzuschlag nur für Händlerware unter 60 € Warenwert", async () => {
+  const { betrag } = await import("../src/bezahlen.js");
+  const h = KATALOG.find((p) => p.mindermenge && !p.varianten.length && p.preis < 10);
+  const ts = KATALOG.find((p) => !p.mindermenge && p.varianten.length);
+  const klein = pruefen({ ...KUNDE, sku: h.sku, menge: 1 });
+  assert.equal(klein.zuschlag, 20);
+  assert.match(mailText("BF-6", klein, null), /Mindermengenzuschlag: 20,00 €/);
+  const g = betrag(klein);
+  assert.equal(g.zuschlag, 2000);
+  assert.equal(g.mwst, Math.round((g.ware + 2000 + g.versand) * 0.19));
+  assert.equal(pruefen({ ...KUNDE, sku: h.sku, menge: Math.ceil(60 / h.preis) }).zuschlag, 0);
+  assert.equal(pruefen({ ...KUNDE, sku: ts.sku, variante: ts.varianten[0].sku, menge: 1 }).zuschlag, 0);
+});
+
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   const { bezugsquelle } = await import("../src/bestellung.js");
   assert.equal(bezugsquelle("GIBTSNICHT"), null);

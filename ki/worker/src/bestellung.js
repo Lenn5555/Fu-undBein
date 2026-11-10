@@ -77,7 +77,14 @@ export function pruefen(d) {
   if (!ZAHLARTEN.includes(k.zahlart)) return { fehler: "Bitte eine Zahlungsart wählen." };
   if (d.zustimmung !== true) return { fehler: "Bitte der Datenverarbeitung zustimmen." };
   const stueck = variante ? variante.preis : p.preis;
-  return { produkt: p, variante, gewaehlt, menge, kunde: k, stueck, summe: Math.round(stueck * menge * 100) / 100 };
+  const summe = Math.round(stueck * menge * 100) / 100;
+  return { produkt: p, variante, gewaehlt, menge, kunde: k, stueck, summe, zuschlag: mindermenge(p, summe) };
+}
+
+// Mindermengenzuschlag für Händlerware unter dem Mindestwarenwert (Lenn, 10.11.2026)
+export function mindermenge(p, summe) {
+  const m = VERSAND.mindermenge;
+  return m && p.mindermenge && summe < m.grenze ? m.zuschlag : 0;
 }
 
 export function bestellnummer(jetzt = new Date()) {
@@ -104,6 +111,7 @@ export function mailText(nr, b, quelle, zahlung = null) {
     `Menge: ${menge}`,
     `Stückpreis netto: ${euro(stueck)}${p.preis_ab ? " (ab-Preis, günstigste Ausführung der Serie: Ausführung mit dem Kunden klären)" : ""}`,
     `Summe netto: ${euro(summe)} zzgl. MwSt. und Versand`,
+    ...(b.zuschlag ? [`Mindermengenzuschlag: ${euro(b.zuschlag)} netto (Warenwert unter ${euro(VERSAND.mindermenge.grenze)})`] : []),
     `Versand: ${k.land === "Deutschland" ? `pauschal ${euro(VERSAND.deutschland.pauschal)} netto` : "nach GLS-Tarif je Paketgewicht (siehe Versandkosten)"}`,
     ``,
     `KUNDE`,

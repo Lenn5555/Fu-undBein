@@ -28,9 +28,10 @@ export function versandPauschale(land) {
 // (EU-Ausland mit USt-IdNr.: Reverse Charge; außerhalb der EU: Ausfuhr ohne deutsche MwSt.)
 export function betrag(b) {
   const ware = cent(b.summe);
+  const zuschlag = cent(b.zuschlag || 0);
   const versand = cent(versandPauschale(b.kunde.land));
-  const mwst = b.kunde.land === "Deutschland" ? Math.round((ware + versand) * MWST) : 0;
-  return { ware, versand, mwst, gesamt: ware + versand + mwst };
+  const mwst = b.kunde.land === "Deutschland" ? Math.round((ware + zuschlag + versand) * MWST) : 0;
+  return { ware, zuschlag, versand, mwst, gesamt: ware + zuschlag + versand + mwst };
 }
 
 // Sofort bezahlen nur mit festem Stückpreis; bei „ab“-Preisen ohne gewählte Ausführung bestätigt der Innendienst den Preis
@@ -105,7 +106,7 @@ export function zahlungsZeilen(z) {
   const e = (c) => euro2(c).replace(".", ",") + " €";
   return [
     `BEZAHLT über PayPal (${z.zahlart}): ${e(z.betrag.gesamt)} brutto, Transaktion ${z.transaktion}.`,
-    `  Ware ${e(z.betrag.ware)} + Versandpauschale ${e(z.betrag.versand)}${z.betrag.mwst ? ` + MwSt. ${e(z.betrag.mwst)}` : " (ohne deutsche MwSt.)"}.`,
+    `  Ware ${e(z.betrag.ware)}${z.betrag.zuschlag ? ` + Mindermengenzuschlag ${e(z.betrag.zuschlag)}` : ""} + Versandpauschale ${e(z.betrag.versand)}${z.betrag.mwst ? ` + MwSt. ${e(z.betrag.mwst)}` : " (ohne deutsche MwSt.)"}.`,
     `  Ware kann versendet werden. Versand ist mit der Pauschale abgegolten, keine Nachberechnung.`,
   ];
 }

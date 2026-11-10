@@ -125,6 +125,8 @@ def katalog(produkte):
             # Serien ohne eigene Variantenpreise: das Gewinde ist trotzdem vor der Bestellung zu wählen
             "optionen": wahl_gewinde(p),
             "bild": b.bild_url(p),
+            # Händlerware (nicht T&S): Mindermengenzuschlag unter der Grenze aus daten/versandkosten.json (Lenn, 10.11.2026)
+            "mindermenge": bool(p["vergleich"]),
         })
     return liste
 
@@ -688,6 +690,7 @@ def kg_text(x):
 
 
 def versandseite():
+    MM = json.loads((ROOT / "daten/versandkosten.json").read_text(encoding="utf-8"))["mindermenge"]
     """Versandkosten pro Paket (GLS ab Pfungstadt), Deutschland und Europa. Länder mit gleichen Preisen stehen in einer Zeile."""
     de = VERSAND["deutschland"]["pauschal"]
     eu = VERSAND["europa"]
@@ -703,6 +706,9 @@ def versandseite():
               '<h1>Versandkosten</h1><p class="pr-kurz">Wir versenden mit GLS ab Pfungstadt. Alle Versandkosten verstehen sich netto zzgl. MwSt.</p>'
               f'<section><h2>Deutschland</h2><p>Innerhalb Deutschlands berechnen wir pauschal <strong>{euro(de)}</strong> netto pro Bestellung, '
               'unabhängig von Gewicht und Menge.</p></section>'
+              f'<section><h2>Mindermengenzuschlag</h2><p>Für Artikel, die wir über Partner beziehen, berechnen wir bei einem Warenwert unter '
+              f'{euro(MM["grenze"])} netto pro Bestellung einen Mindermengenzuschlag von <strong>{euro(MM["zuschlag"])}</strong> netto. '
+              'Ob ein Artikel betroffen ist, sehen Sie im Bestellformular.</p></section>'
               f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis … Mehrere Artikel einer Bestellung packen wir zusammen.</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
               f'<tbody>{zeilen_eu}</tbody></table></div>'
               '<p class="pr-notiz">¹ Versand per Luftfracht. Berechnet wird nach Volumengewicht, wenn es höher ist als das tatsächliche Gewicht.</p></section>'

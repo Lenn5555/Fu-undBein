@@ -331,6 +331,11 @@
     });
     return paypalSkript;
   }
+  // Mindermengenzuschlag für Händlerware (gleiche Regel wie auf dem Server)
+  function zuschlag(p, ware) {
+    var m = versandDaten && versandDaten.mindermenge;
+    return m && p.mindermenge && ware < m.grenze ? m.zuschlag : 0;
+  }
   function pauschale(land) {
     if (!versandDaten) return null;
     return land === "Deutschland" ? versandDaten.deutschland.pauschal : null; // Sofortbezahlen nur in Deutschland
@@ -359,10 +364,15 @@
       var st = v ? v.preis : p.preis;
       var n = parseInt(menge.value, 10) || 0;
       if (!v && p.varianten.length > 1) { summe.textContent = "Bitte Ausführung wählen, dann sehen Sie Stückpreis und Summe."; return; }
+      var zu = zuschlag(p, Math.round(st * n * 100) / 100);
       summe.textContent = (v && p.varianten.length > 1 ? "Stückpreis " + euro(st) + " · " : "") + "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab && !v ? " (ab-Preis, den Preis für Ihre Ausführung bestätigen wir)" : "");
+      mmHinweis.textContent = zu ? "Unter " + euro(versandDaten.mindermenge.grenze) + " Warenwert kommt ein Mindermengenzuschlag von " + euro(zu) +
+        " netto dazu. Ab " + Math.ceil(versandDaten.mindermenge.grenze / st) + " Stück entfällt er." : "";
     }
+    var mmHinweis = el("p", "ki-kurz");
     menge.addEventListener("input", rechnen);
-    f.appendChild(summe); rechnen();
+    f.appendChild(summe); f.appendChild(mmHinweis); rechnen();
+    versandLaden().then(rechnen, function () {});
     var versand = versandFelder();
     zeile("Firma", "firma", "text", false, { autocomplete: "organization" });
     zeile("Name", "name", "text", true, { autocomplete: "name" });
@@ -488,9 +498,10 @@
       }
       var v = wahl.variante(), n = parseInt(menge.value, 10) || 0, land = f.elements.land.value;
       var ware = Math.round((v ? v.preis : p.preis) * n * 100), vs = Math.round(pauschale(land) * 100);
-      var mw = land === "Deutschland" ? Math.round((ware + vs) * MWST) : 0;
-      sofortSumme.textContent = "Jetzt zu zahlen: " + euro((ware + vs + mw) / 100) + " (Ware " + euro(ware / 100) +
-        " + Versandpauschale " + euro(vs / 100) + (mw ? " + 19 % MwSt. " + euro(mw / 100) : ", ohne deutsche MwSt.") + ")";
+      var zu = Math.round(zuschlag(p, ware / 100) * 100);
+      var mw = land === "Deutschland" ? Math.round((ware + zu + vs) * MWST) : 0;
+      sofortSumme.textContent = "Jetzt zu zahlen: " + euro((ware + zu + vs + mw) / 100) + " (Ware " + euro(ware / 100) +
+        (zu ? " + Mindermengenzuschlag " + euro(zu / 100) : "") + " + Versandpauschale " + euro(vs / 100) + (mw ? " + 19 % MwSt. " + euro(mw / 100) : ", ohne deutsche MwSt.") + ")";
       zahlHinweis.textContent = "Sie bezahlen sofort über PayPal" + (zs.value === "Kreditkarte" ? " mit Ihrer Karte" : "") +
         ". Mit der Zahlung ist Ihre Bestellung verbindlich; wir versenden nach Zahlungseingang. Der Versand ist mit der Pauschale abgegolten.";
       var neu = zs.value === "Kreditkarte" ? "card" : "paypal";

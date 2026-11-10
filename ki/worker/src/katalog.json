@@ -39,7 +39,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15798.jpg"
+"bild": "/assets/ts-fotos/BF-15798.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15797",
@@ -71,7 +72,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15797.jpg"
+"bild": "/assets/ts-fotos/BF-15797.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15796",
@@ -101,7 +103,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15796.jpg"
+"bild": "/assets/ts-fotos/BF-15796.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15795",
@@ -133,7 +136,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15795.jpg"
+"bild": "/assets/ts-fotos/BF-15795.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15794",
@@ -184,7 +188,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15794.jpg"
+"bild": "/assets/ts-fotos/BF-15794.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15793",
@@ -219,7 +224,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15793.jpg"
+"bild": "/assets/ts-fotos/BF-15793.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15792",
@@ -265,7 +271,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15792.jpg"
+"bild": "/assets/ts-fotos/BF-15792.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15788",
@@ -297,7 +304,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15788.jpg"
+"bild": "/assets/ts-fotos/BF-15788.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15785",
@@ -329,7 +337,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/einschlagfuss-fuer-vierkantrohr-40-mm-lange-ausfuehrung.svg"
+"bild": "/assets/skizzen/einschlagfuss-fuer-vierkantrohr-40-mm-lange-ausfuehrung.svg",
+"mindermenge": false
 },
 {
 "sku": "BF-15789",
@@ -366,7 +375,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/einschlagfuss-fuer-vierkantrohr-50-mm-mit-flansch.svg"
+"bild": "/assets/skizzen/einschlagfuss-fuer-vierkantrohr-50-mm-mit-flansch.svg",
+"mindermenge": false
 },
 {
 "sku": "BF-15790",
@@ -396,7 +406,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15790.jpg"
+"bild": "/assets/ts-fotos/BF-15790.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15799",
@@ -428,7 +439,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15799.jpg"
+"bild": "/assets/ts-fotos/BF-15799.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-15804",
@@ -481,7 +493,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/ts-fotos/BF-15804.jpg"
+"bild": "/assets/ts-fotos/BF-15804.jpg",
+"mindermenge": false
 },
 {
 "sku": "BF-V-EAF2794A",
@@ -500,7 +513,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-100-mm-m16-m20.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-100-mm-m16-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-171BBB60",
@@ -519,7 +533,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-120-mm-m20-m24.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-120-mm-m20-m24.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FDB606CC",
@@ -538,7 +553,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-30-mm-m8.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-30-mm-m8.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BAF05656",
@@ -557,7 +573,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-40-mm-m8-m10.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-40-mm-m8-m10.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A49D2D3F",
@@ -576,7 +593,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-50-mm-m12.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-50-mm-m12.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-6303D9CA",
@@ -595,7 +613,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-60-mm-m10-m12.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-60-mm-m10-m12.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-88A4059A",
@@ -614,7 +633,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-65-mm-m16.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-65-mm-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E4E11F57",
@@ -633,7 +653,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-75-mm-m12-m20.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-75-mm-m12-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-1454A637",
@@ -652,7 +673,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-911165B2",
@@ -671,7 +693,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-100-mm-m16-m30.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-100-mm-m16-m30.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-1046960A",
@@ -690,7 +713,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-120-mm-m16-m36.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-120-mm-m16-m36.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-76754EAA",
@@ -709,7 +733,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-150-mm-m36.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-teller-150-mm-m36.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BF1F0CBB",
@@ -729,7 +754,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-3-a-teller-60-mm-m12-m20.svg"
+"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-3-a-teller-60-mm-m12-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-AA1A5310",
@@ -748,7 +774,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-100-mm-m30.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-100-mm-m30.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D62B62EF",
@@ -767,7 +794,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-60-mm-m16.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-60-mm-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-648F0321",
@@ -786,7 +814,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-80-mm-m16-m20.svg"
+"bild": "/assets/skizzen/stellfuss-edelstahl-leicht-zu-reinigen-teller-80-mm-m16-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5465A128",
@@ -805,7 +834,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10-x-30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10-x-30.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-4462289E",
@@ -824,7 +854,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10-x-30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10-x-30.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DBC1920D",
@@ -843,7 +874,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m12-x-30.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m12-x-30.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-EF7B51BC",
@@ -862,7 +894,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-n.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-n.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-AEA013E1",
@@ -881,7 +914,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-v.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-52-mm-m10-ausfuehrung-v.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-3CE8A471",
@@ -900,7 +934,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-44-5-56-5-mm-m10.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9D7CA43F",
@@ -919,7 +954,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10.svg"
+"bild": "/assets/skizzen/rohrstellfuss-edelstahl-mit-gleiter-56-6-64-mm-m10.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-636C1764",
@@ -937,7 +973,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-56-5-44-5-mm-hoehe-180-mm.svg"
+"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-56-5-44-5-mm-hoehe-180-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DD89A61D",
@@ -955,7 +992,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-64-56-6-mm-hoehe-180-mm.svg"
+"bild": "/assets/skizzen/rohrsockel-edelstahl-mit-anschraubplatte-64-56-6-mm-hoehe-180-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-46D9552F",
@@ -974,7 +1012,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-gleiter-30-40-mm-m10-x-15.svg"
+"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-gleiter-30-40-mm-m10-x-15.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9AB2383E",
@@ -993,7 +1032,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-lasche-30-40-mm-m10-x-15.svg"
+"bild": "/assets/skizzen/moebelstellfuss-edelstahl-mit-lasche-30-40-mm-m10-x-15.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DAF1DCFF",
@@ -1014,7 +1054,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-30-mm-m10-m16.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-30-mm-m10-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-735F76C5",
@@ -1035,7 +1076,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-38-mm-m10-m16.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-38-mm-m10-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-1D4E9EFA",
@@ -1056,7 +1098,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-42-4-mm-m10-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-42-4-mm-m10-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E3785639",
@@ -1077,7 +1120,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-48-3-mm-m12-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-48-3-mm-m12-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-406430F7",
@@ -1098,7 +1142,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-50-9-mm-m12-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-rundrohr-50-9-mm-m12-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-F09EC711",
@@ -1119,7 +1164,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-30-x-30-mm-m10-m16.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-30-x-30-mm-m10-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-6510EF99",
@@ -1140,7 +1186,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-40-x-40-mm-m10-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-40-x-40-mm-m10-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-56C74504",
@@ -1161,7 +1208,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-50-x-50-mm-m12-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-50-x-50-mm-m12-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0EA495CD",
@@ -1182,7 +1230,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-60-x-60-mm-m14-m20.svg"
+"bild": "/assets/skizzen/gewindestopfen-kunststoff-fuer-vierkantrohr-60-x-60-mm-m14-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5C9CEF9F",
@@ -1203,7 +1252,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m16-80-125-mm.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m16-80-125-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-185A2C70",
@@ -1224,7 +1274,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m20-80-125-mm.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m20-80-125-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-22625A7B",
@@ -1245,7 +1296,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m10-60-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m10-60-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-4C22478D",
@@ -1266,7 +1318,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m12-60-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m12-60-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-8F383257",
@@ -1287,7 +1340,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m14-60-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-mit-kunststoffteller-und-bohrungen-stahlspindel-m14-60-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D497CA83",
@@ -1308,7 +1362,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-100-mit-bohrungen.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-100-mit-bohrungen.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-52A8EA2C",
@@ -1329,7 +1384,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-150-mit-bohrungen-und-nbr-b.svg"
+"bild": "/assets/skizzen/gelenkstellfuss-pressstahl-ovaler-teller-65-mm-m12-x-150-mit-bohrungen-und-nbr-b.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-F65DB51E",
@@ -1390,7 +1446,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m10-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m10-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B8214EC0",
@@ -1451,7 +1508,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m12-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m12-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-C9F0E492",
@@ -1562,7 +1620,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m14-50-65-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m14-50-65-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-C0BFBD73",
@@ -1763,7 +1822,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m16-65-100-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m16-65-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BE2F7339",
@@ -1892,7 +1952,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m20-80-100-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m20-80-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-40FAB03A",
@@ -1961,7 +2022,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m24-100-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-teller-lackiert-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-10CBE62C",
@@ -1981,7 +2043,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-mit-kunststoffkappe-m16-50-100-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-mit-kunststoffkappe-m16-50-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A635A01A",
@@ -2000,7 +2063,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m10-40-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m10-40-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-68FB055B",
@@ -2019,7 +2083,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m12-40-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m12-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-8B2D7859",
@@ -2037,7 +2102,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m16.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m16.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D69A3421",
@@ -2055,7 +2121,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m20.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m20.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-6A7BF3AC",
@@ -2073,7 +2140,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m24.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m24.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B875363B",
@@ -2092,7 +2160,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m8-40-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-verzinkt-oder-edelstahl-m8-40-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-83F6240B",
@@ -2111,7 +2180,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m10-40-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m10-40-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-62C8717D",
@@ -2130,7 +2200,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m12-40-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m12-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-137671DB",
@@ -2149,7 +2220,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m8-40-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-mit-rutschschutzkappe-m8-40-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-94F38ABA",
@@ -2169,7 +2241,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m10-40-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m10-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FDB021BD",
@@ -2189,7 +2262,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m12-40-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m12-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D97654F3",
@@ -2209,7 +2283,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m8-40-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-kunststoff-edelstahlspindel-m8-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E89F7C52",
@@ -2229,7 +2304,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-massiv-gelb-m12-x-125-50-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-massiv-gelb-m12-x-125-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-1D17726A",
@@ -2250,7 +2326,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m10-40-80-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m10-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DF88EAFA",
@@ -2271,7 +2348,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m12-40-80-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m12-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B84FEB57",
@@ -2292,7 +2370,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m16-40-80-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m16-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B2F674E9",
@@ -2313,7 +2392,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m8-40-80-mm.svg"
+"bild": "/assets/skizzen/gelenkfuss-stahl-wahlweise-mit-gummiauflage-m8-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E9058507",
@@ -2351,7 +2431,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m12-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m12-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-AD6C4005",
@@ -2389,7 +2470,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A9742B5F",
@@ -2427,7 +2509,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A6B953FC",
@@ -2465,7 +2548,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B8C06E52",
@@ -2503,7 +2587,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-C809BE61",
@@ -2541,7 +2626,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5A0968A3",
@@ -2579,7 +2665,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-81D067CB",
@@ -2617,7 +2704,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-3BF481CB",
@@ -2655,7 +2743,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m16-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-C9834603",
@@ -2693,7 +2782,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m20-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-EF5668EF",
@@ -2731,7 +2821,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-m24-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A887A160",
@@ -2768,7 +2859,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m12-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m12-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-194A7354",
@@ -2805,7 +2897,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-3C8766E4",
@@ -2842,7 +2935,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FDB5AEA4",
@@ -2879,7 +2973,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BD84EE13",
@@ -2916,7 +3011,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7C35D122",
@@ -2953,7 +3049,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m16-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5151482F",
@@ -2990,7 +3087,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m20-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9A88586C",
@@ -3027,7 +3125,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-b-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-8750ED83",
@@ -3047,7 +3146,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-abgedichtet-m16-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-gelenkstellfuss-edelstahl-abgedichtet-m16-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-413F70F3",
@@ -3068,7 +3168,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m12-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m12-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A20D0C83",
@@ -3089,7 +3190,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-4F303E42",
@@ -3110,7 +3212,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9C99F91D",
@@ -3131,7 +3234,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-27CC917E",
@@ -3152,7 +3256,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BC515CE9",
@@ -3173,7 +3278,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7AE5095E",
@@ -3194,7 +3300,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-03FE504C",
@@ -3215,7 +3322,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-18C43044",
@@ -3236,7 +3344,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m16-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7D100B83",
@@ -3257,7 +3366,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m20-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FA124A9A",
@@ -3278,7 +3388,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-120-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-a-m24-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7457568A",
@@ -3298,7 +3409,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m12-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m12-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9915CADA",
@@ -3318,7 +3430,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-60-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2DCC8132",
@@ -3338,7 +3451,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9CB42F41",
@@ -3358,7 +3472,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-4767CD6D",
@@ -3378,7 +3493,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-80-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-B43408F0",
@@ -3398,7 +3514,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m16-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D7106CD1",
@@ -3418,7 +3535,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m20-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FF32DA3D",
@@ -3438,7 +3556,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-100-mm.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-poliert-3-a-form-b-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-12F0182E",
@@ -3455,7 +3574,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-fuer-brauerei-und-molkerei.svg"
+"bild": "/assets/skizzen/hygiene-stellfuss-edelstahl-3-a-form-a-fuer-brauerei-und-molkerei.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0185216D",
@@ -3756,7 +3876,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m10-40-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m10-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DFC3814D",
@@ -4117,7 +4238,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m12-40-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m12-40-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-533974A5",
@@ -4378,7 +4500,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m14-50-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m14-50-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D55D4762",
@@ -4899,7 +5022,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m16-50-120-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m16-50-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-33362442",
@@ -5440,7 +5564,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m20-60-120-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m20-60-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-734661D5",
@@ -5515,7 +5640,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m8-40-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-oder-edelstahl-drehbare-spindel-m8-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2F4ED981",
@@ -5552,7 +5678,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m10-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m10-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5BB0921F",
@@ -5589,7 +5716,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m6-30-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m6-30-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2DD71741",
@@ -5691,7 +5819,8 @@
 }
 ],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m8-30-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-sechskant-zum-verstellen-m8-30-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-777608B6",
@@ -5709,7 +5838,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-610-kg.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-610-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DFB0AFFD",
@@ -5727,7 +5857,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-2000-kg.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-2000-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-02375754",
@@ -5747,7 +5878,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-4100-kg-m16-160-mm.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-4100-kg-m16-160-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-05A9A6CF",
@@ -5765,7 +5897,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-5600-kg.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-5600-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-CD29986B",
@@ -5783,7 +5916,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-8200-kg.svg"
+"bild": "/assets/skizzen/maschinenlager-nivellierbar-elastomer-bis-8200-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D87492B7",
@@ -5803,7 +5937,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m16-113-mm.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m16-113-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2ABB824D",
@@ -5823,7 +5958,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m20-126-mm.svg"
+"bild": "/assets/skizzen/geraetefuss-schwingungsdaempfend-m20-126-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A3402006",
@@ -5843,7 +5979,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m10-30-50-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m10-30-50-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-94165989",
@@ -5863,7 +6000,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m16-60-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m16-60-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-201F27B6",
@@ -5883,7 +6021,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m8-25-40-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-stahlspindel-verzinkt-m8-25-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E68C5C6F",
@@ -5903,7 +6042,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m10-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m10-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7A82C84C",
@@ -5923,7 +6063,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m6-30-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m6-30-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-BD2DE969",
@@ -5943,7 +6084,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m8-30-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-schraube-verzinkt-m8-30-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-4B26BE1E",
@@ -5963,7 +6105,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m10-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m10-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-8A0B5FB4",
@@ -5983,7 +6126,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m6-30-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m6-30-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-6EB85C59",
@@ -6003,7 +6147,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m8-30-47-mm.svg"
+"bild": "/assets/skizzen/stellfuss-kunststoff-rund-mit-sechskant-starr-m8-30-47-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0F4E301F",
@@ -6022,7 +6167,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/lenkrolle-mit-nivellierfuss-rolle-50-mm-bauhoehe-82-mm.svg"
+"bild": "/assets/skizzen/lenkrolle-mit-nivellierfuss-rolle-50-mm-bauhoehe-82-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-AE657A40",
@@ -6042,7 +6188,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m45-schraube-m16-119-mm.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m45-schraube-m16-119-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-189CAFA7",
@@ -6062,7 +6209,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m45-schraube-m16-119-mm.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m45-schraube-m16-119-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-48C84102",
@@ -6082,7 +6230,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m28-schraube-m10-40-mm.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m28-schraube-m10-40-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-1B3BA4DF",
@@ -6102,7 +6251,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-52-mm.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-52-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-79F3EB19",
@@ -6122,7 +6272,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m36-schraube-m12-52-mm.svg"
+"bild": "/assets/skizzen/nivellierset-stahl-feingewinde-m36-schraube-m12-52-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-DE4CAA40",
@@ -6142,7 +6293,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-99-mm.svg"
+"bild": "/assets/skizzen/nivellierset-edelstahl-feingewinde-m36-schraube-m12-99-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-365D21EF",
@@ -6161,7 +6313,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-lange-spindel-m30-100-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-lange-spindel-m30-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-F423AED3",
@@ -6181,7 +6334,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-mit-befestigungslasche-m24-80-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-mit-befestigungslasche-m24-80-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7CBAC4A5",
@@ -6202,7 +6356,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m10-45-mm-bis-12-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m10-45-mm-bis-12-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-082AAF0B",
@@ -6223,7 +6378,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m12-45-mm-bis-12-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m12-45-mm-bis-12-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-FA094BEC",
@@ -6244,7 +6400,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-45-mm-bis-12-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-45-mm-bis-12-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-5D0E79A3",
@@ -6265,7 +6422,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-58-mm-bis-21-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m16-58-mm-bis-21-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0F768522",
@@ -6286,7 +6444,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-58-mm-bis-21-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-58-mm-bis-21-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-C7EE29C9",
@@ -6307,7 +6466,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-58-mm-bis-21-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-58-mm-bis-21-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E43B565D",
@@ -6328,7 +6488,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-70-mm-bis-34-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m20-70-mm-bis-34-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0A759BBF",
@@ -6349,7 +6510,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-70-mm-bis-34-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m24-70-mm-bis-34-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A854E5E7",
@@ -6370,7 +6532,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m30-70-mm-bis-34-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-durchgang-fuer-m30-70-mm-bis-34-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-36964982",
@@ -6391,7 +6554,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/nivellierelement-stahl-pendelnd-durchgang-fuer-m16-45-mm-bis-12-t.svg"
+"bild": "/assets/skizzen/nivellierelement-stahl-pendelnd-durchgang-fuer-m16-45-mm-bis-12-t.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D946412C",
@@ -6412,7 +6576,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-mit-bohrungen-m30-120-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-gelb-mit-bohrungen-m30-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-E23D8B71",
@@ -6432,7 +6597,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-120-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-120-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0862A772",
@@ -6452,7 +6618,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-100-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m24-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-F14120C0",
@@ -6472,7 +6639,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m30-100-mm.svg"
+"bild": "/assets/skizzen/stellfuss-stahl-massiv-bohrungen-und-nbr-belag-m30-100-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-86276E42",
@@ -6492,7 +6660,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-20-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-20-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-37B55DF4",
@@ -6512,7 +6681,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-33-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-33-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-0BD9119D",
@@ -6532,7 +6702,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-52-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-52-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-8FA0D200",
@@ -6552,7 +6723,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-82-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-82-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-9D45DF37",
@@ -6572,7 +6744,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-120-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-120-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-90058B06",
@@ -6592,7 +6765,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-200-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-200-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-7926B558",
@@ -6612,7 +6786,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-310-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-310-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2D7F3A15",
@@ -6632,7 +6807,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-420-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-420-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-87D287E1",
@@ -6652,7 +6828,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/federisolator-stahl-m10-bis-520-kg.svg"
+"bild": "/assets/skizzen/federisolator-stahl-m10-bis-520-kg.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-3BB77D3C",
@@ -6671,7 +6848,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-10-mm.svg"
+"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-10-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-687EB24D",
@@ -6690,7 +6868,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-15-mm.svg"
+"bild": "/assets/skizzen/gummipuffer-tailliert-beidseitig-aussengewinde-m4-15-mm.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-2CDB3B6F",
@@ -6710,7 +6889,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-55-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-55-shore.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-897A8F8D",
@@ -6730,7 +6910,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-70-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m10-50-x-35-mm-70-shore.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-49F1BA89",
@@ -6750,7 +6931,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-55-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-55-shore.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-A307B24B",
@@ -6770,7 +6952,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-70-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m12-80-x-60-mm-70-shore.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-D1163685",
@@ -6790,7 +6973,8 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-93-mm-55-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-93-mm-55-shore.svg",
+"mindermenge": true
 },
 {
 "sku": "BF-V-CD5A7308",
@@ -6810,6 +6994,7 @@
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
-"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-90-mm-70-shore.svg"
+"bild": "/assets/skizzen/gummipuffer-ballig-innengewinde-m16-125-x-90-mm-70-shore.svg",
+"mindermenge": true
 }
 ]

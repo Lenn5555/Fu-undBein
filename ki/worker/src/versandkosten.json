@@ -805,5 +805,10 @@
         "eu": true
       }
     ]
+  },
+  "mindermenge": {
+    "grenze": 60,
+    "zuschlag": 20,
+    "hinweis": "Mindermengenzuschlag netto für Händlerware (nicht T&S) bei Warenwert unter der Grenze, Lenn 10.11.2026"
   }
 }

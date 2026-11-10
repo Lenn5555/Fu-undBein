@@ -47,11 +47,20 @@ SCHEMA = {
         "gefunden": {"type": "boolean", "description": "true nur, wenn der Preis genau dieses Artikels eindeutig auf der Seite steht"},
         "preis": {"type": "number", "description": "Stückpreis bei Bestellmenge 1, so wie er auf der Seite steht; 0 wenn nicht gefunden"},
         "brutto": {"type": "boolean", "description": "true, wenn der genannte Preis die Mehrwertsteuer enthält"},
+        "mwst_satz": {"type": "number", "description": "bei brutto: der auf der Seite genannte MwSt.-Satz in Prozent (z. B. 19 oder 20); 0 wenn keiner genannt ist"},
         "nicht_mehr_lieferbar": {"type": "boolean", "description": "true nur, wenn die Seite sagt, dass genau dieser Artikel ausgelaufen oder nicht mehr erhältlich ist (nicht bei vorübergehend ausverkauft)"},
     },
-    "required": ["gefunden", "preis", "brutto", "nicht_mehr_lieferbar"],
+    "required": ["gefunden", "preis", "brutto", "mwst_satz", "nicht_mehr_lieferbar"],
     "additionalProperties": False,
 }
+
+
+def mwst_faktor(ki):
+    """Teiler für einen von Claude gelesenen Preis: 1 bei netto, sonst 1 + genannter MwSt.-Satz (Standard 19 %)."""
+    if not ki.get("brutto"):
+        return 1.0
+    satz = ki.get("mwst_satz") or 19
+    return 1 + satz / 100
 
 
 def ki_lesen(eintrag, auszug):
@@ -68,7 +77,8 @@ def ki_lesen(eintrag, auszug):
         "Unten steht der Text einer Händlerseite. Gesucht ist der Preis für genau diesen Artikel bzw. diese Ausführung:\n"
         f"{artikel}\n\n"
         "Nimm den Stückpreis bei Bestellmenge 1 (keine Staffelpreise für größere Mengen, keine Preise anderer Ausführungen, "
-        "keine Zubehör- oder Empfehlungsartikel). Wenn Netto- und Bruttopreis dastehen, nimm den Nettopreis. "
+        "keine Zubehör- oder Empfehlungsartikel). Wenn Netto- und Bruttopreis dastehen, nimm den Nettopreis "
+        "(„zzgl. MwSt.“, „exkl. MwSt.“, „netto“). Steht nur ein Bruttopreis da, gib den MwSt.-Satz an, den die Seite nennt. "
         "Wenn du nicht sicher bist, welcher Preis zu genau diesem Artikel gehört, setze gefunden auf false.\n\n"
         f"<seite>\n{auszug}\n</seite>"
     )

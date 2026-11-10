@@ -53,6 +53,8 @@ STAND = ROOT / "daten/preiswaechter.json"
 
 AUFSCHLAG = 1.20            # Verkaufspreis = EK + 20 % (Lenn, 22.10.2026; vorher 15 %, davor 10 %)
 MWST = 1.19
+TOLERANZ_BRUTTO = 0.005     # Bruttopreis nur einmessen, wenn er fast genau EK × 1,19 ist (sonst evtl. andere MwSt.,
+                            # z. B. 20 % in Österreich: 50,00 netto = 60,00 brutto, /1,19 wären fälschlich 50,42)
 TOLERANZ_EINMESSEN = 0.03   # gefundener Preis darf beim Einmessen 3 % vom bekannten EK abweichen
 MAX_SPRUNG = 0.25           # größere Preissprünge nur melden, nicht übernehmen
 MAX_AUSBLENDEN = 5          # mehr auf einmal = verdächtig, dann nur melden
@@ -67,6 +69,8 @@ AUSLAUF = re.compile(r"nicht mehr (?:lieferbar|verfügbar|erhältlich)|ausgelauf
 AUSVERKAUFT = re.compile(r"ausverkauft|sold out|out of stock|nicht auf lager|derzeit nicht lieferbar|vorübergehend nicht", re.I)
 SPERRSEITE = re.compile(r"captcha|just a moment|access denied|zugriff verweigert|are you a (?:human|robot)|checking your browser"
                         r"|request blocked|attention required|enable javascript and cookies", re.I)
+NETTO_HINWEIS = re.compile(r"zzgl\.?\s*(?:\d+\s*%\s*)?(?:mwst|ust)|exkl\.?\s*(?:mwst|ust)|excl\.?\s*(?:vat|tax)|ohne\s+mwst|\bnetto\b|\bnet\b", re.I)
+FREMDE_MWST = re.compile(r"(?:inkl\.?|incl\.?|including)\s*(?!19\b)(\d{1,2})\s*%\s*(?:mwst|ust|vat|tax)", re.I)
 PREIS = re.compile(r"(?:€|EUR)\s*(\d{1,3}(?:[.,]\d{3})*[.,]\d{2})(?!\d)|(\d{1,3}(?:[.,]\d{3})*[.,]\d{2})\s*(?:€|EUR)", re.I)
 
 
@@ -185,15 +189,24 @@ def kandidaten(roh, text, tokens):
             w = preise_im_text(text, i, i + 700)
             if w:
                 k[f"nach:{n}"] = w[0]
+    # Preis direkt vor „zzgl. MwSt.“ / „netto“: der Nettopreis, egal welche MwSt. der Händler rechnet
+    for m in NETTO_HINWEIS.finditer(text):
+        w = preise_im_text(text, max(0, m.start() - 40), m.start())
+        if w:
+            k["netto"] = w[-1]
+            break
     return k
 
 
-def passt(wert, ek):
+def passt(wert, ek, text=""):
+    """Passt der gelesene Wert zum bekannten Netto-EK? False = netto, True = brutto mit 19 %, None = passt nicht.
+    Brutto nur bei fast genauer Übereinstimmung und wenn die Seite keinen anderen MwSt.-Satz nennt."""
     if not ek:
         return None
-    for brutto, faktor in ((False, 1.0), (True, MWST)):
-        if abs(wert / faktor - ek) <= ek * TOLERANZ_EINMESSEN:
-            return brutto
+    if abs(wert - ek) <= ek * TOLERANZ_EINMESSEN:
+        return False
+    if abs(wert / MWST - ek) <= ek * TOLERANZ_BRUTTO and not FREMDE_MWST.search(text):
+        return True
     return None
 
 
@@ -257,8 +270,8 @@ def pruefe(eintrag, status, final, roh, basis):
         return {"art": "ok", "quelle": "regel", "ek": round(wert / MWST, 2) if basis.get("brutto") else wert, **info}
 
     # Einmessen: welcher Leseweg findet den bekannten EK wieder? Artikelnummer-nahe Preise zuerst.
-    for name in sorted(k, key=lambda n: (not n.startswith("nach:"), n)):
-        brutto = passt(k[name], eintrag.get("ek_netto"))
+    for name in sorted(k, key=lambda n: (not n.startswith("nach:"), n != "netto", n)):
+        brutto = passt(k[name], eintrag.get("ek_netto"), text)
         if brutto is not None:
             return {"art": "eingemessen", "quelle": "regel", "weg": name, "brutto": brutto,
                     "ek": round(k[name] / MWST, 2) if brutto else k[name], **info}
@@ -391,9 +404,9 @@ def main(argv):
         # Zweiter, unabhängiger Leser: Claude
         if r["art"] == "nicht_pruefbar":
             ki = hilfe.ki_lesen(e, r["auszug"])
-            if ki and ki["gefunden"] and passt(ki["preis"] / (MWST if ki["brutto"] else 1), e.get("ek_netto")) is not None:
+            if ki and ki["gefunden"] and passt(ki["preis"] / hilfe.mwst_faktor(ki), e.get("ek_netto")) is False:
                 r.update({"art": "eingemessen", "quelle": "ki", "weg": "ki", "brutto": False,
-                          "ek": round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)})
+                          "ek": round(ki["preis"] / hilfe.mwst_faktor(ki), 2)})
         elif r["art"] == "ki_noetig":
             h = hashlib.sha256(r["auszug"].encode()).hexdigest()[:16]
             r["hash"] = h
@@ -406,11 +419,11 @@ def main(argv):
                 elif ki.get("nicht_mehr_lieferbar"):
                     r.update({"art": "auslauf", "grund": "Händlerseite meldet, dass der Artikel nicht mehr erhältlich ist"})
                 else:
-                    r.update({"art": "ok", "quelle": "ki", "ek": round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)})
+                    r.update({"art": "ok", "quelle": "ki", "ek": round(ki["preis"] / hilfe.mwst_faktor(ki), 2)})
         elif r["art"] in ("ok", "eingemessen") and (s in aus or abs(round(r["ek"] * AUFSCHLAG, 2) - vk.get(s, 0)) >= 0.01):
             ki = hilfe.ki_lesen(e, r["auszug"])  # Änderung gefunden: Claude liest gegen
             if ki and ki["gefunden"]:
-                r["ki_ek"] = round(ki["preis"] / (MWST if ki["brutto"] else 1), 2)
+                r["ki_ek"] = round(ki["preis"] / hilfe.mwst_faktor(ki), 2)
         if r["art"] == "eingemessen" and r.get("quelle") == "ki":
             r["hash"] = hashlib.sha256(r["auszug"].encode()).hexdigest()[:16]
         ergebnisse[s] = r

@@ -299,11 +299,9 @@
   },
   "BF-V-0F4E301F": {
    "auslauf_text": false,
-   "brutto": true,
    "ref": "1110ff9e342c",
    "seit": "2026-11-09",
-   "token": null,
-   "weg": "jsonld"
+   "token": null
   },
   "BF-V-0F768522": {
    "auslauf_text": false,

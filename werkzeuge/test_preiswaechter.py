@@ -53,6 +53,22 @@ class Lesen(unittest.TestCase):
         r = pw.pruefe(e, 200, e["bestell_url"], BRUTTO, {})
         self.assertEqual((r["art"], r["brutto"], r["ek"]), ("eingemessen", True, 30.63))
 
+    def test_andere_mwst_nicht_als_19_prozent(self):
+        # Händler mit 20 % MwSt.: 50,00 netto = 60,00 brutto; 60,00 / 1,19 = 50,42 darf nicht als EK durchgehen
+        jsonld = '<script type="application/ld+json">{"@type":"Product","offers":{"price":"60.00"}}</script>'
+        e = eintrag("https://h.test/m", 50.0, "")
+        seite = jsonld + "<h1>Stellfuß</h1><p>50,00€ zzgl. MwSt.</p><p>60,00€ inkl. 20% MwSt.</p>" + "<p>Text</p>" * 200
+        r = pw.pruefe(e, 200, e["bestell_url"], seite, {})
+        self.assertEqual((r["art"], r["weg"], r["brutto"], r["ek"]), ("eingemessen", "netto", False, 50.0))
+        nur_brutto = jsonld + "<h1>Stellfuß</h1><p>60,00€ inkl. 20% MwSt.</p>" + "<p>Text</p>" * 200
+        self.assertEqual(pw.pruefe(e, 200, e["bestell_url"], nur_brutto, {})["art"], "nicht_pruefbar")
+        self.assertIsNone(pw.passt(60.0, 50.0))  # auch ohne Hinweis auf der Seite: 0,8 % daneben ist zu viel für brutto
+
+    def test_mwst_satz_von_claude(self):
+        self.assertAlmostEqual(60.0 / pw.hilfe.mwst_faktor({"brutto": True, "mwst_satz": 20}), 50.0, places=2)
+        self.assertEqual(pw.hilfe.mwst_faktor({"brutto": True, "mwst_satz": 0}), 1.19)
+        self.assertEqual(pw.hilfe.mwst_faktor({"brutto": False, "mwst_satz": 19}), 1.0)
+
     def test_falscher_preis_wird_nicht_eingemessen(self):
         e = eintrag("https://h.test/p", 15.00, "X0375.005010X25")
         self.assertEqual(pw.pruefe(e, 200, e["bestell_url"], TABELLE.format(a="8,83"), {})["art"], "nicht_pruefbar")

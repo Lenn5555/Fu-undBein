@@ -19,7 +19,7 @@ import shutil
 import sys
 from datetime import date
 from html import escape as e
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -159,9 +159,14 @@ def bezugsquellen(produkte):
             continue
         if p["sku"] in fest:
             x = fest[p["sku"]]
-            d.update({"artikel": x["artikel"], "ek_netto": x["ek_netto"], "bestell_url": x["url"] or d["bestell_url"], "preis_bezug": ""})
+            # Bezugsquelle ist der Händler, dessen Seite den festen Preis liefert; alte Recherche-Notizen passen nicht mehr
+            d.update({"artikel": x["artikel"], "ek_netto": x["ek_netto"], "bestell_url": x["url"] or d["bestell_url"], "preis_bezug": "",
+                      "bezugsquelle": urlparse(x["url"]).netloc.removeprefix("www.") if x["url"] else d["bezugsquelle"], "notiz": ""})
         v = {v["sku"]: fest[v["sku"]] for v in p["varianten"] if v["sku"] in fest}
         if v:
+            u = next((x["url"] for x in v.values() if x["url"]), "")
+            if u:
+                d.update({"bezugsquelle": urlparse(u).netloc.removeprefix("www."), "bestell_url": u, "notiz": ""})
             d["varianten"] = {s: {"artikel": x["artikel"], "ek_netto": x["ek_netto"], **({"bestell_url": x["url"]} if x["url"] else {})}
                               for s, x in v.items()}
             d["preis_bezug"] = ""

@@ -5,7 +5,7 @@
 // Geheimnisse (ANTHROPIC_API_KEY, RESEND_API_KEY) liegen als Worker-Secrets bei Cloudflare, nie im Browser.
 import Anthropic from "@anthropic-ai/sdk";
 import { beraten, neuerClient } from "./berater.js";
-import { pruefen, bestellnummer, mailText, bezugsquelle, senden } from "./bestellung.js";
+import { pruefen, bestellnummer, mailText, bezugsquelle, senden, kundeBenachrichtigen } from "./bestellung.js";
 import { meldungPruefen, bestellEintraege, bericht, schluesselPasst } from "./statistik.js";
 import { zaehlerVon } from "./zaehler.js";
 import { aktiv, bezahlbar, anlegen, abschliessen, betrag } from "./bezahlen.js";
@@ -124,6 +124,7 @@ export default {
     try {
       const quelle = bezugsquelle(b.produkt.sku, b.variante?.sku);
       await senden(env, nr, b, mailText(nr, b, quelle));
+      await kundeBenachrichtigen(env, nr, b);
     } catch (err) {
       console.error("Bestellung:", err);
       return antwort({ fehler: "Die Bestellung konnte nicht übermittelt werden. Bitte per E-Mail bestellen." }, 502, herkunft);
@@ -159,6 +160,7 @@ async function bezahlen(pfad, daten, b, env, ctx, herkunft) {
   // Geld ist eingezogen: die Bestellung gilt auch dann, wenn die Mail scheitert (dann steht sie im Protokoll und bei PayPal)
   try {
     await senden(env, z.nr, b, mailText(z.nr, b, bezugsquelle(b.produkt.sku, b.variante?.sku), { ...z, zahlart: b.kunde.zahlart }), fetch, true);
+    await kundeBenachrichtigen(env, z.nr, b, z);
   } catch (err) {
     console.error(`Mail zur bezahlten Bestellung ${z.nr} (PayPal ${z.transaktion}) fehlgeschlagen:`, err.message);
   }

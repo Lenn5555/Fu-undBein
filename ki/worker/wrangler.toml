@@ -14,6 +14,12 @@ BESTELL_EMAIL = "sales@ts-systec.de"
 # (Test 09.11.2026), deshalb übergangsweise Resends Standardabsender. Er liefert nur an die Adresse des Resend-Kontos,
 # also nur für die interne Bestellmail an sales@ geeignet. Dauerhaft: eigene Domain ohne ß bei Resend bestätigen.
 ABSENDER = "Bein und Fuss <onboarding@resend.dev>"
+# Eingangsbestätigung an den Kunden (Lenn, 11.11.2026). Erst auf "an" stellen, wenn ts-systec.de bei Resend bestätigt ist.
+KUNDENMAIL = "aus"
+KUNDEN_ABSENDER = "Bein und Fuss <bestellung@ts-systec.de>"
+# Bankverbindung für Überweisungen (wie in daten/site.json "bank")
+BANK_INHABER = "T&S Systemtechnik GmbH"
+BANK_IBAN = "DE17 5084 0005 0610 6090 00"
 # SHA-256 des Schlüssels für die Statistikseite; der Schlüssel selbst steht nicht im Repo
 STATISTIK_HASH = "8d97d06abe5bb2467539b272c03c85fa0d29f4ad45ae7ccf2e887d04d28233f2"
 # SHA-256 des Schlüssels für den Abendbericht (liest /statistik ohne Browser).

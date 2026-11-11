@@ -166,6 +166,33 @@ test("Überweisung: Bestellnummer als Verwendungszweck und Betrag in der Mail", 
   assert.match(text, /Betrag \d+,\d\d € brutto/);
 });
 
+test("Eingangsbestätigung an den Kunden: ohne interne Daten, nur wenn eingeschaltet", async () => {
+  const { kundenText, kundeBenachrichtigen } = await import("../src/bestellung.js");
+  const p = KATALOG.find((p) => p.mindermenge && p.varianten.length && !p.mindestwert);
+  const b = pruefen({ ...KUNDE, sku: p.sku, variante: p.varianten[0].sku, menge: 1, land: "Deutschland", zahlart: "Überweisung (Vorkasse)" });
+  assert.ok(!b.fehler, b.fehler);
+  const env = { BANK_INHABER: "T&S Systemtechnik GmbH", BANK_IBAN: "DE17 5084 0005 0610 6090 00", BESTELL_EMAIL: "vertrieb@example.com",
+    KUNDEN_ABSENDER: "Bein und Fuss <bestellung@example.com>", RESEND_API_KEY: "x" };
+  const t = kundenText("BF-20261111-ABCD", b, env);
+  assert.match(t, /IBAN: DE17 5084 0005 0610 6090 00/);
+  assert.match(t, /Verwendungszweck: BF-20261111-ABCD/);
+  assert.match(t, /Gesamtbetrag: \d+,\d\d €/);
+  assert.match(t, /Mindermengenzuschlag/);
+  assert.match(t, /Auftragsbestätigung/);
+  for (const intern of [p.sku, p.varianten[0].sku, "Bezugsquelle", "EK", "INTERN", p.marke].filter(Boolean)) assert.ok(!t.includes(intern), intern);
+  let gesendet = null;
+  const abruf = async (url, o) => { gesendet = JSON.parse(o.body); return { ok: true }; };
+  assert.equal(await kundeBenachrichtigen({ ...env, KUNDENMAIL: "aus" }, "BF-1", b, null, abruf), false);
+  assert.equal(gesendet, null);
+  assert.equal(await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-1", b, null, abruf), true);
+  assert.deepEqual(gesendet.to, [KUNDE.email]);
+  assert.equal(gesendet.reply_to, "vertrieb@example.com");
+  assert.match(gesendet.subject, /^[\x20-\x7e]+$/);
+  // Fehler beim Versand stoppen die Bestellung nicht
+  assert.equal(await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-1", b, null, async () => ({ ok: false, status: 403, text: async () => "nein" })), false);
+  assert.match(kundenText("BF-2", b, env, { nr: "BF-2" }), /Bezahlt per/);
+});
+
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   const { bezugsquelle } = await import("../src/bestellung.js");
   assert.equal(bezugsquelle("GIBTSNICHT"), null);

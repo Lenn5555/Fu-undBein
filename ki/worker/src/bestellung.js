@@ -194,3 +194,94 @@ export async function senden(env, nr, b, text, abruf = fetch, bezahlt = false) {
   });
   if (!r.ok) throw new Error(`Mailversand fehlgeschlagen: ${r.status} ${await r.text()}`);
 }
+
+// Eingangsbestätigung an den Kunden (Lenn, 11.11.2026). Ohne Bezugsquelle, Hersteller und Artikelnummern.
+// Verbindlich wird die Bestellung erst mit der Auftragsbestätigung des Innendienstes.
+// Absender: "Bein und Fuss <bestellung@ts-systec.de>", geht nur, wenn ts-systec.de bei Resend bestätigt ist.
+export function kundenText(nr, b, env, zahlung = null) {
+  const { produkt: p, variante: v, gewaehlt = {}, menge, kunde: k, stueck, summe } = b;
+  const wahl = v ? v.ausfuehrung : Object.entries(gewaehlt).map(([m, w]) => `${m} ${w}`).join(", ");
+  const de = k.land === "Deutschland";
+  const s = betrag(b);
+  const iban = env.BANK_IBAN, inhaber = env.BANK_INHABER;
+  const zeilen = [
+    `Guten Tag ${k.name},`,
+    ``,
+    `vielen Dank für Ihre Bestellung. Sie ist bei uns eingegangen.`,
+    ``,
+    `Bestellnummer: ${nr}`,
+    ``,
+    `IHRE BESTELLUNG`,
+    p.name,
+    ...(wahl ? [`Ausführung: ${wahl}`] : []),
+    ...(k.wunsch ? [`Ihr Wunsch zur Ausführung: ${k.wunsch}`] : []),
+    `Menge: ${menge}`,
+    `Stückpreis netto: ${euro(stueck)}`,
+    `Warenwert netto: ${euro(summe)}`,
+    ...(b.zuschlag ? [`Mindermengenzuschlag netto: ${euro(b.zuschlag)}`] : []),
+    ...(de
+      ? [`Versand netto: ${euro(s.versand / 100)}`, `MwSt. 19 %: ${euro(s.mwst / 100)}`, `Gesamtbetrag: ${euro(s.gesamt / 100)}`]
+      : [`Versand: nach Paketgewicht, den Betrag nennen wir Ihnen mit der Auftragsbestätigung.`]),
+    ``,
+    `LIEFERADRESSE`,
+    ...(k.strasse ? zeilenAdresse({ firma: k.firma, name: k.name, strasse: k.strasse, zusatz: k.zusatz, plz: k.plz, ort: k.ort, land: k.land })
+      : [k.adresse, k.land]),
+    ``,
+    `RECHNUNGSADRESSE`,
+    ...(k.rechnung ? zeilenAdresse(k.rechnung) : [`gleich Lieferadresse`]),
+    ``,
+    `ZAHLUNG`,
+  ];
+  if (zahlung) {
+    zeilen.push(`Bezahlt per ${k.zahlart}: ${euro(s.gesamt / 100)}. Vielen Dank.`);
+  } else if (k.zahlart.startsWith("Überweisung") && iban) {
+    zeilen.push(
+      `Bitte überweisen Sie ${de ? euro(s.gesamt / 100) : "den Betrag aus der Auftragsbestätigung"} auf dieses Konto:`,
+      `Empfänger: ${inhaber}`,
+      `IBAN: ${iban}`,
+      `Verwendungszweck: ${nr}`,
+      `Bitte geben Sie die Bestellnummer als Verwendungszweck an, damit wir Ihre Zahlung zuordnen können.`,
+    );
+  } else {
+    zeilen.push(`Vorkasse per ${k.zahlart}. Den Zahlungslink schicken wir Ihnen mit der Auftragsbestätigung.`);
+  }
+  zeilen.push(
+    ``,
+    `Dies ist eine automatische Eingangsbestätigung. Verbindlich wird Ihre Bestellung mit unserer Auftragsbestätigung, die wir Ihnen gesondert schicken.` +
+      (zahlung ? ` Wir versenden so schnell wie möglich.` : ` Wir versenden nach Zahlungseingang.`),
+    ``,
+    `Fragen? Antworten Sie einfach auf diese Mail.`,
+    ``,
+    `Mit freundlichen Grüßen`,
+    `Bein und Fuss`,
+    `T&S Systemtechnik GmbH, Pfungstadt`,
+    `beinundfuß.de`,
+  );
+  return zeilen.join("\n");
+}
+
+// Schickt die Eingangsbestätigung, nur wenn KUNDENMAIL = "an". Fehler stoppen die Bestellung nicht.
+export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = fetch) {
+  if (env.KUNDENMAIL !== "an" || !env.KUNDEN_ABSENDER) return false;
+  const text = kundenText(nr, b, env, zahlung);
+  try {
+    const r = await abruf(env.RESEND_URL || "https://api.resend.com/emails", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        from: env.KUNDEN_ABSENDER,
+        to: [b.kunde.email],
+        reply_to: env.BESTELL_EMAIL,
+        // Nur einfache Zeichen im Betreff (Outlook, siehe senden)
+        subject: `Ihre Bestellung ${nr} bei Bein und Fuss`,
+        text,
+        html: mailHtml(text),
+      }),
+    });
+    if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+    return true;
+  } catch (err) {
+    console.error(`Eingangsbestätigung ${nr} an den Kunden fehlgeschlagen:`, err.message);
+    return false;
+  }
+}

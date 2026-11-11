@@ -112,7 +112,7 @@ jobs:
             -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
             --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
           cat ergebnis.json; echo
-          sleep 4; echo "--- Server-Protokoll ---"; grep -o '"message":\[[^]]*\]\|"outcome":"[a-zA-Z]*"\|"exceptions":\[[^]]*\]' bestell-protokoll.txt | grep -v -i "key\|secret\|bearer" | tail -30 || true
+          sleep 4; echo "--- Server-Protokoll ---"; node -e "const t=require('fs').readFileSync('bestell-protokoll.txt','utf8'); for (const m of t.matchAll(/\"(message|outcome|name)\":\s*(\[[\s\S]*?\]|\"[^\"]*\")/g)) { const z=m[0].replace(/\s+/g,' '); if (!/key|secret|bearer/i.test(z)) console.log(z); }" || true
           node -e "process.exit(require('./ergebnis.json').ok ? 0 : 1)"
       - name: PayPal-Zugang prüfen (nur auf Wunsch beim manuellen Start)
         if: env.HAT_TOKEN == 'true' && inputs.paypaltest

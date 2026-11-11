@@ -267,9 +267,12 @@ export function kundenText(nr, b, env, zahlung = null) {
 
 // Schickt die Eingangsbestätigung, nur wenn KUNDENMAIL = "an". Fehler stoppen die Bestellung nicht.
 export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = fetch) {
-  if (env.KUNDENMAIL !== "an" || !env.KUNDEN_ABSENDER) return false;
-  const text = kundenText(nr, b, env, zahlung);
+  if (env.KUNDENMAIL !== "an" || !env.KUNDEN_ABSENDER) {
+    console.log(`Kundenmail ${nr}: ausgeschaltet`);
+    return false;
+  }
   try {
+    const text = kundenText(nr, b, env, zahlung);
     const r = await abruf(env.RESEND_URL || "https://api.resend.com/emails", {
       method: "POST",
       headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
@@ -284,6 +287,7 @@ export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = f
       }),
     });
     if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);
+    console.log(`Kundenmail ${nr}: an Resend übergeben`);
     return true;
   } catch (err) {
     console.error(`Eingangsbestätigung ${nr} an den Kunden fehlgeschlagen:`, err.message);

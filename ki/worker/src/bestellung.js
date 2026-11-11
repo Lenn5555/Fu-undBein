@@ -197,7 +197,7 @@ export async function senden(env, nr, b, text, abruf = fetch, bezahlt = false) {
 
 // Eingangsbestätigung an den Kunden (Lenn, 11.11.2026). Ohne Bezugsquelle, Hersteller und Artikelnummern.
 // Verbindlich wird die Bestellung erst mit der Auftragsbestätigung des Innendienstes.
-// Absender: "Bein und Fuss <bestellung@ts-systec.de>", geht nur, wenn ts-systec.de bei Resend bestätigt ist.
+// Absender: "Bein und Fuss <bestellung@beinundfuss.de>", geht nur, wenn beinundfuss.de bei Resend bestätigt ist.
 export function kundenText(nr, b, env, zahlung = null) {
   const { produkt: p, variante: v, gewaehlt = {}, menge, kunde: k, stueck, summe } = b;
   const wahl = v ? v.ausfuehrung : Object.entries(gewaehlt).map(([m, w]) => `${m} ${w}`).join(", ");

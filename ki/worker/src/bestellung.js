@@ -195,7 +195,8 @@ export async function senden(env, nr, b, text, abruf = fetch, bezahlt = false) {
   if (!r.ok) throw new Error(`Mailversand fehlgeschlagen: ${r.status} ${await r.text()}`);
 }
 
-// Eingangsbestätigung an den Kunden (Lenn, 11.11.2026). Ohne Bezugsquelle, Hersteller und Artikelnummern.
+// Mail an den Kunden (Lenn, 11.11.2026): bei Sofortbezahlen die Auftragsbestätigung (AGB § 2 Abs. 3: Annahme mit der Zahlung),
+// sonst eine Eingangsbestätigung; Bankdaten nur bei Überweisung. Ohne Bezugsquelle, Hersteller und Artikelnummern.
 // Verbindlich wird die Bestellung erst mit der Auftragsbestätigung des Innendienstes.
 // Absender: "Bein und Fuss <bestellung@beinundfuss.de>", geht nur, wenn beinundfuss.de bei Resend bestätigt ist.
 export function kundenText(nr, b, env, zahlung = null) {
@@ -207,11 +208,14 @@ export function kundenText(nr, b, env, zahlung = null) {
   const zeilen = [
     `Guten Tag ${k.name},`,
     ``,
-    `vielen Dank für Ihre Bestellung. Sie ist bei uns eingegangen.`,
+    ...(zahlung
+      ? [`vielen Dank für Ihren Auftrag. Ihre Zahlung über ${euro(s.gesamt / 100)} per ${k.zahlart} ist eingegangen.`,
+         `Hiermit bestätigen wir Ihren Auftrag.`]
+      : [`vielen Dank für Ihre Bestellung. Sie ist bei uns eingegangen.`]),
     ``,
     `Bestellnummer: ${nr}`,
     ``,
-    `IHRE BESTELLUNG`,
+    zahlung ? `AUFTRAGSBESTÄTIGUNG` : `IHRE BESTELLUNG`,
     p.name,
     ...(wahl ? [`Ausführung: ${wahl}`] : []),
     ...(k.wunsch ? [`Ihr Wunsch zur Ausführung: ${k.wunsch}`] : []),
@@ -233,7 +237,7 @@ export function kundenText(nr, b, env, zahlung = null) {
     `ZAHLUNG`,
   ];
   if (zahlung) {
-    zeilen.push(`Bezahlt per ${k.zahlart}: ${euro(s.gesamt / 100)}. Vielen Dank.`);
+    zeilen.push(`Bezahlt per ${k.zahlart}: ${euro(s.gesamt / 100)}.`);
   } else if (k.zahlart.startsWith("Überweisung") && iban) {
     zeilen.push(
       `Bitte überweisen Sie ${de ? euro(s.gesamt / 100) : "den Betrag aus der Auftragsbestätigung"} auf dieses Konto:`,
@@ -247,8 +251,9 @@ export function kundenText(nr, b, env, zahlung = null) {
   }
   zeilen.push(
     ``,
-    `Dies ist eine automatische Eingangsbestätigung. Verbindlich wird Ihre Bestellung mit unserer Auftragsbestätigung, die wir Ihnen gesondert schicken.` +
-      (zahlung ? ` Wir versenden so schnell wie möglich.` : ` Wir versenden nach Zahlungseingang.`),
+    zahlung
+      ? `Wir versenden so schnell wie möglich.`
+      : `Dies ist eine automatische Eingangsbestätigung. Verbindlich wird Ihre Bestellung mit unserer Auftragsbestätigung, die wir Ihnen gesondert schicken. Wir versenden nach Zahlungseingang.`,
     ``,
     `Fragen? Antworten Sie einfach auf diese Mail.`,
     ``,
@@ -272,8 +277,8 @@ export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = f
         from: env.KUNDEN_ABSENDER,
         to: [b.kunde.email],
         reply_to: env.BESTELL_EMAIL,
-        // Nur einfache Zeichen im Betreff (Outlook, siehe senden)
-        subject: `Ihre Bestellung ${nr} bei Bein und Fuss`,
+        // Kein ":" und kein "ß" im Betreff (Outlook, siehe senden)
+        subject: zahlung ? `Auftragsbestätigung ${nr} Bein und Fuss` : `Ihre Bestellung ${nr} bei Bein und Fuss`,
         text,
         html: mailHtml(text),
       }),

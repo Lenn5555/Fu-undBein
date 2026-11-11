@@ -187,10 +187,19 @@ test("Eingangsbestätigung an den Kunden: ohne interne Daten, nur wenn eingescha
   assert.equal(await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-1", b, null, abruf), true);
   assert.deepEqual(gesendet.to, [KUNDE.email]);
   assert.equal(gesendet.reply_to, "vertrieb@example.com");
-  assert.match(gesendet.subject, /^[\x20-\x7e]+$/);
+  assert.doesNotMatch(gesendet.subject, /[:ß×]/);
   // Fehler beim Versand stoppen die Bestellung nicht
   assert.equal(await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-1", b, null, async () => ({ ok: false, status: 403, text: async () => "nein" })), false);
-  assert.match(kundenText("BF-2", b, env, { nr: "BF-2" }), /Bezahlt per/);
+  const bez = pruefen({ ...KUNDE, sku: p.sku, variante: p.varianten[0].sku, menge: 1, land: "Deutschland", zahlart: "PayPal" });
+  const tb = kundenText("BF-2", bez, env, { nr: "BF-2" });
+  assert.match(tb, /Hiermit bestätigen wir Ihren Auftrag/);
+  assert.match(tb, /AUFTRAGSBESTÄTIGUNG/);
+  assert.doesNotMatch(tb, /IBAN|Eingangsbestätigung/);
+  assert.doesNotMatch(kundenText("BF-3", bez, env), /IBAN/);
+  gesendet = null;
+  await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-2", bez, { nr: "BF-2" }, abruf);
+  assert.match(gesendet.subject, /^Auftragsbestätigung BF-2/);
+  assert.doesNotMatch(gesendet.subject, /[:ß×]/);
 });
 
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {

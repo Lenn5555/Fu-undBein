@@ -456,7 +456,7 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 </form>
 </section>
 <dialog id="ki-bestellen" class="ki-dialog"></dialog>
-<script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{mail}" }};</script>
+<script>window.bfKi = {{ api: "{e(api)}", basis: "", email: "{mail}", bank: {json.dumps(CFG.get("bank") or {{}}, ensure_ascii=False).replace("<", "\\u003c")} }};</script>
 <script src="/assets/ki.js" defer></script>""", kopf=kopf,
         beschreibung=f"{anzahl} Stellfüße, Einschlagfüße, Stellbeine und Gelenkfüße mit festem Nettopreis, Gewinde {z['gew_min']} bis {z['gew_max']}. "
                      "Anwendung beschreiben, passenden Fuß finden und direkt bestellen.")

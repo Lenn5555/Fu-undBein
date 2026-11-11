@@ -345,6 +345,23 @@
     return land === "Deutschland" ? versandDaten.deutschland.pauschal : null; // Sofortbezahlen nur in Deutschland
   }
 
+  // Bankverbindung nach einer Bestellung per Überweisung, Bestellnummer als Verwendungszweck (Lenn, 11.11.2026)
+  function ueberweisung(x) {
+    var b = el("div", "ki-blase ki-berater");
+    b.appendChild(el("p", null, "Danke! Ihre Bestellung " + x.bestellnummer + " ist bei uns eingegangen. Bitte überweisen Sie " +
+      (x.gesamt ? euro(x.gesamt / 100) + " (inkl. MwSt. und Versand)" : "den Betrag aus der Auftragsbestätigung") + " auf dieses Konto:"));
+    var dl = el("dl", "ki-bank");
+    [["Empfänger", cfg.bank.inhaber], ["IBAN", cfg.bank.iban], ["Verwendungszweck", x.bestellnummer]]
+      .concat(x.gesamt ? [["Betrag", euro(x.gesamt / 100)]] : []).forEach(function (z) {
+        dl.appendChild(el("dt", null, z[0])); dl.appendChild(el("dd", null, z[1]));
+      });
+    b.appendChild(dl);
+    b.appendChild(el("p", null, "Bitte geben Sie die Bestellnummer als Verwendungszweck an, damit wir Ihre Zahlung zuordnen können. " +
+      "Wir versenden nach Zahlungseingang. Bitte notieren Sie sich die Angaben; Sie finden sie auch in unserer Auftragsbestätigung."));
+    box.appendChild(b);
+    nachUnten();
+  }
+
   function bestellen(p, vorher) {
     dialog.innerHTML = "";
     var f = el("form", "ki-formular");
@@ -564,7 +581,8 @@
         .then(function (r) {
           if (!r.ok) throw new Error(r.x.fehler || "Fehler");
           dialog.close();
-          blase("berater", "Danke! Ihre Bestellung " + r.x.bestellnummer + " ist bei uns eingegangen. Wir melden uns mit der Auftragsbestätigung und den Zahlungsdaten.");
+          if (d.zahlart && d.zahlart.indexOf("Überweisung") === 0 && cfg.bank && cfg.bank.iban) ueberweisung(r.x);
+          else blase("berater", "Danke! Ihre Bestellung " + r.x.bestellnummer + " ist bei uns eingegangen. Wir melden uns mit der Auftragsbestätigung und den Zahlungsdaten.");
         })
         .catch(function (err) {
           meldung.textContent = (err.message !== "Failed to fetch" ? err.message : "Keine Verbindung.") + " Alternativ per E-Mail an " + cfg.email + ".";

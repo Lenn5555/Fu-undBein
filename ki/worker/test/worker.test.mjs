@@ -157,6 +157,15 @@ test("Mindermengenzuschlag gestaffelt, nur für Händlerware", async () => {
   assert.equal(pruefen({ ...KUNDE, sku: ts.sku, variante: ts.varianten[0].sku, menge: 1 }).zuschlag, 0);
 });
 
+test("Überweisung: Bestellnummer als Verwendungszweck und Betrag in der Mail", () => {
+  const p = KATALOG.find((p) => !p.mindermenge && p.varianten.length);
+  const b = pruefen({ ...KUNDE, sku: p.sku, variante: p.varianten[0].sku, menge: 2, land: "Deutschland", zahlart: "Überweisung (Vorkasse)" });
+  assert.ok(!b.fehler, b.fehler);
+  const text = mailText("BF-20261111-ABCD", b, null);
+  assert.match(text, /Verwendungszweck BF-20261111-ABCD/);
+  assert.match(text, /Betrag \d+,\d\d € brutto/);
+});
+
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {
   const { bezugsquelle } = await import("../src/bestellung.js");
   assert.equal(bezugsquelle("GIBTSNICHT"), null);
@@ -187,7 +196,7 @@ test("Bestellung: Zahlung nur Vorkasse, Zahlungsart aus der Liste", () => {
   const basis = { sku: p.sku, menge: 2, name: "Max", email: "max@example.com", adresse: "Weg 1", zustimmung: true };
   const ohne = pruefen(basis);
   assert.equal(ohne.kunde.zahlart, "Überweisung (Vorkasse)");
-  assert.match(mailText("BF-8", ohne, null), /ZAHLUNG: Vorkasse per Überweisung \(Vorkasse\)/);
+  assert.match(mailText("BF-8", ohne, null), /ZAHLUNG: Vorkasse per Überweisung\. .*Verwendungszweck BF-8/);
   assert.match(mailText("BF-9", pruefen({ ...basis, zahlart: "PayPal" }), null), /Vorkasse per PayPal/);
   assert.match(pruefen({ ...basis, zahlart: "Rechnung" }).fehler, /Zahlungsart/);
 });

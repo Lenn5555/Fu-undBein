@@ -162,6 +162,11 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .kb-verlauf { flex: 1; overflow-y: auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; scroll-behavior: smooth; }
 .ki-blase { max-width: 88%; animation: blase .35s var(--ease) both; }
 .ki-blase p + p { margin-top: .6em; }
+.ki-bank { display: grid; grid-template-columns: 1fr; gap: 2px; margin: .6em 0; padding: 12px 14px; border: 1px solid var(--linie); border-radius: var(--r-klein); }
+.ki-bank dt { font-size: .8em; opacity: .7; margin-top: 6px; }
+.ki-bank dt:first-child { margin-top: 0; }
+.ki-bank dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; user-select: all; white-space: nowrap; }
+.ki-blase .ki-bank + p { margin-top: .6em; }
 .ki-berater { align-self: flex-start; }
 .ki-kunde { align-self: flex-end; background: var(--hell); color: var(--ink); padding: 12px 16px; border-radius: var(--r) var(--r) 2px var(--r); }
 .ki-fehler { color: #b91c1c; font-weight: 500; }

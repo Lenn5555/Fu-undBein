@@ -1,9 +1,13 @@
 {
-  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink. google_bestaetigung: Code aus der Google Search Console (Bestätigung per HTML-Tag), leer lassen bis vorhanden. nur_feste_preise: true blendet Produkte ohne gesicherten Preis je Ausführung aus (Lenn, 09.11.2026).",
+  "_hinweis": "Einstellungen der statischen Website. anfrage_email: Adresse für Anfragen und Bestellungen. bezahllinks: Artikelnummer -> Stripe-Zahlungslink. google_bestaetigung: Code aus der Google Search Console (Bestätigung per HTML-Tag), leer lassen bis vorhanden. nur_feste_preise: true blendet Produkte ohne gesicherten Preis je Ausführung aus (Lenn, 09.11.2026). bank: Kontoverbindung für Überweisung (Vorkasse), wird nach der Bestellung mit der Bestellnummer als Verwendungszweck angezeigt (Lenn, 11.11.2026).",
   "anfrage_email": "sales@ts-systec.de",
   "betreiber_zeile": "Ein Angebot der TS Systemtechnik.",
   "bezahllinks": {},
   "ki_api": "https://beinundfuss-ki.beinundfuss.workers.dev",
   "google_bestaetigung": "fYK_reWm-3atyzntuFU_gRyCl1o6zctrjn2ldgeioDI",
-  "nur_feste_preise": true
+  "nur_feste_preise": true,
+  "bank": {
+    "inhaber": "T&S Systemtechnik GmbH",
+    "iban": "DE17 5084 0005 0610 6090 00"
+  }
 }

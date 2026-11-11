@@ -129,7 +129,8 @@ export default {
       return antwort({ fehler: "Die Bestellung konnte nicht übermittelt werden. Bitte per E-Mail bestellen." }, 502, herkunft);
     }
     zaehlen(env, ctx, bestellEintraege(daten, b));
-    return antwort({ ok: true, bestellnummer: nr }, 200, herkunft);
+    // Für die Überweisung: Endbetrag nur bei Lieferung nach Deutschland (Ausland: Betrag mit der Auftragsbestätigung)
+    return antwort({ ok: true, bestellnummer: nr, ...(b.kunde.land === "Deutschland" ? { gesamt: betrag(b).gesamt } : {}) }, 200, herkunft);
   },
 };
 

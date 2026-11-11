@@ -4,7 +4,7 @@
 import { NACH_SKU } from "./berater.js";
 import BEZUGSQUELLEN from "./bezugsquellen.json" with { type: "json" };
 import VERSAND from "./versandkosten.json" with { type: "json" };
-import { zahlungsZeilen } from "./bezahlen.js";
+import { zahlungsZeilen, betrag } from "./bezahlen.js";
 
 // Lieferländer aus der Versandtabelle; EU-Ausland nur mit USt-IdNr. (Lieferung ohne deutsche MwSt.)
 const LAENDER = new Map([["Deutschland", { eu: true }], ...VERSAND.europa.laender.map((l) => [l.land, l])]);
@@ -131,7 +131,11 @@ export function mailText(nr, b, quelle, zahlung = null) {
     `RECHNUNGSADRESSE`,
     ...(k.rechnung ? zeilenAdresse(k.rechnung) : [`gleich Lieferadresse`]),
     ``,
-    ...(zahlung ? zahlungsZeilen(zahlung) : [`ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungsdaten bzw. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`]),
+    ...(zahlung ? zahlungsZeilen(zahlung) : (k.zahlart.startsWith("Überweisung")
+      ? [`ZAHLUNG: Vorkasse per Überweisung. Der Kunde hat nach der Bestellung unsere Bankverbindung mit Verwendungszweck ${nr} gesehen` +
+         (k.land === "Deutschland" ? `, Betrag ${euro(betrag(b).gesamt / 100)} brutto.` : `, Betrag folgt mit der Auftragsbestätigung (Ausland).`) +
+         ` Erst nach Zahlungseingang versenden.`]
+      : [`ZAHLUNG: Vorkasse per ${k.zahlart}. Zahlungslink mit der Auftragsbestätigung schicken, erst nach Zahlungseingang versenden.`])),
     ``,
     ...(k.land === "Deutschland" ? [] : [
       `AUSLANDSBESTELLUNG: ${LAENDER.get(k.land)?.eu ? "EU, ohne deutsche MwSt. (Reverse Charge). USt-IdNr. vor der Auftragsbestätigung im EU-System VIES prüfen, Lieferung in die Zusammenfassende Meldung." : "Nicht-EU: Zoll und Ausfuhrpapiere klären, Versand mit dem Kunden absprechen."}`,

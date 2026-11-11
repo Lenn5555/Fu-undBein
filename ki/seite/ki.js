@@ -357,7 +357,7 @@
       });
     b.appendChild(dl);
     b.appendChild(el("p", null, "Bitte geben Sie die Bestellnummer als Verwendungszweck an, damit wir Ihre Zahlung zuordnen können. " +
-      "Wir versenden nach Zahlungseingang. Bitte notieren Sie sich die Angaben; Sie finden sie auch in unserer Auftragsbestätigung."));
+      "Wir versenden nach Zahlungseingang. Die Angaben schicken wir Ihnen auch per E-Mail."));
     box.appendChild(b);
     nachUnten();
   }

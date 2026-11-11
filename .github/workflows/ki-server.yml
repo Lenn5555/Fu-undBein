@@ -106,13 +106,13 @@ jobs:
               name: 'Testbestellung, bitte ignorieren', email: 'sales@ts-systec.de', strasse: 'Teststraße 1', zusatz: 'Test, keine Lieferung', plz: '64319', ort: 'Pfungstadt',
               hinweis: 'Automatischer Test der Bestellmail. Bitte nicht bearbeiten.', zustimmung: true }));
           " > bestellung.json
-          npx wrangler tail beinundfuss-ki --format pretty > bestell-protokoll.txt 2>&1 &
+          npx wrangler tail beinundfuss-ki --format json > bestell-protokoll.txt 2>&1 &
           sleep 12
           curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bestellen \
             -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
             --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
           cat ergebnis.json; echo
-          sleep 4; echo "--- Server-Protokoll ---"; grep -v -i "key\|secret\|bearer" bestell-protokoll.txt | tail -20 || true
+          sleep 4; echo "--- Server-Protokoll ---"; grep -o '"message":\[[^]]*\]\|"outcome":"[a-zA-Z]*"\|"exceptions":\[[^]]*\]' bestell-protokoll.txt | grep -v -i "key\|secret\|bearer" | tail -30 || true
           node -e "process.exit(require('./ergebnis.json').ok ? 0 : 1)"
       - name: PayPal-Zugang prüfen (nur auf Wunsch beim manuellen Start)
         if: env.HAT_TOKEN == 'true' && inputs.paypaltest

@@ -8,7 +8,7 @@ compatibility_flags = ["nodejs_compat"]
 
 [vars]
 # Seiten, die den Berater aufrufen dürfen (kommagetrennt)
-HERKUNFT = "https://lenn5555.github.io,https://xn--beinundfu-o1a.de,https://www.xn--beinundfu-o1a.de"
+HERKUNFT = "https://lenn5555.github.io,https://beinundfuss.de,https://www.beinundfuss.de,https://xn--beinundfu-o1a.de,https://www.xn--beinundfu-o1a.de"
 BESTELL_EMAIL = "sales@ts-systec.de"
 # Absender muss bei Resend erlaubt sein. Outlook am PC zeigt Mails von der ß-Domain (xn--beinundfu-o1a.de) leer an
 # (Test 09.11.2026), deshalb übergangsweise Resends Standardabsender. Er liefert nur an die Adresse des Resend-Kontos,

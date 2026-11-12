@@ -89,7 +89,7 @@ jobs:
           npx wrangler tail beinundfuss-ki --format pretty > protokoll.txt 2>&1 &
           sleep 12
           curl -sS -m 90 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/beraten \
-            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
+            -H "Origin: https://beinundfuss.de" -H "Content-Type: application/json" \
             -d '{"verlauf":[{"rolle":"kunde","text":"Ich brauche 4 Stellfüße M12 für eine Maschine mit 400 kg, der Boden ist etwas uneben."}]}' \
             -o antwort.json -w "HTTP %{http_code} in %{time_total}s\n"
           node -e "const d=require('./antwort.json'); console.log(d.antwort||d.fehler); for (const p of d.produkte||[]) console.log('-', p.sku, p.name, p.preis)"
@@ -112,7 +112,7 @@ jobs:
           npx wrangler tail beinundfuss-ki --format json > bestell-protokoll.txt 2>&1 &
           sleep 12
           curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bestellen \
-            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
+            -H "Origin: https://beinundfuss.de" -H "Content-Type: application/json" \
             --data @bestellung.json -o ergebnis.json -w "HTTP %{http_code}\n"
           cat ergebnis.json; echo
           sleep 4; echo "--- Server-Protokoll ---"; node -e "const t=require('fs').readFileSync('bestell-protokoll.txt','utf8'); for (const m of t.matchAll(/\"(message|outcome|name)\":\s*(\[[\s\S]*?\]|\"[^\"]*\")/g)) { const z=m[0].replace(/\s+/g,' '); if (!/key|secret|bearer/i.test(z)) console.log(z); }" || true
@@ -126,7 +126,7 @@ jobs:
         run: |
           npx wrangler tail beinundfuss-ki --format pretty > paypal-protokoll.txt 2>&1 &
           sleep 12
-          curl -sS -m 30 https://beinundfuss-ki.beinundfuss.workers.dev/bezahlen -H "Origin: https://xn--beinundfu-o1a.de" \
+          curl -sS -m 30 https://beinundfuss-ki.beinundfuss.workers.dev/bezahlen -H "Origin: https://beinundfuss.de" \
             | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{const d=JSON.parse(s);console.log('aktiv:',d.aktiv,'sandbox:',d.sandbox)})"
           node -e "
             const k = require('./src/katalog.json').find((p) => p.varianten.length && !p.preis_ab);
@@ -135,7 +135,7 @@ jobs:
               zahlart: 'PayPal', zustimmung: true }));
           " > zahlung.json
           curl -sS -m 60 -X POST https://beinundfuss-ki.beinundfuss.workers.dev/bezahlen/start \
-            -H "Origin: https://xn--beinundfu-o1a.de" -H "Content-Type: application/json" \
+            -H "Origin: https://beinundfuss.de" -H "Content-Type: application/json" \
             --data @zahlung.json -o start.json -w "HTTP %{http_code}\n"
           sleep 4; echo "--- Server-Protokoll ---"; grep -v -i "key\|secret\|bearer\|basic" paypal-protokoll.txt | tail -20 || true
           node -e "const d=require('./start.json'); console.log(d.ok ? 'PayPal-Bestellung angelegt, Betrag ' + d.gesamt : 'Fehler: ' + d.fehler); process.exit(d.ok ? 0 : 1)"

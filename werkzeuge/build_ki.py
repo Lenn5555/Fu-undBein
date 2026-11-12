@@ -300,8 +300,9 @@ def seo_kopf(titel, beschreibung, pfad, index):
               f'<meta property="og:image" content="{SITE_URL}/assets/vorschau.jpg">',
               '<meta property="og:image:width" content="1200">', '<meta property="og:image:height" content="630">',
               '<meta name="twitter:card" content="summary_large_image">']
-    if CFG.get("google_bestaetigung"):
-        zeilen.append(f'<meta name="google-site-verification" content="{e(CFG["google_bestaetigung"])}">')
+    codes = CFG.get("google_bestaetigung") or []
+    for code in ([codes] if isinstance(codes, str) else codes):
+        zeilen.append(f'<meta name="google-site-verification" content="{e(code)}">')
     return "\n".join(zeilen)
 
 

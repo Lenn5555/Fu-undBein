@@ -260,7 +260,7 @@ export function kundenText(nr, b, env, zahlung = null) {
     `Mit freundlichen Grüßen`,
     `Bein und Fuss`,
     `T&S Systemtechnik GmbH, Pfungstadt`,
-    `beinundfuß.de`,
+    `www.beinundfuss.de`,
   );
   return zeilen.join("\n");
 }

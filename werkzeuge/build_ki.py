@@ -549,11 +549,20 @@ def produktseite(p, verwandte, mehrzahl):
         daten = f'<tr><th scope="row">Hersteller</th><td>{e(p["marke"])}</td></tr>' + daten
     ausf = ""
     if p["varianten"]:
-        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-zahl">{euro(v["preis"])}</td>'
+        # T&S-Ware: Spalte Lagerbestand, gefüllt von assets/bestand.js (bleibt verborgen, solange kein Bestand vorliegt)
+        ts = not p.get("mindermenge", p.get("vergleich", True))
+        mail = e(CFG["anfrage_email"])
+        lager = (lambda v: f'<td class="pr-zahl pr-lager-spalte" hidden data-lager="{e(v["sku"])}" data-mail="{mail}" '
+                           f'data-name="{e(seo_name(p) + ", " + v["ausfuehrung"])}"></td>') if ts else (lambda v: "")
+        zeilen = "".join(f'<tr><td>{e(v["ausfuehrung"])}</td><td class="pr-zahl">{euro(v["preis"])}</td>{lager(v)}'
                          f'<td class="pr-zahl"><a class="pr-pille" href="/?bestellen={quote(p["sku"])}&amp;variante={quote(v["sku"])}#berater">Bestellen</a></td></tr>'
                          for v in p["varianten"])
+        kopf_lager = '<th class="pr-zahl pr-lager-spalte" hidden>Lager</th>' if ts else ""
         ausf = (f'<h2>Ausführungen und Preise</h2><div class="pr-tabelle"><table><thead><tr><th>Ausführung</th>'
-                f'<th class="pr-zahl">Preis netto/Stück</th><th class="pr-zahl"><span class="bf-unsichtbar">Bestellen</span></th></tr></thead><tbody>{zeilen}</tbody></table></div>')
+                f'<th class="pr-zahl">Preis netto/Stück</th>{kopf_lager}<th class="pr-zahl"><span class="bf-unsichtbar">Bestellen</span></th></tr></thead><tbody>{zeilen}</tbody></table></div>')
+        if ts:
+            ausf += '<script src="/assets/bestand.js" defer></script>'
+
     if p["preis_ab"]:
         ausf += "<p class=\"pr-notiz\">Der Preis gilt für die günstigste Ausführung der Serie. Den Preis für Ihre Größe bestätigen wir mit der Auftragsbestätigung.</p>"
     optionen = p.get("optionen") or {}
@@ -757,7 +766,7 @@ def main():
     shutil.copytree(b.THEME / "assets/anwendungen", OUT / "assets/anwendungen")
     shutil.copytree(ROOT / "ki/seite/fonts", OUT / "assets/fonts")
     shutil.copytree(ROOT / "ki/seite/ts-fotos", OUT / "assets/ts-fotos")
-    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "zaehlen.js", "statistik.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
+    for datei in ("ki.js", "ki.css", "produkte.css", "seite.js", "kategorie.js", "zaehlen.js", "statistik.js", "bestand.js", "fuesse-freigestellt.webp", "vorschau.jpg"):
         shutil.copy(ROOT / "ki/seite" / datei, OUT / "assets" / datei)
     # Logo im Browser-Tab: gelber Stellfuß (Gewindespindel und Teller) auf Dunkel (Lenn, 22.10.2026); PNGs für Apple und Google
     (OUT / "assets/favicon.svg").write_text(FAVICON, encoding="utf-8")

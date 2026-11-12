@@ -17,6 +17,8 @@ ABSENDER = "Bein und Fuss <onboarding@resend.dev>"
 # Eingangsbestätigung an den Kunden (Lenn, 11.11.2026). Erst auf "an" stellen, wenn beinundfuss.de (mit ss, ohne ß) bei Resend bestätigt ist.
 KUNDENMAIL = "an"
 KUNDEN_ABSENDER = "Bein und Fuss <bestellung@beinundfuss.de>"
+# Lagerdatei per Mail: nur von dieser Absenderadresse (SHA-256 der Adresse in Kleinbuchstaben, Klartext nicht im Repo)
+LAGER_ABSENDER_HASH = "81b5a7b0b569236c2dd100fb707ec404cd6bc85157cd61420fc25c0445b8bf18"
 # Bankverbindung für Überweisungen (wie in daten/site.json "bank")
 BANK_INHABER = "T&S Systemtechnik GmbH"
 BANK_IBAN = "DE17 5084 0005 0610 6090 00"
@@ -34,6 +36,15 @@ class_name = "Zaehler"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["Zaehler"]
+
+# Lagerbestand der T&S-Artikel, siehe src/lager.js
+[[durable_objects.bindings]]
+name = "LAGER"
+class_name = "Lager"
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["Lager"]
 
 # Schutz gegen Missbrauch: höchstens 20 Anfragen pro Minute und Besucher
 [[ratelimits]]

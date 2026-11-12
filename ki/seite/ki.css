@@ -382,3 +382,6 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .ki-versand td { padding: 6px 0; border-bottom: 1px solid var(--hell-2); }
 .ki-versand .ki-zahl { text-align: right; }
 .ki-versand-ab { margin: 0; font-size: var(--step-small); color: var(--muted); }
+.ki-lager { margin: .3em 0; font-weight: 500; color: #1d7a3e; }
+.ki-lager:empty { display: none; }
+.ki-lager.ki-lager-leer { color: #b42318; }

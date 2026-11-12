@@ -74,3 +74,5 @@
 .st-form label { display: grid; gap: 6px; font-size: var(--step-small); color: var(--muted); }
 .st-form input, .st-form select { min-height: 48px; padding: 0 12px; border: 1px solid var(--linie); border-radius: var(--r-klein); font: inherit; color: var(--ink); background: var(--weiss); }
 #st-ergebnis section { margin: 48px 0 0; }
+.pr-lager-ja { color: #1d7a3e; font-weight: 500; }
+.pr-lager-nein { color: #b42318; font-weight: 500; }

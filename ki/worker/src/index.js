@@ -13,6 +13,10 @@ import { aktiv, bezahlbar, anlegen, abschliessen, betrag } from "./bezahlen.js";
 const SOFORT = ["PayPal", "Kreditkarte"];
 
 export { Zaehler } from "./zaehler.js";
+export { Lager } from "./lager.js";
+import { lagerVon } from "./lager.js";
+import { lagerArtikel, lagerFehler, TS_ARTIKEL } from "./lagerkern.js";
+import { lagerEingang } from "./eingang.js";
 
 const MAX_NACHRICHTEN = 30;
 const MAX_ZEICHEN = 1500;
@@ -76,6 +80,24 @@ export default {
       if (await gebremst(env, request, pfad)) return antwort({ fehler: "Zu viele Anfragen. Bitte kurz warten." }, 429, herkunft);
       return statistik(request, env, herkunft);
     }
+    // Webhook von Resend: Lagerdatei per Mail (siehe eingang.js); ohne Herkunftsprüfung, dafür mit Signatur
+    if (request.method === "POST" && pfad === "/lager/eingang") {
+      try {
+        const r = await lagerEingang(request, env, lagerVon(env));
+        return new Response(r.text, { status: r.status });
+      } catch (err) {
+        console.error("Lager-Eingang:", err.message);
+        return new Response("Fehler", { status: 500 });
+      }
+    }
+    // Lagerbestand der T&S-Artikel für die Anzeige auf der Seite (nur Artikelnummer und Menge)
+    if (request.method === "GET" && pfad === "/bestand") {
+      const lager = lagerVon(env);
+      const d = lager ? await lager.alle() : { stand: null, artikel: {} };
+      const artikel = {};
+      for (const [a, n] of Object.entries(d.artikel)) if (TS_ARTIKEL.has(a)) artikel[a] = n;
+      return antwort({ stand: d.stand, artikel }, 200, herkunft);
+    }
     // Öffentliche Client-ID für die PayPal-Knöpfe; ohne Zugangsdaten bleibt es bei Vorkasse mit Zahlungslink
     if (request.method === "GET" && pfad === "/bezahlen") {
       return antwort(aktiv(env) ? { aktiv: true, client_id: env.PAYPAL_CLIENT_ID, sandbox: env.PAYPAL_SANDBOX === "ja" } : { aktiv: false }, 200, herkunft);
@@ -121,11 +143,20 @@ export default {
     if (pfad.startsWith("/bezahlen/")) return bezahlen(pfad, daten, b, env, ctx, herkunft);
     if (!env.RESEND_API_KEY) return antwort({ fehler: "Online-Bestellung ist noch nicht eingerichtet. Bitte per E-Mail bestellen." }, 503, herkunft);
     const nr = bestellnummer();
+    // Lager: Menge reservieren, bevor die Bestellung rausgeht (nur T&S-Artikel mit hinterlegtem Bestand)
+    const lager = lagerVon(env), artikel = lagerArtikel(b);
+    let abgezogen = false;
+    if (lager && artikel) {
+      const l = await lager.abziehen(artikel, b.menge);
+      if (!l.ok) return antwort({ fehler: lagerFehler(l.rest, env.BESTELL_EMAIL), bestand: l.rest }, 409, herkunft);
+      abgezogen = l.rest !== null;
+    }
     try {
       const quelle = bezugsquelle(b.produkt.sku, b.variante?.sku);
       await senden(env, nr, b, mailText(nr, b, quelle));
       await kundeBenachrichtigen(env, nr, b);
     } catch (err) {
+      if (abgezogen) await lager.zurueck(artikel, b.menge);
       console.error("Bestellung:", err);
       return antwort({ fehler: "Die Bestellung konnte nicht übermittelt werden. Bitte per E-Mail bestellen." }, 502, herkunft);
     }
@@ -140,7 +171,12 @@ async function bezahlen(pfad, daten, b, env, ctx, herkunft) {
   if (!SOFORT.includes(b.kunde.zahlart)) return antwort({ fehler: "Bitte PayPal oder Kreditkarte wählen." }, 400, herkunft);
   const nein = bezahlbar(b);
   if (nein) return antwort({ fehler: nein }, 400, herkunft);
+  const lager = lagerVon(env), artikel = lagerArtikel(b);
   if (pfad === "/bezahlen/start") {
+    if (lager && artikel) {
+      const l = await lager.pruefen(artikel, b.menge);
+      if (!l.ok) return antwort({ fehler: lagerFehler(l.rest, env.BESTELL_EMAIL), bestand: l.rest }, 409, herkunft);
+    }
     try {
       const o = await anlegen(env, bestellnummer(), b);
       return antwort({ ok: true, id: o.id, gesamt: o.betrag.gesamt }, 200, herkunft);
@@ -157,6 +193,8 @@ async function bezahlen(pfad, daten, b, env, ctx, herkunft) {
     return antwort({ fehler: "Die Zahlung konnte nicht abgeschlossen werden. Es wurde nichts abgebucht, bitte erneut versuchen." }, 502, herkunft);
   }
   if (z.fehler) return antwort(z, 400, herkunft);
+  // Bezahlt: Bestand immer abziehen (höchstens bis 0)
+  if (lager && artikel) await lager.erzwingen(artikel, b.menge);
   // Geld ist eingezogen: die Bestellung gilt auch dann, wenn die Mail scheitert (dann steht sie im Protokoll und bei PayPal)
   try {
     await senden(env, z.nr, b, mailText(z.nr, b, bezugsquelle(b.produkt.sku, b.variante?.sku), { ...z, zahlart: b.kunde.zahlart }), fetch, true);

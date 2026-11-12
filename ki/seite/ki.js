@@ -2,6 +2,24 @@
 (function () {
   "use strict";
   var cfg = window.bfKi || {};
+  // Lagerbestand der T&S-Artikel (Artikelnummer -> Stück), siehe Worker /bestand. Ohne Eintrag: keine Anzeige, keine Sperre.
+  var lager = {}, lagerAnfrage = null;
+  function lagerLaden() {
+    if (!lagerAnfrage) lagerAnfrage = cfg.api
+      ? fetch(cfg.api.replace(/\/$/, "") + "/bestand").then(function (r) { return r.json(); })
+          .then(function (d) { lager = d.artikel || {}; return lager; }).catch(function () { return lager; })
+      : Promise.resolve(lager);
+    return lagerAnfrage;
+  }
+  function bestand(p, v) {
+    if (p.mindermenge) return null;
+    var s = v ? v.sku : (p.varianten.length ? null : p.sku);
+    return s && Object.prototype.hasOwnProperty.call(lager, s) ? lager[s] : null;
+  }
+  function lagerText(n) {
+    return n > 0 ? "Auf Lager: " + n + " Stück"
+      : "Aktuell nicht verfügbar. Schreiben Sie uns an " + cfg.email + ", wir sagen Ihnen, wann wir sie wieder haben.";
+  }
   var box = document.getElementById("ki");
   var form = document.getElementById("ki-eingabe");
   var feld = document.getElementById("ki-text");
@@ -71,12 +89,21 @@
     });
     t.appendChild(m);
     var preis = el("p", "ki-preis", preisText(p));
+    var lagerZeile = el("p", "ki-lager");
+    function lagerZeigen() {
+      var n = bestand(p, wahl.variante());
+      lagerZeile.textContent = n === null ? "" : lagerText(n);
+      lagerZeile.classList.toggle("ki-lager-leer", n === 0);
+    }
     var wahl = auswahlFelder(p, function () {
       var v = wahl.variante();
       preis.textContent = v ? euro(v.preis) + " netto pro Stück" : preisText(p);
+      lagerZeigen();
     });
     if (wahl.feld) t.appendChild(wahl.feld);
     t.appendChild(preis);
+    t.appendChild(lagerZeile);
+    lagerLaden().then(lagerZeigen);
     var knopf = el("button", "btn", "Bestellen");
     knopf.type = "button";
     knopf.addEventListener("click", function () { bestellen(p, wahl.werte()); });
@@ -384,6 +411,12 @@
       var v = wahl.variante();
       var st = v ? v.preis : p.preis;
       var n = parseInt(menge.value, 10) || 0;
+      var nb = bestand(p, v);
+      lagerSperre = nb !== null && n > nb;
+      lagerHinweis.textContent = nb === null ? "" : nb === 0 ? lagerText(0)
+        : n > nb ? "Nur " + nb + " Stück sofort lieferbar. Für größere Mengen schreiben Sie uns bitte an " + cfg.email + ", wir nennen Ihnen gern einen Liefertermin."
+        : lagerText(nb);
+      lagerHinweis.classList.toggle("ki-lager-leer", lagerSperre);
       if (!v && p.varianten.length > 1) { summe.textContent = "Bitte Ausführung wählen, dann sehen Sie Stückpreis und Summe."; return; }
       var zu = zuschlag(p, Math.round(st * n * 100) / 100);
       summe.textContent = (v && p.varianten.length > 1 ? "Stückpreis " + euro(st) + " · " : "") + "Summe: " + euro(st * n) + " netto zzgl. MwSt. und Versand" + (p.preis_ab && !v ? " (ab-Preis, den Preis für Ihre Ausführung bestätigen wir)" : "");
@@ -397,9 +430,11 @@
         Math.ceil(s.unter / st) + " Stück " + (naechste ? "nur noch " + euro(naechste.zuschlag) + "." : "entfällt er.") : "";
     }
     var mmHinweis = el("p", "ki-kurz");
+    var lagerHinweis = el("p", "ki-lager"), lagerSperre = false;
     menge.addEventListener("input", rechnen);
-    f.appendChild(summe); f.appendChild(mmHinweis); rechnen();
+    f.appendChild(summe); f.appendChild(lagerHinweis); f.appendChild(mmHinweis); rechnen();
     versandLaden().then(rechnen, function () {});
+    lagerLaden().then(rechnen);
     var versand = versandFelder();
     zeile("Firma", "firma", "text", false, { autocomplete: "organization" });
     zeile("Name", "name", "text", true, { autocomplete: "name" });
@@ -572,6 +607,7 @@
     f.addEventListener("submit", function (ev) {
       ev.preventDefault();
       if (sofortMoeglich()) return; // bezahlt wird über die PayPal-Knöpfe
+      if (lagerSperre) { meldung.textContent = lagerHinweis.textContent; return; }
       var d = daten();
       ok.disabled = true; meldung.textContent = "Wird gesendet …";
       if (!cfg.api) { meldung.textContent = "Online-Bestellung ist noch nicht verbunden."; ok.disabled = false; return; }

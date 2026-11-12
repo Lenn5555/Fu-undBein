@@ -66,10 +66,13 @@ jobs:
           PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
           PAYPAL_SECRET: ${{ secrets.PAYPAL_SECRET }}
           PAYPAL_SANDBOX: ${{ secrets.PAYPAL_SANDBOX }}
+          # Lagerdatei per Mail (Resend-Webhook und Lese-Schlüssel), siehe src/eingang.js
+          RESEND_WEBHOOK_SECRET: ${{ secrets.RESEND_WEBHOOK_SECRET }}
+          RESEND_LESEN_KEY: ${{ secrets.RESEND_LESEN_KEY }}
         run: |
           npx wrangler deploy
           # Nur vorhandene Schlüssel hochladen; fehlende (z. B. Resend) werden später nachgereicht
-          for name in ANTHROPIC_API_KEY RESEND_API_KEY PAYPAL_CLIENT_ID PAYPAL_SECRET PAYPAL_SANDBOX; do
+          for name in ANTHROPIC_API_KEY RESEND_API_KEY PAYPAL_CLIENT_ID PAYPAL_SECRET PAYPAL_SANDBOX RESEND_WEBHOOK_SECRET RESEND_LESEN_KEY; do
             if [ -n "${!name}" ]; then
               printf '%s' "${!name}" | npx wrangler secret put "$name"
             else

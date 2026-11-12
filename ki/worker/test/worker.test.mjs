@@ -386,3 +386,77 @@ test("Lieferadresse in Feldern und abweichende Rechnungsadresse", async () => {
   t = mailText("BF-1", r, null);
   assert.match(t, /RECHNUNGSADRESSE\nMuster Holding\nRing 1\n60311 Frankfurt\nDeutschland/);
 });
+
+test("Lager: Morgendatei ersetzt, Bestellung zieht ab, Sperre bei zu wenig", async () => {
+  const { DatabaseSync } = await import("node:sqlite");
+  const { LagerKern, lagerArtikel, lagerFehler, TS_ARTIKEL } = await import("../src/lagerkern.js");
+  const db = new DatabaseSync(":memory:");
+  const sql = { exec: (q, ...w) => { const st = db.prepare(q); const r = /^\s*SELECT/i.test(q) ? st.all(...w) : (st.run(...w), []); return { toArray: () => r }; } };
+  const l = new LagerKern(sql);
+  assert.deepEqual(l.abziehen("X", 5), { ok: true, rest: null }); // ohne Datei: unbegrenzt
+  l.setzen([{ artikel: "A", menge: 10 }, { artikel: "B", menge: 0 }], "2026-11-12T07:00:00Z", "test");
+  assert.deepEqual(l.abziehen("A", 4), { ok: true, rest: 6 });
+  assert.deepEqual(l.abziehen("A", 7), { ok: false, rest: 6 });
+  assert.deepEqual(l.pruefen("B", 1), { ok: false, rest: 0 });
+  l.erzwingen("A", 9);
+  assert.equal(l.alle().artikel.A, 0);
+  l.zurueck("A", 2);
+  assert.equal(l.alle().artikel.A, 2);
+  l.setzen([{ artikel: "A", menge: 50 }], "2026-11-13T07:00:00Z", "test");
+  assert.deepEqual(l.alle(), { stand: "2026-11-13T07:00:00Z", artikel: { A: 50 } });
+  // Nur T&S-Ware hat Bestand
+  const ts = KATALOG.find((p) => !p.mindermenge && p.varianten.length);
+  assert.ok(TS_ARTIKEL.has(ts.varianten[0].sku));
+  assert.equal(lagerArtikel({ produkt: ts, variante: ts.varianten[0] }), ts.varianten[0].sku);
+  assert.equal(lagerArtikel({ produkt: KATALOG.find((p) => p.mindermenge), variante: null }), null);
+  assert.match(lagerFehler(3, "a@b.de"), /Nur 3 Stück sofort lieferbar.*a@b\.de/);
+  assert.match(lagerFehler(0, "a@b.de"), /aktuell nicht verfügbar/);
+});
+
+test("Lagerdatei: Excel lesen, Webhook prüfen, nur freigegebener Absender", async () => {
+  const fs = await import("node:fs");
+  const { xlsxZeilen, csvZeilen, bestandAus } = await import("../src/tabelle.js");
+  const { signaturOk, lagerEingang, sha256 } = await import("../src/eingang.js");
+  const xlsx = fs.readFileSync(new URL("./daten/lager.xlsx", import.meta.url));
+  const z = await xlsxZeilen(xlsx);
+  assert.deepEqual(z[1], ["1099-1404-2100", "Einschlagfuß & Co", "37"]);
+  const r = bestandAus(z);
+  assert.deepEqual(r.spalten, { artikel: "Artikelnummer", bestand: "Lagerbestand" });
+  assert.deepEqual(r.liste, [{ artikel: "1099-1404-2100", menge: 37 }, { artikel: "1099-1404-2120", menge: 0 }, { artikel: "9999-FREMD", menge: 5 }]);
+  assert.deepEqual(bestandAus(csvZeilen("Art.-Nr.;Verfügbar\n1099-1404-2100;1.234,00\n")).liste, [{ artikel: "1099-1404-2100", menge: 1234 }]);
+
+  // Signatur wie bei Resend/Svix
+  const secret = "whsec_" + Buffer.from("geheim-geheim-geheim").toString("base64");
+  const roh = JSON.stringify({ type: "email.received", data: { email_id: "m1" } });
+  const zeit = String(Math.floor(Date.now() / 1000));
+  const crypto = await import("node:crypto");
+  const sig = crypto.createHmac("sha256", Buffer.from("geheim-geheim-geheim")).update(`id1.${zeit}.${roh}`).digest("base64");
+  const kopf = new Headers({ "svix-id": "id1", "svix-timestamp": zeit, "svix-signature": `v1,${sig}` });
+  assert.equal(await signaturOk(secret, kopf, roh), true);
+  assert.equal(await signaturOk(secret, kopf, roh + " "), false);
+
+  const env = { RESEND_WEBHOOK_SECRET: secret, RESEND_LESEN_KEY: "k", RESEND_API_KEY: "s", KUNDEN_ABSENDER: "Bein und Fuss <b@example.com>",
+    LAGER_ABSENDER_HASH: await sha256("lager@example.com") };
+  let gesetzt = null; const mails = [];
+  const lager = { setzen: async (l) => { gesetzt = l; } };
+  const abruf = (von, auth = { spf: "pass", dkim: "pass" }) => async (url, o) => {
+    if (url.endsWith("/emails/receiving/m1")) return { ok: true, json: async () => ({ from: von, headers: { from: `Lager <${von}>` }, authentication: auth }) };
+    if (url.endsWith("/attachments")) return { ok: true, json: async () => ({ data: [{ filename: "Bestand.xlsx", download_url: "https://dl/x" }] }) };
+    if (url === "https://dl/x") return { ok: true, arrayBuffer: async () => xlsx };
+    if (url.endsWith("/emails")) { mails.push(JSON.parse(o.body)); return { ok: true }; }
+    throw new Error(url);
+  };
+  const anfrage = () => new Request("https://w/lager/eingang", { method: "POST", headers: kopf, body: roh });
+  // fremder Absender: nichts passiert
+  assert.equal((await lagerEingang(anfrage(), env, lager, abruf("fremd@example.com"))).text, "Absender nicht freigegeben");
+  assert.equal(gesetzt, null);
+  // gefälscht (SPF/DKIM fehlgeschlagen)
+  assert.equal((await lagerEingang(anfrage(), env, lager, abruf("Lager@Example.com", { spf: "fail", dkim: "fail" }))).text, "Echtheit nicht bestätigt");
+  // echt
+  assert.equal((await lagerEingang(anfrage(), env, lager, abruf("Lager@Example.com"))).text, "ok");
+  assert.deepEqual(gesetzt, [{ artikel: "1099-1404-2100", menge: 37 }, { artikel: "1099-1404-2120", menge: 0 }]);
+  assert.equal(mails.length, 1);
+  assert.deepEqual(mails[0].to, ["lager@example.com"]);
+  assert.match(mails[0].text, /Übernommen: 2 von \d+ T&S-Artikeln/);
+  assert.match(mails[0].text, /nicht verfügbar \(Bestand 0\): 1099-1404-2120/);
+});

@@ -76,3 +76,18 @@ export async function schluesselPasst(schluessel, hash) {
   const hex = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, "0")).join("");
   return hex === hash.toLowerCase();
 }
+
+// Lenn, 17.11.2026: alle bisherigen Bestellungen waren Tests und werden aus der Statistik gelöscht.
+// Läuft einmal (Merker in Tabelle "erledigt"), löscht nur Bestellzahlen bis einschließlich BIS_TAG; Besucherzahlen bleiben.
+const BEREINIGUNG = "testbestellungen-2026-11-17";
+const BIS_TAG = "2026-11-17";
+export function testBestellungenLoeschen(sql) {
+  sql.exec("CREATE TABLE IF NOT EXISTS erledigt (name TEXT PRIMARY KEY, wann TEXT NOT NULL, zeilen INTEGER NOT NULL)");
+  if (sql.exec("SELECT name FROM erledigt WHERE name = ?", BEREINIGUNG).toArray().length) return null;
+  const bedingung = "tag <= ? AND ((art = 'ereignis' AND wert = 'bestellung') OR art IN ('umsatz', 'artikel'))";
+  const anzahl = sql.exec(`SELECT COUNT(*) AS n FROM zahlen WHERE ${bedingung}`, BIS_TAG).toArray()[0].n;
+  sql.exec(`DELETE FROM zahlen WHERE ${bedingung}`, BIS_TAG);
+  sql.exec("INSERT INTO erledigt (name, wann, zeilen) VALUES (?, ?, ?)", BEREINIGUNG, new Date().toISOString(), anzahl);
+  console.log(`Testbestellungen aus der Statistik gelöscht: ${anzahl} Zeilen`);
+  return anzahl;
+}

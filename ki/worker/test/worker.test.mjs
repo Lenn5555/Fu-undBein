@@ -460,3 +460,23 @@ test("Lagerdatei: Excel lesen, Webhook prüfen, nur freigegebener Absender", asy
   assert.match(mails[0].text, /Übernommen: 2 von \d+ T&S-Artikeln/);
   assert.match(mails[0].text, /nicht verfügbar \(Bestand 0\): 1099-1404-2120/);
 });
+
+test("Statistik: Testbestellungen einmalig gelöscht, Besucher bleiben", async () => {
+  const { DatabaseSync } = await import("node:sqlite");
+  const { testBestellungenLoeschen } = await import("../src/statistik.js");
+  const db = new DatabaseSync(":memory:");
+  const sql = { exec: (q, ...w) => { const st = db.prepare(q); const r = /^\s*SELECT/i.test(q) ? st.all(...w) : (st.run(...w), []); return { toArray: () => r }; } };
+  sql.exec("CREATE TABLE zahlen (tag TEXT, art TEXT, wert TEXT, quelle TEXT, n INTEGER, PRIMARY KEY (tag, art, wert, quelle))");
+  const rein = (tag, art, wert, n) => sql.exec("INSERT INTO zahlen VALUES (?, ?, ?, 'sonstige', ?)", tag, art, wert, n);
+  rein("2026-11-11", "ereignis", "besuch", 30);
+  rein("2026-11-11", "ereignis", "bestellformular", 4);
+  rein("2026-11-11", "ereignis", "bestellung", 3);
+  rein("2026-11-11", "umsatz", "netto_cent", 12345);
+  rein("2026-11-11", "artikel", "X Fuß", 2);
+  rein("2026-11-18", "ereignis", "bestellung", 1);
+  assert.equal(testBestellungenLoeschen(sql), 3);
+  const rest = sql.exec("SELECT tag, art, wert FROM zahlen ORDER BY tag, wert").toArray().map((z) => `${z.tag} ${z.wert}`);
+  assert.deepEqual(rest, ["2026-11-11 bestellformular", "2026-11-11 besuch", "2026-11-18 bestellung"]);
+  rein("2026-11-12", "ereignis", "bestellung", 1);
+  assert.equal(testBestellungenLoeschen(sql), null); // nur einmal
+});

@@ -3192,13 +3192,6 @@
    "Gewinde": "M12"
   }
  },
- "BF-V-1454A637": {
-  "preis": 36.25,
-  "name": "Stellfuß Edelstahl massiv, Teller Ø 80 mm, M20 × 150 mm",
-  "merkmale": {
-   "Gewinde": "M20"
-  }
- },
  "BF-V-EAF2794A": {
   "preis": 34.81,
   "name": "Stellfuß Edelstahl massiv, Teller Ø 100 mm, M16 × 50 mm",
@@ -3305,7 +3298,7 @@
   }
  },
  "BF-V-0EA495CD": {
-  "preis": 7.19,
+  "preis": 7.08,
   "name": "Gewindestopfen Kunststoff für Vierkantrohr 60 × 60 mm, M14",
   "merkmale": {
    "Gewinde": "M14"
@@ -3548,16 +3541,16 @@
   "preis": 67.16
  },
  "BF-V-2CDB3B6F": {
-  "preis": 4.18
+  "preis": 4.16
  },
  "BF-V-49F1BA89": {
-  "preis": 7.82
+  "preis": 7.76
  },
  "BF-V-D1163685": {
   "preis": 27.5
  },
  "BF-V-897A8F8D": {
-  "preis": 4.24
+  "preis": 4.22
  },
  "BF-V-A307B24B": {
   "preis": 7.81
@@ -3569,7 +3562,7 @@
   "preis": 1.03
  },
  "BF-V-687EB24D": {
-  "preis": 1.08
+  "preis": 1.07
  },
  "BF-V-0F4E301F": {
   "preis": 70.22

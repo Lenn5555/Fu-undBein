@@ -665,27 +665,6 @@
 "mindestwert": 42
 },
 {
-"sku": "BF-V-1454A637",
-"name": "Stellfuß Edelstahl massiv, Teller Ø 80 mm, M20 × 150 mm",
-"marke": "",
-"kurz": "Massiver Edelstahl-Stellfuß, optional NBR-Belag oder Bohrungen.",
-"merkmale": {
-"Anwendung": "Gastronomiegerät, Arbeitstisch / Möbel",
-"Funktion": "Höhenverstellung",
-"Bauform": "Stellbein",
-"Material": "Edelstahl",
-"Gewinde": "M20",
-"Durchmesser": "Teller 80 mm"
-},
-"preis": 36.25,
-"preis_ab": false,
-"varianten": [],
-"optionen": {},
-"bild": "/assets/skizzen/stellfuss-edelstahl-massiv-teller-80-mm-m20.svg",
-"mindermenge": true,
-"mindestwert": 42
-},
-{
 "sku": "BF-V-911165B2",
 "name": "Hygiene-Stellfuß Edelstahl, 3-A, Teller Ø 100 mm, M20 × 140 mm",
 "marke": "",
@@ -1253,7 +1232,7 @@
 "Traglast": "12000 N",
 "Durchmesser": "60x60 (Wand 2-4) mm"
 },
-"preis": 7.19,
+"preis": 7.08,
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
@@ -6902,7 +6881,7 @@
 "Gewinde": "M4",
 "Durchmesser": "15 mm"
 },
-"preis": 1.08,
+"preis": 1.07,
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
@@ -6923,7 +6902,7 @@
 "Traglast": "2200 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.18,
+"preis": 4.16,
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
@@ -6944,7 +6923,7 @@
 "Traglast": "8000 N",
 "Durchmesser": "50 mm"
 },
-"preis": 4.24,
+"preis": 4.22,
 "preis_ab": false,
 "varianten": [],
 "optionen": {},
@@ -6965,7 +6944,7 @@
 "Traglast": "11000 N",
 "Durchmesser": "80 mm"
 },
-"preis": 7.82,
+"preis": 7.76,
 "preis_ab": false,
 "varianten": [],
 "optionen": {},

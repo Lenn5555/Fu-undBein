@@ -39,7 +39,9 @@ export function bestellQuelle(d) {
 }
 
 // Was eine erfolgreiche Bestellung zählt: nur Summen (Anzahl, Warenwert netto in Cent, Stück je Artikel), nichts zum Kunden
+// Testbestellungen aus dem Workflow (Firma "TEST") zählen nicht mit (Lenn, 20.11.2026)
 export function bestellEintraege(daten, b) {
+  if (b.kunde && b.kunde.firma === "TEST" && /^(Testbestellung|PayPal-Test)/.test(b.kunde.name || "")) return [];
   const quelle = bestellQuelle(daten);
   return [
     { art: "ereignis", wert: "bestellung", quelle },

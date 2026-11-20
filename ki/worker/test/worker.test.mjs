@@ -480,3 +480,22 @@ test("Statistik: Testbestellungen einmalig gelöscht, Besucher bleiben", async (
   rein("2026-11-12", "ereignis", "bestellung", 1);
   assert.equal(testBestellungenLoeschen(sql), null); // nur einmal
 });
+
+test("Statistik: nur die Testbestellung vom 19.11. wird abgezogen", async () => {
+  const { DatabaseSync } = await import("node:sqlite");
+  const { testBestellung1911Loeschen } = await import("../src/statistik.js");
+  const db = new DatabaseSync(":memory:");
+  const sql = { exec: (q, ...w) => { const st = db.prepare(q); const r = /^\s*SELECT/i.test(q) ? st.all(...w) : (st.run(...w), []); return { toArray: () => r }; } };
+  sql.exec("CREATE TABLE zahlen (tag TEXT, art TEXT, wert TEXT, quelle TEXT, n INTEGER, PRIMARY KEY (tag, art, wert, quelle))");
+  const rein = (tag, art, wert, n) => sql.exec("INSERT INTO zahlen VALUES (?, ?, ?, 'sonstige', ?)", tag, art, wert, n);
+  rein("2026-11-19", "ereignis", "besuch", 12);
+  rein("2026-11-19", "ereignis", "bestellung", 2);
+  rein("2026-11-19", "umsatz", "netto_cent", 1140);
+  rein("2026-11-19", "artikel", "BF-V-201F27B6 Stellfuß Kunststoff", 4);
+  rein("2026-11-19", "artikel", "BF-X Anderer Fuß", 1);
+  rein("2026-11-20", "ereignis", "bestellung", 1);
+  assert.equal(testBestellung1911Loeschen(sql), 3);
+  const rest = Object.fromEntries(sql.exec("SELECT tag, wert, n FROM zahlen").toArray().map((z) => [`${z.tag} ${z.wert}`, z.n]));
+  assert.deepEqual(rest, { "2026-11-19 besuch": 12, "2026-11-19 bestellung": 1, "2026-11-19 netto_cent": 1000, "2026-11-19 BF-X Anderer Fuß": 1, "2026-11-20 bestellung": 1 });
+  assert.equal(testBestellung1911Loeschen(sql), null);
+});

@@ -91,3 +91,26 @@ export function testBestellungenLoeschen(sql) {
   console.log(`Testbestellungen aus der Statistik gelöscht: ${anzahl} Zeilen`);
   return anzahl;
 }
+
+// Lenn, 20.11.2026: die Bestellung vom 19.11. (4 Stück BF-V-201F27B6, 1,40 € netto) war sein Test.
+// Zieht genau diese eine Bestellung ab (einmalig), alles andere bleibt.
+const BEREINIGUNG_2 = "testbestellung-2026-11-19";
+export function testBestellung1911Loeschen(sql) {
+  sql.exec("CREATE TABLE IF NOT EXISTS erledigt (name TEXT PRIMARY KEY, wann TEXT NOT NULL, zeilen INTEGER NOT NULL)");
+  if (sql.exec("SELECT name FROM erledigt WHERE name = ?", BEREINIGUNG_2).toArray().length) return null;
+  const tag = "2026-11-19";
+  const abziehen = (bedingung, werte, n) => {
+    const z = sql.exec(`SELECT art, wert, quelle, n FROM zahlen WHERE tag = ? AND ${bedingung} ORDER BY n DESC LIMIT 1`, tag, ...werte).toArray()[0];
+    if (!z) return 0;
+    sql.exec("UPDATE zahlen SET n = n - ? WHERE tag = ? AND art = ? AND wert = ? AND quelle = ?", Math.min(n, z.n), tag, z.art, z.wert, z.quelle);
+    return 1;
+  };
+  let zeilen = 0;
+  zeilen += abziehen("art = 'ereignis' AND wert = 'bestellung'", [], 1);
+  zeilen += abziehen("art = 'umsatz' AND wert = 'netto_cent'", [], 140);
+  zeilen += abziehen("art = 'artikel' AND wert LIKE ?", ["BF-V-201F27B6 %"], 4);
+  sql.exec("DELETE FROM zahlen WHERE tag = ? AND n <= 0", tag);
+  sql.exec("INSERT INTO erledigt (name, wann, zeilen) VALUES (?, ?, ?)", BEREINIGUNG_2, new Date().toISOString(), zeilen);
+  console.log(`Testbestellung 19.11. aus der Statistik gelöscht: ${zeilen} Zeilen angepasst`);
+  return zeilen;
+}

@@ -1,6 +1,6 @@
 // Durable Object mit SQLite: hält die Tagessummen der anonymen Zählung (siehe statistik.js).
 import { DurableObject } from "cloudflare:workers";
-import { heute, testBestellungenLoeschen } from "./statistik.js";
+import { heute, testBestellungenLoeschen, testBestellung1911Loeschen } from "./statistik.js";
 
 const AUFBEWAHREN_TAGE = 400;
 
@@ -11,6 +11,7 @@ export class Zaehler extends DurableObject {
       tag TEXT NOT NULL, art TEXT NOT NULL, wert TEXT NOT NULL, quelle TEXT NOT NULL, n INTEGER NOT NULL,
       PRIMARY KEY (tag, art, wert, quelle))`);
     testBestellungenLoeschen(ctx.storage.sql);
+    testBestellung1911Loeschen(ctx.storage.sql);
   }
 
   zaehlen(eintraege) {

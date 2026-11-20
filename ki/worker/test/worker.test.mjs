@@ -200,6 +200,15 @@ test("Eingangsbestätigung an den Kunden: ohne interne Daten, nur wenn eingescha
   await kundeBenachrichtigen({ ...env, KUNDENMAIL: "an" }, "BF-2", bez, { nr: "BF-2" }, abruf);
   assert.match(gesendet.subject, /^Auftragsbestätigung BF-2/);
   assert.doesNotMatch(gesendet.subject, /[:ß×]/);
+  // HTML-Fassung: gleicher Inhalt, keine internen Daten, Bankdaten nur bei Überweisung
+  assert.doesNotMatch(gesendet.html, /IBAN|Eingangsbestätigung/);
+  assert.match(gesendet.html, /Auftragsbestätigung/);
+  const { kundenHtml } = await import("../src/bestellung.js");
+  const h = kundenHtml("BF-20261111-ABCD", b, env);
+  assert.match(h, /DE17 5084 0005 0610 6090 00/);
+  assert.match(h, /BF-20261111-ABCD/);
+  for (const intern of [p.sku, p.varianten[0].sku, "Bezugsquelle", "INTERN", p.marke].filter(Boolean)) assert.ok(!h.includes(intern), intern);
+  assert.doesNotMatch(h, /<img|<script/);
 });
 
 test("Bezugsquelle kommt aus der mitgelieferten Datei", async () => {

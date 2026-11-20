@@ -265,6 +265,90 @@ export function kundenText(nr, b, env, zahlung = null) {
   return zeilen.join("\n");
 }
 
+// HTML-Fassung der Kundenmail (Lenn, 20.11.2026: "hübsch machen"). Nur Tabellen und Inline-Styles, damit Outlook sie sauber zeigt;
+// keine Bilder (Outlook blockiert sie oft), Farben wie im Shop (dunkel #111827, gelb #fece14). Inhalt wie kundenText.
+const H = (x) => String(x ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const SCHRIFT = "font-family:Arial,Helvetica,sans-serif;";
+export function kundenHtml(nr, b, env, zahlung = null) {
+  const { produkt: p, variante: v, gewaehlt = {}, menge, kunde: k, stueck, summe } = b;
+  const wahl = v ? v.ausfuehrung : Object.entries(gewaehlt).map(([m, w]) => `${m} ${w}`).join(", ");
+  const de = k.land === "Deutschland";
+  const s = betrag(b);
+  const zeile = (l, w, fett = false) =>
+    `<tr><td style="${SCHRIFT}font-size:14px;color:#4b5563;padding:6px 0;border-bottom:1px solid #e5e7eb">${H(l)}</td>` +
+    `<td align="right" style="${SCHRIFT}font-size:14px;color:#111827;padding:6px 0;border-bottom:1px solid #e5e7eb;white-space:nowrap${fett ? ";font-weight:bold" : ""}">${H(w)}</td></tr>`;
+  const ueberschrift = (t) => `<p style="${SCHRIFT}font-size:12px;font-weight:bold;letter-spacing:1px;color:#4b5563;margin:28px 0 8px">${H(t)}</p>`;
+  const absatz = (t, extra = "") => `<p style="${SCHRIFT}font-size:15px;line-height:22px;color:#111827;margin:0 0 12px${extra}">${t}</p>`;
+  const adresse = (zeilen) => absatz(zeilen.map(H).join("<br>"));
+
+  const preise = [
+    zeile("Menge", `${menge} Stück`),
+    zeile("Stückpreis netto", euro(stueck)),
+    zeile("Warenwert netto", euro(summe)),
+    ...(b.zuschlag ? [zeile("Mindermengenzuschlag netto", euro(b.zuschlag))] : []),
+    ...(de
+      ? [zeile("Versand netto", euro(s.versand / 100)), zeile("MwSt. 19 %", euro(s.mwst / 100)), zeile("Gesamtbetrag", euro(s.gesamt / 100), true)]
+      : [zeile("Versand", "nach Paketgewicht, folgt mit der Auftragsbestätigung")]),
+  ].join("");
+
+  let zahlteil;
+  if (zahlung) {
+    zahlteil = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#dcfce7;border-radius:6px"><tr><td style="${SCHRIFT}font-size:15px;color:#14532d;padding:14px 16px">` +
+      `<b>Bezahlt</b> per ${H(k.zahlart)}: ${H(euro(s.gesamt / 100))}</td></tr></table>`;
+  } else if (k.zahlart.startsWith("Überweisung") && env.BANK_IBAN) {
+    const bz = (l, w) => `<tr><td style="${SCHRIFT}font-size:13px;color:#4b5563;padding:4px 16px 0">${H(l)}</td></tr>` +
+      `<tr><td style="${SCHRIFT}font-size:16px;font-weight:bold;color:#111827;padding:0 16px 6px;white-space:nowrap">${H(w)}</td></tr>`;
+    zahlteil = absatz(`Bitte überweisen Sie ${de ? `<b>${H(euro(s.gesamt / 100))}</b>` : "den Betrag aus der Auftragsbestätigung"} auf dieses Konto:`) +
+      `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff7d1;border-left:4px solid #fece14;border-radius:6px">` +
+      `<tr><td style="height:8px;line-height:8px">&nbsp;</td></tr>` +
+      bz("Empfänger", env.BANK_INHABER) + bz("IBAN", env.BANK_IBAN) + bz("Verwendungszweck", nr) +
+      `<tr><td style="height:8px;line-height:8px">&nbsp;</td></tr></table>` +
+      absatz("Bitte geben Sie die Bestellnummer als Verwendungszweck an, damit wir Ihre Zahlung zuordnen können.", ";margin-top:12px;font-size:13px;color:#4b5563");
+  } else {
+    zahlteil = absatz(`Vorkasse per ${H(k.zahlart)}. Den Zahlungslink schicken wir Ihnen mit der Auftragsbestätigung.`);
+  }
+
+  const einleitung = zahlung
+    ? `vielen Dank für Ihren Auftrag. Ihre Zahlung über ${H(euro(s.gesamt / 100))} per ${H(k.zahlart)} ist eingegangen. Hiermit bestätigen wir Ihren Auftrag.`
+    : "vielen Dank für Ihre Bestellung. Sie ist bei uns eingegangen.";
+  const schluss = zahlung
+    ? "Wir versenden so schnell wie möglich."
+    : "Dies ist eine automatische Eingangsbestätigung. Verbindlich wird Ihre Bestellung mit unserer Auftragsbestätigung, die wir Ihnen gesondert schicken. Wir versenden nach Zahlungseingang.";
+
+  return `<!DOCTYPE html><html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${H(zahlung ? "Auftragsbestätigung" : "Ihre Bestellung")} ${H(nr)}</title></head>` +
+    `<body style="margin:0;padding:0;background:#f3f4f6">` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6"><tr><td align="center" style="padding:24px 12px">` +
+    `<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden">` +
+    // Kopf
+    `<tr><td style="background:#111827;padding:22px 28px"><span style="${SCHRIFT}font-size:22px;font-weight:bold;color:#ffffff">Bein und </span><span style="${SCHRIFT}font-size:22px;font-weight:bold;color:#fece14">Fuss</span>` +
+    `<br><span style="${SCHRIFT}font-size:13px;color:#d1d5db">Stellfüße und Einschlagfüße</span></td></tr>` +
+    `<tr><td style="background:#fece14;height:4px;line-height:4px;font-size:0">&nbsp;</td></tr>` +
+    // Inhalt
+    `<tr><td style="padding:28px">` +
+    `<p style="${SCHRIFT}font-size:22px;font-weight:bold;color:#111827;margin:0 0 4px">${zahlung ? "Auftragsbestätigung" : "Ihre Bestellung ist eingegangen"}</p>` +
+    `<p style="${SCHRIFT}font-size:14px;color:#4b5563;margin:0 0 22px">Bestellnummer <b style="color:#111827">${H(nr)}</b></p>` +
+    absatz(`Guten Tag ${H(k.name)},`) + absatz(einleitung) +
+    ueberschrift(zahlung ? "AUFTRAG" : "IHRE BESTELLUNG") +
+    `<p style="${SCHRIFT}font-size:16px;font-weight:bold;color:#111827;margin:0 0 2px">${H(p.name)}</p>` +
+    (wahl ? `<p style="${SCHRIFT}font-size:14px;color:#4b5563;margin:0 0 2px">Ausführung: ${H(wahl)}</p>` : "") +
+    (k.wunsch ? `<p style="${SCHRIFT}font-size:14px;color:#4b5563;margin:0 0 2px">Ihr Wunsch zur Ausführung: ${H(k.wunsch)}</p>` : "") +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-top:10px">${preise}</table>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>` +
+    `<td valign="top" width="50%" style="padding-right:10px">${ueberschrift("LIEFERADRESSE")}${adresse(k.strasse ? zeilenAdresse({ firma: k.firma, name: k.name, strasse: k.strasse, zusatz: k.zusatz, plz: k.plz, ort: k.ort, land: k.land }) : [k.adresse, k.land])}</td>` +
+    `<td valign="top" width="50%" style="padding-left:10px">${ueberschrift("RECHNUNGSADRESSE")}${adresse(k.rechnung ? zeilenAdresse(k.rechnung) : ["gleich Lieferadresse"])}</td>` +
+    `</tr></table>` +
+    ueberschrift("ZAHLUNG") + zahlteil +
+    `<div style="height:16px;line-height:16px">&nbsp;</div>` +
+    absatz(H(schluss), ";font-size:14px;color:#4b5563") +
+    absatz("Fragen? Antworten Sie einfach auf diese Mail.") +
+    absatz("Mit freundlichen Grüßen<br><b>Bein und Fuss</b>", ";margin-top:20px") +
+    `</td></tr>` +
+    // Fuß
+    `<tr><td style="background:#f9fafb;border-top:1px solid #e5e7eb;padding:16px 28px"><p style="${SCHRIFT}font-size:12px;line-height:18px;color:#6b7280;margin:0">` +
+    `Bein und Fuss · T&amp;S Systemtechnik GmbH, Pfungstadt<br><a href="https://www.beinundfuss.de" style="color:#111827">www.beinundfuss.de</a></p></td></tr>` +
+    `</table></td></tr></table></body></html>`;
+}
+
 // Schickt die Eingangsbestätigung, nur wenn KUNDENMAIL = "an". Fehler stoppen die Bestellung nicht.
 export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = fetch) {
   if (env.KUNDENMAIL !== "an" || !env.KUNDEN_ABSENDER) {
@@ -283,7 +367,7 @@ export async function kundeBenachrichtigen(env, nr, b, zahlung = null, abruf = f
         // Kein ":" und kein "ß" im Betreff (Outlook, siehe senden)
         subject: zahlung ? `Auftragsbestätigung ${nr} Bein und Fuss` : `Ihre Bestellung ${nr} bei Bein und Fuss`,
         text,
-        html: mailHtml(text),
+        html: kundenHtml(nr, b, env, zahlung),
       }),
     });
     if (!r.ok) throw new Error(`${r.status} ${await r.text()}`);

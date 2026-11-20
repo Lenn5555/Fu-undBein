@@ -848,6 +848,7 @@ def main():
     (OUT / "404.html").write_text(seitenrahmen("Seite nicht gefunden | beinundfuß.de", '<section class="bf-text" data-feld="weiss">'
                                                '<h1>Seite nicht gefunden</h1><p>Diese Seite gibt es nicht. <a href="/">Zum Berater</a></p></section>',
                                                index=False), encoding="utf-8")
+    shutil.copy(ROOT / "ki/seite/favicon.ico", OUT / "favicon.ico")  # Fallback für Google & alte Browser (Lenn, 20.11.2026)
     (OUT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     (OUT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
 

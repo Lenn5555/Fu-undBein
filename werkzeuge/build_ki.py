@@ -507,6 +507,10 @@ def kat_url(bauform, absolut=False):
     return (SITE_URL if absolut else "") + f"/produkte/{b.slug(dict(BAUFORMEN)[bauform])}/"
 
 
+TITELBILD = ('<figure class="pr-titelbild"><img src="/assets/fuesse-freigestellt.webp" width="1344" height="390" '
+             'alt="Stellfüße, Stellbeine und Einschlagfüße aus Edelstahl und Kunststoff" decoding="async"></figure>')
+
+
 def produkt_url(p, absolut=False):
     return (SITE_URL if absolut else "") + f"/produkte/{p['slug']}/"
 
@@ -612,7 +616,7 @@ def produktuebersicht(liste):
                      + (f'<p><a class="pr-mehr" href="{kat_url(bauform)}">Alle {len(l)} {e(mehrzahl)} ansehen</a></p>' if len(l) > 10 else "") + '</section>')
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / Produkte</nav>'
               f'<h1>Alle Produkte mit Preis</h1><p class="pr-kurz">{len(liste)} Stellfüße, Stellbeine, Gelenkfüße, Einschlagfüße und mehr. '
-              f'Alle Preise netto pro Stück. Unsicher, welcher passt? <a href="/#berater">Fragen Sie den Berater.</a></p>'
+              f'Alle Preise netto pro Stück. Unsicher, welcher passt? <a href="/#berater">Fragen Sie den Berater.</a></p>' + TITELBILD +
               f'<nav class="pr-sprung" aria-label="Bauformen">{"".join(f"<a href=\"{kat_url(bf)}\">{e(mz)}</a>" for bf, mz in BAUFORMEN if bf in gruppen)}</nav>'
               f'{"".join(teile)}</article>')
     SEITEN.append(("produkte/", "0.9"))
@@ -678,7 +682,7 @@ def kategorieseite(bauform, l):
     inhalt = (f'<article class="pr-seite" data-feld="weiss"><nav class="pr-krumen" aria-label="Brotkrumen"><a href="/">Startseite</a> / '
               f'<a href="/produkte/">Produkte</a> / {e(mehrzahl)}</nav><h1>{e(titel)}</h1><p class="pr-kurz">{e(text)}</p>'
               f'<p class="pr-kurz">{len(l)} Modelle, {spanne(l)} netto pro Stück. Unsicher, welcher passt? '
-              f'<a href="/?frage={quote(frage)}#berater">Fragen Sie den Berater.</a></p>'
+              f'<a href="/?frage={quote(frage)}#berater">Fragen Sie den Berater.</a></p>' + TITELBILD +
               f'<section>{sortierleiste(l)}<ul class="pr-liste pr-spalten" id="pr-modelle">{zeilen}</ul></section></article>')
     pfad = kat_url(bauform)[1:]
     SEITEN.append((pfad, "0.9"))

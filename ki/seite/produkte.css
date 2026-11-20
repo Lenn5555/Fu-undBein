@@ -76,3 +76,7 @@
 #st-ergebnis section { margin: 48px 0 0; }
 .pr-lager-ja { color: #1d7a3e; font-weight: 500; }
 .pr-lager-nein { color: #b42318; font-weight: 500; }
+
+/* Titelbild auf Übersicht und Kategorien, damit Google ein Vorschaubild hat (Lenn, 20.11.2026) */
+.pr-titelbild { margin: 24px 0 8px; max-width: 900px; }
+.pr-titelbild img { display: block; width: 100%; height: auto; }

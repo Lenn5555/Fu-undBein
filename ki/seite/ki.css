@@ -412,3 +412,25 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .kb-chat-spalte { margin-top: 40px; }
   .kb-chat-spalte .kb-chat { margin-top: 0; }
 }
+
+/* Herkunft mit Karte (Lenn, 24.11.2026) */
+.kb-herkunft-zeile { margin: -8px 0 28px; font-size: 15px; color: var(--muted); }
+.kb-herkunft-zeile a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-color: var(--gelb, #fece14); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.kb-herkunft { padding: 112px var(--rand); }
+.kb-herkunft-innen { display: grid; grid-template-columns: 1fr minmax(260px, 360px); gap: 64px; align-items: center; max-width: var(--breite); margin: 0 auto; }
+.kb-herkunft h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.1; margin: 0 0 20px; letter-spacing: -0.02em; }
+.kb-herkunft-text > p { font-size: 18px; line-height: 1.6; max-width: 56ch; margin: 0 0 28px; }
+.kb-herkunft-adresse { font-style: normal; font-size: 16px; line-height: 1.7; padding: 20px 24px; background: var(--weiss, #fff); border-radius: 12px; border-left: 4px solid var(--gelb, #fece14); display: inline-block; }
+.kb-herkunft-adresse a { color: inherit; }
+.kb-karte-feld { margin: 0; }
+.kb-karte { width: 100%; height: auto; display: block; }
+.kb-karte .kb-land { fill: #d9dde3; stroke: #fff; stroke-width: 1.2; stroke-linejoin: round; }
+.kb-karte .kb-hessen { fill: var(--gelb, #fece14); stroke: #111827; stroke-width: 1.6; stroke-linejoin: round; }
+.kb-karte .kb-ort { fill: #111827; }
+.kb-karte .kb-ort-ring { fill: none; stroke: #111827; stroke-width: 2; opacity: .35; }
+.kb-karte .kb-ort-name { font: 600 20px Poppins, sans-serif; fill: #111827; paint-order: stroke; stroke: #f3f4f6; stroke-width: 5px; }
+@media (max-width: 760px) {
+  .kb-herkunft { padding: 72px var(--rand); }
+  .kb-herkunft-innen { grid-template-columns: 1fr; gap: 32px; }
+  .kb-karte-feld { max-width: 300px; margin: 0 auto; }
+}

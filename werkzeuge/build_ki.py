@@ -343,6 +343,10 @@ def beraterseite(liste):
     return re.sub(r"(?:von )?(M\d+) bis \1\b", r"\1", _beraterseite(liste))
 
 
+# Karte: Natural Earth 1:10m Bundesländer (gemeinfrei), vereinfacht; Hessen gelb, Punkt = Pfungstadt (Lenn, 24.11.2026)
+KARTE = (Path(__file__).parent / "karte_deutschland.svg").read_text(encoding="utf-8")
+
+
 def _beraterseite(liste):
     api = CFG.get("ki_api", "")
     anzahl = len(liste)
@@ -394,6 +398,7 @@ def _beraterseite(liste):
 <div class="kb-hero-text">
 <h1 class="kb-titel" data-rein>Stellfüße und <span>Einschlagfüße</span> mit festem Preis</h1>
 <p class="kb-hero-lead" data-rein>Beschreiben Sie Ihre Anwendung. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
+<p class="kb-herkunft-zeile" data-rein>Ein Angebot der <a href="#herkunft">T&amp;S Systemtechnik GmbH aus Pfungstadt, Hessen</a></p>
 <p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="/produkte/">Alle Produkte ansehen</a></p>
 </div>
 <figure class="kb-hero-bildfeld" data-rein><img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
@@ -430,6 +435,17 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <p data-rein>{ZAHLWORT.get(len(einsaetze), len(einsaetze))} typische Anwendungen und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
 </div>
 <div class="kb-akk" data-rein>{"".join(panels)}</div>
+</section>
+
+<section class="kb-herkunft" id="herkunft" data-feld="hell">
+<div class="kb-herkunft-innen">
+<div class="kb-herkunft-text">
+<h2 data-rein>Aus Pfungstadt in Hessen</h2>
+<p data-rein>Das Sortiment von beinundfuß.de kommt von der T&amp;S Systemtechnik GmbH. Unser Sitz ist Pfungstadt bei Darmstadt, südlich von Frankfurt am Main. Von hier versenden wir mit GLS, in Deutschland und ins europäische Ausland.</p>
+<address class="kb-herkunft-adresse" data-rein><strong>T&amp;S Systemtechnik GmbH</strong><br>Am Hintergraben 26<br>64319 Pfungstadt, Hessen<br>Deutschland<br><a href="tel:+496157808700">+49 6157 8087 0</a> · <a href="mailto:{mail}">{mail}</a></address>
+</div>
+<figure class="kb-karte-feld" data-rein>{KARTE}</figure>
+</div>
 </section>
 
 <section class="kb-kontakt" id="kontakt" data-feld="weiss">

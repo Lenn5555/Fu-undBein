@@ -390,7 +390,7 @@ def _beraterseite(liste):
 <section class="kb-hero" data-feld="hell">
 <div class="kb-hero-text">
 <h1 class="kb-titel" data-rein>Stellfüße und <span>Einschlagfüße</span> mit festem Preis</h1>
-<p class="kb-hero-lead" data-rein>Sagen Sie, was Ihr Fuß tragen muss. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
+<p class="kb-hero-lead" data-rein>Beschreiben Sie Ihre Anwendung. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
 <p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="#preise">Alle Preise ansehen</a></p>
 <dl class="kb-fakten" data-rein>
 <div><dt>Modelle mit Preis</dt><dd>{anzahl}</dd></div>
@@ -408,17 +408,6 @@ def _beraterseite(liste):
 <div class="kb-berater-text">
 <h2 data-rein>Beschreiben Sie Ihre Anwendung</h2>
 <p data-rein>Gerät, Gewinde oder Rohrmaß, ungefähre Last, Boden: Was Sie wissen, reicht. Was fehlt, fragt der Berater nach und zeigt danach passende Füße mit Preis.</p>
-<form class="kb-rechner" id="kb-rechner" data-rein>
-<h3>Last pro Fuß</h3>
-<p class="kb-rechner-wert"><output id="kb-last" for="kb-kg kb-anzahl">990 N</output></p>
-<p class="kb-rechner-notiz" id="kb-last-notiz">pro Fuß, gleichmäßig verteilt auf 4 Füße.</p>
-<p class="kb-rechner-reserve" id="kb-last-reserve">Mit Reserve: <strong>1.310 N</strong>. Auf unebenem Boden trägt ein Fuß oft kaum mit, bis das Gestell ausgerichtet ist. Dann verteilt sich die Last auf 3 Füße.</p>
-<div class="kb-rechner-felder">
-<label>Gewicht in kg<input type="number" id="kb-kg" min="1" max="100000" value="400" inputmode="numeric"></label>
-<label>Anzahl Füße<input type="number" id="kb-anzahl" min="1" max="64" value="4" inputmode="numeric"></label>
-</div>
-<button type="button" class="bf-knopf bf-knopf-gelb" id="kb-last-frage" data-frage="Mein Gerät wiegt 400 kg und steht auf 4 Füßen, also etwa 990 N pro Fuß bei gleichmäßiger Verteilung, mit Reserve für unebenen Boden 1.310 N. Welche Füße passen?">Füße suchen</button>
-</form>
 <p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
 </div>
 
@@ -427,7 +416,7 @@ def _beraterseite(liste):
 <div id="ki" class="kb-verlauf" aria-live="polite"></div>
 <div class="kb-chips" id="ki-chips">{chips}</div>
 <form id="ki-eingabe" class="kb-eingabe">
-<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Was soll der Fuß tragen?" aria-label="Ihre Frage" required></textarea>
+<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Ihre Frage an den Berater" aria-label="Ihre Frage" required></textarea>
 <button class="kb-senden" type="submit">Senden</button>
 </form>
 <p class="kb-hinweis">Der Berater ist ein KI-System. Angaben vor der Bestellung bitte prüfen, verbindlich sind Auftragsbestätigung und Datenblatt.

@@ -153,7 +153,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
 .kb-rechner .bf-knopf { justify-self: start; }
 .kb-ablauf { font-size: var(--step-small); }
 
-.kb-chat { grid-column: 6 / 13; background: var(--weiss); color: var(--ink); border-radius: var(--r-gross); overflow: hidden; display: flex; flex-direction: column; min-height: 640px; max-height: 820px; }
+.kb-chat { grid-column: 6 / 13; background: var(--weiss); color: var(--ink); border-radius: var(--r-gross); overflow: hidden; display: flex; flex-direction: column; height: clamp(420px, 50svh, 560px); } /* Berater halb so hoch wie der Bildschirm (Lenn, 24.11.2026) */
 .kb-chat-kopf { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; border-bottom: 1px solid var(--hell-2); }
 .kb-chat-kopf strong { font-size: var(--step-body); font-weight: 600; display: inline-flex; align-items: center; gap: 10px; }
 .kb-chat-kopf strong::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gruen); }
@@ -337,7 +337,7 @@ h3 { font-size: var(--step-h3); line-height: 1.25; }
   .kb-hero-bildfeld { padding: 24px 12px; }
   .kb-berater { padding: 80px var(--rand); display: block; }
   .kb-berater[data-feld] { padding: 80px var(--rand); }
-  .kb-chat { margin-top: 40px; min-height: 560px; max-height: 80svh; }
+  .kb-chat { margin-top: 40px; height: clamp(540px, 75svh, 660px); }
   .kb-chat-kopf, .kb-verlauf { padding-left: 16px; padding-right: 16px; }
   .kb-chips, .kb-eingabe, .kb-hinweis { padding-left: 16px; padding-right: 16px; }
   .kb-rechner { padding: 20px; }

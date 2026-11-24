@@ -388,6 +388,17 @@ def _beraterseite(liste):
         ("Edelstahl", None), ("Zinkdruckguss", None), ("Gelenkfüße", "Gelenkfuß"),
         ("Einschlagfüße für Vierkantrohr", "Einschlagfuß"), ("Schwingungsdämpfer", "Schwingungsdämpfer"),
         ("Nivellierelemente", "Nivellierelement")) if bauform is None or z.get(bauform))
+    # Kategorie-Kacheln mit Bild neben dem Berater (Lenn, 24.11.2026): je Bauform im Shop eine Kachel
+    kacheln = []
+    for bauform, mehrzahl in BAUFORMEN:
+        l = [p for p in liste if p["merkmale"]["Bauform"] == bauform]
+        if not l:
+            continue
+        bild = next((p["bild"] for p in l if p.get("bild", "").endswith(".jpg")), l[0].get("bild", ""))
+        kacheln.append(f'<a class="kb-kat" href="{kat_url(bauform)}" data-rein><span class="kb-kat-bild"><img src="{e(bild)}" alt="{e(mehrzahl)}" loading="lazy"></span>'
+                       f'<span class="kb-kat-text"><strong>{e(mehrzahl)}</strong><span>{len(l)} {"Modell" if len(l) == 1 else "Modelle"}, {spanne(l)} netto</span>'
+                       f'<span class="kb-kat-mehr">Alle ansehen →</span></span></a>')
+    kat_kacheln = "".join(kacheln)
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])
@@ -405,22 +416,24 @@ def _beraterseite(liste):
 <div class="kb-band" data-feld="dunkel" aria-hidden="true"><div class="kb-band-lauf">{band}{band}</div></div>
 
 <section class="kb-berater" id="berater" data-feld="dunkel">
-<div class="kb-berater-text">
-<h2 data-rein>Beschreiben Sie Ihre Anwendung</h2>
-<p data-rein>Gerät, Gewinde oder Rohrmaß, ungefähre Last, Boden: Was Sie wissen, reicht. Was fehlt, fragt der Berater nach und zeigt danach passende Füße mit Preis.</p>
-<p class="kb-ablauf" data-rein>Danach wählen Sie Ausführung und Menge und senden die Bestellung ab. Verbindlich wird sie mit unserer Auftragsbestätigung per E-Mail.</p>
+<div class="kb-kats">
+<h2 data-rein>Unsere Produkte</h2>
+<div class="kb-kat-raster">{kat_kacheln}</div>
 </div>
 
+<div class="kb-chat-spalte">
+<p class="kb-chat-intro" data-rein>Nicht sicher, welcher passt? Beschreiben Sie Ihre Anwendung, der Berater zeigt passende Füße mit Preis.</p>
 <div class="kb-chat" data-rein>
 <div class="kb-chat-kopf"><strong>Berater</strong><button type="button" class="kb-neu" id="ki-neu">Neu starten</button></div>
 <div id="ki" class="kb-verlauf" aria-live="polite"></div>
 <div class="kb-chips" id="ki-chips">{chips}</div>
 <form id="ki-eingabe" class="kb-eingabe">
-<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Ihre Frage an den Berater" aria-label="Ihre Frage" required></textarea>
+<textarea id="ki-text" rows="1" maxlength="1500" placeholder="Ihre Frage" aria-label="Ihre Frage" required></textarea>
 <button class="kb-senden" type="submit">Senden</button>
 </form>
 <p class="kb-hinweis">Der Berater ist ein KI-System. Angaben vor der Bestellung bitte prüfen, verbindlich sind Auftragsbestätigung und Datenblatt.
 Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/">Datenschutz</a>.</p>
+</div>
 </div>
 </section>
 

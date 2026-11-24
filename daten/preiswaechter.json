@@ -235,11 +235,11 @@
   "BF-V-03FE504C": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "88623895a9c5eb55",
+   "hash": "1bac73cb3cb92e26",
    "ref": "2d97acf208c3",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 84.66,
+   "vorschlag_vk": 84.31,
    "weg": "ki"
   },
   "BF-V-05A9A6CF": {
@@ -296,11 +296,10 @@
   "BF-V-0EA495CD": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "87e57c44e55fb75d",
+   "hash": "5a1c7d8c16357bf9",
    "ref": "9fd3eac258b3",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 7.06,
    "weg": "ki"
   },
   "BF-V-0F4E301F": {
@@ -406,11 +405,10 @@
   "BF-V-18C43044": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "57955c507ed4e267",
+   "hash": "5cf18c36d6dace35",
    "ref": "85b1fd74a9de",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 84.8,
    "weg": "ki"
   },
   "BF-V-194A7354-01": {
@@ -483,11 +481,11 @@
   "BF-V-27CC917E": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "ba1b9f039c18f456",
+   "hash": "2f101740bcffc254",
    "ref": "5ad892394ac4",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 81.42,
+   "vorschlag_vk": 81.52,
    "weg": "ki"
   },
   "BF-V-294DBF8D": {
@@ -505,11 +503,10 @@
   "BF-V-2CDB3B6F": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "1ce8a5dc71b3b7b7",
+   "hash": "cda6030e6a9cc85c",
    "ref": "c3e3ade5868d",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 4.18,
    "weg": "ki"
   },
   "BF-V-2D7F3A15": {
@@ -523,11 +520,11 @@
   "BF-V-2DCC8132": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "9ddbc15ff5589fce",
+   "hash": "9dccdc6d88b84305",
    "ref": "96167540eef4",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 74.57,
+   "vorschlag_vk": 74.93,
    "weg": "ki"
   },
   "BF-V-2DD71741-01": {
@@ -1172,11 +1169,11 @@
   "BF-V-413F70F3": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "10d4b1bc1d2606ba",
+   "hash": "535278e8a4100eec",
    "ref": "bd0e1b5fc9f5",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 68.92,
+   "vorschlag_vk": 68.98,
    "weg": "ki"
   },
   "BF-V-4462289E": {
@@ -1221,11 +1218,11 @@
   "BF-V-49F1BA89": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "361bd49ef5da4f65",
+   "hash": "095dd175f97b0347",
    "ref": "8a893c44944c",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 7.81,
+   "vorschlag_vk": 7.78,
    "weg": "ki"
   },
   "BF-V-4B26BE1E": {
@@ -1249,11 +1246,11 @@
   "BF-V-4F303E42": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "c222910c16b2cf0a",
+   "hash": "609a34dcda7cf0a0",
    "ref": "d0fb1b72d0a6",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 71.83,
+   "vorschlag_vk": 71.54,
    "weg": "ki"
   },
   "BF-V-4F63F519": {
@@ -1491,11 +1488,10 @@
   "BF-V-56C74504": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "8fd195b4b8f1536d",
+   "hash": "f389b6c37062295b",
    "ref": "968683175cc0",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 6.67,
    "weg": "ki"
   },
   "BF-V-581C4488": {
@@ -1603,21 +1599,19 @@
   "BF-V-6510EF99": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "b39f49c569f209e8",
+   "hash": "934c11da9ec76a3d",
    "ref": "a0d55d5afeae",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 4.39,
    "weg": "ki"
   },
   "BF-V-687EB24D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "d6db771b9ae2b499",
+   "hash": "37ab791ca41c4e2f",
    "ref": "c49643f3b3e1",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 1.06,
    "weg": "ki"
   },
   "BF-V-68FB055B": {
@@ -1716,11 +1710,11 @@
   "BF-V-7457568A": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "9d46e5dfb5752686",
+   "hash": "8aec31b79468688d",
    "ref": "d91013cd52b2",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 72.8,
+   "vorschlag_vk": 72.74,
    "weg": "ki"
   },
   "BF-V-76754EAA": {
@@ -1764,21 +1758,20 @@
   "BF-V-7A82C84C": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "e5fa0bdadb23ef2f",
+   "hash": "f657183c81ad0c89",
    "ref": "e8d5f0848855",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 0.56,
    "weg": "ki"
   },
   "BF-V-7AE5095E": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "60ccdf0ad4b53581",
+   "hash": "65ca6ef7111a350f",
    "ref": "e9e8904d6e9d",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 78.42,
+   "vorschlag_vk": 77.87,
    "weg": "ki"
   },
   "BF-V-7C35D122-01": {
@@ -1809,11 +1802,11 @@
   "BF-V-7D100B83": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "b2e9c2b931d750b3",
+   "hash": "51b6d109e53c684d",
    "ref": "979cd9c49d6c",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 87.71,
+   "vorschlag_vk": 87.62,
    "weg": "ki"
   },
   "BF-V-81A33A5E": {
@@ -1990,11 +1983,11 @@
   "BF-V-9915CADA": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "ea8761d882651eed",
+   "hash": "2e878ff9f4730dea",
    "ref": "c3788c66f463",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 72.98,
+   "vorschlag_vk": 73.28,
    "weg": "ki"
   },
   "BF-V-9A88586C-01": {
@@ -2025,21 +2018,21 @@
   "BF-V-9C99F91D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "c9c4d841cf3d110f",
+   "hash": "9ed97f79413245e7",
    "ref": "e86f51e15164",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 74.63,
+   "vorschlag_vk": 74.88,
    "weg": "ki"
   },
   "BF-V-9CB42F41": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "015614e581e79576",
+   "hash": "e0bb78b125b6447a",
    "ref": "d494d1ad8df1",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 79.73,
+   "vorschlag_vk": 79.86,
    "weg": "ki"
   },
   "BF-V-9D45DF37": {
@@ -2062,11 +2055,11 @@
   "BF-V-A20D0C83": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "8a767bd58d2f9697",
+   "hash": "c2f58eae2f472766",
    "ref": "6e427979fc7d",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 68.87,
+   "vorschlag_vk": 69.14,
    "weg": "ki"
   },
   "BF-V-A307B24B": {
@@ -2217,11 +2210,11 @@
   "BF-V-B43408F0": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "4cb6b8b31d20228d",
+   "hash": "f617e0ff16c541f2",
    "ref": "87a2cedc7418",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 79.19,
+   "vorschlag_vk": 79.28,
    "weg": "ki"
   },
   "BF-V-B8214EC0-01": {
@@ -2310,11 +2303,11 @@
   "BF-V-BC515CE9": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "970fb7a57156acd6",
+   "hash": "530ce4d3192dab2d",
    "ref": "39bbb0c194a1",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 74.75,
+   "vorschlag_vk": 74.5,
    "weg": "ki"
   },
   "BF-V-BD2DE969": {
@@ -2746,21 +2739,20 @@
   "BF-V-CD5A7308": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "df8fc0a188871f0f",
+   "hash": "ed3f177fcf1b9d7c",
    "ref": "fda49d20f384",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 27.71,
+   "vorschlag_vk": 27.62,
    "weg": "ki"
   },
   "BF-V-D1163685": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "761ac9893d4983ec",
+   "hash": "4b304819dcc78f13",
    "ref": "460fe5635c0c",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 27.55,
    "weg": "ki"
   },
   "BF-V-D497CA83": {
@@ -3231,11 +3223,10 @@
   "BF-V-DAF1DCFF": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "e66dcbb1b92517ff",
+   "hash": "22277ced8e846789",
    "ref": "4a1e06ff6bfc",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 4.45,
    "weg": "ki"
   },
   "BF-V-DBC1920D": {
@@ -3747,11 +3738,11 @@
   "BF-V-FA124A9A": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "d5b3fa385b477830",
+   "hash": "477945073ad5c7c6",
    "ref": "f11f581eeeaf",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 94.42,
+   "vorschlag_vk": 94.09,
    "weg": "ki"
   },
   "BF-V-FDB021BD": {
@@ -3791,11 +3782,11 @@
   "BF-V-FF32DA3D": {
    "auslauf_text": false,
    "brutto": false,
-   "hash": "5d32712ad3733b91",
+   "hash": "da3692b49b61478d",
    "ref": "af94d975f24b",
    "seit": "2026-11-09",
    "token": 0,
-   "vorschlag_vk": 88.55,
+   "vorschlag_vk": 89.12,
    "weg": "ki"
   },
   "BF-V-FFACA225": {

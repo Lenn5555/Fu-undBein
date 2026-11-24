@@ -29,7 +29,21 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Pausenschalter (Lenn, 24.11.2026): "preiswaechter_an": false in daten/site.json pausiert die automatischen Läufe
+  schalter:
+    runs-on: ubuntu-latest
+    outputs:
+      an: ${{ steps.s.outputs.an }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: s
+        run: |
+          an=$(python3 -c "import json; print('ja' if json.load(open('daten/site.json')).get('preiswaechter_an', True) else 'nein')")
+          echo "an=$an" >> "$GITHUB_OUTPUT"
+          [ "$an" = ja ] || echo "::notice::Preiswächter ist pausiert (daten/site.json: preiswaechter_an = false)"
   pruefen:
+    needs: schalter
+    if: needs.schalter.outputs.an == 'ja' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     env:
       BEZUGSQUELLEN: ${{ secrets.BEZUGSQUELLEN }}

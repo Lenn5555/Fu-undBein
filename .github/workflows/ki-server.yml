@@ -7,7 +7,7 @@ name: KI-Server veröffentlichen
 on:
   push:
     branches: [main]
-    paths: ["ki/worker/**", ".github/workflows/ki-server.yml"]
+    paths: ["ki/worker/**", ".github/workflows/ki-server.yml", "daten/site.json"]
   workflow_dispatch:
     inputs:
       testbestellung:
@@ -55,6 +55,9 @@ jobs:
           fi
           node -e "console.log(Object.keys(require('./src/bezugsquellen.json')).length + ' Bezugsquellen')"
       - run: npm test
+      - name: Produktliste für den Berater neu bauen (Schalter nur_eigene_produkte in daten/site.json)
+        working-directory: .
+        run: python3 werkzeuge/build_ki.py > /dev/null && node -e "const k=require('./ki/worker/src/katalog.json'); console.log(k.length + ' Produkte im Berater')"
       - name: Worker veröffentlichen
         if: env.HAT_TOKEN == 'true'
         env:

@@ -336,13 +336,26 @@ def sitemap():
 
 
 def beraterseite(liste):
+    # Nur ein Gewinde (z. B. bei „nur eigene Produkte“): „M10“ statt „M10 bis M10“
+    return re.sub(r"(?:von )?(M\d+) bis \1\b", r"\1", _beraterseite(liste))
+
+
+def _beraterseite(liste):
     api = CFG.get("ki_api", "")
     anzahl = len(liste)
     z = kennzahlen(liste)
     chips = "".join(f'<button type="button" class="kb-chip" data-frage="{e(x)}">{e(x)}</button>' for x in BEISPIELE)
 
     panels = []
-    for i, (nr, name, text, frage) in enumerate(EINSAETZE):
+    # Anwendungen ohne passende Produkte weglassen (z. B. wenn nur eigene Produkte gezeigt werden, Lenn 24.11.2026)
+    einsaetze = []
+    for nr, name, text, frage in EINSAETZE:
+        felder = [f for f in re.findall(r"\{([^}]+)\}", text) if not f.startswith("gew_")]
+        if felder and not z.get(felder[0]):
+            continue
+        text = re.sub(r" und 0 [^.]+", "", text.format_map({**{f: 0 for f in felder}, **z}))
+        einsaetze.append((nr, name, text.replace("{", "{{").replace("}", "}}"), frage))
+    for i, (nr, name, text, frage) in enumerate(einsaetze):
         offen = " ist-offen" if i == 0 else ""
         panels.append(
             f'<div class="kb-akk-panel{offen}" style="--stufe:{i}">'
@@ -724,12 +737,12 @@ def versandseite():
               '<h1>Versandkosten</h1><p class="pr-kurz">Wir versenden mit GLS ab Pfungstadt. Alle Versandkosten verstehen sich netto zzgl. MwSt.</p>'
               f'<section><h2>Deutschland</h2><p>Innerhalb Deutschlands berechnen wir pauschal <strong>{euro(de)}</strong> netto pro Bestellung, '
               'unabhängig von Gewicht und Menge.</p></section>'
-              f'<section><h2>Mindermengenzuschlag</h2><p>Für Artikel, die wir über Partner beziehen, berechnen wir bei kleinem Warenwert '
+              + ('' if CFG.get("nur_eigene_produkte") else f'<section><h2>Mindermengenzuschlag</h2><p>Für Artikel, die wir über Partner beziehen, berechnen wir bei kleinem Warenwert '
               'einen Mindermengenzuschlag pro Bestellung (netto):</p><ul class="pr-punkte">'
               + "".join(f'<li>Warenwert unter {euro(s["unter"])}: {euro(s["zuschlag"])}</li>' for s in MM["stufen"])
               + f'<li>ab {euro(MM["stufen"][-1]["unter"])}: kein Zuschlag</li></ul>'
               '<p>Ob ein Artikel betroffen ist, sehen Sie im Bestellformular. Für einzelne Artikel gilt außerdem ein Mindestbestellwert; '
-              'er steht ebenfalls im Bestellformular.</p></section>'
+              'er steht ebenfalls im Bestellformular.</p></section>') +
               f'<section><h2>Europa</h2><p class="pr-notiz">Preis pro Paket nach Gewicht bis … Mehrere Artikel einer Bestellung packen wir zusammen.</p><div class="pr-tabelle pr-versand-eu"><table><thead><tr><th>Land</th>{kopf}</tr></thead>'
               f'<tbody>{zeilen_eu}</tbody></table></div>'
               '<p class="pr-notiz">¹ Versand per Luftfracht. Berechnet wird nach Volumengewicht, wenn es höher ist als das tatsächliche Gewicht.</p></section>'
@@ -746,6 +759,13 @@ def main():
     produkte = b.produkte_laden()
     neutral(produkte)
     feste_preise(produkte)
+    # Schalter in daten/site.json (Lenn, 24.11.2026): nur eigene T&S-Produkte zeigen, Händlerware ausblenden.
+    # Ausgeblendete Seiten leiten auf ihre Kategorie weiter (siehe unten), false zeigt wieder alles.
+    if CFG.get("nur_eigene_produkte"):
+        for p in produkte:
+            if p.get("vergleich"):
+                p["ausgeblendet"] = True
+        print("nur eigene Produkte: Händlerware ausgeblendet")
     # T&S-Fotos von ts-systemtechnik.de mit weiß gerechnetem Hintergrund (ki/seite/ts-fotos, Lenn, 23.10.2026);
     # ohne eigenes Foto die weiße Skizze wie bei allen anderen
     for p in produkte:

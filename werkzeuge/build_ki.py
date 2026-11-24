@@ -335,6 +335,9 @@ def sitemap():
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n'
 
 
+ZAHLWORT = {1: "Eine", 2: "Zwei", 3: "Drei", 4: "Vier", 5: "Fünf", 6: "Sechs"}
+
+
 def beraterseite(liste):
     # Nur ein Gewinde (z. B. bei „nur eigene Produkte“): „M10“ statt „M10 bis M10“
     return re.sub(r"(?:von )?(M\d+) bis \1\b", r"\1", _beraterseite(liste))
@@ -424,7 +427,7 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <section class="kb-einsaetze" id="einsaetze" data-feld="weiss">
 <div class="kb-intro">
 <h2 data-rein>Anwendungsbereiche</h2>
-<p data-rein>Sechs typische Anwendungen und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
+<p data-rein>{ZAHLWORT.get(len(einsaetze), len(einsaetze))} typische Anwendungen und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
 </div>
 <div class="kb-akk" data-rein>{"".join(panels)}</div>
 </section>

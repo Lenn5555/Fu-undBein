@@ -244,7 +244,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
     """Eigener Rahmen der KI-Seite: feste helle Kopfleiste, dunkler Fuß mit Wortmarke."""
     # Seitenart für die anonyme Zählung (Einstiegsseite), siehe ki/seite/zaehlen.js
     seite = seite or ("start" if pfad == "" and index else "uebersicht" if pfad == "produkte/" else "sonstige")
-    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Anwendung", "/#einsaetze"), ("Preise", "/#preise"), ("Kontakt", "/#kontakt")))
+    nav = "".join(f'<a href="{h}">{t}</a>' for t, h in (("Berater", "/#berater"), ("Anwendung", "/#einsaetze"), ("Produkte", "/produkte/"), ("Kontakt", "/#kontakt")))
     mail = e(CFG["anfrage_email"])
     return f"""<!doctype html>
 <html lang="de">
@@ -273,7 +273,7 @@ def seitenrahmen(titel, inhalt, beschreibung="", kopf="", feld="bone", pfad="", 
 <footer class="bf-fuss" data-feld="dunkel">
 <div class="bf-fuss-kopf"><a class="bf-wortmarke" href="/">beinundfuß.de</a><p>Stellfüße, Einschlagfüße und Maschinenfüße mit festem Nettopreis. Ein Angebot von TS Systemtechnik, Pfungstadt.</p></div>
 <div class="bf-fuss-raster">
-<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Anwendung</a><a href="/#preise">Preise</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a><a href="/versandkosten/">Versandkosten</a></nav>
+<nav class="bf-fuss-links" aria-label="Seite"><a href="/#berater">Berater</a><a href="/#einsaetze">Anwendung</a><a href="/#kontakt">Kontakt</a><a href="/produkte/">Alle Produkte</a><a href="/versandkosten/">Versandkosten</a></nav>
 <nav class="bf-fuss-links" aria-label="Rechtliches"><a href="/kontakt/">Kontaktseite</a><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a>{b.AGB_LINK}</nav>
 <div class="bf-fuss-adresse"><p>{e(CFG['betreiber_zeile'])}<br>TS Systemtechnik, Pfungstadt</p><p><a href="mailto:{mail}">{mail}</a></p></div>
 </div>
@@ -369,19 +369,6 @@ def _beraterseite(liste):
             f'<img class="kb-sticker" src="/assets/anwendungen/anwendung-{nr:02d}.jpg" width="266" height="180" loading="lazy" '
             f'alt="Beispiel: {e(name)} mit passendem Fuß"></div></div>')
 
-    gruppen = {}
-    for p in liste:
-        gruppen.setdefault(p["merkmale"]["Bauform"], []).append(p)
-    bars = []
-    for i, (bauform, mehrzahl) in enumerate(BAUFORMEN):
-        l = sorted(gruppen.get(bauform, []), key=min_preis)
-        if not l:
-            continue
-        # Alle Modelle der Bauform, jedes führt zu seiner Produktseite
-        zeilen = "".join(f'<li><a href="{produkt_url(p)}"><span>{e(p["name"])}</span><span class="kb-preis">{preis_ab_text(p)}</span></a></li>' for p in l)
-        bars.append(f'<details class="kb-bar"{" open" if i == 0 else ""}><summary><span>{e(mehrzahl)}</span>'
-                    f'<span class="kb-bar-info">{len(l)} Modelle, {spanne(l)}</span></summary><ul>{zeilen}</ul>'
-                    f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
     # Laufband nennt nur Bauformen, die es im Shop gerade gibt (Lenn, 24.11.2026)
     band = "".join(f"<span>{e(x)}</span>" for x, bauform in (
@@ -407,7 +394,7 @@ def _beraterseite(liste):
 <div class="kb-hero-text">
 <h1 class="kb-titel" data-rein>Stellfüße und <span>Einschlagfüße</span> mit festem Preis</h1>
 <p class="kb-hero-lead" data-rein>Beschreiben Sie Ihre Anwendung. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
-<p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="#preise">Alle Preise ansehen</a></p>
+<p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="/produkte/">Alle Produkte ansehen</a></p>
 </div>
 <figure class="kb-hero-bildfeld" data-rein><img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
  alt="Stellfüße, Edelstahl-Stellbeine, ein Einschlagfuß mit Flansch und ein Nivellierelement nebeneinander"></figure>
@@ -443,17 +430,6 @@ Ihre Eingaben gehen zur Beantwortung an Anthropic, siehe <a href="/datenschutz/"
 <p data-rein>{ZAHLWORT.get(len(einsaetze), len(einsaetze))} typische Anwendungen und was dafür im Sortiment steht. „Berater fragen“ beginnt das Gespräch mit genau diesem Fall.</p>
 </div>
 <div class="kb-akk" data-rein>{"".join(panels)}</div>
-</section>
-
-<section class="kb-preise" id="preise" data-feld="hell">
-<div class="kb-preise-text">
-<h2 data-rein>Preise</h2>
-<p data-rein>Jeder Preis gilt netto pro Stück, zzgl. MwSt. und <a href="/versandkosten/">Versand</a>. Verkauf an Gewerbetreibende.</p>
-<p data-rein>Tippen Sie auf ein Modell für Datenblatt, Ausführungen und Preise. Insgesamt {anzahl} Modelle, <a href="/produkte/">alle Produkte im Überblick</a>.</p>
-</div>
-<div class="kb-preise-liste">
-{"".join(bars)}
-</div>
 </section>
 
 <section class="kb-kontakt" id="kontakt" data-feld="weiss">

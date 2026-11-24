@@ -381,8 +381,8 @@ def _beraterseite(liste):
                     f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
     band = "".join(f"<span>{e(x)}</span>" for x in (
-        f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
-        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"{spanne(liste)} netto"))
+        "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
+        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente"))
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])
@@ -392,10 +392,6 @@ def _beraterseite(liste):
 <h1 class="kb-titel" data-rein>Stellfüße und <span>Einschlagfüße</span> mit festem Preis</h1>
 <p class="kb-hero-lead" data-rein>Beschreiben Sie Ihre Anwendung. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
 <p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="#preise">Alle Preise ansehen</a></p>
-<dl class="kb-fakten" data-rein>
-<div><dt>Gewinde</dt><dd>{z['gew_min']} bis {z['gew_max']}</dd></div>
-<div><dt>Preise ab, netto</dt><dd>{euro(min(map(min_preis, liste)))}</dd></div>
-</dl>
 </div>
 <figure class="kb-hero-bildfeld" data-rein><img class="kb-hero-bild" src="/assets/fuesse-freigestellt.webp" width="1344" height="390"
  alt="Stellfüße, Edelstahl-Stellbeine, ein Einschlagfuß mit Flansch und ein Nivellierelement nebeneinander"></figure>

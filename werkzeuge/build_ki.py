@@ -380,9 +380,11 @@ def _beraterseite(liste):
                     f'<span class="kb-bar-info">{len(l)} Modelle, {spanne(l)}</span></summary><ul>{zeilen}</ul>'
                     f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
-    band = "".join(f"<span>{e(x)}</span>" for x in (
-        "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
-        "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente"))
+    # Laufband nennt nur Bauformen, die es im Shop gerade gibt (Lenn, 24.11.2026)
+    band = "".join(f"<span>{e(x)}</span>" for x, bauform in (
+        ("Edelstahl", None), ("Zinkdruckguss", None), ("Gelenkfüße", "Gelenkfuß"),
+        ("Einschlagfüße für Vierkantrohr", "Einschlagfuß"), ("Schwingungsdämpfer", "Schwingungsdämpfer"),
+        ("Nivellierelemente", "Nivellierelement")) if bauform is None or z.get(bauform))
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
     mail = e(CFG["anfrage_email"])

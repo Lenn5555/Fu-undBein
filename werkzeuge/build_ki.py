@@ -381,7 +381,7 @@ def _beraterseite(liste):
                     f'<p class="kb-bar-alle"><a href="{kat_url(bauform)}">Alle {e(mehrzahl)} im Überblick</a></p></details>')
 
     band = "".join(f"<span>{e(x)}</span>" for x in (
-        f"{anzahl} Modelle mit Preis", f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
+        f"Gewinde {z['gew_min']} bis {z['gew_max']}", "Edelstahl", "Zinkdruckguss", "Gelenkfüße",
         "Einschlagfüße für Vierkantrohr", "Schwingungsdämpfer", "Nivellierelemente", f"{spanne(liste)} netto"))
     kopf = strukturierte_daten(liste)
     SEITEN.append(("", "1.0"))
@@ -393,7 +393,6 @@ def _beraterseite(liste):
 <p class="kb-hero-lead" data-rein>Beschreiben Sie Ihre Anwendung. Sie bekommen passende Modelle mit Nettopreis und bestellen direkt.</p>
 <p class="kb-aktionen" data-rein><a class="bf-knopf bf-knopf-gelb bf-knopf-gross" href="#berater">Passenden Fuß finden</a><a class="bf-knopf bf-knopf-rand bf-knopf-gross" href="#preise">Alle Preise ansehen</a></p>
 <dl class="kb-fakten" data-rein>
-<div><dt>Modelle mit Preis</dt><dd>{anzahl}</dd></div>
 <div><dt>Gewinde</dt><dd>{z['gew_min']} bis {z['gew_max']}</dd></div>
 <div><dt>Preise ab, netto</dt><dd>{euro(min(map(min_preis, liste)))}</dd></div>
 </dl>
